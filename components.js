@@ -123,6 +123,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-rate">Rate</span>
                 <div class="dropdown">
                     <a href="networth.html">Net Worth Calibration</a>
+                    <a href="fire_timeline.html">FIRE Timeline Planner</a>
                     <a href="portfolio_alpha.html">Portfolio Alpha Simulator</a>
                     <a href="runway_lab.html">Financial Runway Lab</a>
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
