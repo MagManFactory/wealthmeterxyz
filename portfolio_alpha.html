@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio Alpha Simulator | WEALTHMETER.XYZ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --slate-900: #0f172a;
+            --blue-600: #2563eb;
+            --cyan-500: #06b6d4;
+            --amber-500: #f59e0b;
+            --gray-50: #f8fafc;
+            --gray-200: #e2e8f0;
+            --success-green: #10b981;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--gray-50);
+            color: var(--slate-900);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        
+        .simulator-grid {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 40px;
+            background: white;
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+            border: 1px solid var(--gray-200);
+        }
+
+        .input-pane { display: flex; flex-direction: column; gap: 24px; }
+        .input-group { display: flex; flex-direction: column; gap: 8px; }
+        
+        label { 
+            font-size: 0.75rem; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            letter-spacing: 0.12em; 
+            color: var(--slate-900);
+        }
+
+        .tax-help {
+            font-size: 0.65rem;
+            color: #64748b;
+            font-weight: 500;
+            margin-top: -4px;
+        }
+
+        input {
+            padding: 14px;
+            border: 2px solid var(--gray-200);
+            border-radius: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            transition: border-color 0.2s;
+        }
+
+        input:focus { outline: none; border-color: var(--blue-600); }
+
+        .results-pane {
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .terminal-label { 
+            font-size: 0.85rem; 
+            font-weight: 800;
+            color: var(--blue-600);
+            text-transform: uppercase; 
+            letter-spacing: 0.15em; 
+            margin-bottom: 10px;
+        }
+
+        .terminal-value { 
+            font-size: 4.5rem; 
+            font-weight: 900; 
+            margin: 0; 
+            color: var(--slate-900);
+            letter-spacing: -0.04em;
+        }
+
+        .assessment-box {
+            margin-top: 25px;
+            padding: 15px;
+            background: #f1f5f9;
+            border-radius: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--slate-900);
+            border-left: 4px solid var(--blue-600);
+        }
+
+        .alpha-metric { 
+            font-family: 'JetBrains Mono', monospace; 
+            font-size: 1rem; 
+            color: #64748b; 
+            margin-top: 10px;
+        }
+
+        .friction-breakdown {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid var(--gray-200);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .friction-item { text-align: left; }
+        .friction-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: #94a3b8; }
+        .friction-val { font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--amber-500); }
+
+        .btn-simulate {
+            background: var(--blue-600);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 12px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-simulate:hover { background: #1d4ed8; transform: translateY(-2px); }
+
+        @media (max-width: 900px) { .simulator-grid { grid-template-columns: 1fr; padding: 30px; } }
+    </style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<div class="container">
+    <div style="margin-bottom: 50px; border-left: 8px solid var(--blue-600); padding-left: 25px;">
+        <h1 style="font-weight: 900; font-size: 3rem; margin: 0; letter-spacing: -0.04em;">Portfolio Alpha</h1>
+        <p style="color: #64748b; font-size: 1.2rem; font-weight: 500;">Calibration Tool: Compound Growth vs. Economic Friction</p>
+    </div>
+
+    <div class="simulator-grid">
+        <div class="input-pane">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="input-group" style="grid-column: span 2;">
+                    <label>Initial Portfolio ($)</label>
+                    <input type="number" id="principal" value="100000">
+                </div>
+                <div class="input-group">
+                    <label>Annual Add ($)</label>
+                    <input type="number" id="contribution" value="12000">
+                </div>
+                <div class="input-group">
+                    <label>Horizon (Yrs)</label>
+                    <input type="number" id="years" value="25">
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Expected Return Rate (%)</label>
+                <input type="number" id="returnRate" value="7.0" step="0.1">
+            </div>
+            <div class="input-group">
+                <label>Estimated Inflation (%)</label>
+                <input type="number" id="inflation" value="2.5" step="0.1">
+            </div>
+            <div class="input-group">
+                <label>Effective Income Tax (%)</label>
+                <div class="tax-help">Standard Range: 20% (low) to 45% (high)</div>
+                <input type="number" id="tax" value="25" step="1">
+            </div>
+            <button class="btn-simulate" onclick="simulate()">Calculate Impact</button>
+        </div>
+
+        <div class="results-pane">
+            <div class="terminal-label">Inflation-Adjusted Net Value</div>
+            <div class="terminal-value" id="realResult">$0.00M</div>
+            
+            <div class="assessment-box" id="assessmentText">Adjust inputs to see your assessment.</div>
+            
+            <div class="alpha-metric" id="nominalResult">Nominal Final Value: $0.00M</div>
+
+            <div class="friction-breakdown">
+                <div class="friction-item">
+                    <div class="friction-label">Tax Friction</div>
+                    <div class="friction-val" id="taxImpact">-$0.00M</div>
+                </div>
+                <div class="friction-item">
+                    <div class="friction-label">Inflation Decay</div>
+                    <div class="friction-val" id="inflationImpact">-$0.00M</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script src="components.js"></script>
+<script>
+    function formatM(val) { return '$' + (val / 1000000).toFixed(2) + 'M'; }
+
+    function simulate() {
+        const p = parseFloat(document.getElementById('principal').value);
+        const c = parseFloat(document.getElementById('contribution').value);
+        const t = parseInt(document.getElementById('years').value);
+        const r = parseFloat(document.getElementById('returnRate').value) / 100;
+        const i = parseFloat(document.getElementById('inflation').value) / 100;
+        const taxRate = parseFloat(document.getElementById('tax').value) / 100;
+
+        let nominal = p;
+        for (let year = 1; year <= t; year++) {
+            nominal = (nominal + c) * (1 + r);
+        }
+
+        const totalInvested = p + (c * t);
+        const totalProfit = Math.max(0, nominal - totalInvested);
+        
+        // Simulation applies Effective Income Tax to the growth portion of the wealth [cite: 2025-11-11].
+        const taxBill = totalProfit * taxRate;
+        const postTaxNominal = nominal - taxBill;
+        const realValue = postTaxNominal / Math.pow((1 + i), t);
+        const inflationLoss = postTaxNominal - realValue;
+
+        // UI Updates
+        document.getElementById('realResult').textContent = formatM(realValue);
+        document.getElementById('nominalResult').textContent = `Nominal Final Value: ${formatM(nominal)}`;
+        document.getElementById('taxImpact').textContent = `-${formatM(taxBill)}`;
+        document.getElementById('inflationImpact').textContent = `-${formatM(inflationLoss)}`;
+
+        // Dynamic One-Line Assessment [cite: 2025-11-11]
+        const assessmentEl = document.getElementById('assessmentText');
+        const multiple = realValue / totalInvested;
+
+        if (multiple > 4) {
+            assessmentEl.innerText = "ASSESSMENT: Exceptional growth. You are significantly outpacing friction.";
+            assessmentEl.style.borderLeftColor = "var(--success-green)";
+        } else if (multiple > 2) {
+            assessmentEl.innerText = "ASSESSMENT: Healthy performance. Your purchasing power is safely doubling.";
+            assessmentEl.style.borderLeftColor = "var(--blue-600)";
+        } else if (multiple >= 1) {
+            assessmentEl.innerText = "ASSESSMENT: Growth is marginal. Inflation and tax are eating most of your gains.";
+            assessmentEl.style.borderLeftColor = "var(--amber-500)";
+        } else {
+            assessmentEl.innerText = "ASSESSMENT: Wealth destruction. Friction is higher than your return rate.";
+            assessmentEl.style.borderLeftColor = "#ef4444";
+        }
+    }
+    window.onload = simulate;
+</script>
+</body>
+</html>

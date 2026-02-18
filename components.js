@@ -1,0 +1,160 @@
+// components.js - WealthMeter™ V25 Studio Standard
+
+const sharedStyles = `
+<style>
+    /* Monolith Pulse Animation */
+    @keyframes monolithPulse {
+        0% { transform: scaleY(1); }
+        50% { transform: scaleY(1.25); }
+        100% { transform: scaleY(1); }
+    }
+    .bar-rank { animation: monolithPulse 2s ease-in-out infinite; transform-origin: bottom; fill: #FF4B4B; }
+    .bar-analyze { animation: monolithPulse 2.4s ease-in-out infinite; animation-delay: 0.2s; transform-origin: bottom; fill: #0f172a; }
+    .bar-rate { animation: monolithPulse 1.8s ease-in-out infinite; animation-delay: 0.4s; transform-origin: bottom; fill: #0891b2; }
+
+    /* Pillar Colors */
+    .label-rank { color: #FF4B4B !important; }
+    .label-rate { color: #00bcd4 !important; }
+    .label-analyze { color: #2563eb !important; }
+
+    /* Layout Standards */
+    header { 
+        width: 100%; 
+        position: sticky; 
+        top: 0; 
+        background: rgba(255,255,255,0.98); 
+        backdrop-filter: blur(12px); 
+        border-bottom: 1px solid #e2e8f0; 
+        z-index: 9999; 
+    }
+    .nav-container { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        padding: 0 3rem; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        height: 90px; 
+    }
+
+    /* Brand Wrapper: Prevents collision with nav items */
+    .brand-wrapper {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        margin-right: 3rem;
+    }
+
+    /* Navigation: Forces links to the right */
+    nav { 
+        display: flex; 
+        gap: 3rem; 
+        align-items: center; 
+        height: 100%; 
+        margin-left: auto; 
+    }
+    
+    .nav-group { 
+        position: relative; 
+        cursor: pointer; 
+        display: flex; 
+        align-items: center; 
+        height: 100%; 
+        white-space: nowrap; 
+    }
+    .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
+    .nav-group:hover .dropdown { display: block !important; }
+    
+    .dropdown { 
+        display: none; 
+        position: absolute; 
+        top: 100%; 
+        left: 0; 
+        background: white; 
+        border: 1px solid #e2e8f0; 
+        border-radius: 0.5rem; 
+        padding: 1rem 0; 
+        min-width: 260px; 
+        box-shadow: 0 30px 60px rgba(0,0,0,0.1); 
+        z-index: 10000; 
+        margin-top: -5px; 
+    }
+    .dropdown a { 
+        display: block; 
+        padding: 0.8rem 1.5rem; 
+        text-decoration: none; 
+        color: #475569; 
+        font-size: 0.9rem; 
+        font-weight: 700; 
+        transition: 0.2s; 
+    }
+    .dropdown a:hover { background: #f8fafc; color: #020617; }
+
+    footer { padding: 5rem 2rem; text-align: center; border-top: 1px solid #e2e8f0; background: #f8fafc; margin-top: auto; }
+    .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+    .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
+</style>
+`;
+
+const siteHeader = `
+<header>
+    <div class="nav-container">
+        <div class="brand-wrapper">
+            <a href="index.html" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="bar-rank" x="15" y="45" width="16" height="40" rx="2"/>
+                    <rect class="bar-analyze" x="42" y="25" width="16" height="60" rx="2"/>
+                    <rect class="bar-rate" x="69" y="55" width="16" height="30" rx="2"/>
+                </svg>
+                <div style="font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 900; letter-spacing: -0.04em; display: flex; line-height: 1; white-space: nowrap;">
+                    <span style="color: #0f172a;">WEALTH</span><span style="color: #2563eb;">METER</span><span style="color: #0891b2;">.XYZ</span>
+                </div>
+            </a>
+        </div>
+        <nav>
+            <div class="nav-group"><span class="nav-group-label label-rank">Rank</span>
+                <div class="dropdown">
+                    <a href="index.html">Global Wealth Rank</a>
+                    <a href="global_ranker.html">Country-Specific Rank</a>
+                    <a href="income_ranker.html">Income Percentile</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-rate">Rate</span>
+                <div class="dropdown">
+                    <a href="networth.html">Net Worth Calibration</a>
+                    <a href="portfolio_alpha.html">Portfolio Alpha Simulator</a>
+                    <a href="runway_lab.html">Financial Runway Lab</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-analyze">Analyze</span>
+                <div class="dropdown">
+                    <a href="global_explorer.html">Global Explorer</a>
+                    <a href="atlas.html">Atlas View</a>
+                    <a href="data-lab.html">Data Lab</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <a href="https://lifemeter.xyz" target="_blank" style="font-weight:900; font-size:0.85rem; color:#FF4B4B; text-decoration:none; text-transform:uppercase; letter-spacing:0.12em; white-space: nowrap;">LifeMeter ↗</a>
+        </nav>
+    </div>
+</header>`;
+
+const siteFooter = `
+<footer>
+    <div class="footer-links">
+        <a href="data-sources.html">Data Sources</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+    </div>
+</footer>`;
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.head.insertAdjacentHTML("beforeend", sharedStyles);
+    const headerEl = document.getElementById("header-placeholder");
+    const footerEl = document.getElementById("footer-placeholder");
+    if (headerEl) headerEl.innerHTML = siteHeader;
+    if (footerEl) footerEl.innerHTML = siteFooter;
+});

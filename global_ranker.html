@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Country Wealth Ranker | WEALTHMETER.XYZ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Compare your net worth against 40+ countries worldwide. See exactly where you stand in any country's wealth distribution with detailed percentile rankings and statistics.">
+<meta name="keywords" content="wealth calculator, net worth comparison, country wealth rankings, wealth percentile">
+<link rel="canonical" href="https://wealthmeter.xyz/global_ranker.html">
+<meta property="og:title" content="Country Wealth Ranker | WealthMeter.xyz">
+<meta property="og:description" content="Compare your net worth against 40+ countries worldwide">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5589641656748708" crossorigin="anonymous"></script>
+<style>
+:root {
+    --slate-dark: #1e293b;
+    --blue-primary: #2563eb;
+    --cyan-accent: #06b6d4;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-400: #94a3b8;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --green-500: #22c55e;
+    --orange-500: #f97316;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--gray-50);
+    color: var(--slate-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+    background: white;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.logo-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.logo-wealth { color: var(--slate-dark); }
+.logo-meter { color: var(--blue-primary); }
+.logo-xyz { color: var(--cyan-accent); }
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--gray-600);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+.nav-links a:hover {
+    color: var(--blue-primary);
+}
+
+/* MAIN CONTENT */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    flex: 1;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: var(--slate-dark);
+    letter-spacing: -0.03em;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+/* INPUT SECTION */
+.input-card {
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid var(--gray-200);
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--slate-dark);
+    margin-bottom: 10px;
+}
+
+input, select {
+    padding: 16px 18px;
+    font-size: 1.1rem;
+    border: 2px solid var(--gray-200);
+    border-radius: 12px;
+    font-family: inherit;
+    transition: all 0.2s;
+    background: white;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--blue-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+input[type="number"] {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    background: var(--blue-primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* RESULTS SECTION */
+.results-container {
+    display: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.results-container.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.position-card {
+    background: linear-gradient(135deg, var(--blue-primary), var(--cyan-accent));
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow: 0 15px 50px rgba(37, 99, 235, 0.3);
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.position-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.position-percentile {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.position-description {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    margin-bottom: 10px;
+}
+
+.country-name-display {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+/* WEALTH LADDER */
+.ladder-card {
+    background: white;
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid var(--gray-200);
+    margin-bottom: 50px;
+}
+
+.ladder-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: var(--slate-dark);
+    text-align: center;
+}
+
+.ladder-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 150px;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--gray-50);
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.ladder-row:hover {
+    background: var(--gray-100);
+    transform: translateX(5px);
+}
+
+.ladder-row.user-position {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(6, 182, 212, 0.1));
+    border: 2px solid var(--blue-primary);
+}
+
+.ladder-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.ladder-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--slate-dark);
+}
+
+.ladder-bar-container {
+    height: 40px;
+    background: var(--gray-200);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.ladder-bar {
+    height: 100%;
+    background: var(--blue-primary);
+    border-radius: 10px;
+    transition: width 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ladder-bar.top1 {
+    background: linear-gradient(90deg, var(--slate-dark), var(--gray-700));
+}
+
+.ladder-bar.top10 {
+    background: linear-gradient(90deg, var(--blue-primary), var(--cyan-accent));
+}
+
+.ladder-bar.median {
+    background: linear-gradient(90deg, var(--gray-400), var(--gray-600));
+}
+
+.ladder-bar.user {
+    background: linear-gradient(90deg, var(--orange-500), #fb923c);
+}
+
+.ladder-rank {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--blue-primary);
+}
+
+/* STATS GRID */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.stat-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--slate-dark);
+}
+
+/* FOOTER */
+footer {
+    background: white;
+    border-top: 1px solid var(--gray-200);
+    padding: 40px 20px;
+    margin-top: 80px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--gray-600);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--blue-primary);
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .input-card {
+        padding: 30px 20px;
+    }
+    
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ladder-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .position-percentile {
+        font-size: 3.5rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+}
+</style>
+</head>
+<body data-page="global_ranker.html">
+
+<div id="header-placeholder"></div>
+
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-title">Country Wealth Ranker</h1>
+        <p class="page-subtitle">See exactly where you stand within any country's wealth distribution</p>
+    </div>
+
+    <div class="input-card">
+        <form id="rankerForm">
+            <div class="input-grid">
+                <div class="form-group">
+                    <label for="networth">Your Net Worth (USD)</label>
+                    <input type="number" id="networth" placeholder="0" min="0" step="1000" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Compare Against</label>
+                    <select id="country" required>
+                        <option value="">Select a Country</option>
+                        <optgroup label="Americas">
+                            <option value="USA">🇺🇸 United States</option>
+                            <option value="CAN">🇨🇦 Canada</option>
+                            <option value="BRA">🇧🇷 Brazil</option>
+                            <option value="MEX">🇲🇽 Mexico</option>
+                            <option value="ARG">🇦🇷 Argentina</option>
+                            <option value="CHL">🇨🇱 Chile</option>
+                            <option value="COL">🇨🇴 Colombia</option>
+                            <option value="PER">🇵🇪 Peru</option>
+                        </optgroup>
+                        <optgroup label="Europe">
+                            <option value="CHE">🇨🇭 Switzerland</option>
+                            <option value="GBR">🇬🇧 United Kingdom</option>
+                            <option value="DEU">🇩🇪 Germany</option>
+                            <option value="FRA">🇫🇷 France</option>
+                            <option value="ITA">🇮🇹 Italy</option>
+                            <option value="ESP">🇪🇸 Spain</option>
+                            <option value="NLD">🇳🇱 Netherlands</option>
+                            <option value="BEL">🇧🇪 Belgium</option>
+                            <option value="SWE">🇸🇪 Sweden</option>
+                            <option value="NOR">🇳🇴 Norway</option>
+                            <option value="DNK">🇩🇰 Denmark</option>
+                            <option value="FIN">🇫🇮 Finland</option>
+                            <option value="AUT">🇦🇹 Austria</option>
+                            <option value="IRL">🇮🇪 Ireland</option>
+                            <option value="POL">🇵🇱 Poland</option>
+                            <option value="PRT">🇵🇹 Portugal</option>
+                            <option value="GRC">🇬🇷 Greece</option>
+                            <option value="CZE">🇨🇿 Czech Republic</option>
+                            <option value="RUS">🇷🇺 Russia</option>
+                        </optgroup>
+                        <optgroup label="Asia-Pacific">
+                            <option value="AUS">🇦🇺 Australia</option>
+                            <option value="CHN">🇨🇳 China</option>
+                            <option value="JPN">🇯🇵 Japan</option>
+                            <option value="IND">🇮🇳 India</option>
+                            <option value="SGP">🇸🇬 Singapore</option>
+                            <option value="KOR">🇰🇷 South Korea</option>
+                            <option value="HKG">🇭🇰 Hong Kong</option>
+                            <option value="NZL">🇳🇿 New Zealand</option>
+                            <option value="THA">🇹🇭 Thailand</option>
+                            <option value="MYS">🇲🇾 Malaysia</option>
+                            <option value="IDN">🇮🇩 Indonesia</option>
+                            <option value="PHL">🇵🇭 Philippines</option>
+                            <option value="VNM">🇻🇳 Vietnam</option>
+                        </optgroup>
+                        <optgroup label="Middle East">
+                            <option value="ARE">🇦🇪 UAE</option>
+                            <option value="QAT">🇶🇦 Qatar</option>
+                            <option value="SAU">🇸🇦 Saudi Arabia</option>
+                            <option value="ISR">🇮🇱 Israel</option>
+                            <option value="TUR">🇹🇷 Turkey</option>
+                        </optgroup>
+                        <optgroup label="Africa">
+                            <option value="ZAF">🇿🇦 South Africa</option>
+                            <option value="EGY">🇪🇬 Egypt</option>
+                            <option value="NGA">🇳🇬 Nigeria</option>
+                            <option value="KEN">🇰🇪 Kenya</option>
+                            <option value="MAR">🇲🇦 Morocco</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn-primary">Analyze My Position</button>
+        </form>
+    </div>
+
+    <div class="results-container" id="resultsContainer">
+        <div class="position-card">
+            <div class="position-label">Your Position</div>
+            <div class="position-percentile" id="percentile">Top 15%</div>
+            <div class="position-description" id="description">
+                You are wealthier than <strong id="wealthierThan">85 million</strong> adults
+            </div>
+            <div class="country-name-display" id="countryDisplay">🇺🇸 United States</div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Adult Population</div>
+                <div class="stat-value" id="totalPop">255M</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Your Rank</div>
+                <div class="stat-value" id="yourRank">#38.2M</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Median Wealth</div>
+                <div class="stat-value" id="medianWealth">$108k</div>
+            </div>
+        </div>
+
+        <div class="ladder-card">
+            <div class="ladder-title">Wealth Distribution Ladder</div>
+            <div id="ladderContainer"></div>
+        </div>
+    </div>
+</div>
+
+<div id="footer-placeholder"></div><script src="components.js"></script>
+
+<script>
+// Comprehensive country wealth data (40+ countries)
+const countryData = {
+    "USA": { flag: "🇺🇸", name: "United States", pop: 254831886, median: 107700, top10: 1600000, top1: 5800000 },
+    "CAN": { flag: "🇨🇦", name: "Canada", pop: 29156000, median: 137000, top10: 1100000, top1: 3400000 },
+    "AUS": { flag: "🇦🇺", name: "Australia", pop: 19850000, median: 260000, top10: 1300000, top1: 4500000 },
+    "CHE": { flag: "🇨🇭", name: "Switzerland", pop: 7088000, median: 167000, top10: 1400000, top1: 8500000 },
+    "GBR": { flag: "🇬🇧", name: "United Kingdom", pop: 52637000, median: 151000, top10: 850000, top1: 2800000 },
+    "DEU": { flag: "🇩🇪", name: "Germany", pop: 69305000, median: 66700, top10: 725000, top1: 2500000 },
+    "FRA": { flag: "🇫🇷", name: "France", pop: 52345000, median: 133000, top10: 890000, top1: 2600000 },
+    "ITA": { flag: "🇮🇹", name: "Italy", pop: 51109000, median: 112000, top10: 650000, top1: 1900000 },
+    "ESP": { flag: "🇪🇸", name: "Spain", pop: 38704000, median: 107000, top10: 580000, top1: 1700000 },
+    "NLD": { flag: "🇳🇱", name: "Netherlands", pop: 13704000, median: 110000, top10: 950000, top1: 3200000 },
+    "BEL": { flag: "🇧🇪", name: "Belgium", pop: 9087000, median: 230000, top10: 820000, top1: 2400000 },
+    "SWE": { flag: "🇸🇪", name: "Sweden", pop: 8007000, median: 90000, top10: 650000, top1: 2100000 },
+    "NOR": { flag: "🇳🇴", name: "Norway", pop: 4226000, median: 117000, top10: 750000, top1: 2500000 },
+    "DNK": { flag: "🇩🇰", name: "Denmark", pop: 4556000, median: 95000, top10: 670000, top1: 2200000 },
+    "FIN": { flag: "🇫🇮", name: "Finland", pop: 4424000, median: 89000, top10: 580000, top1: 1900000 },
+    "AUT": { flag: "🇦🇹", name: "Austria", pop: 7388000, median: 94000, top10: 710000, top1: 2300000 },
+    "IRL": { flag: "🇮🇪", name: "Ireland", pop: 3790000, median: 104000, top10: 850000, top1: 2900000 },
+    "POL": { flag: "🇵🇱", name: "Poland", pop: 32198000, median: 30000, top10: 320000, top1: 1200000 },
+    "PRT": { flag: "🇵🇹", name: "Portugal", pop: 8621000, median: 71000, top10: 460000, top1: 1400000 },
+    "GRC": { flag: "🇬🇷", name: "Greece", pop: 9190000, median: 54000, top10: 390000, top1: 1200000 },
+    "CZE": { flag: "🇨🇿", name: "Czech Republic", pop: 8903000, median: 41000, top10: 380000, top1: 1300000 },
+    "RUS": { flag: "🇷🇺", name: "Russia", pop: 117543000, median: 12000, top10: 180000, top1: 950000 },
+    "CHN": { flag: "🇨🇳", name: "China", pop: 1100000000, median: 28000, top10: 240000, top1: 1800000 },
+    "JPN": { flag: "🇯🇵", name: "Japan", pop: 103290000, median: 120000, top10: 550000, top1: 1500000 },
+    "IND": { flag: "🇮🇳", name: "India", pop: 965860000, median: 3800, top10: 25000, top1: 175000 },
+    "SGP": { flag: "🇸🇬", name: "Singapore", pop: 4483000, median: 100000, top10: 1100000, top1: 3800000 },
+    "KOR": { flag: "🇰🇷", name: "South Korea", pop: 42759000, median: 72000, top10: 480000, top1: 1600000 },
+    "HKG": { flag: "🇭🇰", name: "Hong Kong", pop: 6225000, median: 150000, top10: 1300000, top1: 4200000 },
+    "NZL": { flag: "🇳🇿", name: "New Zealand", pop: 3710000, median: 185000, top10: 950000, top1: 3100000 },
+    "THA": { flag: "🇹🇭", name: "Thailand", pop: 54792000, median: 12000, top10: 95000, top1: 580000 },
+    "MYS": { flag: "🇲🇾", name: "Malaysia", pop: 24881000, median: 16000, top10: 130000, top1: 750000 },
+    "IDN": { flag: "🇮🇩", name: "Indonesia", pop: 197135000, median: 7800, top10: 56000, top1: 380000 },
+    "PHL": { flag: "🇵🇭", name: "Philippines", pop: 75090000, median: 3600, top10: 28000, top1: 210000 },
+    "VNM": { flag: "🇻🇳", name: "Vietnam", pop: 75691000, median: 5100, top10: 38000, top1: 270000 },
+    "BRA": { flag: "🇧🇷", name: "Brazil", pop: 168273000, median: 4200, top10: 80000, top1: 450000 },
+    "MEX": { flag: "🇲🇽", name: "Mexico", pop: 94425000, median: 15000, top10: 120000, top1: 900000 },
+    "ARG": { flag: "🇦🇷", name: "Argentina", pop: 35195000, median: 8500, top10: 95000, top1: 620000 },
+    "CHL": { flag: "🇨🇱", name: "Chile", pop: 14388000, median: 18000, top10: 140000, top1: 850000 },
+    "COL": { flag: "🇨🇴", name: "Colombia", pop: 39398000, median: 6200, top10: 65000, top1: 420000 },
+    "PER": { flag: "🇵🇪", name: "Peru", pop: 25527000, median: 5800, top10: 58000, top1: 390000 },
+    "ARE": { flag: "🇦🇪", name: "UAE", pop: 7298000, median: 42000, top10: 850000, top1: 3500000 },
+    "QAT": { flag: "🇶🇦", name: "Qatar", pop: 2193000, median: 65000, top10: 1100000, top1: 4200000 },
+    "SAU": { flag: "🇸🇦", name: "Saudi Arabia", pop: 26295000, median: 28000, top10: 420000, top1: 1900000 },
+    "ISR": { flag: "🇮🇱", name: "Israel", pop: 6657000, median: 89000, top10: 690000, top1: 2400000 },
+    "TUR": { flag: "🇹🇷", name: "Turkey", pop: 60042000, median: 8900, top10: 95000, top1: 580000 },
+    "ZAF": { flag: "🇿🇦", name: "South Africa", pop: 41804000, median: 5200, top10: 55000, top1: 350000 },
+    "EGY": { flag: "🇪🇬", name: "Egypt", pop: 66147000, median: 2800, top10: 22000, top1: 180000 },
+    "NGA": { flag: "🇳🇬", name: "Nigeria", pop: 105594000, median: 1800, top10: 18000, top1: 150000 },
+    "KEN": { flag: "🇰🇪", name: "Kenya", pop: 31793000, median: 2100, top10: 19000, top1: 160000 },
+    "MAR": { flag: "🇲🇦", name: "Morocco", pop: 27389000, median: 4200, top10: 35000, top1: 240000 }
+};
+
+function formatCurrency(amount) {
+    if (amount >= 1000000) {
+        return '$' + (amount / 1000000).toFixed(1) + 'M';
+    }
+    if (amount >= 1000) {
+        return '$' + (amount / 1000).toFixed(0) + 'k';
+    }
+    return '$' + amount.toLocaleString();
+}
+
+function formatNumber(num) {
+    if (num >= 1000000000) {
+        return (num / 1000000000).toFixed(1) + 'B';
+    }
+    if (num >= 1000000) {
+        return (num / 1000000).toFixed(1) + 'M';
+    }
+    if (num >= 1000) {
+        return (num / 1000).toFixed(0) + 'k';
+    }
+    return num.toLocaleString();
+}
+
+function calculatePercentile(networth, country) {
+    const data = countryData[country];
+    
+    // Simplified percentile estimation based on thresholds
+    if (networth >= data.top1) {
+        return 99 + (Math.min(networth / data.top1, 10) - 1) * 0.1;
+    }
+    if (networth >= data.top10) {
+        return 90 + ((networth - data.top10) / (data.top1 - data.top10)) * 9;
+    }
+    if (networth >= data.median) {
+        return 50 + ((networth - data.median) / (data.top10 - data.median)) * 40;
+    }
+    return (networth / data.median) * 50;
+}
+
+document.getElementById('rankerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const networth = parseFloat(document.getElementById('networth').value);
+    const countryCode = document.getElementById('country').value;
+    
+    if (!networth || !countryCode) {
+        alert('Please enter your net worth and select a country');
+        return;
+    }
+    
+    const country = countryData[countryCode];
+    const percentile = calculatePercentile(networth, countryCode);
+    const rank = Math.round((percentile / 100) * country.pop);
+    const wealthierThan = country.pop - rank;
+    
+    // Update position card
+    document.getElementById('percentile').textContent = `Top ${(100 - percentile).toFixed(1)}%`;
+    document.getElementById('description').innerHTML = `You are wealthier than <strong>${formatNumber(wealthierThan)}</strong> adults`;
+    document.getElementById('countryDisplay').textContent = `${country.flag} ${country.name}`;
+    
+    // Update stats
+    document.getElementById('totalPop').textContent = formatNumber(country.pop);
+    document.getElementById('yourRank').textContent = `#${formatNumber(rank)}`;
+    document.getElementById('medianWealth').textContent = formatCurrency(country.median);
+    
+    // Build ladder
+    const ladderData = [
+        { label: 'Top 1%', value: country.top1, class: 'top1' },
+        { label: 'Top 10%', value: country.top10, class: 'top10' },
+        { label: 'Median (50%)', value: country.median, class: 'median' },
+        { label: 'YOU', value: networth, class: 'user', isUser: true }
+    ];
+    
+    ladderData.sort((a, b) => b.value - a.value);
+    
+    const maxValue = country.top1;
+    const ladderContainer = document.getElementById('ladderContainer');
+    ladderContainer.innerHTML = '';
+    
+    ladderData.forEach(item => {
+        const percentage = (item.value / maxValue) * 100;
+        const row = document.createElement('div');
+        row.className = 'ladder-row' + (item.isUser ? ' user-position' : '');
+        row.innerHTML = `
+            <div>
+                <span class="ladder-label">${item.label}</span>
+                <div class="ladder-value">${formatCurrency(item.value)}</div>
+            </div>
+            <div class="ladder-bar-container">
+                <div class="ladder-bar ${item.class}" style="width: ${percentage}%"></div>
+            </div>
+            <div class="ladder-rank">${percentage.toFixed(0)}%</div>
+        `;
+        ladderContainer.appendChild(row);
+    });
+    
+    // Show results
+    document.getElementById('resultsContainer').classList.add('active');
+    document.getElementById('resultsContainer').scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+
+
+<div style="max-width:900px;margin:40px auto 20px;background:linear-gradient(135deg,#ef4444,#dc2626);border-radius:16px;padding:20px 24px;display:flex;align-items:center;gap:16px">
+<span style="font-size:28px">❤️</span>
+<div style="flex:1">
+<div style="color:white;font-weight:700;font-size:15px;margin-bottom:4px">Health & Longevity Data</div>
+<div style="color:rgba(255,255,255,0.9);font-size:13px">Visit LIFEMETER.XYZ for life expectancy rankings and health statistics</div>
+</div>
+<a href="https://lifemeter.xyz" target="_blank" style="color:white;font-size:20px;text-decoration:none">→</a>
+</div>
+</body>
+</html>

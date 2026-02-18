@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology | WealthMeter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --bg-body: #f8fafc; --text-main: #0f172a; --text-muted: #64748b; --primary: #2563eb; --border: #e2e8f0; }
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-body); color: var(--text-main); margin: 0; min-height: 100vh; display: flex; flex-direction: column; }
+        
+        .info-stage { flex-grow: 1; display: flex; justify-content: center; padding: 100px 20px; }
+        .info-card { max-width: 850px; width: 100%; text-align: center; }
+        
+        h1 { font-family: 'Outfit', sans-serif; font-size: 3.5rem; font-weight: 900; letter-spacing: -0.05em; margin-bottom: 20px; line-height: 1; }
+        .section-break { width: 60px; height: 4px; background: var(--primary); margin: 40px auto; border-radius: 2px; }
+        p { font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 40px; }
+        
+        /* Methodology Disclosure Blocks */
+        .method-box { text-align: left; background: white; border: 1px solid var(--border); padding: 45px; border-radius: 24px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+        .method-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.4rem; margin-bottom: 15px; color: var(--text-main); }
+        .formula-block { font-family: 'Roboto Mono', monospace; background: #f1f5f9; padding: 20px; border-radius: 12px; font-size: 0.9rem; color: var(--primary); margin: 20px 0; border-left: 4px solid var(--primary); }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <main class="info-stage">
+        <div class="info-card">
+            <h1>Methodology.</h1>
+            <div class="section-break"></div>
+            <p>WealthMeter utilizes advanced stochastic modeling and logarithmic interpolation to synthesize global financial standing across 140+ sovereign jurisdictions.</p>
+            
+            <div class="method-box">
+                <div class="method-title">1. Logarithmic Percentile Modeling</div>
+                <p>Because wealth distribution is non-linear, we utilize logarithmic interpolation to map individual net worth against the global adult population of 3.77 billion. This ensures that rankings remain sensitive at both the median and the extreme "tail" of the distribution.</p>
+                <div class="formula-block">
+                    P(w) = 1 / (1 + (w / k)^α)
+                </div>
+                <p style="font-size: 0.95rem;">Where <em>w</em> represents net worth, <em>k</em> is the median wealth coefficient, and <em>α</em> represents the distribution's shape parameter derived from <strong>Global Institutional Wealth Aggregates</strong>.</p>
+            </div>
+
+            <div class="method-box">
+                <div class="method-title">2. Pareto Power-Law Integration</div>
+                <p>For high-net-worth brackets, our engine transitions to a Pareto distribution model. This "Power Law" approach accurately reflects the disproportionate concentration of capital within the top 1% and 0.1% of global households.</p>
+            </div>
+
+            <div class="method-box">
+                <div class="method-title">3. Sovereign Weighting & Calibration</div>
+                <p>Global rankings are cross-referenced against regional Gini coefficients and periodically updated exchange benchmarks. This allows for a "Perspective" shift, showing how a single net worth value translates into relative standing within specific sovereign economic corridors.</p>
+            </div>
+
+            <p style="margin-top: 60px; font-size: 0.95rem; opacity: 0.8;"></strong></p>
+        </div>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="components.js"></script>
+</body>
+</html>

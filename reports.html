@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Strategic Reports | WealthMeter Studio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-body: #f8fafc;
+            --primary: #2563eb;
+            --dark: #0f172a;
+            --slate: #475569;
+            --border: #e2e8f0;
+            --font-ui: 'Inter', sans-serif;
+            --font-heading: 'Outfit', sans-serif;
+        }
+
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        body { 
+            font-family: var(--font-ui); background-color: var(--bg-body); 
+            color: var(--dark); margin: 0; min-height: 100vh; display: flex; 
+            flex-direction: column; 
+        }
+
+        .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; flex-grow: 1; }
+
+        /* NYER-Style Header Section [cite: 2025-11-11] */
+        .page-header { text-align: center; margin-bottom: 80px; }
+        .page-category { 
+            font-size: 0.75rem; font-weight: 800; text-transform: uppercase; 
+            letter-spacing: 0.2em; color: var(--primary); margin-bottom: 15px; display: block; 
+        }
+        .page-title { 
+            font-family: var(--font-heading); font-size: 3.5rem; font-weight: 900; 
+            letter-spacing: -0.04em; line-height: 1; margin: 0; 
+        }
+        .page-subtitle { 
+            font-size: 1.1rem; color: var(--slate); max-width: 600px; 
+            margin: 25px auto 0; line-height: 1.6; 
+        }
+
+        /* Report Gallery Grid */
+        .report-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        
+        .report-card { 
+            background: white; border: 1px solid var(--border); border-radius: 24px; 
+            padding: 40px; position: relative; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex; flex-direction: column;
+        }
+        .report-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08); }
+        
+        .report-icon { font-size: 2.5rem; margin-bottom: 25px; display: block; }
+        .report-name { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 15px; }
+        .report-desc { font-size: 0.95rem; color: var(--slate); line-height: 1.6; margin-bottom: 30px; flex-grow: 1; }
+
+        /* Lock Mechanism Architecture */
+        .lock-footer { 
+            display: flex; align-items: center; justify-content: space-between; 
+            padding-top: 25px; border-top: 1px solid var(--border); 
+        }
+        .status-badge { 
+            font-size: 0.65rem; font-weight: 800; text-transform: uppercase; 
+            letter-spacing: 0.1em; color: var(--slate); 
+        }
+        .lock-icon { font-size: 1.2rem; opacity: 0.4; }
+
+        .coming-soon-banner {
+            grid-column: 1 / -1; background: var(--dark); color: white; border-radius: 20px;
+            padding: 30px; text-align: center; margin-top: 20px;
+        }
+        .coming-soon-banner p { margin: 0; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main class="container">
+    <div class="page-header">
+        <span class="page-category">Advanced Reports</span>
+        <h1 class="page-title">Strategic Intelligence Hub.</h1>
+        <p class="page-subtitle">Demystifying trends in wealth accumulation patterns, global wealth migration, institutional thresholds, and the geography of capital.</p>
+    </div>
+
+    <div class="report-grid">
+        <div class="report-card">
+            <span class="report-icon">📊</span>
+            <h2 class="report-name">Global Wealth Trends Report</h2>
+            <p class="report-desc">An analytical take on multi-decade wealth accumulation patterns and the acceleration of the global middle class.</p>
+            <div class="lock-footer">
+                <span class="status-badge">Available Q1 2026</span>
+                <span class="lock-icon">🔒</span>
+            </div>
+        </div>
+
+        <div class="report-card">
+            <span class="report-icon">📈</span>
+            <h2 class="report-name">Wealth Thresholds Report</h2>
+            <p class="report-desc">What does it really take? Identifying the specific capital milestones required at various thresholds.</p>
+            <div class="lock-footer">
+                <span class="status-badge">Available Q1 2026</span>
+                <span class="lock-icon">🔒</span>
+            </div>
+        </div>
+
+        <div class="report-card">
+            <span class="report-icon">🌍</span>
+            <h2 class="report-name">The Geography of Global Wealth</h2>
+            <p class="report-desc">How do wealth and location mix? Are there certain geographies where your wealth would translate better?</p>
+            <div class="lock-footer">
+                <span class="status-badge">Available Q2 2026</span>
+                <span class="lock-icon">🔒</span>
+            </div>
+        </div>
+
+        <div class="coming-soon-banner">
+            <p>COMING SOON! STAY TUNED FOR UPDATES</p>
+        </div>
+    </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="components.js"></script>
+</body>
+</html>

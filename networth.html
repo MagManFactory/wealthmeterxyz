@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free net worth calculator. Calculate your total net worth by adding assets and subtracting liabilities. Get your complete financial picture instantly.">
+    <meta name="keywords" content="net worth calculator, asset calculator, financial calculator, wealth calculation, personal finance">
+    <meta name="author" content="WEALTHMETER.XYZ">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://wealthmeter.xyz/networth.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wealthmeter.xyz/networth.html">
+    <meta property="og:title" content="Net Worth Calculator | WEALTHMETER.XYZ">
+    <meta property="og:description" content="Free net worth calculator. Calculate your total financial position by adding assets and subtracting liabilities.">
+    <meta property="og:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
+    <meta property="og:site_name" content="WEALTHMETER.XYZ">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://wealthmeter.xyz/networth.html">
+    <meta name="twitter:title" content="Net Worth Calculator | WEALTHMETER.XYZ">
+    <meta name="twitter:description" content="Free net worth calculator. Calculate your total financial position instantly.">
+    <meta name="twitter:image" content="https://wealthmeter.xyz/images/twitter-networth-calculator.jpg">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <title>Net Worth Calculator | WEALTHMETER.XYZ</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5589641656748708"
+     crossorigin="anonymous"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Net Worth Calculator - WEALTHMETER.XYZ",
+      "url": "https://wealthmeter.xyz/networth.html",
+      "description": "Free net worth calculator to calculate your total financial position",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --accent: #0891b2;
+            --success: #10b981;
+            --danger: #ef4444;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HEADER */
+        header {
+            background: white;
+            padding: 20px 40px;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-wealth { color: var(--text-main); }
+        .logo-meter { color: var(--primary); }
+        .logo-xyz { color: var(--accent); }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* MAIN CONTENT */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            flex: 1;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--text-main);
+            letter-spacing: -0.03em;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* CALCULATOR CARD */
+        .calculator-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-icon {
+            font-size: 1.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .currency-symbol {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 14px 16px 14px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .section-divider {
+            height: 2px;
+            background: var(--border);
+            margin: 40px 0;
+        }
+
+        /* SUMMARY CARD */
+        .summary-card {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 24px;
+            padding: 40px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.3);
+        }
+
+        .summary-label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .summary-value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .summary-breakdown {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .breakdown-item {
+            text-align: center;
+        }
+
+        .breakdown-label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .breakdown-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .breakdown-value.positive {
+            color: #86efac;
+        }
+
+        .breakdown-value.negative {
+            color: #fca5a5;
+        }
+
+        /* CTA BUTTON */
+        .cta-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+        }
+
+        /* AD CONTAINER */
+        .ad-container {
+            max-width: 728px;
+            margin: 40px auto;
+            padding: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            text-align: center;
+            min-height: 100px;
+        }
+
+        .ad-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            opacity: 0.6;
+        }
+
+        /* FOOTER */
+        footer {
+            background: white;
+            border-top: 1px solid var(--border);
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .calculator-card {
+                padding: 30px 20px;
+            }
+
+            .summary-value {
+                font-size: 2.5rem;
+            }
+
+            .summary-breakdown {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            header {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+<body data-page="networth.html">
+
+<div id="header-placeholder"></div>
+
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-title">Net Worth Calculator</h1>
+        <p class="page-subtitle">Calculate your total net worth by adding up your assets and subtracting your liabilities</p>
+    </div>
+
+    <div class="calculator-card">
+        <h2 class="section-title">
+            <span class="section-icon">💰</span>
+            Assets (What You Own)
+        </h2>
+
+        <div class="input-group">
+            <label for="cash">Cash & Savings</label>
+            <div class="input-wrapper">
+                <span class="currency-symbol">$</span>
+                <input type="number" id="cash" placeholder="0" min="0" step="100">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="investments">Investments (Stocks, Bonds, Retirement Accounts)</label>
+            <div class="input-wrapper">
+                <span class="currency-symbol">$</span>
+                <input type="number" id="investments" placeholder="0" min="0" step="100">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="property">Real Estate (Home, Land, Rental Properties)</label>
+            <div class="input-wrapper">
+                <span class="currency-symbol">$</span>
+                <input type="number" id="property" placeholder="0" min="0" step="1000">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="vehicles">Vehicles (Cars, Boats, etc.)</label>
+            <div class="input-wrapper">
+                <span class="currency-symbol">$</span>
+                <input type="number" id="vehicles" placeholder="0" min="0" step="500">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="other-assets">Other Assets (Jewelry, Art, Business Value, etc.)</label>
+            <div class="input-wrapper">
+                <span class="currency-symbol">$</span>
+                <input type="number" id="other-assets" placeholder="0" min="0" step="100">
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="section-title">
+            <span class="section-icon">📉</span>
+            Liabilities (What You Owe)
+        </h2>
+
+        <div class="input-group">
+            <label for="mortgage">Mortgage Balance</label>
+            <div class="input-wrapper">
+                <span class="currency-symbol">$</span>
+                <input type="number" id="mortgage" placeholder="0" min="0" step="1000">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="loans">Personal Loans, Student Loans</label>
+            <div class="input-wrapper">
+                <span class="currency-symbol">$</span>
+                <input type="number" id="loans" placeholder="0" min="0" step="100">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="credit-cards">Credit Card Debt</label>
+            <div class="input-wrapper">
+                <span class="currency-symbol">$</span>
+                <input type="number" id="credit-cards" placeholder="0" min="0" step="10">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="other-liabilities">Other Debts</label>
+            <div class="input-wrapper">
+                <span class="currency-symbol">$</span>
+                <input type="number" id="other-liabilities" placeholder="0" min="0" step="100">
+            </div>
+        </div>
+    </div>
+
+    <div class="summary-card">
+        <div class="summary-label">Your Total Net Worth</div>
+        <div class="summary-value" id="netWorthDisplay">$0</div>
+        
+        <div class="summary-breakdown">
+            <div class="breakdown-item">
+                <div class="breakdown-label">Total Assets</div>
+                <div class="breakdown-value positive" id="totalAssets">$0</div>
+            </div>
+            <div class="breakdown-item">
+                <div class="breakdown-label">Total Liabilities</div>
+                <div class="breakdown-value negative" id="totalLiabilities">$0</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <a href="index.html" class="cta-button">Find My Global Wealth Rank →</a>
+    </div>
+
+    <!-- AdSense Ad -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-5589641656748708"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</div>
+
+<div id="footer-placeholder"></div><script src="components.js"></script>
+
+<script>
+    // Get all input fields
+    const inputs = document.querySelectorAll('input[type="number"]');
+    
+    // Asset fields
+    const cashInput = document.getElementById('cash');
+    const investmentsInput = document.getElementById('investments');
+    const propertyInput = document.getElementById('property');
+    const vehiclesInput = document.getElementById('vehicles');
+    const otherAssetsInput = document.getElementById('other-assets');
+    
+    // Liability fields
+    const mortgageInput = document.getElementById('mortgage');
+    const loansInput = document.getElementById('loans');
+    const creditCardsInput = document.getElementById('credit-cards');
+    const otherLiabilitiesInput = document.getElementById('other-liabilities');
+    
+    // Display elements
+    const netWorthDisplay = document.getElementById('netWorthDisplay');
+    const totalAssetsDisplay = document.getElementById('totalAssets');
+    const totalLiabilitiesDisplay = document.getElementById('totalLiabilities');
+
+    function formatCurrency(value) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(value);
+    }
+
+    function calculateNetWorth() {
+        // Calculate total assets
+        const totalAssets = 
+            (parseFloat(cashInput.value) || 0) +
+            (parseFloat(investmentsInput.value) || 0) +
+            (parseFloat(propertyInput.value) || 0) +
+            (parseFloat(vehiclesInput.value) || 0) +
+            (parseFloat(otherAssetsInput.value) || 0);
+        
+        // Calculate total liabilities
+        const totalLiabilities = 
+            (parseFloat(mortgageInput.value) || 0) +
+            (parseFloat(loansInput.value) || 0) +
+            (parseFloat(creditCardsInput.value) || 0) +
+            (parseFloat(otherLiabilitiesInput.value) || 0);
+        
+        // Calculate net worth
+        const netWorth = totalAssets - totalLiabilities;
+        
+        // Update displays
+        totalAssetsDisplay.textContent = formatCurrency(totalAssets);
+        totalLiabilitiesDisplay.textContent = formatCurrency(totalLiabilities);
+        netWorthDisplay.textContent = formatCurrency(netWorth);
+        
+        // Change color based on positive/negative
+        if (netWorth >= 0) {
+            netWorthDisplay.style.color = 'white';
+        } else {
+            netWorthDisplay.style.color = '#fca5a5';
+        }
+    }
+
+    // Add event listeners to all inputs
+    inputs.forEach(input => {
+        input.addEventListener('input', calculateNetWorth);
+    });
+
+    // Initial calculation
+    calculateNetWorth();
+</script>
+
+</body>
+</html>

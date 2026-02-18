@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5589641656748708" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<title>Income Position Ranker | WEALTHMETER.XYZ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --slate-dark: #1e293b;
+    --blue-primary: #2563eb;
+    --cyan-accent: #06b6d4;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-400: #94a3b8;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --green-500: #22c55e;
+    --orange-500: #f97316;
+    --purple-500: #a855f7;
+    --pink-500: #ec4899;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--gray-50);
+    color: var(--slate-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+    background: white;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.logo-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.logo-wealth { color: var(--slate-dark); }
+.logo-meter { color: var(--blue-primary); }
+.logo-xyz { color: var(--cyan-accent); }
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--gray-600);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--blue-primary);
+}
+
+/* MAIN CONTENT */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    flex: 1;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: var(--slate-dark);
+    letter-spacing: -0.03em;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+/* INPUT SECTION */
+.input-card {
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid var(--gray-200);
+    max-width: 900px;
+    margin: 0 auto 50px;
+}
+
+.section-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--blue-primary);
+    margin-bottom: 20px;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.input-grid-full {
+    grid-column: 1 / -1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--slate-dark);
+    margin-bottom: 10px;
+}
+
+input, select {
+    padding: 16px 18px;
+    font-size: 1.1rem;
+    border: 2px solid var(--gray-200);
+    border-radius: 12px;
+    font-family: inherit;
+    transition: all 0.2s;
+    background: white;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--blue-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+input[type="number"] {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* INCOME INPUT ROW WITH CURRENCY */
+.income-input-row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 15px;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: '▼';
+    position: absolute;
+    right: 12px;
+    top: 24px;
+    font-size: 10px;
+    color: var(--gray-600);
+    pointer-events: none;
+}
+
+.select-wrapper select {
+    width: 100%;
+    height: 60px;
+    appearance: none;
+    cursor: pointer;
+}
+
+.gender-toggle {
+    display: flex;
+    gap: 12px;
+}
+
+.gender-btn {
+    flex: 1;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid var(--gray-200);
+    background: white;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.gender-btn:hover {
+    border-color: var(--blue-primary);
+    background: var(--gray-50);
+}
+
+.gender-btn.active {
+    border-color: var(--blue-primary);
+    background: var(--blue-primary);
+    color: white;
+}
+
+.comparison-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: var(--gray-50);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.comparison-toggle input[type="checkbox"] {
+    width: 48px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.comparison-toggle label {
+    margin: 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.comparison-section {
+    display: none;
+    padding-top: 20px;
+    border-top: 2px solid var(--gray-100);
+}
+
+.comparison-section.active {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    background: var(--blue-primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* RESULTS SECTION */
+.results-container {
+    display: none;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.results-container.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.results-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.results-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--slate-dark);
+    margin-bottom: 10px;
+}
+
+.results-subtitle {
+    font-size: 1.1rem;
+    color: var(--gray-600);
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.comparison-grid.single {
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.country-result-card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid var(--gray-200);
+}
+
+.country-result-card.primary {
+    border: 2px solid var(--blue-primary);
+}
+
+.country-result-card.comparison {
+    border: 2px solid var(--purple-500);
+}
+
+.country-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--gray-100);
+}
+
+.country-name {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--slate-dark);
+}
+
+.country-flag {
+    font-size: 3rem;
+}
+
+.percentile-display {
+    background: linear-gradient(135deg, var(--blue-primary), var(--cyan-accent));
+    border-radius: 16px;
+    padding: 30px;
+    color: white;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.country-result-card.comparison .percentile-display {
+    background: linear-gradient(135deg, var(--purple-500), var(--pink-500));
+}
+
+.percentile-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.percentile-value {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.percentile-description {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+/* SHARE SECTION - ICON ONLY STYLE */
+.share-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.share-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.share-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.share-icon-header {
+    font-size: 1.2rem;
+}
+
+.share-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0.03em;
+    margin: 0;
+}
+
+.share-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.share-icon-btn {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.share-icon-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.share-icon-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Share button colors */
+.share-icon-btn.x-btn {
+    background: #000000;
+}
+
+.share-icon-btn.linkedin-btn {
+    background: #0A66C2;
+}
+
+.share-icon-btn.whatsapp-btn {
+    background: #25D366;
+}
+
+.share-icon-btn.telegram-btn {
+    background: #0088cc;
+}
+
+.share-icon-btn.reddit-btn {
+    background: #FF4500;
+}
+
+.share-icon-btn.imessage-btn {
+    background: #34C759;
+}
+
+.share-icon-btn.email-btn {
+    background: #DC2626;
+}
+
+.share-icon-btn.copy-btn {
+    background: var(--gray-700);
+}
+
+.share-icon-btn.copy-btn.copied {
+    background: var(--green-500);
+}
+
+.stats-mini-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.stat-mini {
+    background: var(--gray-50);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-mini-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    margin-bottom: 8px;
+}
+
+.stat-mini-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--slate-dark);
+}
+
+.insights-section {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 2px solid var(--gray-100);
+}
+
+.insights-title {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate-dark);
+    margin-bottom: 15px;
+}
+
+.insight-item {
+    display: flex;
+    align-items: start;
+    gap: 12px;
+    padding: 15px;
+    background: var(--gray-50);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.insight-icon {
+    font-size: 1.5rem;
+}
+
+.insight-text {
+    font-size: 0.9rem;
+    color: var(--gray-700);
+    line-height: 1.5;
+}
+
+/* INCOME LADDER */
+.ladder-section {
+    background: white;
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    border: 1px solid var(--gray-200);
+    margin-bottom: 50px;
+}
+
+.ladder-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ladder-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--slate-dark);
+    margin-bottom: 10px;
+}
+
+.ladder-subtitle {
+    font-size: 1rem;
+    color: var(--gray-600);
+}
+
+.ladder-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.ladder-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: var(--gray-50);
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.ladder-row:hover {
+    background: var(--gray-100);
+    transform: translateX(5px);
+}
+
+.ladder-row.user {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(6, 182, 212, 0.1));
+    border: 2px solid var(--blue-primary);
+}
+
+.ladder-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--gray-600);
+    margin-bottom: 5px;
+}
+
+.ladder-value {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--slate-dark);
+}
+
+.ladder-bar-container {
+    height: 35px;
+    background: var(--gray-200);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ladder-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--blue-primary), var(--cyan-accent));
+    border-radius: 10px;
+    transition: width 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ladder-bar.user {
+    background: linear-gradient(90deg, var(--orange-500), #fb923c);
+}
+
+/* DATA SOURCES NOTE */
+.data-note {
+    max-width: 900px;
+    margin: 30px auto 0;
+    padding: 25px 30px;
+    background: var(--gray-50);
+    border-radius: 12px;
+    border: 1px solid var(--gray-200);
+}
+
+.data-note-title {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--slate-dark);
+    margin-bottom: 12px;
+}
+
+.data-note-text {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.data-sources-list {
+    font-size: 0.8rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+}
+
+.data-sources-list li {
+    margin-left: 20px;
+}
+
+/* FOOTER */
+footer {
+    background: white;
+    border-top: 1px solid var(--gray-200);
+    padding: 40px 20px;
+    margin-top: 80px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--gray-600);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--blue-primary);
+}
+
+@media (max-width: 1024px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ladder-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .input-card, .ladder-section, .country-result-card {
+        padding: 30px 20px;
+    }
+    
+    .percentile-value {
+        font-size: 3rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .income-input-row {
+        grid-template-columns: 80px 1fr;
+        gap: 10px;
+    }
+    
+    .share-buttons {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+}
+</style>
+</head>
+<body data-page="income_ranker.html">
+
+<div id="header-placeholder"></div>
+
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-title">Income Position Ranker</h1>
+        <p class="page-subtitle">Compare your income position across countries by age and gender</p>
+    </div>
+
+    <div class="input-card">
+        <form id="incomeForm">
+            <div class="section-label">📊 Your Demographics</div>
+            
+            <div class="input-grid">
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" placeholder="35" min="18" max="100" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="gender-toggle">
+                        <button type="button" class="gender-btn active" data-gender="male">Male</button>
+                        <button type="button" class="gender-btn" data-gender="female">Female</button>
+                    </div>
+                    <input type="hidden" id="gender" value="male">
+                </div>
+                
+                <div class="form-group input-grid-full">
+                    <label for="income">Annual Income</label>
+                    <div class="income-input-row">
+                        <div class="select-wrapper">
+                            <select id="currency">
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="GBP">GBP</option>
+                                <option value="CAD">CAD</option>
+                                <option value="AUD">AUD</option>
+                                <option value="JPY">JPY</option>
+                                <option value="INR">INR</option>
+                                <option value="CNY">CNY</option>
+                                <option value="CHF">CHF</option>
+                            </select>
+                        </div>
+                        <input type="number" id="income" placeholder="75000" min="0" step="1000" required>
+                    </div>
+                </div>
+                
+                <div class="form-group input-grid-full">
+                    <label for="primaryCountry">Your Country</label>
+                    <select id="primaryCountry" required>
+                        <option value="">Select your country</option>
+                        <optgroup label="Americas">
+                            <option value="USA">🇺🇸 United States</option>
+                            <option value="CAN">🇨🇦 Canada</option>
+                            <option value="MEX">🇲🇽 Mexico</option>
+                            <option value="BRA">🇧🇷 Brazil</option>
+                        </optgroup>
+                        <optgroup label="Europe">
+                            <option value="CHE">🇨🇭 Switzerland</option>
+                            <option value="GBR">🇬🇧 United Kingdom</option>
+                            <option value="DEU">🇩🇪 Germany</option>
+                            <option value="FRA">🇫🇷 France</option>
+                            <option value="ITA">🇮🇹 Italy</option>
+                            <option value="ESP">🇪🇸 Spain</option>
+                            <option value="NLD">🇳🇱 Netherlands</option>
+                            <option value="SWE">🇸🇪 Sweden</option>
+                            <option value="NOR">🇳🇴 Norway</option>
+                            <option value="DNK">🇩🇰 Denmark</option>
+                        </optgroup>
+                        <optgroup label="Asia-Pacific">
+                            <option value="AUS">🇦🇺 Australia</option>
+                            <option value="JPN">🇯🇵 Japan</option>
+                            <option value="SGP">🇸🇬 Singapore</option>
+                            <option value="KOR">🇰🇷 South Korea</option>
+                            <option value="CHN">🇨🇳 China</option>
+                            <option value="IND">🇮🇳 India</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="comparison-toggle">
+                <input type="checkbox" id="enableComparison">
+                <label for="enableComparison">Compare to another country</label>
+            </div>
+            
+            <div class="comparison-section" id="comparisonSection">
+                <div class="section-label">🌍 Compare Against</div>
+                <div class="form-group">
+                    <label for="comparisonCountry">Comparison Country</label>
+                    <select id="comparisonCountry">
+                        <option value="">Select comparison country</option>
+                        <optgroup label="Americas">
+                            <option value="USA">🇺🇸 United States</option>
+                            <option value="CAN">🇨🇦 Canada</option>
+                            <option value="MEX">🇲🇽 Mexico</option>
+                            <option value="BRA">🇧🇷 Brazil</option>
+                        </optgroup>
+                        <optgroup label="Europe">
+                            <option value="CHE">🇨🇭 Switzerland</option>
+                            <option value="GBR">🇬🇧 United Kingdom</option>
+                            <option value="DEU">🇩🇪 Germany</option>
+                            <option value="FRA">🇫🇷 France</option>
+                            <option value="ITA">🇮🇹 Italy</option>
+                            <option value="ESP">🇪🇸 Spain</option>
+                            <option value="NLD">🇳🇱 Netherlands</option>
+                            <option value="SWE">🇸🇪 Sweden</option>
+                            <option value="NOR">🇳🇴 Norway</option>
+                            <option value="DNK">🇩🇰 Denmark</option>
+                        </optgroup>
+                        <optgroup label="Asia-Pacific">
+                            <option value="AUS">🇦🇺 Australia</option>
+                            <option value="JPN">🇯🇵 Japan</option>
+                            <option value="SGP">🇸🇬 Singapore</option>
+                            <option value="KOR">🇰🇷 South Korea</option>
+                            <option value="CHN">🇨🇳 China</option>
+                            <option value="IND">🇮🇳 India</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn-primary">Analyze My Income Position</button>
+        </form>
+    </div>
+
+    <div class="results-container" id="resultsContainer">
+        <div class="results-header">
+            <h2 class="results-title">Your Income Position Analysis</h2>
+            <p class="results-subtitle" id="resultsSubtitle"></p>
+        </div>
+        
+        <div class="comparison-grid" id="comparisonGrid">
+            <!-- Results will be inserted here -->
+        </div>
+        
+        <div class="ladder-section">
+            <div class="ladder-header">
+                <h3 class="ladder-title">Income Distribution Ladder</h3>
+                <p class="ladder-subtitle" id="ladderSubtitle"></p>
+            </div>
+            <div class="ladder-container" id="ladderContainer"></div>
+        </div>
+        
+        <div class="data-note">
+            <div class="data-note-title">Data Sources & Methodology</div>
+            <p class="data-note-text">
+                Income estimates are based on the most recent representative data available from multiple international sources. 
+                Data recency varies by country due to different reporting methodologies and statistical cycles (typically 2019-2023).
+            </p>
+            <ul class="data-sources-list">
+                <li>OECD Income Distribution Database</li>
+                <li>International Labour Organization (ILO) Global Wage Reports</li>
+                <li>World Inequality Database (WID.world)</li>
+                <li>National Statistics Agencies</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="footer-placeholder"></div><script src="components.js"></script>
+
+<script>
+// Currency exchange rates (to USD)
+const FX_RATES = {
+    USD: 1.0,
+    EUR: 1.09,
+    GBP: 1.27,
+    CAD: 0.71,
+    AUD: 0.66,
+    JPY: 0.0067,
+    INR: 0.012,
+    CNY: 0.14,
+    CHF: 1.12
+};
+
+// Income data by country, age, and gender
+const incomeData = {
+    "USA": {
+        flag: "🇺🇸",
+        name: "United States",
+        currency: "USD",
+        pop: 254831886,
+        medianByAge: {
+            "18-24": 28000,
+            "25-34": 52000,
+            "35-44": 68000,
+            "45-54": 72000,
+            "55-64": 70000,
+            "65+": 48000
+        },
+        genderGap: 0.82,
+        p10: 0.30,
+        p25: 0.60,
+        p75: 1.70,
+        p90: 2.80,
+        p95: 4.20,
+        p99: 10.50
+    },
+    "CAN": {
+        flag: "🇨🇦",
+        name: "Canada",
+        currency: "CAD",
+        pop: 29156000,
+        medianByAge: {
+            "18-24": 24000,
+            "25-34": 48000,
+            "35-44": 62000,
+            "45-54": 66000,
+            "55-64": 64000,
+            "65+": 42000
+        },
+        genderGap: 0.85,
+        p10: 0.32,
+        p25: 0.62,
+        p75: 1.68,
+        p90: 2.70,
+        p95: 4.00,
+        p99: 9.80
+    },
+    "GBR": {
+        flag: "🇬🇧",
+        name: "United Kingdom",
+        currency: "GBP",
+        pop: 52637000,
+        medianByAge: {
+            "18-24": 22000,
+            "25-34": 38000,
+            "35-44": 48000,
+            "45-54": 52000,
+            "55-64": 50000,
+            "65+": 28000
+        },
+        genderGap: 0.86,
+        p10: 0.35,
+        p25: 0.65,
+        p75: 1.65,
+        p90: 2.60,
+        p95: 3.80,
+        p99: 9.20
+    },
+    "DEU": {
+        flag: "🇩🇪",
+        name: "Germany",
+        currency: "EUR",
+        pop: 69305000,
+        medianByAge: {
+            "18-24": 20000,
+            "25-34": 42000,
+            "35-44": 55000,
+            "45-54": 60000,
+            "55-64": 58000,
+            "65+": 32000
+        },
+        genderGap: 0.82,
+        p10: 0.33,
+        p25: 0.63,
+        p75: 1.62,
+        p90: 2.55,
+        p95: 3.70,
+        p99: 8.80
+    },
+    "FRA": {
+        flag: "🇫🇷",
+        name: "France",
+        currency: "EUR",
+        pop: 52345000,
+        medianByAge: {
+            "18-24": 18000,
+            "25-34": 36000,
+            "35-44": 46000,
+            "45-54": 50000,
+            "55-64": 48000,
+            "65+": 28000
+        },
+        genderGap: 0.84,
+        p10: 0.36,
+        p25: 0.67,
+        p75: 1.60,
+        p90: 2.50,
+        p95: 3.60,
+        p99: 8.50
+    },
+    "ITA": {
+        flag: "🇮🇹",
+        name: "Italy",
+        currency: "EUR",
+        pop: 51109000,
+        medianByAge: {
+            "18-24": 16000,
+            "25-34": 28000,
+            "35-44": 36000,
+            "45-54": 40000,
+            "55-64": 38000,
+            "65+": 22000
+        },
+        genderGap: 0.80,
+        p10: 0.38,
+        p25: 0.68,
+        p75: 1.58,
+        p90: 2.45,
+        p95: 3.50,
+        p99: 8.20
+    },
+    "ESP": {
+        flag: "🇪🇸",
+        name: "Spain",
+        currency: "EUR",
+        pop: 38704000,
+        medianByAge: {
+            "18-24": 14000,
+            "25-34": 26000,
+            "35-44": 34000,
+            "45-54": 38000,
+            "55-64": 36000,
+            "65+": 20000
+        },
+        genderGap: 0.81,
+        p10: 0.37,
+        p25: 0.66,
+        p75: 1.60,
+        p90: 2.50,
+        p95: 3.55,
+        p99: 8.40
+    },
+    "NLD": {
+        flag: "🇳🇱",
+        name: "Netherlands",
+        currency: "EUR",
+        pop: 13704000,
+        medianByAge: {
+            "18-24": 22000,
+            "25-34": 42000,
+            "35-44": 54000,
+            "45-54": 58000,
+            "55-64": 56000,
+            "65+": 32000
+        },
+        genderGap: 0.87,
+        p10: 0.34,
+        p25: 0.64,
+        p75: 1.64,
+        p90: 2.58,
+        p95: 3.75,
+        p99: 9.00
+    },
+    "SWE": {
+        flag: "🇸🇪",
+        name: "Sweden",
+        currency: "SEK",
+        pop: 8007000,
+        medianByAge: {
+            "18-24": 22000,
+            "25-34": 44000,
+            "35-44": 56000,
+            "45-54": 60000,
+            "55-64": 58000,
+            "65+": 34000
+        },
+        genderGap: 0.88,
+        p10: 0.36,
+        p25: 0.66,
+        p75: 1.58,
+        p90: 2.48,
+        p95: 3.58,
+        p99: 8.60
+    },
+    "NOR": {
+        flag: "🇳🇴",
+        name: "Norway",
+        currency: "NOK",
+        pop: 4226000,
+        medianByAge: {
+            "18-24": 26000,
+            "25-34": 52000,
+            "35-44": 66000,
+            "45-54": 70000,
+            "55-64": 68000,
+            "65+": 38000
+        },
+        genderGap: 0.89,
+        p10: 0.35,
+        p25: 0.65,
+        p75: 1.60,
+        p90: 2.52,
+        p95: 3.65,
+        p99: 8.80
+    },
+    "DNK": {
+        flag: "🇩🇰",
+        name: "Denmark",
+        currency: "DKK",
+        pop: 4556000,
+        medianByAge: {
+            "18-24": 24000,
+            "25-34": 48000,
+            "35-44": 62000,
+            "45-54": 66000,
+            "55-64": 64000,
+            "65+": 36000
+        },
+        genderGap: 0.87,
+        p10: 0.36,
+        p25: 0.66,
+        p75: 1.58,
+        p90: 2.48,
+        p95: 3.60,
+        p99: 8.70
+    },
+    "CHE": {
+        flag: "🇨🇭",
+        name: "Switzerland",
+        currency: "CHF",
+        pop: 7088000,
+        medianByAge: {
+            "18-24": 42000,
+            "25-34": 72000,
+            "35-44": 92000,
+            "45-54": 98000,
+            "55-64": 95000,
+            "65+": 52000
+        },
+        genderGap: 0.82,
+        p10: 0.32,
+        p25: 0.62,
+        p75: 1.68,
+        p90: 2.75,
+        p95: 4.10,
+        p99: 10.20
+    },
+    "AUS": {
+        flag: "🇦🇺",
+        name: "Australia",
+        currency: "AUD",
+        pop: 19850000,
+        medianByAge: {
+            "18-24": 32000,
+            "25-34": 58000,
+            "35-44": 74000,
+            "45-54": 78000,
+            "55-64": 76000,
+            "65+": 42000
+        },
+        genderGap: 0.86,
+        p10: 0.33,
+        p25: 0.63,
+        p75: 1.66,
+        p90: 2.68,
+        p95: 3.95,
+        p99: 9.60
+    },
+    "JPN": {
+        flag: "🇯🇵",
+        name: "Japan",
+        currency: "JPY",
+        pop: 103290000,
+        medianByAge: {
+            "18-24": 24000,
+            "25-34": 42000,
+            "35-44": 52000,
+            "45-54": 56000,
+            "55-64": 54000,
+            "65+": 28000
+        },
+        genderGap: 0.78,
+        p10: 0.34,
+        p25: 0.64,
+        p75: 1.64,
+        p90: 2.62,
+        p95: 3.85,
+        p99: 9.30
+    },
+    "SGP": {
+        flag: "🇸🇬",
+        name: "Singapore",
+        currency: "SGD",
+        pop: 4483000,
+        medianByAge: {
+            "18-24": 32000,
+            "25-34": 56000,
+            "35-44": 72000,
+            "45-54": 78000,
+            "55-64": 75000,
+            "65+": 38000
+        },
+        genderGap: 0.83,
+        p10: 0.30,
+        p25: 0.60,
+        p75: 1.72,
+        p90: 2.85,
+        p95: 4.25,
+        p99: 10.80
+    },
+    "KOR": {
+        flag: "🇰🇷",
+        name: "South Korea",
+        currency: "KRW",
+        pop: 42759000,
+        medianByAge: {
+            "18-24": 22000,
+            "25-34": 38000,
+            "35-44": 48000,
+            "45-54": 52000,
+            "55-64": 50000,
+            "65+": 26000
+        },
+        genderGap: 0.75,
+        p10: 0.32,
+        p25: 0.62,
+        p75: 1.68,
+        p90: 2.72,
+        p95: 4.05,
+        p99: 9.90
+    },
+    "CHN": {
+        flag: "🇨🇳",
+        name: "China",
+        currency: "CNY",
+        pop: 1100000000,
+        medianByAge: {
+            "18-24": 8000,
+            "25-34": 16000,
+            "35-44": 22000,
+            "45-54": 24000,
+            "55-64": 22000,
+            "65+": 10000
+        },
+        genderGap: 0.80,
+        p10: 0.35,
+        p25: 0.65,
+        p75: 1.85,
+        p90: 3.20,
+        p95: 5.10,
+        p99: 14.50
+    },
+    "IND": {
+        flag: "🇮🇳",
+        name: "India",
+        currency: "INR",
+        pop: 965860000,
+        medianByAge: {
+            "18-24": 3200,
+            "25-34": 6800,
+            "35-44": 9200,
+            "45-54": 10200,
+            "55-64": 9500,
+            "65+": 4200
+        },
+        genderGap: 0.72,
+        p10: 0.38,
+        p25: 0.68,
+        p75: 1.95,
+        p90: 3.50,
+        p95: 5.80,
+        p99: 16.20
+    },
+    "MEX": {
+        flag: "🇲🇽",
+        name: "Mexico",
+        currency: "MXN",
+        pop: 94425000,
+        medianByAge: {
+            "18-24": 8500,
+            "25-34": 14000,
+            "35-44": 17000,
+            "45-54": 18000,
+            "55-64": 16000,
+            "65+": 8000
+        },
+        genderGap: 0.79,
+        p10: 0.36,
+        p25: 0.66,
+        p75: 1.78,
+        p90: 3.00,
+        p95: 4.80,
+        p99: 12.80
+    },
+    "BRA": {
+        flag: "🇧🇷",
+        name: "Brazil",
+        currency: "BRL",
+        pop: 168273000,
+        medianByAge: {
+            "18-24": 7200,
+            "25-34": 12000,
+            "35-44": 15000,
+            "45-54": 16000,
+            "55-64": 14500,
+            "65+": 7000
+        },
+        genderGap: 0.77,
+        p10: 0.37,
+        p25: 0.67,
+        p75: 1.82,
+        p90: 3.10,
+        p95: 5.00,
+        p99: 13.50
+    }
+};
+
+// Helper functions
+function getAgeGroup(age) {
+    if (age >= 18 && age <= 24) return "18-24";
+    if (age >= 25 && age <= 34) return "25-34";
+    if (age >= 35 && age <= 44) return "35-44";
+    if (age >= 45 && age <= 54) return "45-54";
+    if (age >= 55 && age <= 64) return "55-64";
+    return "65+";
+}
+
+function formatCurrency(amount) {
+    if (amount >= 1000000) {
+        return '$' + (amount / 1000000).toFixed(1) + 'M';
+    }
+    if (amount >= 1000) {
+        return '$' + (amount / 1000).toFixed(0) + 'k';
+    }
+    return '$' + amount.toLocaleString();
+}
+
+function formatNumber(num) {
+    if (num >= 1000000000) return (num / 1000000000).toFixed(1) + 'B';
+    if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+    if (num >= 1000) return (num / 1000).toFixed(0) + 'k';
+    return num.toLocaleString();
+}
+
+function calculatePercentile(income, countryCode, age, gender) {
+    const data = incomeData[countryCode];
+    const ageGroup = getAgeGroup(age);
+    let baseMedian = data.medianByAge[ageGroup];
+    
+    if (gender === "female") {
+        baseMedian *= data.genderGap;
+    }
+    
+    const ratio = income / baseMedian;
+    
+    if (ratio < data.p10) {
+        return (ratio / data.p10) * 10;
+    } else if (ratio < data.p25) {
+        return 10 + ((ratio - data.p10) / (data.p25 - data.p10)) * 15;
+    } else if (ratio < 1) {
+        return 25 + ((ratio - data.p25) / (1 - data.p25)) * 25;
+    } else if (ratio < data.p75) {
+        return 50 + ((ratio - 1) / (data.p75 - 1)) * 25;
+    } else if (ratio < data.p90) {
+        return 75 + ((ratio - data.p75) / (data.p90 - data.p75)) * 15;
+    } else if (ratio < data.p95) {
+        return 90 + ((ratio - data.p90) / (data.p95 - data.p90)) * 5;
+    } else if (ratio < data.p99) {
+        return 95 + ((ratio - data.p95) / (data.p99 - data.p95)) * 4;
+    } else {
+        return Math.min(99.9, 99 + (ratio - data.p99) / data.p99);
+    }
+}
+
+function getInsights(income, countryCode, age, gender, percentile) {
+    const data = incomeData[countryCode];
+    const ageGroup = getAgeGroup(age);
+    const baseMedian = data.medianByAge[ageGroup];
+    const adjustedMedian = gender === "female" ? baseMedian * data.genderGap : baseMedian;
+    
+    const insights = [];
+    
+    if (percentile >= 90) {
+        insights.push({
+            icon: "🎯",
+            text: `You're in the top ${(100 - percentile).toFixed(1)}% of earners in your demographic - excellent income position!`
+        });
+    } else if (percentile >= 75) {
+        insights.push({
+            icon: "📈",
+            text: `Your income is ${((income / adjustedMedian - 1) * 100).toFixed(0)}% above the median for your age and gender.`
+        });
+    } else if (percentile >= 50) {
+        insights.push({
+            icon: "✅",
+            text: `You earn above the median for ${gender}s aged ${getAgeGroup(age)} in ${data.name}.`
+        });
+    } else {
+        insights.push({
+            icon: "📊",
+            text: `The median income for your demographic is ${formatCurrency(adjustedMedian)}.`
+        });
+    }
+    
+    if (gender === "female") {
+        const gapPercent = ((1 - data.genderGap) * 100).toFixed(0);
+        insights.push({
+            icon: "⚖️",
+            text: `Women in ${data.name} earn approximately ${gapPercent}% less than men on average.`
+        });
+    }
+    
+    if (getAgeGroup(age) === "35-44" || getAgeGroup(age) === "45-54") {
+        insights.push({
+            icon: "⏰",
+            text: `You're in peak earning years - this age group typically has the highest incomes.`
+        });
+    }
+    
+    return insights;
+}
+
+function generateShareText(countryCode, percentile) {
+    const data = incomeData[countryCode];
+    const topPercent = (100 - percentile).toFixed(1);
+    return `I'm in the top ${topPercent}% of income earners in ${data.name}! 💰 Check your global income position at`;
+}
+
+function createCountryResultCard(countryCode, income, age, gender, isPrimary = true) {
+    const data = incomeData[countryCode];
+    const percentile = calculatePercentile(income, countryCode, age, gender);
+    const rank = Math.round(((100 - percentile) / 100) * data.pop);
+    const wealthierThan = data.pop - rank;
+    const insights = getInsights(income, countryCode, age, gender, percentile);
+    
+    const ageGroup = getAgeGroup(age);
+    const baseMedian = data.medianByAge[ageGroup];
+    const adjustedMedian = gender === "female" ? baseMedian * data.genderGap : baseMedian;
+    
+    const shareText = encodeURIComponent(generateShareText(countryCode, percentile));
+    const shareUrl = encodeURIComponent(window.location.href);
+    const emailSubject = encodeURIComponent('Check Your Global Income Position');
+    const emailBody = encodeURIComponent(`I'm in the top ${(100 - percentile).toFixed(1)}% of income earners in ${data.name}! 💰\n\nCheck your global income position at ${window.location.href}`);
+    
+    return `
+        <div class="country-result-card ${isPrimary ? 'primary' : 'comparison'}">
+            <div class="country-header">
+                <div class="country-name">${data.name}</div>
+                <div class="country-flag">${data.flag}</div>
+            </div>
+            
+            <div class="percentile-display">
+                <div class="percentile-label">Your Income Position</div>
+                <div class="percentile-value">Top ${(100 - percentile).toFixed(1)}%</div>
+                <div class="percentile-description">
+                    Wealthier than ${formatNumber(wealthierThan)} adults
+                </div>
+                
+                <div class="share-section" id="shareSection${isPrimary ? 'Primary' : 'Comparison'}">
+                    <div class="share-header">
+                        <span class="share-icon-header">📤</span>
+                        <h4 class="share-title">Share Your Results</h4>
+                    </div>
+                    <div class="share-buttons">
+                        <a href="https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}" target="_blank" class="share-icon-btn x-btn" title="Share on X">
+                            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}" target="_blank" class="share-icon-btn linkedin-btn" title="Share on LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="https://wa.me/?text=${shareText}%20${shareUrl}" target="_blank" class="share-icon-btn whatsapp-btn" title="Share on WhatsApp">
+                            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        </a>
+                        <a href="https://t.me/share/url?url=${shareUrl}&text=${shareText}" target="_blank" class="share-icon-btn telegram-btn" title="Share on Telegram">
+                            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                        </a>
+                        <a href="https://reddit.com/submit?url=${shareUrl}&title=${shareText}" target="_blank" class="share-icon-btn reddit-btn" title="Share on Reddit">
+                            <svg viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                        </a>
+                        <a href="sms:&body=${shareText}%20${shareUrl}" class="share-icon-btn imessage-btn" title="Share via iMessage">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 20.2A1 1 0 0 0 3.8 21.454l3.032-.892A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 2c4.411 0 8 3.589 8 8s-3.589 8-8 8a7.96 7.96 0 0 1-4.126-1.147 1 1 0 0 0-.773-.105l-2.125.625.625-2.125a1 1 0 0 0-.105-.773A7.96 7.96 0 0 1 4 12c0-4.411 3.589-8 8-8z"/></svg>
+                        </a>
+                        <a href="mailto:?subject=${emailSubject}&body=${emailBody}" class="share-icon-btn email-btn" title="Share via Email">
+                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </a>
+                        <button class="share-icon-btn copy-btn" onclick="copyShareLink('${data.name}', ${(100 - percentile).toFixed(1)}, this)" title="Copy Link">
+                            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stats-mini-grid">
+                <div class="stat-mini">
+                    <div class="stat-mini-label">Your Rank</div>
+                    <div class="stat-mini-value">#${formatNumber(rank)}</div>
+                </div>
+                <div class="stat-mini">
+                    <div class="stat-mini-label">Median (${ageGroup})</div>
+                    <div class="stat-mini-value">${formatCurrency(adjustedMedian)}</div>
+                </div>
+            </div>
+            
+            <div class="insights-section">
+                <div class="insights-title">Key Insights</div>
+                ${insights.map(insight => `
+                    <div class="insight-item">
+                        <div class="insight-icon">${insight.icon}</div>
+                        <div class="insight-text">${insight.text}</div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+}
+
+function copyShareLink(countryName, topPercent, button) {
+    const text = `I'm in the top ${topPercent}% of income earners in ${countryName}! 💰 Check your global income position at ${window.location.href}`;
+    
+    navigator.clipboard.writeText(text).then(() => {
+        button.classList.add('copied');
+        button.innerHTML = '<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+        
+        setTimeout(() => {
+            button.classList.remove('copied');
+            button.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>';
+        }, 2000);
+    });
+}
+
+function buildIncomeLadder(countryCode, income, age, gender) {
+    const data = incomeData[countryCode];
+    const ageGroup = getAgeGroup(age);
+    const baseMedian = data.medianByAge[ageGroup];
+    const adjustedMedian = gender === "female" ? baseMedian * data.genderGap : baseMedian;
+    
+    const ladderData = [
+        { label: 'Top 1%', value: adjustedMedian * data.p99, percentile: 99 },
+        { label: 'Top 5%', value: adjustedMedian * data.p95, percentile: 95 },
+        { label: 'Top 10%', value: adjustedMedian * data.p90, percentile: 90 },
+        { label: 'Top 25%', value: adjustedMedian * data.p75, percentile: 75 },
+        { label: 'Median', value: adjustedMedian, percentile: 50 },
+        { label: 'YOU', value: income, percentile: calculatePercentile(income, countryCode, age, gender), isUser: true }
+    ];
+    
+    ladderData.sort((a, b) => b.value - a.value);
+    
+    const maxValue = ladderData[0].value;
+    
+    return ladderData.map(item => {
+        const percentage = (item.value / maxValue) * 100;
+        return `
+            <div class="ladder-row ${item.isUser ? 'user' : ''}">
+                <div>
+                    <div class="ladder-label">${item.label}</div>
+                    <div class="ladder-value">${formatCurrency(item.value)}</div>
+                </div>
+                <div class="ladder-bar-container">
+                    <div class="ladder-bar ${item.isUser ? 'user' : ''}" style="width: ${percentage}%"></div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// UI Interactions
+document.querySelectorAll('.gender-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.gender-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        document.getElementById('gender').value = this.dataset.gender;
+    });
+});
+
+document.getElementById('enableComparison').addEventListener('change', function() {
+    const section = document.getElementById('comparisonSection');
+    if (this.checked) {
+        section.classList.add('active');
+    } else {
+        section.classList.remove('active');
+    }
+});
+
+document.getElementById('incomeForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const age = parseInt(document.getElementById('age').value);
+    const gender = document.getElementById('gender').value;
+    const incomeInput = parseFloat(document.getElementById('income').value);
+    const currency = document.getElementById('currency').value;
+    const primaryCountry = document.getElementById('primaryCountry').value;
+    const comparisonEnabled = document.getElementById('enableComparison').checked;
+    const comparisonCountry = document.getElementById('comparisonCountry').value;
+    
+    if (!primaryCountry) {
+        alert('Please select your country');
+        return;
+    }
+    
+    if (comparisonEnabled && !comparisonCountry) {
+        alert('Please select a comparison country');
+        return;
+    }
+    
+    if (comparisonEnabled && primaryCountry === comparisonCountry) {
+        alert('Please select different countries for comparison');
+        return;
+    }
+    
+    const incomeUSD = incomeInput * FX_RATES[currency];
+    
+    const genderText = gender === 'male' ? 'Male' : 'Female';
+    document.getElementById('resultsSubtitle').textContent = 
+        `${genderText}, Age ${age}, Annual Income: ${currency} ${incomeInput.toLocaleString()}`;
+    
+    const grid = document.getElementById('comparisonGrid');
+    if (comparisonEnabled) {
+        grid.classList.remove('single');
+        grid.innerHTML = createCountryResultCard(primaryCountry, incomeUSD, age, gender, true) +
+                        createCountryResultCard(comparisonCountry, incomeUSD, age, gender, false);
+    } else {
+        grid.classList.add('single');
+        grid.innerHTML = createCountryResultCard(primaryCountry, incomeUSD, age, gender, true);
+    }
+    
+    document.getElementById('ladderSubtitle').textContent = 
+        `Income distribution for ${genderText}s aged ${getAgeGroup(age)} in ${incomeData[primaryCountry].name}`;
+    document.getElementById('ladderContainer').innerHTML = 
+        buildIncomeLadder(primaryCountry, incomeUSD, age, gender);
+    
+    document.getElementById('resultsContainer').classList.add('active');
+    document.getElementById('resultsContainer').scrollIntoView({ behavior: 'smooth' });
+    
+    // Animate share buttons appearance
+    setTimeout(() => {
+        const shareSection = document.getElementById('shareSectionPrimary');
+        if (shareSection) shareSection.classList.add('visible');
+        
+        if (comparisonEnabled) {
+            const shareSection2 = document.getElementById('shareSectionComparison');
+            if (shareSection2) shareSection2.classList.add('visible');
+        }
+    }, 800);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Financial Runway Lab | WEALTHMETER.XYZ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --slate-900: #0f172a;
+            --blue-600: #2563eb;
+            --cyan-500: #06b6d4;
+            --amber-500: #f59e0b;
+            --gray-50: #f8fafc;
+            --gray-200: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--gray-50);
+            color: var(--slate-900);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        
+        .simulator-grid {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 40px;
+            background: white;
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+            border: 1px solid var(--gray-200);
+        }
+
+        .input-pane { display: flex; flex-direction: column; gap: 24px; }
+        .input-group { display: flex; flex-direction: column; gap: 8px; }
+        
+        label { 
+            font-size: 0.75rem; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            letter-spacing: 0.12em; 
+            color: var(--slate-900);
+        }
+
+        .input-help { font-size: 0.65rem; color: #64748b; margin-top: -4px; }
+
+        input, select {
+            padding: 14px;
+            border: 2px solid var(--gray-200);
+            border-radius: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            background: white;
+        }
+
+        .results-pane {
+            background: linear-gradient(135deg, #ffffff, #f8fafc);
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .runway-label { 
+            font-size: 0.85rem; 
+            font-weight: 800;
+            color: var(--blue-600);
+            text-transform: uppercase; 
+            letter-spacing: 0.15em; 
+        }
+
+        .runway-value { 
+            font-size: 5.5rem; 
+            font-weight: 900; 
+            margin: 10px 0; 
+            color: var(--slate-900);
+            letter-spacing: -0.04em;
+        }
+
+        .assessment-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f5f9;
+            border-radius: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-left: 4px solid var(--blue-600);
+        }
+
+        .geo-arbitrage-box {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid var(--gray-200);
+            text-align: left;
+        }
+
+        .geo-title { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: #94a3b8; margin-bottom: 15px; }
+        .geo-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .geo-card { padding: 20px; border-radius: 12px; background: white; border: 1px solid var(--gray-200); }
+        .geo-city-label { font-weight: 800; font-size: 0.8rem; color: var(--slate-900); margin-bottom: 5px; }
+        .geo-years { font-family: 'JetBrains Mono', monospace; color: var(--cyan-500); font-size: 1.3rem; font-weight: 700; }
+
+        .btn-calculate {
+            background: var(--slate-900);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 12px;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-calculate:hover { background: var(--blue-600); transform: translateY(-2px); }
+
+        @media (max-width: 900px) { .simulator-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<div class="container">
+    <div style="margin-bottom: 50px; border-left: 8px solid var(--slate-900); padding-left: 25px;">
+        <h1 style="font-weight: 900; font-size: 3rem; margin: 0; letter-spacing: -0.04em;">Financial Runway Lab</h1>
+        <p style="color: #64748b; font-size: 1.2rem; font-weight: 500;">Sustainability Modeling: Capital Depletion & Geo-Arbitrage</p>
+    </div>
+
+    <div class="simulator-grid">
+        <div class="input-pane">
+            <div class="input-group">
+                <label>Current Baseline Location</label>
+                <select id="currentLoc">
+                    <optgroup label="Tier 1 High-Cost (1.0x - 1.2x)">
+                        <option value="1.20">Zurich, Switzerland</option>
+                        <option value="1.15">San Francisco, USA</option>
+                        <option value="1.10">New York City, USA</option>
+                        <option value="1.05">London, UK</option>
+                        <option value="1.05">Singapore</option>
+                        <option value="1.00" selected>Baseline (Global Median Top City)</option>
+                    </optgroup>
+                    <optgroup label="Tier 2 Developed (0.8x - 0.95x)">
+                        <option value="0.95">Sydney, Australia</option>
+                        <option value="0.90">Paris, France</option>
+                        <option value="0.85">Tokyo, Japan</option>
+                        <option value="0.80">Toronto, Canada</option>
+                        <option value="0.75">Berlin, Germany</option>
+                    </optgroup>
+                    <optgroup label="Broad Locations (50+ Representative)">
+                        <option value="0.92">Hong Kong</option>
+                        <option value="0.88">Dublin, Ireland</option>
+                        <option value="0.85">Amsterdam, Netherlands</option>
+                        <option value="0.82">Copenhagen, Denmark</option>
+                        <option value="0.80">Oslo, Norway</option>
+                        <option value="0.78">Seoul, South Korea</option>
+                        <option value="0.75">Stockholm, Sweden</option>
+                        <option value="0.72">Vancouver, Canada</option>
+                        <option value="0.70">Melbourne, Australia</option>
+                        <option value="0.68">Vienna, Austria</option>
+                        <option value="0.65">Helsinki, Finland</option>
+                        <option value="0.62">Tel Aviv, Israel</option>
+                        <option value="0.60">Rome, Italy</option>
+                        <option value="0.58">Madrid, Spain</option>
+                        <option value="0.55">Brussels, Belgium</option>
+                        <option value="0.52">Barcelona, Spain</option>
+                        <option value="0.50">Milan, Italy</option>
+                        <option value="0.48">Lisbon, Portugal</option>
+                        <option value="0.45">Prague, Czechia</option>
+                        <option value="0.42">Warsaw, Poland</option>
+                        <option value="0.40">Budapest, Hungary</option>
+                        <option value="0.38">Athens, Greece</option>
+                        <option value="0.35">Istanbul, Turkey</option>
+                        <option value="0.32">Dubai, UAE</option>
+                        <option value="0.30">Doha, Qatar</option>
+                        <option value="0.28">Riyadh, Saudi Arabia</option>
+                        <option value="0.25">São Paulo, Brazil</option>
+                        <option value="0.22">Mexico City, Mexico</option>
+                        <option value="0.20">Santiago, Chile</option>
+                        <option value="0.18">Buenos Aires, Argentina</option>
+                        <option value="0.15">Lima, Peru</option>
+                        <option value="0.12">Bogotá, Colombia</option>
+                        <option value="0.10">Bangkok, Thailand</option>
+                        <option value="0.08">Hanoi, Vietnam</option>
+                        <option value="0.06">Kuala Lumpur, Malaysia</option>
+                        <option value="0.05">Jakarta, Indonesia</option>
+                        <option value="0.04">Manila, Philippines</option>
+                        <option value="0.03">Mumbai, India</option>
+                        <option value="0.02">Lagos, Nigeria</option>
+                        <option value="0.01">Cairo, Egypt</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Current Net Worth ($)</label>
+                <input type="number" id="networth" value="500000">
+            </div>
+            <div class="input-group">
+                <label>Annual Burn Rate ($)</label>
+                <div class="input-help">Yearly spend at baseline location</div>
+                <input type="number" id="burn" value="80000">
+            </div>
+            <div class="input-group">
+                <label>Annual Yield / SWR (%)</label>
+                <input type="number" id="yield" value="4.0" step="0.1">
+            </div>
+            
+            <hr style="border: 0; border-top: 1px solid var(--gray-200); margin: 10px 0;">
+            <label style="color: var(--cyan-500);">Geo-Arbitrage Targets</label>
+            <div class="input-group">
+                <select id="target1">
+                    <option value="0.48">Lisbon, Portugal (-52%)</option>
+                    <option value="0.38">Athens, Greece (-62%)</option>
+                    <option value="0.28">Valencia, Spain (-72%)</option>
+                    <option value="0.35">Istanbul, Turkey (-65%)</option>
+                    <option value="0.22">Mexico City, Mexico (-78%)</option>
+                    <option value="0.12">Medellín, Colombia (-88%)</option>
+                    <option value="0.32">Dubai, UAE (-68%)</option>
+                    <option value="0.55">Prague, Czechia (-45%)</option>
+                    <option value="0.42">Warsaw, Poland (-58%)</option>
+                    <option value="0.30">Budapest, Hungary (-70%)</option>
+                    <option value="0.25">Buenos Aires, Argentina (-75%)</option>
+                    <option value="0.18">Santiago, Chile (-82%)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <select id="target2">
+                    <option value="0.10">Bangkok, Thailand (-90%)</option>
+                    <option value="0.08">Bali, Indonesia (-92%)</option>
+                    <option value="0.07">Hanoi, Vietnam (-93%)</option>
+                    <option value="0.06">Kuala Lumpur, Malaysia (-94%)</option>
+                    <option value="0.04">Manila, Philippines (-96%)</option>
+                    <option value="0.09">Chiang Mai, Thailand (-91%)</option>
+                    <option value="0.05">Jakarta, Indonesia (-95%)</option>
+                    <option value="0.03">Mumbai, India (-97%)</option>
+                    <option value="0.15">Cape Town, South Africa (-85%)</option>
+                    <option value="0.11">Marrakech, Morocco (-89%)</option>
+                    <option value="0.02">Cairo, Egypt (-98%)</option>
+                    <option value="0.01">Lagos, Nigeria (-99%)</option>
+                </select>
+            </div>
+
+            <button class="btn-calculate" onclick="calculateRunway()">Analyze Sustainability</button>
+        </div>
+
+        <div class="results-pane">
+            <div class="runway-label">Total Survival Runway</div>
+            <div class="runway-value" id="runwayDisplay">0 Years</div>
+            
+            <div class="assessment-box" id="assessmentText">Define parameters to begin simulation.</div>
+
+            <div class="geo-arbitrage-box">
+                <div class="geo-title">🌎 Geo-Arbitrage Efficiency Contrast</div>
+                <div class="geo-comparison">
+                    <div class="geo-card">
+                        <div class="geo-city-label" id="labelT1">Target Location 1</div>
+                        <div class="geo-years" id="valT1">0 Years</div>
+                    </div>
+                    <div class="geo-card">
+                        <div class="geo-city-label" id="labelT2">Target Location 2</div>
+                        <div class="geo-years" id="valT2">0 Years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script src="components.js"></script>
+<script>
+    function calculateRunway() {
+        const baseNW = parseFloat(document.getElementById('networth').value);
+        const baseBurn = parseFloat(document.getElementById('burn').value);
+        const yRate = parseFloat(document.getElementById('yield').value) / 100;
+        const currentModifier = parseFloat(document.getElementById('currentLoc').value);
+        
+        // Dynamic Extraction of Select Data
+        const t1Mod = parseFloat(document.getElementById('target1').value);
+        const t1Name = document.getElementById('target1').options[document.getElementById('target1').selectedIndex].text;
+        const t2Mod = parseFloat(document.getElementById('target2').value);
+        const t2Name = document.getElementById('target2').options[document.getElementById('target2').selectedIndex].text;
+
+        // Core Calculation: Normalized Burn Rate
+        // Logic: (Baseline Burn / Baseline Modifier) * Target Modifier [cite: 2025-11-11]
+        const baselineYears = runSim(baseNW, baseBurn, yRate);
+        const t1Years = runSim(baseNW, (baseBurn / currentModifier) * t1Mod, yRate);
+        const t2Years = runSim(baseNW, (baseBurn / currentModifier) * t2Mod, yRate);
+
+        updateDisplay('runwayDisplay', baselineYears);
+        updateDisplay('valT1', t1Years);
+        updateDisplay('valT2', t2Years);
+        
+        document.getElementById('labelT1').textContent = t1Name;
+        document.getElementById('labelT2').textContent = t2Name;
+
+        const assessment = document.getElementById('assessmentText');
+        if (baselineYears === Infinity) {
+            assessment.innerText = "ASSESSMENT: Perpetual Solvency. Your yield covers your global baseline burn.";
+        } else if (baselineYears > 30) {
+            assessment.innerText = "ASSESSMENT: High Sustainability. Runway exceeds standard generational cycles.";
+        } else {
+            assessment.innerText = "ASSESSMENT: Critical Burn. Strategic relocation or yield enhancement recommended.";
+        }
+    }
+
+    function runSim(nw, burn, yield) {
+        if (nw * yield >= burn) return Infinity;
+        let years = 0;
+        let tempNW = nw;
+        while (tempNW > 0 && years < 100) {
+            tempNW = (tempNW * (1 + yield)) - burn;
+            if (tempNW > 0) years++;
+        }
+        return years;
+    }
+
+    function updateDisplay(id, val) {
+        const el = document.getElementById(id);
+        if (val === Infinity) el.textContent = "INFINITE";
+        else el.textContent = (val >= 100 ? "100+" : val) + " Years";
+    }
+
+    window.onload = calculateRunway;
+</script>
+</body>
+</html>
