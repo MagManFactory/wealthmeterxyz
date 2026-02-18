@@ -74,8 +74,22 @@
             transition: background .3s ease, color .3s ease; 
         }
 
-        .app-content-area { flex-grow: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
-        .app-wrapper { width: 100%; max-width: 800px; position: relative; }
+        .app-content-area { flex-grow: 1; display: flex; align-items: flex-start; justify-content: center; padding: 70px 20px 50px; }
+        .hero-grid { width: 100%; max-width: 1200px; display: grid; grid-template-columns: minmax(280px, 1fr) minmax(320px, 520px); gap: 48px; align-items: start; }
+        .hero-copy { padding: 6px 0; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--primary); background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.25); padding: 8px 14px; border-radius: 999px; }
+        .hero-title { font-family: 'Outfit', sans-serif; font-size: 52px; line-height: 1.05; letter-spacing: -0.02em; margin: 18px 0 12px; }
+        .hero-sub { color: var(--text-muted); font-size: 16px; line-height: 1.75; max-width: 520px; }
+        .hero-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
+        .hero-metric { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 16px 18px; }
+        .metric-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-muted); font-weight: 700; }
+        .metric-value { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 800; margin-top: 8px; color: var(--text-main); }
+        .hero-links { margin-top: 18px; display: flex; gap: 14px; flex-wrap: wrap; }
+        .hero-links a { font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--text-muted); text-decoration: none; font-weight: 800; }
+        .hero-links a:hover { color: var(--text-main); }
+        .hero-panel { position: relative; }
+        .app-wrapper { width: 100%; max-width: 520px; position: relative; }
+        .calc-sticky { position: sticky; top: 120px; }
 
         .theme-toggle { position: absolute; top: -60px; right: 0; background: var(--panel-bg); border: 1px solid var(--panel-border); padding: 10px; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center; transition: all .2s ease; backdrop-filter: blur(8px); }
         .theme-toggle svg { width: 20px; height: 20px; fill: var(--toggle-icon); transition: fill .3s; }
@@ -130,6 +144,14 @@
         .baseline-tooltip { display: none; position: absolute; z-index: 10; width: 320px; background: #0f172a; color: #f8fafc; padding: 12px 14px; border-radius: 10px; font-size: 12px; line-height: 1.5; box-shadow: 0 12px 30px rgba(0,0,0,0.25); text-align: left; }
         .baseline-help:hover .baseline-tooltip { display: block; }
 
+        @media (max-width: 980px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 42px; }
+            .hero-metrics { grid-template-columns: 1fr; }
+            .calc-sticky { position: static; }
+            .app-content-area { padding-top: 40px; }
+        }
+
         /* DIAGNOSTIC CARD (From Vercel App) */
         #shareCardTemplate { 
             position: absolute; left: -9999px; top: -9999px;
@@ -152,12 +174,43 @@
 <div id="header-placeholder"></div>
 
 <div class="app-content-area">
-    <div class="app-wrapper">
-        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
-            <svg viewBox="0 0 24 24"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/></svg>
-        </button>
+    <div class="hero-grid">
+        <div class="hero-copy">
+            <div class="hero-badge">2026 Reports Hub</div>
+            <div class="hero-title">Discover Your True Global Wealth Rank</div>
+            <div class="hero-sub">Instantly benchmark your net worth against global distribution models. Compare UBS covered‑market adults against a UN WPP global adult baseline for a clearer perspective.</div>
+            <div class="hero-metrics">
+                <div class="hero-metric">
+                    <div class="metric-label">Covered Markets</div>
+                    <div class="metric-value">56 Countries</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="metric-label">Coverage</div>
+                    <div class="metric-value">~92% of Wealth</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="metric-label">Modes</div>
+                    <div class="metric-value">UBS + UN WPP</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="metric-label">Output</div>
+                    <div class="metric-value">Rank + Percentile</div>
+                </div>
+            </div>
+            <div class="hero-links">
+                <a href="methodology.html">Methodology</a>
+                <a href="data-sources.html">Data Sources</a>
+                <a href="reports.html">2026 Reports Hub</a>
+            </div>
+        </div>
+        <div class="hero-panel">
+            <div class="app-wrapper">
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/></svg>
+                </button>
 
-        <div class="glass-panel">
+                <div class="calc-sticky">
+                    <div class="glass-panel">
             <div id="inputSection">
                 <div class="input-row">
                     <div class="input-container">
@@ -178,13 +231,13 @@
                     <label>Population Baseline</label>
                     <span class="baseline-help" style="position: relative;">
                         <span class="baseline-help-dot">?</span>
-                        <span class="baseline-tooltip">UBS baseline reflects 56 covered markets (wealth‑weighted coverage). Global baseline uses UN World Population Prospects 2024 adult (15+) totals. Toggle to compare denominators; percentile shape stays consistent.</span>
+                        <span class="baseline-tooltip">UBS baseline reflects 56 covered markets (wealth‑weighted coverage). Global baseline uses UN World Population Prospects 2024 adult (18+) totals. Toggle to compare denominators; percentile shape stays consistent.</span>
                     </span>
                     <div class="baseline-options">
                         <label class="baseline-option"><input type="radio" name="baseline" value="ubs" checked> UBS Covered Markets (3.767B adults)</label>
-                        <label class="baseline-option"><input type="radio" name="baseline" value="global"> Global Adults 15+ (UN WPP 2024)</label>
+                        <label class="baseline-option"><input type="radio" name="baseline" value="global"> Global Adults 18+ (UN WPP 2024)</label>
                     </div>
-                    <div class="baseline-note" id="baselineNote">UBS baseline uses 56 markets covering ~92% of global wealth. Global estimate uses World Bank population and age shares.</div>
+                    <div class="baseline-note" id="baselineNote">UBS baseline uses 56 markets covering ~92% of global wealth. Global estimate uses UN WPP 2024 adults 18+.</div>
                 </div>
                 <button class="cta-btn" onclick="calculate()">Find My Global Rank</button>
             </div>
@@ -229,12 +282,15 @@
                 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5589641656748708" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins> <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
 
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <div id="footer-placeholder"></div>
-<div class="build-stamp">Build 2026.02.18.1</div>
+<div class="build-stamp">Build 2026.02.18.2</div>
 
 <!-- DIAGNOSTIC CARD TEMPLATE (Hidden, used for generating images) -->
 <div id="shareCardTemplate">
@@ -275,10 +331,12 @@
     let currentRank = 0;
     let currentPercentile = 0;
     let currentTopShare = 0;
+    let currentPopBase = 0;
 
     /* Population baselines */
     const ADULT_POP_UBS = 3.767e9; // UBS Global Wealth Report 2024 wealth pyramid (56 markets)
-    const ADULT_POP_GLOBAL = 6.38e9; // UN World Population Prospects 2024, adults 15+ (approx)
+    const ADULT_POP_GLOBAL = 5.749e9; // UN WPP 2024 adults 18+ (approx)
+    currentPopBase = ADULT_POP_UBS;
 
     const FX = {
         USD:1.0, EUR:1.09, GBP:1.27, CAD:0.71, JPY:0.0067,
@@ -346,8 +404,9 @@
             const topShare = interpolateTopShare(usd);
             const baseline = document.querySelector('input[name="baseline"]:checked')?.value || 'ubs';
             const popBase = baseline === 'global' ? ADULT_POP_GLOBAL : ADULT_POP_UBS;
+            currentPopBase = popBase;
             const baselineLabel = baseline === 'global'
-                ? 'Global adults 15+ (UN WPP 2024)'
+                ? 'Global adults 18+ (UN WPP 2024)'
                 : 'UBS covered markets (adult sample)';
             const globalRank = Math.max(1, Math.round(popBase * topShare));
 
@@ -418,7 +477,7 @@
     function populateComparison(rank) {
         const block = document.getElementById('compareBlock');
         block.innerHTML = COUNTRIES.map(c => {
-            const scaled = Math.max(1, Math.round(rank * (c.adults / ADULT_POP)));
+            const scaled = Math.max(1, Math.round(rank * (c.adults / currentPopBase)));
             const widthVal = Math.max(5, (1 - scaled / c.adults) * 100);
             return `
                 <div class="country-card">
@@ -436,10 +495,10 @@
         input.addEventListener('change', () => {
             const baseline = document.querySelector('input[name="baseline"]:checked')?.value || 'ubs';
             const note = baseline === 'global'
-                ? 'Global baseline uses UN World Population Prospects 2024 adult (15+) totals.'
+                ? 'Global baseline uses UN WPP 2024 adults 18+.'
                 : 'UBS baseline uses 56 markets covering ~92% of global wealth (adult sample ~3.767B).';
             const label = baseline === 'global'
-                ? 'Global adults 15+ (WDI estimate)'
+                ? 'Global adults 18+ (UN WPP 2024)'
                 : 'UBS covered markets (adult sample)';
             const noteEl = document.getElementById('baselineNote');
             const labelEl = document.getElementById('baselineLabel');
@@ -469,7 +528,7 @@
         const selected = [...COUNTRIES].sort(() => 0.5 - Math.random()).slice(0, 3);
         const container = document.getElementById('cardRandomComparison');
         container.innerHTML = selected.map(c => {
-            const scaled = Math.max(1, Math.round(rank * (c.adults / ADULT_POP)));
+            const scaled = Math.max(1, Math.round(rank * (c.adults / currentPopBase)));
             return `
                 <div style="text-align:center;">
                     <div style="font-size:55px; margin-bottom:15px;">${c.flag}</div>
@@ -482,7 +541,7 @@
 
     async function shareTo(p) {
         const baseline = document.querySelector('input[name="baseline"]:checked')?.value || 'ubs';
-        const baselineLabel = baseline === 'global' ? 'global adults (15+ est.)' : 'covered markets (UBS sample)';
+        const baselineLabel = baseline === 'global' ? 'global adults 18+ (UN WPP est.)' : 'covered markets (UBS sample)';
         const text = `I'm in the top ${(currentTopShare * 100).toFixed(2)}% of ${baselineLabel}! Estimated Wealth Rank: #${currentRank.toLocaleString()}. Check yours:`;
         const canvas = await html2canvas(document.getElementById('shareCardTemplate'), { scale: 1 });
         const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
