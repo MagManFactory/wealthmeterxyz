@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calculate your global wealth rank. Find out where you stand among 3.77 billion adults worldwide. Free wealth calculator with real-time rankings.">
+    <meta name="description" content="Calculate your global wealth rank. See where you stand among ~3.77 billion adults in the UBS sample (56 markets). Free wealth calculator with real-time rankings.">
     <title>Global Wealth Rank Calculator | WEALTHMETER.XYZ</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -254,8 +254,8 @@
     let currentPercentile = 0;
     let currentTopShare = 0;
 
-    /* Global adult population (Credit Suisse / UBS Global Wealth Report 2024) */
-    const ADULT_POP = 3.77e9;
+    /* Adult population base (UBS Global Wealth Report 2024 wealth pyramid; 56 markets total) */
+    const ADULT_POP = 3.767e9;
 
     const FX = {
         USD:1.0, EUR:1.09, GBP:1.27, CAD:0.71, JPY:0.0067,
@@ -328,7 +328,7 @@
             currentTopShare = topShare;
 
             document.getElementById('headline').textContent =
-                `You are in the top ${(topShare * 100).toFixed(4)}% of adults worldwide.`;
+                `You are in the top ${(topShare * 100).toFixed(4)}% of adults in our covered markets.`;
 
             animateFlipBoard(globalRank, () => {
                 document.getElementById('secondary-content').style.display = 'block';

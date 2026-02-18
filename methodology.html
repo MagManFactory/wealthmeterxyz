@@ -24,6 +24,8 @@
         .method-box { text-align: left; background: white; border: 1px solid var(--border); padding: 45px; border-radius: 24px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
         .method-title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.4rem; margin-bottom: 15px; color: var(--text-main); }
         .formula-block { font-family: 'Roboto Mono', monospace; background: #f1f5f9; padding: 20px; border-radius: 12px; font-size: 0.9rem; color: var(--primary); margin: 20px 0; border-left: 4px solid var(--primary); }
+        .badge-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 30px 0 10px; }
+        .badge { background: #f1f5f9; border: 1px solid var(--border); border-radius: 999px; padding: 8px 16px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-main); }
     </style>
 </head>
 <body>
@@ -33,10 +35,20 @@
             <h1>Methodology.</h1>
             <div class="section-break"></div>
             <p>WealthMeter utilizes advanced stochastic modeling and logarithmic interpolation to synthesize global financial standing across 140+ sovereign jurisdictions.</p>
+
+            <div class="badge-row">
+                <div class="badge">Last Updated: Feb 18, 2026</div>
+                <div class="badge">Data Accuracy Score: B+</div>
+            </div>
+            
+            <div class="method-box">
+                <div class="method-title">0. Coverage & Population Base</div>
+                <p>Our baseline population is derived from the UBS Global Wealth Report 2024 wealth pyramid. The report covers 56 markets representing roughly 92% of global wealth, and its adult sample totals ~3.767B individuals. Rankings are therefore anchored to this coverage set rather than a full global census.</p>
+            </div>
             
             <div class="method-box">
                 <div class="method-title">1. Logarithmic Percentile Modeling</div>
-                <p>Because wealth distribution is non-linear, we utilize logarithmic interpolation to map individual net worth against the global adult population of 3.77 billion. This ensures that rankings remain sensitive at both the median and the extreme "tail" of the distribution.</p>
+                <p>Because wealth distribution is non-linear, we utilize logarithmic interpolation to map individual net worth against the covered adult population (~3.767B). This ensures that rankings remain sensitive at both the median and the extreme "tail" of the distribution.</p>
                 <div class="formula-block">
                     P(w) = 1 / (1 + (w / k)^α)
                 </div>

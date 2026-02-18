@@ -24,6 +24,8 @@
         .source-item:hover { transform: translateY(-3px); }
         .source-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: var(--primary); letter-spacing: 0.1em; margin-bottom: 10px; display: block; }
         .source-name { font-weight: 700; font-size: 1.1rem; color: var(--text-main); line-height: 1.3; }
+        .source-name a { color: var(--text-main); text-decoration: none; }
+        .source-name a:hover { text-decoration: underline; }
         
         @media (max-width: 600px) { .source-grid { grid-template-columns: 1fr; } }
     </style>
@@ -34,28 +36,29 @@
         <div class="info-card">
             <h1>Data Sources.</h1>
             <div class="section-break"></div>
-            <p>WealthMeter synthesizes diverse actuarial streams from prominent global research institutes, sovereign registries, and private financial reporting yearbooks to provide a high-fidelity measure of global financial standing.</p>
+            <p>WealthMeter anchors its distribution model to publicly available, tier‑one research. Coverage, population baselines, and percentile calibration are sourced from global financial and demographic datasets.</p>
+            <p style="font-size: 0.95rem; opacity: 0.8;">Last updated: Feb 18, 2026</p>
             
             <div class="source-grid">
                 <div class="source-item">
                     <span class="source-label">Institutional Baseline</span>
-                    <span class="source-name">World Inequality Database (WID)</span>
+                    <span class="source-name"><a href="https://wid.world" target="_blank" rel="noopener">World Inequality Database (WID)</a></span>
                 </div>
                 <div class="source-item">
-                    <span class="source-label">Market Intelligence</span>
-                    <span class="source-name">Leading International Financial Yearbooks</span>
+                    <span class="source-label">Primary Wealth Distribution</span>
+                    <span class="source-name"><a href="https://www.scribd.com/document/814513001/Global-Wealth-Report-2024" target="_blank" rel="noopener">UBS Global Wealth Report 2024 (Wealth Pyramid)</a></span>
                 </div>
                 <div class="source-item">
-                    <span class="source-label">Benchmark Registry</span>
-                    <span class="source-name">Global Institutional Wealth Aggregates</span>
+                    <span class="source-label">Population Baselines</span>
+                    <span class="source-name"><a href="https://population.un.org/wpp/" target="_blank" rel="noopener">UN World Population Prospects 2024</a></span>
                 </div>
                 <div class="source-item">
-                    <span class="source-label">Currency Precision</span>
-                    <span class="source-name">Periodically Updated Exchange Benchmarks</span>
+                    <span class="source-label">Population By Age</span>
+                    <span class="source-name"><a href="https://data.worldbank.org/indicator/SP.POP.1564.TO" target="_blank" rel="noopener">World Bank WDI (Population ages 15–64)</a></span>
                 </div>
             </div>
             
-            <p style="margin-top: 60px; font-size: 0.95rem; opacity: 0.8;">Our modeling protocol involves the cross-referencing of public economic data with established private-sector wealth indices to ensure statistical consistency across 140+ sovereign jurisdictions.</p>
+            <p style="margin-top: 60px; font-size: 0.95rem; opacity: 0.8;">Our modeling protocol cross‑references public demographic baselines with institutional wealth distributions to ensure statistical consistency across covered markets.</p>
         </div>
     </main>
     <div id="footer-placeholder"></div>
