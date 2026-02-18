@@ -125,6 +125,10 @@
         .baseline-option { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 999px; padding: 8px 14px; font-size: 12px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
         .baseline-note { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
         .baseline-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 700; margin-top: 12px; text-align: center; }
+        .baseline-help { display: inline-flex; align-items: center; gap: 6px; margin-left: 8px; cursor: help; }
+        .baseline-help-dot { width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--card-border); color: var(--text-muted); display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; background: var(--card-bg); }
+        .baseline-tooltip { display: none; position: absolute; z-index: 10; width: 320px; background: #0f172a; color: #f8fafc; padding: 12px 14px; border-radius: 10px; font-size: 12px; line-height: 1.5; box-shadow: 0 12px 30px rgba(0,0,0,0.25); text-align: left; }
+        .baseline-help:hover .baseline-tooltip { display: block; }
 
         /* DIAGNOSTIC CARD (From Vercel App) */
         #shareCardTemplate { 
@@ -172,9 +176,13 @@
                 </div>
                 <div class="baseline-row">
                     <label>Population Baseline</label>
+                    <span class="baseline-help" style="position: relative;">
+                        <span class="baseline-help-dot">?</span>
+                        <span class="baseline-tooltip">UBS baseline reflects 56 covered markets (wealth‑weighted coverage). Global baseline uses UN World Population Prospects 2024 adult (15+) totals. Toggle to compare denominators; percentile shape stays consistent.</span>
+                    </span>
                     <div class="baseline-options">
                         <label class="baseline-option"><input type="radio" name="baseline" value="ubs" checked> UBS Covered Markets (3.767B adults)</label>
-                        <label class="baseline-option"><input type="radio" name="baseline" value="global"> Global Adults 15+ (≈6.38B, WDI est.)</label>
+                        <label class="baseline-option"><input type="radio" name="baseline" value="global"> Global Adults 15+ (UN WPP 2024)</label>
                     </div>
                     <div class="baseline-note" id="baselineNote">UBS baseline uses 56 markets covering ~92% of global wealth. Global estimate uses World Bank population and age shares.</div>
                 </div>
@@ -270,10 +278,7 @@
 
     /* Population baselines */
     const ADULT_POP_UBS = 3.767e9; // UBS Global Wealth Report 2024 wealth pyramid (56 markets)
-    const WORLD_POP_2024 = 8141808945; // World Bank total population (2024)
-    const WDI_15_64_PCT = 65.98; // World Bank WDI: population ages 15–64 (% of total), latest
-    const WDI_65UP_PCT = 12.42;  // World Bank WDI: population ages 65+ (% of total), latest
-    const ADULT_POP_GLOBAL = Math.round(WORLD_POP_2024 * ((WDI_15_64_PCT + WDI_65UP_PCT) / 100));
+    const ADULT_POP_GLOBAL = 6.38e9; // UN World Population Prospects 2024, adults 15+ (approx)
 
     const FX = {
         USD:1.0, EUR:1.09, GBP:1.27, CAD:0.71, JPY:0.0067,
@@ -342,7 +347,7 @@
             const baseline = document.querySelector('input[name="baseline"]:checked')?.value || 'ubs';
             const popBase = baseline === 'global' ? ADULT_POP_GLOBAL : ADULT_POP_UBS;
             const baselineLabel = baseline === 'global'
-                ? 'Global adults 15+ (WDI estimate)'
+                ? 'Global adults 15+ (UN WPP 2024)'
                 : 'UBS covered markets (adult sample)';
             const globalRank = Math.max(1, Math.round(popBase * topShare));
 
@@ -431,7 +436,7 @@
         input.addEventListener('change', () => {
             const baseline = document.querySelector('input[name="baseline"]:checked')?.value || 'ubs';
             const note = baseline === 'global'
-                ? 'Global baseline uses World Bank total population and WDI age shares (15–64% + 65+%).'
+                ? 'Global baseline uses UN World Population Prospects 2024 adult (15+) totals.'
                 : 'UBS baseline uses 56 markets covering ~92% of global wealth (adult sample ~3.767B).';
             const label = baseline === 'global'
                 ? 'Global adults 15+ (WDI estimate)'
