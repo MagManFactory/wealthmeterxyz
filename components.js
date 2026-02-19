@@ -2,6 +2,7 @@
 
 const sharedStyles = `
 <style>
+    :root { color-scheme: light; }
     /* Monolith Pulse Animation */
     @keyframes monolithPulse {
         0% { transform: scaleY(1); }
@@ -93,6 +94,85 @@ const sharedStyles = `
     footer { padding: 5rem 2rem; text-align: center; border-top: 1px solid #e2e8f0; background: #f8fafc; margin-top: auto; }
     .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
     .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
+
+    .global-theme-toggle {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        border: 1px solid #cbd5e1;
+        background: #ffffff;
+        color: #0f172a;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        cursor: pointer;
+        box-shadow: 0 10px 24px rgba(2, 6, 23, 0.15);
+        z-index: 12000;
+    }
+    .global-theme-toggle:hover { transform: translateY(-1px); }
+
+    body.dark-mode { 
+        color-scheme: dark;
+        --bg-body: #020617;
+        --bg-gradient: radial-gradient(circle at 10% 20%, rgba(37,99,235,0.18) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(8,145,178,0.14) 0%, transparent 40%);
+        --panel-bg: rgba(15,23,42,0.9);
+        --panel-border: rgba(148,163,184,0.35);
+        --panel-shadow: 0 40px 80px -20px rgba(0,0,0,0.72);
+        --card-bg: rgba(30,41,59,0.55);
+        --card-border: rgba(148,163,184,0.35);
+        --text-main: #e2e8f0;
+        --text-muted: #94a3b8;
+        --input-bg: rgba(2,6,23,0.58);
+        --input-border: rgba(148,163,184,0.35);
+        --input-focus-bg: rgba(2,6,23,0.8);
+        --flap-bg: #0f172a;
+        --flap-text: #e2e8f0;
+        --primary: #60a5fa;
+    }
+    body.dark-mode,
+    body.dark-mode main,
+    body.dark-mode section,
+    body.dark-mode article { color: #e2e8f0; }
+    body.dark-mode header { background: rgba(2, 6, 23, 0.94); border-bottom-color: #334155; }
+    body.dark-mode footer { background: #0b1220; border-top-color: #334155; }
+    body.dark-mode .dropdown { background: #0f172a; border-color: #334155; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+    body.dark-mode .dropdown a { color: #cbd5e1; }
+    body.dark-mode .dropdown a:hover { background: #1e293b; color: #f8fafc; }
+    body.dark-mode .global-theme-toggle { background: #0f172a; border-color: #334155; color: #f8fafc; }
+    body.dark-mode input,
+    body.dark-mode select,
+    body.dark-mode textarea {
+        background-color: var(--input-bg) !important;
+        color: var(--text-main) !important;
+        border-color: var(--input-border) !important;
+    }
+    body.dark-mode [style*="background: white"],
+    body.dark-mode [style*="background:#fff"],
+    body.dark-mode [style*="background: #fff"],
+    body.dark-mode [style*="background:#ffffff"],
+    body.dark-mode [style*="background: #ffffff"],
+    body.dark-mode [style*="background:#f8fafc"],
+    body.dark-mode [style*="background: #f8fafc"],
+    body.dark-mode [style*="background:#f1f5f9"],
+    body.dark-mode [style*="background: #f1f5f9"] {
+        background: #0f172a !important;
+    }
+    body.dark-mode [style*="color:#0f172a"],
+    body.dark-mode [style*="color: #0f172a"],
+    body.dark-mode [style*="color:#020617"],
+    body.dark-mode [style*="color: #020617"],
+    body.dark-mode [style*="color:#1e293b"],
+    body.dark-mode [style*="color: #1e293b"],
+    body.dark-mode [style*="color:#334155"],
+    body.dark-mode [style*="color: #334155"],
+    body.dark-mode [style*="color:#475569"],
+    body.dark-mode [style*="color: #475569"] {
+        color: #e2e8f0 !important;
+    }
 </style>
 `;
 
@@ -152,10 +232,61 @@ const siteFooter = `
     </div>
 </footer>`;
 
+function syncThemeToggleVisual(toggleEl) {
+    if (!toggleEl) return;
+    const dark = document.body.classList.contains("dark-mode");
+    toggleEl.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+    toggleEl.setAttribute("title", dark ? "Switch to light mode" : "Switch to dark mode");
+    if (toggleEl.classList.contains("global-theme-toggle")) {
+        toggleEl.textContent = dark ? "☀" : "☾";
+    }
+}
+
+function applyTheme(mode) {
+    const dark = mode === "dark";
+    document.body.classList.toggle("dark-mode", dark);
+    localStorage.setItem("wealthmeter_theme", dark ? "dark" : "light");
+    syncThemeToggleVisual(document.querySelector(".global-theme-toggle"));
+    const nativeToggle = document.querySelector(".theme-toggle");
+    if (nativeToggle) syncThemeToggleVisual(nativeToggle);
+}
+
+function toggleTheme() {
+    const dark = document.body.classList.contains("dark-mode");
+    applyTheme(dark ? "light" : "dark");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     document.head.insertAdjacentHTML("beforeend", sharedStyles);
     const headerEl = document.getElementById("header-placeholder");
     const footerEl = document.getElementById("footer-placeholder");
     if (headerEl) headerEl.innerHTML = siteHeader;
     if (footerEl) footerEl.innerHTML = siteFooter;
+
+    const savedTheme = localStorage.getItem("wealthmeter_theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+
+    const existingToggle = document.querySelector(".theme-toggle");
+    if (existingToggle) {
+        const hasInlineToggle = existingToggle.hasAttribute("onclick");
+        if (!hasInlineToggle) {
+            existingToggle.addEventListener("click", (event) => {
+                event.preventDefault();
+                toggleTheme();
+            });
+        }
+        syncThemeToggleVisual(existingToggle);
+    } else {
+        const toggle = document.createElement("button");
+        toggle.className = "global-theme-toggle";
+        toggle.type = "button";
+        toggle.addEventListener("click", toggleTheme);
+        document.body.appendChild(toggle);
+        syncThemeToggleVisual(toggle);
+    }
+
+    // Keep backward compatibility for pages using inline onclick="toggleTheme()".
+    window.toggleTheme = toggleTheme;
 });
