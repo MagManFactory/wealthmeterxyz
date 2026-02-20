@@ -212,8 +212,8 @@ const siteHeader = `
             </div>
             <div class="nav-group"><span class="nav-group-label label-analyze">Analyze</span>
                 <div class="dropdown">
-                    <a href="global_explorer.html">Global Explorer</a>
-                    <a href="atlas.html">Atlas View</a>
+                    <a href="global_explorer.html">Wealth Explorer</a>
+                    <a href="atlas.html">Longevity Atlas</a>
                     <a href="data-lab.html">Data Lab</a>
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
                 </div>
