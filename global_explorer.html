@@ -175,6 +175,31 @@ h1 {
   padding: 0.9rem;
 }
 
+.sidebar-controls {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.55rem;
+}
+
+.sidebar-controls button {
+  flex: 1;
+  border: 1px solid #cfdbef;
+  background: #f8fbff;
+  color: #315383;
+  border-radius: 8px;
+  padding: 0.45rem 0.5rem;
+  font-size: 0.7rem;
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.sidebar-controls button:hover {
+  border-color: #9db8e6;
+  background: #eef4ff;
+}
+
 .region {
   margin-bottom: 0.65rem;
 }
@@ -187,6 +212,33 @@ h1 {
   color: var(--text-sub);
   margin: 0.6rem 0 0.4rem;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  background: transparent;
+  padding: 0.18rem 0.15rem;
+  text-align: left;
+}
+
+.region-head:hover {
+  color: #34537f;
+}
+
+.region-chevron {
+  font-size: 0.75rem;
+  letter-spacing: 0;
+  transition: transform 0.15s ease;
+}
+
+.region-head.collapsed .region-chevron {
+  transform: rotate(-90deg);
+}
+
+.region-body.collapsed {
+  display: none;
 }
 
 .country-btn {
@@ -636,6 +688,7 @@ const COUNTRY_DB = {
 const REGION_ORDER = ["Americas", "Europe", "Asia-Pacific", "Middle East", "Africa"];
 const COUNTRY_CODES = Object.keys(COUNTRY_DB);
 let activeCode = "USA";
+let collapsedRegions = new Set();
 
 const searchEl = document.getElementById('countrySearch');
 const sortEl = document.getElementById('sortMode');
@@ -704,6 +757,7 @@ function getFilteredCodes() {
 
 function buildSidebar() {
   const codes = getFilteredCodes();
+  const queryActive = searchEl.value.trim().length > 0;
   const byRegion = {};
   for (const region of REGION_ORDER) byRegion[region] = [];
 
@@ -720,11 +774,20 @@ function buildSidebar() {
     return;
   }
 
-  let html = '';
+  const activeRegion = activeCode ? COUNTRY_DB[activeCode].region : null;
+  if (activeRegion) collapsedRegions.delete(activeRegion);
+
+  let html = '<div class="sidebar-controls"><button type="button" data-action="expand-all">Expand All</button><button type="button" data-action="collapse-all">Collapse All</button></div>';
   for (const region of REGION_ORDER) {
     if (!byRegion[region].length) continue;
-    html += '<section class="region">';
-    html += '<div class="region-head">' + region + ' (' + byRegion[region].length + ')</div>';
+    const collapsed = !queryActive && collapsedRegions.has(region);
+    const headClass = collapsed ? 'region-head collapsed' : 'region-head';
+    const bodyClass = collapsed ? 'region-body collapsed' : 'region-body';
+    html += '<section class="region" data-region="' + region + '">';
+    html += '<button type="button" class="' + headClass + '" data-region-toggle="' + region + '" aria-expanded="' + (!collapsed) + '">';
+    html += '<span>' + region + ' (' + byRegion[region].length + ')</span><span class="region-chevron">▾</span>';
+    html += '</button>';
+    html += '<div class="' + bodyClass + '">';
     for (const code of byRegion[region]) {
       const d = COUNTRY_DB[code];
       const active = code === activeCode ? ' active' : '';
@@ -733,10 +796,40 @@ function buildSidebar() {
       html += '<span class="meta">' + d.grade + '</span>';
       html += '</button>';
     }
+    html += '</div>';
     html += '</section>';
   }
 
   sidebarEl.innerHTML = html;
+
+  sidebarEl.querySelectorAll('[data-region-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const region = btn.getAttribute('data-region-toggle');
+      if (collapsedRegions.has(region)) {
+        collapsedRegions.delete(region);
+      } else {
+        collapsedRegions.add(region);
+      }
+      persistCollapsedRegions();
+      buildSidebar();
+      if (activeCode) loadCountry(activeCode);
+    });
+  });
+
+  sidebarEl.querySelectorAll('[data-action]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const action = btn.getAttribute('data-action');
+      if (action === 'expand-all') {
+        collapsedRegions.clear();
+      } else {
+        collapsedRegions = new Set(REGION_ORDER);
+        if (activeCode) collapsedRegions.delete(COUNTRY_DB[activeCode].region);
+      }
+      persistCollapsedRegions();
+      buildSidebar();
+      if (activeCode) loadCountry(activeCode);
+    });
+  });
 
   sidebarEl.querySelectorAll('.country-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -785,6 +878,23 @@ function updateCoverage() {
   document.getElementById('coverageCount').textContent = COUNTRY_CODES.length + ' countries';
 }
 
+function persistCollapsedRegions() {
+  localStorage.setItem('wm_explorer_collapsed_regions', JSON.stringify(Array.from(collapsedRegions)));
+}
+
+function restoreCollapsedRegions() {
+  const raw = localStorage.getItem('wm_explorer_collapsed_regions');
+  if (!raw) return;
+  try {
+    const arr = JSON.parse(raw);
+    if (Array.isArray(arr)) {
+      collapsedRegions = new Set(arr.filter((region) => REGION_ORDER.includes(region)));
+    }
+  } catch (e) {
+    collapsedRegions = new Set();
+  }
+}
+
 searchEl.addEventListener('input', () => {
   buildSidebar();
   if (activeCode) loadCountry(activeCode);
@@ -796,6 +906,7 @@ sortEl.addEventListener('change', () => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
+  restoreCollapsedRegions();
   updateCoverage();
   buildSidebar();
   if (activeCode) loadCountry(activeCode);
