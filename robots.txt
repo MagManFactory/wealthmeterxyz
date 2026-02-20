@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wealthmeter.xyz/sitemap.xml
