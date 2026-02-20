@@ -4,554 +4,802 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5589641656748708" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght;500;600;700;800;900&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://wealthmeter.xyz/global_explorer.html">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://wealthmeter.xyz/global_explorer.html">
 <title>Global Wealth Explorer | WEALTHMETER.XYZ</title>
-    <style>
-        :root { 
-            --surface: #ffffff; 
-            --bg-app: #f8f9fa; 
-            --border: #e1e1e6; 
-            --active-blue: #0ea5e9; 
-            --text-main: #1e293b; 
-            --text-sub: #64748b; 
-        }
-        
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body { 
-            background-color: var(--bg-app); 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        
-        /* HEADER */
-        header { 
-            background: white; 
-            padding: 15px 40px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            border-bottom: 1px solid var(--border); 
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .logo { 
-            font-weight: 800; 
-            font-size: 1.5rem; 
-            text-decoration: none; 
-            color: var(--text-main); 
-            display: flex; 
-            align-items: center; 
-            gap: 8px; 
-        }
-        
-        .logo span { color: var(--active-blue); }
-        
-        .nav-links { 
-            display: flex; 
-            gap: 30px; 
-            font-weight: 600; 
-            color: var(--text-sub); 
-            font-size: 0.9rem; 
-        }
-        
-        .nav-links a { 
-            color: var(--text-sub); 
-            text-decoration: none; 
-            transition: color 0.2s; 
-        }
-        
-        .nav-links a:hover { color: var(--active-blue); }
-        
-        /* CONTAINER */
-        .container { 
-            max-width: 1200px; 
-            padding: 40px 20px; 
-            margin: 0 auto; 
-            flex: 1;
-            width: 100%;
-        }
-        
-        .page-header { text-align: center; margin-bottom: 40px; }
-        .page-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.02em; color: var(--text-main); }
-        .page-sub { color: var(--text-sub); font-size: 1.1rem; }
-        
-        .dashboard-grid { display: grid; grid-template-columns: 260px 1fr; gap: 40px; align-items: start; }
-        @media (max-width: 900px) { .dashboard-grid { grid-template-columns: 1fr; } }
-        
-        .sidebar { 
-            background: var(--surface); 
-            border-radius: 16px; 
-            padding: 20px; 
-            border: 1px solid var(--border); 
-            position: sticky; 
-            top: 90px; 
-        }
-        
-        .region-head { 
-            font-size: 0.7rem; 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            letter-spacing: 0.1em; 
-            color: var(--text-sub); 
-            margin: 20px 0 10px 0; 
-            display: block; 
-        }
-        
-        .region-head:first-child { margin-top: 0; }
-        
-        .c-btn { 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-            padding: 10px 14px; 
-            margin-bottom: 5px; 
-            border-radius: 8px; 
-            font-size: 0.9rem; 
-            font-weight: 500; 
-            color: var(--text-main); 
-            cursor: pointer; 
-            transition: all 0.2s ease; 
-            border: none;
-            background: transparent;
-            width: 100%;
-            text-align: left;
-        }
-        
-        .c-btn:hover { background: #f1f5f9; }
-        
-        .c-btn.active { 
-            background: var(--active-blue); 
-            color: white; 
-            font-weight: 600; 
-            box-shadow: 0 4px 10px rgba(14, 165, 233, 0.25); 
-        }
-        
-        .stage-card { 
-            background: white; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06); 
-            border: 1px solid var(--border); 
-            padding: 40px; 
-        }
-        
-        .country-head { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: flex-start; 
-            border-bottom: 1px solid var(--border); 
-            padding-bottom: 25px; 
-            margin-bottom: 30px; 
-        }
-        
-        .c-name { 
-            font-size: 3rem; 
-            font-weight: 800; 
-            line-height: 1; 
-            letter-spacing: -0.03em; 
-            margin-bottom: 5px; 
-            color: var(--text-main);
-        }
-        
-        .c-meta { font-size: 0.9rem; color: var(--text-sub); }
-        
-        .head-right { 
-            text-align: right; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: flex-end; 
-            gap: 15px; 
-        }
-        
-        .badge-row { display: flex; gap: 10px; }
-        
-        .badge { 
-            display: inline-block; 
-            padding: 6px 12px; 
-            border-radius: 6px; 
-            font-size: 0.8rem; 
-            font-weight: 700; 
-            background: #f1f5f9; 
-            color: #475569; 
-        }
-        
-        .b-grade { background: #dcfce7; color: #166534; }
-        
-        .big-flag { 
-            font-size: 4.5rem; 
-            line-height: 1; 
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); 
-        }
-        
-        .metrics-grid { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 30px; 
-            margin-bottom: 40px; 
-        }
-        
-        .metric-box { 
-            text-align: center; 
-            padding: 25px; 
-            background: #fafafa; 
-            border-radius: 12px; 
-            border: 1px solid var(--border); 
-        }
-        
-        .m-label { 
-            font-size: 0.75rem; 
-            text-transform: uppercase; 
-            font-weight: 700; 
-            color: var(--text-sub); 
-            letter-spacing: 0.05em; 
-        }
-        
-        .m-val { 
-            font-size: 2.2rem; 
-            font-weight: 800; 
-            color: var(--text-main); 
-            margin: 8px 0; 
-        }
-        
-        .m-sub { 
-            font-size: 0.85rem; 
-            color: var(--active-blue); 
-            font-weight: 600; 
-        }
-        
-        .ladder-section { margin-top: 40px; }
-        
-        .l-title { 
-            font-size: 1.1rem; 
-            font-weight: 700; 
-            margin-bottom: 25px; 
-            color: var(--text-main); 
-        }
-        
-        .ladder-row { 
-            display: grid; 
-            grid-template-columns: 200px 1fr; 
-            align-items: center; 
-            gap: 20px; 
-            margin-bottom: 20px; 
-        }
-        
-        .l-data { 
-            text-align: right; 
-            border-right: 2px solid #f1f5f9; 
-            padding-right: 25px; 
-            min-width: 200px; 
-        }
-        
-        .l-rank { 
-            font-size: 0.8rem; 
-            font-weight: 700; 
-            color: var(--text-sub); 
-            display: block; 
-            margin-bottom: 2px; 
-        }
-        
-        .l-money { 
-            font-size: 1.2rem; 
-            font-weight: 700; 
-            color: var(--text-main); 
-            display: block; 
-            white-space: nowrap; 
-        }
-        
-        .track { 
-            height: 44px; 
-            background: #f1f5f9; 
-            border-radius: 8px; 
-            width: 100%; 
-            position: relative; 
-            overflow: hidden; 
-        }
-        
-        .bar { 
-            height: 100%; 
-            border-radius: 8px; 
-            transition: width 1s cubic-bezier(0.2, 0.8, 0.2, 1); 
-        }
-        
-        .bar-1 { background: #1e293b; }
-        .bar-10 { background: #2563eb; }
-        .bar-50 { background: #cbd5e1; }
-        
-        /* CONTEXT ROWS */
-        .context-row { 
-            margin-top: 40px; 
-            padding-top: 30px; 
-            border-top: 1px solid var(--border); 
-            display: grid; 
-            grid-template-columns: 1fr 1fr 1fr; 
-            gap: 30px; 
-        }
-        
-        @media (max-width: 800px) { 
-            .context-row { grid-template-columns: 1fr; } 
-        }
-        
-        .ctx-item p { 
-            font-size: 0.8rem; 
-            line-height: 1.5; 
-            color: var(--text-sub); 
-            margin: 0; 
-        }
-        
-        .ctx-item strong { 
-            display: block; 
-            font-size: 0.75rem; 
-            font-weight: 800; 
-            color: var(--text-main); 
-            text-transform: uppercase; 
-            margin-bottom: 6px; 
-        }
-        
-        /* DATA GRADE NOTE */
-        .data-grade-row { 
-            margin-top: 30px; 
-            padding: 20px; 
-            background: #f8fafc; 
-            border-radius: 12px; 
-            border: 1px solid var(--border); 
-        }
-        
-        .dg-title { 
-            font-size: 0.75rem; 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            color: var(--text-main); 
-            display: block; 
-            margin-bottom: 10px; 
-        }
-        
-        .dg-list { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr 1fr; 
-            gap: 20px; 
-        }
-        
-        @media (max-width: 700px) { 
-            .dg-list { grid-template-columns: 1fr; } 
-        }
-        
-        .dg-item { 
-            font-size: 0.75rem; 
-            color: var(--text-sub); 
-            line-height: 1.4; 
-        }
-        
-        .dg-item b { color: var(--text-main); }
-        
-        /* FOOTER */
-        footer { 
-            background: white; 
-            padding: 30px 40px; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center;
-            gap: 35px; 
-            border-top: 1px solid var(--border); 
-            margin-top: 40px;
-        }
-        
-        footer a { 
-            color: var(--text-sub); 
-            text-decoration: none; 
-            font-weight: 600; 
-            font-size: 0.85rem; 
-            transition: color 0.2s;
-        }
-        
-        footer a:hover { color: var(--active-blue); }
-        
-        @media (max-width: 600px) {
-            footer { 
-                flex-direction: column; 
-                gap: 15px; 
-                padding: 25px 20px;
-            }
-        }
-    </style>
+<meta name="description" content="Explore wealth thresholds across 50 countries with median, top 10%, and top 1% benchmarks using UBS, WID, and UN population baselines.">
+<meta name="keywords" content="global wealth explorer, country wealth thresholds, median wealth, top 1 percent wealth, top 10 percent wealth, UBS Global Wealth Report, WID, UN World Population Prospects">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Global Wealth Explorer | WEALTHMETER.XYZ">
+<meta property="og:description" content="Interactive country-by-country wealth thresholds with concentration and distribution context.">
+<meta property="og:url" content="https://wealthmeter.xyz/global_explorer.html">
+<meta property="og:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Global Wealth Explorer | WEALTHMETER.XYZ">
+<meta name="twitter:description" content="Explore median, top 10%, and top 1% wealth thresholds across 50 countries.">
+<meta name="twitter:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
+<style>
+:root {
+  --bg-body: #f8fafc;
+  --bg-panel: #ffffff;
+  --text-main: #0f172a;
+  --text-sub: #64748b;
+  --line: #dbe4f0;
+  --blue: #2563eb;
+  --teal: #0891b2;
+  --soft: #f1f5f9;
+  --green-bg: #dcfce7;
+  --green-text: #166534;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-body);
+  color: var(--text-main);
+}
+
+.wrap {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 2.5rem 1.2rem 4.5rem;
+}
+
+.hero {
+  background: linear-gradient(145deg, #ffffff 0%, #eef4ff 62%, #edfaff 100%);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.kicker {
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-size: 0.72rem;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.data-stamp {
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.68rem;
+  color: var(--text-sub);
+  border: 1px solid #c8d8ee;
+  background: #ffffff;
+  padding: 0.45rem 0.6rem;
+  border-radius: 999px;
+}
+
+h1 {
+  margin: 0.8rem 0 0.55rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.hero p {
+  margin: 0;
+  max-width: 880px;
+  color: var(--text-sub);
+  line-height: 1.65;
+}
+
+.stat-strip {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.stat-pill {
+  background: #ffffff;
+  border: 1px solid #dbe6f5;
+  border-radius: 12px;
+  padding: 0.7rem 0.85rem;
+}
+
+.stat-pill .label {
+  display: block;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-sub);
+  font-size: 0.64rem;
+  margin-bottom: 0.25rem;
+}
+
+.stat-pill .value {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.tools {
+  margin-top: 1.1rem;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 0.8rem;
+}
+
+.tools input,
+.tools select {
+  width: 100%;
+  border: 1px solid #cfdbef;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0.8rem 0.9rem;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.tools input:focus,
+.tools select:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.layout {
+  margin-top: 1.1rem;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.sidebar {
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 130px);
+  overflow: auto;
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 0.9rem;
+}
+
+.region {
+  margin-bottom: 0.65rem;
+}
+
+.region-head {
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.66rem;
+  color: var(--text-sub);
+  margin: 0.6rem 0 0.4rem;
+  font-weight: 700;
+}
+
+.country-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border: none;
+  background: transparent;
+  color: var(--text-main);
+  border-radius: 9px;
+  padding: 0.53rem 0.62rem;
+  cursor: pointer;
+  font-size: 0.89rem;
+  text-align: left;
+}
+
+.country-btn:hover {
+  background: #f4f8ff;
+}
+
+.country-btn.active {
+  background: var(--blue);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.22);
+}
+
+.country-btn .left {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+}
+
+.country-btn .meta {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.66rem;
+  opacity: 0.9;
+}
+
+.empty-state {
+  color: var(--text-sub);
+  font-size: 0.85rem;
+  padding: 0.6rem;
+}
+
+.stage {
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 1.4rem;
+}
+
+.country-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1rem;
+}
+
+.country-head h2 {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.03em;
+  font-size: clamp(1.8rem, 3.3vw, 2.8rem);
+  line-height: 1.04;
+}
+
+.country-head .sub {
+  margin-top: 0.3rem;
+  color: var(--text-sub);
+  font-size: 0.93rem;
+}
+
+.flag {
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+.badges {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.35rem 0.58rem;
+  border: 1px solid #d6e3f6;
+  background: #f8fbff;
+  color: #36537d;
+}
+
+.badge.grade-a { background: var(--green-bg); border-color: #bbebcd; color: var(--green-text); }
+.badge.grade-b { background: #fff7ed; border-color: #fed7aa; color: #9a3412; }
+.badge.grade-c { background: #fef2f2; border-color: #fecaca; color: #991b1b; }
+
+.metrics {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.metric {
+  border: 1px solid var(--line);
+  background: #fbfdff;
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.metric .label {
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-sub);
+  font-size: 0.64rem;
+}
+
+.metric .value {
+  margin-top: 0.25rem;
+  font-size: clamp(1rem, 2.4vw, 1.6rem);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.metric .sub {
+  margin-top: 0.18rem;
+  color: var(--text-sub);
+  font-size: 0.74rem;
+}
+
+.ladder {
+  margin-top: 1rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+
+.ladder h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-main);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 0.65rem;
+  align-items: center;
+  margin-bottom: 0.62rem;
+}
+
+.row .rank {
+  font-size: 0.7rem;
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-sub);
+}
+
+.row .money {
+  margin-top: 0.2rem;
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.track {
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #d8e3f5;
+  background: #f4f8ff;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.6s ease;
+}
+
+.bar.top1 { background: #0f172a; }
+.bar.top10 { background: #2563eb; }
+.bar.median { background: #94a3b8; }
+
+.context {
+  margin-top: 1rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.context-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fcfdff;
+  padding: 0.72rem;
+}
+
+.context-card strong {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.64rem;
+  color: var(--text-main);
+  margin-bottom: 0.34rem;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.context-card p,
+.context-card li {
+  margin: 0;
+  font-size: 0.83rem;
+  color: var(--text-sub);
+  line-height: 1.5;
+}
+
+.context-card ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.context-card a {
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.context-card a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1080px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; max-height: none; }
+}
+
+@media (max-width: 900px) {
+  .metrics { grid-template-columns: 1fr 1fr; }
+  .context { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+  .tools { grid-template-columns: 1fr; }
+  .stat-strip { grid-template-columns: 1fr; }
+  .row { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body data-page="global_explorer.html">
 <div id="header-placeholder"></div>
 
-<div class="container">
-    <div class="page-header">
-        <div class="page-title">Global Wealth Explorer</div>
-        <div class="page-sub">Comprehensive wealth distribution across major global economies.</div>
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-top">
+      <span class="kicker">Global Explorer</span>
+      <span class="data-stamp" id="dataStamp">Data refresh cycle: Feb 2026</span>
+    </div>
+    <h1>Country-Level Wealth Distribution Atlas</h1>
+    <p>Compare median, top 10%, and top 1% wealth thresholds across major economies. Use this view to separate typical household position from top-tier asset concentration.</p>
+
+    <div class="stat-strip">
+      <div class="stat-pill">
+        <span class="label">Coverage</span>
+        <span class="value" id="coverageCount">50 countries</span>
+      </div>
+      <div class="stat-pill">
+        <span class="label">Reference Wealth Cycle</span>
+        <span class="value">UBS GWR 2025</span>
+      </div>
+      <div class="stat-pill">
+        <span class="label">Population Baseline</span>
+        <span class="value">UN WPP 2024</span>
+      </div>
     </div>
 
-    <div class="dashboard-grid">
-        <div class="sidebar">
-            <span class="region-head">Americas</span>
-            <button class="c-btn active" id="btnUSA" onclick="loadC('USA')">🇺🇸 USA</button>
-            <button class="c-btn" id="btnCA" onclick="loadC('CA')">🇨🇦 Canada</button>
-            <button class="c-btn" id="btnBR" onclick="loadC('BR')">🇧🇷 Brazil</button>
-            <button class="c-btn" id="btnMX" onclick="loadC('MX')">🇲🇽 Mexico</button>
-            <button class="c-btn" id="btnCL" onclick="loadC('CL')">🇨🇱 Chile</button>
-
-            <span class="region-head">Europe</span>
-            <button class="c-btn" id="btnCH" onclick="loadC('CH')">🇨🇭 Switzerland</button>
-            <button class="c-btn" id="btnUK" onclick="loadC('UK')">🇬🇧 UK</button>
-            <button class="c-btn" id="btnDE" onclick="loadC('DE')">🇩🇪 Germany</button>
-            <button class="c-btn" id="btnFR" onclick="loadC('FR')">🇫🇷 France</button>
-            <button class="c-btn" id="btnIT" onclick="loadC('IT')">🇮🇹 Italy</button>
-            <button class="c-btn" id="btnNL" onclick="loadC('NL')">🇳🇱 Netherlands</button>
-
-            <span class="region-head">Asia-Pacific</span>
-            <button class="c-btn" id="btnAU" onclick="loadC('AU')">🇦🇺 Australia</button>
-            <button class="c-btn" id="btnCN" onclick="loadC('CN')">🇨🇳 China</button>
-            <button class="c-btn" id="btnJP" onclick="loadC('JP')">🇯🇵 Japan</button>
-            <button class="c-btn" id="btnIN" onclick="loadC('IN')">🇮🇳 India</button>
-            <button class="c-btn" id="btnSG" onclick="loadC('SG')">🇸🇬 Singapore</button>
-
-            <span class="region-head">Africa</span>
-            <button class="c-btn" id="btnZA" onclick="loadC('ZA')">🇿🇦 South Africa</button>
-            <button class="c-btn" id="btnNG" onclick="loadC('NG')">🇳🇬 Nigeria</button>
-        </div>
-
-        <div class="stage-card">
-            <div class="country-head">
-                <div>
-                    <div class="c-name" id="dName">United States</div>
-                    <div class="c-meta">Currency: USD (Purchasing Power Parity)</div>
-                </div>
-                <div class="head-right">
-                    <div class="badge-row">
-                        <span class="badge b-grade" id="qBadge">Data Grade: A</span>
-                        <span class="badge" id="dPop">Pop: 333M</span>
-                    </div>
-                    <div class="big-flag" id="dFlag">🇺🇸</div>
-                </div>
-            </div>
-
-            <div class="metrics-grid">
-                <div class="metric-box">
-                    <div class="m-label">Typical Citizen (Median)</div>
-                    <div class="m-val" id="dMedian">$107,700</div>
-                    <div class="m-sub">50th Percentile</div>
-                </div>
-                <div class="metric-box">
-                    <div class="m-label">Statistical Average</div>
-                    <div class="m-val" id="dMean">$560,000</div>
-                    <div class="m-sub" id="dRatio">Skew: 5.2x</div>
-                </div>
-            </div>
-
-            <div class="ladder-section">
-                <div class="l-title">The Wealth Ladder</div>
-                <div class="ladder-row">
-                    <div class="l-data">
-                        <span class="l-rank">Top 1% Rank</span>
-                        <span class="l-money" id="val1">$5.8M</span>
-                    </div>
-                    <div class="l-visual"><div class="track"><div class="bar bar-1" id="bar1"></div></div></div>
-                </div>
-                <div class="ladder-row">
-                    <div class="l-data">
-                        <span class="l-rank">Top 10% Rank</span>
-                        <span class="l-money" id="val10">$1.6M</span>
-                    </div>
-                    <div class="l-visual"><div class="track"><div class="bar bar-10" id="bar10"></div></div></div>
-                </div>
-                <div class="ladder-row">
-                    <div class="l-data">
-                        <span class="l-rank">Typical (Median)</span>
-                        <span class="l-money" id="valMid">$107k</span>
-                    </div>
-                    <div class="l-visual"><div class="track"><div class="bar bar-50" id="barMid"></div></div></div>
-                </div>
-            </div>
-
-            <div class="context-row">
-                <div class="ctx-item"><strong>Median vs Mean</strong><p>Median represents the exact middle. Mean is a calculated average frequently skewed by ultra-high-net-worth outliers.</p></div>
-                <div class="ctx-item"><strong>Methodology</strong><p>Primary data derived from World Inequality Database (WID) and UBS Global Wealth Reports.</p></div>
-                <div class="ctx-item"><strong>Current Insight</strong><p id="dDesc">Analyzes the density and concentration of national household assets.</p></div>
-            </div>
-
-            <div class="data-grade-row">
-                <span class="dg-title">Understanding Data Grades</span>
-                <div class="dg-list">
-                    <div class="dg-item"><b>Grade A:</b> Highly reliable. Utilizes comprehensive tax registries, administrative records, and national accounts.</div>
-                    <div class="dg-item"><b>Grade B:</b> Reliable. Derived from high-quality household surveys with periodic administrative cross-checks.</div>
-                    <div class="dg-item"><b>Grade C:</b> Modeled. Estimates based on limited survey data or econometric modeling from regional peers.</div>
-                </div>
-            </div>
-        </div>
+    <div class="tools">
+      <input id="countrySearch" type="search" placeholder="Search country (e.g., Japan, Brazil, UAE)" aria-label="Search country">
+      <select id="sortMode" aria-label="Sort countries">
+        <option value="alpha">Sort: A-Z</option>
+        <option value="median_desc">Sort: Median Wealth (High-Low)</option>
+        <option value="top1_desc">Sort: Top 1% Threshold (High-Low)</option>
+        <option value="concentration_desc">Sort: Concentration (Top1/Median)</option>
+      </select>
     </div>
-</div>
+  </section>
 
-<div id="footer-placeholder"></div><script src="components.js"></script>
+  <section class="layout">
+    <aside class="sidebar" id="countrySidebar"></aside>
 
+    <article class="stage">
+      <div class="country-head">
+        <div>
+          <h2 id="countryName">United States</h2>
+          <div class="sub" id="countrySub">Adult wealth benchmark profile</div>
+          <div class="badges">
+            <span class="badge" id="countryRegion">Region: Americas</span>
+            <span class="badge" id="countryPop">Adult pop: 255M</span>
+            <span class="badge grade-a" id="countryGrade">Grade A</span>
+          </div>
+        </div>
+        <div class="flag" id="countryFlag" aria-hidden="true">🇺🇸</div>
+      </div>
+
+      <div class="metrics">
+        <div class="metric">
+          <span class="label">Median Adult Wealth</span>
+          <div class="value" id="medianVal">$107,700</div>
+          <div class="sub">50th percentile household position</div>
+        </div>
+        <div class="metric">
+          <span class="label">Top 10% Threshold</span>
+          <div class="value" id="top10Val">$1,600,000</div>
+          <div class="sub">Entry point for top-decile wealth</div>
+        </div>
+        <div class="metric">
+          <span class="label">Top 1% Threshold</span>
+          <div class="value" id="top1Val">$5,800,000</div>
+          <div class="sub">Entry point for top-percentile wealth</div>
+        </div>
+        <div class="metric">
+          <span class="label">Concentration Ratio</span>
+          <div class="value" id="concVal">53.9x</div>
+          <div class="sub" id="gapVal">Top10/Median: 14.9x</div>
+        </div>
+      </div>
+
+      <div class="ladder">
+        <h3>Relative Wealth Ladder</h3>
+
+        <div class="row">
+          <div>
+            <span class="rank">Top 1% threshold</span>
+            <span class="money" id="rowTop1">$5.8M</span>
+          </div>
+          <div class="track"><div class="bar top1" id="barTop1"></div></div>
+        </div>
+
+        <div class="row">
+          <div>
+            <span class="rank">Top 10% threshold</span>
+            <span class="money" id="rowTop10">$1.6M</span>
+          </div>
+          <div class="track"><div class="bar top10" id="barTop10"></div></div>
+        </div>
+
+        <div class="row">
+          <div>
+            <span class="rank">Median adult wealth</span>
+            <span class="money" id="rowMedian">$107.7K</span>
+          </div>
+          <div class="track"><div class="bar median" id="barMedian"></div></div>
+        </div>
+      </div>
+
+      <div class="context">
+        <div class="context-card">
+          <strong>Current Insight</strong>
+          <p id="insightText">The top threshold in this market is substantially detached from the median household base, indicating concentration pressure in upper-asset tiers.</p>
+        </div>
+
+        <div class="context-card">
+          <strong>Methodology</strong>
+          <p>Thresholds are harmonized from UBS market wealth distributions, cross-checked against World Inequality Database concentration patterns, and normalized using UN WPP demographic baselines.</p>
+        </div>
+
+        <div class="context-card">
+          <strong>Primary Sources</strong>
+          <ul>
+            <li><a href="https://www.ubs.com/global/en/media/display-page-ndp/en-20250618-gwr-2025.html" target="_blank" rel="noopener noreferrer">UBS Global Wealth Report 2025</a></li>
+            <li><a href="https://wid.world/" target="_blank" rel="noopener noreferrer">World Inequality Database</a></li>
+            <li><a href="https://www.un.org/development/desa/pd/content/World-Population-Prospects-2024" target="_blank" rel="noopener noreferrer">UN World Population Prospects 2024</a></li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="components.js"></script>
 <script>
-    const db = {
-        "USA": { flag: "🇺🇸", name: "United States", grade:"A", pop: "333M", median: 107700, mean: 560000, top10: 1600000, top1: 5800000, desc: "Extreme wealth concentration. The massive gap between Mean and Median reflects high asset density at the top 1%." },
-        "CA": { flag: "🇨🇦", name: "Canada", grade:"A", pop: "38M", median: 137000, mean: 390000, top10: 1100000, top1: 3400000, desc: "High median wealth driven by property values. Wealth is distributed more broadly than in the United States." },
-        "AU": { flag: "🇦🇺", name: "Australia", grade:"A", pop: "26M", median: 260000, mean: 550000, top10: 1300000, top1: 4500000, desc: "Consistently leads in median wealth due to mandatory superannuation and high residential real estate values." },
-        "CH": { flag: "🇨🇭", name: "Switzerland", grade:"A", pop: "8.7M", median: 167000, mean: 685000, top10: 1400000, top1: 8500000, desc: "The highest average wealth per adult globally, bolstered by currency strength and massive private pension reserves." },
-        "UK": { flag: "🇬🇧", name: "United Kingdom", grade:"A", pop: "67M", median: 151000, mean: 305000, top10: 850000, top1: 2800000, desc: "Strong median wealth supported by property ownership, though regional disparities remain." },
-        "DE": { flag: "🇩🇪", name: "Germany", grade:"A", pop: "84M", median: 66700, mean: 256000, top10: 725000, top1: 2500000, desc: "Lower median wealth than European peers due to low home ownership; wealth is concentrated in savings." },
-        "FR": { flag: "🇫🇷", name: "France", grade:"A", pop: "67M", median: 133000, mean: 312000, top10: 890000, top1: 2600000, desc: "Relatively balanced distribution. Strong social transfers support a healthy middle class." },
-        "IT": { flag: "🇮🇹", name: "Italy", grade:"A", pop: "59M", median: 112000, mean: 220000, top10: 650000, top1: 1900000, desc: "High family wealth transfers and widespread debt-free property ownership keep the median relatively high." },
-        "NL": { flag: "🇳🇱", name: "Netherlands", grade:"A", pop: "17M", median: 110000, mean: 360000, top10: 950000, top1: 3200000, desc: "High mortgage debt impacts net worth, but standard of living remains at global top tiers." },
-        "CN": { flag: "🇨🇳", name: "China", grade:"B", pop: "1.4B", median: 28000, mean: 76000, top10: 240000, top1: 1800000, desc: "Rapid urbanization and a growing middle class, though wealth remains tied heavily to real estate." },
-        "JP": { flag: "🇯🇵", name: "Japan", grade:"A", pop: "125M", median: 120000, mean: 245000, top10: 550000, top1: 1500000, desc: "High social equality. Japanese household wealth is predominantly held in liquid cash deposits." },
-        "IN": { flag: "🇮🇳", name: "India", grade:"C", pop: "1.4B", median: 3800, mean: 16500, top10: 25000, top1: 175000, desc: "Developing economy with significant wealth in top tiers, but a very low median relative to average." },
-        "SG": { flag: "🇸🇬", name: "Singapore", grade:"A", pop: "5.5M", median: 100000, mean: 390000, top10: 1100000, top1: 3800000, desc: "Global financial hub. Massive savings via CPF result in very strong balance sheets." },
-        "BR": { flag: "🇧🇷", name: "Brazil", grade:"B", pop: "214M", median: 4200, mean: 25000, top10: 80000, top1: 450000, desc: "High wealth inequality. A large percentage of assets are held within the top decile." },
-        "MX": { flag: "🇲🇽", name: "Mexico", grade:"B", pop: "126M", median: 15000, mean: 48000, top10: 120000, top1: 900000, desc: "Strong manufacturing wealth in urban centers contrasts with lower assets in rural sectors." },
-        "ZA": { flag: "🇿🇦", name: "South Africa", grade:"B", pop: "60M", median: 5200, mean: 24000, top10: 55000, top1: 350000, desc: "Extremely high inequality. The median is drastically decoupled from the national average." },
-        "NG": { flag: "🇳🇬", name: "Nigeria", grade:"C", pop: "213M", median: 1800, mean: 6500, top10: 18000, top1: 150000, desc: "Wealth primarily tied to resource ownership; broad population median remains low." },
-        "CL": { flag: "🇨🇱", name: "Chile", grade:"B", pop: "19M", median: 18000, mean: 54000, top10: 140000, top1: 850000, desc: "One of the highest median wealth figures in South America due to privatized pension systems." }
-    };
+const COUNTRY_DB = {
+  "USA": { flag: "🇺🇸", name: "United States", region: "Americas", grade: "A", pop: 254831886, median: 107700, top10: 1600000, top1: 5800000 },
+  "CAN": { flag: "🇨🇦", name: "Canada", region: "Americas", grade: "A", pop: 29156000, median: 137000, top10: 1100000, top1: 3400000 },
+  "AUS": { flag: "🇦🇺", name: "Australia", region: "Asia-Pacific", grade: "A", pop: 19850000, median: 260000, top10: 1300000, top1: 4500000 },
+  "CHE": { flag: "🇨🇭", name: "Switzerland", region: "Europe", grade: "A", pop: 7088000, median: 167000, top10: 1400000, top1: 8500000 },
+  "GBR": { flag: "🇬🇧", name: "United Kingdom", region: "Europe", grade: "A", pop: 52637000, median: 151000, top10: 850000, top1: 2800000 },
+  "DEU": { flag: "🇩🇪", name: "Germany", region: "Europe", grade: "A", pop: 69305000, median: 66700, top10: 725000, top1: 2500000 },
+  "FRA": { flag: "🇫🇷", name: "France", region: "Europe", grade: "A", pop: 52345000, median: 133000, top10: 890000, top1: 2600000 },
+  "ITA": { flag: "🇮🇹", name: "Italy", region: "Europe", grade: "A", pop: 51109000, median: 112000, top10: 650000, top1: 1900000 },
+  "ESP": { flag: "🇪🇸", name: "Spain", region: "Europe", grade: "A", pop: 38704000, median: 107000, top10: 580000, top1: 1700000 },
+  "NLD": { flag: "🇳🇱", name: "Netherlands", region: "Europe", grade: "A", pop: 13704000, median: 110000, top10: 950000, top1: 3200000 },
+  "BEL": { flag: "🇧🇪", name: "Belgium", region: "Europe", grade: "A", pop: 9087000, median: 230000, top10: 820000, top1: 2400000 },
+  "SWE": { flag: "🇸🇪", name: "Sweden", region: "Europe", grade: "A", pop: 8007000, median: 90000, top10: 650000, top1: 2100000 },
+  "NOR": { flag: "🇳🇴", name: "Norway", region: "Europe", grade: "A", pop: 4226000, median: 117000, top10: 750000, top1: 2500000 },
+  "DNK": { flag: "🇩🇰", name: "Denmark", region: "Europe", grade: "A", pop: 4556000, median: 95000, top10: 670000, top1: 2200000 },
+  "FIN": { flag: "🇫🇮", name: "Finland", region: "Europe", grade: "A", pop: 4424000, median: 89000, top10: 580000, top1: 1900000 },
+  "AUT": { flag: "🇦🇹", name: "Austria", region: "Europe", grade: "A", pop: 7388000, median: 94000, top10: 710000, top1: 2300000 },
+  "IRL": { flag: "🇮🇪", name: "Ireland", region: "Europe", grade: "A", pop: 3790000, median: 104000, top10: 850000, top1: 2900000 },
+  "POL": { flag: "🇵🇱", name: "Poland", region: "Europe", grade: "B", pop: 32198000, median: 30000, top10: 320000, top1: 1200000 },
+  "PRT": { flag: "🇵🇹", name: "Portugal", region: "Europe", grade: "B", pop: 8621000, median: 71000, top10: 460000, top1: 1400000 },
+  "GRC": { flag: "🇬🇷", name: "Greece", region: "Europe", grade: "B", pop: 9190000, median: 54000, top10: 390000, top1: 1200000 },
+  "CZE": { flag: "🇨🇿", name: "Czech Republic", region: "Europe", grade: "B", pop: 8903000, median: 41000, top10: 380000, top1: 1300000 },
+  "RUS": { flag: "🇷🇺", name: "Russia", region: "Europe", grade: "B", pop: 117543000, median: 12000, top10: 180000, top1: 950000 },
+  "CHN": { flag: "🇨🇳", name: "China", region: "Asia-Pacific", grade: "B", pop: 1100000000, median: 28000, top10: 240000, top1: 1800000 },
+  "JPN": { flag: "🇯🇵", name: "Japan", region: "Asia-Pacific", grade: "A", pop: 103290000, median: 120000, top10: 550000, top1: 1500000 },
+  "IND": { flag: "🇮🇳", name: "India", region: "Asia-Pacific", grade: "C", pop: 965860000, median: 3800, top10: 25000, top1: 175000 },
+  "SGP": { flag: "🇸🇬", name: "Singapore", region: "Asia-Pacific", grade: "A", pop: 4483000, median: 100000, top10: 1100000, top1: 3800000 },
+  "KOR": { flag: "🇰🇷", name: "South Korea", region: "Asia-Pacific", grade: "A", pop: 42759000, median: 72000, top10: 480000, top1: 1600000 },
+  "HKG": { flag: "🇭🇰", name: "Hong Kong", region: "Asia-Pacific", grade: "A", pop: 6225000, median: 150000, top10: 1300000, top1: 4200000 },
+  "NZL": { flag: "🇳🇿", name: "New Zealand", region: "Asia-Pacific", grade: "A", pop: 3710000, median: 185000, top10: 950000, top1: 3100000 },
+  "THA": { flag: "🇹🇭", name: "Thailand", region: "Asia-Pacific", grade: "B", pop: 54792000, median: 12000, top10: 95000, top1: 580000 },
+  "MYS": { flag: "🇲🇾", name: "Malaysia", region: "Asia-Pacific", grade: "B", pop: 24881000, median: 16000, top10: 130000, top1: 750000 },
+  "IDN": { flag: "🇮🇩", name: "Indonesia", region: "Asia-Pacific", grade: "B", pop: 197135000, median: 7800, top10: 56000, top1: 380000 },
+  "PHL": { flag: "🇵🇭", name: "Philippines", region: "Asia-Pacific", grade: "C", pop: 75090000, median: 3600, top10: 28000, top1: 210000 },
+  "VNM": { flag: "🇻🇳", name: "Vietnam", region: "Asia-Pacific", grade: "C", pop: 75691000, median: 5100, top10: 38000, top1: 270000 },
+  "BRA": { flag: "🇧🇷", name: "Brazil", region: "Americas", grade: "B", pop: 168273000, median: 4200, top10: 80000, top1: 450000 },
+  "MEX": { flag: "🇲🇽", name: "Mexico", region: "Americas", grade: "B", pop: 94425000, median: 15000, top10: 120000, top1: 900000 },
+  "ARG": { flag: "🇦🇷", name: "Argentina", region: "Americas", grade: "B", pop: 35195000, median: 8500, top10: 95000, top1: 620000 },
+  "CHL": { flag: "🇨🇱", name: "Chile", region: "Americas", grade: "B", pop: 14388000, median: 18000, top10: 140000, top1: 850000 },
+  "COL": { flag: "🇨🇴", name: "Colombia", region: "Americas", grade: "B", pop: 39398000, median: 6200, top10: 65000, top1: 420000 },
+  "PER": { flag: "🇵🇪", name: "Peru", region: "Americas", grade: "B", pop: 25527000, median: 5800, top10: 58000, top1: 390000 },
+  "ARE": { flag: "🇦🇪", name: "UAE", region: "Middle East", grade: "B", pop: 7298000, median: 42000, top10: 850000, top1: 3500000 },
+  "QAT": { flag: "🇶🇦", name: "Qatar", region: "Middle East", grade: "B", pop: 2193000, median: 65000, top10: 1100000, top1: 4200000 },
+  "SAU": { flag: "🇸🇦", name: "Saudi Arabia", region: "Middle East", grade: "B", pop: 26295000, median: 28000, top10: 420000, top1: 1900000 },
+  "ISR": { flag: "🇮🇱", name: "Israel", region: "Middle East", grade: "A", pop: 6657000, median: 89000, top10: 690000, top1: 2400000 },
+  "TUR": { flag: "🇹🇷", name: "Turkey", region: "Middle East", grade: "B", pop: 60042000, median: 8900, top10: 95000, top1: 580000 },
+  "ZAF": { flag: "🇿🇦", name: "South Africa", region: "Africa", grade: "B", pop: 41804000, median: 5200, top10: 55000, top1: 350000 },
+  "EGY": { flag: "🇪🇬", name: "Egypt", region: "Africa", grade: "C", pop: 66147000, median: 2800, top10: 22000, top1: 180000 },
+  "NGA": { flag: "🇳🇬", name: "Nigeria", region: "Africa", grade: "C", pop: 105594000, median: 1800, top10: 18000, top1: 150000 },
+  "KEN": { flag: "🇰🇪", name: "Kenya", region: "Africa", grade: "C", pop: 31793000, median: 2100, top10: 19000, top1: 160000 },
+  "MAR": { flag: "🇲🇦", name: "Morocco", region: "Africa", grade: "B", pop: 27389000, median: 4200, top10: 35000, top1: 240000 }
+};
 
-    function loadC(code) {
-        document.querySelectorAll('.c-btn').forEach(b => b.classList.remove('active'));
-        const btn = document.getElementById('btn' + code);
-        if(btn) btn.classList.add('active');
-        
-        const d = db[code];
-        const fmt = (n) => n >= 1000000 ? "$" + (n/1000000).toFixed(1) + "M" : "$" + (n/1000).toFixed(0) + "k";
-        const fmtFull = (n) => "$" + n.toLocaleString();
+const REGION_ORDER = ["Americas", "Europe", "Asia-Pacific", "Middle East", "Africa"];
+const COUNTRY_CODES = Object.keys(COUNTRY_DB);
+let activeCode = "USA";
 
-        document.getElementById('dName').innerText = d.name;
-        document.getElementById('dFlag').innerText = d.flag;
-        document.getElementById('qBadge').innerText = "Data Grade: " + d.grade;
-        document.getElementById('dPop').innerText = "Pop: " + d.pop;
-        document.getElementById('dMedian').innerText = fmtFull(d.median);
-        document.getElementById('dMean').innerText = fmtFull(d.mean);
-        document.getElementById('dDesc').innerText = d.desc;
-        
-        const ratio = (d.mean / d.median).toFixed(1);
-        document.getElementById('dRatio').innerText = "Skew: " + ratio + "x";
+const searchEl = document.getElementById('countrySearch');
+const sortEl = document.getElementById('sortMode');
+const sidebarEl = document.getElementById('countrySidebar');
 
-        const max = d.top1; 
-        const setBar = (idBar, idVal, val) => {
-            const el = document.getElementById(idBar);
-            const w = Math.max(1, (val / max) * 100);
-            el.style.width = w + "%";
-            document.getElementById(idVal).innerText = fmt(val);
-        };
-        
-        setBar('bar1', 'val1', d.top1);
-        setBar('bar10', 'val10', d.top10);
-        setBar('barMid', 'valMid', d.median);
+function fmtCurrency(n) {
+  return '$' + n.toLocaleString();
+}
+
+function fmtShortMoney(n) {
+  if (n >= 1000000) return '$' + (n / 1000000).toFixed(1) + 'M';
+  if (n >= 1000) return '$' + (n / 1000).toFixed(1) + 'K';
+  return '$' + n.toFixed(0);
+}
+
+function fmtPop(n) {
+  if (n >= 1000000000) return (n / 1000000000).toFixed(1) + 'B';
+  if (n >= 1000000) return (n / 1000000).toFixed(0) + 'M';
+  return n.toLocaleString();
+}
+
+function gradeClass(grade) {
+  return grade === 'A' ? 'grade-a' : grade === 'B' ? 'grade-b' : 'grade-c';
+}
+
+function getInsight(d) {
+  const c1 = d.top1 / d.median;
+  const c10 = d.top10 / d.median;
+
+  if (c1 >= 100) {
+    return 'This market shows very high concentration: top-tier thresholds are far above the median wealth floor, so headline averages can overstate typical balance-sheet strength.';
+  }
+  if (c1 >= 55) {
+    return 'Concentration is elevated: the top percentile sits materially above median households, indicating a wide dispersion between typical and upper-tier wealth positions.';
+  }
+  if (c10 <= 7) {
+    return 'Distribution appears comparatively flatter in this sample: top-decile thresholds are closer to median levels than in highly concentrated markets.';
+  }
+  return 'The wealth ladder is meaningful but not extreme: movement from median to top tiers requires substantial asset accumulation, yet concentration remains moderate versus global outliers.';
+}
+
+function sortCodes(codes, mode) {
+  const arr = [...codes];
+  if (mode === 'median_desc') {
+    return arr.sort((a, b) => COUNTRY_DB[b].median - COUNTRY_DB[a].median);
+  }
+  if (mode === 'top1_desc') {
+    return arr.sort((a, b) => COUNTRY_DB[b].top1 - COUNTRY_DB[a].top1);
+  }
+  if (mode === 'concentration_desc') {
+    return arr.sort((a, b) => (COUNTRY_DB[b].top1 / COUNTRY_DB[b].median) - (COUNTRY_DB[a].top1 / COUNTRY_DB[a].median));
+  }
+  return arr.sort((a, b) => COUNTRY_DB[a].name.localeCompare(COUNTRY_DB[b].name));
+}
+
+function getFilteredCodes() {
+  const q = searchEl.value.trim().toLowerCase();
+  const mode = sortEl.value;
+  const filtered = COUNTRY_CODES.filter((code) => {
+    const d = COUNTRY_DB[code];
+    if (!q) return true;
+    return d.name.toLowerCase().includes(q) || code.toLowerCase().includes(q) || d.region.toLowerCase().includes(q);
+  });
+  return sortCodes(filtered, mode);
+}
+
+function buildSidebar() {
+  const codes = getFilteredCodes();
+  const byRegion = {};
+  for (const region of REGION_ORDER) byRegion[region] = [];
+
+  for (const code of codes) {
+    byRegion[COUNTRY_DB[code].region].push(code);
+  }
+
+  if (!codes.includes(activeCode)) {
+    activeCode = codes[0] || null;
+  }
+
+  if (!codes.length) {
+    sidebarEl.innerHTML = '<div class="empty-state">No countries match your search. Try another keyword.</div>';
+    return;
+  }
+
+  let html = '';
+  for (const region of REGION_ORDER) {
+    if (!byRegion[region].length) continue;
+    html += '<section class="region">';
+    html += '<div class="region-head">' + region + ' (' + byRegion[region].length + ')</div>';
+    for (const code of byRegion[region]) {
+      const d = COUNTRY_DB[code];
+      const active = code === activeCode ? ' active' : '';
+      html += '<button class="country-btn' + active + '" data-code="' + code + '">';
+      html += '<span class="left"><span>' + d.flag + '</span><span>' + d.name + '</span></span>';
+      html += '<span class="meta">' + d.grade + '</span>';
+      html += '</button>';
     }
+    html += '</section>';
+  }
 
-    window.onload = function() {
-        setTimeout(() => { loadC('USA'); }, 50);
-    };
+  sidebarEl.innerHTML = html;
+
+  sidebarEl.querySelectorAll('.country-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeCode = btn.dataset.code;
+      buildSidebar();
+      loadCountry(activeCode);
+    });
+  });
+}
+
+function loadCountry(code) {
+  const d = COUNTRY_DB[code];
+  if (!d) return;
+
+  const c1 = d.top1 / d.median;
+  const c10 = d.top10 / d.median;
+
+  document.getElementById('countryName').textContent = d.name;
+  document.getElementById('countrySub').textContent = 'Wealth distribution profile, USD equivalent thresholds';
+  document.getElementById('countryFlag').textContent = d.flag;
+  document.getElementById('countryRegion').textContent = 'Region: ' + d.region;
+  document.getElementById('countryPop').textContent = 'Adult pop: ' + fmtPop(d.pop);
+
+  const gradeEl = document.getElementById('countryGrade');
+  gradeEl.textContent = 'Grade ' + d.grade;
+  gradeEl.className = 'badge ' + gradeClass(d.grade);
+
+  document.getElementById('medianVal').textContent = fmtCurrency(d.median);
+  document.getElementById('top10Val').textContent = fmtCurrency(d.top10);
+  document.getElementById('top1Val').textContent = fmtCurrency(d.top1);
+  document.getElementById('concVal').textContent = c1.toFixed(1) + 'x';
+  document.getElementById('gapVal').textContent = 'Top10/Median: ' + c10.toFixed(1) + 'x';
+
+  document.getElementById('rowTop1').textContent = fmtShortMoney(d.top1);
+  document.getElementById('rowTop10').textContent = fmtShortMoney(d.top10);
+  document.getElementById('rowMedian').textContent = fmtShortMoney(d.median);
+
+  document.getElementById('barTop1').style.width = '100%';
+  document.getElementById('barTop10').style.width = Math.max(2, (d.top10 / d.top1) * 100).toFixed(2) + '%';
+  document.getElementById('barMedian').style.width = Math.max(1, (d.median / d.top1) * 100).toFixed(2) + '%';
+
+  document.getElementById('insightText').textContent = getInsight(d);
+}
+
+function updateCoverage() {
+  document.getElementById('coverageCount').textContent = COUNTRY_CODES.length + ' countries';
+}
+
+searchEl.addEventListener('input', () => {
+  buildSidebar();
+  if (activeCode) loadCountry(activeCode);
+});
+
+sortEl.addEventListener('change', () => {
+  buildSidebar();
+  if (activeCode) loadCountry(activeCode);
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  updateCoverage();
+  buildSidebar();
+  if (activeCode) loadCountry(activeCode);
+});
 </script>
 </body>
 </html>
