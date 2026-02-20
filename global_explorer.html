@@ -774,9 +774,6 @@ function buildSidebar() {
     return;
   }
 
-  const activeRegion = activeCode ? COUNTRY_DB[activeCode].region : null;
-  if (activeRegion) collapsedRegions.delete(activeRegion);
-
   let html = '<div class="sidebar-controls"><button type="button" data-action="expand-all">Expand All</button><button type="button" data-action="collapse-all">Collapse All</button></div>';
   for (const region of REGION_ORDER) {
     if (!byRegion[region].length) continue;
@@ -823,7 +820,6 @@ function buildSidebar() {
         collapsedRegions.clear();
       } else {
         collapsedRegions = new Set(REGION_ORDER);
-        if (activeCode) collapsedRegions.delete(COUNTRY_DB[activeCode].region);
       }
       persistCollapsedRegions();
       buildSidebar();
