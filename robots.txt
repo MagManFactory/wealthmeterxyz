@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://wealthmeter.xyz/sitemap.xml
+Sitemap: https://wealthmeter.xyz/sitemap-index.xml
