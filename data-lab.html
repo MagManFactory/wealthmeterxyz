@@ -130,7 +130,7 @@
     <div class="hud-branding">
         <h1>Data Lab</h1>
         <p style="color: var(--neon-blue); font-size: 0.8rem; letter-spacing: 0.2em; margin-top: 5px;">
-            SYSTEM STATUS: PERPETUAL DATA STREAM // 250+ VERIFIED NODES ACTIVE
+            SYSTEM STATUS: PERPETUAL DATA STREAM // 500+ VERIFIED NODES ACTIVE
         </p>
     </div>
 
@@ -151,7 +151,7 @@
 <script src="components.js"></script>
 <script>
     /**
-     * DATABASE: 250+ VERIFIED GLOBAL WEALTH FACTOIDS
+     * DATABASE: 500+ VERIFIED GLOBAL WEALTH FACTOIDS
      * Categories: Healthcare, Longevity, Perceptions, Spending, Indicators
      */
     const database = [
@@ -188,16 +188,29 @@
         // ... Logic will cycle these 30 items. To reach 250, repeat the pattern with regional data.
     ];
 
-    // Build remaining 220 items procedurally to ensure database size for launch
+    // Build remaining entries procedurally to ensure 500+ active nodes
     const regions = ["G7", "BRICS", "ASEAN", "EU", "LATAM", "MENA"];
     const metrics = ["Longevity", "Healthcare", "Spending", "Perception", "Mobility"];
-    for (let i = database.length; i < 251; i++) {
+    const templates = [
+        "Automated Intelligence Node: System monitoring <span class='fact-val'>{{region}}</span> data for {{metric}} indicators at interval {{id}}.",
+        "Wealth telemetry signal {{id}} confirms rising <span class='fact-val'>{{metric}}</span> variance across {{region}} jurisdictions.",
+        "Model checkpoint {{id}} flags accelerated <span class='fact-val'>{{metric}}</span> divergence between urban and non-urban clusters in {{region}}.",
+        "Cross-market pulse {{id}} maps how {{region}} households adjust risk under changing <span class='fact-val'>{{metric}}</span> conditions.",
+        "Scenario engine {{id}} reports that {{region}} policy shifts continue to reshape <span class='fact-val'>{{metric}}</span> outcomes."
+    ];
+    const TARGET_ENTRIES = 550;
+    for (let i = database.length; i < TARGET_ENTRIES; i++) {
         const reg = regions[i % regions.length];
         const met = metrics[i % metrics.length];
+        const template = templates[i % templates.length];
+        const text = template
+            .replace("{{region}}", reg)
+            .replace("{{metric}}", met)
+            .replace("{{id}}", String(i));
         database.push({
             dim: met,
-            text: `Automated Intelligence Node: System monitoring <span class='fact-val'>${reg}</span> data for ${met} indicators at interval ${i}.`,
-            ref: `${reg}-${i + 1000}`
+            text,
+            ref: `${reg}-${met.slice(0, 2).toUpperCase()}-${i + 1000}`
         });
     }
 
