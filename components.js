@@ -17,6 +17,7 @@ const sharedStyles = `
     .label-rank { color: #FF4B4B !important; }
     .label-rate { color: #00bcd4 !important; }
     .label-analyze { color: #2563eb !important; }
+    .label-longform { color: #0ea5e9 !important; }
 
     /* Layout Standards */
     header { 
@@ -215,6 +216,16 @@ const siteHeader = `
                     <a href="atlas.html">Atlas View</a>
                     <a href="data-lab.html">Data Lab</a>
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
+                <div class="dropdown">
+                    <a href="longform.html" style="color: #2563eb; font-weight: 800;">Longform Hub</a>
+                    <a href="rich-or-just-in-a-bubble.html">Are You Rich or Just in a Bubble?</a>
+                    <a href="great-baseline-war.html">The Great Baseline War</a>
+                    <a href="one-salary-three-futures.html">One Salary, Three Futures</a>
+                    <a href="crypto-etf-wealth-effect.html">Crypto ETF Wealth Effect</a>
+                    <a href="new-middle-class-trap.html">The New Middle-Class Trap</a>
                 </div>
             </div>
             <a href="https://lifemeter.xyz" target="_blank" style="font-weight:900; font-size:0.9rem; color:#FF4B4B; text-decoration:none; text-transform:uppercase; letter-spacing:0.12em; white-space: nowrap;">LifeMeter ↗</a>
