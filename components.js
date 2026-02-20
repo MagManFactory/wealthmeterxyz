@@ -63,7 +63,7 @@ const sharedStyles = `
         height: 100%; 
         white-space: nowrap; 
     }
-    .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
+    .nav-group-label { font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; }
     .nav-group:hover .dropdown { display: block !important; }
     
     .dropdown { 
@@ -217,7 +217,7 @@ const siteHeader = `
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
                 </div>
             </div>
-            <a href="https://lifemeter.xyz" target="_blank" style="font-weight:900; font-size:0.85rem; color:#FF4B4B; text-decoration:none; text-transform:uppercase; letter-spacing:0.12em; white-space: nowrap;">LifeMeter ↗</a>
+            <a href="https://lifemeter.xyz" target="_blank" style="font-weight:900; font-size:0.9rem; color:#FF4B4B; text-decoration:none; text-transform:uppercase; letter-spacing:0.12em; white-space: nowrap;">LifeMeter ↗</a>
         </nav>
     </div>
 </header>`;
