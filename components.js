@@ -226,6 +226,7 @@ const siteHeader = `
                     <a href="one-salary-three-futures.html">One Salary, Three Futures</a>
                     <a href="crypto-etf-wealth-effect.html">Crypto ETF Wealth Effect</a>
                     <a href="new-middle-class-trap.html">The New Middle-Class Trap</a>
+                    <a href="inside-wealth-china-india.html">Inside Wealth in China + India</a>
                 </div>
             </div>
             <a href="https://lifemeter.xyz" target="_blank" style="font-weight:900; font-size:0.9rem; color:#FF4B4B; text-decoration:none; text-transform:uppercase; letter-spacing:0.12em; white-space: nowrap;">LifeMeter ↗</a>
