@@ -16,6 +16,7 @@
 - Prefer CSS variables instead of fixed light-only colors (`#0f172a`, `#1e293b`, etc.) for body copy and labels.
 - For longform warning/overstatement blocks, keep class name `.callout` so shared dark-mode styling auto-converts the light gradient panel to a dark readable panel.
 
+- If a card/panel uses `background:` (especially gradients), dark-mode override must also use `background:` (not only `background-color:`) to avoid light panels in dark mode.
 ## Pre-Publish Theme QA (required)
 - Verify both `light` and `dark` modes on:
   - header + footer contrast
