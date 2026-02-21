@@ -146,6 +146,46 @@ const sharedStyles = `
     body.dark-mode .dropdown a { color: #cbd5e1; }
     body.dark-mode .dropdown a:hover { background: #1e293b; color: #f8fafc; }
     body.dark-mode .global-theme-toggle { background: #0f172a; border-color: #334155; color: #f8fafc; }
+
+    /* Readability guardrails for content templates with hard-coded light-mode text colors. */
+    body.dark-mode main h1,
+    body.dark-mode main h2,
+    body.dark-mode main h3,
+    body.dark-mode main h4,
+    body.dark-mode main h5,
+    body.dark-mode main h6,
+    body.dark-mode .container h1,
+    body.dark-mode .container h2,
+    body.dark-mode .container h3,
+    body.dark-mode .container h4,
+    body.dark-mode .container h5,
+    body.dark-mode .container h6 { color: #f8fafc !important; }
+    body.dark-mode main p,
+    body.dark-mode main li,
+    body.dark-mode main dd,
+    body.dark-mode main dt,
+    body.dark-mode main blockquote,
+    body.dark-mode .container p,
+    body.dark-mode .container li,
+    body.dark-mode .container dd,
+    body.dark-mode .container dt,
+    body.dark-mode .container blockquote { color: #cbd5e1 !important; }
+    body.dark-mode main label,
+    body.dark-mode .container label { color: #94a3b8 !important; }
+    body.dark-mode main h2 { border-top-color: #334155 !important; }
+    body.dark-mode main a { color: #93c5fd; }
+    body.dark-mode main .card,
+    body.dark-mode main .panel,
+    body.dark-mode main .glass-panel,
+    body.dark-mode main .highlight-box,
+    body.dark-mode main .longevity-dashboard,
+    body.dark-mode main .diagnostic-card,
+    body.dark-mode .card {
+        background-color: #0f172a !important;
+        border-color: #334155 !important;
+        color: #e2e8f0 !important;
+    }
+
     body.dark-mode input,
     body.dark-mode select,
     body.dark-mode textarea {
