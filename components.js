@@ -223,8 +223,9 @@ const sharedStyles = `
     body.dark-mode .longevity-dashboard,
     body.dark-mode .diagnostic-card,
     body.dark-mode .highlight-box,
+    body.dark-mode .summary,
     body.dark-mode .card {
-        background-color: #0f172a !important;
+        background: #0f172a !important;
         border-color: #334155 !important;
         color: #e2e8f0 !important;
     }
