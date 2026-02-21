@@ -14,6 +14,7 @@
 - Use `dark-mode` only (not `dark`) for class-based theme styling.
 - Avoid hard-coding dark text for emphasis in article templates (`strong`, `b`, `em`); let shared dark-mode rules handle contrast.
 - Prefer CSS variables instead of fixed light-only colors (`#0f172a`, `#1e293b`, etc.) for body copy and labels.
+- For longform warning/overstatement blocks, keep class name `.callout` so shared dark-mode styling auto-converts the light gradient panel to a dark readable panel.
 
 ## Pre-Publish Theme QA (required)
 - Verify both `light` and `dark` modes on:

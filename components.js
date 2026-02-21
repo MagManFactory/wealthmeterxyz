@@ -210,6 +210,15 @@ const sharedStyles = `
     body.dark-mode .tutorial-meta,
     body.dark-mode .main-subtitle,
     body.dark-mode .secondary-subtitle { color: #94a3b8 !important; }
+    body.dark-mode .callout,
+    body.dark-mode main .callout,
+    body.dark-mode article .callout,
+    body.dark-mode .article .callout,
+    body.dark-mode .container .callout {
+        background: linear-gradient(130deg, #0f172a, #111c33) !important;
+        border-left-color: #22d3ee !important;
+    }
+    body.dark-mode .callout p { color: #cbd5e1 !important; }
     body.dark-mode .btn-action {
         background: #1d4ed8 !important;
         color: #f8fafc !important;
