@@ -140,6 +140,8 @@ const sharedStyles = `
     body.dark-mode article { color: #e2e8f0; }
     body.dark-mode header { background: rgba(2, 6, 23, 0.94); border-bottom-color: #334155; }
     body.dark-mode footer { background: #0b1220; border-top-color: #334155; }
+    body.dark-mode footer .footer-links a { color: #cbd5e1; }
+    body.dark-mode footer .footer-links a:hover { color: #f8fafc; }
     body.dark-mode .dropdown { background: #0f172a; border-color: #334155; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
     body.dark-mode .dropdown a { color: #cbd5e1; }
     body.dark-mode .dropdown a:hover { background: #1e293b; color: #f8fafc; }
@@ -250,18 +252,20 @@ function syncThemeToggleVisual(toggleEl) {
     const dark = document.body.classList.contains("dark-mode");
     toggleEl.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
     toggleEl.setAttribute("title", dark ? "Switch to light mode" : "Switch to dark mode");
-    if (toggleEl.classList.contains("global-theme-toggle")) {
+    if (toggleEl.classList.contains("global-theme-toggle") || !toggleEl.querySelector("svg")) {
         toggleEl.textContent = dark ? "☀" : "☾";
     }
+}
+
+function syncAllThemeToggles() {
+    document.querySelectorAll(".global-theme-toggle, .theme-toggle").forEach(syncThemeToggleVisual);
 }
 
 function applyTheme(mode) {
     const dark = mode === "dark";
     document.body.classList.toggle("dark-mode", dark);
     localStorage.setItem("wealthmeter_theme", dark ? "dark" : "light");
-    syncThemeToggleVisual(document.querySelector(".global-theme-toggle"));
-    const nativeToggle = document.querySelector(".theme-toggle");
-    if (nativeToggle) syncThemeToggleVisual(nativeToggle);
+    syncAllThemeToggles();
 }
 
 function toggleTheme() {
@@ -281,24 +285,31 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.add("dark-mode");
     }
 
-    const existingToggle = document.querySelector(".theme-toggle");
-    if (existingToggle) {
-        const hasInlineToggle = existingToggle.hasAttribute("onclick");
-        if (!hasInlineToggle) {
-            existingToggle.addEventListener("click", (event) => {
-                event.preventDefault();
-                toggleTheme();
-            });
-        }
-        syncThemeToggleVisual(existingToggle);
-    } else {
-        const toggle = document.createElement("button");
-        toggle.className = "global-theme-toggle";
-        toggle.type = "button";
-        toggle.addEventListener("click", toggleTheme);
-        document.body.appendChild(toggle);
-        syncThemeToggleVisual(toggle);
+    document.querySelectorAll(".theme-toggle").forEach((toggleEl) => {
+        toggleEl.removeAttribute("onclick");
+        if (toggleEl.dataset.themeToggleBound === "1") return;
+        toggleEl.addEventListener("click", (event) => {
+            event.preventDefault();
+            toggleTheme();
+        });
+        toggleEl.dataset.themeToggleBound = "1";
+    });
+
+    let globalToggle = document.querySelector(".global-theme-toggle");
+    if (!globalToggle) {
+        globalToggle = document.createElement("button");
+        globalToggle.className = "global-theme-toggle";
+        globalToggle.type = "button";
+        document.body.appendChild(globalToggle);
     }
+    if (globalToggle.dataset.themeToggleBound !== "1") {
+        globalToggle.addEventListener("click", (event) => {
+            event.preventDefault();
+            toggleTheme();
+        });
+        globalToggle.dataset.themeToggleBound = "1";
+    }
+    syncAllThemeToggles();
 
     // Keep backward compatibility for pages using inline onclick="toggleTheme()".
     window.toggleTheme = toggleTheme;

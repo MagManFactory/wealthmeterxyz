@@ -70,7 +70,7 @@
       <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ads Settings</a>.
     </p>
   </main>
-  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" onclick="toggleTheme()">☾</button>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
   <script>
     const THEME_KEY = "wealthmeter_theme";
     const toggle = document.getElementById("themeToggle");
@@ -89,6 +89,7 @@
       localStorage.setItem(THEME_KEY, document.body.classList.contains("dark-mode") ? "dark" : "light");
       sync();
     }
+    toggle.addEventListener("click", toggleTheme);
   </script>
 </body>
 </html>
