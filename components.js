@@ -172,6 +172,18 @@ const sharedStyles = `
     body.dark-mode .container blockquote { color: #cbd5e1 !important; }
     body.dark-mode main label,
     body.dark-mode .container label { color: #94a3b8 !important; }
+    body.dark-mode main strong,
+    body.dark-mode main b,
+    body.dark-mode main em,
+    body.dark-mode article strong,
+    body.dark-mode article b,
+    body.dark-mode article em,
+    body.dark-mode .article strong,
+    body.dark-mode .article b,
+    body.dark-mode .article em,
+    body.dark-mode .container strong,
+    body.dark-mode .container b,
+    body.dark-mode .container em { color: #f8fafc !important; }
     body.dark-mode main h2 { border-top-color: #334155 !important; }
     body.dark-mode main a { color: #93c5fd; }
     body.dark-mode main .card,
