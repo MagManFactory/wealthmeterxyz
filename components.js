@@ -66,6 +66,7 @@ const sharedStyles = `
     }
     .nav-group-label { font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; }
     .nav-group:hover .dropdown { display: block !important; }
+    .nav-group.open .dropdown { display: block !important; }
     
     .dropdown { 
         display: none; 
@@ -290,6 +291,33 @@ const sharedStyles = `
     body.dark-mode [style*="color: #475569"] {
         color: #e2e8f0 !important;
     }
+
+    @media (max-width: 1024px) {
+        header { position: relative; }
+        .nav-container { height: auto; min-height: 72px; padding: 0.75rem 1rem; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+        nav {
+            width: 100%;
+            gap: 1rem;
+            overflow-x: auto;
+            padding-bottom: 0.25rem;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        nav::-webkit-scrollbar { display: none; }
+        .nav-group { height: auto; }
+        .nav-group-label { font-size: 0.72rem; }
+        .dropdown {
+            position: fixed;
+            left: 1rem;
+            right: 1rem;
+            top: 76px;
+            min-width: 0;
+            max-height: 68vh;
+            overflow-y: auto;
+            margin-top: 0;
+        }
+        .dropdown a { font-size: 0.95rem; }
+    }
 </style>
 `;
 
@@ -424,6 +452,22 @@ document.addEventListener("DOMContentLoaded", () => {
         globalToggle.dataset.themeToggleBound = "1";
     }
     syncAllThemeToggles();
+
+    // Touch/mobile support: tap nav label to open/close dropdown menus.
+    if (window.matchMedia("(max-width: 1024px)").matches) {
+        const groups = Array.from(document.querySelectorAll(".nav-group"));
+        groups.forEach((group) => {
+            group.addEventListener("click", (event) => {
+                event.stopPropagation();
+                const wasOpen = group.classList.contains("open");
+                groups.forEach((g) => g.classList.remove("open"));
+                if (!wasOpen) group.classList.add("open");
+            });
+        });
+        document.addEventListener("click", () => {
+            groups.forEach((g) => g.classList.remove("open"));
+        });
+    }
 
     // Keep backward compatibility for pages using inline onclick="toggleTheme()".
     window.toggleTheme = toggleTheme;
