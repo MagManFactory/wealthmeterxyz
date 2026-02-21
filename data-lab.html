@@ -115,72 +115,58 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        .insight-zone {
-            border: 2px solid #0f2740;
-            background: linear-gradient(180deg, #061223 0%, #030b16 100%);
-            border-radius: 6px;
-            padding: 16px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
+        .insight-flash {
+            position: fixed;
+            right: 22px;
+            top: 108px;
+            width: clamp(300px, 30vw, 520px);
+            background: linear-gradient(180deg, rgba(3, 14, 28, 0.98) 0%, rgba(2, 9, 20, 0.98) 100%);
+            border: 2px solid #1d3652;
+            border-radius: 10px;
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+            padding: 14px 16px;
+            z-index: 50;
+            opacity: 0;
+            transform: translateY(-10px) scale(0.985);
+            transition: opacity 0.28s ease, transform 0.28s ease;
+            pointer-events: none;
         }
 
-        .insight-zone-header {
-            color: var(--neon-blue);
-            font-size: 0.75rem;
+        .insight-flash.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .insight-flash-badge {
+            color: var(--neon-amber);
+            font-size: 0.74rem;
             letter-spacing: 0.16em;
             text-transform: uppercase;
             font-weight: 700;
-            margin: 0 0 12px;
+            margin-bottom: 8px;
         }
 
-        .insight-deck {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 12px;
-        }
-
-        .insight-card {
-            background: rgba(2, 9, 20, 0.88);
-            border: 1px solid #1d3652;
-            border-radius: 6px;
-            padding: 12px;
-            min-height: 128px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            opacity: 1;
-            transition: opacity 0.24s ease;
-        }
-
-        .insight-card.is-fading {
-            opacity: 0;
-        }
-
-        .insight-label {
-            color: var(--neon-amber);
-            font-size: 0.72rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        .insight-text {
+        .insight-flash-text {
             color: #dbeafe;
-            font-size: 0.82rem;
-            line-height: 1.45;
+            font-size: 0.9rem;
+            line-height: 1.5;
             display: -webkit-box;
-            -webkit-line-clamp: 4;
+            -webkit-line-clamp: 5;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
 
-        .insight-meta {
-            margin-top: auto;
+        .insight-flash-meta {
+            margin-top: 10px;
             color: #94a3b8;
-            font-size: 0.68rem;
+            font-size: 0.72rem;
             line-height: 1.35;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
         }
 
-        .insight-ref {
+        .insight-flash-ref {
             color: var(--neon-blue);
         }
 
@@ -191,11 +177,17 @@
                 gap: 10px;
             }
             .hud-branding h1 { font-size: 2rem; }
-            .insight-deck {
-                grid-template-columns: 1fr;
+            .insight-flash {
+                right: 12px;
+                left: 12px;
+                width: auto;
+                top: auto;
+                bottom: 18px;
+                padding: 12px;
             }
-            .insight-card {
-                min-height: 108px;
+            .insight-flash-text {
+                font-size: 0.84rem;
+                -webkit-line-clamp: 4;
             }
         }
     </style>
@@ -223,11 +215,9 @@
             </div>
     </div>
 
-    <div class="insight-zone">
-        <p class="insight-zone-header">INSIGHT ROTATION</p>
-        <div id="insightDeck" class="insight-deck"></div>
-    </div>
 </div>
+
+<div id="insightFlash" class="insight-flash" aria-live="polite"></div>
 
 <div id="footer-placeholder"></div>
 
@@ -235,7 +225,7 @@
 <script>
     /**
      * DATABASE: 1000+ VERIFIED GLOBAL WEALTH FACTOIDS // MULTI-SOURCE REAL-DATA NODES (WB + WID + OECD + CENSUS)
-     * Categories: GDP, Spending, Demographics, Longevity, Inequality, Wealth, Labor Market, Growth, Insight, Insight
+     * Categories: GDP, Spending, Demographics, Longevity, Inequality, Wealth, Labor Market, Growth, Insight
      */
     const database = [
         { dim: 'Demographics', text: 'In <span class=\'fact-val\'>Afghanistan</span>, summing U.S. Census IDB POP across ages 0-100+ gives <span class=\'fact-val\'>48,001,842</span> in 2024.', ref: 'USC-IDBPOP-AFGHANIS9941-2024', source: 'U.S. Census Bureau International Data Base (IDB 1-year, accessed 2026-02-20)' },
@@ -2096,12 +2086,13 @@
     ];
 
     const list = document.getElementById('rollingList');
-    const insightDeck = document.getElementById('insightDeck');
+    const insightFlash = document.getElementById('insightFlash');
     let currentIndex = 0;
     let sourceQueue = [];
     let sourceQueueIndex = 0;
     let insightQueue = [];
     let insightQueueIndex = 0;
+    let insightHideTimer = null;
 
     function shuffleArray(items) {
         const arr = items.slice();
@@ -2170,39 +2161,25 @@
         return row;
     }
 
-    function createInsightCard(item) {
-        const card = document.createElement('div');
-        card.className = 'insight-card';
-        card.innerHTML = `
-            <div class="insight-label">INSIGHT:</div>
-            <div class="insight-text">${item ? item.text : 'No insight data loaded.'}</div>
-            <div class="insight-meta">
-                <div class="insight-ref">${item ? item.ref : ''}</div>
-                <div>${item ? item.source : ''}</div>
+    function showFlashInsight() {
+        if (!insightFlash) return;
+        const item = nextInsightEntry();
+        if (!item) return;
+
+        insightFlash.innerHTML = `
+            <div class="insight-flash-badge">INSIGHT:</div>
+            <div class="insight-flash-text">${item.text}</div>
+            <div class="insight-flash-meta">
+                <div class="insight-flash-ref">${item.ref}</div>
+                <div>${item.source}</div>
             </div>
         `;
-        return card;
-    }
 
-    function refreshInsightCards() {
-        if (!insightDeck) return;
-        const cards = Array.from(insightDeck.children);
-        if (!cards.length) return;
-        cards.forEach((card) => card.classList.add('is-fading'));
-        setTimeout(() => {
-            cards.forEach((card) => {
-                const item = nextInsightEntry();
-                card.innerHTML = `
-                    <div class="insight-label">INSIGHT:</div>
-                    <div class="insight-text">${item ? item.text : 'No insight data loaded.'}</div>
-                    <div class="insight-meta">
-                        <div class="insight-ref">${item ? item.ref : ''}</div>
-                        <div>${item ? item.source : ''}</div>
-                    </div>
-                `;
-                card.classList.remove('is-fading');
-            });
-        }, 220);
+        insightFlash.classList.add('is-visible');
+        if (insightHideTimer) clearTimeout(insightHideTimer);
+        insightHideTimer = setTimeout(() => {
+            insightFlash.classList.remove('is-visible');
+        }, 4300);
     }
 
     // Initial populate: Fill the board with 11 rows using mixed dimensions
@@ -2213,12 +2190,8 @@
         currentIndex++;
     }
 
-    // Insight cards populate and rotation.
-    if (insightDeck) {
-        for (let i = 0; i < 3; i++) {
-            insightDeck.appendChild(createInsightCard(nextInsightEntry()));
-        }
-    }
+    // First flash after load.
+    setTimeout(showFlashInsight, 1200);
 
     /**
      * PERPETUAL ROLLING MECHANISM
@@ -2245,7 +2218,7 @@
 
     // Automatic Trigger: 4-second intervals for optimal reading speed
     setInterval(roll, 4000);
-    setInterval(refreshInsightCards, 6500);
+    setInterval(showFlashInsight, 10000);
 </script>
 
 </body>
