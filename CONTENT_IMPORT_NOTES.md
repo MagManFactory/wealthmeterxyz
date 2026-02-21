@@ -24,3 +24,8 @@
   - inputs/selects/help text
   - primary CTA button readability
 - Hard refresh check (`Cmd+Shift+R`) after deploy before sign-off.
+
+
+## Theme Lint Command
+- Run before publish: `python3 scripts/lint_theme_integration.py`
+- This checks sitemap pages for required header/footer/components wiring, dark-mode toggle hygiene, and overstatement callout wrappers.
