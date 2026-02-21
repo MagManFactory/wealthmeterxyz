@@ -143,7 +143,8 @@
         .app-content-area { flex-grow: 1; display: flex; align-items: flex-start; justify-content: center; padding: 70px 20px 50px; }
         .hero-grid { width: 100%; max-width: 1200px; display: grid; grid-template-columns: minmax(260px, 0.8fr) minmax(360px, 540px); gap: 48px; align-items: start; }
         .hero-copy { padding: 6px 0; }
-        .hero-badge { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--primary); background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.25); padding: 8px 14px; border-radius: 999px; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--primary); background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.25); padding: 8px 14px; border-radius: 999px; text-decoration: none; }
+        .hero-badge:hover { background: rgba(37,99,235,0.18); border-color: rgba(37,99,235,0.35); }
         .hero-title { font-family: 'Outfit', sans-serif; font-size: 52px; line-height: 1.05; letter-spacing: -0.02em; margin: 18px 0 12px; }
         .hero-sub { color: var(--text-muted); font-size: 16px; line-height: 1.75; max-width: 520px; }
         .hero-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
@@ -261,7 +262,7 @@
 <div class="app-content-area">
     <div class="hero-grid">
         <div class="hero-copy">
-            <div class="hero-badge">2026 Reports Hub</div>
+            <a class="hero-badge" href="reports.html">2026 Reports Hub</a>
             <div class="hero-title">Discover Your True Global Wealth Rank</div>
             <div class="hero-sub">Instantly benchmark your net worth against global distribution models. Compare UBS covered‑market adults against a UN WPP global adult baseline for a clearer perspective.</div>
             <div class="hero-metrics">
