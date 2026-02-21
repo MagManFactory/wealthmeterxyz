@@ -180,10 +180,34 @@ const sharedStyles = `
     body.dark-mode main .highlight-box,
     body.dark-mode main .longevity-dashboard,
     body.dark-mode main .diagnostic-card,
+    body.dark-mode .longevity-dashboard,
+    body.dark-mode .diagnostic-card,
+    body.dark-mode .highlight-box,
     body.dark-mode .card {
         background-color: #0f172a !important;
         border-color: #334155 !important;
         color: #e2e8f0 !important;
+    }
+    body.dark-mode .hero-section {
+        background: #020617 !important;
+        border-bottom-color: #334155 !important;
+    }
+    body.dark-mode .hero-text p,
+    body.dark-mode .help-text,
+    body.dark-mode .subtitle,
+    body.dark-mode .tutorial-meta,
+    body.dark-mode .main-subtitle,
+    body.dark-mode .secondary-subtitle { color: #94a3b8 !important; }
+    body.dark-mode .btn-action {
+        background: #1d4ed8 !important;
+        color: #f8fafc !important;
+        border: 1px solid #1d4ed8 !important;
+    }
+    body.dark-mode .btn-action:hover { background: #2563eb !important; }
+    body.dark-mode .disclaimer-box {
+        background: #3b0a0a !important;
+        border-color: #7f1d1d !important;
+        color: #fecaca !important;
     }
 
     body.dark-mode input,
