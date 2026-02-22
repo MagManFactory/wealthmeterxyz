@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+(function () {
+  if (window.location.pathname === '/index.html') {
+    window.location.replace('/' + window.location.search + window.location.hash);
+  }
+})();
+</script>
         <meta name="robots" content="index, follow">
 <meta name="description" content="Calculate your global wealth rank and percentile. Compare UBS covered‑market adults vs a UN WPP global adult baseline. Free wealth calculator with real‑time rankings.">
     <link rel="canonical" href="https://wealthmeter.xyz/">
