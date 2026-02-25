@@ -2,7 +2,16 @@
 
 const sharedStyles = `
 <style>
-    :root { color-scheme: light; }
+    :root {
+        color-scheme: light;
+        --base-font-size: 16px;
+    }
+    html {
+        font-size: var(--base-font-size);
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    body { font-size: 1rem; }
     /* Monolith Pulse Animation */
     @keyframes monolithPulse {
         0% { transform: scaleY(1); }
