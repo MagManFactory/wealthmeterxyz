@@ -1,0 +1,42 @@
+name: Content Policy
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  content-policy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check banned internal prompt text
+        run: bash scripts/check_content_policy.sh
+
+  live-verify:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: [content-policy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify live content policy
+        run: |
+          bash -c 'set -euo pipefail; \
+          DOMAIN="https://wealthmeter.xyz"; \
+          HUBS=("https://wealthmeter.xyz/longform.html"); \
+          BANNED_REGEX="Visual[[:space:]]+Prompts?[[:space:]]+for[[:space:]]+the[[:space:]]+Design[[:space:]]+Team|[0-9]+\\)[[:space:]]*Visual[[:space:]]+Prompt:"; \
+          STAMP=$(date +%s); \
+          URLS=$( \
+            { for h in "${HUBS[@]}"; do echo "$h"; curl -fsSL "${h}?cb=${STAMP}" | rg -o '\''href=\"[^\"]+\\.html\"'\'' | sed -E '\''s/^href=\"([^\"]+)\"$/\\1/'\'' | sed -E '\''s#^/#https://wealthmeter.xyz/#; t; s#^https?://#&#; t; s#^#https://wealthmeter.xyz/#'\''; done; } | sort -u \
+          ); \
+          FAIL=0; \
+          while IFS= read -r u; do \
+            [ -z "$u" ] && continue; \
+            if curl -fsSL "${u}?cb=${STAMP}" | rg -n -i --pcre2 "$BANNED_REGEX"; then \
+              echo "Violation found on ${u}"; \
+              FAIL=1; \
+            fi; \
+          done <<< "$URLS"; \
+          [ "$FAIL" -eq 0 ]'
+
