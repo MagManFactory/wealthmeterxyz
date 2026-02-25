@@ -365,6 +365,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html" style="color: #2563eb; font-weight: 800;">Longform Hub</a>
+                    <a href="ai-boom-portfolios-personal-wealth.html">AI Boom Portfolio Reality Map</a>
                     <a href="rich-or-just-in-a-bubble.html">Are You Rich or Just in a Bubble?</a>
                     <a href="great-baseline-war.html">The Great Baseline War</a>
                     <a href="one-salary-three-futures.html">One Salary, Three Futures</a>
