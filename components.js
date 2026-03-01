@@ -175,10 +175,260 @@ const siteFooter = `
     </div>
 </footer>`;
 
+const longformRailStyles = `
+<style>
+    .wm-longform-rail {
+        margin-top: 16px;
+        padding: 12px 14px;
+        border: 1px solid #dbe4f0;
+        border-radius: 14px;
+        background: rgba(248, 250, 252, 0.92);
+    }
+    .wm-longform-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 10px;
+    }
+    .wm-longform-eyebrow {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #64748b;
+    }
+    .wm-longform-all {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #2563eb;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+    .wm-longform-window {
+        min-height: 56px;
+        overflow: hidden;
+    }
+    .wm-longform-link {
+        display: block;
+        text-decoration: none;
+        color: #0f172a;
+        transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .wm-longform-window.is-swapping .wm-longform-link {
+        opacity: 0.08;
+        transform: translateY(8px);
+    }
+    .wm-longform-title {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.35;
+        margin-bottom: 2px;
+    }
+    .wm-longform-desc {
+        display: block;
+        font-size: 12px;
+        color: #64748b;
+        line-height: 1.45;
+    }
+    .wm-longform-index {
+        margin-top: 10px;
+    }
+    .wm-longform-index summary {
+        cursor: pointer;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #64748b;
+        list-style: none;
+    }
+    .wm-longform-index summary::-webkit-details-marker {
+        display: none;
+    }
+    .wm-longform-list {
+        margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 10px;
+    }
+    .wm-longform-list a {
+        font-size: 12px;
+        color: #334155;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(51, 65, 85, 0.25);
+    }
+    .wm-longform-list a:hover {
+        color: #2563eb;
+        border-bottom-color: rgba(37, 99, 235, 0.5);
+    }
+    body.dark-mode .wm-longform-rail {
+        background: rgba(15, 23, 42, 0.55);
+        border-color: rgba(148, 163, 184, 0.35);
+    }
+    body.dark-mode .wm-longform-title {
+        color: #e2e8f0;
+    }
+    body.dark-mode .wm-longform-desc,
+    body.dark-mode .wm-longform-index summary {
+        color: #94a3b8;
+    }
+    body.dark-mode .wm-longform-list a {
+        color: #cbd5e1;
+        border-bottom-color: rgba(148, 163, 184, 0.35);
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .wm-longform-link {
+            transition: none;
+        }
+    }
+</style>
+`;
+
+const longformRailArticles = [
+    { href: "inheritance-illusion.html", title: "The Inheritance Illusion", desc: "Same inheritance headline, very different real resilience once liquidity is priced in." },
+    { href: "dual-income-trap.html", title: "The Dual-Income Trap", desc: "Why two salaries can still produce weaker savings velocity and reserve depth." },
+    { href: "inside-wealth-germany-japan-canada.html", title: "Inside Wealth: Germany, Japan, and Canada", desc: "What top-tier net worth means across three different asset cultures." },
+    { href: "equity-compensation-trap.html", title: "The Equity Compensation Trap", desc: "How RSUs and ISOs can overstate wealth after tax and concentration risk." },
+    { href: "retirement-age-lie.html", title: "The Retirement Age Lie", desc: "Why static retirement targets fail under current inflation and rate regimes." },
+    { href: "longevity-capital-living-to-120.html", title: "Longevity Capital", desc: "How longer lifespans rewrite accumulation, drawdown, and transfer planning." },
+    { href: "compounding-gap-after-1m.html", title: "The Compounding Gap After $1M", desc: "Why compounding becomes non-linear after access and capital-cost thresholds." },
+    { href: "ai-boom-portfolios-personal-wealth.html", title: "AI Boom Portfolios", desc: "Capturing AI upside without allowing concentration to dominate your balance sheet." },
+    { href: "rich-or-just-in-a-bubble.html", title: "Are You Rich or Just in a Bubble?", desc: "Reframing net worth through affordability and financing friction." },
+    { href: "great-baseline-war.html", title: "The Great Baseline War", desc: "How population lens choice changes percentile interpretation." },
+    { href: "one-salary-three-futures.html", title: "One Salary, Three Futures", desc: "The same income can compound very differently by city and cost base." },
+    { href: "crypto-etf-wealth-effect.html", title: "Crypto ETF Wealth Effect", desc: "Separate temporary wealth effect from durable portfolio architecture." },
+    { href: "new-middle-class-trap.html", title: "The New Middle-Class Trap", desc: "High earnings can coexist with fragile net worth conversion systems." },
+    { href: "inside-wealth-china-india.html", title: "Inside Wealth in China + India", desc: "How ownership structure and access rails shape top-decile durability." },
+    { href: "realistic-projections-ubi.html", title: "Realistic Projections on UBI", desc: "What policy trials imply for household planning under uncertainty." }
+];
+
+const longformRailTargets = {
+    "/": [".glass-panel"],
+    "/index.html": [".glass-panel"],
+    "/global_ranker.html": [".input-card", ".results-container"],
+    "/income_ranker.html": [".input-card", ".results-container"],
+    "/networth.html": [".cta-section", ".summary-card"],
+    "/fire_timeline.html": [".glass-panel"],
+    "/portfolio_alpha.html": [".simulator-grid"],
+    "/runway_lab.html": [".simulator-grid"]
+};
+
+function normalizePathname() {
+    const raw = (window.location.pathname || "/").toLowerCase();
+    if (raw.length > 1 && raw.endsWith("/")) return raw.slice(0, -1);
+    return raw;
+}
+
+function shuffled(items) {
+    const arr = [...items];
+    for (let i = arr.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    return arr;
+}
+
+function mountLongformRail() {
+    const path = normalizePathname();
+    const targetSelectors = longformRailTargets[path];
+    if (!targetSelectors || !longformRailArticles.length || document.getElementById("wm-longform-rail")) return;
+
+    let anchor = null;
+    for (const selector of targetSelectors) {
+        const candidate = document.querySelector(selector);
+        if (candidate) {
+            anchor = candidate;
+            break;
+        }
+    }
+    if (!anchor) return;
+
+    const rail = document.createElement("section");
+    rail.id = "wm-longform-rail";
+    rail.className = "wm-longform-rail";
+    rail.setAttribute("aria-label", "Related longform articles");
+    rail.innerHTML = `
+        <div class="wm-longform-head">
+            <span class="wm-longform-eyebrow">From Longform</span>
+            <a class="wm-longform-all" href="longform.html">View all</a>
+        </div>
+        <div class="wm-longform-window" aria-live="polite">
+            <a class="wm-longform-link" href="longform.html">
+                <span class="wm-longform-title"></span>
+                <span class="wm-longform-desc"></span>
+            </a>
+        </div>
+        <details class="wm-longform-index">
+            <summary>Browse all article links</summary>
+            <div class="wm-longform-list"></div>
+        </details>
+    `;
+
+    anchor.insertAdjacentElement("afterend", rail);
+
+    const windowEl = rail.querySelector(".wm-longform-window");
+    const linkEl = rail.querySelector(".wm-longform-link");
+    const titleEl = rail.querySelector(".wm-longform-title");
+    const descEl = rail.querySelector(".wm-longform-desc");
+    const listEl = rail.querySelector(".wm-longform-list");
+
+    longformRailArticles.forEach((article) => {
+        const a = document.createElement("a");
+        a.href = article.href;
+        a.textContent = article.title;
+        listEl.appendChild(a);
+    });
+
+    let order = shuffled(longformRailArticles);
+    let cursor = 0;
+    let paused = false;
+
+    function renderArticle(article) {
+        titleEl.textContent = article.title;
+        descEl.textContent = article.desc;
+        linkEl.href = article.href;
+    }
+
+    function nextArticle() {
+        cursor += 1;
+        if (cursor >= order.length) {
+            order = shuffled(longformRailArticles);
+            cursor = 0;
+        }
+        return order[cursor];
+    }
+
+    function rotate() {
+        if (paused || document.hidden) return;
+        windowEl.classList.add("is-swapping");
+        window.setTimeout(() => {
+            renderArticle(nextArticle());
+            windowEl.classList.remove("is-swapping");
+        }, 260);
+    }
+
+    renderArticle(order[cursor]);
+
+    rail.addEventListener("mouseenter", () => { paused = true; });
+    rail.addEventListener("mouseleave", () => { paused = false; });
+    rail.addEventListener("focusin", () => { paused = true; });
+    rail.addEventListener("focusout", () => { paused = false; });
+
+    window.setInterval(rotate, 11000);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     document.head.insertAdjacentHTML("beforeend", sharedStyles);
+    document.head.insertAdjacentHTML("beforeend", longformRailStyles);
     const headerEl = document.getElementById("header-placeholder");
     const footerEl = document.getElementById("footer-placeholder");
     if (headerEl) headerEl.innerHTML = siteHeader;
     if (footerEl) footerEl.innerHTML = siteFooter;
+    mountLongformRail();
 });
