@@ -155,6 +155,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="mortgage-lock-in-trap.html">The Mortgage Lock-In Trap</a>
                     <a href="war-premium-iran-conflict-repricing-energy-credit-equities.html">The War Premium</a>
                     <a href="end-of-safe-job-illusion-ai-labor-deflation-white-collar-income.html">The End of the Safe Job Illusion</a>
                     <a href="inheritance-illusion.html">The Inheritance Illusion</a>
