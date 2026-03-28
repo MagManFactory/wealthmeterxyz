@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 4,
+  "schemaVersion": 5,
   "updatedAt": "2026-03-28",
   "count": 399,
   "categories": {
@@ -233,8 +233,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at how frequent trading tends to hurt returns for ordinary investors.",
-      "whyItMatters": "Useful if you want evidence on whether trading more actually helps.",
+      "summary": "Barber and Odean study household brokerage accounts and find that the people who trade the most earn worse returns than those who trade less. The gap is not just bad luck. Trading costs and poor timing do real damage.",
+      "whyItMatters": "This matters because it is one of the clearest papers showing that more activity does not mean better results for ordinary investors.",
       "focusTags": [
         "Active vs passive"
       ],
@@ -251,8 +251,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at whether active managers beat the market often enough after fees and trading costs.",
-      "whyItMatters": "Useful if you are deciding whether active investing is worth the extra complexity and cost.",
+      "summary": "Fama and French test mutual fund returns to see how much is true manager skill and how much is random variation. Their results suggest that strong performance is rare and that most apparent winners can be explained by luck once costs are counted.",
+      "whyItMatters": "This matters because a short list of past winners can look persuasive even when it says very little about future skill.",
       "focusTags": [
         "Active vs passive",
         "Mutual funds"
@@ -270,8 +270,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to active vs passive.",
-      "whyItMatters": "Useful if you want a stronger source on active vs passive instead of a recycled headline or opinion piece.",
+      "summary": "This paper looks at how equity mutual funds did over two decades and compares investor results with simple market benchmarks. The broad result is that fees and costs made it hard for the average fund to beat the market in a lasting way.",
+      "whyItMatters": "This matters because it is early evidence for the idea that active funds have to clear a high cost hurdle before investors actually benefit.",
       "focusTags": [
         "Active vs passive",
         "Mutual funds"
@@ -289,8 +289,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at whether active managers beat the market often enough after fees and trading costs.",
-      "whyItMatters": "Useful if you are deciding whether active investing is worth the extra complexity and cost.",
+      "summary": "Sharpe lays out a simple but powerful point: before costs, active investors as a group must match the market, and after costs they must trail it. The argument is mathematical, not rhetorical.",
+      "whyItMatters": "This matters because it explains why active investing is hard in aggregate even before you look at any one manager.",
       "focusTags": [
         "Active vs passive",
         "Active management"
@@ -308,8 +308,8 @@
       "sourceType": "industry scorecard",
       "sourceLabel": "industry scorecard",
       "sourceLinkLabel": "View industry scorecard",
-      "summary": "Looks at whether active managers beat the market often enough after fees and trading costs.",
-      "whyItMatters": "Useful if you are deciding whether active investing is worth the extra complexity and cost.",
+      "summary": "The SPIVA scorecard tracks how often active funds beat their benchmarks over different time periods. Its recurring pattern is that most active funds fall behind over longer horizons, especially after survivorship is handled properly.",
+      "whyItMatters": "This matters because it gives an up-to-date scoreboard on active fund results instead of relying on marketing claims or a few famous managers.",
       "focusTags": [
         "Active vs passive"
       ],
@@ -326,8 +326,8 @@
       "sourceType": "book",
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
-      "summary": "Looks at how defaults and automatic plan design change saving behavior.",
-      "whyItMatters": "Useful if you want a savings system people are more likely to stick with.",
+      "summary": "This paper reviews evidence showing that default settings have a large effect on whether people join retirement plans, how much they contribute, and where the money goes. People often stay close to the default even when better choices are available.",
+      "whyItMatters": "This matters because plan design can change saving outcomes more than financial education alone.",
       "focusTags": [
         "Money behavior",
         "Retirement",
@@ -347,8 +347,8 @@
       "sourceType": "business journal",
       "sourceLabel": "business journal",
       "sourceLinkLabel": "View business journal",
-      "summary": "Looks at whether quick wins help people stay with a debt payoff plan.",
-      "whyItMatters": "Useful if you are comparing the snowball and avalanche styles of debt repayment.",
+      "summary": "The paper studies debt repayment behavior and finds that early progress on a small balance can help people stay engaged with a payoff plan. The psychological effect can matter even when the math would favor a different order of attack.",
+      "whyItMatters": "This matters because the best debt strategy is not always the one with the cleanest spreadsheet result if people cannot stick with it.",
       "focusTags": [
         "Money behavior",
         "Debt payoff"
@@ -384,8 +384,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at how defaults and automatic plan design change saving behavior.",
-      "whyItMatters": "Useful if you want a savings system people are more likely to stick with.",
+      "summary": "Madrian and Shea study what happened when a company moved from opt-in enrollment to automatic enrollment in its 401(k) plan. Participation jumped, and many workers stayed with the default contribution rate and fund choice.",
+      "whyItMatters": "This matters because it shows that a small change in plan design can alter saving behavior far more than lectures or reminders.",
       "focusTags": [
         "Money behavior",
         "Savings"
@@ -403,8 +403,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at how defaults and automatic plan design change saving behavior.",
-      "whyItMatters": "Useful if you want a savings system people are more likely to stick with.",
+      "summary": "Thaler and Benartzi test a program that commits workers in advance to raise saving rates when future pay raises arrive. The design helps people save more without feeling the full pain of a current pay cut.",
+      "whyItMatters": "This matters because it is one of the clearest examples of a behavioral fix that improved real saving outcomes at work.",
       "focusTags": [
         "Money behavior",
         "Savings"
@@ -1161,8 +1161,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at how investor behavior can push prices too far or make people trade badly.",
-      "whyItMatters": "Useful if you want a clearer view of common investing mistakes and crowd behavior.",
+      "summary": "Barber and Odean compare men and women in brokerage data and find that men trade more and, on average, hurt their returns more as a result. The paper links overconfidence to real investing mistakes.",
+      "whyItMatters": "This matters because it connects a behavioral bias to a measurable performance gap, not just a theory about personality.",
       "focusTags": [
         "Money behavior"
       ],
@@ -1310,8 +1310,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at whether mutual fund results come from skill, costs, style, or luck.",
-      "whyItMatters": "Useful if you are comparing active funds and want to know what the results really reflect.",
+      "summary": "The paper breaks mutual fund performance into stock picking, style exposure, trading costs, and fees. It shows that any stock-picking skill has to survive a heavy layer of costs before investors benefit.",
+      "whyItMatters": "This matters because it shifts the question from \u201cdoes skill exist?\u201d to \u201cdoes enough of it survive after costs?\u201d",
       "focusTags": [
         "Active vs passive",
         "Mutual funds"
@@ -1349,8 +1349,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at whether active managers beat the market often enough after fees and trading costs.",
-      "whyItMatters": "Useful if you are deciding whether active investing is worth the extra complexity and cost.",
+      "summary": "Cremers and Petajisto introduce Active Share, a measure of how different a fund is from its benchmark. They show that funds that look active on paper but hug the index tend to disappoint, while genuinely differentiated funds are a separate category.",
+      "whyItMatters": "This matters because not every expensive active fund is truly active. The paper helps separate closet indexers from managers making real bets.",
       "focusTags": [
         "Active vs passive",
         "Active management"
@@ -5047,8 +5047,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at how portfolios should be built when you balance risk, return, and diversification.",
-      "whyItMatters": "Useful if you want the basic research behind broad diversification and portfolio design.",
+      "summary": "Benartzi and Thaler show that many retirement savers use simple split-the-difference rules instead of building a thoughtful portfolio. The menu itself can distort the final allocation.",
+      "whyItMatters": "This matters because giving people more choices does not always produce better portfolios. Sometimes it just changes how they make rough guesses.",
       "focusTags": [
         "Money behavior",
         "Savings"
@@ -5386,8 +5386,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at whether active managers beat the market often enough after fees and trading costs.",
-      "whyItMatters": "Useful if you are deciding whether active investing is worth the extra complexity and cost.",
+      "summary": "Berk and Green argue that money tends to flow toward successful active managers until the edge gets competed away. The result is that even skilled managers may not leave a large surplus for new investors after they become popular.",
+      "whyItMatters": "This matters because it explains why skill can exist and still be hard for outside investors to capture in a scalable way.",
       "focusTags": [
         "Active vs passive",
         "Active management"
@@ -5405,8 +5405,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Looks at a source related to active vs passive.",
-      "whyItMatters": "Useful if you want a stronger source on active vs passive instead of a recycled headline or opinion piece.",
+      "summary": "This paper studies what active mutual fund managers actually hold and trade, rather than just their headline returns. It finds that some managers show stock selection skill, but that the value to investors depends on costs and implementation.",
+      "whyItMatters": "This matters because it is a more direct test of whether managers add value through their decisions, not just through lucky return snapshots.",
       "focusTags": [
         "Active vs passive",
         "Mutual funds",
@@ -5426,8 +5426,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to active vs passive.",
-      "whyItMatters": "Useful if you want a stronger source on active vs passive instead of a recycled headline or opinion piece.",
+      "summary": "French estimates the total cost investors pay for active investing, not just fund fees but the full system cost of trying to beat the market. His conclusion is that the aggregate price of active management is large relative to the value most investors receive.",
+      "whyItMatters": "This matters because many people underestimate how much active investing costs once you include the whole chain, not just the visible expense ratio.",
       "focusTags": [
         "Active vs passive",
         "Active management"
