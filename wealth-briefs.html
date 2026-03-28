@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wealth Briefs | WEALTHMETER.XYZ</title>
+    <meta name="description" content="Structured evidence briefs on saving, debt, tax, investing, and retirement decisions for practical household wealth strategy.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://wealthmeter.xyz/wealth-briefs.html">
+    <meta property="og:title" content="Wealth Briefs | WEALTHMETER.XYZ">
+    <meta property="og:description" content="Compact evidence briefs on saving, debt, tax strategy, portfolio construction, and retirement decisions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wealthmeter.xyz/wealth-briefs.html">
+    <meta property="og:image" content="https://wealthmeter.xyz/images/longform/ai-wealth-compounding-playbook.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wealth Briefs | WEALTHMETER.XYZ">
+    <meta name="twitter:description" content="Decision-grade briefs on saving, debt, tax, and investing claims.">
+    <meta name="twitter:image" content="https://wealthmeter.xyz/images/longform/ai-wealth-compounding-playbook.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Wealth Briefs",
+      "url": "https://wealthmeter.xyz/wealth-briefs.html",
+      "description": "Structured evidence briefs on practical wealth decisions.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "WEALTHMETER.XYZ",
+        "url": "https://wealthmeter.xyz"
+      }
+    }
+    </script>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #0f172a;
+            --slate: #64748b;
+            --line: #dbe4f0;
+            --blue: #2563eb;
+            --cyan: #0891b2;
+            --green: #059669;
+            --amber: #d97706;
+            --red: #dc2626;
+        }
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .page {
+            width: 100%;
+            max-width: 1280px;
+            margin: 72px auto;
+            padding: 0 20px 48px;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0f172a, #112b59 55%, #1d4ed8);
+            color: #fff;
+            border-radius: 28px;
+            padding: 34px 30px;
+            box-shadow: 0 18px 42px rgba(15, 23, 42, 0.22);
+        }
+        .eyebrow {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            background: rgba(255,255,255,0.14);
+            border: 1px solid rgba(255,255,255,0.24);
+            border-radius: 999px;
+            padding: 7px 12px;
+            margin-bottom: 14px;
+        }
+        h1 {
+            margin: 0;
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            line-height: 1.02;
+            letter-spacing: -0.04em;
+        }
+        .hero p {
+            margin: 14px 0 0;
+            max-width: 860px;
+            color: #dbeafe;
+            font-size: 1.04rem;
+            line-height: 1.6;
+        }
+        .meta-line {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: #cfe3ff;
+        }
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.24);
+            background: rgba(255,255,255,0.08);
+            color: #f8fbff;
+            padding: 7px 11px;
+            font-size: 0.74rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        .utility-grid {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 14px;
+        }
+        .panel {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 18px;
+        }
+        .panel h2, .panel h3 {
+            margin: 0 0 10px;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        .panel p {
+            margin: 0;
+            color: #334155;
+            line-height: 1.65;
+        }
+        .policy-list, .rule-list {
+            display: grid;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .policy-row, .rule-row {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 12px 13px;
+            background: #f8fafc;
+        }
+        .policy-row strong, .rule-row strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text);
+        }
+        .policy-row span, .rule-row span {
+            color: #475569;
+            line-height: 1.55;
+            font-size: 0.95rem;
+        }
+        .crawl-index {
+            margin-top: 18px;
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 16px 18px;
+        }
+        .crawl-index h2 {
+            margin: 0 0 10px;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            color: var(--slate);
+        }
+        .crawl-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem 0.85rem;
+        }
+        .crawl-links a {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .controls {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+            gap: 12px;
+        }
+        .control {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 12px;
+        }
+        .control label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.68rem;
+            color: var(--slate);
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 0.09em;
+        }
+        .control input, .control select {
+            width: 100%;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: #fff;
+        }
+        .control-note {
+            margin-top: 8px;
+            color: var(--slate);
+            font-size: 0.75rem;
+            line-height: 1.4;
+        }
+        .filter-row-label {
+            margin-top: 16px;
+            font-size: 0.72rem;
+            color: var(--slate);
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+        }
+        .theme-row {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .theme-chip-btn {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            border: 1px solid #dbeafe;
+            background: #eff6ff;
+            color: #1d4ed8;
+            padding: 7px 11px;
+            font-size: 0.74rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+        .theme-chip-btn.active {
+            border-color: #1d4ed8;
+            background: #1d4ed8;
+            color: #eff6ff;
+        }
+        .focus-chip-btn {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            border: 1px solid #cbd5e1;
+            background: #fff;
+            color: #334155;
+            padding: 7px 11px;
+            font-size: 0.74rem;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+        .focus-chip-btn.active {
+            border-color: #0f766e;
+            background: #115e59;
+            color: #ecfeff;
+        }
+        .count-row {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .count-row .chip {
+            background: #ecfdf5;
+            border-color: #a7f3d0;
+            color: #065f46;
+        }
+        .board {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 14px;
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+            display: flex;
+            flex-direction: column;
+            min-height: 360px;
+        }
+        .topline {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .grade {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            padding: 5px 10px;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .grade.a { background: #dcfce7; color: #166534; }
+        .grade.b { background: #fef3c7; color: #92400e; }
+        .grade.c { background: #fee2e2; color: #991b1b; }
+        .source-type {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            color: var(--slate);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .category {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            background: #eff6ff;
+            color: #1e40af;
+            padding: 5px 10px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .stance {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            padding: 5px 10px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .stance.favorable { background: #dcfce7; color: #166534; }
+        .stance.conditional { background: #e0f2fe; color: #075985; }
+        .stance.mixed { background: #fef3c7; color: #92400e; }
+        .stance.overstated { background: #fee2e2; color: #991b1b; }
+        h2.card-title {
+            margin: 0.55rem 0 0.75rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+        .signal, .section-copy, .meta-copy {
+            color: #334155;
+            line-height: 1.62;
+            font-size: 0.98rem;
+        }
+        .section-label {
+            display: block;
+            margin: 12px 0 5px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--slate);
+        }
+        .focus-tags {
+            margin: 10px 0 4px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .focus-tag {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            border: 1px solid #dbeafe;
+            background: #f8fbff;
+            color: #1d4ed8;
+            padding: 5px 9px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+        .footer-row {
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid var(--line);
+            display: grid;
+            gap: 8px;
+        }
+        .source-link {
+            color: var(--blue);
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .empty {
+            background: #fff;
+            border: 1px dashed #cbd5e1;
+            border-radius: 18px;
+            padding: 22px;
+            color: var(--slate);
+        }
+        @media (max-width: 1000px) {
+            .utility-grid, .controls { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+<main class="page">
+    <section class="hero">
+        <span class="eyebrow">Analyze / Wealth Briefs</span>
+        <h1>Decision-grade wealth evidence, without longform sprawl</h1>
+        <p>Wealth Briefs is a compact reference layer for recurring financial claims. Each brief separates empirical support from implementation judgment, shows where the tactic works, and marks where the evidence is mixed, regime-dependent, or easily overstated.</p>
+        <div class="meta-line">
+            <span class="chip">Saving</span>
+            <span class="chip">Debt</span>
+            <span class="chip">Tax strategy</span>
+            <span class="chip">Portfolio construction</span>
+            <span class="chip">Retirement mechanics</span>
+        </div>
+    </section>
+
+    <section class="utility-grid">
+        <article class="panel">
+            <h2>What this section is for</h2>
+            <p>Longform explains systems and tradeoffs across a full narrative arc. Wealth Briefs does something narrower. It compresses a single strategy or claim into a repeatable evidence card so the user can compare tactics on the same frame: support level, mechanism, boundaries, friction, and action stance.</p>
+            <div class="rule-list">
+                <div class="rule-row">
+                    <strong>Established fact</strong>
+                    <span>Empirical baseline fields are reserved for what the cited source class actually supports.</span>
+                </div>
+                <div class="rule-row">
+                    <strong>Reasoned inference</strong>
+                    <span>Action stance reflects implementation judgment, not a disguised citation.</span>
+                </div>
+                <div class="rule-row">
+                    <strong>Source hierarchy</strong>
+                    <span>Peer-reviewed research, official datasets, and institutional scorecards outrank books or opinion-led advice.</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="panel">
+            <h2>Evidence policy</h2>
+            <div class="policy-list">
+                <div class="policy-row">
+                    <strong>Grade A</strong>
+                    <span>Repeated support across long samples, multiple studies, or official scorecards. Good default decision material.</span>
+                </div>
+                <div class="policy-row">
+                    <strong>Grade B</strong>
+                    <span>Useful but conditional. Often tax-sensitive, regime-sensitive, or highly dependent on household structure.</span>
+                </div>
+                <div class="policy-row">
+                    <strong>Grade C</strong>
+                    <span>Plausible or early, but not strong enough for confident default advice.</span>
+                </div>
+                <div class="policy-row">
+                    <strong>Books and reports</strong>
+                    <span>Consumer books can frame an idea, but they do not automatically elevate it to decision-grade evidence.</span>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <section class="crawl-index" aria-label="WealthMeter internal links">
+        <h2>Explore WealthMeter Tools</h2>
+        <div class="crawl-links">
+            <a href="/">Global Wealth Rank</a>
+            <a href="index.html">Wealth Rank App</a>
+            <a href="global_explorer.html">Wealth Explorer</a>
+            <a href="data-lab.html">Data Lab</a>
+            <a href="wealth-longform.html">Longform Hub</a>
+        </div>
+    </section>
+
+    <section class="controls" aria-label="Brief filters">
+        <div class="control">
+            <label for="searchInput">Search</label>
+            <input id="searchInput" type="search" placeholder="Search title, thesis, source, or tags">
+            <div class="control-note">Search includes title, signal, mechanism, source, and focus tags.</div>
+        </div>
+        <div class="control">
+            <label for="categoryFilter">Category</label>
+            <select id="categoryFilter"></select>
+        </div>
+        <div class="control">
+            <label for="gradeFilter">Evidence grade</label>
+            <select id="gradeFilter"></select>
+        </div>
+        <div class="control">
+            <label for="sourceFilter">Source type</label>
+            <select id="sourceFilter"></select>
+        </div>
+        <div class="control">
+            <label for="stanceFilter">Action stance</label>
+            <select id="stanceFilter"></select>
+        </div>
+    </section>
+
+    <div class="filter-row-label">Primary categories</div>
+    <div class="theme-row" id="categoryRow"></div>
+
+    <div class="filter-row-label">Searchable focus tags</div>
+    <div class="theme-row" id="focusRow"></div>
+
+    <div class="count-row" id="countRow"></div>
+    <section class="board" id="board"></section>
+</main>
+<div id="footer-placeholder"></div>
+
+<script>
+const state = {
+    briefs: [],
+    activeCategoryChip: "All",
+    activeFocusChip: "All"
+};
+
+const gradeOrder = ["All", "A", "B", "C"];
+const stanceOrder = ["All", "Usually favorable", "Favorable with conditions", "Mixed", "Usually overstated"];
+
+function populateSelect(select, values) {
+    select.innerHTML = values.map((value) => `<option value="${value}">${value}</option>`).join("");
+}
+
+function uniqueValues(items, key) {
+    return ["All", ...Array.from(new Set(items.map((item) => item[key]).filter(Boolean))).sort()];
+}
+
+function uniqueFocusTags(items) {
+    return ["All", ...Array.from(new Set(items.flatMap((item) => item.focusTags || []))).sort()];
+}
+
+function stanceClass(value) {
+    if (value === "Usually favorable") return "favorable";
+    if (value === "Favorable with conditions") return "conditional";
+    if (value === "Usually overstated") return "overstated";
+    return "mixed";
+}
+
+function renderCategoryChips(items, active) {
+    const categories = uniqueValues(items, "category");
+    const row = document.getElementById("categoryRow");
+    row.innerHTML = categories.map((category) => {
+        const count = category === "All" ? items.length : items.filter((item) => item.category === category).length;
+        return `<button class="theme-chip-btn ${category === active ? "active" : ""}" data-category="${category}">${category.toUpperCase()} (${count})</button>`;
+    }).join("");
+}
+
+function renderFocusChips(items, active) {
+    const tags = uniqueFocusTags(items);
+    const row = document.getElementById("focusRow");
+    row.innerHTML = tags.map((tag) => {
+        const count = tag === "All" ? items.length : items.filter((item) => (item.focusTags || []).includes(tag)).length;
+        return `<button class="focus-chip-btn ${tag === active ? "active" : ""}" data-focus="${tag}">${tag} (${count})</button>`;
+    }).join("");
+}
+
+function renderCountRow(total, filtered) {
+    document.getElementById("countRow").innerHTML = [
+        `<span class="chip">Visible briefs: ${filtered}</span>`,
+        `<span class="chip">Total loaded: ${total}</span>`
+    ].join("");
+}
+
+function renderCards(items) {
+    const board = document.getElementById("board");
+    if (!items.length) {
+        board.innerHTML = `<div class="empty">No briefs match the current filter stack.</div>`;
+        return;
+    }
+    board.innerHTML = items.map((item) => `
+        <article class="card">
+            <div class="topline">
+                <span class="grade ${item.evidenceGrade.toLowerCase()}">Grade ${item.evidenceGrade}</span>
+                <span class="source-type">${item.sourceType}</span>
+            </div>
+            <div class="topline">
+                <span class="category">${item.category}</span>
+                <span class="stance ${stanceClass(item.actionStance)}">${item.actionStance}</span>
+            </div>
+            <h2 class="card-title">${item.title}</h2>
+            <div class="signal">${item.signal}</div>
+            <div class="focus-tags">${(item.focusTags || []).map((tag) => `<span class="focus-tag">${tag}</span>`).join("")}</div>
+            <span class="section-label">Empirical baseline</span>
+            <div class="section-copy">${item.empiricalBaseline}</div>
+            <span class="section-label">Mechanism</span>
+            <div class="section-copy">${item.mechanism}</div>
+            <span class="section-label">Boundary</span>
+            <div class="section-copy">${item.whereItWorks}</div>
+            <span class="section-label">Failure mode</span>
+            <div class="section-copy">${item.whereItBreaks}</div>
+            <div class="footer-row">
+                <div class="meta-copy"><strong>Study window:</strong> ${item.studyWindow}</div>
+                <div class="meta-copy"><strong>Execution friction:</strong> ${item.executionFriction}</div>
+                <div class="meta-copy"><strong>Source tier:</strong> ${item.sourceTier} | <strong>Quality score:</strong> ${item.qualityScore}</div>
+                <a class="source-link" href="${item.sourceUrl}" target="_blank" rel="noopener">${item.sourceName}</a>
+            </div>
+        </article>
+    `).join("");
+}
+
+function render() {
+    const searchValue = document.getElementById("searchInput").value.trim().toLowerCase();
+    const selectedCategory = document.getElementById("categoryFilter").value;
+    const selectedGrade = document.getElementById("gradeFilter").value;
+    const selectedSource = document.getElementById("sourceFilter").value;
+    const selectedStance = document.getElementById("stanceFilter").value;
+
+    const filtered = state.briefs.filter((item) => {
+        const categoryPass = selectedCategory === "All" && state.activeCategoryChip === "All"
+            ? true
+            : (selectedCategory !== "All" ? item.category === selectedCategory : item.category === state.activeCategoryChip);
+
+        const focusPass = state.activeFocusChip === "All" || (item.focusTags || []).includes(state.activeFocusChip);
+        const gradePass = selectedGrade === "All" || item.evidenceGrade === selectedGrade;
+        const sourcePass = selectedSource === "All" || item.sourceType === selectedSource;
+        const stancePass = selectedStance === "All" || item.actionStance === selectedStance;
+        const searchPass = !searchValue || [
+            item.title,
+            item.signal,
+            item.empiricalBaseline,
+            item.mechanism,
+            item.sourceName,
+            item.category,
+            item.actionStance,
+            ...(item.focusTags || [])
+        ].join(" ").toLowerCase().includes(searchValue);
+
+        return categoryPass && focusPass && gradePass && sourcePass && stancePass && searchPass;
+    });
+
+    renderCategoryChips(state.briefs, state.activeCategoryChip);
+    renderFocusChips(
+        selectedCategory === "All" && state.activeCategoryChip === "All"
+            ? state.briefs
+            : state.briefs.filter((item) => {
+                const category = selectedCategory !== "All" ? selectedCategory : state.activeCategoryChip;
+                return category === "All" ? true : item.category === category;
+            }),
+        state.activeFocusChip
+    );
+    renderCountRow(state.briefs.length, filtered.length);
+    renderCards(filtered);
+}
+
+async function loadBriefs() {
+    const response = await fetch("data/wealth-briefs.json");
+    const payload = await response.json();
+    state.briefs = payload.briefs || [];
+
+    populateSelect(document.getElementById("categoryFilter"), uniqueValues(state.briefs, "category"));
+    populateSelect(document.getElementById("gradeFilter"), gradeOrder);
+    populateSelect(document.getElementById("sourceFilter"), uniqueValues(state.briefs, "sourceType"));
+    populateSelect(document.getElementById("stanceFilter"), stanceOrder);
+    render();
+}
+
+document.addEventListener("click", (event) => {
+    const categoryChip = event.target.closest("[data-category]");
+    if (categoryChip) {
+        state.activeCategoryChip = categoryChip.dataset.category;
+        document.getElementById("categoryFilter").value = "All";
+        render();
+    }
+
+    const focusChip = event.target.closest("[data-focus]");
+    if (focusChip) {
+        state.activeFocusChip = focusChip.dataset.focus;
+        render();
+    }
+});
+
+["searchInput", "categoryFilter", "gradeFilter", "sourceFilter", "stanceFilter"].forEach((id) => {
+    document.addEventListener("input", (event) => {
+        if (event.target.id === id) {
+            if (id === "categoryFilter") {
+                state.activeCategoryChip = "All";
+            }
+            render();
+        }
+    });
+    document.addEventListener("change", (event) => {
+        if (event.target.id === id) {
+            if (id === "categoryFilter") {
+                state.activeCategoryChip = "All";
+            }
+            render();
+        }
+    });
+});
+
+loadBriefs().catch(() => {
+    document.getElementById("board").innerHTML = `<div class="empty">Wealth Briefs failed to load.</div>`;
+});
+</script>
+<script src="components22.js?v=2026-03-28.1"></script>
+</body>
+</html>

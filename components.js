@@ -149,6 +149,7 @@ const siteHeader = `
                     <a href="global_explorer.html">Wealth Explorer</a>
                     <a href="atlas.html">Longevity Atlas</a>
                     <a href="data-lab.html">Data Lab</a>
+                    <a href="wealth-briefs.html">Wealth Briefs</a>
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
                 </div>
             </div>
