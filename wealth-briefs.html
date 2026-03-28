@@ -546,9 +546,19 @@ function uniqueYears(items) {
 
 function renderStats(payload) {
     const categories = Object.keys(payload.categories || {}).length;
-    const books = payload.sourceTypes?.["Book"] || 0;
-    const journals = payload.sourceTypes?.["Journal paper"] || 0;
-    const reports = (payload.sourceTypes?.["Research / report"] || 0) + (payload.sourceTypes?.["Scorecard / report"] || 0);
+    const books = payload.sourceTypes?.["book"] || 0;
+    const journals =
+        (payload.sourceTypes?.["finance journal"] || 0) +
+        (payload.sourceTypes?.["economics journal"] || 0) +
+        (payload.sourceTypes?.["academic journal"] || 0) +
+        (payload.sourceTypes?.["real estate journal"] || 0) +
+        (payload.sourceTypes?.["planning journal"] || 0) +
+        (payload.sourceTypes?.["business journal"] || 0);
+    const reports =
+        (payload.sourceTypes?.["research report"] || 0) +
+        (payload.sourceTypes?.["industry scorecard"] || 0) +
+        (payload.sourceTypes?.["working paper"] || 0) +
+        (payload.sourceTypes?.["NBER working paper"] || 0);
     const stats = [
         { label: "Real sources", value: payload.count, copy: "No placeholder entries in the live dataset." },
         { label: "Categories", value: categories, copy: "Coverage across investing, behavior, housing, taxes, and retirement." },
@@ -606,7 +616,7 @@ function renderCards(items) {
                 <div class="meta-line-small"><strong>Why it matters:</strong> ${item.whyItMatters}</div>
                 <div class="meta-line-small"><strong>Authors:</strong> ${item.authors}</div>
                 <div class="meta-line-small"><strong>Publication:</strong> ${item.publication}</div>
-                <a class="source-link" href="${item.sourceUrl}" target="_blank" rel="noopener">Open source</a>
+                <a class="source-link" href="${item.sourceUrl}" target="_blank" rel="noopener">${item.sourceLinkLabel || "View source"}</a>
             </div>
         </article>
     `).join("");
