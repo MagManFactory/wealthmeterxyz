@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wealth Briefs | WEALTHMETER.XYZ</title>
-    <meta name="description" content="Structured evidence briefs on saving, debt, tax, investing, and retirement decisions for practical household wealth strategy.">
+    <meta name="description" content="A searchable shelf of real finance research, reports, and books across saving, investing, taxes, retirement, and household money decisions.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://wealthmeter.xyz/wealth-briefs.html">
     <meta property="og:title" content="Wealth Briefs | WEALTHMETER.XYZ">
-    <meta property="og:description" content="Compact evidence briefs on saving, debt, tax strategy, portfolio construction, and retirement decisions.">
+    <meta property="og:description" content="Real wealth research and reports in plain language, organized for fast browsing.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wealthmeter.xyz/wealth-briefs.html">
     <meta property="og:image" content="https://wealthmeter.xyz/images/longform/ai-wealth-compounding-playbook.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Wealth Briefs | WEALTHMETER.XYZ">
-    <meta name="twitter:description" content="Decision-grade briefs on saving, debt, tax, and investing claims.">
+    <meta name="twitter:description" content="A searchable shelf of real finance research, reports, and books in plain language.">
     <meta name="twitter:image" content="https://wealthmeter.xyz/images/longform/ai-wealth-compounding-playbook.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "Wealth Briefs",
       "url": "https://wealthmeter.xyz/wealth-briefs.html",
-      "description": "Structured evidence briefs on practical wealth decisions.",
+      "description": "A searchable shelf of real finance research, reports, and books for practical wealth decisions.",
       "publisher": {
         "@type": "Organization",
         "name": "WEALTHMETER.XYZ",
@@ -37,142 +37,148 @@
         :root {
             --bg: #f8fafc;
             --card: #ffffff;
-            --text: #0f172a;
-            --slate: #64748b;
+            --ink: #0f172a;
+            --muted: #64748b;
             --line: #dbe4f0;
             --blue: #2563eb;
+            --blue-soft: #eff6ff;
             --cyan: #0891b2;
             --green: #059669;
             --amber: #d97706;
-            --red: #dc2626;
         }
         * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
         body {
             margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            font-family: 'Inter', sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 30%),
+                radial-gradient(circle at top right, rgba(8, 145, 178, 0.12), transparent 26%),
+                #f8fafc;
         }
         .page {
             width: 100%;
             max-width: 1280px;
             margin: 72px auto;
-            padding: 0 20px 48px;
+            padding: 0 20px 56px;
         }
         .hero {
-            background: linear-gradient(135deg, #0f172a, #112b59 55%, #1d4ed8);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 30px;
+            padding: 36px 32px 34px;
             color: #fff;
-            border-radius: 28px;
-            padding: 34px 30px;
-            box-shadow: 0 18px 42px rgba(15, 23, 42, 0.22);
+            background:
+                linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(17, 43, 89, 0.94) 52%, rgba(37, 99, 235, 0.92)),
+                linear-gradient(45deg, #0f172a, #1d4ed8);
+            box-shadow: 0 24px 54px rgba(15, 23, 42, 0.24);
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: auto -120px -120px auto;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.18), rgba(255,255,255,0));
+            pointer-events: none;
         }
         .eyebrow {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            padding: 7px 12px;
+            border: 1px solid rgba(255,255,255,0.22);
+            background: rgba(255,255,255,0.1);
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.74rem;
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            background: rgba(255,255,255,0.14);
-            border: 1px solid rgba(255,255,255,0.24);
-            border-radius: 999px;
-            padding: 7px 12px;
-            margin-bottom: 14px;
         }
         h1 {
-            margin: 0;
+            margin: 16px 0 10px;
+            max-width: 860px;
             font-family: 'Outfit', sans-serif;
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            line-height: 1.02;
-            letter-spacing: -0.04em;
+            font-size: clamp(2.4rem, 5.2vw, 4.4rem);
+            line-height: 0.98;
+            letter-spacing: -0.05em;
         }
         .hero p {
-            margin: 14px 0 0;
-            max-width: 860px;
+            margin: 0;
+            max-width: 760px;
+            font-size: 1.06rem;
+            line-height: 1.64;
             color: #dbeafe;
-            font-size: 1.04rem;
-            line-height: 1.6;
         }
         .meta-line {
-            margin-top: 16px;
+            margin-top: 18px;
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            color: #cfe3ff;
         }
-        .chip {
+        .hero-chip {
             display: inline-flex;
             align-items: center;
             border-radius: 999px;
-            border: 1px solid rgba(255,255,255,0.24);
+            border: 1px solid rgba(255,255,255,0.2);
             background: rgba(255,255,255,0.08);
-            color: #f8fbff;
+            color: #eff6ff;
             padding: 7px 11px;
-            font-size: 0.74rem;
+            font-size: 0.76rem;
             font-weight: 800;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
         }
-        .utility-grid {
+        .stats-grid {
             margin-top: 18px;
             display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 14px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
         }
-        .panel {
+        .stat-card {
             background: #fff;
             border: 1px solid var(--line);
-            border-radius: 18px;
-            padding: 18px;
+            border-radius: 20px;
+            padding: 18px 18px 16px;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
         }
-        .panel h2, .panel h3 {
-            margin: 0 0 10px;
-            font-family: 'Outfit', sans-serif;
-            letter-spacing: -0.02em;
-        }
-        .panel p {
-            margin: 0;
-            color: #334155;
-            line-height: 1.65;
-        }
-        .policy-list, .rule-list {
-            display: grid;
-            gap: 10px;
-            margin-top: 12px;
-        }
-        .policy-row, .rule-row {
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            padding: 12px 13px;
-            background: #f8fafc;
-        }
-        .policy-row strong, .rule-row strong {
+        .stat-label {
             display: block;
-            margin-bottom: 5px;
-            color: var(--text);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
         }
-        .policy-row span, .rule-row span {
+        .stat-value {
+            margin-top: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            line-height: 1;
+            letter-spacing: -0.04em;
+            color: var(--ink);
+        }
+        .stat-copy {
+            margin-top: 6px;
             color: #475569;
-            line-height: 1.55;
             font-size: 0.95rem;
+            line-height: 1.5;
         }
         .crawl-index {
             margin-top: 18px;
-            background: #fff;
             border: 1px solid var(--line);
             border-radius: 18px;
+            background: #fff;
             padding: 16px 18px;
         }
         .crawl-index h2 {
             margin: 0 0 10px;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.13em;
-            color: var(--slate);
+            letter-spacing: 0.12em;
+            color: var(--muted);
         }
         .crawl-links {
             display: flex;
@@ -187,92 +193,72 @@
         .controls {
             margin-top: 18px;
             display: grid;
-            grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1.45fr 1fr 1fr 1fr;
             gap: 12px;
         }
         .control {
-            background: #fff;
             border: 1px solid var(--line);
             border-radius: 14px;
+            background: #fff;
             padding: 12px;
         }
         .control label {
             display: block;
             margin-bottom: 6px;
             font-size: 0.68rem;
-            color: var(--slate);
+            color: var(--muted);
             text-transform: uppercase;
             font-weight: 900;
             letter-spacing: 0.09em;
         }
         .control input, .control select {
             width: 100%;
+            padding: 10px;
             border: 1px solid #cbd5e1;
             border-radius: 8px;
-            padding: 10px;
-            font-size: 0.95rem;
             font-family: 'Inter', sans-serif;
-            color: var(--text);
+            font-size: 0.95rem;
+            color: var(--ink);
             background: #fff;
         }
         .control-note {
-            margin-top: 8px;
-            color: var(--slate);
+            margin-top: 7px;
             font-size: 0.75rem;
-            line-height: 1.4;
+            line-height: 1.45;
+            color: var(--muted);
         }
         .filter-row-label {
             margin-top: 16px;
             font-size: 0.72rem;
-            color: var(--slate);
+            color: var(--muted);
             text-transform: uppercase;
             font-weight: 900;
             letter-spacing: 0.1em;
         }
-        .theme-row {
+        .chip-row {
             margin-top: 10px;
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
-        .theme-chip-btn {
+        .chip-btn {
             display: inline-flex;
             align-items: center;
             border-radius: 999px;
             border: 1px solid #dbeafe;
-            background: #eff6ff;
+            background: var(--blue-soft);
             color: #1d4ed8;
             padding: 7px 11px;
             font-size: 0.74rem;
             font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.04em;
             cursor: pointer;
             font-family: 'Inter', sans-serif;
         }
-        .theme-chip-btn.active {
+        .chip-btn.active {
             border-color: #1d4ed8;
             background: #1d4ed8;
             color: #eff6ff;
-        }
-        .focus-chip-btn {
-            display: inline-flex;
-            align-items: center;
-            border-radius: 999px;
-            border: 1px solid #cbd5e1;
-            background: #fff;
-            color: #334155;
-            padding: 7px 11px;
-            font-size: 0.74rem;
-            font-weight: 800;
-            letter-spacing: 0.03em;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-        }
-        .focus-chip-btn.active {
-            border-color: #0f766e;
-            background: #115e59;
-            color: #ecfeff;
         }
         .count-row {
             margin-top: 12px;
@@ -280,10 +266,18 @@
             flex-wrap: wrap;
             gap: 8px;
         }
-        .count-row .chip {
+        .count-chip {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            border: 1px solid #a7f3d0;
             background: #ecfdf5;
-            border-color: #a7f3d0;
             color: #065f46;
+            padding: 7px 11px;
+            font-size: 0.74rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
         .board {
             margin-top: 18px;
@@ -292,91 +286,53 @@
             gap: 14px;
         }
         .card {
-            background: var(--card);
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            padding: 18px;
-            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
             display: flex;
             flex-direction: column;
-            min-height: 360px;
+            min-height: 290px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: var(--card);
+            padding: 18px;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
         }
         .topline {
             display: flex;
             justify-content: space-between;
             gap: 8px;
-            margin-bottom: 10px;
             flex-wrap: wrap;
-        }
-        .grade {
-            display: inline-flex;
-            align-items: center;
-            border-radius: 999px;
-            padding: 5px 10px;
-            font-size: 0.72rem;
-            font-weight: 900;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-        .grade.a { background: #dcfce7; color: #166534; }
-        .grade.b { background: #fef3c7; color: #92400e; }
-        .grade.c { background: #fee2e2; color: #991b1b; }
-        .source-type {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.74rem;
-            color: var(--slate);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
+            margin-bottom: 10px;
         }
         .category {
             display: inline-flex;
             align-items: center;
             border-radius: 999px;
             background: #eff6ff;
-            color: #1e40af;
+            color: #1d4ed8;
             padding: 5px 10px;
             font-size: 0.72rem;
             font-weight: 800;
             letter-spacing: 0.05em;
             text-transform: uppercase;
         }
-        .stance {
-            display: inline-flex;
-            align-items: center;
-            border-radius: 999px;
-            padding: 5px 10px;
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+        .year {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.76rem;
+            color: var(--muted);
         }
-        .stance.favorable { background: #dcfce7; color: #166534; }
-        .stance.conditional { background: #e0f2fe; color: #075985; }
-        .stance.mixed { background: #fef3c7; color: #92400e; }
-        .stance.overstated { background: #fee2e2; color: #991b1b; }
         h2.card-title {
-            margin: 0.55rem 0 0.75rem;
+            margin: 0.35rem 0 0.75rem;
             font-family: 'Outfit', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.34rem;
             line-height: 1.15;
             letter-spacing: -0.02em;
         }
-        .signal, .section-copy, .meta-copy {
+        .card-copy {
             color: #334155;
             line-height: 1.62;
             font-size: 0.98rem;
         }
-        .section-label {
-            display: block;
-            margin: 12px 0 5px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--slate);
-        }
         .focus-tags {
-            margin: 10px 0 4px;
+            margin-top: 12px;
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
@@ -387,32 +343,84 @@
             border-radius: 999px;
             border: 1px solid #dbeafe;
             background: #f8fbff;
-            color: #1d4ed8;
-            padding: 5px 9px;
+            color: #2563eb;
+            padding: 4px 8px;
             font-size: 0.72rem;
             font-weight: 700;
         }
-        .footer-row {
+        .meta-block {
             margin-top: auto;
-            padding-top: 12px;
+            padding-top: 14px;
             border-top: 1px solid var(--line);
             display: grid;
-            gap: 8px;
+            gap: 6px;
+        }
+        .meta-line-small {
+            color: #475569;
+            font-size: 0.92rem;
+            line-height: 1.55;
         }
         .source-link {
             color: var(--blue);
             font-weight: 700;
             text-decoration: none;
         }
-        .empty {
+        .bottom-grid {
+            margin-top: 26px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 14px;
+        }
+        .panel {
+            border: 1px solid var(--line);
+            border-radius: 18px;
             background: #fff;
+            padding: 18px;
+        }
+        .panel h2 {
+            margin: 0 0 10px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            letter-spacing: -0.02em;
+        }
+        .panel p {
+            margin: 0;
+            color: #334155;
+            line-height: 1.65;
+        }
+        .mini-list {
+            display: grid;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .mini-row {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: #f8fafc;
+            padding: 12px 13px;
+        }
+        .mini-row strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--ink);
+        }
+        .mini-row span {
+            color: #475569;
+            line-height: 1.55;
+            font-size: 0.95rem;
+        }
+        .empty {
             border: 1px dashed #cbd5e1;
             border-radius: 18px;
+            background: #fff;
             padding: 22px;
-            color: var(--slate);
+            color: var(--muted);
         }
-        @media (max-width: 1000px) {
-            .utility-grid, .controls { grid-template-columns: 1fr; }
+        @media (max-width: 1100px) {
+            .stats-grid, .controls, .bottom-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 760px) {
+            .stats-grid, .controls, .bottom-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -421,59 +429,16 @@
 <main class="page">
     <section class="hero">
         <span class="eyebrow">Analyze / Wealth Briefs</span>
-        <h1>Decision-grade wealth evidence, without longform sprawl</h1>
-        <p>Wealth Briefs is a compact reference layer for recurring financial claims. Each brief separates empirical support from implementation judgment, shows where the tactic works, and marks where the evidence is mixed, regime-dependent, or easily overstated.</p>
+        <h1>Real sources. Plain language. Fast browsing.</h1>
+        <p>This page is a searchable shelf of finance research, reports, and books. Every card points to a real source from the master list. The copy is kept simple so you can scan quickly before opening the original source.</p>
         <div class="meta-line">
-            <span class="chip">Saving</span>
-            <span class="chip">Debt</span>
-            <span class="chip">Tax strategy</span>
-            <span class="chip">Portfolio construction</span>
-            <span class="chip">Retirement mechanics</span>
+            <span class="hero-chip">No placeholder entries</span>
+            <span class="hero-chip">Real source links only</span>
+            <span class="hero-chip">Search by topic or source type</span>
         </div>
     </section>
 
-    <section class="utility-grid">
-        <article class="panel">
-            <h2>What this section is for</h2>
-            <p>Longform explains systems and tradeoffs across a full narrative arc. Wealth Briefs does something narrower. It compresses a single strategy or claim into a repeatable evidence card so the user can compare tactics on the same frame: support level, mechanism, boundaries, friction, and action stance.</p>
-            <div class="rule-list">
-                <div class="rule-row">
-                    <strong>Established fact</strong>
-                    <span>Empirical baseline fields are reserved for what the cited source class actually supports.</span>
-                </div>
-                <div class="rule-row">
-                    <strong>Reasoned inference</strong>
-                    <span>Action stance reflects implementation judgment, not a disguised citation.</span>
-                </div>
-                <div class="rule-row">
-                    <strong>Source hierarchy</strong>
-                    <span>Peer-reviewed research, official datasets, and institutional scorecards outrank books or opinion-led advice.</span>
-                </div>
-            </div>
-        </article>
-
-        <article class="panel">
-            <h2>Evidence policy</h2>
-            <div class="policy-list">
-                <div class="policy-row">
-                    <strong>Grade A</strong>
-                    <span>Repeated support across long samples, multiple studies, or official scorecards. Good default decision material.</span>
-                </div>
-                <div class="policy-row">
-                    <strong>Grade B</strong>
-                    <span>Useful but conditional. Often tax-sensitive, regime-sensitive, or highly dependent on household structure.</span>
-                </div>
-                <div class="policy-row">
-                    <strong>Grade C</strong>
-                    <span>Plausible or early, but not strong enough for confident default advice.</span>
-                </div>
-                <div class="policy-row">
-                    <strong>Books and reports</strong>
-                    <span>Consumer books can frame an idea, but they do not automatically elevate it to decision-grade evidence.</span>
-                </div>
-            </div>
-        </article>
-    </section>
+    <section class="stats-grid" id="statsGrid"></section>
 
     <section class="crawl-index" aria-label="WealthMeter internal links">
         <h2>Explore WealthMeter Tools</h2>
@@ -489,35 +454,70 @@
     <section class="controls" aria-label="Brief filters">
         <div class="control">
             <label for="searchInput">Search</label>
-            <input id="searchInput" type="search" placeholder="Search title, thesis, source, or tags">
-            <div class="control-note">Search includes title, signal, mechanism, source, and focus tags.</div>
+            <input id="searchInput" type="search" placeholder="Search title, author, topic, or publication">
+            <div class="control-note">Search looks across titles, authors, publications, categories, and tags.</div>
         </div>
         <div class="control">
             <label for="categoryFilter">Category</label>
             <select id="categoryFilter"></select>
         </div>
         <div class="control">
-            <label for="gradeFilter">Evidence grade</label>
-            <select id="gradeFilter"></select>
+            <label for="sourceTypeFilter">Source type</label>
+            <select id="sourceTypeFilter"></select>
         </div>
         <div class="control">
-            <label for="sourceFilter">Source type</label>
-            <select id="sourceFilter"></select>
-        </div>
-        <div class="control">
-            <label for="stanceFilter">Action stance</label>
-            <select id="stanceFilter"></select>
+            <label for="yearFilter">Year</label>
+            <select id="yearFilter"></select>
         </div>
     </section>
 
-    <div class="filter-row-label">Primary categories</div>
-    <div class="theme-row" id="categoryRow"></div>
+    <div class="filter-row-label">Categories</div>
+    <div class="chip-row" id="categoryRow"></div>
 
-    <div class="filter-row-label">Searchable focus tags</div>
-    <div class="theme-row" id="focusRow"></div>
+    <div class="filter-row-label">Browse tags</div>
+    <div class="chip-row" id="focusRow"></div>
 
     <div class="count-row" id="countRow"></div>
     <section class="board" id="board"></section>
+
+    <section class="bottom-grid">
+        <article class="panel">
+            <h2>What this section is for</h2>
+            <p>Wealth Briefs is not a set of made-up advice cards. It is a source shelf. Each card gives you the topic, the source, and a short plain-language note on why that source matters. If you want the original argument, data, or method, open the linked paper, report, or book listing.</p>
+            <div class="mini-list">
+                <div class="mini-row">
+                    <strong>Simple on purpose</strong>
+                    <span>The card text avoids technical language where possible. It is there to help you sort sources quickly, not replace them.</span>
+                </div>
+                <div class="mini-row">
+                    <strong>Real entries only</strong>
+                    <span>Every card is tied to a row in the master source file and keeps the original title, publication, year, and link.</span>
+                </div>
+                <div class="mini-row">
+                    <strong>Useful for follow-up work</strong>
+                    <span>This page is a starting point for deeper analysis, calculators, and future longform pieces.</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="panel">
+            <h2>Evidence policy</h2>
+            <div class="mini-list">
+                <div class="mini-row">
+                    <strong>No hypothetical articles</strong>
+                    <span>If a source is not real and linked, it does not belong in the database.</span>
+                </div>
+                <div class="mini-row">
+                    <strong>Source type is shown, not inflated</strong>
+                    <span>Journal papers, working papers, reports, and books are labeled directly instead of being forced into a fake certainty score.</span>
+                </div>
+                <div class="mini-row">
+                    <strong>Books are context, not proof</strong>
+                    <span>Books can be useful, but they should not be treated the same way as a journal paper or a scorecard.</span>
+                </div>
+            </div>
+        </article>
+    </section>
 </main>
 <div id="footer-placeholder"></div>
 
@@ -527,9 +527,6 @@ const state = {
     activeCategoryChip: "All",
     activeFocusChip: "All"
 };
-
-const gradeOrder = ["All", "A", "B", "C"];
-const stanceOrder = ["All", "Usually favorable", "Favorable with conditions", "Mixed", "Usually overstated"];
 
 function populateSelect(select, values) {
     select.innerHTML = values.map((value) => `<option value="${value}">${value}</option>`).join("");
@@ -543,113 +540,112 @@ function uniqueFocusTags(items) {
     return ["All", ...Array.from(new Set(items.flatMap((item) => item.focusTags || []))).sort()];
 }
 
-function stanceClass(value) {
-    if (value === "Usually favorable") return "favorable";
-    if (value === "Favorable with conditions") return "conditional";
-    if (value === "Usually overstated") return "overstated";
-    return "mixed";
+function uniqueYears(items) {
+    return ["All", ...Array.from(new Set(items.map((item) => String(item.year)).filter(Boolean))).sort((a, b) => Number(b) - Number(a))];
+}
+
+function renderStats(payload) {
+    const categories = Object.keys(payload.categories || {}).length;
+    const books = payload.sourceTypes?.["Book"] || 0;
+    const journals = payload.sourceTypes?.["Journal paper"] || 0;
+    const reports = (payload.sourceTypes?.["Research / report"] || 0) + (payload.sourceTypes?.["Scorecard / report"] || 0);
+    const stats = [
+        { label: "Real sources", value: payload.count, copy: "No placeholder entries in the live dataset." },
+        { label: "Categories", value: categories, copy: "Coverage across investing, behavior, housing, taxes, and retirement." },
+        { label: "Journal papers", value: journals, copy: "Academic work remains the largest source bucket." },
+        { label: "Reports + books", value: reports + books, copy: "Reports and books stay visible but clearly labeled." }
+    ];
+    document.getElementById("statsGrid").innerHTML = stats.map((stat) => `
+        <article class="stat-card">
+            <span class="stat-label">${stat.label}</span>
+            <div class="stat-value">${stat.value}</div>
+            <div class="stat-copy">${stat.copy}</div>
+        </article>
+    `).join("");
 }
 
 function renderCategoryChips(items, active) {
     const categories = uniqueValues(items, "category");
-    const row = document.getElementById("categoryRow");
-    row.innerHTML = categories.map((category) => {
+    document.getElementById("categoryRow").innerHTML = categories.map((category) => {
         const count = category === "All" ? items.length : items.filter((item) => item.category === category).length;
-        return `<button class="theme-chip-btn ${category === active ? "active" : ""}" data-category="${category}">${category.toUpperCase()} (${count})</button>`;
+        return `<button class="chip-btn ${category === active ? "active" : ""}" data-category="${category}">${category.toUpperCase()} (${count})</button>`;
     }).join("");
 }
 
 function renderFocusChips(items, active) {
     const tags = uniqueFocusTags(items);
-    const row = document.getElementById("focusRow");
-    row.innerHTML = tags.map((tag) => {
+    document.getElementById("focusRow").innerHTML = tags.map((tag) => {
         const count = tag === "All" ? items.length : items.filter((item) => (item.focusTags || []).includes(tag)).length;
-        return `<button class="focus-chip-btn ${tag === active ? "active" : ""}" data-focus="${tag}">${tag} (${count})</button>`;
+        return `<button class="chip-btn ${tag === active ? "active" : ""}" data-focus="${tag}">${tag} (${count})</button>`;
     }).join("");
 }
 
 function renderCountRow(total, filtered) {
     document.getElementById("countRow").innerHTML = [
-        `<span class="chip">Visible briefs: ${filtered}</span>`,
-        `<span class="chip">Total loaded: ${total}</span>`
+        `<span class="count-chip">Visible: ${filtered}</span>`,
+        `<span class="count-chip">Loaded: ${total}</span>`
     ].join("");
 }
 
 function renderCards(items) {
     const board = document.getElementById("board");
     if (!items.length) {
-        board.innerHTML = `<div class="empty">No briefs match the current filter stack.</div>`;
+        board.innerHTML = `<div class="empty">No sources match the current filter set.</div>`;
         return;
     }
     board.innerHTML = items.map((item) => `
         <article class="card">
             <div class="topline">
-                <span class="grade ${item.evidenceGrade.toLowerCase()}">Grade ${item.evidenceGrade}</span>
-                <span class="source-type">${item.sourceType}</span>
-            </div>
-            <div class="topline">
-                <span class="category">${item.category}</span>
-                <span class="stance ${stanceClass(item.actionStance)}">${item.actionStance}</span>
+                <span class="category">${item.categoryLabel || item.category}</span>
+                <span class="year">${item.year} | ${item.sourceType}</span>
             </div>
             <h2 class="card-title">${item.title}</h2>
-            <div class="signal">${item.signal}</div>
+            <div class="card-copy">${item.summary}</div>
             <div class="focus-tags">${(item.focusTags || []).map((tag) => `<span class="focus-tag">${tag}</span>`).join("")}</div>
-            <span class="section-label">Empirical baseline</span>
-            <div class="section-copy">${item.empiricalBaseline}</div>
-            <span class="section-label">Mechanism</span>
-            <div class="section-copy">${item.mechanism}</div>
-            <span class="section-label">Boundary</span>
-            <div class="section-copy">${item.whereItWorks}</div>
-            <span class="section-label">Failure mode</span>
-            <div class="section-copy">${item.whereItBreaks}</div>
-            <div class="footer-row">
-                <div class="meta-copy"><strong>Study window:</strong> ${item.studyWindow}</div>
-                <div class="meta-copy"><strong>Execution friction:</strong> ${item.executionFriction}</div>
-                <div class="meta-copy"><strong>Source tier:</strong> ${item.sourceTier} | <strong>Quality score:</strong> ${item.qualityScore}</div>
-                <a class="source-link" href="${item.sourceUrl}" target="_blank" rel="noopener">${item.sourceName}</a>
+            <div class="meta-block">
+                <div class="meta-line-small"><strong>Why it matters:</strong> ${item.whyItMatters}</div>
+                <div class="meta-line-small"><strong>Authors:</strong> ${item.authors}</div>
+                <div class="meta-line-small"><strong>Publication:</strong> ${item.publication}</div>
+                <a class="source-link" href="${item.sourceUrl}" target="_blank" rel="noopener">Open source</a>
             </div>
         </article>
     `).join("");
 }
 
-function render() {
+function filterItems() {
     const searchValue = document.getElementById("searchInput").value.trim().toLowerCase();
     const selectedCategory = document.getElementById("categoryFilter").value;
-    const selectedGrade = document.getElementById("gradeFilter").value;
-    const selectedSource = document.getElementById("sourceFilter").value;
-    const selectedStance = document.getElementById("stanceFilter").value;
+    const selectedSourceType = document.getElementById("sourceTypeFilter").value;
+    const selectedYear = document.getElementById("yearFilter").value;
 
-    const filtered = state.briefs.filter((item) => {
+    return state.briefs.filter((item) => {
         const categoryPass = selectedCategory === "All" && state.activeCategoryChip === "All"
             ? true
             : (selectedCategory !== "All" ? item.category === selectedCategory : item.category === state.activeCategoryChip);
-
         const focusPass = state.activeFocusChip === "All" || (item.focusTags || []).includes(state.activeFocusChip);
-        const gradePass = selectedGrade === "All" || item.evidenceGrade === selectedGrade;
-        const sourcePass = selectedSource === "All" || item.sourceType === selectedSource;
-        const stancePass = selectedStance === "All" || item.actionStance === selectedStance;
+        const sourcePass = selectedSourceType === "All" || item.sourceType === selectedSourceType;
+        const yearPass = selectedYear === "All" || String(item.year) === selectedYear;
         const searchPass = !searchValue || [
             item.title,
-            item.signal,
-            item.empiricalBaseline,
-            item.mechanism,
-            item.sourceName,
+            item.authors,
+            item.publication,
             item.category,
-            item.actionStance,
+            item.categoryLabel,
+            item.summary,
+            item.whyItMatters,
             ...(item.focusTags || [])
         ].join(" ").toLowerCase().includes(searchValue);
+        return categoryPass && focusPass && sourcePass && yearPass && searchPass;
+    }).sort((a, b) => Number(b.year) - Number(a.year) || a.title.localeCompare(b.title));
+}
 
-        return categoryPass && focusPass && gradePass && sourcePass && stancePass && searchPass;
-    });
-
+function render() {
+    const filtered = filterItems();
     renderCategoryChips(state.briefs, state.activeCategoryChip);
     renderFocusChips(
-        selectedCategory === "All" && state.activeCategoryChip === "All"
+        state.activeCategoryChip === "All"
             ? state.briefs
-            : state.briefs.filter((item) => {
-                const category = selectedCategory !== "All" ? selectedCategory : state.activeCategoryChip;
-                return category === "All" ? true : item.category === category;
-            }),
+            : state.briefs.filter((item) => item.category === state.activeCategoryChip),
         state.activeFocusChip
     );
     renderCountRow(state.briefs.length, filtered.length);
@@ -660,11 +656,10 @@ async function loadBriefs() {
     const response = await fetch("data/wealth-briefs.json");
     const payload = await response.json();
     state.briefs = payload.briefs || [];
-
+    renderStats(payload);
     populateSelect(document.getElementById("categoryFilter"), uniqueValues(state.briefs, "category"));
-    populateSelect(document.getElementById("gradeFilter"), gradeOrder);
-    populateSelect(document.getElementById("sourceFilter"), uniqueValues(state.briefs, "sourceType"));
-    populateSelect(document.getElementById("stanceFilter"), stanceOrder);
+    populateSelect(document.getElementById("sourceTypeFilter"), uniqueValues(state.briefs, "sourceType"));
+    populateSelect(document.getElementById("yearFilter"), uniqueYears(state.briefs));
     render();
 }
 
@@ -675,7 +670,6 @@ document.addEventListener("click", (event) => {
         document.getElementById("categoryFilter").value = "All";
         render();
     }
-
     const focusChip = event.target.closest("[data-focus]");
     if (focusChip) {
         state.activeFocusChip = focusChip.dataset.focus;
@@ -683,7 +677,7 @@ document.addEventListener("click", (event) => {
     }
 });
 
-["searchInput", "categoryFilter", "gradeFilter", "sourceFilter", "stanceFilter"].forEach((id) => {
+["searchInput", "categoryFilter", "sourceTypeFilter", "yearFilter"].forEach((id) => {
     document.addEventListener("input", (event) => {
         if (event.target.id === id) {
             if (id === "categoryFilter") {
