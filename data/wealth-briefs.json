@@ -1201,8 +1201,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "Useful if you want to see how bias and framing change real money decisions, not just abstract preferences.",
+      "summary": "Barberis, Shleifer, and Vishny offer a model in which investor bias can produce both slow underreaction and later overreaction in asset prices.",
+      "whyItMatters": "This is a key theoretical bridge between behavioral bias and return patterns like momentum and reversal.",
       "focusTags": [
         "Money behavior",
         "Momentum"
@@ -1298,8 +1298,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Tests whether active fund management adds enough skill to overcome fees, taxes, and trading costs.",
-      "whyItMatters": "Useful if you want to know whether active management adds enough skill to justify its cost.",
+      "summary": "The paper studies how investors chase recent fund returns and how that flow behavior can distort measured performance. It focuses on what happens when money arrives for the wrong reason.",
+      "whyItMatters": "Useful when recent outperformance may owe more to return chasing than to durable process quality.",
       "focusTags": [
         "Active vs passive",
         "Mutual funds"
@@ -1318,8 +1318,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Tests whether active fund management adds enough skill to overcome fees, taxes, and trading costs.",
-      "whyItMatters": "Best read when the real question is whether paying more produces a better investor outcome.",
+      "summary": "The paper looks at how hard it is for investors to search the fund universe and how that friction shapes where money flows. Limited search can keep expensive or mediocre funds alive longer than expected.",
+      "whyItMatters": "This helps explain why bad funds can still gather assets in a market that looks competitive on paper.",
       "focusTags": [
         "Active vs passive",
         "Mutual funds"
@@ -1338,8 +1338,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Tests whether active fund management adds enough skill to overcome fees, taxes, and trading costs.",
-      "whyItMatters": "This helps separate genuine manager edge from fees, taxes, and benchmark noise.",
+      "summary": "This paper examines how mutual fund managers change risk when pay, rankings, or career pressure push them to reach for a better-looking result. Incentives can alter the portfolio even without changing skill.",
+      "whyItMatters": "This is useful when manager behavior may be responding to incentives rather than investor interests.",
       "focusTags": [
         "Active vs passive",
         "Mutual funds"
@@ -1358,8 +1358,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Tests whether active fund management adds enough skill to overcome fees, taxes, and trading costs.",
-      "whyItMatters": "Best read when the real question is whether paying more produces a better investor outcome.",
+      "summary": "Brown, Harlow, and Starks study how mutual fund managers change behavior when rankings create tournament-like incentives. Managers who are behind may take different risks than managers who are ahead.",
+      "whyItMatters": "This helps explain why end-of-period fund behavior may reflect career games, not steady investment logic.",
       "focusTags": [
         "Active vs passive",
         "Mutual funds"
@@ -1398,8 +1398,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Tests whether active fund management adds enough skill to overcome fees, taxes, and trading costs.",
-      "whyItMatters": "Useful if you want to know whether active management adds enough skill to justify its cost.",
+      "summary": "The paper studies how concentrated active-fund positions are within industries and whether that concentration reflects conviction or hidden risk. It connects portfolio concentration to fund outcomes.",
+      "whyItMatters": "Useful when you want to know whether concentration inside an active fund is a sign of skill or just a larger bet.",
       "focusTags": [
         "Active vs passive",
         "Mutual funds",
@@ -1439,8 +1439,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Tests whether active fund management adds enough skill to overcome fees, taxes, and trading costs.",
-      "whyItMatters": "This helps separate genuine manager edge from fees, taxes, and benchmark noise.",
+      "summary": "Berk and Green model why money chases recent winners even in a rational market. If skill exists but is scarce, fund flows can bid away the surplus that new investors hope to capture.",
+      "whyItMatters": "This helps explain why a manager can be skilled while still being a weak buy for fresh capital.",
       "focusTags": [
         "Active vs passive",
         "Mutual funds"
@@ -1459,8 +1459,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Examines whether active managers lose their edge as assets under management grow and their best ideas become harder to scale.",
-      "whyItMatters": "Best read when the real question is whether paying more produces a better investor outcome.",
+      "summary": "Pastor and Stambaugh study how large the active-management business can get before competition erodes its value to investors. The paper links industry size to diminishing edge.",
+      "whyItMatters": "Useful when the question is not whether skill exists, but whether too much money can crowd it away.",
       "focusTags": [
         "Active vs passive",
         "Active management"
@@ -2855,8 +2855,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "Useful if you want to see how bias and framing change real money decisions, not just abstract preferences.",
+      "summary": "This paper applies prospect theory to investor behavior in Brazil and studies whether the expected loss-aversion patterns show up in practice.",
+      "whyItMatters": "Useful as a country-specific application of the broader prospect-theory framework.",
       "focusTags": [
         "Money behavior"
       ],
@@ -2874,8 +2874,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "Useful if you want to see how bias and framing change real money decisions, not just abstract preferences.",
+      "summary": "This paper links loss aversion and prospect theory to familiar market anomalies and to everyday financial choice patterns.",
+      "whyItMatters": "Useful if you want a direct bridge between prospect theory and anomaly language.",
       "focusTags": [
         "Money behavior"
       ],
@@ -2912,8 +2912,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "Useful if you want to see how bias and framing change real money decisions, not just abstract preferences.",
+      "summary": "This paper revisits prospect theory and asks where the model still fits well and where its limits may be showing.",
+      "whyItMatters": "Useful when you want to know whether the field’s core framework is still being challenged.",
       "focusTags": [
         "Money behavior"
       ],
@@ -2931,8 +2931,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "Useful if you want to see how bias and framing change real money decisions, not just abstract preferences.",
+      "summary": "This study examines prospect-theory effects in Pakistan and asks whether market context changes how strongly behavioral patterns appear.",
+      "whyItMatters": "Useful if you want a second regime-based test of prospect-theory behavior in practice.",
       "focusTags": [
         "Money behavior"
       ],
@@ -2950,8 +2950,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This paper studies whether prospect-theory style behavior shows up differently across political and market regimes in Pakistan.",
+      "whyItMatters": "Useful as a regime-sensitive test of behavioral-finance claims in one market.",
       "focusTags": [
         "Money behavior"
       ],
@@ -2969,8 +2969,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "This helps explain why sensible plans often break once habit, emotion, or social cues get involved.",
+      "summary": "This is a literature-mapping paper that tracks how much behavioral-finance work has been built on prospect theory.",
+      "whyItMatters": "Useful for seeing how central prospect theory has become inside the behavioral-finance literature.",
       "focusTags": [
         "Money behavior"
       ],
@@ -2988,8 +2988,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "Useful if you want to see how bias and framing change real money decisions, not just abstract preferences.",
+      "summary": "The paper looks at why investor choices drift from standard rational models and groups those deviations into familiar behavioral-finance patterns.",
+      "whyItMatters": "Useful as a compact overview of how actual investor choices diverge from textbook assumptions.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3007,8 +3007,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "Useful if you want to see how bias and framing change real money decisions, not just abstract preferences.",
+      "summary": "This paper applies prospect-theory style investor behavior to cryptocurrency markets, where sentiment and lottery-like demand can be especially strong.",
+      "whyItMatters": "Useful if you want a behavioral-finance lens on crypto rather than a pure valuation story.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3026,8 +3026,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This paper applies prospect-theory ideas to student investment decisions and shows how framing and loss aversion appear even in simple settings.",
+      "whyItMatters": "Useful as a small-scale illustration of how quickly prospect-theory behavior shows up.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3045,8 +3045,8 @@
       "sourceType": "academic journal",
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This paper surveys where prospect theory has been used most heavily inside behavioral-finance research and what kinds of results it helps explain.",
+      "whyItMatters": "Useful as a narrower guide to prospect theory’s direct use inside finance.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3064,8 +3064,8 @@
       "sourceType": "academic journal",
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This study examines whether prospect-theory behavior shows up among Brazilian investors and how that affects financial choices.",
+      "whyItMatters": "Useful for seeing how prospect theory travels into a specific investor population.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3083,8 +3083,8 @@
       "sourceType": "academic journal",
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "Useful if you want to see how bias and framing change real money decisions, not just abstract preferences.",
+      "summary": "This paper applies prospect theory to potential investors in Brazil and asks whether the expected behavioral patterns appear before real capital is committed.",
+      "whyItMatters": "Useful as a localized application of prospect theory to investor decision-making.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3102,8 +3102,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This paper reviews applied evidence for prospect theory in behavioral finance and groups the main empirical findings by topic.",
+      "whyItMatters": "Useful if you want a compact review of how prospect theory has been applied empirically.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3121,8 +3121,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "This helps explain why sensible plans often break once habit, emotion, or social cues get involved.",
+      "summary": "This wide-ranging review connects prospect theory, mental accounting, and nudges across several domains, not just investing.",
+      "whyItMatters": "Useful if you want to see how the same behavioral ideas travel well beyond portfolio choice.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3159,8 +3159,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This is a publication-mapping paper that shows which behavioral-finance topics, authors, and themes have attracted the most research attention.",
+      "whyItMatters": "Useful for seeing where the literature is concentrated, but not as a primary evidence source on investor behavior itself.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3178,8 +3178,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This paper applies prospect-theory and noise-trading ideas to a specific stock market and studies whether bias-linked anomalies show up there.",
+      "whyItMatters": "Useful as an applied market-specific test of prospect-theory style behavior.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3197,8 +3197,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "This helps explain why sensible plans often break once habit, emotion, or social cues get involved.",
+      "summary": "This paper surveys the main theoretical foundations of behavioral finance rather than focusing on one narrow empirical result.",
+      "whyItMatters": "Useful if you want the conceptual scaffolding behind the field before reading specific anomaly papers.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3216,8 +3216,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "This helps explain why sensible plans often break once habit, emotion, or social cues get involved.",
+      "summary": "This paper broadens behavioral-finance ideas beyond investors and applies them to management choices, corporate strategy, and organizational judgment.",
+      "whyItMatters": "Useful if you care about behavioral bias in executives and firms, not just in individual investors.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3235,8 +3235,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This review links behavioral-finance explanations to common market anomalies such as momentum, overreaction, and sentiment-driven moves.",
+      "whyItMatters": "Useful when you want a review paper that connects bias research directly to anomaly debates.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3254,8 +3254,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "This helps explain why sensible plans often break once habit, emotion, or social cues get involved.",
+      "summary": "This paper applies behavioral-finance ideas to operational trade-offs, asking how people weigh accuracy, cost, and environmental impact when decisions are not purely financial.",
+      "whyItMatters": "Useful mainly as a niche application of behavioral framing rather than a core investing paper.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3273,8 +3273,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This review traces how behavioral-finance research evolved from a challenge to rational models into a broader field with many subtopics and methods.",
+      "whyItMatters": "Useful when you want the field’s intellectual arc rather than a single anomaly paper.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3292,8 +3292,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This review surveys the main behavioral-finance themes, including bias, anomaly formation, and the challenge of linking psychology to real market outcomes.",
+      "whyItMatters": "Useful when you want one review paper that maps the main behavioral-finance territory.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3311,8 +3311,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "This helps explain why sensible plans often break once habit, emotion, or social cues get involved.",
+      "summary": "This paper connects behavioral-finance habits to workplace outcomes by asking whether money decisions spill over into productivity and performance.",
+      "whyItMatters": "Useful as a cross-domain application of financial behavior rather than a core market paper.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3330,8 +3330,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This paper studies investor bias in a local setting and discusses whether awareness of behavioral errors can improve decision quality. It is narrower and more context-specific than the canonical bias papers.",
+      "whyItMatters": "Useful as a regional application of investor-bias research, not as the main source on the topic.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3349,8 +3349,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "Useful if you want to see how bias and framing change real money decisions, not just abstract preferences.",
+      "summary": "This is a broad review of how behavioral-finance ideas developed and where they have been applied across investing and decision-making topics.",
+      "whyItMatters": "Useful as a general orientation paper when you want breadth more than depth.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3368,8 +3368,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This paper gives a straightforward overview of how investor psychology can move prices away from what a purely rational model would predict.",
+      "whyItMatters": "Useful as a plain introduction to the investor-psychology side of market behavior.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3387,8 +3387,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "Useful if you want to see how bias and framing change real money decisions, not just abstract preferences.",
+      "summary": "This paper focuses on how to study behavioral-finance effects in managerial settings and what methods are best suited to that work.",
+      "whyItMatters": "Useful if your interest is behavioral finance inside firms rather than only in markets.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3406,8 +3406,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This review looks at how AI tools are being used to model investor bias and decision patterns in behavioral-finance research.",
+      "whyItMatters": "Useful if you want to see how behavioral-finance research is starting to intersect with machine-learning methods.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3425,8 +3425,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This paper looks at how common investor biases interact with sustainable-investing choices and ESG narratives in the stock market.",
+      "whyItMatters": "Useful if you want to see how sustainability preferences and behavioral bias can reinforce each other.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3444,8 +3444,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "Useful if you want to see how bias and framing change real money decisions, not just abstract preferences.",
+      "summary": "This paper focuses on how optimism, fear, and crowd belief can feed bubbles and keep them going longer than fundamentals alone would justify.",
+      "whyItMatters": "Useful when the question is how investor mood helps inflate and sustain a bubble.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3463,8 +3463,8 @@
       "sourceType": "academic journal",
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This paper studies prospect-theory behavior in a graduate-student investor sample and links it to investor profile differences.",
+      "whyItMatters": "Useful as a small-sample behavioral application rather than as a field-defining paper.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3482,8 +3482,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "summary": "This paper compares standard expected-utility theory with prospect theory and lays out where the two models make different predictions.",
+      "whyItMatters": "Useful if you want to understand what prospect theory changed relative to the older rational benchmark.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3501,8 +3501,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "This helps explain why sensible plans often break once habit, emotion, or social cues get involved.",
+      "summary": "This paper applies prospect-theory ideas to stock returns in India and asks whether the behavioral relationship changes across different return environments.",
+      "whyItMatters": "Useful as a narrower empirical test of prospect-theory ideas in one market.",
       "focusTags": [
         "Money behavior",
         "Value"
@@ -5455,8 +5455,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "Useful if you want to see how bias and framing change real money decisions, not just abstract preferences.",
+      "summary": "This paper provides a broad overview of the main behavioral biases that shape investment choices, from overconfidence to loss aversion and herd effects.",
+      "whyItMatters": "Useful as a general survey when you want the major investor biases in one place.",
       "focusTags": [
         "Money behavior"
       ],
@@ -5618,8 +5618,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Tests whether active fund management adds enough skill to overcome fees, taxes, and trading costs.",
-      "whyItMatters": "Best read when the real question is whether paying more produces a better investor outcome.",
+      "summary": "This paper asks whether higher-priced mutual funds actually deliver better results. It examines whether investors are paying for genuine performance or simply paying more for the same exposure.",
+      "whyItMatters": "Useful if a higher fee is being sold as evidence of higher quality.",
       "focusTags": [
         "Active vs passive",
         "Mutual funds"
@@ -5638,8 +5638,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Tests whether active fund management adds enough skill to overcome fees, taxes, and trading costs.",
-      "whyItMatters": "This helps separate genuine manager edge from fees, taxes, and benchmark noise.",
+      "summary": "Kacperczyk, Sialm, and Zheng show that the holdings funds report can miss part of what managers are doing between disclosures. That gap matters when investors judge skill from stale snapshots.",
+      "whyItMatters": "This helps explain why fund disclosures do not always tell the full story about manager behavior.",
       "focusTags": [
         "Active vs passive",
         "Mutual funds"
@@ -5658,8 +5658,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Separates genuine manager skill from outcomes that can be explained by chance, factor exposure, or survivorship.",
-      "whyItMatters": "This helps separate genuine manager edge from fees, taxes, and benchmark noise.",
+      "summary": "Fama and French test whether mutual fund outperformance survives once luck, factor exposure, and costs are stripped out. They find very little evidence that many managers deliver persistent skill net of fees.",
+      "whyItMatters": "Useful when a fund’s past outperformance may just be noise rather than repeatable manager edge.",
       "focusTags": [
         "Active vs passive",
         "Mutual funds"
@@ -7227,8 +7227,8 @@
       "sourceType": "book",
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
-      "summary": "Tests whether active fund management adds enough skill to overcome fees, taxes, and trading costs.",
-      "whyItMatters": "Useful if you want to know whether active management adds enough skill to justify its cost.",
+      "summary": "Ellis argues that for most investors the winning move is not to outplay everyone else but to make fewer costly mistakes than the crowd. The book pushes discipline over cleverness.",
+      "whyItMatters": "Useful if the real edge comes from avoiding self-inflicted errors rather than chasing brilliance.",
       "focusTags": [
         "Active vs passive"
       ],
@@ -7456,8 +7456,8 @@
       "sourceType": "book",
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
-      "summary": "Explains how bias, framing, and social cues can change saving, spending, and investing decisions.",
-      "whyItMatters": "Useful if you want to see how bias and framing change real money decisions, not just abstract preferences.",
+      "summary": "Dalio frames decision-making around principles, feedback loops, and error correction, blending practical management advice with a system view of judgment.",
+      "whyItMatters": "Useful as a decision-framework book, though it is not a primary evidence source in the same way as the core papers.",
       "focusTags": [
         "Money behavior"
       ],
