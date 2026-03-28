@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 6,
+  "schemaVersion": 7,
   "updatedAt": "2026-03-28",
   "count": 399,
   "categories": {
@@ -5988,8 +5988,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at how property values are measured and what really drives real estate returns.",
-      "whyItMatters": "Useful if you want a more grounded view of property returns and valuation risk.",
+      "summary": "This paper shows that appraisal-based real estate return series often look smoother than the real market because appraisals lag and mute price changes. Reported property volatility can therefore look lower than actual economic risk.",
+      "whyItMatters": "This matters because private real estate can appear safer than it really is when the pricing method smooths the path.",
       "focusTags": [
         "Housing and property"
       ],
@@ -6006,8 +6006,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at a source related to housing and property.",
-      "whyItMatters": "Useful if you want a stronger source on housing and property instead of a recycled headline or opinion piece.",
+      "summary": "Case and Shiller test whether single-family home prices behave like an efficient market. They find evidence that past price movements can help predict future movements, which is awkward for a fully efficient-market story.",
+      "whyItMatters": "This matters because housing prices do not always move like a perfectly informed market, which helps explain momentum, overshooting, and local booms.",
       "focusTags": [
         "Housing and property"
       ],
@@ -6024,8 +6024,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at how property values are measured and what really drives real estate returns.",
-      "whyItMatters": "Useful if you want a more grounded view of property returns and valuation risk.",
+      "summary": "The paper links commercial real estate returns to broader economic risk factors rather than treating property as a world of its own. It shows that property returns move with macro conditions in ways investors can measure.",
+      "whyItMatters": "This matters because real estate is not a separate universe. It still carries exposure to growth, rates, and broader economic stress.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6043,8 +6043,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at how investor behavior can push prices too far or make people trade badly.",
-      "whyItMatters": "Useful if you want a clearer view of common investing mistakes and crowd behavior.",
+      "summary": "This paper compares commercial property values with underlying fundamentals and investor mood. It argues that sentiment can push valuations away from the income and macro drivers that would normally anchor them.",
+      "whyItMatters": "This matters because commercial property booms are not always backed by rents and cash flow. Sentiment can do a lot of the lifting.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6062,8 +6062,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at how property values are measured and what really drives real estate returns.",
-      "whyItMatters": "Useful if you want a more grounded view of property returns and valuation risk.",
+      "summary": "The paper compares different ways to build commercial real estate price indices and shows that the method used can materially change the picture of returns and volatility.",
+      "whyItMatters": "This matters because two property indices can tell different stories even when they claim to track the same market.",
       "focusTags": [
         "Housing and property",
         "Real estate",
@@ -6082,8 +6082,8 @@
       "sourceType": "NBER working paper",
       "sourceLabel": "NBER working paper",
       "sourceLinkLabel": "View NBER working paper",
-      "summary": "Looks at what drives house prices, housing booms, and homeownership trends.",
-      "whyItMatters": "Useful if you are trying to separate housing fundamentals from housing hype.",
+      "summary": "This NBER paper looks at why house prices and homeownership changed so sharply in the 2000s, with attention to credit conditions, demand, and supply. It tries to separate structural drivers from simple bubble talk.",
+      "whyItMatters": "This matters because housing moves are rarely driven by one variable alone. Credit, supply, and demand can all change at once.",
       "focusTags": [
         "Housing and property",
         "Housing"
@@ -6101,8 +6101,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at what drives house prices, housing booms, and homeownership trends.",
-      "whyItMatters": "Useful if you are trying to separate housing fundamentals from housing hype.",
+      "summary": "The paper argues that housing bubbles behave differently in places where supply is slow to respond. When new building is constrained, demand shocks can translate into much bigger price moves.",
+      "whyItMatters": "This matters because local supply rules can make the same demand surge much more damaging in one market than another.",
       "focusTags": [
         "Housing and property"
       ],
@@ -6119,8 +6119,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at what drives house prices, housing booms, and homeownership trends.",
-      "whyItMatters": "Useful if you are trying to separate housing fundamentals from housing hype.",
+      "summary": "Himmelberg, Mayer, and Sinai examine whether high house prices necessarily imply a bubble. They show that financing costs, rent equivalents, and local conditions can justify more of the price level than simple ratio-based arguments suggest.",
+      "whyItMatters": "This matters because expensive housing is not automatically irrational. Some markets can look stretched and still be partly explained by fundamentals.",
       "focusTags": [
         "Housing and property",
         "Housing"
@@ -6138,8 +6138,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to housing and property.",
-      "whyItMatters": "Useful if you want a stronger source on housing and property instead of a recycled headline or opinion piece.",
+      "summary": "This paper argues that homebuyers may think in nominal rather than real terms, which can distort housing demand and pricing. Inflation and nominal interest rates can therefore change housing behavior in ways standard models miss.",
+      "whyItMatters": "This matters because housing buyers often react to monthly payment optics, not just clean real-value math.",
       "focusTags": [
         "Housing and property"
       ],
@@ -6156,8 +6156,8 @@
       "sourceType": "NBER working paper",
       "sourceLabel": "NBER working paper",
       "sourceLinkLabel": "View NBER working paper",
-      "summary": "Looks at what drives house prices, housing booms, and homeownership trends.",
-      "whyItMatters": "Useful if you are trying to separate housing fundamentals from housing hype.",
+      "summary": "The paper studies what drives real house prices over time, including income, construction costs, demographics, and financing conditions. It treats house prices as the result of several interacting forces rather than one single cycle story.",
+      "whyItMatters": "This matters because house prices are affected by a mix of local and national variables, which makes simple narratives unreliable.",
       "focusTags": [
         "Housing and property",
         "Housing"
@@ -6175,8 +6175,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at how property values are measured and what really drives real estate returns.",
-      "whyItMatters": "Useful if you want a more grounded view of property returns and valuation risk.",
+      "summary": "The paper asks whether stock market information, especially from listed property vehicles, can help explain or forecast real estate returns. Public markets may reveal information faster than appraisals or private deals do.",
+      "whyItMatters": "This matters because listed markets can sometimes show changes in property risk before private valuations catch up.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6194,8 +6194,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at how property values are measured and what really drives real estate returns.",
-      "whyItMatters": "Useful if you want a more grounded view of property returns and valuation risk.",
+      "summary": "This paper tests how closely stock and real estate prices move together across countries. The answer is mixed: there is some connection, but the link is not stable enough to treat the two assets as the same thing.",
+      "whyItMatters": "This matters because investors often assume housing and stocks are either fully separate or tightly linked. The truth is more conditional.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6213,8 +6213,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at how property values are measured and what really drives real estate returns.",
-      "whyItMatters": "Useful if you want a more grounded view of property returns and valuation risk.",
+      "summary": "The paper studies how the risk premium in real estate changes over time rather than staying constant. Property returns can therefore look very different across calm periods and stressed periods.",
+      "whyItMatters": "This matters because real estate return expectations should not be treated as fixed. The required premium moves with the cycle.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6232,8 +6232,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at how property values are measured and what really drives real estate returns.",
-      "whyItMatters": "Useful if you want a more grounded view of property returns and valuation risk.",
+      "summary": "This paper models real estate returns across countries using several common drivers instead of one local story at a time. It shows that global property returns share some common risk factors even when local details differ.",
+      "whyItMatters": "This matters because international diversification in property helps, but common global forces can still hit many markets together.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6251,8 +6251,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at how portfolios should be built when you balance risk, return, and diversification.",
-      "whyItMatters": "Useful if you want the basic research behind broad diversification and portfolio design.",
+      "summary": "The paper studies how much diversification real estate actually adds and where the limits appear. Property can diversify a portfolio, but concentration by region, type, or cycle can shrink the benefit.",
+      "whyItMatters": "This matters because \u201creal estate diversifies everything\u201d is too broad. The diversification gain depends on what kind of property exposure you actually own.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6270,8 +6270,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at a source related to housing and property.",
-      "whyItMatters": "Useful if you want a stronger source on housing and property instead of a recycled headline or opinion piece.",
+      "summary": "This paper tests real estate as a diversifier across several countries. It finds that property can improve portfolio mix in some settings, but the strength of the benefit depends on market structure and correlation patterns.",
+      "whyItMatters": "This matters because the diversification case for real estate is not one-size-fits-all across countries.",
       "focusTags": [
         "Housing and property",
         "Real estate",
@@ -6290,8 +6290,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at how property values are measured and what really drives real estate returns.",
-      "whyItMatters": "Useful if you want a more grounded view of property returns and valuation risk.",
+      "summary": "The paper separates current income from expected growth when thinking about commercial property returns. It shows that return expectations depend on more than cap rates alone.",
+      "whyItMatters": "This matters because commercial real estate can look attractive on current yield while still disappointing on total return if growth assumptions are weak.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6309,8 +6309,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Looks at how property values are measured and what really drives real estate returns.",
-      "whyItMatters": "Useful if you want a more grounded view of property returns and valuation risk.",
+      "summary": "This paper examines how well real estate prices can be forecast and which variables help. It suggests that prediction is possible to a degree, but far less cleanly than many market narratives imply.",
+      "whyItMatters": "This matters because confident housing forecasts often hide a lot of uncertainty.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6328,8 +6328,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to housing and property.",
-      "whyItMatters": "Useful if you want a stronger source on housing and property instead of a recycled headline or opinion piece.",
+      "summary": "The paper looks at whether managers running funds of REITs add value through selection and allocation. It tests whether layering active management on top of listed property vehicles actually improves investor outcomes.",
+      "whyItMatters": "This matters because extra manager layers can promise expertise while also adding another layer of cost.",
       "focusTags": [
         "Housing and property",
         "Value"
@@ -6347,8 +6347,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at a source related to housing and property.",
-      "whyItMatters": "Useful if you want a stronger source on housing and property instead of a recycled headline or opinion piece.",
+      "summary": "This paper studies the return and risk profile of equity REITs using public-market evidence. It helps frame listed real estate as a serious asset class with its own mix of income, leverage, and market sensitivity.",
+      "whyItMatters": "This matters because REITs are often treated as either bond substitutes or stock substitutes when they are really a distinct hybrid exposure.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6366,8 +6366,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at a source related to housing and property.",
-      "whyItMatters": "Useful if you want a stronger source on housing and property instead of a recycled headline or opinion piece.",
+      "summary": "The paper uses multiple benchmark indices to understand what drives REIT performance. It shows that listed property returns reflect more than one source of risk at the same time.",
+      "whyItMatters": "This matters because REIT performance can be misread if investors compare it to only one benchmark.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6385,8 +6385,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at a source related to housing and property.",
-      "whyItMatters": "Useful if you want a stronger source on housing and property instead of a recycled headline or opinion piece.",
+      "summary": "This paper compares private and public asset performance and highlights the valuation and liquidity issues that complicate direct comparisons. Private assets can look smoother partly because they are priced differently.",
+      "whyItMatters": "This matters because \u201cprivate beats public\u201d claims often ignore the role of illiquidity and pricing method.",
       "focusTags": [
         "Housing and property"
       ],
@@ -6403,8 +6403,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at a source related to housing and property.",
-      "whyItMatters": "Useful if you want a stronger source on housing and property instead of a recycled headline or opinion piece.",
+      "summary": "The paper compares listed and private real estate over a long horizon with a more careful method than simple headline return charts. It tries to isolate what is real performance difference and what is just measurement difference.",
+      "whyItMatters": "This matters because investors often compare public REITs and private property on an uneven basis.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6422,8 +6422,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at a source related to housing and property.",
-      "whyItMatters": "Useful if you want a stronger source on housing and property instead of a recycled headline or opinion piece.",
+      "summary": "This paper builds a commercial property return series using a repeated-measures method to improve on simpler index construction. It aims to give a cleaner long-run picture of private commercial real estate performance.",
+      "whyItMatters": "This matters because the method used to build a property index can change the story investors think they are looking at.",
       "focusTags": [
         "Housing and property"
       ],
@@ -6440,8 +6440,8 @@
       "sourceType": "real estate journal",
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
-      "summary": "Looks at a source related to housing and property.",
-      "whyItMatters": "Useful if you want a stronger source on housing and property instead of a recycled headline or opinion piece.",
+      "summary": "This paper looks at how search frictions and illiquidity shape real estate prices and transactions. Unlike stocks, property markets often involve slow matching, delayed sales, and uneven information.",
+      "whyItMatters": "This matters because housing and property are not frictionless assets. Liquidity problems can become part of the return story.",
       "focusTags": [
         "Housing and property",
         "Real estate"
