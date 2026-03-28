@@ -43,7 +43,7 @@
       "sourceLabel": "planning journal",
       "sourceLinkLabel": "View planning journal",
       "summary": "Bengen tests rolling historical stock, bond, and inflation data and shows that a roughly 4 percent starting withdrawal, increased with inflation, survived the toughest 30-year periods in his dataset.",
-      "whyItMatters": "Best read when you care more about spending resilience than about a single headline withdrawal rate.",
+      "whyItMatters": "This is the paper that made the modern safe-withdrawal debate concrete.",
       "focusTags": [
         "Retirement spending",
         "Withdrawal rules"
@@ -63,7 +63,7 @@
       "sourceLabel": "planning journal",
       "sourceLinkLabel": "View planning journal",
       "summary": "Blanchett shows that retiree spending often falls in real terms over time, instead of rising neatly with inflation every year. He estimates average real spending declines of about 1 percent a year and describes a spending smile across retirement.",
-      "whyItMatters": "Best read when you care more about spending resilience than about a single headline withdrawal rate.",
+      "whyItMatters": "Useful when you want a retirement spending baseline that matches how households actually age, not a flat inflation-only rule.",
       "focusTags": [
         "Retirement spending",
         "Retirement",
@@ -106,7 +106,7 @@
       "sourceLabel": "planning journal",
       "sourceLinkLabel": "View planning journal",
       "summary": "Guyton and Klinger test withdrawal guardrails that let spending rise or fall with portfolio conditions instead of following one fixed inflation rule. Their results suggest higher starting withdrawals may work when retirees follow strict spending rules after good and bad markets.",
-      "whyItMatters": "This helps show where retirement spending plans fail and where they stay durable.",
+      "whyItMatters": "Worth reading if you want to know what guardrails add beyond a fixed 4 percent rule.",
       "focusTags": [
         "Retirement spending",
         "Withdrawal rules"
@@ -146,7 +146,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Asness, Moskowitz, and Pedersen show that value and momentum patterns appear across countries and asset classes rather than in one narrow corner of the market.",
-      "whyItMatters": "Worth using when you want evidence on why recent winners can keep winning for a while.",
+      "whyItMatters": "This broadens the value and momentum debate from one stock market to a cross-asset pattern.",
       "focusTags": [
         "Return drivers",
         "Momentum",
@@ -186,8 +186,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Examines which risks, company traits, or market frictions the paper links to differences in long-run returns.",
-      "whyItMatters": "Useful if you want a cleaner view of what the paper thinks actually drives returns over time.",
+      "summary": "Fama and French test which stock traits line up with higher returns and find that size and value explain a large share of the gap between stronger and weaker performers.",
+      "whyItMatters": "This is one of the core papers behind modern factor investing and return attribution.",
       "focusTags": [
         "Return drivers"
       ],
@@ -206,7 +206,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Fama and French expand the standard stock-return model by adding profitability and investment behavior to the usual market, size, and value factors.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "whyItMatters": "Useful when you need the modern Fama-French baseline rather than the older three-factor version.",
       "focusTags": [
         "Return drivers"
       ],
@@ -225,7 +225,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Sharpe sets out the classic CAPM claim that expected return should mainly reflect how much market risk a stock adds to a diversified portfolio.",
-      "whyItMatters": "Best read as evidence on which risks or traits investors have historically been paid for.",
+      "whyItMatters": "This is the canonical starting point for the idea that market risk should drive expected return.",
       "focusTags": [
         "Return drivers"
       ],
@@ -244,7 +244,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Barber and Odean study household brokerage accounts and find that the people who trade the most earn worse returns than those who trade less. The gap is not just bad luck. Trading costs and poor timing do real damage.",
-      "whyItMatters": "Useful if you want to know whether active management adds enough skill to justify its cost.",
+      "whyItMatters": "This is one of the clearest empirical warnings that more trading often means worse investor outcomes.",
       "focusTags": [
         "Active vs passive"
       ],
@@ -263,7 +263,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Fama and French test mutual fund returns to see how much is true manager skill and how much is random variation. Their results suggest that strong performance is rare and that most apparent winners can be explained by luck once costs are counted.",
-      "whyItMatters": "Useful if you want to know whether active management adds enough skill to justify its cost.",
+      "whyItMatters": "Useful when a hot manager track record may simply be randomness wearing the mask of skill.",
       "focusTags": [
         "Active vs passive",
         "Mutual funds"
@@ -303,7 +303,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Sharpe lays out a simple but powerful point: before costs, active investors as a group must match the market, and after costs they must trail it. The argument is mathematical, not rhetorical.",
-      "whyItMatters": "This helps separate genuine manager edge from fees, taxes, and benchmark noise.",
+      "whyItMatters": "This is the shortest and cleanest argument for why active management has to lose after costs in aggregate.",
       "focusTags": [
         "Active vs passive",
         "Active management"
@@ -323,7 +323,7 @@
       "sourceLabel": "industry scorecard",
       "sourceLinkLabel": "View industry scorecard",
       "summary": "The SPIVA scorecard tracks how often active funds beat their benchmarks over different time periods. Its recurring pattern is that most active funds fall behind over longer horizons, especially after survivorship is handled properly.",
-      "whyItMatters": "Best read when the real question is whether paying more produces a better investor outcome.",
+      "whyItMatters": "This is the practical scorecard most investors need before paying active-fund fees.",
       "focusTags": [
         "Active vs passive"
       ],
@@ -342,7 +342,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "This paper reviews evidence showing that default settings have a large effect on whether people join retirement plans, how much they contribute, and where the money goes. People often stay close to the default even when better choices are available.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "whyItMatters": "This shows that plan design can matter as much as investor intent.",
       "focusTags": [
         "Money behavior",
         "Retirement",
@@ -384,7 +384,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "Builds on prospect theory, the idea that people feel losses more sharply than gains and often take different risks depending on how choices are framed.",
-      "whyItMatters": "This helps explain why sensible plans often break once habit, emotion, or social cues get involved.",
+      "whyItMatters": "This is the foundation for understanding loss aversion, framing effects, and many later investor-bias papers.",
       "focusTags": [
         "Money behavior"
       ],
@@ -403,7 +403,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "Madrian and Shea study what happened when a company moved from opt-in enrollment to automatic enrollment in its 401(k) plan. Participation jumped, and many workers stayed with the default contribution rate and fund choice.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "whyItMatters": "This paper explains why opt-in systems underperform automatic enrollment by so much.",
       "focusTags": [
         "Money behavior",
         "Savings"
@@ -423,7 +423,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "Thaler and Benartzi test a program that commits workers in advance to raise saving rates when future pay raises arrive. The design helps people save more without feeling the full pain of a current pay cut.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "whyItMatters": "Useful when the goal is higher saving rates without relying on constant self-control.",
       "focusTags": [
         "Money behavior",
         "Savings"
@@ -443,7 +443,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Stein and Narasimhan estimate the value of tax-loss harvesting for taxable investors by modeling how realized losses can offset gains and reduce current tax drag. The paper treats harvesting as a measurable after-tax benefit, not just a slogan.",
-      "whyItMatters": "This helps quantify decisions that look small on paper but compound once taxes are included.",
+      "whyItMatters": "This is a direct answer to whether tax-loss harvesting is worth real money or just marketing copy.",
       "focusTags": [
         "Taxes and account order",
         "Taxes",
@@ -506,7 +506,7 @@
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
       "summary": "This paper studies which account retirees should spend from first, including taxable, tax-deferred, and tax-free pools. The order changes taxes, portfolio life, and how much money can be spent over retirement.",
-      "whyItMatters": "Best read when account order, loss use, or asset placement is part of the real decision.",
+      "whyItMatters": "This matters when withdrawal order changes taxes, Medicare effects, and how long the portfolio lasts.",
       "focusTags": [
         "Taxes and account order",
         "Retirement",
@@ -527,7 +527,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "The paper looks at where different assets should be placed when an investor has both taxable and tax-deferred accounts. It tests whether certain holdings belong in sheltered accounts while others belong in taxable ones.",
-      "whyItMatters": "Useful if you care about after-tax wealth rather than pretending pretax returns are the whole story.",
+      "whyItMatters": "Useful when the real question is where each asset should live, not just what to buy.",
       "focusTags": [
         "Taxes and account order",
         "Savings",
@@ -549,7 +549,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Markowitz introduces the core idea that a portfolio should be judged by both expected return and risk, not by return alone. The paper lays out the mean-variance framework that became the base model for modern portfolio construction.",
-      "whyItMatters": "This helps frame portfolio construction as a trade-off between concentration, volatility, and expected return.",
+      "whyItMatters": "This is the paper that turned diversification into a formal portfolio problem instead of a slogan.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -723,7 +723,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Jegadeesh and Titman document momentum by showing that recent winning stocks often keep outperforming for a time while recent losers keep lagging.",
-      "whyItMatters": "This helps separate a durable momentum effect from a one-off market quirk.",
+      "whyItMatters": "This is one of the central papers behind momentum as a serious return pattern.",
       "focusTags": [
         "Return drivers"
       ],
@@ -761,7 +761,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "Shiller compares stock-price swings with later changes in dividends and argues that prices seem to move more than fundamentals alone would justify. The paper became one of the landmark challenges to a strict efficient-market view.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "This is a classic challenge to the idea that price swings mostly reflect changing fundamentals.",
       "focusTags": [
         "Market efficiency",
         "Dividends"
@@ -781,7 +781,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "Mehra and Prescott show that stocks have beaten safe assets by so much that standard consumption models struggle to explain the gap.",
-      "whyItMatters": "This is one of the cleanest entry points into the stock-versus-safe-assets return gap.",
+      "whyItMatters": "This is still the cleanest statement of how hard it is to explain long-run stock outperformance.",
       "focusTags": [
         "Return drivers"
       ],
@@ -838,7 +838,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Statman studies how many stocks are needed before diversification removes most single-stock risk. The answer is more than many investors expect, especially if they want diversification to be meaningful rather than symbolic.",
-      "whyItMatters": "This helps frame portfolio construction as a trade-off between concentration, volatility, and expected return.",
+      "whyItMatters": "Useful if you want a concrete answer to how concentrated a stock portfolio can be before diversification stops being real.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -876,7 +876,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Ibbotson and Sinquefield assemble one of the core long-run U.S. return datasets for stocks, bonds, bills, and inflation.",
-      "whyItMatters": "Useful if you want a real case study in leverage, liquidity pressure, and crowd behavior.",
+      "whyItMatters": "This dataset underpins a large share of U.S. long-run return analysis.",
       "focusTags": [
         "Market history",
         "Bonds"
@@ -915,7 +915,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Fama reviews the theory and evidence for efficient capital markets and organizes the idea into a clear research agenda. The paper became the standard reference point for what market efficiency means in finance.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "This is the baseline statement of market efficiency that later anomaly papers are arguing with.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -1145,7 +1145,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Shleifer and Vishny argue that even when mispricing is obvious, investors may be unable or unwilling to bet aggressively enough to fix it. Capital constraints, career risk, and withdrawal risk can keep bad prices alive.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "This paper explains why apparent mispricing can persist even when smart investors see it.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -1222,7 +1222,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "Barber and Odean compare men and women in brokerage data and find that men trade more and, on average, hurt their returns more as a result. The paper links overconfidence to real investing mistakes.",
-      "whyItMatters": "Best read as evidence on why people do not behave like frictionless spreadsheet optimizers.",
+      "whyItMatters": "Useful because it ties overconfidence to an actual return penalty, not just a survey result.",
       "focusTags": [
         "Money behavior"
       ],
@@ -5015,7 +5015,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "DeMiguel, Garlappi, and Uppal compare optimized portfolios with a simple equal-weight strategy and find that the naive 1/N rule is hard to beat in many practical settings. Estimation error can wipe out the theoretical gains from more sophisticated optimization.",
-      "whyItMatters": "Best read when the real issue is how to build a portfolio instead of how to pick a single winner.",
+      "whyItMatters": "This is the practical check on how much optimization really beats a simple equal-weight rule.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -5053,7 +5053,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "This paper studies portfolios built to minimize volatility rather than maximize expected return. It documents that low-volatility portfolios can produce surprisingly competitive results in the US equity market.",
-      "whyItMatters": "This helps frame portfolio construction as a trade-off between concentration, volatility, and expected return.",
+      "whyItMatters": "Useful when you want evidence that lower-volatility equity portfolios can stay competitive without heroic forecasts.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -5760,7 +5760,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "This paper documents that stock returns differ by day of the week, with unusually weak performance around the Monday opening. It became one of the classic calendar-anomaly papers.",
-      "whyItMatters": "This helps separate a true pricing error from a situation where arbitrage is simply hard to execute.",
+      "whyItMatters": "This is one of the standard calendar anomalies used to test how cleanly markets absorb information.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -5836,7 +5836,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "Fama studies whether forward rates contain useful information about future interest rates and risk premia. The paper helps separate what a yield curve is forecasting from what it is charging as compensation for risk.",
-      "whyItMatters": "Best read when income looks attractive but you need to know which risks are sitting underneath it.",
+      "whyItMatters": "Useful when you need to separate rate expectations from term premia in the yield curve.",
       "focusTags": [
         "Bonds and rates"
       ],
@@ -6013,7 +6013,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Collin-Dufresne, Goldstein, and Martin examine why corporate bond spreads are wider than simple default models predict. They find that changing credit conditions and other nondefault forces matter a lot.",
-      "whyItMatters": "Best read when income looks attractive but you need to know which risks are sitting underneath it.",
+      "whyItMatters": "This is a core paper for understanding why credit spreads move beyond pure default risk.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -6192,7 +6192,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "Gurkaynak, Sack, and Wright build a long historical Treasury yield curve dataset that became a standard reference for fixed-income research. It gives researchers a cleaner continuous curve across decades.",
-      "whyItMatters": "Best read when income looks attractive but you need to know which risks are sitting underneath it.",
+      "whyItMatters": "This is a foundational curve dataset behind a large share of later fixed-income research.",
       "focusTags": [
         "Bonds and rates",
         "Yield curve"
@@ -6332,7 +6332,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "Case and Shiller test whether single-family home prices behave like an efficient market. They find evidence that past price movements can help predict future movements, which is awkward for a fully efficient-market story.",
-      "whyItMatters": "Useful if you want to know whether property returns are coming from fundamentals, leverage, or stale pricing.",
+      "whyItMatters": "This is one of the classic papers questioning whether housing markets are as efficient as stock markets.",
       "focusTags": [
         "Housing and property"
       ],
@@ -6432,7 +6432,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "The paper argues that housing bubbles behave differently in places where supply is slow to respond. When new building is constrained, demand shocks can translate into much bigger price moves.",
-      "whyItMatters": "Best read when housing or property looks safe on the surface but the pricing mechanics are doing more work than expected.",
+      "whyItMatters": "Useful when you want to know why some housing booms become far more extreme than others.",
       "focusTags": [
         "Housing and property"
       ],
@@ -6471,7 +6471,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "This paper argues that homebuyers may think in nominal rather than real terms, which can distort housing demand and pricing. Inflation and nominal interest rates can therefore change housing behavior in ways standard models miss.",
-      "whyItMatters": "Useful if you want to know whether property returns are coming from fundamentals, leverage, or stale pricing.",
+      "whyItMatters": "This helps explain why nominal rates and inflation can distort housing behavior in ways buyers do not fully notice.",
       "focusTags": [
         "Housing and property"
       ],
@@ -6808,8 +6808,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Presents a household money system built around saving, spending control, debt management, or long-run investing.",
-      "whyItMatters": "Best read when the goal is a money system you can repeat without constant micromanagement.",
+      "summary": "Stanley and Danko profile affluent households and argue that wealth often comes from steady saving, modest consumption, and business ownership rather than visible luxury.",
+      "whyItMatters": "Useful if you want a behavioral picture of how ordinary wealth accumulation usually works in practice.",
       "focusTags": [
         "Household finance"
       ],
@@ -6828,7 +6828,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Graham sets out the core value-investing framework: demand a margin of safety, focus on price versus underlying value, and avoid speculation disguised as investing.",
-      "whyItMatters": "This helps explain what a margin of safety looks like when you actually have to buy at a price.",
+      "whyItMatters": "This is still the clearest plain-language statement of margin-of-safety investing.",
       "focusTags": [
         "Value investing"
       ],
@@ -6847,7 +6847,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Graham and Dodd build a detailed framework for valuing securities through balance-sheet strength, earnings power, and conservative appraisal.",
-      "whyItMatters": "Best read when the question is how to value a business without paying up for excitement.",
+      "whyItMatters": "This is the deeper technical foundation underneath later value-investing books.",
       "focusTags": [
         "Value investing"
       ],
@@ -6923,7 +6923,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Collins presents a straightforward household-investing framework built around high savings rates, broad index funds, and simple withdrawal rules.",
-      "whyItMatters": "This helps separate workable financial habits from advice that sounds good but rarely sticks.",
+      "whyItMatters": "Useful if you want a stripped-down household investing system that favors consistency over complexity.",
       "focusTags": [
         "Household finance"
       ],
@@ -6980,7 +6980,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Klarman lays out a cautious value-investing framework centered on downside protection, patience, and buying only when the discount is large enough.",
-      "whyItMatters": "Useful if you want the discipline behind value investing rather than the marketing version of it.",
+      "whyItMatters": "This is one of the clearest modern statements of value investing as downside control first.",
       "focusTags": [
         "Value investing",
         "Value"
@@ -7381,7 +7381,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Siegel argues from long-run historical data that diversified stocks have tended to beat bonds, bills, and inflation over very long holding periods.",
-      "whyItMatters": "This helps put abstract market risk into an actual historical sequence of decisions and consequences.",
+      "whyItMatters": "Useful when you want the long-horizon case for equities stated in historical rather than promotional terms.",
       "focusTags": [
         "Market history"
       ],
@@ -7476,7 +7476,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Lowenstein reconstructs how a highly sophisticated hedge fund collapsed when leverage, crowded trades, and funding pressure hit at the same time.",
-      "whyItMatters": "This helps put abstract market risk into an actual historical sequence of decisions and consequences.",
+      "whyItMatters": "This is one of the best real-world studies of how leverage and crowding can break elite strategies.",
       "focusTags": [
         "Market history"
       ],
