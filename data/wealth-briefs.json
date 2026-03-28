@@ -48,7 +48,8 @@
         "Retirement spending",
         "Withdrawal rules"
       ],
-      "sourceUrl": "https://www.retailinvestor.org/pdf/Bengen1.pdf"
+      "sourceUrl": "https://www.retailinvestor.org/pdf/Bengen1.pdf",
+      "featured": true
     },
     {
       "id": "2014-exploring-the-retirement-consumption-puzzle",
@@ -68,7 +69,8 @@
         "Retirement",
         "Spending"
       ],
-      "sourceUrl": "https://www.financialplanningassociation.org/article/journal/MAY14-exploring-retirement-consumption-puzzle"
+      "sourceUrl": "https://www.financialplanningassociation.org/article/journal/MAY14-exploring-retirement-consumption-puzzle",
+      "featured": true
     },
     {
       "id": "1998-retirement-savings-choosing-a-withdrawal-rate-that-is-sustainable",
@@ -89,7 +91,8 @@
         "Retirement",
         "Savings"
       ],
-      "sourceUrl": "https://www.aaii.com/journal/article/retirement-savings-choosing-a-withdrawal-rate-that-is-sustainable"
+      "sourceUrl": "https://www.aaii.com/journal/article/retirement-savings-choosing-a-withdrawal-rate-that-is-sustainable",
+      "featured": false
     },
     {
       "id": "2004-decision-rules-and-maximum-initial-withdrawal-rates",
@@ -108,7 +111,8 @@
         "Retirement spending",
         "Withdrawal rules"
       ],
-      "sourceUrl": "https://www.financialplanningassociation.org/article/journal/AUG04-decision-rules-and-maximum-initial-withdrawal-rates"
+      "sourceUrl": "https://www.financialplanningassociation.org/article/journal/AUG04-decision-rules-and-maximum-initial-withdrawal-rates",
+      "featured": true
     },
     {
       "id": "2015-making-sense-out-of-variable-spending-strategies-for-retirees",
@@ -127,7 +131,8 @@
         "Retirement spending",
         "Retirement"
       ],
-      "sourceUrl": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2584140"
+      "sourceUrl": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2584140",
+      "featured": false
     },
     {
       "id": "2013-value-and-momentum-everywhere",
@@ -147,7 +152,8 @@
         "Momentum",
         "Value"
       ],
-      "sourceUrl": "https://doi.org/10.1111/jofi.12046"
+      "sourceUrl": "https://doi.org/10.1111/jofi.12046",
+      "featured": true
     },
     {
       "id": "1997-on-persistence-in-mutual-fund-performance",
@@ -166,7 +172,8 @@
         "Return drivers",
         "Mutual funds"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1997.tb03808.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1997.tb03808.x",
+      "featured": false
     },
     {
       "id": "1992-the-cross-section-of-expected-stock-returns",
@@ -184,7 +191,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1992.tb04565.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1992.tb04565.x",
+      "featured": true
     },
     {
       "id": "2015-a-five-factor-asset-pricing-model",
@@ -202,7 +210,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.jfineco.2014.10.010"
+      "sourceUrl": "https://doi.org/10.1016/j.jfineco.2014.10.010",
+      "featured": true
     },
     {
       "id": "1964-capital-asset-prices-a-theory-of-market-equilibrium-under-conditions-of-risk",
@@ -220,7 +229,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1964.tb02865.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1964.tb02865.x",
+      "featured": true
     },
     {
       "id": "2000-trading-is-hazardous-to-your-wealth-the-common-stock-investment-performance-of-individual-investors",
@@ -238,7 +248,8 @@
       "focusTags": [
         "Active vs passive"
       ],
-      "sourceUrl": "https://doi.org/10.1111/0022-1082.00226"
+      "sourceUrl": "https://doi.org/10.1111/0022-1082.00226",
+      "featured": true
     },
     {
       "id": "2010-luck-versus-skill-in-the-cross-section-of-mutual-fund-returns",
@@ -257,7 +268,8 @@
         "Active vs passive",
         "Mutual funds"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2010.01598.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2010.01598.x",
+      "featured": true
     },
     {
       "id": "1995-returns-from-investing-in-equity-mutual-funds-1971-to-1991",
@@ -276,7 +288,8 @@
         "Active vs passive",
         "Mutual funds"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1995.tb04792.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1995.tb04792.x",
+      "featured": false
     },
     {
       "id": "1991-the-arithmetic-of-active-management",
@@ -295,7 +308,8 @@
         "Active vs passive",
         "Active management"
       ],
-      "sourceUrl": "https://doi.org/10.2469/faj.v47.n1.7"
+      "sourceUrl": "https://doi.org/10.2469/faj.v47.n1.7",
+      "featured": true
     },
     {
       "id": "2025-spiva-u-s-scorecard",
@@ -313,7 +327,8 @@
       "focusTags": [
         "Active vs passive"
       ],
-      "sourceUrl": "https://www.spglobal.com/spdji/en/research-insights/spiva/"
+      "sourceUrl": "https://www.spglobal.com/spdji/en/research-insights/spiva/",
+      "featured": true
     },
     {
       "id": "2008-the-importance-of-default-options-for-retirement-saving-outcomes-evidence-from-the-united-states",
@@ -334,7 +349,8 @@
         "Defaults",
         "Savings"
       ],
-      "sourceUrl": "https://doi.org/10.3386/w12009"
+      "sourceUrl": "https://doi.org/10.3386/w12009",
+      "featured": true
     },
     {
       "id": "2012-can-small-victories-help-win-the-war-evidence-from-consumer-debt-management",
@@ -353,7 +369,8 @@
         "Money behavior",
         "Debt payoff"
       ],
-      "sourceUrl": "https://doi.org/10.1509/jmr.11.0081"
+      "sourceUrl": "https://doi.org/10.1509/jmr.11.0081",
+      "featured": false
     },
     {
       "id": "1979-prospect-theory-an-analysis-of-decision-under-risk",
@@ -371,7 +388,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.2307/1914185"
+      "sourceUrl": "https://doi.org/10.2307/1914185",
+      "featured": true
     },
     {
       "id": "2001-the-power-of-suggestion-inertia-in-401-k-participation-and-savings-behavior",
@@ -390,7 +408,8 @@
         "Money behavior",
         "Savings"
       ],
-      "sourceUrl": "https://doi.org/10.1162/003355301753265543"
+      "sourceUrl": "https://doi.org/10.1162/003355301753265543",
+      "featured": true
     },
     {
       "id": "2004-save-more-tomorrow-using-behavioral-economics-to-increase-employee-saving",
@@ -409,7 +428,8 @@
         "Money behavior",
         "Savings"
       ],
-      "sourceUrl": "https://doi.org/10.1086/381437"
+      "sourceUrl": "https://doi.org/10.1086/381437",
+      "featured": true
     },
     {
       "id": "2001-loss-harvesting-what-s-it-worth-to-the-taxable-investor",
@@ -429,7 +449,8 @@
         "Taxes",
         "Tax-loss harvesting"
       ],
-      "sourceUrl": "https://doi.org/10.3905/jwm.2001.320422"
+      "sourceUrl": "https://doi.org/10.3905/jwm.2001.320422",
+      "featured": true
     },
     {
       "id": "2001-optimal-consumption-and-investment-with-capital-gains-taxes",
@@ -449,7 +470,8 @@
         "Spending",
         "Taxes"
       ],
-      "sourceUrl": "https://doi.org/10.1093/rfs/14.3.583"
+      "sourceUrl": "https://doi.org/10.1093/rfs/14.3.583",
+      "featured": false
     },
     {
       "id": "2009-optimal-savings-with-taxable-and-tax-advantaged-accounts",
@@ -469,7 +491,8 @@
         "Savings",
         "Taxes"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.red.2009.01.002"
+      "sourceUrl": "https://doi.org/10.1016/j.red.2009.01.002",
+      "featured": false
     },
     {
       "id": "2006-tax-efficient-sequencing-of-accounts-to-tap-in-retirement",
@@ -489,7 +512,8 @@
         "Retirement",
         "Taxes"
       ],
-      "sourceUrl": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=944813"
+      "sourceUrl": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=944813",
+      "featured": true
     },
     {
       "id": "2003-asset-location-in-tax-deferred-and-conventional-savings-accounts",
@@ -510,7 +534,8 @@
         "Taxes",
         "Asset location"
       ],
-      "sourceUrl": "https://doi.org/10.1016/S0047-2727(02)00213-4"
+      "sourceUrl": "https://doi.org/10.1016/S0047-2727(02)00213-4",
+      "featured": true
     },
     {
       "id": "1952-portfolio-selection",
@@ -528,7 +553,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1952.tb01525.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1952.tb01525.x",
+      "featured": true
     },
     {
       "id": "1966-mutual-fund-performance",
@@ -547,7 +573,8 @@
         "Portfolio design",
         "Mutual funds"
       ],
-      "sourceUrl": "https://doi.org/10.1086/294846"
+      "sourceUrl": "https://doi.org/10.1086/294846",
+      "featured": false
     },
     {
       "id": "1968-the-performance-of-mutual-funds-in-the-period-1945-1964",
@@ -566,7 +593,8 @@
         "Portfolio design",
         "Mutual funds"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1968.tb00815.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1968.tb00815.x",
+      "featured": false
     },
     {
       "id": "1965-how-to-rate-management-of-investment-funds",
@@ -584,7 +612,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1002/9781119196679.ch10"
+      "sourceUrl": "https://doi.org/10.1002/9781119196679.ch10",
+      "featured": false
     },
     {
       "id": "1977-a-critique-of-the-asset-pricing-theory-s-tests",
@@ -602,7 +631,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1016/0304-405X(77)90009-5"
+      "sourceUrl": "https://doi.org/10.1016/0304-405X(77)90009-5",
+      "featured": false
     },
     {
       "id": "1976-the-arbitrage-theory-of-capital-asset-pricing",
@@ -620,7 +650,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1016/0022-0531(76)90046-6"
+      "sourceUrl": "https://doi.org/10.1016/0022-0531(76)90046-6",
+      "featured": false
     },
     {
       "id": "1972-capital-market-equilibrium-with-restricted-borrowing",
@@ -638,7 +669,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1086/295472"
+      "sourceUrl": "https://doi.org/10.1086/295472",
+      "featured": false
     },
     {
       "id": "1981-the-relationship-between-return-and-market-value-of-common-stocks",
@@ -657,7 +689,8 @@
         "Return drivers",
         "Value"
       ],
-      "sourceUrl": "https://doi.org/10.1016/0304-405X(81)90018-0"
+      "sourceUrl": "https://doi.org/10.1016/0304-405X(81)90018-0",
+      "featured": false
     },
     {
       "id": "1977-investment-performance-of-common-stocks-in-relation-to-their-price-earnings-ratios",
@@ -675,7 +708,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1977.tb01979.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1977.tb01979.x",
+      "featured": false
     },
     {
       "id": "1993-returns-to-buying-winners-and-selling-losers-implications-for-stock-market-efficiency",
@@ -693,7 +727,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1993.tb04702.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1993.tb04702.x",
+      "featured": true
     },
     {
       "id": "1985-does-the-stock-market-overreact",
@@ -711,7 +746,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1985.tb05004.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1985.tb05004.x",
+      "featured": false
     },
     {
       "id": "1981-do-stock-prices-move-too-much-to-be-justified-by-subsequent-changes-in-dividends",
@@ -730,7 +766,8 @@
         "Market efficiency",
         "Dividends"
       ],
-      "sourceUrl": "https://www.jstor.org/stable/1806228"
+      "sourceUrl": "https://www.jstor.org/stable/1806228",
+      "featured": true
     },
     {
       "id": "1985-the-equity-premium-a-puzzle",
@@ -748,7 +785,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1016/0304-3932(85)90061-3"
+      "sourceUrl": "https://doi.org/10.1016/0304-3932(85)90061-3",
+      "featured": true
     },
     {
       "id": "1995-myopic-loss-aversion-and-the-equity-premium-puzzle",
@@ -766,7 +804,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.2307/2118511"
+      "sourceUrl": "https://doi.org/10.2307/2118511",
+      "featured": false
     },
     {
       "id": "1986-determinants-of-portfolio-performance",
@@ -784,7 +823,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.2469/faj.v42.n4.39"
+      "sourceUrl": "https://doi.org/10.2469/faj.v42.n4.39",
+      "featured": false
     },
     {
       "id": "1987-how-many-stocks-make-a-diversified-portfolio",
@@ -802,7 +842,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.2307/2330969"
+      "sourceUrl": "https://doi.org/10.2307/2330969",
+      "featured": true
     },
     {
       "id": "1991-investor-diversification-and-international-equity-markets",
@@ -820,7 +861,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://www.jstor.org/stable/2006734"
+      "sourceUrl": "https://www.jstor.org/stable/2006734",
+      "featured": false
     },
     {
       "id": "1976-stocks-bonds-bills-and-inflation-year-by-year-historical-returns-1926-1974",
@@ -839,7 +881,8 @@
         "Market history",
         "Bonds"
       ],
-      "sourceUrl": "https://doi.org/10.1086/295800"
+      "sourceUrl": "https://doi.org/10.1086/295800",
+      "featured": true
     },
     {
       "id": "1965-proof-that-properly-anticipated-prices-fluctuate-randomly",
@@ -857,7 +900,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1142/9789814566926_0002"
+      "sourceUrl": "https://doi.org/10.1142/9789814566926_0002",
+      "featured": false
     },
     {
       "id": "1970-efficient-capital-markets-a-review-of-theory-and-empirical-work",
@@ -875,7 +919,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1970.tb00518.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1970.tb00518.x",
+      "featured": true
     },
     {
       "id": "1969-lifetime-portfolio-selection-under-uncertainty-the-continuous-time-case",
@@ -893,7 +938,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.2307/1926560"
+      "sourceUrl": "https://doi.org/10.2307/1926560",
+      "featured": false
     },
     {
       "id": "1992-advances-in-prospect-theory-cumulative-representation-of-uncertainty",
@@ -911,7 +957,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1007/BF00122574"
+      "sourceUrl": "https://doi.org/10.1007/BF00122574",
+      "featured": false
     },
     {
       "id": "2001-prospect-theory-and-asset-prices",
@@ -929,7 +976,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1162/003355301556310"
+      "sourceUrl": "https://doi.org/10.1162/003355301556310",
+      "featured": false
     },
     {
       "id": "1999-by-force-of-habit-a-consumption-based-explanation-of-aggregate-stock-market-behavior",
@@ -948,7 +996,8 @@
         "Return drivers",
         "Spending"
       ],
-      "sourceUrl": "https://doi.org/10.1086/250059"
+      "sourceUrl": "https://doi.org/10.1086/250059",
+      "featured": false
     },
     {
       "id": "2003-liquidity-risk-and-expected-stock-returns",
@@ -966,7 +1015,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1086/374184"
+      "sourceUrl": "https://doi.org/10.1086/374184",
+      "featured": false
     },
     {
       "id": "2013-the-other-side-of-value-the-gross-profitability-premium",
@@ -985,7 +1035,8 @@
         "Return drivers",
         "Value"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.jfineco.2013.03.013"
+      "sourceUrl": "https://doi.org/10.1016/j.jfineco.2013.03.013",
+      "featured": false
     },
     {
       "id": "2014-betting-against-beta",
@@ -1003,7 +1054,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.jfineco.2013.10.005"
+      "sourceUrl": "https://doi.org/10.1016/j.jfineco.2013.10.005",
+      "featured": false
     },
     {
       "id": "2019-quality-minus-junk",
@@ -1021,7 +1073,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s11142-018-9470-2"
+      "sourceUrl": "https://doi.org/10.1007/s11142-018-9470-2",
+      "featured": false
     },
     {
       "id": "2016-and-the-cross-section-of-expected-returns",
@@ -1039,7 +1092,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1093/rfs/hhv059"
+      "sourceUrl": "https://doi.org/10.1093/rfs/hhv059",
+      "featured": false
     },
     {
       "id": "1988-stock-market-prices-do-not-follow-random-walks-evidence-from-a-simple-specification-test",
@@ -1057,7 +1111,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1093/rfs/1.1.41"
+      "sourceUrl": "https://doi.org/10.1093/rfs/1.1.41",
+      "featured": false
     },
     {
       "id": "1980-on-the-impossibility-of-informationally-efficient-markets",
@@ -1075,7 +1130,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://www.jstor.org/stable/1805228"
+      "sourceUrl": "https://www.jstor.org/stable/1805228",
+      "featured": false
     },
     {
       "id": "1997-the-limits-of-arbitrage",
@@ -1093,7 +1149,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1997.tb03807.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1997.tb03807.x",
+      "featured": true
     },
     {
       "id": "2001-characteristics-of-risk-and-return-in-risk-arbitrage",
@@ -1111,7 +1168,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1111/0022-1082.00401"
+      "sourceUrl": "https://doi.org/10.1111/0022-1082.00401",
+      "featured": false
     },
     {
       "id": "1998-investor-psychology-and-security-market-under-and-overreactions",
@@ -1129,7 +1187,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1111/0022-1082.00077"
+      "sourceUrl": "https://doi.org/10.1111/0022-1082.00077",
+      "featured": false
     },
     {
       "id": "1999-a-unified-theory-of-underreaction-momentum-trading-and-overreaction-in-asset-markets",
@@ -1148,7 +1207,8 @@
         "Money behavior",
         "Momentum"
       ],
-      "sourceUrl": "https://doi.org/10.1111/0022-1082.00184"
+      "sourceUrl": "https://doi.org/10.1111/0022-1082.00184",
+      "featured": false
     },
     {
       "id": "2001-boys-will-be-boys-gender-overconfidence-and-common-stock-investment",
@@ -1166,7 +1226,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1162/003355301556400"
+      "sourceUrl": "https://doi.org/10.1162/003355301556400",
+      "featured": true
     },
     {
       "id": "2001-familiarity-breeds-investment",
@@ -1184,7 +1245,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1093/rfs/14.3.659"
+      "sourceUrl": "https://doi.org/10.1093/rfs/14.3.659",
+      "featured": false
     },
     {
       "id": "2001-how-distance-language-and-culture-influence-stockholdings-and-trades",
@@ -1202,7 +1264,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1111/0022-1082.00355"
+      "sourceUrl": "https://doi.org/10.1111/0022-1082.00355",
+      "featured": false
     },
     {
       "id": "1999-home-bias-at-home-local-equity-preference-in-domestic-portfolios",
@@ -1221,7 +1284,8 @@
         "Money behavior",
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1111/0022-1082.00181"
+      "sourceUrl": "https://doi.org/10.1111/0022-1082.00181",
+      "featured": false
     },
     {
       "id": "2002-returns-chasing-behavior-mutual-funds-and-beta-s-death",
@@ -1240,7 +1304,8 @@
         "Active vs passive",
         "Mutual funds"
       ],
-      "sourceUrl": "https://doi.org/10.2307/3595013"
+      "sourceUrl": "https://doi.org/10.2307/3595013",
+      "featured": false
     },
     {
       "id": "1998-costly-search-and-mutual-fund-flows",
@@ -1259,7 +1324,8 @@
         "Active vs passive",
         "Mutual funds"
       ],
-      "sourceUrl": "https://doi.org/10.1111/0022-1082.00066"
+      "sourceUrl": "https://doi.org/10.1111/0022-1082.00066",
+      "featured": false
     },
     {
       "id": "1999-risk-taking-by-mutual-funds-as-a-response-to-incentives",
@@ -1278,7 +1344,8 @@
         "Active vs passive",
         "Mutual funds"
       ],
-      "sourceUrl": "https://doi.org/10.1086/250098"
+      "sourceUrl": "https://doi.org/10.1086/250098",
+      "featured": false
     },
     {
       "id": "1996-of-tournaments-and-temptations-an-analysis-of-managerial-incentives-in-the-mutual-fund-industry",
@@ -1297,7 +1364,8 @@
         "Active vs passive",
         "Mutual funds"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1996.tb05240.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1996.tb05240.x",
+      "featured": false
     },
     {
       "id": "2000-mutual-fund-performance-an-empirical-decomposition-into-stock-picking-talent-style-transactions-costs-and-expenses",
@@ -1316,7 +1384,8 @@
         "Active vs passive",
         "Mutual funds"
       ],
-      "sourceUrl": "https://doi.org/10.1111/0022-1082.00263"
+      "sourceUrl": "https://doi.org/10.1111/0022-1082.00263",
+      "featured": false
     },
     {
       "id": "2005-on-the-industry-concentration-of-actively-managed-equity-mutual-funds",
@@ -1336,7 +1405,8 @@
         "Mutual funds",
         "Active management"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2005.00785.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2005.00785.x",
+      "featured": false
     },
     {
       "id": "2009-how-active-is-your-fund-manager-a-new-measure-that-predicts-performance",
@@ -1355,7 +1425,8 @@
         "Active vs passive",
         "Active management"
       ],
-      "sourceUrl": "https://doi.org/10.1093/rfs/hhp057"
+      "sourceUrl": "https://doi.org/10.1093/rfs/hhp057",
+      "featured": false
     },
     {
       "id": "2004-mutual-fund-flows-and-performance-in-rational-markets",
@@ -1374,7 +1445,8 @@
         "Active vs passive",
         "Mutual funds"
       ],
-      "sourceUrl": "https://doi.org/10.1086/424739"
+      "sourceUrl": "https://doi.org/10.1086/424739",
+      "featured": false
     },
     {
       "id": "2012-on-the-size-of-the-active-management-industry",
@@ -1393,7 +1465,8 @@
         "Active vs passive",
         "Active management"
       ],
-      "sourceUrl": "https://doi.org/10.1086/666601"
+      "sourceUrl": "https://doi.org/10.1086/666601",
+      "featured": false
     },
     {
       "id": "2001-disappearing-dividends-changing-firm-characteristics-or-lower-propensity-to-pay",
@@ -1411,7 +1484,8 @@
       "focusTags": [
         "Dividends"
       ],
-      "sourceUrl": "https://doi.org/10.1016/S0304-405X(01)00038-1"
+      "sourceUrl": "https://doi.org/10.1016/S0304-405X(01)00038-1",
+      "featured": false
     },
     {
       "id": "2004-a-catering-theory-of-dividends",
@@ -1429,7 +1503,8 @@
       "focusTags": [
         "Dividends"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2004.00658.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2004.00658.x",
+      "featured": false
     },
     {
       "id": "2018-multi-factor-asset-pricing-models-factor-construction-choices-and-the-revisit-of-pricing-factors",
@@ -1447,7 +1522,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1016/J.INTFIN.2018.02.006"
+      "sourceUrl": "https://doi.org/10.1016/J.INTFIN.2018.02.006",
+      "featured": false
     },
     {
       "id": "2019-empirical-tests-of-asset-pricing-models-with-individual-assets-resolving-the-errors-in-variables-bias-in-risk-premium-estimation",
@@ -1465,7 +1541,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.2139/SSRN.2664332"
+      "sourceUrl": "https://doi.org/10.2139/SSRN.2664332",
+      "featured": false
     },
     {
       "id": "2024-benchmarking-asset-pricing-models-in-emerging-markets-evidence-from-borsa-istanbul",
@@ -1483,7 +1560,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1108/jes-07-2023-0357"
+      "sourceUrl": "https://doi.org/10.1108/jes-07-2023-0357",
+      "featured": false
     },
     {
       "id": "2025-dispersed-ownership-and-asset-pricing-an-unpriced-premium-associated-with-free-float",
@@ -1501,7 +1579,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.2139/ssrn.4102188"
+      "sourceUrl": "https://doi.org/10.2139/ssrn.4102188",
+      "featured": false
     },
     {
       "id": "2024-is-human-capital-premium-price-in-asset-pricing-insights-from-south-africa-during-the-covid-19-era",
@@ -1519,7 +1598,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.62270/jirms.v5i4.78"
+      "sourceUrl": "https://doi.org/10.62270/jirms.v5i4.78",
+      "featured": false
     },
     {
       "id": "2017-empirical-tests-of-asset-pricing-models-with-individual-assets-resolving-the-errors-in-variables-bias-in-risk-premium-estimation-by",
@@ -1537,7 +1617,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/a27f1b37d1d13e35d8ffd46bd4acbb6a8ce41538"
+      "sourceUrl": "https://www.semanticscholar.org/paper/a27f1b37d1d13e35d8ffd46bd4acbb6a8ce41538",
+      "featured": false
     },
     {
       "id": "2022-an-empirical-investigation-of-tobin-s-q-augmented-various-asset-pricing-models-evidence-from-pakistan",
@@ -1555,7 +1636,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.56556/jssms.v1i4.293"
+      "sourceUrl": "https://doi.org/10.56556/jssms.v1i4.293",
+      "featured": false
     },
     {
       "id": "2025-human-capital-in-asset-pricing-the-case-of-the-brazilian-stock-market-during-crisis-periods",
@@ -1573,7 +1655,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.61351/mf.v3i2.237"
+      "sourceUrl": "https://doi.org/10.61351/mf.v3i2.237",
+      "featured": false
     },
     {
       "id": "2021-further-tests-of-asset-pricing-models-liquidity-risk-matters",
@@ -1591,7 +1674,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.econmod.2020.12.013"
+      "sourceUrl": "https://doi.org/10.1016/j.econmod.2020.12.013",
+      "featured": false
     },
     {
       "id": "2025-how-do-climate-related-risks-and-opportunities-affect-portfolio-allocation-and-asset-pricing",
@@ -1610,7 +1694,8 @@
         "Return drivers",
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1002/mde.4494"
+      "sourceUrl": "https://doi.org/10.1002/mde.4494",
+      "featured": false
     },
     {
       "id": "2025-sparse-principal-component-factors-in-asset-pricing-evidence-from-the-chinese-stock-market",
@@ -1628,7 +1713,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s10479-025-06666-w"
+      "sourceUrl": "https://doi.org/10.1007/s10479-025-06666-w",
+      "featured": false
     },
     {
       "id": "2020-relative-performances-of-asset-pricing-models-for-bist-100-index",
@@ -1646,7 +1732,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1080/02102412.2020.1801169"
+      "sourceUrl": "https://doi.org/10.1080/02102412.2020.1801169",
+      "featured": false
     },
     {
       "id": "2020-tests-of-multifactor-asset-pricing-models-in-asian-stock-markets",
@@ -1664,7 +1751,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1108/S1569-376720200000021010"
+      "sourceUrl": "https://doi.org/10.1108/S1569-376720200000021010",
+      "featured": false
     },
     {
       "id": "2018-capturing-profitability-in-asset-pricing-models-for-japanese-equities-1994-2016",
@@ -1682,7 +1770,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.5539/ijef.v10n5p254"
+      "sourceUrl": "https://doi.org/10.5539/ijef.v10n5p254",
+      "featured": false
     },
     {
       "id": "2017-applicability-of-investment-and-profitability-effects-in-asset-pricing-models",
@@ -1700,7 +1789,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1590/1982-7849RAC2017170027"
+      "sourceUrl": "https://doi.org/10.1590/1982-7849RAC2017170027",
+      "featured": false
     },
     {
       "id": "2018-behaviour-of-asset-pricing-models-in-pre-and-post-recession-period-an-evidence-from-india",
@@ -1718,7 +1808,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/67dd872b2adc9e34d1b19e74c64a37d04f11876c"
+      "sourceUrl": "https://www.semanticscholar.org/paper/67dd872b2adc9e34d1b19e74c64a37d04f11876c",
+      "featured": false
     },
     {
       "id": "2017-the-capital-asset-pricing-model-and-fama-french-three-factor-model-in-an-emerging-market-environment",
@@ -1736,7 +1827,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.19030/IBER.V16I4.10040"
+      "sourceUrl": "https://doi.org/10.19030/IBER.V16I4.10040",
+      "featured": false
     },
     {
       "id": "2018-sectoral-robustness-of-asset-pricing-models-evidence-from-the-indian-capital-market",
@@ -1754,7 +1846,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.18843/IJCMS/V9I2/05"
+      "sourceUrl": "https://doi.org/10.18843/IJCMS/V9I2/05",
+      "featured": false
     },
     {
       "id": "2018-validity-of-the-asset-pricing-models-in-applications-to-the-u-s-and-korean-markets",
@@ -1772,7 +1865,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/96d1a3f45aa362b72db93e896ac80ca78a738a4e"
+      "sourceUrl": "https://www.semanticscholar.org/paper/96d1a3f45aa362b72db93e896ac80ca78a738a4e",
+      "featured": false
     },
     {
       "id": "2023-taking-over-the-size-effect-asset-pricing-implications-of-merger-activity",
@@ -1790,7 +1884,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1017/S0022109023000030"
+      "sourceUrl": "https://doi.org/10.1017/S0022109023000030",
+      "featured": false
     },
     {
       "id": "2023-the-asset-pricing-implications-of-carbon-risk-in-korea",
@@ -1808,7 +1903,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/jifm.12190"
+      "sourceUrl": "https://doi.org/10.1111/jifm.12190",
+      "featured": false
     },
     {
       "id": "2017-unconditional-tests-of-linear-asset-pricing-models-with-time-varying-betas",
@@ -1826,7 +1922,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/FIRE.12129"
+      "sourceUrl": "https://doi.org/10.1111/FIRE.12129",
+      "featured": false
     },
     {
       "id": "2016-corporate-sustainability-and-asset-pricing-models-empirical-evidence-for-the-brazilian-stock-market",
@@ -1844,7 +1941,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1590/0103-6513.201115"
+      "sourceUrl": "https://doi.org/10.1590/0103-6513.201115",
+      "featured": false
     },
     {
       "id": "2017-illiquidity-based-factor-construction-in-asset-pricing-an-analysis-on-long-run-performance-of-sri-lankan-initial-public-offering-stocks",
@@ -1862,7 +1960,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.4038/CBJ.V8I1.10"
+      "sourceUrl": "https://doi.org/10.4038/CBJ.V8I1.10",
+      "featured": false
     },
     {
       "id": "2022-asset-pricing-dynamics-in-sustainable-equity-portfolios-evidence-from-the-pakistan-stock-exchange",
@@ -1881,7 +1980,8 @@
         "Return drivers",
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1080/1331677X.2022.2147977"
+      "sourceUrl": "https://doi.org/10.1080/1331677X.2022.2147977",
+      "featured": false
     },
     {
       "id": "2015-on-the-robustness-of-theoretical-asset-pricing-models",
@@ -1899,7 +1999,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/28b7be7c4fd66c537fe86e73d42461410657a707"
+      "sourceUrl": "https://www.semanticscholar.org/paper/28b7be7c4fd66c537fe86e73d42461410657a707",
+      "featured": false
     },
     {
       "id": "2021-volatility-of-volatility-risk-in-asset-pricing",
@@ -1917,7 +2018,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.2139/ssrn.3755915"
+      "sourceUrl": "https://doi.org/10.2139/ssrn.3755915",
+      "featured": false
     },
     {
       "id": "2018-asset-pricing-with-omitted-factors",
@@ -1935,7 +2037,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/17b410dfc6e88ac5d3861c9c5f5efd844332687f"
+      "sourceUrl": "https://www.semanticscholar.org/paper/17b410dfc6e88ac5d3861c9c5f5efd844332687f",
+      "featured": false
     },
     {
       "id": "2019-capital-share-risk-in-u-s-asset-pricing",
@@ -1953,7 +2056,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/jofi.12772"
+      "sourceUrl": "https://doi.org/10.1111/jofi.12772",
+      "featured": false
     },
     {
       "id": "2009-factor-models-in-portfolio-and-asset-pricing-theory",
@@ -1972,7 +2076,8 @@
         "Return drivers",
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1007/978-0-387-77439-8_13"
+      "sourceUrl": "https://doi.org/10.1007/978-0-387-77439-8_13",
+      "featured": false
     },
     {
       "id": "2013-a-comparative-assessment-of-unconditional-multifactor-asset-pricing-models",
@@ -1990,7 +2095,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/c7ec1f205ebd42b4fa66e752980f4985bac6f8b6"
+      "sourceUrl": "https://www.semanticscholar.org/paper/c7ec1f205ebd42b4fa66e752980f4985bac6f8b6",
+      "featured": false
     },
     {
       "id": "1999-two-pass-tests-of-asset-pricing-models-with-useless-factors",
@@ -2008,7 +2114,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/0022-1082.00102"
+      "sourceUrl": "https://doi.org/10.1111/0022-1082.00102",
+      "featured": false
     },
     {
       "id": "1997-growth-optimal-portfolio-restrictions-on-asset-pricing-models",
@@ -2027,7 +2134,8 @@
         "Return drivers",
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1017/S1365100597003039"
+      "sourceUrl": "https://doi.org/10.1017/S1365100597003039",
+      "featured": false
     },
     {
       "id": "2013-investor-sentiment-risk-factor-and-asset-pricing-anomalies",
@@ -2045,7 +2153,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.2139/ssrn.1781077"
+      "sourceUrl": "https://doi.org/10.2139/ssrn.1781077",
+      "featured": false
     },
     {
       "id": "2005-asset-pricing-models-and-economic-risk-premia-a-decomposition",
@@ -2063,7 +2172,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.2139/SSRN.775829"
+      "sourceUrl": "https://doi.org/10.2139/SSRN.775829",
+      "featured": false
     },
     {
       "id": "1992-the-cross-section-of-expected-stock-returns",
@@ -2081,7 +2191,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/J.1540-6261.1992.TB04398.X"
+      "sourceUrl": "https://doi.org/10.1111/J.1540-6261.1992.TB04398.X",
+      "featured": false
     },
     {
       "id": "2014-the-cross-section-of-expected-stock-returns",
@@ -2099,7 +2210,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.2139/SSRN.2511246"
+      "sourceUrl": "https://doi.org/10.2139/SSRN.2511246",
+      "featured": false
     },
     {
       "id": "1996-the-conditional-capm-and-the-cross-section-of-expected-returns",
@@ -2117,7 +2229,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/J.1540-6261.1996.TB05201.X"
+      "sourceUrl": "https://doi.org/10.1111/J.1540-6261.1996.TB05201.X",
+      "featured": false
     },
     {
       "id": "2013-and-the-cross-section-of-expected-returns",
@@ -2135,7 +2248,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.3386/w20592"
+      "sourceUrl": "https://doi.org/10.3386/w20592",
+      "featured": false
     },
     {
       "id": "2006-the-cross-section-of-volatility-and-expected-returns",
@@ -2153,7 +2267,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/J.1540-6261.2006.00836.X"
+      "sourceUrl": "https://doi.org/10.1111/J.1540-6261.2006.00836.X",
+      "featured": false
     },
     {
       "id": "2011-maxing-out-stocks-as-lotteries-and-the-cross-section-of-expected-returns",
@@ -2171,7 +2286,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.2139/SSRN.1262416"
+      "sourceUrl": "https://doi.org/10.2139/SSRN.1262416",
+      "featured": false
     },
     {
       "id": "2008-idiosyncratic-volatility-and-the-cross-section-of-expected-returns",
@@ -2189,7 +2305,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1017/S002210900000274X"
+      "sourceUrl": "https://doi.org/10.1017/S002210900000274X",
+      "featured": false
     },
     {
       "id": "2003-market-frictions-price-delay-and-the-cross-section-of-expected-returns",
@@ -2207,7 +2324,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.2139/SSRN.408161"
+      "sourceUrl": "https://doi.org/10.2139/SSRN.408161",
+      "featured": false
     },
     {
       "id": "2009-idiosyncratic-risk-and-the-cross-section-of-expected-stock-returns",
@@ -2225,7 +2343,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1016/J.JFINECO.2008.02.003"
+      "sourceUrl": "https://doi.org/10.1016/J.JFINECO.2008.02.003",
+      "featured": false
     },
     {
       "id": "2013-organization-capital-and-the-cross-section-of-expected-returns",
@@ -2243,7 +2362,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.2139/SSRN.1359320"
+      "sourceUrl": "https://doi.org/10.2139/SSRN.1359320",
+      "featured": false
     },
     {
       "id": "2025-war-discourse-and-the-cross-section-of-expected-stock-returns",
@@ -2261,7 +2381,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/jofi.13482"
+      "sourceUrl": "https://doi.org/10.1111/jofi.13482",
+      "featured": false
     },
     {
       "id": "1998-alternative-factor-specifications-security-characteristics-and-the-cross-section-of-expected-stock-returns",
@@ -2279,7 +2400,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1016/S0304-405X(98)00028-2"
+      "sourceUrl": "https://doi.org/10.1016/S0304-405X(98)00028-2",
+      "featured": false
     },
     {
       "id": "2024-esg-factors-and-the-cross-section-of-expected-stock-returns-a-lasso-based-approach",
@@ -2297,7 +2419,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.frl.2024.105482"
+      "sourceUrl": "https://doi.org/10.1016/j.frl.2024.105482",
+      "featured": false
     },
     {
       "id": "2024-someone-like-you-lottery-like-preference-and-the-cross-section-of-expected-returns-in-the-cryptocurrency-market",
@@ -2315,7 +2438,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.intfin.2024.101957"
+      "sourceUrl": "https://doi.org/10.1016/j.intfin.2024.101957",
+      "featured": false
     },
     {
       "id": "2025-the-cross-section-of-expected-stock-returns",
@@ -2333,7 +2457,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.3126/sj.v16i1.91837"
+      "sourceUrl": "https://doi.org/10.3126/sj.v16i1.91837",
+      "featured": false
     },
     {
       "id": "2019-the-cross-section-of-expected-returns-evidence-from-implied-beliefs-of-active-mutual-funds-managers",
@@ -2353,7 +2478,8 @@
         "Mutual funds",
         "Active management"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/9f064f23481c92881f1340daf671869a817d3aab"
+      "sourceUrl": "https://www.semanticscholar.org/paper/9f064f23481c92881f1340daf671869a817d3aab",
+      "featured": false
     },
     {
       "id": "2025-expected-investment-growth-and-the-cross-section-of-expected-returns-evidence-from-reits",
@@ -2371,7 +2497,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.2139/ssrn.5678250"
+      "sourceUrl": "https://doi.org/10.2139/ssrn.5678250",
+      "featured": false
     },
     {
       "id": "2016-editor-s-choice-and-the-cross-section-of-expected-returns",
@@ -2389,7 +2516,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/563c3d06b01519f5534e2800defb8a296cd7c195"
+      "sourceUrl": "https://www.semanticscholar.org/paper/563c3d06b01519f5534e2800defb8a296cd7c195",
+      "featured": false
     },
     {
       "id": "2020-earnings-retained-earnings-and-book-to-market-in-the-cross-section-of-expected-returns",
@@ -2407,7 +2535,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.2139/SSRN.2924798"
+      "sourceUrl": "https://doi.org/10.2139/SSRN.2924798",
+      "featured": false
     },
     {
       "id": "2024-stock-price-delay-and-the-cross-section-of-expected-returns-a-story-of-night-and-day",
@@ -2425,7 +2554,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.iref.2024.103669"
+      "sourceUrl": "https://doi.org/10.1016/j.iref.2024.103669",
+      "featured": false
     },
     {
       "id": "2024-bank-credit-consumption-risk-and-the-cross-section-of-expected-returns",
@@ -2444,7 +2574,8 @@
         "Return drivers",
         "Spending"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.irfa.2024.103103"
+      "sourceUrl": "https://doi.org/10.1016/j.irfa.2024.103103",
+      "featured": false
     },
     {
       "id": "2024-sentiment-and-the-cross-section-of-expected-stock-returns",
@@ -2462,7 +2593,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/fire.12380"
+      "sourceUrl": "https://doi.org/10.1111/fire.12380",
+      "featured": false
     },
     {
       "id": "2024-cross-section-of-expected-stock-returns-an-application-of-fama-french-five-factor-model-in-nepal",
@@ -2480,7 +2612,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.3126/batuk.v10i1.62299"
+      "sourceUrl": "https://doi.org/10.3126/batuk.v10i1.62299",
+      "featured": false
     },
     {
       "id": "2024-market-risk-and-cross-section-of-expected-stock-returns",
@@ -2498,7 +2631,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.3126/sudurpaschim.v2i1.69505"
+      "sourceUrl": "https://doi.org/10.3126/sudurpaschim.v2i1.69505",
+      "featured": false
     },
     {
       "id": "2005-consumption-risk-and-the-cross-section-of-expected-returns",
@@ -2517,7 +2651,8 @@
         "Return drivers",
         "Spending"
       ],
-      "sourceUrl": "https://doi.org/10.1086/426042"
+      "sourceUrl": "https://doi.org/10.1086/426042",
+      "featured": false
     },
     {
       "id": "2026-broker-network-connectivity-and-the-cross-section-of-expected-returns",
@@ -2535,7 +2670,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s10479-026-07082-4"
+      "sourceUrl": "https://doi.org/10.1007/s10479-026-07082-4",
+      "featured": false
     },
     {
       "id": "2023-war-discourse-and-the-cross-section-of-expected-stock-returns",
@@ -2553,7 +2689,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.2139/ssrn.4483650"
+      "sourceUrl": "https://doi.org/10.2139/ssrn.4483650",
+      "featured": false
     },
     {
       "id": "2024-the-cross-section-of-expected-stock-returns-nepalese-evidence",
@@ -2571,7 +2708,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.3126/pycnjm.v17i1.76878"
+      "sourceUrl": "https://doi.org/10.3126/pycnjm.v17i1.76878",
+      "featured": false
     },
     {
       "id": "2024-expected-idiosyncratic-moment-risk-and-the-cross-section-of-reit-returns",
@@ -2589,7 +2727,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1080/09599916.2024.2409133"
+      "sourceUrl": "https://doi.org/10.1080/09599916.2024.2409133",
+      "featured": false
     },
     {
       "id": "2019-option-implied-volatility-skewness-and-kurtosis-and-the-cross-section-of-expected-stock-returns",
@@ -2607,7 +2746,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.2139/SSRN.2322945"
+      "sourceUrl": "https://doi.org/10.2139/SSRN.2322945",
+      "featured": false
     },
     {
       "id": "2026-tail-risk-exposure-and-the-cross-section-of-expected-stock-returns",
@@ -2625,7 +2765,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.jbankfin.2025.107626"
+      "sourceUrl": "https://doi.org/10.1016/j.jbankfin.2025.107626",
+      "featured": false
     },
     {
       "id": "2004-forecast-dispersion-and-the-cross-section-of-expected-returns",
@@ -2643,7 +2784,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/J.1540-6261.2004.00688.X"
+      "sourceUrl": "https://doi.org/10.1111/J.1540-6261.2004.00688.X",
+      "featured": false
     },
     {
       "id": "2021-predictability-and-the-cross-section-of-expected-returns-a-challenge-for-asset-pricing-models",
@@ -2661,7 +2803,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1287/MNSC.2020.3859"
+      "sourceUrl": "https://doi.org/10.1287/MNSC.2020.3859",
+      "featured": false
     },
     {
       "id": "2021-equilibrium-asset-pricing-and-the-cross-section-of-expected-returns",
@@ -2679,7 +2822,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s10436-021-00383-7"
+      "sourceUrl": "https://doi.org/10.1007/s10436-021-00383-7",
+      "featured": false
     },
     {
       "id": "2022-market-volatility-market-skewness-and-the-cross-section-of-expected-returns-in-chinese-equity-markets",
@@ -2697,7 +2841,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1080/00036846.2022.2140766"
+      "sourceUrl": "https://doi.org/10.1080/00036846.2022.2140766",
+      "featured": false
     },
     {
       "id": "2024-behavioral-finance-an-application-of-prospect-theory-to-brazilian-investors",
@@ -2715,7 +2860,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.5539/ijef.v16n9p31"
+      "sourceUrl": "https://doi.org/10.5539/ijef.v16n9p31",
+      "featured": false
     },
     {
       "id": "2024-behavioral-finance-loss-aversion-market-anomalies-and-prospect-theory-in-financial-decision-making",
@@ -2733,7 +2879,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.54097/h1wnk736"
+      "sourceUrl": "https://doi.org/10.54097/h1wnk736",
+      "featured": false
     },
     {
       "id": "2011-behavioral-finance-prospect-theory-a-vliv-typu-vysoko-kolsk-ho-vzd-l-n-na-ty-d-ln-chov-n",
@@ -2751,7 +2898,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/dd18c51df7182567fbf969227c422b7092ff3bdd"
+      "sourceUrl": "https://www.semanticscholar.org/paper/dd18c51df7182567fbf969227c422b7092ff3bdd",
+      "featured": false
     },
     {
       "id": "2023-do-we-need-to-question-the-prospect-theory-in-the-field-of-behavioral-finance",
@@ -2769,7 +2917,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.2139/ssrn.4665237"
+      "sourceUrl": "https://doi.org/10.2139/ssrn.4665237",
+      "featured": false
     },
     {
       "id": "2020-behavioral-finance-perspectives-on-pakistan-stock-market-efficiency-assessing-the-prospect-theory-empirically-with-an-adaptive-pattern-of-efficiency-across-military-and-democratic-regimes",
@@ -2787,7 +2936,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.33844/ijol.2020.60488"
+      "sourceUrl": "https://doi.org/10.33844/ijol.2020.60488",
+      "featured": false
     },
     {
       "id": "2020-behavioral-finance-perspectives-on-pakistan-stock-market-efficiency-assessing-the-prospect-theory-empirically-using-adaptive-pattern-of-efficiency-across-military-and-democratic-phases",
@@ -2805,7 +2955,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.2139/ssrn.3683106"
+      "sourceUrl": "https://doi.org/10.2139/ssrn.3683106",
+      "featured": false
     },
     {
       "id": "2020-finan-as-comportamentais-um-estudo-sobre-os-artigos-publicados-com-base-na-teoria-do-prospecto-behavioral-finance-a-study-on-articles-published-based-on-prospect-theory",
@@ -2823,7 +2974,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.34117/bjdv6n12-320"
+      "sourceUrl": "https://doi.org/10.34117/bjdv6n12-320",
+      "featured": false
     },
     {
       "id": "2025-analysis-of-investor-decision-deviation-from-the-perspective-of-behavioral-finance-theory",
@@ -2841,7 +2993,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.54097/h1gasa03"
+      "sourceUrl": "https://doi.org/10.54097/h1gasa03",
+      "featured": false
     },
     {
       "id": "2024-behavioral-biases-of-cryptocurrency-investors-a-prospect-theory-model-to-explain-cryptocurrency-returns",
@@ -2859,7 +3012,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1108/rbf-07-2023-0172"
+      "sourceUrl": "https://doi.org/10.1108/rbf-07-2023-0172",
+      "featured": false
     },
     {
       "id": "2024-investment-decision-making-among-students-using-prospect-theory-in-behavioral-economics",
@@ -2877,7 +3031,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.61220/famj.v2i2.2246"
+      "sourceUrl": "https://doi.org/10.61220/famj.v2i2.2246",
+      "featured": false
     },
     {
       "id": "2016-specific-applications-of-prospect-theory-to-behavioral-finance",
@@ -2895,7 +3050,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1007/978-3-319-32711-2_9"
+      "sourceUrl": "https://doi.org/10.1007/978-3-319-32711-2_9",
+      "featured": false
     },
     {
       "id": "2014-behavioral-finance-in-brazil-applying-the-prospect-theory-to-potential-investors",
@@ -2913,7 +3069,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.7819/RBGN.V16I53.1865"
+      "sourceUrl": "https://doi.org/10.7819/RBGN.V16I53.1865",
+      "featured": false
     },
     {
       "id": "2014-behavioral-finance-in-brazil-applying-the-prospect-theory-to-potential",
@@ -2931,7 +3088,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/6ea0629f75a878a1b74fe07f4c0639279ced4436"
+      "sourceUrl": "https://www.semanticscholar.org/paper/6ea0629f75a878a1b74fe07f4c0639279ced4436",
+      "featured": false
     },
     {
       "id": "2015-teoria-do-prospecto-evid-ncias-aplicadas-em-finan-as-comportamentais-prospect-theory-applied-evidence-in-behavioral-finance",
@@ -2949,7 +3107,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.2139/SSRN.2688204"
+      "sourceUrl": "https://doi.org/10.2139/SSRN.2688204",
+      "featured": false
     },
     {
       "id": "2022-prospect-theory-mental-accounting-nudges-applications-to-economics-finance-marketing-public-policy-and-to-covid-19-pandemic-management",
@@ -2967,7 +3126,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1177/jmrt.22.1023226"
+      "sourceUrl": "https://doi.org/10.1177/jmrt.22.1023226",
+      "featured": false
     },
     {
       "id": "N/A-prospect-theory-personality-traits-cognitive-reflection-test-and-investor-profile-analysis-a-behavioral-finance-study",
@@ -2985,7 +3145,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/39022b1eb4aa499366f67fa4d0f18e87cd4f6c32"
+      "sourceUrl": "https://www.semanticscholar.org/paper/39022b1eb4aa499366f67fa4d0f18e87cd4f6c32",
+      "featured": false
     },
     {
       "id": "2025-bibliometric-review-of-behavioral-finance-and-risk-a-scientometric-analysis-using-biblioshiny",
@@ -3003,7 +3164,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.31893/multirev.2025233"
+      "sourceUrl": "https://doi.org/10.31893/multirev.2025233",
+      "featured": false
     },
     {
       "id": "2025-cognitive-bias-asymmetry-and-heuristic-driven-market-anomalies-a-neurofinancial-noise-trading-analysis-of-prospect-theory-elasticity-in-the-pakistan-stock-exchange-psx",
@@ -3021,7 +3183,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.71085/sss.04.02.260"
+      "sourceUrl": "https://doi.org/10.71085/sss.04.02.260",
+      "featured": false
     },
     {
       "id": "2025-theoretical-aspects-of-behavioral-finance-research",
@@ -3039,7 +3202,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.32515/2663-1636.2025.13(46).1.154-165"
+      "sourceUrl": "https://doi.org/10.32515/2663-1636.2025.13(46).1.154-165",
+      "featured": false
     },
     {
       "id": "2025-behavioral-finance-and-managerial-decision-making-integrating-psychology-with-modern-business-strategy",
@@ -3057,7 +3221,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.22214/ijraset.2025.75986"
+      "sourceUrl": "https://doi.org/10.22214/ijraset.2025.75986",
+      "featured": false
     },
     {
       "id": "2025-the-role-of-behavioral-finance-in-understanding-market-anomalies",
@@ -3075,7 +3240,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.70135/seejph.vi.4018"
+      "sourceUrl": "https://doi.org/10.70135/seejph.vi.4018",
+      "featured": false
     },
     {
       "id": "2025-a-behavioral-finance-framework-for-balancing-ai-accuracy-and-operational-carbon-emissions",
@@ -3093,7 +3259,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1145/3736646"
+      "sourceUrl": "https://doi.org/10.1145/3736646",
+      "featured": false
     },
     {
       "id": "2025-behavioral-finance-studies-of-irrational-investor-behavior-theoretical-evolution-and-future-directions",
@@ -3111,7 +3278,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1051/shsconf/202522501038"
+      "sourceUrl": "https://doi.org/10.1051/shsconf/202522501038",
+      "featured": false
     },
     {
       "id": "2025-advances-in-behavioral-finance-a-comprehensive-review-of-investor-psychology-and-market-anomalies",
@@ -3129,7 +3297,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.54254/2977-5701/2025.29628"
+      "sourceUrl": "https://doi.org/10.54254/2977-5701/2025.29628",
+      "featured": false
     },
     {
       "id": "2025-impact-of-behavioral-finance-on-employee-productivity-mediating-role-of-financial-decision-making",
@@ -3147,7 +3316,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.70843/ijass.2025.05211"
+      "sourceUrl": "https://doi.org/10.70843/ijass.2025.05211",
+      "featured": false
     },
     {
       "id": "2025-a-research-on-unlocking-investment-rationality-exploring-the-role-of-behavioral-finance-in-mitigating-investment-biases-in-guntur",
@@ -3165,7 +3335,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.55041/ijsrem41113"
+      "sourceUrl": "https://doi.org/10.55041/ijsrem41113",
+      "featured": false
     },
     {
       "id": "2025-research-on-the-development-and-application-of-the-behavioral-finance",
@@ -3183,7 +3354,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.54254/2754-1169/2024.19270"
+      "sourceUrl": "https://doi.org/10.54254/2754-1169/2024.19270",
+      "featured": false
     },
     {
       "id": "2025-behavioral-finance-understanding-investor-psychology-and-its-impact-on-stock-price",
@@ -3201,7 +3373,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.63363/aijfr.2025.v06i06.2502"
+      "sourceUrl": "https://doi.org/10.63363/aijfr.2025.v06i06.2502",
+      "featured": false
     },
     {
       "id": "2025-scientific-and-methodological-foundations-for-studying-the-impact-of-behavioral-finance-on-the-managerial-decision-making-process",
@@ -3219,7 +3392,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.12958/1817-3772-2025-2(80)-19-28"
+      "sourceUrl": "https://doi.org/10.12958/1817-3772-2025-2(80)-19-28",
+      "featured": false
     },
     {
       "id": "2025-artificial-intelligence-in-behavioral-finance-a-global-review-of-cognitive-bias-modeling-in-investor-decision-making",
@@ -3237,7 +3411,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s43546-025-00986-6"
+      "sourceUrl": "https://doi.org/10.1007/s43546-025-00986-6",
+      "featured": false
     },
     {
       "id": "2025-the-impact-of-behavioral-finance-on-sustainable-investing-in-the-stock-market-a-comprehensive-analysis-of-investor-behaviour-biases-and-decision-making-processes",
@@ -3255,7 +3430,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1109/ICRTEECT67512.2025.11448952"
+      "sourceUrl": "https://doi.org/10.1109/ICRTEECT67512.2025.11448952",
+      "featured": false
     },
     {
       "id": "2025-investor-psychology-and-market-bubbles-a-behavioral-finance-perspective",
@@ -3273,7 +3449,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.55041/ijsrem48661"
+      "sourceUrl": "https://doi.org/10.55041/ijsrem48661",
+      "featured": false
     },
     {
       "id": "2014-behavioral-finance-an-investigation-based-on-the-prospect-theory-and-the-investor-profile-of-portuguese-stricto-sensu-graduate-students",
@@ -3291,7 +3468,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/4a754540dd9da399221a2daf9b7963d6c6392c5b"
+      "sourceUrl": "https://www.semanticscholar.org/paper/4a754540dd9da399221a2daf9b7963d6c6392c5b",
+      "featured": false
     },
     {
       "id": "2024-a-critical-comparison-of-seut-and-prospect-theory",
@@ -3309,7 +3487,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.54254/2754-1169/72/20240690"
+      "sourceUrl": "https://doi.org/10.54254/2754-1169/72/20240690",
+      "featured": false
     },
     {
       "id": "2024-asymmetric-dependence-between-the-prospect-theory-value-and-stock-returns-in-india-a-quantile-regression-approach",
@@ -3328,7 +3507,8 @@
         "Money behavior",
         "Value"
       ],
-      "sourceUrl": "https://doi.org/10.1108/mf-10-2023-0628"
+      "sourceUrl": "https://doi.org/10.1108/mf-10-2023-0628",
+      "featured": false
     },
     {
       "id": "2023-tune-as-you-scale-hyperparameter-optimization-for-compute-efficient-training",
@@ -3346,7 +3526,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.48550/arXiv.2306.08055"
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2306.08055",
+      "featured": false
     },
     {
       "id": "2021-surrogate-guided-multi-objective-optimization-sgmoo-using-an-efficient-online-sampling-strategy",
@@ -3364,7 +3545,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1016/J.KNOSYS.2021.106919"
+      "sourceUrl": "https://doi.org/10.1016/J.KNOSYS.2021.106919",
+      "featured": false
     },
     {
       "id": "2006-the-efficient-frontier-for-partially-correlated-bounded-assets",
@@ -3382,7 +3564,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/cce1c32302392af9622eedc4918beb9d88eed84e"
+      "sourceUrl": "https://www.semanticscholar.org/paper/cce1c32302392af9622eedc4918beb9d88eed84e",
+      "featured": false
     },
     {
       "id": "2023-leo-learning-efficient-orderings-for-multiobjective-binary-decision-diagrams",
@@ -3400,7 +3583,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.48550/arXiv.2307.03171"
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2307.03171",
+      "featured": false
     },
     {
       "id": "2020-data-driven-stochastic-optimization-on-manifolds-for-additive-manufacturing",
@@ -3418,7 +3602,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.commatsci.2020.109750"
+      "sourceUrl": "https://doi.org/10.1016/j.commatsci.2020.109750",
+      "featured": false
     },
     {
       "id": "2003-efficient-point-methods-for-probabilistic-optimization-problems",
@@ -3436,7 +3621,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.18452/8307"
+      "sourceUrl": "https://doi.org/10.18452/8307",
+      "featured": false
     },
     {
       "id": "2004-dual-methods-for-probabilistic-optimization-problems",
@@ -3454,7 +3640,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s001860400371"
+      "sourceUrl": "https://doi.org/10.1007/s001860400371",
+      "featured": false
     },
     {
       "id": "2020-fair-policy-targeting",
@@ -3472,7 +3659,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1080/01621459.2022.2142591"
+      "sourceUrl": "https://doi.org/10.1080/01621459.2022.2142591",
+      "featured": false
     },
     {
       "id": "1998-convexification-of-a-noninferior-frontier",
@@ -3490,7 +3678,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1023/A:1022654528902"
+      "sourceUrl": "https://doi.org/10.1023/A:1022654528902",
+      "featured": false
     },
     {
       "id": "2021-mean-variance-hedging-for-production-planning-with-multiple-products",
@@ -3508,7 +3697,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1111/poms.13446"
+      "sourceUrl": "https://doi.org/10.1111/poms.13446",
+      "featured": false
     },
     {
       "id": "2010-pivoting-algorithm-for-mean-lower-semi-absolute-deviation-portfolio-optimization-model",
@@ -3526,7 +3716,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1109/MMIT.2010.83"
+      "sourceUrl": "https://doi.org/10.1109/MMIT.2010.83",
+      "featured": false
     },
     {
       "id": "1999-comparing-different-models-of-evolutionary-three-objective-optimization-using-fuzzy-logic-in-tehran-stock-exchange",
@@ -3544,7 +3735,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.22034/IJF.2017.59775"
+      "sourceUrl": "https://doi.org/10.22034/IJF.2017.59775",
+      "featured": false
     },
     {
       "id": "2006-derivative-free-generation-and-interpolation-of-convex-pareto-optimal-imrt-plans",
@@ -3562,7 +3754,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1088/0031-9155/51/24/005"
+      "sourceUrl": "https://doi.org/10.1088/0031-9155/51/24/005",
+      "featured": false
     },
     {
       "id": "2012-an-exact-method-for-balancing-efficiency-and-equity-in-the-liver-allocation-hierarchy",
@@ -3580,7 +3773,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1287/ijoc.1110.0445"
+      "sourceUrl": "https://doi.org/10.1287/ijoc.1110.0445",
+      "featured": false
     },
     {
       "id": "2018-some-methods-for-measuring-the-efficiency-of-firms-utilizing-different-technologies",
@@ -3598,7 +3792,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1109/IEA.2018.8387084"
+      "sourceUrl": "https://doi.org/10.1109/IEA.2018.8387084",
+      "featured": false
     },
     {
       "id": "2014-tu-c-17a-01-a-data-based-development-for-pratical-pareto-optimality-assessment-and-identification",
@@ -3616,7 +3811,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1118/1.4889276"
+      "sourceUrl": "https://doi.org/10.1118/1.4889276",
+      "featured": false
     },
     {
       "id": "2004-designing-communication-networks-for-distributed-control-agents",
@@ -3634,7 +3830,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1016/S0377-2217(03)00262-5"
+      "sourceUrl": "https://doi.org/10.1016/S0377-2217(03)00262-5",
+      "featured": false
     },
     {
       "id": "1991-improving-stochastic-communication-network-performance-reliability-vs-throughput",
@@ -3652,7 +3849,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/25a608e6c5b35b8419fd98d7490b68a2f657765f"
+      "sourceUrl": "https://www.semanticscholar.org/paper/25a608e6c5b35b8419fd98d7490b68a2f657765f",
+      "featured": false
     },
     {
       "id": "2024-lower-bounds-on-the-noiseless-worst-case-complexity-of-efficient-global-optimization",
@@ -3670,7 +3868,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s10957-024-02399-1"
+      "sourceUrl": "https://doi.org/10.1007/s10957-024-02399-1",
+      "featured": false
     },
     {
       "id": "2023-on-the-relationship-between-the-value-function-and-the-efficient-frontier-of-a-mixed-integer-linear-optimization-problem",
@@ -3689,7 +3888,8 @@
         "Portfolio design",
         "Value"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s00186-024-00871-2"
+      "sourceUrl": "https://doi.org/10.1007/s00186-024-00871-2",
+      "featured": false
     },
     {
       "id": "2022-portfolio-optimization-in-stocks-using-mean-variance-optimization-and-the-efficient-frontier",
@@ -3707,7 +3907,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s41870-022-01052-2"
+      "sourceUrl": "https://doi.org/10.1007/s41870-022-01052-2",
+      "featured": false
     },
     {
       "id": "2024-efp-efficient-frontier-based-autonomous-uav-exploration-strategy-for-unknown-environments",
@@ -3725,7 +3926,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1109/LRA.2024.3363531"
+      "sourceUrl": "https://doi.org/10.1109/LRA.2024.3363531",
+      "featured": false
     },
     {
       "id": "2022-deep-learning-the-efficient-frontier-of-convex-vector-optimization-problems",
@@ -3743,7 +3945,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s10898-024-01408-x"
+      "sourceUrl": "https://doi.org/10.1007/s10898-024-01408-x",
+      "featured": false
     },
     {
       "id": "2025-efficient-frontier-and-applications-in-product-offering-and-pricing",
@@ -3761,7 +3964,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1287/msom.2022.0164"
+      "sourceUrl": "https://doi.org/10.1287/msom.2022.0164",
+      "featured": false
     },
     {
       "id": "2020-a-comparison-on-particle-swarm-optimization-and-genetic-algorithm-performances-in-deriving-the-efficient-frontier-of-stocks-portfolios-based-on-amean-lowerpartial-moment-model",
@@ -3779,7 +3983,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1002/IJFE.2086"
+      "sourceUrl": "https://doi.org/10.1002/IJFE.2086",
+      "featured": false
     },
     {
       "id": "2025-enhancing-autonomous-exploration-for-robotics-via-real-time-map-optimization-and-improved-frontier-costs",
@@ -3797,7 +4002,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1038/s41598-025-97231-9"
+      "sourceUrl": "https://doi.org/10.1038/s41598-025-97231-9",
+      "featured": false
     },
     {
       "id": "2020-uncertainty-of-efficient-frontier-in-portfolio-optimization",
@@ -3815,7 +4021,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1007/978-3-030-53552-0_33"
+      "sourceUrl": "https://doi.org/10.1007/978-3-030-53552-0_33",
+      "featured": false
     },
     {
       "id": "2019-a-multiobjective-optimization-approach-to-compute-the-efficient-frontier-in-data-envelopment-analysis",
@@ -3833,7 +4040,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1002/mcda.1684"
+      "sourceUrl": "https://doi.org/10.1002/mcda.1684",
+      "featured": false
     },
     {
       "id": "2018-examining-the-effect-of-different-configuration-issues-of-the-multiobjective-evolutionary-algorithms-on-the-efficient-frontier-formulation-for-the-constrained-portfolio-optimization-problem",
@@ -3851,7 +4059,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1057/jors.2016.38"
+      "sourceUrl": "https://doi.org/10.1057/jors.2016.38",
+      "featured": false
     },
     {
       "id": "2022-constrained-efficient-global-optimization-of-expensive-black-box-functions",
@@ -3869,7 +4078,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/db2e818f0670e07324884d28392edd3343a37da0"
+      "sourceUrl": "https://www.semanticscholar.org/paper/db2e818f0670e07324884d28392edd3343a37da0",
+      "featured": false
     },
     {
       "id": "2017-algorithms-for-construction-of-efficient-frontier-for-nonconvex-models-on-the-basis-of-optimization-methods",
@@ -3887,7 +4097,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1134/S1064562417050337"
+      "sourceUrl": "https://doi.org/10.1134/S1064562417050337",
+      "featured": false
     },
     {
       "id": "2024-efficient-bounds-tightening-based-on-socp-relaxations-for-ac-optimal-power-flow",
@@ -3905,7 +4116,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s11081-024-09891-7"
+      "sourceUrl": "https://doi.org/10.1007/s11081-024-09891-7",
+      "featured": false
     },
     {
       "id": "2025-an-efficient-global-optimization-algorithm-for-the-sum-of-linear-ratios-problems-based-on-a-novel-adjustable-branching-rule",
@@ -3923,7 +4135,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s10589-025-00679-8"
+      "sourceUrl": "https://doi.org/10.1007/s10589-025-00679-8",
+      "featured": false
     },
     {
       "id": "2023-an-analytic-derivation-of-the-efficient-frontier-in-biobjective-cash-management-and-its-implications-for-policies",
@@ -3941,7 +4154,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s10479-023-05433-z"
+      "sourceUrl": "https://doi.org/10.1007/s10479-023-05433-z",
+      "featured": false
     },
     {
       "id": "2023-learning-the-efficient-frontier",
@@ -3959,7 +4173,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.48550/arXiv.2309.15775"
+      "sourceUrl": "https://doi.org/10.48550/arXiv.2309.15775",
+      "featured": false
     },
     {
       "id": "2021-limits-of-arbitrage-and-mispricing-evidence-from-mergers-and-acquisitions",
@@ -3977,7 +4192,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1108/rbf-01-2021-0005"
+      "sourceUrl": "https://doi.org/10.1108/rbf-01-2021-0005",
+      "featured": false
     },
     {
       "id": "2024-investor-sentiment-limits-to-arbitrage-and-hard-to-value-stocks",
@@ -3996,7 +4212,8 @@
         "Market efficiency",
         "Value"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s11156-024-01353-6"
+      "sourceUrl": "https://doi.org/10.1007/s11156-024-01353-6",
+      "featured": false
     },
     {
       "id": "2017-liquidity-cognition-and-limits-of-arbitrage",
@@ -4014,7 +4231,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/e2571d1badb06bb18d28a0e8e1703b6298fbc530"
+      "sourceUrl": "https://www.semanticscholar.org/paper/e2571d1badb06bb18d28a0e8e1703b6298fbc530",
+      "featured": false
     },
     {
       "id": "2010-limits-of-arbitrage",
@@ -4032,7 +4250,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1146/ANNUREV-FINANCIAL-073009-104107"
+      "sourceUrl": "https://doi.org/10.1146/ANNUREV-FINANCIAL-073009-104107",
+      "featured": false
     },
     {
       "id": "2022-asymmetric-effect-of-fears-sentiment-on-stock-returns-short-sale-constraints-limits-to-arbitrage-and-behavioural-biases",
@@ -4050,7 +4269,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1080/1540496X.2022.2028618"
+      "sourceUrl": "https://doi.org/10.1080/1540496X.2022.2028618",
+      "featured": false
     },
     {
       "id": "2020-biased-short-short-sellers-disposition-effect-and-limits-to-arbitrage",
@@ -4068,7 +4288,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1016/J.FINMAR.2019.100512"
+      "sourceUrl": "https://doi.org/10.1016/J.FINMAR.2019.100512",
+      "featured": false
     },
     {
       "id": "2016-investor-sentiment-limits-on-arbitrage-and-the-performance-of-cross-country-stock-market-anomalies",
@@ -4086,7 +4307,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1016/J.JBEF.2015.11.007"
+      "sourceUrl": "https://doi.org/10.1016/J.JBEF.2015.11.007",
+      "featured": false
     },
     {
       "id": "2012-limits-to-arbitrage-an-introduction-to-behavioral-finance-and-a-literature-review",
@@ -4104,7 +4326,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/8b2a08de0f36fc1ae333ad31275115b565d21c6d"
+      "sourceUrl": "https://www.semanticscholar.org/paper/8b2a08de0f36fc1ae333ad31275115b565d21c6d",
+      "featured": false
     },
     {
       "id": "2004-industry-momentum-and-behavioral-limits-to-arbitrage",
@@ -4123,7 +4346,8 @@
         "Market efficiency",
         "Momentum"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/5e90fadd0f9933cd51d9384f8cec2b068fd833d9"
+      "sourceUrl": "https://www.semanticscholar.org/paper/5e90fadd0f9933cd51d9384f8cec2b068fd833d9",
+      "featured": false
     },
     {
       "id": "2002-a-survey-of-behavioral-finance",
@@ -4141,7 +4365,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.2139/SSRN.327880"
+      "sourceUrl": "https://doi.org/10.2139/SSRN.327880",
+      "featured": false
     },
     {
       "id": "2014-how-constraining-are-limits-to-arbitrage-evidence-from-a-recent-financial-innovation",
@@ -4159,7 +4384,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.3386/W19834"
+      "sourceUrl": "https://doi.org/10.3386/W19834",
+      "featured": false
     },
     {
       "id": "2014-how-constraining-are-limits-to-arbitrage-evidence-from-a-recent-financial-innovation",
@@ -4177,7 +4403,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.3386/W19834"
+      "sourceUrl": "https://doi.org/10.3386/W19834",
+      "featured": false
     },
     {
       "id": "2011-benchmarks-as-limits-to-arbitrage-understanding-the-low-volatility-anomaly",
@@ -4195,7 +4422,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.2469/faj.v67.n1.4"
+      "sourceUrl": "https://doi.org/10.2469/faj.v67.n1.4",
+      "featured": false
     },
     {
       "id": "2014-behavioral-factors-in-risk-arbitrage",
@@ -4213,7 +4441,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/123ae84e506aef494c73a883aad692023c02da8c"
+      "sourceUrl": "https://www.semanticscholar.org/paper/123ae84e506aef494c73a883aad692023c02da8c",
+      "featured": false
     },
     {
       "id": "2011-the-dynamics-of-limits-to-arbitrage-an-empirical-investigation",
@@ -4231,7 +4460,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/b5e9445fc5478ad05b8c3c656851459f6ce45795"
+      "sourceUrl": "https://www.semanticscholar.org/paper/b5e9445fc5478ad05b8c3c656851459f6ce45795",
+      "featured": false
     },
     {
       "id": "2022-behavioral-biases-and-the-asset-growth-anomaly",
@@ -4249,7 +4479,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1080/15427560.2022.2047684"
+      "sourceUrl": "https://doi.org/10.1080/15427560.2022.2047684",
+      "featured": false
     },
     {
       "id": "2008-ambiguity-no-arbitrage-and-the-limits-to-rational-expectations",
@@ -4267,7 +4498,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.2139/SSRN.1102337"
+      "sourceUrl": "https://doi.org/10.2139/SSRN.1102337",
+      "featured": false
     },
     {
       "id": "2004-influencing-limits-to-arbitrage-corporate-disclosure-in-inefficient-markets",
@@ -4285,7 +4517,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.2139/SSRN.687267"
+      "sourceUrl": "https://doi.org/10.2139/SSRN.687267",
+      "featured": false
     },
     {
       "id": "2021-why-do-firms-fail-to-engage-diversity-a-behavioral-strategy-perspective",
@@ -4303,7 +4536,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1287/ORSC.2020.1425"
+      "sourceUrl": "https://doi.org/10.1287/ORSC.2020.1425",
+      "featured": false
     },
     {
       "id": "2021-behavioral-finance-research-in-2020-cui-bono-et-quo-vadis",
@@ -4321,7 +4555,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.35944/JOFRP.2021.10.1.004"
+      "sourceUrl": "https://doi.org/10.35944/JOFRP.2021.10.1.004",
+      "featured": false
     },
     {
       "id": "2018-behavioral-biases-in-the-corporate-bond-market",
@@ -4340,7 +4575,8 @@
         "Market efficiency",
         "Bonds"
       ],
-      "sourceUrl": "https://doi.org/10.1016/J.JEMPFIN.2017.12.003"
+      "sourceUrl": "https://doi.org/10.1016/J.JEMPFIN.2017.12.003",
+      "featured": false
     },
     {
       "id": "2021-short-and-long-horizon-behavioral-anomalies-and-institutional-investors-nudge-behavior-based-on-the-data-of-listed-chinese-tobacco-companies",
@@ -4358,7 +4594,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.18001/trs.7.5.112"
+      "sourceUrl": "https://doi.org/10.18001/trs.7.5.112",
+      "featured": false
     },
     {
       "id": "2018-behavioral-finance-a-review",
@@ -4376,7 +4613,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/3739db0bfa6b036b145dd057812398c1320a33dd"
+      "sourceUrl": "https://www.semanticscholar.org/paper/3739db0bfa6b036b145dd057812398c1320a33dd",
+      "featured": false
     },
     {
       "id": "2020-a-review-of-overconfidence-in-behavioral-finance",
@@ -4394,7 +4632,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/a976dd3de3e64773f58ab4e73dd1f217a5bbce56"
+      "sourceUrl": "https://www.semanticscholar.org/paper/a976dd3de3e64773f58ab4e73dd1f217a5bbce56",
+      "featured": false
     },
     {
       "id": "2020-influence-of-behavioral-biases-on-professional-investment-decision-in-kenya",
@@ -4412,7 +4651,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/5e38762f21e8c78d1f8ed4f2ffbc6a7320da0b50"
+      "sourceUrl": "https://www.semanticscholar.org/paper/5e38762f21e8c78d1f8ed4f2ffbc6a7320da0b50",
+      "featured": false
     },
     {
       "id": "2020-a-look-at-behavioral-finance",
@@ -4430,7 +4670,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.5539/ijef.v12n3p73"
+      "sourceUrl": "https://doi.org/10.5539/ijef.v12n3p73",
+      "featured": false
     },
     {
       "id": "2003-chapter-18-a-survey-of-behavioral-finance",
@@ -4448,7 +4689,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1016/S1574-0102(03)01027-6"
+      "sourceUrl": "https://doi.org/10.1016/S1574-0102(03)01027-6",
+      "featured": false
     },
     {
       "id": "2019-chapter-17-behavioral-finance-in-theory-and-practice",
@@ -4466,7 +4708,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/0e23fd6a8f8069f08704a61884585fb094d507f9"
+      "sourceUrl": "https://www.semanticscholar.org/paper/0e23fd6a8f8069f08704a61884585fb094d507f9",
+      "featured": false
     },
     {
       "id": "2019-a-survey-of-behavioral-macro-finance",
@@ -4484,7 +4727,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1142/9789813279469_0006"
+      "sourceUrl": "https://doi.org/10.1142/9789813279469_0006",
+      "featured": false
     },
     {
       "id": "2018-the-conventional-past-behavioral-present-and-algorithmic-future-of-risk-and-finance",
@@ -4502,7 +4746,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/f141e8de34df050550eaab6782f939975682cb7a"
+      "sourceUrl": "https://www.semanticscholar.org/paper/f141e8de34df050550eaab6782f939975682cb7a",
+      "featured": false
     },
     {
       "id": "2017-three-essays-on-behavioral-economics",
@@ -4520,7 +4765,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/b62839c09ab267edce053ec686641e95d429ab9b"
+      "sourceUrl": "https://www.semanticscholar.org/paper/b62839c09ab267edce053ec686641e95d429ab9b",
+      "featured": false
     },
     {
       "id": "2025-mistaking-bad-news-for-good-news-investor-optimism-and-mispricing-of-strategic-alternatives-announcements",
@@ -4538,7 +4784,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s11142-025-09917-0"
+      "sourceUrl": "https://doi.org/10.1007/s11142-025-09917-0",
+      "featured": false
     },
     {
       "id": "2025-the-relationship-between-stock-price-and-intrinsic-value-of-a-company",
@@ -4557,7 +4804,8 @@
         "Market efficiency",
         "Value"
       ],
-      "sourceUrl": "https://doi.org/10.54254/2753-8818/2025.24823"
+      "sourceUrl": "https://doi.org/10.54254/2753-8818/2025.24823",
+      "featured": false
     },
     {
       "id": "2024-the-economics-of-liquid-staking-derivatives-basis-determinants-and-price-discovery",
@@ -4575,7 +4823,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1002/fut.22556"
+      "sourceUrl": "https://doi.org/10.1002/fut.22556",
+      "featured": false
     },
     {
       "id": "2015-on-informational-efficiency-of-the-banking-sector-a-behavioral-model-of-the-credit-boom",
@@ -4593,7 +4842,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1108/SEF-04-2013-0050"
+      "sourceUrl": "https://doi.org/10.1108/SEF-04-2013-0050",
+      "featured": false
     },
     {
       "id": "2008-resolving-the-paradox-is-the-safe-withdrawal-rate-sometimes-too-safe",
@@ -4612,7 +4862,8 @@
         "Retirement spending",
         "Withdrawal rules"
       ],
-      "sourceUrl": "https://www.kitces.com/"
+      "sourceUrl": "https://www.kitces.com/",
+      "featured": false
     },
     {
       "id": "2011-safe-savings-rates-a-new-approach-to-retirement-planning-over-the-life-cycle",
@@ -4632,7 +4883,8 @@
         "Retirement",
         "Savings"
       ],
-      "sourceUrl": "https://doi.org/10.2139/ssrn.1822262"
+      "sourceUrl": "https://doi.org/10.2139/ssrn.1822262",
+      "featured": false
     },
     {
       "id": "2009-a-dynamic-and-adaptive-approach-to-distribution-planning-and-monitoring",
@@ -4650,7 +4902,8 @@
       "focusTags": [
         "Retirement spending"
       ],
-      "sourceUrl": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1413620"
+      "sourceUrl": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1413620",
+      "featured": false
     },
     {
       "id": "2006-conserving-client-portfolios-during-retirement",
@@ -4670,7 +4923,8 @@
         "Retirement",
         "Portfolio design"
       ],
-      "sourceUrl": "https://www.financialplanningassociation.org"
+      "sourceUrl": "https://www.financialplanningassociation.org",
+      "featured": false
     },
     {
       "id": "2012-spending-flexibility-and-safe-withdrawal-rates",
@@ -4689,7 +4943,8 @@
         "Retirement spending",
         "Withdrawal rules"
       ],
-      "sourceUrl": "https://doi.org/10.2139/ssrn.2001552"
+      "sourceUrl": "https://doi.org/10.2139/ssrn.2001552",
+      "featured": false
     },
     {
       "id": "2004-pension-design-and-structure-new-lessons-from-behavioral-finance",
@@ -4707,7 +4962,8 @@
       "focusTags": [
         "Retirement spending"
       ],
-      "sourceUrl": "https://doi.org/10.1093/0199273391.001.0001"
+      "sourceUrl": "https://doi.org/10.1093/0199273391.001.0001",
+      "featured": false
     },
     {
       "id": "2005-a-sustainable-spending-rate-without-simulation",
@@ -4725,7 +4981,8 @@
       "focusTags": [
         "Retirement spending"
       ],
-      "sourceUrl": "https://doi.org/10.2469/faj.v61.n6.2770"
+      "sourceUrl": "https://doi.org/10.2469/faj.v61.n6.2770",
+      "featured": false
     },
     {
       "id": "1992-global-portfolio-optimization",
@@ -4743,7 +5000,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.2469/faj.v48.n5.28"
+      "sourceUrl": "https://doi.org/10.2469/faj.v48.n5.28",
+      "featured": false
     },
     {
       "id": "2009-optimal-versus-naive-diversification-how-inefficient-is-the-1-n-portfolio-strategy",
@@ -4761,7 +5019,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1093/rfs/hhm075"
+      "sourceUrl": "https://doi.org/10.1093/rfs/hhm075",
+      "featured": true
     },
     {
       "id": "2008-toward-maximum-diversification",
@@ -4779,7 +5038,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.3905/JPM.2008.35.1.40"
+      "sourceUrl": "https://doi.org/10.3905/JPM.2008.35.1.40",
+      "featured": false
     },
     {
       "id": "2006-minimum-variance-portfolios-in-the-us-equity-market",
@@ -4797,7 +5057,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.3905/jpm.2006.661366"
+      "sourceUrl": "https://doi.org/10.3905/jpm.2006.661366",
+      "featured": true
     },
     {
       "id": "1989-the-markowitz-optimization-enigma-is-optimized-optimal",
@@ -4815,7 +5076,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.2469/faj.v45.n1.31"
+      "sourceUrl": "https://doi.org/10.2469/faj.v45.n1.31",
+      "featured": false
     },
     {
       "id": "2003-modern-investment-management-an-equilibrium-approach",
@@ -4833,7 +5095,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://www.wiley.com"
+      "sourceUrl": "https://www.wiley.com",
+      "featured": false
     },
     {
       "id": "2004-the-diversification-puzzle",
@@ -4851,7 +5114,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.2469/faj.v60.n4.2635"
+      "sourceUrl": "https://doi.org/10.2469/faj.v60.n4.2635",
+      "featured": false
     },
     {
       "id": "2006-the-cross-section-of-volatility-and-expected-returns",
@@ -4869,7 +5133,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2006.00836.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2006.00836.x",
+      "featured": false
     },
     {
       "id": "2007-the-volatility-effect",
@@ -4887,7 +5152,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.3905/jpm.2007.698039"
+      "sourceUrl": "https://doi.org/10.3905/jpm.2007.698039",
+      "featured": false
     },
     {
       "id": "1991-the-efficient-market-inefficiency-of-capitalization-weighted-stock-portfolios",
@@ -4906,7 +5172,8 @@
         "Return drivers",
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.3905/jpm.1991.409335"
+      "sourceUrl": "https://doi.org/10.3905/jpm.1991.409335",
+      "featured": false
     },
     {
       "id": "1996-do-stock-prices-fully-reflect-information-in-accruals-and-cash-flows-about-future-earnings",
@@ -4924,7 +5191,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://www.jstor.org/stable/248290"
+      "sourceUrl": "https://www.jstor.org/stable/248290",
+      "featured": false
     },
     {
       "id": "1994-contrarian-investment-extrapolation-and-risk",
@@ -4942,7 +5210,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1994.tb00472.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1994.tb00472.x",
+      "featured": false
     },
     {
       "id": "1997-evidence-on-the-characteristics-of-cross-sectional-variation-in-stock-returns",
@@ -4960,7 +5229,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1997.tb03806.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1997.tb03806.x",
+      "featured": false
     },
     {
       "id": "2000-value-investing-the-use-of-historical-financial-statement-information-to-separate-winners-from-losers",
@@ -4979,7 +5249,8 @@
         "Return drivers",
         "Value"
       ],
-      "sourceUrl": "https://doi.org/10.2307/2672906"
+      "sourceUrl": "https://doi.org/10.2307/2672906",
+      "featured": false
     },
     {
       "id": "2004-capital-investments-and-stock-returns",
@@ -4997,7 +5268,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://doi.org/10.2307/30031881"
+      "sourceUrl": "https://doi.org/10.2307/30031881",
+      "featured": false
     },
     {
       "id": "1999-do-industries-explain-momentum",
@@ -5016,7 +5288,8 @@
         "Return drivers",
         "Momentum"
       ],
-      "sourceUrl": "https://doi.org/10.1111/0022-1082.00146"
+      "sourceUrl": "https://doi.org/10.1111/0022-1082.00146",
+      "featured": false
     },
     {
       "id": "1998-are-investors-reluctant-to-realize-their-losses",
@@ -5034,7 +5307,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1111/0022-1082.00072"
+      "sourceUrl": "https://doi.org/10.1111/0022-1082.00072",
+      "featured": false
     },
     {
       "id": "2001-naive-diversification-strategies-in-defined-contribution-saving-plans",
@@ -5053,7 +5327,8 @@
         "Money behavior",
         "Savings"
       ],
-      "sourceUrl": "https://www.jstor.org/stable/2677846"
+      "sourceUrl": "https://www.jstor.org/stable/2677846",
+      "featured": false
     },
     {
       "id": "1985-the-disposition-to-sell-winners-too-early-and-ride-losers-too-long-theory-and-evidence",
@@ -5071,7 +5346,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1985.tb05002.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1985.tb05002.x",
+      "featured": false
     },
     {
       "id": "1998-a-model-of-investor-sentiment",
@@ -5089,7 +5365,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1016/S0304-405X(98)00027-0"
+      "sourceUrl": "https://doi.org/10.1016/S0304-405X(98)00027-0",
+      "featured": false
     },
     {
       "id": "2007-overconfidence-and-trading-volume",
@@ -5107,7 +5384,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s10713-007-0003-3"
+      "sourceUrl": "https://doi.org/10.1007/s10713-007-0003-3",
+      "featured": false
     },
     {
       "id": "2003-good-day-sunshine-stock-returns-and-the-weather",
@@ -5125,7 +5403,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1111/1540-6261.00556"
+      "sourceUrl": "https://doi.org/10.1111/1540-6261.00556",
+      "featured": false
     },
     {
       "id": "2007-sports-sentiment-and-stock-returns",
@@ -5143,7 +5422,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2007.01262.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2007.01262.x",
+      "featured": false
     },
     {
       "id": "2009-animal-spirits-how-human-psychology-drives-the-economy",
@@ -5161,7 +5441,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1515/9781400830121"
+      "sourceUrl": "https://doi.org/10.1515/9781400830121",
+      "featured": false
     },
     {
       "id": "2005-behavioral-biases-and-investment",
@@ -5179,7 +5460,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s10679-005-4997-z"
+      "sourceUrl": "https://doi.org/10.1007/s10679-005-4997-z",
+      "featured": false
     },
     {
       "id": "2006-optimal-withdrawal-strategies-for-retirees-with-multiple-savings-accounts",
@@ -5200,7 +5482,8 @@
         "Retirement",
         "Savings"
       ],
-      "sourceUrl": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=944754"
+      "sourceUrl": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=944754",
+      "featured": false
     },
     {
       "id": "2004-asset-location-for-retirement-savers",
@@ -5220,7 +5503,8 @@
         "Retirement",
         "Asset location"
       ],
-      "sourceUrl": "https://doi.org/10.7208/chicago/9780226069945.003.0002"
+      "sourceUrl": "https://doi.org/10.7208/chicago/9780226069945.003.0002",
+      "featured": false
     },
     {
       "id": "1984-optimal-stock-trading-with-personal-taxes-implications-for-prices-and-the-abnormal-january-returns",
@@ -5239,7 +5523,8 @@
         "Taxes and account order",
         "Taxes"
       ],
-      "sourceUrl": "https://doi.org/10.1016/0304-405X(84)90016-3"
+      "sourceUrl": "https://doi.org/10.1016/0304-405X(84)90016-3",
+      "featured": false
     },
     {
       "id": "2003-tax-management-loss-harvesting-and-hifo-accounting",
@@ -5259,7 +5544,8 @@
         "Taxes",
         "Tax-loss harvesting"
       ],
-      "sourceUrl": "https://doi.org/10.2469/faj.v59.n4.2546"
+      "sourceUrl": "https://doi.org/10.2469/faj.v59.n4.2546",
+      "featured": false
     },
     {
       "id": "2009-tax-changes-and-asset-pricing",
@@ -5278,7 +5564,8 @@
         "Taxes and account order",
         "Taxes"
       ],
-      "sourceUrl": "https://www.jstor.org/stable/29730240"
+      "sourceUrl": "https://www.jstor.org/stable/29730240",
+      "featured": false
     },
     {
       "id": "2005-tax-motivated-trading-by-individual-investors",
@@ -5297,7 +5584,8 @@
         "Taxes and account order",
         "Taxes"
       ],
-      "sourceUrl": "https://doi.org/10.1257/000282805775014380"
+      "sourceUrl": "https://doi.org/10.1257/000282805775014380",
+      "featured": false
     },
     {
       "id": "2017-how-mutual-fund-capital-gains-distributions-affect-retail-investor-behavior",
@@ -5316,7 +5604,8 @@
         "Taxes and account order",
         "Mutual funds"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.jacceco.2017.06.002"
+      "sourceUrl": "https://doi.org/10.1016/j.jacceco.2017.06.002",
+      "featured": false
     },
     {
       "id": "2009-the-relation-between-price-and-performance-in-the-mutual-fund-industry",
@@ -5335,7 +5624,8 @@
         "Active vs passive",
         "Mutual funds"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2009.01497.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2009.01497.x",
+      "featured": false
     },
     {
       "id": "2014-unobserved-actions-of-mutual-funds",
@@ -5354,7 +5644,8 @@
         "Active vs passive",
         "Mutual funds"
       ],
-      "sourceUrl": "https://doi.org/10.1093/rfs/hht066"
+      "sourceUrl": "https://doi.org/10.1093/rfs/hht066",
+      "featured": false
     },
     {
       "id": "2015-measuring-skill-in-the-mutual-fund-industry",
@@ -5373,7 +5664,8 @@
         "Active vs passive",
         "Mutual funds"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.jfineco.2015.05.002"
+      "sourceUrl": "https://doi.org/10.1016/j.jfineco.2015.05.002",
+      "featured": false
     },
     {
       "id": "2015-scale-and-skill-in-active-management",
@@ -5392,7 +5684,8 @@
         "Active vs passive",
         "Active management"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.jfineco.2015.01.005"
+      "sourceUrl": "https://doi.org/10.1016/j.jfineco.2015.01.005",
+      "featured": false
     },
     {
       "id": "2000-the-value-of-active-mutual-fund-management-an-examination-of-the-stockholdings-and-trades-of-fund-managers",
@@ -5413,7 +5706,8 @@
         "Active management",
         "Value"
       ],
-      "sourceUrl": "https://doi.org/10.2307/2676254"
+      "sourceUrl": "https://doi.org/10.2307/2676254",
+      "featured": false
     },
     {
       "id": "2008-the-cost-of-active-investing",
@@ -5432,7 +5726,8 @@
         "Active vs passive",
         "Active management"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2008.01368.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2008.01368.x",
+      "featured": false
     },
     {
       "id": "1984-orange-juice-and-weather",
@@ -5450,7 +5745,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://www.jstor.org/stable/1805164"
+      "sourceUrl": "https://www.jstor.org/stable/1805164",
+      "featured": false
     },
     {
       "id": "1980-stock-returns-and-the-weekend-effect",
@@ -5468,7 +5764,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1016/0304-405X(80)90021-5"
+      "sourceUrl": "https://doi.org/10.1016/0304-405X(80)90021-5",
+      "featured": true
     },
     {
       "id": "1976-capital-market-seasonality-the-case-of-stock-returns",
@@ -5486,7 +5783,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1016/0304-405X(76)90028-3"
+      "sourceUrl": "https://doi.org/10.1016/0304-405X(76)90028-3",
+      "featured": false
     },
     {
       "id": "1983-size-related-anomalies-and-stock-return-seasonality-further-empirical-evidence",
@@ -5504,7 +5802,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.1016/0304-405X(83)90025-9"
+      "sourceUrl": "https://doi.org/10.1016/0304-405X(83)90025-9",
+      "featured": false
     },
     {
       "id": "1995-the-p-e-effect-risk-or-anomaly",
@@ -5522,7 +5821,8 @@
       "focusTags": [
         "Market efficiency"
       ],
-      "sourceUrl": "https://doi.org/10.3905/jpm.1995.409540"
+      "sourceUrl": "https://doi.org/10.3905/jpm.1995.409540",
+      "featured": false
     },
     {
       "id": "1987-the-information-in-long-maturity-forward-rates",
@@ -5540,7 +5840,8 @@
       "focusTags": [
         "Bonds and rates"
       ],
-      "sourceUrl": "https://www.jstor.org/stable/1804108"
+      "sourceUrl": "https://www.jstor.org/stable/1804108",
+      "featured": true
     },
     {
       "id": "1991-yield-spreads-and-interest-rate-movements-a-bird-s-eye-view",
@@ -5559,7 +5860,8 @@
         "Bonds and rates",
         "Yield curve"
       ],
-      "sourceUrl": "https://doi.org/10.2307/2298008"
+      "sourceUrl": "https://doi.org/10.2307/2298008",
+      "featured": false
     },
     {
       "id": "2005-bond-risk-premia",
@@ -5578,7 +5880,8 @@
         "Bonds and rates",
         "Bonds"
       ],
-      "sourceUrl": "https://doi.org/10.1257/0002828053828581"
+      "sourceUrl": "https://doi.org/10.1257/0002828053828581",
+      "featured": false
     },
     {
       "id": "1938-some-theoretical-problems-suggested-by-the-movements-of-interest-rates-bond-yields-and-stock-prices-in-the-united-states-since-1856",
@@ -5598,7 +5901,8 @@
         "Bonds",
         "Yield curve"
       ],
-      "sourceUrl": "https://www.nber.org/books-and-chapters/some-theoretical-problems-suggested-movements-interest-rates-bond-yields-and-stock-prices-united"
+      "sourceUrl": "https://www.nber.org/books-and-chapters/some-theoretical-problems-suggested-movements-interest-rates-bond-yields-and-stock-prices-united",
+      "featured": false
     },
     {
       "id": "1977-an-equilibrium-characterization-of-the-term-structure",
@@ -5616,7 +5920,8 @@
       "focusTags": [
         "Bonds and rates"
       ],
-      "sourceUrl": "https://doi.org/10.1016/0304-405X(77)90016-2"
+      "sourceUrl": "https://doi.org/10.1016/0304-405X(77)90016-2",
+      "featured": false
     },
     {
       "id": "1985-a-theory-of-the-term-structure-of-interest-rates",
@@ -5634,7 +5939,8 @@
       "focusTags": [
         "Bonds and rates"
       ],
-      "sourceUrl": "https://doi.org/10.2307/1911242"
+      "sourceUrl": "https://doi.org/10.2307/1911242",
+      "featured": false
     },
     {
       "id": "1991-common-factors-affecting-bond-returns",
@@ -5653,7 +5959,8 @@
         "Bonds and rates",
         "Bonds"
       ],
-      "sourceUrl": "https://doi.org/10.3905/jfi.1991.408014"
+      "sourceUrl": "https://doi.org/10.3905/jfi.1991.408014",
+      "featured": false
     },
     {
       "id": "1986-economic-forces-and-the-stock-market",
@@ -5671,7 +5978,8 @@
       "focusTags": [
         "Bonds and rates"
       ],
-      "sourceUrl": "https://doi.org/10.1086/296344"
+      "sourceUrl": "https://doi.org/10.1086/296344",
+      "featured": false
     },
     {
       "id": "1993-common-risk-factors-in-the-returns-on-stocks-and-bonds",
@@ -5690,7 +5998,8 @@
         "Bonds and rates",
         "Bonds"
       ],
-      "sourceUrl": "https://doi.org/10.1016/0304-405X(93)90023-5"
+      "sourceUrl": "https://doi.org/10.1016/0304-405X(93)90023-5",
+      "featured": false
     },
     {
       "id": "2001-explaining-the-rate-spread-on-corporate-bonds",
@@ -5709,7 +6018,8 @@
         "Bonds and rates",
         "Bonds"
       ],
-      "sourceUrl": "https://doi.org/10.1111/0022-1082.00324"
+      "sourceUrl": "https://doi.org/10.1111/0022-1082.00324",
+      "featured": true
     },
     {
       "id": "2001-the-determinants-of-credit-spread-changes",
@@ -5728,7 +6038,8 @@
         "Bonds and rates",
         "Credit spreads"
       ],
-      "sourceUrl": "https://doi.org/10.1111/0022-1082.00402"
+      "sourceUrl": "https://doi.org/10.1111/0022-1082.00402",
+      "featured": false
     },
     {
       "id": "1999-modeling-term-structures-of-defaultable-bonds",
@@ -5748,7 +6059,8 @@
         "Defaults",
         "Bonds"
       ],
-      "sourceUrl": "https://doi.org/10.1093/rfs/12.4.687"
+      "sourceUrl": "https://doi.org/10.1093/rfs/12.4.687",
+      "featured": false
     },
     {
       "id": "1995-a-simple-approach-to-valuing-risky-fixed-and-floating-rate-debt",
@@ -5767,7 +6079,8 @@
         "Bonds and rates",
         "Debt payoff"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1995.tb04037.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1995.tb04037.x",
+      "featured": false
     },
     {
       "id": "2006-market-transparency-liquidity-externalities-and-institutional-trading-costs-in-corporate-bonds",
@@ -5786,7 +6099,8 @@
         "Bonds and rates",
         "Bonds"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.jfineco.2005.10.002"
+      "sourceUrl": "https://doi.org/10.1016/j.jfineco.2005.10.002",
+      "featured": false
     },
     {
       "id": "2011-the-illiquidity-of-corporate-bonds",
@@ -5805,7 +6119,8 @@
         "Bonds and rates",
         "Bonds"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2011.01655.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2011.01655.x",
+      "featured": false
     },
     {
       "id": "1995-time-varying-expected-returns-in-international-bond-markets",
@@ -5824,7 +6139,8 @@
         "Bonds and rates",
         "Bonds"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1995.tb04793.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.1995.tb04793.x",
+      "featured": false
     },
     {
       "id": "1997-on-biases-in-tests-of-the-expectations-hypothesis-of-the-term-structure-of-interest-rates",
@@ -5842,7 +6158,8 @@
       "focusTags": [
         "Bonds and rates"
       ],
-      "sourceUrl": "https://doi.org/10.1016/S0304-405X(97)00003-2"
+      "sourceUrl": "https://doi.org/10.1016/S0304-405X(97)00003-2",
+      "featured": false
     },
     {
       "id": "2003-a-no-arbitrage-vector-autoregression-of-term-structure-dynamics-with-macroeconomic-and-latent-variables",
@@ -5860,7 +6177,8 @@
       "focusTags": [
         "Bonds and rates"
       ],
-      "sourceUrl": "https://doi.org/10.1016/S0304-3932(03)00017-1"
+      "sourceUrl": "https://doi.org/10.1016/S0304-3932(03)00017-1",
+      "featured": false
     },
     {
       "id": "2007-the-us-treasury-yield-curve-1961-to-the-present",
@@ -5879,7 +6197,8 @@
         "Bonds and rates",
         "Yield curve"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.jmoneco.2007.06.029"
+      "sourceUrl": "https://doi.org/10.1016/j.jmoneco.2007.06.029",
+      "featured": true
     },
     {
       "id": "2017-factor-investing-in-the-corporate-bond-market",
@@ -5898,7 +6217,8 @@
         "Bonds and rates",
         "Bonds"
       ],
-      "sourceUrl": "https://doi.org/10.2469/faj.v73.n2.1"
+      "sourceUrl": "https://doi.org/10.2469/faj.v73.n2.1",
+      "featured": false
     },
     {
       "id": "2018-common-factors-in-corporate-bond-returns",
@@ -5917,7 +6237,8 @@
         "Bonds and rates",
         "Bonds"
       ],
-      "sourceUrl": "https://doi.org/10.2139/ssrn.2951405"
+      "sourceUrl": "https://doi.org/10.2139/ssrn.2951405",
+      "featured": false
     },
     {
       "id": "2007-corporate-bond-market-transaction-costs-and-transparency",
@@ -5936,7 +6257,8 @@
         "Bonds and rates",
         "Bonds"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2007.01242.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2007.01242.x",
+      "featured": false
     },
     {
       "id": "2012-the-performance-of-corporate-bond-mutual-funds-evidence-based-on-security-level-holdings",
@@ -5956,7 +6278,8 @@
         "Mutual funds",
         "Bonds"
       ],
-      "sourceUrl": "https://doi.org/10.1017/S002210901200003X"
+      "sourceUrl": "https://doi.org/10.1017/S002210901200003X",
+      "featured": false
     },
     {
       "id": "2006-secondary-trading-costs-in-the-municipal-bond-market",
@@ -5975,7 +6298,8 @@
         "Bonds and rates",
         "Bonds"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2006.00876.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1540-6261.2006.00876.x",
+      "featured": false
     },
     {
       "id": "1991-smoothing-in-appraisal-based-returns",
@@ -5993,7 +6317,8 @@
       "focusTags": [
         "Housing and property"
       ],
-      "sourceUrl": "https://doi.org/10.1007/BF00173121"
+      "sourceUrl": "https://doi.org/10.1007/BF00173121",
+      "featured": false
     },
     {
       "id": "1989-the-efficiency-of-the-market-for-single-family-homes",
@@ -6011,7 +6336,8 @@
       "focusTags": [
         "Housing and property"
       ],
-      "sourceUrl": "https://www.jstor.org/stable/1804778"
+      "sourceUrl": "https://www.jstor.org/stable/1804778",
+      "featured": true
     },
     {
       "id": "1997-economic-risk-factors-and-commercial-real-estate-returns",
@@ -6030,7 +6356,8 @@
         "Housing and property",
         "Real estate"
       ],
-      "sourceUrl": "https://doi.org/10.1023/A:1007787405230"
+      "sourceUrl": "https://doi.org/10.1023/A:1007787405230",
+      "featured": false
     },
     {
       "id": "2009-commercial-real-estate-valuation-fundamentals-versus-investor-sentiment",
@@ -6049,7 +6376,8 @@
         "Housing and property",
         "Real estate"
       ],
-      "sourceUrl": "https://doi.org/10.1007/s11146-008-9150-1"
+      "sourceUrl": "https://doi.org/10.1007/s11146-008-9150-1",
+      "featured": false
     },
     {
       "id": "1994-value-indices-of-commercial-real-estate-a-comparison-of-index-construction-methods",
@@ -6069,7 +6397,8 @@
         "Real estate",
         "Value"
       ],
-      "sourceUrl": "https://doi.org/10.1007/BF01099410"
+      "sourceUrl": "https://doi.org/10.1007/BF01099410",
+      "featured": false
     },
     {
       "id": "2007-understanding-recent-trends-in-house-prices-and-home-ownership",
@@ -6088,7 +6417,8 @@
         "Housing and property",
         "Housing"
       ],
-      "sourceUrl": "https://doi.org/10.3386/w13553"
+      "sourceUrl": "https://doi.org/10.3386/w13553",
+      "featured": false
     },
     {
       "id": "2008-housing-supply-and-housing-bubbles",
@@ -6106,7 +6436,8 @@
       "focusTags": [
         "Housing and property"
       ],
-      "sourceUrl": "https://doi.org/10.1016/j.jue.2008.07.007"
+      "sourceUrl": "https://doi.org/10.1016/j.jue.2008.07.007",
+      "featured": true
     },
     {
       "id": "2005-assessing-high-house-prices-bubbles-fundamentals-and-misperceptions",
@@ -6125,7 +6456,8 @@
         "Housing and property",
         "Housing"
       ],
-      "sourceUrl": "https://doi.org/10.1257/089533005775196769"
+      "sourceUrl": "https://doi.org/10.1257/089533005775196769",
+      "featured": false
     },
     {
       "id": "2008-money-illusion-and-housing-anomalies",
@@ -6143,7 +6475,8 @@
       "focusTags": [
         "Housing and property"
       ],
-      "sourceUrl": "https://doi.org/10.1093/rfs/hhm043"
+      "sourceUrl": "https://doi.org/10.1093/rfs/hhm043",
+      "featured": true
     },
     {
       "id": "2002-determinants-of-real-house-price-dynamics",
@@ -6162,7 +6495,8 @@
         "Housing and property",
         "Housing"
       ],
-      "sourceUrl": "https://doi.org/10.3386/w9262"
+      "sourceUrl": "https://doi.org/10.3386/w9262",
+      "featured": false
     },
     {
       "id": "1992-what-does-the-stock-market-tell-us-about-real-estate-returns",
@@ -6181,7 +6515,8 @@
         "Housing and property",
         "Real estate"
       ],
-      "sourceUrl": "https://doi.org/10.1111/1540-6229.00592"
+      "sourceUrl": "https://doi.org/10.1111/1540-6229.00592",
+      "featured": false
     },
     {
       "id": "1999-do-real-estate-prices-and-stock-prices-move-together-an-international-analysis",
@@ -6200,7 +6535,8 @@
         "Housing and property",
         "Real estate"
       ],
-      "sourceUrl": "https://doi.org/10.1111/1540-6229.00771"
+      "sourceUrl": "https://doi.org/10.1111/1540-6229.00771",
+      "featured": false
     },
     {
       "id": "1998-the-variation-of-economic-risk-premiums-in-real-estate-returns",
@@ -6219,7 +6555,8 @@
         "Housing and property",
         "Real estate"
       ],
-      "sourceUrl": "https://doi.org/10.1023/A:1007711921160"
+      "sourceUrl": "https://doi.org/10.1023/A:1007711921160",
+      "featured": false
     },
     {
       "id": "2003-international-real-estate-returns-a-multifactor-multicountry-approach",
@@ -6238,7 +6575,8 @@
         "Housing and property",
         "Real estate"
       ],
-      "sourceUrl": "https://doi.org/10.1111/1540-6229.00071"
+      "sourceUrl": "https://doi.org/10.1111/1540-6229.00071",
+      "featured": false
     },
     {
       "id": "1999-diversification-issues-in-real-estate-investment",
@@ -6257,7 +6595,8 @@
         "Housing and property",
         "Real estate"
       ],
-      "sourceUrl": "https://doi.org/10.1080/10835547.1999.12090076"
+      "sourceUrl": "https://doi.org/10.1080/10835547.1999.12090076",
+      "featured": false
     },
     {
       "id": "2004-international-evidence-on-real-estate-as-a-portfolio-diversifier",
@@ -6277,7 +6616,8 @@
         "Real estate",
         "Portfolio design"
       ],
-      "sourceUrl": "https://doi.org/10.1080/10835547.2004.12091136"
+      "sourceUrl": "https://doi.org/10.1080/10835547.2004.12091136",
+      "featured": false
     },
     {
       "id": "2010-expected-returns-and-expected-growth-in-commercial-real-estate",
@@ -6296,7 +6636,8 @@
         "Housing and property",
         "Real estate"
       ],
-      "sourceUrl": "https://doi.org/10.1093/rfs/hhq059"
+      "sourceUrl": "https://doi.org/10.1093/rfs/hhq059",
+      "featured": false
     },
     {
       "id": "2013-forecasting-real-estate-prices",
@@ -6315,7 +6656,8 @@
         "Housing and property",
         "Real estate"
       ],
-      "sourceUrl": "https://doi.org/10.1016/B978-0-444-53683-9.00009-X"
+      "sourceUrl": "https://doi.org/10.1016/B978-0-444-53683-9.00009-X",
+      "featured": false
     },
     {
       "id": "2000-the-value-added-from-investment-managers-an-examination-of-funds-of-reits",
@@ -6334,7 +6676,8 @@
         "Housing and property",
         "Value"
       ],
-      "sourceUrl": "https://doi.org/10.2307/2676208"
+      "sourceUrl": "https://doi.org/10.2307/2676208",
+      "featured": false
     },
     {
       "id": "1990-risk-and-return-on-real-estate-evidence-from-equity-reits",
@@ -6353,7 +6696,8 @@
         "Housing and property",
         "Real estate"
       ],
-      "sourceUrl": "https://doi.org/10.1111/1540-6229.00527"
+      "sourceUrl": "https://doi.org/10.1111/1540-6229.00527",
+      "featured": false
     },
     {
       "id": "1986-risk-and-the-performance-of-real-estate-investment-trusts-a-multiple-index-approach",
@@ -6372,7 +6716,8 @@
         "Housing and property",
         "Real estate"
       ],
-      "sourceUrl": "https://doi.org/10.1111/1540-6229.00392"
+      "sourceUrl": "https://doi.org/10.1111/1540-6229.00392",
+      "featured": false
     },
     {
       "id": "2005-privately-versus-publicly-held-asset-investment-performance",
@@ -6390,7 +6735,8 @@
       "focusTags": [
         "Housing and property"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1080-8620.2005.00115.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1080-8620.2005.00115.x",
+      "featured": false
     },
     {
       "id": "2005-public-versus-private-real-estate-equities-a-more-refined-long-term-comparison",
@@ -6409,7 +6755,8 @@
         "Housing and property",
         "Real estate"
       ],
-      "sourceUrl": "https://doi.org/10.1111/j.1080-8620.2005.00116.x"
+      "sourceUrl": "https://doi.org/10.1111/j.1080-8620.2005.00116.x",
+      "featured": false
     },
     {
       "id": "2000-two-decades-of-commercial-property-returns-a-repeated-measures-regression-based-version-of-the-ncreif-index",
@@ -6427,7 +6774,8 @@
       "focusTags": [
         "Housing and property"
       ],
-      "sourceUrl": "https://doi.org/10.1023/A:1007871112443"
+      "sourceUrl": "https://doi.org/10.1023/A:1007871112443",
+      "featured": false
     },
     {
       "id": "2013-search-and-liquidity-in-real-estate-markets",
@@ -6446,7 +6794,8 @@
         "Housing and property",
         "Real estate"
       ],
-      "sourceUrl": "https://doi.org/10.1111/reec.12002"
+      "sourceUrl": "https://doi.org/10.1111/reec.12002",
+      "featured": false
     },
     {
       "id": "1996-the-millionaire-next-door-the-surprising-secrets-of-america-s-wealthy",
@@ -6464,7 +6813,8 @@
       "focusTags": [
         "Household finance"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Millionaire+Next+Door"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Millionaire+Next+Door",
+      "featured": true
     },
     {
       "id": "1949-the-intelligent-investor",
@@ -6482,7 +6832,8 @@
       "focusTags": [
         "Value investing"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Intelligent+Investor"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Intelligent+Investor",
+      "featured": true
     },
     {
       "id": "1934-security-analysis",
@@ -6500,7 +6851,8 @@
       "focusTags": [
         "Value investing"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Security+Analysis"
+      "sourceUrl": "https://openlibrary.org/search?title=Security+Analysis",
+      "featured": true
     },
     {
       "id": "1973-a-random-walk-down-wall-street",
@@ -6518,7 +6870,8 @@
       "focusTags": [
         "Active vs passive"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=A+Random+Walk+Down+Wall+Street"
+      "sourceUrl": "https://openlibrary.org/search?title=A+Random+Walk+Down+Wall+Street",
+      "featured": false
     },
     {
       "id": "2007-the-little-book-of-common-sense-investing",
@@ -6536,7 +6889,8 @@
       "focusTags": [
         "Active vs passive"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Little+Book+of+Common+Sense+Investing"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Little+Book+of+Common+Sense+Investing",
+      "featured": false
     },
     {
       "id": "2020-the-psychology-of-money",
@@ -6554,7 +6908,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Psychology+of+Money"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Psychology+of+Money",
+      "featured": false
     },
     {
       "id": "2016-the-simple-path-to-wealth",
@@ -6572,7 +6927,8 @@
       "focusTags": [
         "Household finance"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Simple+Path+to+Wealth"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Simple+Path+to+Wealth",
+      "featured": true
     },
     {
       "id": "2021-die-with-zero-getting-all-you-can-from-your-money-and-your-life",
@@ -6590,7 +6946,8 @@
       "focusTags": [
         "Household finance"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Die+With+Zero"
+      "sourceUrl": "https://openlibrary.org/search?title=Die+With+Zero",
+      "featured": false
     },
     {
       "id": "2022-just-keep-buying",
@@ -6608,7 +6965,8 @@
       "focusTags": [
         "Household finance"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Just+Keep+Buying"
+      "sourceUrl": "https://openlibrary.org/search?title=Just+Keep+Buying",
+      "featured": false
     },
     {
       "id": "1991-margin-of-safety-risk-averse-value-investing-strategies-for-the-thoughtful-investor",
@@ -6627,7 +6985,8 @@
         "Value investing",
         "Value"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Margin+of+Safety"
+      "sourceUrl": "https://openlibrary.org/search?title=Margin+of+Safety",
+      "featured": true
     },
     {
       "id": "1958-common-stocks-and-uncommon-profits",
@@ -6645,7 +7004,8 @@
       "focusTags": [
         "Value investing"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Common+Stocks+and+Uncommon+Profits"
+      "sourceUrl": "https://openlibrary.org/search?title=Common+Stocks+and+Uncommon+Profits",
+      "featured": false
     },
     {
       "id": "1989-one-up-on-wall-street",
@@ -6663,7 +7023,8 @@
       "focusTags": [
         "Value investing"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=One+Up+On+Wall+Street"
+      "sourceUrl": "https://openlibrary.org/search?title=One+Up+On+Wall+Street",
+      "featured": false
     },
     {
       "id": "1993-beating-the-street",
@@ -6681,7 +7042,8 @@
       "focusTags": [
         "Value investing"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Beating+the+Street"
+      "sourceUrl": "https://openlibrary.org/search?title=Beating+the+Street",
+      "featured": false
     },
     {
       "id": "2005-the-little-book-that-beats-the-market",
@@ -6699,7 +7061,8 @@
       "focusTags": [
         "Value investing"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Little+Book+That+Beats+the+Market"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Little+Book+That+Beats+the+Market",
+      "featured": false
     },
     {
       "id": "2015-misbehaving-the-making-of-behavioral-economics",
@@ -6717,7 +7080,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Misbehaving"
+      "sourceUrl": "https://openlibrary.org/search?title=Misbehaving",
+      "featured": false
     },
     {
       "id": "2011-thinking-fast-and-slow",
@@ -6735,7 +7099,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Thinking+Fast+and+Slow"
+      "sourceUrl": "https://openlibrary.org/search?title=Thinking+Fast+and+Slow",
+      "featured": false
     },
     {
       "id": "2001-fooled-by-randomness-the-hidden-role-of-chance-in-life-and-in-the-markets",
@@ -6753,7 +7118,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Fooled+by+Randomness"
+      "sourceUrl": "https://openlibrary.org/search?title=Fooled+by+Randomness",
+      "featured": false
     },
     {
       "id": "2007-the-black-swan-the-impact-of-the-highly-improbable",
@@ -6771,7 +7137,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Black+Swan"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Black+Swan",
+      "featured": false
     },
     {
       "id": "2011-the-most-important-thing-uncommon-sense-for-the-thoughtful-investor",
@@ -6789,7 +7156,8 @@
       "focusTags": [
         "Value investing"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Most+Important+Thing"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Most+Important+Thing",
+      "featured": false
     },
     {
       "id": "2000-the-intelligent-asset-allocator",
@@ -6807,7 +7175,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Intelligent+Asset+Allocator"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Intelligent+Asset+Allocator",
+      "featured": false
     },
     {
       "id": "2002-the-four-pillars-of-investing",
@@ -6825,7 +7194,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Four+Pillars+of+Investing"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Four+Pillars+of+Investing",
+      "featured": false
     },
     {
       "id": "2005-unconventional-success-a-fundamental-approach-to-personal-investment",
@@ -6843,7 +7213,8 @@
       "focusTags": [
         "Portfolio design"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Unconventional+Success"
+      "sourceUrl": "https://openlibrary.org/search?title=Unconventional+Success",
+      "featured": false
     },
     {
       "id": "1998-winning-the-loser-s-game",
@@ -6861,7 +7232,8 @@
       "focusTags": [
         "Active vs passive"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Winning+the+Losers+Game"
+      "sourceUrl": "https://openlibrary.org/search?title=Winning+the+Losers+Game",
+      "featured": false
     },
     {
       "id": "1999-common-sense-on-mutual-funds",
@@ -6880,7 +7252,8 @@
         "Active vs passive",
         "Mutual funds"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Common+Sense+on+Mutual+Funds"
+      "sourceUrl": "https://openlibrary.org/search?title=Common+Sense+on+Mutual+Funds",
+      "featured": false
     },
     {
       "id": "1989-the-wealthy-barber",
@@ -6898,7 +7271,8 @@
       "focusTags": [
         "Household finance"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Wealthy+Barber"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Wealthy+Barber",
+      "featured": false
     },
     {
       "id": "1997-rich-dad-poor-dad",
@@ -6916,7 +7290,8 @@
       "focusTags": [
         "Household finance"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Rich+Dad+Poor+Dad"
+      "sourceUrl": "https://openlibrary.org/search?title=Rich+Dad+Poor+Dad",
+      "featured": false
     },
     {
       "id": "1992-your-money-or-your-life",
@@ -6934,7 +7309,8 @@
       "focusTags": [
         "Household finance"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Your+Money+or+Your+Life"
+      "sourceUrl": "https://openlibrary.org/search?title=Your+Money+or+Your+Life",
+      "featured": false
     },
     {
       "id": "2009-i-will-teach-you-to-be-rich",
@@ -6952,7 +7328,8 @@
       "focusTags": [
         "Household finance"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=I+Will+Teach+You+to+Be+Rich"
+      "sourceUrl": "https://openlibrary.org/search?title=I+Will+Teach+You+to+Be+Rich",
+      "featured": false
     },
     {
       "id": "1978-the-only-investment-guide-you-ll-ever-need",
@@ -6970,7 +7347,8 @@
       "focusTags": [
         "Household finance"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Only+Investment+Guide+Youll+Ever+Need"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Only+Investment+Guide+Youll+Ever+Need",
+      "featured": false
     },
     {
       "id": "1926-the-richest-man-in-babylon",
@@ -6988,7 +7366,8 @@
       "focusTags": [
         "Household finance"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Richest+Man+in+Babylon"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Richest+Man+in+Babylon",
+      "featured": false
     },
     {
       "id": "1994-stocks-for-the-long-run",
@@ -7006,7 +7385,8 @@
       "focusTags": [
         "Market history"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Stocks+for+the+Long+Run"
+      "sourceUrl": "https://openlibrary.org/search?title=Stocks+for+the+Long+Run",
+      "featured": true
     },
     {
       "id": "1996-what-works-on-wall-street",
@@ -7024,7 +7404,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=What+Works+on+Wall+Street"
+      "sourceUrl": "https://openlibrary.org/search?title=What+Works+on+Wall+Street",
+      "featured": false
     },
     {
       "id": "2007-your-money-and-your-brain",
@@ -7042,7 +7423,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Your+Money+and+Your+Brain"
+      "sourceUrl": "https://openlibrary.org/search?title=Your+Money+and+Your+Brain",
+      "featured": false
     },
     {
       "id": "2008-predictably-irrational",
@@ -7060,7 +7442,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Predictably+Irrational"
+      "sourceUrl": "https://openlibrary.org/search?title=Predictably+Irrational",
+      "featured": false
     },
     {
       "id": "2017-principles-life-and-work",
@@ -7078,7 +7461,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Principles+Life+and+Work"
+      "sourceUrl": "https://openlibrary.org/search?title=Principles+Life+and+Work",
+      "featured": false
     },
     {
       "id": "2000-when-genius-failed-the-rise-and-fall-of-long-term-capital-management",
@@ -7096,7 +7480,8 @@
       "focusTags": [
         "Market history"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=When+Genius+Failed"
+      "sourceUrl": "https://openlibrary.org/search?title=When+Genius+Failed",
+      "featured": true
     },
     {
       "id": "1989-liar-s-poker",
@@ -7114,7 +7499,8 @@
       "focusTags": [
         "Market history"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Liars+Poker"
+      "sourceUrl": "https://openlibrary.org/search?title=Liars+Poker",
+      "featured": false
     },
     {
       "id": "2014-flash-boys-a-wall-street-revolt",
@@ -7132,7 +7518,8 @@
       "focusTags": [
         "Market history"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Flash+Boys"
+      "sourceUrl": "https://openlibrary.org/search?title=Flash+Boys",
+      "featured": false
     },
     {
       "id": "1999-devil-take-the-hindmost-a-history-of-financial-speculation",
@@ -7150,7 +7537,8 @@
       "focusTags": [
         "Market history"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Devil+Take+the+Hindmost"
+      "sourceUrl": "https://openlibrary.org/search?title=Devil+Take+the+Hindmost",
+      "featured": false
     },
     {
       "id": "1978-manias-panics-and-crashes-a-history-of-financial-crises",
@@ -7168,7 +7556,8 @@
       "focusTags": [
         "Market history"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Manias+Panics+and+Crashes"
+      "sourceUrl": "https://openlibrary.org/search?title=Manias+Panics+and+Crashes",
+      "featured": false
     },
     {
       "id": "1841-extraordinary-popular-delusions-and-the-madness-of-crowds",
@@ -7186,7 +7575,8 @@
       "focusTags": [
         "Market history"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Extraordinary+Popular+Delusions"
+      "sourceUrl": "https://openlibrary.org/search?title=Extraordinary+Popular+Delusions",
+      "featured": false
     },
     {
       "id": "1987-the-alchemy-of-finance",
@@ -7204,7 +7594,8 @@
       "focusTags": [
         "Market history"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Alchemy+of+Finance"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Alchemy+of+Finance",
+      "featured": false
     },
     {
       "id": "1923-reminiscences-of-a-stock-operator",
@@ -7222,7 +7613,8 @@
       "focusTags": [
         "Market history"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Reminiscences+of+a+Stock+Operator"
+      "sourceUrl": "https://openlibrary.org/search?title=Reminiscences+of+a+Stock+Operator",
+      "featured": false
     },
     {
       "id": "1999-why-smart-people-make-big-money-mistakes",
@@ -7240,7 +7632,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Why+Smart+People+Make+Big+Money+Mistakes"
+      "sourceUrl": "https://openlibrary.org/search?title=Why+Smart+People+Make+Big+Money+Mistakes",
+      "featured": false
     },
     {
       "id": "2010-what-investors-really-want",
@@ -7258,7 +7651,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=What+Investors+Really+Want"
+      "sourceUrl": "https://openlibrary.org/search?title=What+Investors+Really+Want",
+      "featured": false
     },
     {
       "id": "2007-behavioural-investing-a-practitioners-guide-to-applying-behavioural-finance",
@@ -7276,7 +7670,8 @@
       "focusTags": [
         "Money behavior"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Behavioural+Investing"
+      "sourceUrl": "https://openlibrary.org/search?title=Behavioural+Investing",
+      "featured": false
     },
     {
       "id": "2010-the-quants-how-a-new-breed-of-math-whizzes-conquered-wall-street-and-nearly-destroyed-it",
@@ -7294,7 +7689,8 @@
       "focusTags": [
         "Return drivers"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Quants"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Quants",
+      "featured": false
     },
     {
       "id": "2017-a-man-for-all-markets",
@@ -7312,7 +7708,8 @@
       "focusTags": [
         "Market history"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=A+Man+for+All+Markets"
+      "sourceUrl": "https://openlibrary.org/search?title=A+Man+for+All+Markets",
+      "featured": false
     },
     {
       "id": "1994-the-warren-buffett-way",
@@ -7330,7 +7727,8 @@
       "focusTags": [
         "Value investing"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=The+Warren+Buffett+Way"
+      "sourceUrl": "https://openlibrary.org/search?title=The+Warren+Buffett+Way",
+      "featured": false
     },
     {
       "id": "1995-buffett-the-making-of-an-american-capitalist",
@@ -7348,7 +7746,9 @@
       "focusTags": [
         "Value investing"
       ],
-      "sourceUrl": "https://openlibrary.org/search?title=Buffett+The+Making+of+an+American+Capitalist"
+      "sourceUrl": "https://openlibrary.org/search?title=Buffett+The+Making+of+an+American+Capitalist",
+      "featured": false
     }
-  ]
+  ],
+  "featuredCount": 43
 }

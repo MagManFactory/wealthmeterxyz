@@ -190,10 +190,91 @@
             text-decoration: none;
             font-weight: 700;
         }
+        .featured-shell {
+            margin-top: 18px;
+            border: 1px solid rgba(37, 99, 235, 0.16);
+            border-radius: 22px;
+            background: linear-gradient(180deg, rgba(239, 246, 255, 0.88), rgba(255, 255, 255, 0.98));
+            padding: 20px 18px 18px;
+            box-shadow: 0 10px 24px rgba(37, 99, 235, 0.08);
+        }
+        .featured-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            align-items: end;
+            margin-bottom: 14px;
+        }
+        .featured-head h2 {
+            margin: 0 0 4px;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+        }
+        .featured-head p {
+            margin: 0;
+            color: #475569;
+            font-size: 0.94rem;
+            line-height: 1.55;
+            max-width: 700px;
+        }
+        .featured-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 88px;
+            padding: 10px 12px;
+            border-radius: 999px;
+            background: #dbeafe;
+            color: #1d4ed8;
+            font-size: 0.76rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+        }
+        .featured-card {
+            border: 1px solid rgba(37, 99, 235, 0.16);
+            border-radius: 18px;
+            background: rgba(255,255,255,0.96);
+            padding: 14px;
+        }
+        .featured-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 10px;
+            font-size: 0.7rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #1d4ed8;
+        }
+        .featured-card h3 {
+            margin: 0 0 8px;
+            font-size: 1rem;
+            line-height: 1.35;
+        }
+        .featured-card p {
+            margin: 0;
+            color: #475569;
+            font-size: 0.92rem;
+            line-height: 1.56;
+        }
+        .featured-card a {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 800;
+        }
         .controls {
             margin-top: 18px;
             display: grid;
-            grid-template-columns: 1.45fr 1fr 1fr 1fr;
+            grid-template-columns: 1.45fr 1fr 1fr 1fr 1fr;
             gap: 12px;
         }
         .control {
@@ -278,6 +359,19 @@
             font-weight: 800;
             letter-spacing: 0.05em;
             text-transform: uppercase;
+        }
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 4px 8px;
+            font-size: 0.68rem;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin: 0 0 10px;
         }
         .board {
             margin-top: 18px;
@@ -418,9 +512,10 @@
         }
         @media (max-width: 1100px) {
             .stats-grid, .controls, .bottom-grid { grid-template-columns: 1fr 1fr; }
+            .featured-head { align-items: start; flex-direction: column; }
         }
         @media (max-width: 760px) {
-            .stats-grid, .controls, .bottom-grid { grid-template-columns: 1fr; }
+            .stats-grid, .controls, .bottom-grid, .featured-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -439,6 +534,17 @@
     </section>
 
     <section class="stats-grid" id="statsGrid"></section>
+
+    <section class="featured-shell" aria-label="Featured Wealth Briefs">
+        <div class="featured-head">
+            <div>
+                <h2>Start Here</h2>
+                <p>A smaller high-signal set for first-pass reading. These cards cover the strongest baseline papers, scorecards, and books across core money decisions.</p>
+            </div>
+            <div class="featured-pill" id="featuredPill">Featured</div>
+        </div>
+        <div class="featured-grid" id="featuredGrid"></div>
+    </section>
 
     <section class="crawl-index" aria-label="WealthMeter internal links">
         <h2>Explore WealthMeter Tools</h2>
@@ -468,6 +574,15 @@
         <div class="control">
             <label for="yearFilter">Year</label>
             <select id="yearFilter"></select>
+        </div>
+        <div class="control">
+            <label for="sortFilter">Sort</label>
+            <select id="sortFilter">
+                <option value="featured">Featured first</option>
+                <option value="newest">Newest first</option>
+                <option value="oldest">Oldest first</option>
+                <option value="title">Title A-Z</option>
+            </select>
         </div>
     </section>
 
@@ -524,6 +639,7 @@
 <script>
 const state = {
     briefs: [],
+    featuredCount: 0,
     activeCategoryChip: "All",
     activeFocusChip: "All"
 };
@@ -561,6 +677,7 @@ function renderStats(payload) {
         (payload.sourceTypes?.["NBER working paper"] || 0);
     const stats = [
         { label: "Real sources", value: payload.count, copy: "No placeholder entries in the live dataset." },
+        { label: "Featured", value: payload.featuredCount || 0, copy: "A tighter starter shelf for the highest-signal items." },
         { label: "Categories", value: categories, copy: "Coverage across investing, behavior, housing, taxes, and retirement." },
         { label: "Journal papers", value: journals, copy: "Academic work remains the largest source bucket." },
         { label: "Reports + books", value: reports + books, copy: "Reports and books stay visible but clearly labeled." }
@@ -570,6 +687,19 @@ function renderStats(payload) {
             <span class="stat-label">${stat.label}</span>
             <div class="stat-value">${stat.value}</div>
             <div class="stat-copy">${stat.copy}</div>
+        </article>
+    `).join("");
+}
+
+function renderFeatured(items) {
+    const featuredItems = items.filter((item) => item.featured);
+    document.getElementById("featuredPill").textContent = `${featuredItems.length} Featured`;
+    document.getElementById("featuredGrid").innerHTML = featuredItems.slice(0, 8).map((item) => `
+        <article class="featured-card">
+            <div class="featured-kicker">${item.categoryLabel || item.category} | ${item.year}</div>
+            <h3>${item.title}</h3>
+            <p>${item.summary}</p>
+            <a href="${item.sourceUrl}" target="_blank" rel="noopener">${item.sourceLinkLabel || "View source"}</a>
         </article>
     `).join("");
 }
@@ -593,7 +723,8 @@ function renderFocusChips(items, active) {
 function renderCountRow(total, filtered) {
     document.getElementById("countRow").innerHTML = [
         `<span class="count-chip">Visible: ${filtered}</span>`,
-        `<span class="count-chip">Loaded: ${total}</span>`
+        `<span class="count-chip">Loaded: ${total}</span>`,
+        `<span class="count-chip">Featured: ${state.briefs.filter((item) => item.featured).length}</span>`
     ].join("");
 }
 
@@ -610,6 +741,7 @@ function renderCards(items) {
                 <span class="year">${item.year} | ${item.sourceType}</span>
             </div>
             <h2 class="card-title">${item.title}</h2>
+            ${item.featured ? `<div class="featured-badge">Featured</div>` : ``}
             <div class="card-copy">${item.summary}</div>
             <div class="focus-tags">${(item.focusTags || []).map((tag) => `<span class="focus-tag">${tag}</span>`).join("")}</div>
             <div class="meta-block">
@@ -627,8 +759,9 @@ function filterItems() {
     const selectedCategory = document.getElementById("categoryFilter").value;
     const selectedSourceType = document.getElementById("sourceTypeFilter").value;
     const selectedYear = document.getElementById("yearFilter").value;
+    const sortMode = document.getElementById("sortFilter").value;
 
-    return state.briefs.filter((item) => {
+    const filtered = state.briefs.filter((item) => {
         const categoryPass = selectedCategory === "All" && state.activeCategoryChip === "All"
             ? true
             : (selectedCategory !== "All" ? item.category === selectedCategory : item.category === state.activeCategoryChip);
@@ -646,11 +779,27 @@ function filterItems() {
             ...(item.focusTags || [])
         ].join(" ").toLowerCase().includes(searchValue);
         return categoryPass && focusPass && sourcePass && yearPass && searchPass;
-    }).sort((a, b) => Number(b.year) - Number(a.year) || a.title.localeCompare(b.title));
+    });
+
+    return filtered.sort((a, b) => {
+        if (sortMode === "title") {
+            return a.title.localeCompare(b.title);
+        }
+        if (sortMode === "oldest") {
+            return Number(a.year) - Number(b.year) || a.title.localeCompare(b.title);
+        }
+        if (sortMode === "newest") {
+            return Number(b.year) - Number(a.year) || a.title.localeCompare(b.title);
+        }
+        return Number(Boolean(b.featured)) - Number(Boolean(a.featured))
+            || Number(b.year) - Number(a.year)
+            || a.title.localeCompare(b.title);
+    });
 }
 
 function render() {
     const filtered = filterItems();
+    renderFeatured(state.briefs);
     renderCategoryChips(state.briefs, state.activeCategoryChip);
     renderFocusChips(
         state.activeCategoryChip === "All"
@@ -663,9 +812,10 @@ function render() {
 }
 
 async function loadBriefs() {
-    const response = await fetch("data/wealth-briefs.json?v=2026-03-28.10");
+    const response = await fetch("data/wealth-briefs.json?v=2026-03-28.11");
     const payload = await response.json();
     state.briefs = payload.briefs || [];
+    state.featuredCount = payload.featuredCount || 0;
     renderStats(payload);
     populateSelect(document.getElementById("categoryFilter"), uniqueValues(state.briefs, "category"));
     populateSelect(document.getElementById("sourceTypeFilter"), uniqueValues(state.briefs, "sourceType"));
@@ -687,7 +837,7 @@ document.addEventListener("click", (event) => {
     }
 });
 
-["searchInput", "categoryFilter", "sourceTypeFilter", "yearFilter"].forEach((id) => {
+["searchInput", "categoryFilter", "sourceTypeFilter", "yearFilter", "sortFilter"].forEach((id) => {
     document.addEventListener("input", (event) => {
         if (event.target.id === id) {
             if (id === "categoryFilter") {
