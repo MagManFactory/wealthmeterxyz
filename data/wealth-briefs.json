@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 7,
+  "schemaVersion": 8,
   "updatedAt": "2026-03-28",
   "count": 399,
   "categories": {
@@ -523,8 +523,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at how portfolios should be built when you balance risk, return, and diversification.",
-      "whyItMatters": "Useful if you want the basic research behind broad diversification and portfolio design.",
+      "summary": "Markowitz introduces the core idea that a portfolio should be judged by both expected return and risk, not by return alone. The paper lays out the mean-variance framework that became the base model for modern portfolio construction.",
+      "whyItMatters": "This matters because almost every later discussion of diversification and efficient frontiers starts here.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -541,8 +541,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at whether mutual fund results come from skill, costs, style, or luck.",
-      "whyItMatters": "Useful if you are comparing active funds and want to know what the results really reflect.",
+      "summary": "Sharpe tests whether mutual funds beat what would be expected from the market risk they take. The paper helped establish risk-adjusted performance as a more serious way to judge managers.",
+      "whyItMatters": "This matters because it moved performance evaluation beyond raw returns and toward a cleaner benchmark-based comparison.",
       "focusTags": [
         "Portfolio design",
         "Mutual funds"
@@ -560,8 +560,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to portfolio design.",
-      "whyItMatters": "Useful if you want a stronger source on portfolio design instead of a recycled headline or opinion piece.",
+      "summary": "Jensen studies mutual fund returns over a long historical period and compares them with a risk-adjusted market benchmark. He finds little evidence that the average fund delivered persistent superior performance after costs.",
+      "whyItMatters": "This matters because it is one of the classic early papers questioning whether active mutual fund managers beat the market in a reliable way.",
       "focusTags": [
         "Portfolio design",
         "Mutual funds"
@@ -579,8 +579,8 @@
       "sourceType": "business journal",
       "sourceLabel": "business journal",
       "sourceLinkLabel": "View business journal",
-      "summary": "Looks at a source related to portfolio design.",
-      "whyItMatters": "Useful if you want a stronger source on portfolio design instead of a recycled headline or opinion piece.",
+      "summary": "Treynor proposes an early framework for judging portfolio managers by comparing return with the market risk taken to earn it. The paper helped shape later performance measures that focus on skill rather than raw outcome.",
+      "whyItMatters": "This matters because it is part of the foundation for how investors still evaluate funds today.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -597,8 +597,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to portfolio design.",
-      "whyItMatters": "Useful if you want a stronger source on portfolio design instead of a recycled headline or opinion piece.",
+      "summary": "Roll argues that testing asset-pricing models is harder than it looks because the true market portfolio is unobservable. That means many clean-looking tests depend on benchmark choices that are less solid than they appear.",
+      "whyItMatters": "This matters because even elegant finance models can be hard to verify in practice when the benchmark itself is uncertain.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -615,8 +615,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at a source related to portfolio design.",
-      "whyItMatters": "Useful if you want a stronger source on portfolio design instead of a recycled headline or opinion piece.",
+      "summary": "Ross offers an alternative to the single-market-factor view of expected returns by arguing that several common risks can help price assets. The paper helped open the door to multifactor investing frameworks.",
+      "whyItMatters": "This matters because it helped move portfolio thinking beyond one all-purpose market beta.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -633,8 +633,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to portfolio design.",
-      "whyItMatters": "Useful if you want a stronger source on portfolio design instead of a recycled headline or opinion piece.",
+      "summary": "Black shows that asset-pricing results change when investors cannot borrow and lend freely at the same rate. That makes real-world portfolio constraints part of the model instead of an afterthought.",
+      "whyItMatters": "This matters because actual investors face borrowing limits, margin rules, and other frictions that can change what \u201coptimal\u201d looks like.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -779,8 +779,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at how portfolios should be built when you balance risk, return, and diversification.",
-      "whyItMatters": "Useful if you want the basic research behind broad diversification and portfolio design.",
+      "summary": "Brinson, Hood, and Beebower decompose pension fund results and find that asset allocation explains far more of return variation than manager selection or market timing. The paper became famous for focusing attention on allocation first.",
+      "whyItMatters": "This matters because it reinforced the idea that broad portfolio structure usually matters more than tactical moves.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -797,8 +797,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at how portfolios should be built when you balance risk, return, and diversification.",
-      "whyItMatters": "Useful if you want the basic research behind broad diversification and portfolio design.",
+      "summary": "Statman studies how many stocks are needed before diversification removes most single-stock risk. The answer is more than many investors expect, especially if they want diversification to be meaningful rather than symbolic.",
+      "whyItMatters": "This matters because owning a handful of stocks is often called diversified when it is really still concentrated.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -815,8 +815,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at how portfolios should be built when you balance risk, return, and diversification.",
-      "whyItMatters": "Useful if you want the basic research behind broad diversification and portfolio design.",
+      "summary": "This paper studies whether investors can reduce risk by spreading equity exposure across countries instead of staying only in their home market. It shows that international diversification can improve the mix, especially when markets do not move in lockstep.",
+      "whyItMatters": "This matters because home-country concentration is one of the most common portfolio blind spots.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -888,8 +888,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Looks at how portfolios should be built when you balance risk, return, and diversification.",
-      "whyItMatters": "Useful if you want the basic research behind broad diversification and portfolio design.",
+      "summary": "Merton develops a lifetime framework for choosing portfolio risk and consumption under uncertainty rather than treating investment as a one-period problem. The model helped connect saving, spending, and asset mix into one decision system.",
+      "whyItMatters": "This matters because real investing is a life-cycle problem, not just a one-time asset allocation choice.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -4738,8 +4738,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to portfolio design.",
-      "whyItMatters": "Useful if you want a stronger source on portfolio design instead of a recycled headline or opinion piece.",
+      "summary": "This work studies how portfolios should be optimized when investors draw from several markets at once instead of one domestic universe. It treats cross-market diversification as a core design problem.",
+      "whyItMatters": "This matters because global investing can improve diversification, but only if the portfolio is built with those interactions in mind.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -4756,8 +4756,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at how portfolios should be built when you balance risk, return, and diversification.",
-      "whyItMatters": "Useful if you want the basic research behind broad diversification and portfolio design.",
+      "summary": "DeMiguel, Garlappi, and Uppal compare optimized portfolios with a simple equal-weight strategy and find that the naive 1/N rule is hard to beat in many practical settings. Estimation error can wipe out the theoretical gains from more sophisticated optimization.",
+      "whyItMatters": "This matters because a simple portfolio can outperform a clever one when the inputs behind the clever model are too noisy.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -4774,8 +4774,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at how portfolios should be built when you balance risk, return, and diversification.",
-      "whyItMatters": "Useful if you want the basic research behind broad diversification and portfolio design.",
+      "summary": "Choueifaty and Coignard propose a portfolio approach that explicitly tries to maximize diversification rather than only balancing mean and variance. The method focuses on spreading risk contributions more broadly across holdings.",
+      "whyItMatters": "This matters because diversification itself can be treated as a design target rather than as a side effect of optimization.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -4792,8 +4792,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to portfolio design.",
-      "whyItMatters": "Useful if you want a stronger source on portfolio design instead of a recycled headline or opinion piece.",
+      "summary": "This paper studies portfolios built to minimize volatility rather than maximize expected return. It documents that low-volatility portfolios can produce surprisingly competitive results in the US equity market.",
+      "whyItMatters": "This matters because it challenges the simple idea that taking more volatility is always the only path to better equity outcomes.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -4810,8 +4810,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to portfolio design.",
-      "whyItMatters": "Useful if you want a stronger source on portfolio design instead of a recycled headline or opinion piece.",
+      "summary": "Michaud argues that classic mean-variance optimization can produce unstable and unrealistic portfolios because it overreacts to noisy input estimates. The paper questions whether mathematically optimal portfolios are actually robust in practice.",
+      "whyItMatters": "This matters because optimization outputs can look precise while resting on fragile assumptions.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -4828,8 +4828,8 @@
       "sourceType": "book",
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
-      "summary": "Looks at a source related to portfolio design.",
-      "whyItMatters": "Useful if you want a stronger source on portfolio design instead of a recycled headline or opinion piece.",
+      "summary": "This book presents portfolio construction through an equilibrium lens and helped popularize ideas that later fed into Black-Litterman and other practical allocation frameworks.",
+      "whyItMatters": "This matters because it links theory and implementation in a way that shaped how many institutional portfolios are built.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -4846,8 +4846,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at how portfolios should be built when you balance risk, return, and diversification.",
-      "whyItMatters": "Useful if you want the basic research behind broad diversification and portfolio design.",
+      "summary": "This source examines why many investors remain underdiversified even when diversification is widely taught and easy to explain. It treats underdiversification as a persistent behavioral and structural problem.",
+      "whyItMatters": "This matters because knowing the rule of diversification is not the same as actually following it.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -6802,8 +6802,8 @@
       "sourceType": "book",
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
-      "summary": "Looks at a source related to portfolio design.",
-      "whyItMatters": "Useful if you want a stronger source on portfolio design instead of a recycled headline or opinion piece.",
+      "summary": "Bernstein explains asset allocation in practical language, with a strong emphasis on diversification, rebalancing, and staying realistic about risk. The book translates portfolio theory into decisions a household investor can actually use.",
+      "whyItMatters": "This matters because it is one of the better bridges between academic allocation ideas and real-world investor behavior.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -6820,8 +6820,8 @@
       "sourceType": "book",
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
-      "summary": "Looks at a source related to portfolio design.",
-      "whyItMatters": "Useful if you want a stronger source on portfolio design instead of a recycled headline or opinion piece.",
+      "summary": "Bernstein organizes investing around theory, history, psychology, and business practice. The book aims to show why portfolio success depends on behavior and structure, not just return chasing.",
+      "whyItMatters": "This matters because portfolios fail as often from bad behavior and bad expectations as from bad math.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -6838,8 +6838,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Looks at a source related to portfolio design.",
-      "whyItMatters": "Useful if you want a stronger source on portfolio design instead of a recycled headline or opinion piece.",
+      "summary": "Swensen argues for a low-cost, disciplined, diversified approach for individual investors rather than manager chasing or stock picking. The book stresses structure, simplicity, and cost control.",
+      "whyItMatters": "This matters because it gives a clean case for building a durable personal portfolio without pretending individual investors have an edge in active selection.",
       "focusTags": [
         "Portfolio design"
       ],

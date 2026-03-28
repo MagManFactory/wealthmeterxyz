@@ -663,7 +663,7 @@ function render() {
 }
 
 async function loadBriefs() {
-    const response = await fetch("data/wealth-briefs.json?v=2026-03-28.6");
+    const response = await fetch("data/wealth-briefs.json?v=2026-03-28.7");
     const payload = await response.json();
     state.briefs = payload.briefs || [];
     renderStats(payload);
