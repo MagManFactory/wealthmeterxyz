@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "updatedAt": "2026-03-28",
   "count": 399,
   "categories": {
@@ -42,8 +42,8 @@
       "sourceType": "planning journal",
       "sourceLabel": "planning journal",
       "sourceLinkLabel": "View planning journal",
-      "summary": "Looks at how much someone can spend from savings in retirement without running out too early.",
-      "whyItMatters": "Useful if you are building a retirement spending plan and want to know how fragile a withdrawal rule can be.",
+      "summary": "Bengen tests rolling historical stock, bond, and inflation data and shows that a roughly 4 percent starting withdrawal, increased with inflation, survived the toughest 30-year periods in his dataset.",
+      "whyItMatters": "This is the paper behind the 4 percent rule. It matters because so much retirement planning still starts here, even when people do not know the assumptions behind it.",
       "focusTags": [
         "Retirement spending",
         "Withdrawal rules"
@@ -61,8 +61,8 @@
       "sourceType": "planning journal",
       "sourceLabel": "planning journal",
       "sourceLinkLabel": "View planning journal",
-      "summary": "Looks at how spending changes after retirement instead of assuming it stays flat forever.",
-      "whyItMatters": "Useful if you want a retirement plan based on how people actually spend over time.",
+      "summary": "Blanchett shows that retiree spending often falls in real terms over time, instead of rising neatly with inflation every year. He estimates average real spending declines of about 1 percent a year and describes a spending smile across retirement.",
+      "whyItMatters": "This matters because many retirement plans assume flat inflation-adjusted spending. If real spending often declines, some withdrawal models may be more conservative than they need to be.",
       "focusTags": [
         "Retirement spending",
         "Retirement",
@@ -81,8 +81,8 @@
       "sourceType": "planning journal",
       "sourceLabel": "planning journal",
       "sourceLinkLabel": "View planning journal",
-      "summary": "Looks at how much someone can spend from savings in retirement without running out too early.",
-      "whyItMatters": "Useful if you are building a retirement spending plan and want to know how fragile a withdrawal rule can be.",
+      "summary": "The Trinity study tests historical stock and bond mixes against different withdrawal rates and retirement lengths to see which combinations held up over time. It helped popularize the idea that around 4 percent was a workable starting point for many 30-year retirements.",
+      "whyItMatters": "This matters because it turned withdrawal-rate research into a practical rule used by planners, FIRE communities, and retirement calculators.",
       "focusTags": [
         "Retirement spending",
         "Withdrawal rules",
@@ -102,8 +102,8 @@
       "sourceType": "planning journal",
       "sourceLabel": "planning journal",
       "sourceLinkLabel": "View planning journal",
-      "summary": "Looks at how much someone can spend from savings in retirement without running out too early.",
-      "whyItMatters": "Useful if you are building a retirement spending plan and want to know how fragile a withdrawal rule can be.",
+      "summary": "Guyton and Klinger test withdrawal guardrails that let spending rise or fall with portfolio conditions instead of following one fixed inflation rule. Their results suggest higher starting withdrawals may work when retirees follow strict spending rules after good and bad markets.",
+      "whyItMatters": "This matters because it shifts the question from one fixed safe rate to a rule-based system that can adapt when markets change.",
       "focusTags": [
         "Retirement spending",
         "Withdrawal rules"
@@ -121,8 +121,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Looks at spending rules that change when markets or portfolio values change.",
-      "whyItMatters": "Useful if you want a retirement plan that can adjust instead of relying on one fixed number.",
+      "summary": "Pfau compares a range of variable spending rules, from fixed real withdrawals to rules that recalculate spending from the remaining portfolio. He frames the choice as a tradeoff between steadier income now and lower risk of severe cuts later.",
+      "whyItMatters": "This matters because many retirees will not actually spend the same real amount forever. The paper helps compare more realistic ways to adjust spending.",
       "focusTags": [
         "Retirement spending",
         "Retirement"
@@ -4606,8 +4606,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Looks at how much someone can spend from savings in retirement without running out too early.",
-      "whyItMatters": "Useful if you are building a retirement spending plan and want to know how fragile a withdrawal rule can be.",
+      "summary": "Kitces argues that safe withdrawal rates are not equally low in every market environment. He shows that starting valuation levels, especially the Shiller P/E, line up strongly with how safe future withdrawal rates are likely to be.",
+      "whyItMatters": "This matters because it challenges the idea that one withdrawal rate fits every retirement start date. Starting conditions can change how conservative a plan needs to be.",
       "focusTags": [
         "Retirement spending",
         "Withdrawal rules"
@@ -4625,8 +4625,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Looks at a source related to retirement spending.",
-      "whyItMatters": "Useful if you want a stronger source on retirement spending instead of a recycled headline or opinion piece.",
+      "summary": "Pfau argues that retirement planning works better when saving years and spending years are treated as one combined life-cycle problem. He shows that a safe savings rate can be more stable and more useful than aiming for one fixed safe withdrawal rule.",
+      "whyItMatters": "This matters because it moves the focus from hitting a magic retirement number to building a savings habit that can survive different market histories.",
       "focusTags": [
         "Retirement spending",
         "Retirement",
@@ -4645,8 +4645,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Looks at spending rules that change when markets or portfolio values change.",
-      "whyItMatters": "Useful if you want a retirement plan that can adjust instead of relying on one fixed number.",
+      "summary": "Blanchett and Frank propose reviewing the sustainability of a withdrawal rate every year instead of deciding once at retirement and never revisiting it. Their method raises or lowers the rate based on the remaining horizon and the portfolio\u2019s current condition.",
+      "whyItMatters": "This matters because retirement plans are not static. A yearly check can respond to age, market losses, and upside surprises without relying on a one-time guess.",
       "focusTags": [
         "Retirement spending"
       ],
@@ -4663,8 +4663,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Looks at a source related to retirement spending.",
-      "whyItMatters": "Useful if you want a stronger source on retirement spending instead of a recycled headline or opinion piece.",
+      "summary": "Bengen extends his retirement-withdrawal research beyond one fixed rule and looks at alternatives such as spending more early in retirement or adjusting withdrawals to portfolio performance. The work keeps the central question the same: how much can a retiree take without running out too soon.",
+      "whyItMatters": "This matters because it shows the 4 percent rule was never the end of the story. Even Bengen kept testing ways to make retirement spending more flexible.",
       "focusTags": [
         "Retirement spending",
         "Retirement",
@@ -4683,8 +4683,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Looks at how much someone can spend from savings in retirement without running out too early.",
-      "whyItMatters": "Useful if you are building a retirement spending plan and want to know how fragile a withdrawal rule can be.",
+      "summary": "Finke, Pfau, and Williams model withdrawal decisions around risk tolerance instead of treating everyone as if they want the same retirement tradeoff. They find that more risk-tolerant retirees may rationally choose higher withdrawal rates and riskier portfolios than the usual 4 percent guidance suggests.",
+      "whyItMatters": "This matters because it connects retirement spending to personal risk tolerance. A cautious retiree and a flexible retiree may not need the same withdrawal rule.",
       "focusTags": [
         "Retirement spending",
         "Withdrawal rules"
@@ -4720,8 +4720,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at how much someone can spend from savings in retirement without running out too early.",
-      "whyItMatters": "Useful if you are building a retirement spending plan and want to know how fragile a withdrawal rule can be.",
+      "summary": "Milevsky and Robinson build a forward-looking way to estimate sustainable spending without relying only on backward-looking historical tests or black-box Monte Carlo results. Their framework suggests payout rates may need to be lower than many advisers assume.",
+      "whyItMatters": "This matters because it gives a cleaner analytical check on whether a spending plan is too aggressive, especially when return assumptions are optimistic.",
       "focusTags": [
         "Retirement spending"
       ],
