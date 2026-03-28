@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 9,
+  "schemaVersion": 10,
   "updatedAt": "2026-03-28",
   "count": 399,
   "categories": {
@@ -724,8 +724,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at dividends and whether payout policy changes what investors actually get.",
-      "whyItMatters": "Useful if you want to know whether dividends add something special beyond total return.",
+      "summary": "Shiller compares stock-price swings with later changes in dividends and argues that prices seem to move more than fundamentals alone would justify. The paper became one of the landmark challenges to a strict efficient-market view.",
+      "whyItMatters": "This matters because it raised the possibility that markets can overshoot by a lot, not just by a trivial amount.",
       "focusTags": [
         "Market efficiency",
         "Dividends"
@@ -852,8 +852,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at a source related to market efficiency.",
-      "whyItMatters": "Useful if you want a stronger source on market efficiency instead of a recycled headline or opinion piece.",
+      "summary": "Samuelson gives the formal argument that if information is already reflected in prices, price changes should look unpredictable. It is one of the classic statements behind the random-walk view of markets.",
+      "whyItMatters": "This matters because it is part of the theoretical backbone for passive investing and skepticism about market timing.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -870,8 +870,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at whether markets are hard to beat and where pricing mistakes can still survive.",
-      "whyItMatters": "Useful if you want to understand the case for simple investing and the limits of market timing.",
+      "summary": "Fama reviews the theory and evidence for efficient capital markets and organizes the idea into a clear research agenda. The paper became the standard reference point for what market efficiency means in finance.",
+      "whyItMatters": "This matters because almost every later debate over market efficiency is reacting to this framework in some way.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -1052,8 +1052,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at whether markets are hard to beat and where pricing mistakes can still survive.",
-      "whyItMatters": "Useful if you want to understand the case for simple investing and the limits of market timing.",
+      "summary": "Lo and MacKinlay test the random-walk idea directly and find patterns inconsistent with a pure random walk in stock prices. The paper gave strong empirical pushback against the simplest form of market efficiency.",
+      "whyItMatters": "This matters because even if markets are hard to beat, they may still be less random than the strongest efficient-market version suggests.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -1070,8 +1070,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at a source related to market efficiency.",
-      "whyItMatters": "Useful if you want a stronger source on market efficiency instead of a recycled headline or opinion piece.",
+      "summary": "Grossman and Stiglitz argue that perfectly efficient markets cannot exist in a literal sense because someone must have an incentive to gather costly information. If prices were perfectly informative, nobody would pay to produce that information.",
+      "whyItMatters": "This matters because it explains why a small amount of inefficiency is almost built into the logic of information markets.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -1088,8 +1088,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at whether markets are hard to beat and where pricing mistakes can still survive.",
-      "whyItMatters": "Useful if you want to understand the case for simple investing and the limits of market timing.",
+      "summary": "Shleifer and Vishny argue that even when mispricing is obvious, investors may be unable or unwilling to bet aggressively enough to fix it. Capital constraints, career risk, and withdrawal risk can keep bad prices alive.",
+      "whyItMatters": "This matters because it explains why smart traders do not always erase anomalies right away.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -1106,8 +1106,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to market efficiency.",
-      "whyItMatters": "Useful if you want a stronger source on market efficiency instead of a recycled headline or opinion piece.",
+      "summary": "This paper studies merger arbitrage and shows that the return pattern is tied to deal-specific risks rather than a free lunch. The strategy can look smooth until deal breaks expose the hidden downside.",
+      "whyItMatters": "This matters because many so-called arbitrage trades are really risk-bearing trades with a particular crash profile.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -3972,8 +3972,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Looks at whether markets are hard to beat and where pricing mistakes can still survive.",
-      "whyItMatters": "Useful if you want to understand the case for simple investing and the limits of market timing.",
+      "summary": "This paper uses merger situations to show how limits to arbitrage can leave prices away from their likely end value. It treats M&A spreads as a live example of why mispricing can persist even in watched markets.",
+      "whyItMatters": "This matters because it gives a concrete case where mispricing is visible but not costless to attack.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -3990,8 +3990,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at how investor behavior can push prices too far or make people trade badly.",
-      "whyItMatters": "Useful if you want a clearer view of common investing mistakes and crowd behavior.",
+      "summary": "The paper studies how investor sentiment matters most in stocks that are difficult to value and hard to arbitrage. In those names, mood and narrative can push prices farther away from fundamentals.",
+      "whyItMatters": "This matters because not all mispricing risk is equal. Hard-to-value stocks are more exposed to sentiment swings.",
       "focusTags": [
         "Market efficiency",
         "Value"
@@ -4136,8 +4136,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Looks at a source related to market efficiency.",
-      "whyItMatters": "Useful if you want a stronger source on market efficiency instead of a recycled headline or opinion piece.",
+      "summary": "Barberis and Thaler review the main ideas in behavioral finance, including sentiment, overreaction, underreaction, and limits to arbitrage. The paper became a standard map of the field.",
+      "whyItMatters": "This matters because it connects a wide set of anomalies and behavioral ideas into one usable framework.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4190,8 +4190,8 @@
       "sourceType": "academic journal",
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
-      "summary": "Looks at a source related to market efficiency.",
-      "whyItMatters": "Useful if you want a stronger source on market efficiency instead of a recycled headline or opinion piece.",
+      "summary": "This paper argues that benchmark structure itself can limit arbitrage by pushing professional managers toward index-relative behavior. That helps explain why low-volatility stocks can perform better than a simple theory would suggest.",
+      "whyItMatters": "This matters because anomalies can survive not only from ignorance, but from institutional incentives built into the way managers are judged.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4226,8 +4226,8 @@
       "sourceType": "academic journal",
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
-      "summary": "Looks at a source related to market efficiency.",
-      "whyItMatters": "Useful if you want a stronger source on market efficiency instead of a recycled headline or opinion piece.",
+      "summary": "This paper studies how constraints on arbitrage change over time instead of treating them as fixed. It shows that the force keeping mispricing alive can intensify during stress and relax during calmer periods.",
+      "whyItMatters": "This matters because the ease of correcting bad prices is itself cyclical.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4244,8 +4244,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Looks at a source related to market efficiency.",
-      "whyItMatters": "Useful if you want a stronger source on market efficiency instead of a recycled headline or opinion piece.",
+      "summary": "The paper examines whether investor behavior helps explain why firms with rapid asset growth often earn weaker later returns. It links a well-known market anomaly to behavioral overreaction or misplaced optimism.",
+      "whyItMatters": "This matters because some return patterns may come from how investors process corporate growth stories, not only from hard risk differences.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4479,8 +4479,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Looks at a source related to market efficiency.",
-      "whyItMatters": "Useful if you want a stronger source on market efficiency instead of a recycled headline or opinion piece.",
+      "summary": "This survey connects behavioral finance with larger macro questions such as asset booms, crashes, and cycles. It expands the discussion from single-stock anomalies to economy-wide behavior and pricing patterns.",
+      "whyItMatters": "This matters because market inefficiency debates do not stop at stock picking. They also shape how people think about bubbles and macro risk.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -5445,8 +5445,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at a source related to market efficiency.",
-      "whyItMatters": "Useful if you want a stronger source on market efficiency instead of a recycled headline or opinion piece.",
+      "summary": "Roll studies whether weather affects orange juice prices and uses a very specific market to show how information gets into prices. It is often cited as an example of a market where fundamentals can dominate cleanly.",
+      "whyItMatters": "This matters because it shows that some niche markets can behave in a highly information-driven way, even when broader equity markets are more ambiguous.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -5463,8 +5463,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to market efficiency.",
-      "whyItMatters": "Useful if you want a stronger source on market efficiency instead of a recycled headline or opinion piece.",
+      "summary": "This paper documents that stock returns differ by day of the week, with unusually weak performance around the Monday opening. It became one of the classic calendar-anomaly papers.",
+      "whyItMatters": "This matters because recurring seasonality is awkward for a world where prices always fully and instantly absorb information.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -5481,8 +5481,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to market efficiency.",
-      "whyItMatters": "Useful if you want a stronger source on market efficiency instead of a recycled headline or opinion piece.",
+      "summary": "The paper studies recurring seasonal patterns in stock returns rather than treating returns as uniform through the calendar. It helped expand the literature on market seasonality beyond a single anomaly.",
+      "whyItMatters": "This matters because persistent calendar patterns challenge the idea that return timing never matters.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -5499,8 +5499,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to market efficiency.",
-      "whyItMatters": "Useful if you want a stronger source on market efficiency instead of a recycled headline or opinion piece.",
+      "summary": "This paper studies whether small-cap return anomalies are tied to specific parts of the calendar. It strengthens the case that market seasonality and firm size can interact in important ways.",
+      "whyItMatters": "This matters because it shows that anomalies can cluster and reinforce each other rather than appearing one at a time.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -5517,8 +5517,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Looks at a source related to market efficiency.",
-      "whyItMatters": "Useful if you want a stronger source on market efficiency instead of a recycled headline or opinion piece.",
+      "summary": "This paper studies whether low price-to-earnings stocks earn higher returns because they are riskier or because markets misprice them. It is part of the early debate over whether value effects are compensation for risk or an anomaly.",
+      "whyItMatters": "This matters because it gets to the heart of a recurring investing question: are excess returns earned or are they a pricing mistake?",
       "focusTags": [
         "Market efficiency"
       ],
