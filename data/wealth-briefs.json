@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 8,
+  "schemaVersion": 9,
   "updatedAt": "2026-03-28",
   "count": 399,
   "categories": {
@@ -5535,8 +5535,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at bond yields, credit spreads, and what they say about risk and future returns.",
-      "whyItMatters": "Useful if you are using bonds for income, defense, or rate views and want to know what matters most.",
+      "summary": "Fama studies whether forward rates contain useful information about future interest rates and risk premia. The paper helps separate what a yield curve is forecasting from what it is charging as compensation for risk.",
+      "whyItMatters": "This matters because investors often treat forward rates as clean predictions when they also embed risk premia.",
       "focusTags": [
         "Bonds and rates"
       ],
@@ -5553,8 +5553,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Looks at bond yields, credit spreads, and what they say about risk and future returns.",
-      "whyItMatters": "Useful if you are using bonds for income, defense, or rate views and want to know what matters most.",
+      "summary": "Campbell and Shiller study how yield spreads relate to later rate moves. They show that spreads carry information, but not always in the simple expectations-only way that textbook term-structure stories suggest.",
+      "whyItMatters": "This matters because the shape of the yield curve is often used as a signal for rates, growth, and recession risk.",
       "focusTags": [
         "Bonds and rates",
         "Yield curve"
@@ -5572,8 +5572,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at bond yields, credit spreads, and what they say about risk and future returns.",
-      "whyItMatters": "Useful if you are using bonds for income, defense, or rate views and want to know what matters most.",
+      "summary": "Cochrane and Piazzesi show that expected bond returns move over time and can be forecast using a combination of forward rates. Bond risk premia are not constant. They expand and contract with the cycle.",
+      "whyItMatters": "This matters because long bonds are not just about duration. The reward for holding them also changes over time.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -5591,8 +5591,8 @@
       "sourceType": "NBER working paper",
       "sourceLabel": "NBER working paper",
       "sourceLinkLabel": "View NBER working paper",
-      "summary": "Looks at a source related to bonds and rates.",
-      "whyItMatters": "Useful if you want a stronger source on bonds and rates instead of a recycled headline or opinion piece.",
+      "summary": "Hicks lays out early theoretical questions about why interest rates and bond yields move the way they do over long history. It is a foundational attempt to explain term structure rather than merely describe it.",
+      "whyItMatters": "This matters because many later yield-curve models are extensions of the problems Hicks framed here.",
       "focusTags": [
         "Bonds and rates",
         "Bonds",
@@ -5611,8 +5611,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at bond yields, credit spreads, and what they say about risk and future returns.",
-      "whyItMatters": "Useful if you are using bonds for income, defense, or rate views and want to know what matters most.",
+      "summary": "Cox, Ingersoll, and Ross develop an equilibrium model for how interest rates evolve across maturities. The paper became one of the classic foundations for term-structure modeling.",
+      "whyItMatters": "This matters because term-structure models used in pricing, hedging, and macro finance often trace back to this framework.",
       "focusTags": [
         "Bonds and rates"
       ],
@@ -5629,8 +5629,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at bond yields, credit spreads, and what they say about risk and future returns.",
-      "whyItMatters": "Useful if you are using bonds for income, defense, or rate views and want to know what matters most.",
+      "summary": "Vasicek presents a tractable model of interest-rate movements that became a workhorse for pricing bonds and rate-sensitive securities. It is simple enough to use and rich enough to matter.",
+      "whyItMatters": "This matters because many practical bond-pricing tools still rely on descendants of models like this.",
       "focusTags": [
         "Bonds and rates"
       ],
@@ -5647,8 +5647,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to bonds and rates.",
-      "whyItMatters": "Useful if you want a stronger source on bonds and rates instead of a recycled headline or opinion piece.",
+      "summary": "Litterman and Scheinkman show that a small number of factors explain most Treasury return movements, especially level, slope, and curvature shifts in the curve. This became one of the most influential organizing ideas in bond investing.",
+      "whyItMatters": "This matters because it gives investors a much cleaner way to think about bond risk than looking only at individual maturities.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -5666,8 +5666,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to bonds and rates.",
-      "whyItMatters": "Useful if you want a stronger source on bonds and rates instead of a recycled headline or opinion piece.",
+      "summary": "Chen, Roll, and Ross study how broad economic forces affect stock returns and connect those forces to asset-pricing risk. The paper helps bridge macro variables and market returns across asset classes.",
+      "whyItMatters": "This matters because bonds and stocks are both exposed to larger economic forces, even when investors discuss them separately.",
       "focusTags": [
         "Bonds and rates"
       ],
@@ -5684,8 +5684,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to bonds and rates.",
-      "whyItMatters": "Useful if you want a stronger source on bonds and rates instead of a recycled headline or opinion piece.",
+      "summary": "Fama and French identify factors that help explain returns across both stocks and bonds, not just within one market. The paper helped unify cross-asset return thinking.",
+      "whyItMatters": "This matters because stock and bond returns are not driven by completely separate worlds. Some common forces show up in both.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -5703,8 +5703,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to bonds and rates.",
-      "whyItMatters": "Useful if you want a stronger source on bonds and rates instead of a recycled headline or opinion piece.",
+      "summary": "Collin-Dufresne, Goldstein, and Martin examine why corporate bond spreads are wider than simple default models predict. They find that changing credit conditions and other nondefault forces matter a lot.",
+      "whyItMatters": "This matters because corporate spreads are not just a pure measure of expected default loss.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -5722,8 +5722,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at bond yields, credit spreads, and what they say about risk and future returns.",
-      "whyItMatters": "Useful if you are using bonds for income, defense, or rate views and want to know what matters most.",
+      "summary": "This paper studies what drives changes in corporate credit spreads and shows that spreads move with more than just firm default risk. Marketwide and liquidity-related forces also play a role.",
+      "whyItMatters": "This matters because a widening spread can reflect broader market stress, not just a deteriorating borrower.",
       "focusTags": [
         "Bonds and rates",
         "Credit spreads"
@@ -5741,8 +5741,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at bond yields, credit spreads, and what they say about risk and future returns.",
-      "whyItMatters": "Useful if you are using bonds for income, defense, or rate views and want to know what matters most.",
+      "summary": "Duffie and Singleton build a framework for pricing bonds that carry default risk rather than assuming Treasuries and corporates behave the same way. The model became a key building block in credit pricing.",
+      "whyItMatters": "This matters because corporate and structured debt cannot be understood with risk-free rate models alone.",
       "focusTags": [
         "Bonds and rates",
         "Defaults",
@@ -5761,8 +5761,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to bonds and rates.",
-      "whyItMatters": "Useful if you want a stronger source on bonds and rates instead of a recycled headline or opinion piece.",
+      "summary": "Merton offers a structural way to think about risky debt by linking debt value to the value and volatility of the underlying firm. It is a foundational step in modern credit-risk modeling.",
+      "whyItMatters": "This matters because much of credit theory starts from the idea that debt risk depends on the value of the borrower's assets.",
       "focusTags": [
         "Bonds and rates",
         "Debt payoff"
@@ -5780,8 +5780,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to bonds and rates.",
-      "whyItMatters": "Useful if you want a stronger source on bonds and rates instead of a recycled headline or opinion piece.",
+      "summary": "This paper studies how transparency and market structure affect the cost of trading corporate bonds. It shows that bond-market frictions can be large and that better transparency can change who pays them.",
+      "whyItMatters": "This matters because bond investors often focus on yield and ignore the hidden cost of getting in and out.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -5799,8 +5799,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to bonds and rates.",
-      "whyItMatters": "Useful if you want a stronger source on bonds and rates instead of a recycled headline or opinion piece.",
+      "summary": "This paper measures how illiquid corporate bonds can be relative to more transparent or actively traded markets. It shows that trading frictions are an important part of corporate bond returns.",
+      "whyItMatters": "This matters because extra yield in corporate bonds can partly be payment for illiquidity, not just for credit risk.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -5818,8 +5818,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to bonds and rates.",
-      "whyItMatters": "Useful if you want a stronger source on bonds and rates instead of a recycled headline or opinion piece.",
+      "summary": "This paper studies whether expected bond returns change through time across countries rather than staying fixed. The evidence suggests that bond return opportunities shift with global and local conditions.",
+      "whyItMatters": "This matters because bond markets do not offer one stable reward across every rate regime.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -5837,8 +5837,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at bond yields, credit spreads, and what they say about risk and future returns.",
-      "whyItMatters": "Useful if you are using bonds for income, defense, or rate views and want to know what matters most.",
+      "summary": "Bekaert, Hodrick, and Marshall study why simple tests of the expectations hypothesis can be misleading. They show that statistical bias can distort the apparent evidence on how the yield curve works.",
+      "whyItMatters": "This matters because many clean claims about the yield curve rest on tests that are more fragile than they look.",
       "focusTags": [
         "Bonds and rates"
       ],
@@ -5855,8 +5855,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at bond yields, credit spreads, and what they say about risk and future returns.",
-      "whyItMatters": "Useful if you are using bonds for income, defense, or rate views and want to know what matters most.",
+      "summary": "This paper combines no-arbitrage bond pricing with macro variables and hidden state factors to model the yield curve more realistically. It links rates to both observable economics and latent dynamics.",
+      "whyItMatters": "This matters because yields reflect both visible macro conditions and market-specific forces that are harder to observe directly.",
       "focusTags": [
         "Bonds and rates"
       ],
@@ -5873,8 +5873,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at a source related to bonds and rates.",
-      "whyItMatters": "Useful if you want a stronger source on bonds and rates instead of a recycled headline or opinion piece.",
+      "summary": "Gurkaynak, Sack, and Wright build a long historical Treasury yield curve dataset that became a standard reference for fixed-income research. It gives researchers a cleaner continuous curve across decades.",
+      "whyItMatters": "This matters because better yield data improves everything built on top of it, from recession signals to bond-return models.",
       "focusTags": [
         "Bonds and rates",
         "Yield curve"
@@ -5892,8 +5892,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to bonds and rates.",
-      "whyItMatters": "Useful if you want a stronger source on bonds and rates instead of a recycled headline or opinion piece.",
+      "summary": "This paper studies whether factor-style ideas such as value, carry, low risk, or momentum can also work in corporate bonds. It applies the factor lens to a market often treated as yield-only.",
+      "whyItMatters": "This matters because corporate bond investing may have more structure than simply reaching for spread.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -5911,8 +5911,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Looks at a source related to bonds and rates.",
-      "whyItMatters": "Useful if you want a stronger source on bonds and rates instead of a recycled headline or opinion piece.",
+      "summary": "The paper studies whether corporate bond returns can be organized around a small set of common drivers rather than many isolated security stories. It helps simplify a market that often looks fragmented.",
+      "whyItMatters": "This matters because investors can manage bond risk better when they know which common forces dominate the market.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -5930,8 +5930,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to bonds and rates.",
-      "whyItMatters": "Useful if you want a stronger source on bonds and rates instead of a recycled headline or opinion piece.",
+      "summary": "This paper measures how transparency changes transaction costs in the corporate bond market. It shows that market structure can materially affect investor execution.",
+      "whyItMatters": "This matters because bond returns are shaped by trading costs as well as coupons and spreads.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -5949,8 +5949,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to bonds and rates.",
-      "whyItMatters": "Useful if you want a stronger source on bonds and rates instead of a recycled headline or opinion piece.",
+      "summary": "This paper studies corporate-bond mutual funds using their actual holdings rather than only fund-level returns. It asks whether managers add value through security selection after costs and constraints.",
+      "whyItMatters": "This matters because bond funds can look similar at the surface while holding very different underlying credit exposures.",
       "focusTags": [
         "Bonds and rates",
         "Mutual funds",
@@ -5969,8 +5969,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to bonds and rates.",
-      "whyItMatters": "Useful if you want a stronger source on bonds and rates instead of a recycled headline or opinion piece.",
+      "summary": "This paper measures the costs investors face when trading municipal bonds in the secondary market. It shows that transaction costs can be meaningful in a market many households treat as safe and sleepy.",
+      "whyItMatters": "This matters because tax-exempt income can be eroded by trading frictions that investors do not see in the quoted yield.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
