@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 5,
+  "schemaVersion": 6,
   "updatedAt": "2026-03-28",
   "count": 399,
   "categories": {
@@ -422,8 +422,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at when selling losses can reduce taxes and improve after-tax results.",
-      "whyItMatters": "Useful if you want to know whether tax-loss harvesting is worth the effort.",
+      "summary": "Stein and Narasimhan estimate the value of tax-loss harvesting for taxable investors by modeling how realized losses can offset gains and reduce current tax drag. The paper treats harvesting as a measurable after-tax benefit, not just a slogan.",
+      "whyItMatters": "This matters because tax-loss harvesting is often sold as free alpha. This paper asks what it is actually worth once you frame it as a real tax benefit.",
       "focusTags": [
         "Taxes and account order",
         "Taxes",
@@ -442,8 +442,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at how taxes can change investing behavior, prices, and after-tax returns.",
-      "whyItMatters": "Useful if you want to understand how tax rules affect real investor outcomes.",
+      "summary": "This paper studies how capital gains taxes change the best mix of spending, investing, and trading over time. It shows that taxes do not just lower returns. They also change when and how investors should realize gains.",
+      "whyItMatters": "This matters because after-tax investing is not only about what you own. It is also about when you sell and how taxes reshape the whole plan.",
       "focusTags": [
         "Taxes and account order",
         "Spending",
@@ -462,8 +462,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at a source related to taxes and account order.",
-      "whyItMatters": "Useful if you want a stronger source on taxes and account order instead of a recycled headline or opinion piece.",
+      "summary": "The paper compares saving across taxable accounts and tax-advantaged accounts and asks how households should split contributions between them. It shows that account choice can materially change long-run after-tax wealth.",
+      "whyItMatters": "This matters because many people focus on what to invest in before deciding where each asset should sit.",
       "focusTags": [
         "Taxes and account order",
         "Savings",
@@ -482,8 +482,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Looks at the order retirees should tap different accounts to reduce taxes and extend savings.",
-      "whyItMatters": "Useful if you want a cleaner withdrawal order across taxable and tax-advantaged accounts.",
+      "summary": "This paper studies which account retirees should spend from first, including taxable, tax-deferred, and tax-free pools. The order changes taxes, portfolio life, and how much money can be spent over retirement.",
+      "whyItMatters": "This matters because withdrawal order can change outcomes even when the total portfolio stays the same.",
       "focusTags": [
         "Taxes and account order",
         "Retirement",
@@ -502,8 +502,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at which account types are better for different investments when taxes matter.",
-      "whyItMatters": "Useful if you are choosing what to hold in taxable, traditional, and Roth accounts.",
+      "summary": "The paper looks at where different assets should be placed when an investor has both taxable and tax-deferred accounts. It tests whether certain holdings belong in sheltered accounts while others belong in taxable ones.",
+      "whyItMatters": "This matters because two investors with the same asset mix can end up with different after-tax results depending on account placement.",
       "focusTags": [
         "Taxes and account order",
         "Savings",
@@ -5192,8 +5192,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Looks at the order retirees should tap different accounts to reduce taxes and extend savings.",
-      "whyItMatters": "Useful if you want a cleaner withdrawal order across taxable and tax-advantaged accounts.",
+      "summary": "This paper models how retirees should withdraw from several account types rather than treating retirement wealth as one single pool. The goal is to improve after-tax spending and reduce avoidable tax drag over time.",
+      "whyItMatters": "This matters because real retirees often have taxable accounts, traditional retirement accounts, and Roth-type accounts all at once.",
       "focusTags": [
         "Taxes and account order",
         "Withdrawal rules",
@@ -5213,8 +5213,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Looks at which account types are better for different investments when taxes matter.",
-      "whyItMatters": "Useful if you are choosing what to hold in taxable, traditional, and Roth accounts.",
+      "summary": "This source explains the practical logic of asset location for retirement investors, focusing on which assets are better suited to taxable versus tax-sheltered accounts.",
+      "whyItMatters": "This matters because asset location is one of the cleaner ways to improve after-tax results without taking more market risk.",
       "focusTags": [
         "Taxes and account order",
         "Retirement",
@@ -5233,8 +5233,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to taxes and account order.",
-      "whyItMatters": "Useful if you want a stronger source on taxes and account order instead of a recycled headline or opinion piece.",
+      "summary": "Constantinides studies how personal taxes affect the timing of stock trades and how those choices can feed back into market prices. The paper links tax behavior to seasonal market effects such as January return patterns.",
+      "whyItMatters": "This matters because taxes do not only affect private outcomes. They can also shape market behavior and apparent anomalies.",
       "focusTags": [
         "Taxes and account order",
         "Taxes"
@@ -5252,8 +5252,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at when selling losses can reduce taxes and improve after-tax results.",
-      "whyItMatters": "Useful if you want to know whether tax-loss harvesting is worth the effort.",
+      "summary": "This paper looks at tax-loss harvesting together with high-in first-out accounting, which can reduce realized gains by choosing the highest-cost shares first. It treats tax management as a detailed implementation problem, not a generic idea.",
+      "whyItMatters": "This matters because the benefit of harvesting depends on execution details, including lot selection and recordkeeping.",
       "focusTags": [
         "Taxes and account order",
         "Taxes",
@@ -5272,8 +5272,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at how taxes can change investing behavior, prices, and after-tax returns.",
-      "whyItMatters": "Useful if you want to understand how tax rules affect real investor outcomes.",
+      "summary": "The paper studies how changes in tax rules can alter asset prices and expected returns. It treats taxes as part of the market structure rather than as a side issue for accountants only.",
+      "whyItMatters": "This matters because tax policy changes can affect valuations, not just after-tax statements for individual investors.",
       "focusTags": [
         "Taxes and account order",
         "Taxes"
@@ -5291,8 +5291,8 @@
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
-      "summary": "Looks at a source related to taxes and account order.",
-      "whyItMatters": "Useful if you want a stronger source on taxes and account order instead of a recycled headline or opinion piece.",
+      "summary": "This paper studies whether individual investors trade partly to manage taxes, including delaying gains or realizing losses at useful times. It shows that tax motives can be seen directly in trading behavior.",
+      "whyItMatters": "This matters because real investors do respond to tax incentives, and those responses can shape both personal outcomes and market flow.",
       "focusTags": [
         "Taxes and account order",
         "Taxes"
@@ -5310,8 +5310,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Looks at a source related to taxes and account order.",
-      "whyItMatters": "Useful if you want a stronger source on taxes and account order instead of a recycled headline or opinion piece.",
+      "summary": "The paper studies how retail investors react when mutual funds distribute taxable capital gains. It shows that tax events tied to fund structure can influence investor behavior even when investors did not actively sell anything themselves.",
+      "whyItMatters": "This matters because taxable mutual fund distributions can create surprises for investors who assumed they were simply holding a passive product.",
       "focusTags": [
         "Taxes and account order",
         "Mutual funds"
