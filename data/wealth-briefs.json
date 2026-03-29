@@ -1,14 +1,14 @@
 {
   "schemaVersion": 10,
   "updatedAt": "2026-03-28",
-  "count": 399,
+  "count": 381,
   "categories": {
     "Decumulation": 12,
     "Asset Pricing": 96,
     "Active vs Passive": 24,
     "Behavioral Economics": 70,
     "Tax & Sequence": 12,
-    "Portfolio Theory": 56,
+    "Portfolio Theory": 38,
     "Market Efficiency": 47,
     "Market History": 11,
     "Dividend Policy": 2,
@@ -25,8 +25,8 @@
     "book": 35,
     "business journal": 2,
     "economics journal": 32,
-    "research report": 122,
-    "academic journal": 59,
+    "research report": 108,
+    "academic journal": 55,
     "NBER working paper": 3,
     "real estate journal": 16
   },
@@ -3568,82 +3568,6 @@
       "featured": false
     },
     {
-      "id": "2023-leo-learning-efficient-orderings-for-multiobjective-binary-decision-diagrams",
-      "title": "LEO: Learning Efficient Orderings for Multiobjective Binary Decision Diagrams",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2023,
-      "authors": "R. Patel Elias Boutros Khalil",
-      "publication": "Integration of AI and OR Techniques in Constraint Programming",
-      "sourceType": "research report",
-      "sourceLabel": "research report",
-      "sourceLinkLabel": "View research report",
-      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
-      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.48550/arXiv.2307.03171",
-      "featured": false
-    },
-    {
-      "id": "2020-data-driven-stochastic-optimization-on-manifolds-for-additive-manufacturing",
-      "title": "Data-driven stochastic optimization on manifolds for additive manufacturing",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2020,
-      "authors": "Myrl G. Marmarelis R. Ghanem",
-      "publication": "Academic Journal",
-      "sourceType": "academic journal",
-      "sourceLabel": "academic journal",
-      "sourceLinkLabel": "View academic journal",
-      "summary": "This is an optimization paper from another field that uses frontier or trade-off language similar to portfolio theory, but it is not a direct investing source.",
-      "whyItMatters": "Useful only as a cross-domain optimization analogue, not as a core portfolio-construction reference.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.1016/j.commatsci.2020.109750",
-      "featured": false
-    },
-    {
-      "id": "2003-efficient-point-methods-for-probabilistic-optimization-problems",
-      "title": "Efficient point methods for probabilistic optimization problems",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2003,
-      "authors": "Darinka Dentcheva Bogumila Lai A. Ruszczynski",
-      "publication": "Academic Journal",
-      "sourceType": "academic journal",
-      "sourceLabel": "academic journal",
-      "sourceLinkLabel": "View academic journal",
-      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
-      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.18452/8307",
-      "featured": false
-    },
-    {
-      "id": "2004-dual-methods-for-probabilistic-optimization-problems",
-      "title": "Dual methods for probabilistic optimization problems*",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2004,
-      "authors": "Darinka Dentcheva Bogumila Lai A. Ruszczynski",
-      "publication": "Math. Methods Oper. Res.",
-      "sourceType": "research report",
-      "sourceLabel": "research report",
-      "sourceLinkLabel": "View research report",
-      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
-      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.1007/s001860400371",
-      "featured": false
-    },
-    {
       "id": "2020-fair-policy-targeting",
       "title": "Fair Policy Targeting",
       "category": "Portfolio Theory",
@@ -3660,25 +3584,6 @@
         "Portfolio design"
       ],
       "sourceUrl": "https://doi.org/10.1080/01621459.2022.2142591",
-      "featured": false
-    },
-    {
-      "id": "1998-convexification-of-a-noninferior-frontier",
-      "title": "Convexification of a Noninferior Frontier",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 1998,
-      "authors": "C. Goh Xiaoqi Yang",
-      "publication": "Academic Journal",
-      "sourceType": "academic journal",
-      "sourceLabel": "academic journal",
-      "sourceLinkLabel": "View academic journal",
-      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
-      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.1023/A:1022654528902",
       "featured": false
     },
     {
@@ -3720,25 +3625,6 @@
       "featured": false
     },
     {
-      "id": "1999-comparing-different-models-of-evolutionary-three-objective-optimization-using-fuzzy-logic-in-tehran-stock-exchange",
-      "title": "Comparing Different Models of Evolutionary Three-Objective Optimization Using Fuzzy Logic in Tehran Stock Exchange",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 1999,
-      "authors": "M. Salimi M. Fallah Hadi Khajezadeh Dezfuli",
-      "publication": "Academic Journal",
-      "sourceType": "academic journal",
-      "sourceLabel": "academic journal",
-      "sourceLinkLabel": "View academic journal",
-      "summary": "Focuses on portfolio construction, diversification, and the trade-off between seeking return and controlling risk.",
-      "whyItMatters": "This helps frame portfolio construction as a trade-off between concentration, volatility, and expected return.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.22034/IJF.2017.59775",
-      "featured": false
-    },
-    {
       "id": "2006-derivative-free-generation-and-interpolation-of-convex-pareto-optimal-imrt-plans",
       "title": "Derivative-free generation and interpolation of convex Pareto optimal IMRT plans",
       "category": "Portfolio Theory",
@@ -3755,25 +3641,6 @@
         "Portfolio design"
       ],
       "sourceUrl": "https://doi.org/10.1088/0031-9155/51/24/005",
-      "featured": false
-    },
-    {
-      "id": "2012-an-exact-method-for-balancing-efficiency-and-equity-in-the-liver-allocation-hierarchy",
-      "title": "An Exact Method for Balancing Efficiency and Equity in the Liver Allocation Hierarchy",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2012,
-      "authors": "Mehmet C. Demirci A. Schaefer H. Romeijn et al.",
-      "publication": "INFORMS journal on computing",
-      "sourceType": "research report",
-      "sourceLabel": "research report",
-      "sourceLinkLabel": "View research report",
-      "summary": "This is an optimization paper from another field that uses frontier or trade-off language similar to portfolio theory, but it is not a direct investing source.",
-      "whyItMatters": "Useful only as a cross-domain optimization analogue, not as a core portfolio-construction reference.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.1287/ijoc.1110.0445",
       "featured": false
     },
     {
@@ -3796,44 +3663,6 @@
       "featured": false
     },
     {
-      "id": "2014-tu-c-17a-01-a-data-based-development-for-pratical-pareto-optimality-assessment-and-identification",
-      "title": "TU-C-17A-01: A Data-Based Development for Pratical Pareto Optimality Assessment and Identification.",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2014,
-      "authors": "D. Ruan S. Qi J. DeMarco et al.",
-      "publication": "Medical Physics (Lancaster)",
-      "sourceType": "research report",
-      "sourceLabel": "research report",
-      "sourceLinkLabel": "View research report",
-      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
-      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.1118/1.4889276",
-      "featured": false
-    },
-    {
-      "id": "2004-designing-communication-networks-for-distributed-control-agents",
-      "title": "Designing communication networks for distributed control agents",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2004,
-      "authors": "E. Camponogara S. Talukdar",
-      "publication": "European Journal of Operational Research",
-      "sourceType": "research report",
-      "sourceLabel": "research report",
-      "sourceLinkLabel": "View research report",
-      "summary": "This is an optimization paper from another field that uses frontier or trade-off language similar to portfolio theory, but it is not a direct investing source.",
-      "whyItMatters": "Useful only as a cross-domain optimization analogue, not as a core portfolio-construction reference.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.1016/S0377-2217(03)00262-5",
-      "featured": false
-    },
-    {
       "id": "1991-improving-stochastic-communication-network-performance-reliability-vs-throughput",
       "title": "Improving Stochastic Communication Network Performance: Reliability vs. Throughput",
       "category": "Portfolio Theory",
@@ -3850,45 +3679,6 @@
         "Portfolio design"
       ],
       "sourceUrl": "https://www.semanticscholar.org/paper/25a608e6c5b35b8419fd98d7490b68a2f657765f",
-      "featured": false
-    },
-    {
-      "id": "2024-lower-bounds-on-the-noiseless-worst-case-complexity-of-efficient-global-optimization",
-      "title": "Lower Bounds on the Noiseless Worst-Case Complexity of Efficient Global Optimization",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2024,
-      "authors": "Wenjie Xu Yuning Jiang E. Maddalena et al.",
-      "publication": "Journal of Optimization Theory and Applications",
-      "sourceType": "research report",
-      "sourceLabel": "research report",
-      "sourceLinkLabel": "View research report",
-      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
-      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.1007/s10957-024-02399-1",
-      "featured": false
-    },
-    {
-      "id": "2023-on-the-relationship-between-the-value-function-and-the-efficient-frontier-of-a-mixed-integer-linear-optimization-problem",
-      "title": "On the relationship between the value function and the efficient frontier of a mixed integer linear optimization problem",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2023,
-      "authors": "Samira Fallah T. Ralphs N. Boland",
-      "publication": "Mathematical Methods of Operations Research",
-      "sourceType": "research report",
-      "sourceLabel": "research report",
-      "sourceLinkLabel": "View research report",
-      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
-      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
-      "focusTags": [
-        "Portfolio design",
-        "Value"
-      ],
-      "sourceUrl": "https://doi.org/10.1007/s00186-024-00871-2",
       "featured": false
     },
     {
@@ -3911,25 +3701,6 @@
       "featured": false
     },
     {
-      "id": "2024-efp-efficient-frontier-based-autonomous-uav-exploration-strategy-for-unknown-environments",
-      "title": "EFP: Efficient Frontier-Based Autonomous UAV Exploration Strategy for Unknown Environments",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2024,
-      "authors": "Hong Zhang Song-yan Wang Yuanshuai Liu et al.",
-      "publication": "IEEE Robotics and Automation Letters",
-      "sourceType": "research report",
-      "sourceLabel": "research report",
-      "sourceLinkLabel": "View research report",
-      "summary": "This is an optimization paper from another field that uses frontier or trade-off language similar to portfolio theory, but it is not a direct investing source.",
-      "whyItMatters": "Useful only as a cross-domain optimization analogue, not as a core portfolio-construction reference.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.1109/LRA.2024.3363531",
-      "featured": false
-    },
-    {
       "id": "2022-deep-learning-the-efficient-frontier-of-convex-vector-optimization-problems",
       "title": "Deep learning the efficient frontier of convex vector optimization problems",
       "category": "Portfolio Theory",
@@ -3946,25 +3717,6 @@
         "Portfolio design"
       ],
       "sourceUrl": "https://doi.org/10.1007/s10898-024-01408-x",
-      "featured": false
-    },
-    {
-      "id": "2025-efficient-frontier-and-applications-in-product-offering-and-pricing",
-      "title": "Efficient Frontier and Applications in Product Offering and Pricing",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2025,
-      "authors": "Chenxu Ke Lijian Lu Ruxian Wang",
-      "publication": "Manufacturing & Service Operations Management",
-      "sourceType": "research report",
-      "sourceLabel": "research report",
-      "sourceLinkLabel": "View research report",
-      "summary": "This paper applies efficient-frontier ideas to product strategy and pricing rather than to financial portfolios.",
-      "whyItMatters": "Useful as a cross-domain use of frontier thinking, but not a primary investing source.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.1287/msom.2022.0164",
       "featured": false
     },
     {
@@ -3987,25 +3739,6 @@
       "featured": false
     },
     {
-      "id": "2025-enhancing-autonomous-exploration-for-robotics-via-real-time-map-optimization-and-improved-frontier-costs",
-      "title": "Enhancing autonomous exploration for robotics via real time map optimization and improved frontier costs",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2025,
-      "authors": "Chunyang Liu Dingfa Zhang Weitao Liu et al.",
-      "publication": "Scientific Reports",
-      "sourceType": "research report",
-      "sourceLabel": "research report",
-      "sourceLinkLabel": "View research report",
-      "summary": "This is an optimization paper from another field that uses frontier or trade-off language similar to portfolio theory, but it is not a direct investing source.",
-      "whyItMatters": "Useful only as a cross-domain optimization analogue, not as a core portfolio-construction reference.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.1038/s41598-025-97231-9",
-      "featured": false
-    },
-    {
       "id": "2020-uncertainty-of-efficient-frontier-in-portfolio-optimization",
       "title": "Uncertainty of Efficient Frontier in Portfolio Optimization",
       "category": "Portfolio Theory",
@@ -4022,25 +3755,6 @@
         "Portfolio design"
       ],
       "sourceUrl": "https://doi.org/10.1007/978-3-030-53552-0_33",
-      "featured": false
-    },
-    {
-      "id": "2019-a-multiobjective-optimization-approach-to-compute-the-efficient-frontier-in-data-envelopment-analysis",
-      "title": "A multiobjective optimization approach to compute the efficient frontier in data envelopment analysis",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2019,
-      "authors": "M. Ehrgott M. Hasannasab A. Raith",
-      "publication": "Journal of Multi-Criteria Decision Analysis",
-      "sourceType": "research report",
-      "sourceLabel": "research report",
-      "sourceLinkLabel": "View research report",
-      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
-      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.1002/mcda.1684",
       "featured": false
     },
     {
@@ -4063,25 +3777,6 @@
       "featured": false
     },
     {
-      "id": "2022-constrained-efficient-global-optimization-of-expensive-black-box-functions",
-      "title": "Constrained Efficient Global Optimization of Expensive Black-box Functions",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2022,
-      "authors": "Donald R. Jones Matthias Schonlau W. Welch",
-      "publication": "International Conference on Machine Learning",
-      "sourceType": "research report",
-      "sourceLabel": "research report",
-      "sourceLinkLabel": "View research report",
-      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
-      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://www.semanticscholar.org/paper/db2e818f0670e07324884d28392edd3343a37da0",
-      "featured": false
-    },
-    {
       "id": "2017-algorithms-for-construction-of-efficient-frontier-for-nonconvex-models-on-the-basis-of-optimization-methods",
       "title": "Algorithms for construction of efficient frontier for nonconvex models on the basis of optimization methods",
       "category": "Portfolio Theory",
@@ -4098,44 +3793,6 @@
         "Portfolio design"
       ],
       "sourceUrl": "https://doi.org/10.1134/S1064562417050337",
-      "featured": false
-    },
-    {
-      "id": "2024-efficient-bounds-tightening-based-on-socp-relaxations-for-ac-optimal-power-flow",
-      "title": "Efficient bounds tightening based on SOCP relaxations for AC optimal power flow",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2024,
-      "authors": "Yu-cheng Shao Dillard Robertson M. Bynum et al.",
-      "publication": "Optimization and Engineering",
-      "sourceType": "research report",
-      "sourceLabel": "research report",
-      "sourceLinkLabel": "View research report",
-      "summary": "This is an optimization paper from another field that uses frontier or trade-off language similar to portfolio theory, but it is not a direct investing source.",
-      "whyItMatters": "Useful only as a cross-domain optimization analogue, not as a core portfolio-construction reference.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.1007/s11081-024-09891-7",
-      "featured": false
-    },
-    {
-      "id": "2025-an-efficient-global-optimization-algorithm-for-the-sum-of-linear-ratios-problems-based-on-a-novel-adjustable-branching-rule",
-      "title": "An efficient global optimization algorithm for the sum of linear ratios problems based on a novel adjustable branching rule",
-      "category": "Portfolio Theory",
-      "categoryLabel": "Portfolio design",
-      "year": 2025,
-      "authors": "Bingdi Huang Peiping Shen",
-      "publication": "Computational optimization and applications",
-      "sourceType": "research report",
-      "sourceLabel": "research report",
-      "sourceLinkLabel": "View research report",
-      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
-      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
-      "focusTags": [
-        "Portfolio design"
-      ],
-      "sourceUrl": "https://doi.org/10.1007/s10589-025-00679-8",
       "featured": false
     },
     {
