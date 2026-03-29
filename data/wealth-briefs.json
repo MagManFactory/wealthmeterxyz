@@ -1536,8 +1536,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Tests how well different return models explain stock performance, usually by comparing one-factor and multi-factor approaches.",
-      "whyItMatters": "Useful if you want the return model behind common claims about risk, value, size, or profitability.",
+      "summary": "This paper focuses on a measurement problem in asset-pricing tests and asks whether correcting that bias changes the estimated risk premia.",
+      "whyItMatters": "Useful if you want to know how much the econometrics affects the apparent success of a pricing model.",
       "focusTags": [
         "Return drivers"
       ],
@@ -1555,8 +1555,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Tests how well different return models explain stock performance, usually by comparing one-factor and multi-factor approaches.",
-      "whyItMatters": "Best read as a map of which traits the paper treats as priced and which ones it does not.",
+      "summary": "This paper compares asset-pricing models in the Turkish market and asks which factor setup travels best outside the usual U.S. sample.",
+      "whyItMatters": "Useful as a direct test of whether standard pricing models survive in an emerging-market setting.",
       "focusTags": [
         "Return drivers"
       ],
@@ -1574,8 +1574,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Examines which risks, company traits, or market frictions the paper links to differences in long-run returns.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "summary": "The paper studies whether free float and ownership dispersion help explain return differences across stocks. It asks whether market-access characteristics carry a premium that standard models miss.",
+      "whyItMatters": "Useful if you want to know whether who can actually trade a stock matters for pricing.",
       "focusTags": [
         "Return drivers"
       ],
@@ -1593,8 +1593,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Applies a standard return model to a specific market and checks whether the usual factors still hold up outside the main U.S. sample.",
-      "whyItMatters": "Best read as a map of which traits the paper treats as priced and which ones it does not.",
+      "summary": "This paper tests whether human-capital risk was priced in South African equities during the COVID period.",
+      "whyItMatters": "Useful when you want a crisis-period application of labor-risk ideas in asset pricing.",
       "focusTags": [
         "Return drivers"
       ],
@@ -1631,8 +1631,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Tests how well different return models explain stock performance, usually by comparing one-factor and multi-factor approaches.",
-      "whyItMatters": "Best read as a map of which traits the paper treats as priced and which ones it does not.",
+      "summary": "This paper adds Tobin’s Q to asset-pricing models in Pakistan and tests whether investment-related valuation signals improve model fit.",
+      "whyItMatters": "Useful if you want to know whether balance-sheet investment signals add value in an applied pricing model.",
       "focusTags": [
         "Return drivers"
       ],
@@ -1650,8 +1650,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Applies a standard return model to a specific market and checks whether the usual factors still hold up outside the main U.S. sample.",
-      "whyItMatters": "Best read as a map of which traits the paper treats as priced and which ones it does not.",
+      "summary": "This paper tests whether human-capital risk helps explain stock returns in Brazil, especially during stressed market periods.",
+      "whyItMatters": "Useful as a market-specific test of whether labor-income risk belongs in asset-pricing models.",
       "focusTags": [
         "Return drivers"
       ],
@@ -1669,8 +1669,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Tests how well different return models explain stock performance, usually by comparing one-factor and multi-factor approaches.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "summary": "This paper revisits major asset-pricing models and asks whether adding liquidity risk improves their ability to explain returns.",
+      "whyItMatters": "Useful if you think trading friction may be part of the return investors demand.",
       "focusTags": [
         "Return drivers"
       ],
@@ -1688,8 +1688,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Tests whether climate, carbon, or sustainability exposures show up in expected returns and portfolio pricing.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "summary": "This paper examines whether climate risk and climate opportunity exposures alter portfolio choices and the returns investors demand.",
+      "whyItMatters": "Useful when climate exposure is being framed as either purely ethical or purely cosmetic instead of potentially priced.",
       "focusTags": [
         "Return drivers",
         "Portfolio design"
@@ -1708,8 +1708,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Examines which common factors should be used to explain returns and how sensitive the results are to model design.",
-      "whyItMatters": "Best read as a map of which traits the paper treats as priced and which ones it does not.",
+      "summary": "The paper builds asset-pricing factors with sparse statistical methods and tests whether they explain returns in the Chinese market better than standard constructions.",
+      "whyItMatters": "Useful if you want to know how much factor design changes the result in applied asset-pricing work.",
       "focusTags": [
         "Return drivers"
       ],
@@ -1727,8 +1727,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Tests how well different return models explain stock performance, usually by comparing one-factor and multi-factor approaches.",
-      "whyItMatters": "Best read as a map of which traits the paper treats as priced and which ones it does not.",
+      "summary": "This paper compares several asset-pricing models on the BIST 100 and asks which one explains Turkish equity returns best.",
+      "whyItMatters": "Useful as a straightforward model-comparison paper in one market.",
       "focusTags": [
         "Return drivers"
       ],
@@ -1746,8 +1746,8 @@
       "sourceType": "academic journal",
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
-      "summary": "Tests how well different return models explain stock performance, usually by comparing one-factor and multi-factor approaches.",
-      "whyItMatters": "Best read as a map of which traits the paper treats as priced and which ones it does not.",
+      "summary": "This paper compares multifactor pricing models across Asian markets and tests which factors travel best across countries.",
+      "whyItMatters": "Useful when you want cross-country evidence on whether the same factors keep working.",
       "focusTags": [
         "Return drivers"
       ],
@@ -1879,8 +1879,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Examines whether company size helps explain why expected returns differ across stocks.",
-      "whyItMatters": "Useful if you want the return model behind common claims about risk, value, size, or profitability.",
+      "summary": "This paper asks whether merger activity changes the usual size effect and whether acquisition patterns help explain return differences.",
+      "whyItMatters": "Useful if you want to know whether corporate events are part of what looks like a size premium.",
       "focusTags": [
         "Return drivers"
       ],
@@ -1898,8 +1898,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Tests whether climate, carbon, or sustainability exposures show up in expected returns and portfolio pricing.",
-      "whyItMatters": "Best read as evidence on which risks or traits investors have historically been paid for.",
+      "summary": "This paper studies whether carbon risk is priced in Korean equities and whether that exposure changes expected returns.",
+      "whyItMatters": "Useful as a direct test of carbon-risk pricing in a non-U.S. market.",
       "focusTags": [
         "Return drivers"
       ],
@@ -1974,8 +1974,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Tests whether climate, carbon, or sustainability exposures show up in expected returns and portfolio pricing.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "summary": "This paper studies how sustainable-equity portfolios behave in Pakistan and whether their return dynamics differ from standard portfolios.",
+      "whyItMatters": "Useful as a market-specific test of sustainable-investing claims in an emerging market.",
       "focusTags": [
         "Return drivers",
         "Portfolio design"
@@ -2013,8 +2013,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Examines whether different forms of risk, such as volatility or tail exposure, help explain why some assets earn more than others.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "summary": "This paper studies whether changes in volatility itself, not just volatility level, are priced in expected returns.",
+      "whyItMatters": "Useful if you want a more advanced risk story than plain volatility alone.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2051,8 +2051,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Examines which risks, company traits, or market frictions the paper links to differences in long-run returns.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "summary": "This paper asks whether variation in capital-share risk helps explain expected returns in U.S. equities.",
+      "whyItMatters": "Useful if you want a macroeconomic risk channel beyond the standard factor set.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2376,8 +2376,8 @@
       "sourceType": "finance journal",
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "summary": "This paper studies whether war-related public discourse changes which stocks command higher expected returns.",
+      "whyItMatters": "Useful if you want to see how geopolitical narrative can enter the return cross section.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2414,8 +2414,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "Best read as a map of which traits the paper treats as priced and which ones it does not.",
+      "summary": "This paper tests whether ESG-related variables help explain expected returns and uses LASSO to control which ones actually matter.",
+      "whyItMatters": "Useful if you want ESG return claims filtered through a stricter variable-selection method.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2433,8 +2433,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "Useful if you want the return model behind common claims about risk, value, size, or profitability.",
+      "summary": "This paper studies whether lottery-like preference helps explain return differences across cryptocurrencies.",
+      "whyItMatters": "Useful if you want a behavioral asset-pricing lens on crypto rather than a pure technology story.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2452,8 +2452,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Fama and French test which stock traits line up with higher returns and find that size and value help explain a large share of the gap between winners and losers.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "summary": "This version revisits the cross-section return question and tests which firm traits still matter once common factor explanations are imposed.",
+      "whyItMatters": "Useful as a companion to the original Fama-French paper rather than a replacement for it.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2471,8 +2471,8 @@
       "sourceType": "academic journal",
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "Best read as a map of which traits the paper treats as priced and which ones it does not.",
+      "summary": "This paper uses implied beliefs from active fund managers to study the cross section of expected returns.",
+      "whyItMatters": "Useful if you want a manager-expectations angle on the expected-return problem.",
       "focusTags": [
         "Return drivers",
         "Mutual funds",
@@ -2492,8 +2492,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "Best read as a map of which traits the paper treats as priced and which ones it does not.",
+      "summary": "This paper applies expected-return sorting to REITs and tests whether future investment growth helps explain return differences in real-estate securities.",
+      "whyItMatters": "Useful as a property-market application of cross-section return research.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2530,8 +2530,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "summary": "This paper tests whether earnings retention and book-to-market help explain why expected returns differ across stocks.",
+      "whyItMatters": "Useful when the question is whether accounting structure adds to standard value signals.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2549,8 +2549,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "Useful if you want the return model behind common claims about risk, value, size, or profitability.",
+      "summary": "This paper asks whether slow price adjustment helps explain cross-section return differences and separates that delay into clearer components.",
+      "whyItMatters": "Useful if you want to know whether sluggish information incorporation shows up in expected returns.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2568,8 +2568,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "summary": "This paper tests whether bank-credit conditions and consumption risk help explain why expected returns differ across stocks.",
+      "whyItMatters": "Useful when you want a macro-finance link between credit conditions and equity pricing.",
       "focusTags": [
         "Return drivers",
         "Spending"
@@ -2607,8 +2607,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "summary": "This paper applies the Fama-French five-factor framework to Nepal and checks which factors still explain return differences there.",
+      "whyItMatters": "Useful as a simple portability test for a major factor model outside core developed markets.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2626,8 +2626,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "Useful if you want the return model behind common claims about risk, value, size, or profitability.",
+      "summary": "This paper revisits whether market risk by itself explains enough of the cross section of stock returns or whether other traits still matter.",
+      "whyItMatters": "Useful if you want the single-factor view tested against broader cross-section evidence.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2665,8 +2665,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "Useful if you want the return model behind common claims about risk, value, size, or profitability.",
+      "summary": "This paper studies whether the structure of broker relationships helps explain which stocks earn higher returns. It treats market connectivity as a priced feature rather than a purely microstructural detail.",
+      "whyItMatters": "Useful if you want to know whether information networks can show up in expected returns.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2684,8 +2684,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "Best read as a map of which traits the paper treats as priced and which ones it does not.",
+      "summary": "This paper studies whether war-related public discourse changes which stocks command higher expected returns.",
+      "whyItMatters": "Useful if you want to see how geopolitical narrative can enter the return cross section.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2703,8 +2703,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "Best read as a map of which traits the paper treats as priced and which ones it does not.",
+      "summary": "This paper tests the cross section of expected stock returns in Nepal and asks whether familiar factor patterns survive in that market.",
+      "whyItMatters": "Useful as another portability check for cross-section return research outside major markets.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2722,8 +2722,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Asks whether stock-specific risk is rewarded in returns or simply reflects noise that investors do not get paid for bearing.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "summary": "The paper studies whether higher-order idiosyncratic risk measures help explain return differences across REITs.",
+      "whyItMatters": "Useful if you want a more technical property-securities test of whether unusual risk moments get priced.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2741,8 +2741,8 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "summary": "This paper tests whether option-implied asymmetry and tail-shape measures help explain return differences across stocks.",
+      "whyItMatters": "Useful if you want a forward-looking derivatives-based view of priced risk.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2760,8 +2760,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "Best read as a map of which traits the paper treats as priced and which ones it does not.",
+      "summary": "This paper asks whether stocks that are more exposed to severe downside outcomes earn higher expected returns as compensation.",
+      "whyItMatters": "Useful when the real question is whether investors get paid for exposure to crash-like outcomes.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2798,8 +2798,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "Best read as a map of which traits the paper treats as priced and which ones it does not.",
+      "summary": "This paper argues that predictable return patterns in the cross section create a problem for standard asset-pricing models.",
+      "whyItMatters": "Useful when you want to see where empirical predictability is pressuring theory.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2817,8 +2817,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "summary": "This paper links equilibrium asset-pricing theory to the empirical cross section of expected returns and asks whether the theory can match the data.",
+      "whyItMatters": "Useful if you want the cross-section debate tied back to formal pricing theory.",
       "focusTags": [
         "Return drivers"
       ],
@@ -2836,8 +2836,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Studies which company traits, risks, or signals line up with higher future returns across many stocks rather than in one isolated case.",
-      "whyItMatters": "This helps anchor stock-return debates in an explicit pricing model instead of loose intuition.",
+      "summary": "This paper tests whether volatility and skewness help explain expected-return differences across Chinese stocks.",
+      "whyItMatters": "Useful if you want a cleaner answer to whether higher-moment risk is actually priced in equities.",
       "focusTags": [
         "Return drivers"
       ],
@@ -3578,8 +3578,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Focuses on portfolio construction, diversification, and the trade-off between seeking return and controlling risk.",
-      "whyItMatters": "Best read when the real issue is how to build a portfolio instead of how to pick a single winner.",
+      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
+      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -3597,8 +3597,8 @@
       "sourceType": "academic journal",
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
-      "summary": "Focuses on portfolio construction, diversification, and the trade-off between seeking return and controlling risk.",
-      "whyItMatters": "Useful if you want to understand what diversification is buying you and what it is not.",
+      "summary": "This is an optimization paper from another field that uses frontier or trade-off language similar to portfolio theory, but it is not a direct investing source.",
+      "whyItMatters": "Useful only as a cross-domain optimization analogue, not as a core portfolio-construction reference.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -3616,8 +3616,8 @@
       "sourceType": "academic journal",
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
-      "summary": "Focuses on portfolio construction, diversification, and the trade-off between seeking return and controlling risk.",
-      "whyItMatters": "Best read when the real issue is how to build a portfolio instead of how to pick a single winner.",
+      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
+      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -3635,8 +3635,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Focuses on portfolio construction, diversification, and the trade-off between seeking return and controlling risk.",
-      "whyItMatters": "This helps frame portfolio construction as a trade-off between concentration, volatility, and expected return.",
+      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
+      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -3673,8 +3673,8 @@
       "sourceType": "academic journal",
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
-      "summary": "Focuses on portfolio construction, diversification, and the trade-off between seeking return and controlling risk.",
-      "whyItMatters": "Useful if you want to understand what diversification is buying you and what it is not.",
+      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
+      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -3749,8 +3749,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Focuses on portfolio construction, diversification, and the trade-off between seeking return and controlling risk.",
-      "whyItMatters": "Useful if you want to understand what diversification is buying you and what it is not.",
+      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
+      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -3768,8 +3768,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Focuses on portfolio construction, diversification, and the trade-off between seeking return and controlling risk.",
-      "whyItMatters": "Best read when the real issue is how to build a portfolio instead of how to pick a single winner.",
+      "summary": "This is an optimization paper from another field that uses frontier or trade-off language similar to portfolio theory, but it is not a direct investing source.",
+      "whyItMatters": "Useful only as a cross-domain optimization analogue, not as a core portfolio-construction reference.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -3806,8 +3806,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Focuses on portfolio construction, diversification, and the trade-off between seeking return and controlling risk.",
-      "whyItMatters": "Useful if you want to understand what diversification is buying you and what it is not.",
+      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
+      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -3825,8 +3825,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Focuses on portfolio construction, diversification, and the trade-off between seeking return and controlling risk.",
-      "whyItMatters": "This helps frame portfolio construction as a trade-off between concentration, volatility, and expected return.",
+      "summary": "This is an optimization paper from another field that uses frontier or trade-off language similar to portfolio theory, but it is not a direct investing source.",
+      "whyItMatters": "Useful only as a cross-domain optimization analogue, not as a core portfolio-construction reference.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -3863,8 +3863,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Focuses on portfolio construction, diversification, and the trade-off between seeking return and controlling risk.",
-      "whyItMatters": "Best read when the real issue is how to build a portfolio instead of how to pick a single winner.",
+      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
+      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -3882,8 +3882,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Centers on the efficient frontier, the trade-off between return and risk when investors combine assets into a portfolio.",
-      "whyItMatters": "Useful if you want to understand what diversification is buying you and what it is not.",
+      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
+      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
       "focusTags": [
         "Portfolio design",
         "Value"
@@ -3902,8 +3902,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Centers on the efficient frontier, the trade-off between return and risk when investors combine assets into a portfolio.",
-      "whyItMatters": "Best read when the real issue is how to build a portfolio instead of how to pick a single winner.",
+      "summary": "This paper applies mean-variance optimization directly to stock portfolios and examines how the efficient frontier behaves in a practical investing setup.",
+      "whyItMatters": "Useful if you want a direct applied example of efficient-frontier portfolio construction.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -3921,8 +3921,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Centers on the efficient frontier, the trade-off between return and risk when investors combine assets into a portfolio.",
-      "whyItMatters": "This helps frame portfolio construction as a trade-off between concentration, volatility, and expected return.",
+      "summary": "This is an optimization paper from another field that uses frontier or trade-off language similar to portfolio theory, but it is not a direct investing source.",
+      "whyItMatters": "Useful only as a cross-domain optimization analogue, not as a core portfolio-construction reference.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -3959,8 +3959,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Centers on the efficient frontier, the trade-off between return and risk when investors combine assets into a portfolio.",
-      "whyItMatters": "Best read when the real issue is how to build a portfolio instead of how to pick a single winner.",
+      "summary": "This paper applies efficient-frontier ideas to product strategy and pricing rather than to financial portfolios.",
+      "whyItMatters": "Useful as a cross-domain use of frontier thinking, but not a primary investing source.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -3997,8 +3997,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Focuses on portfolio construction, diversification, and the trade-off between seeking return and controlling risk.",
-      "whyItMatters": "This helps frame portfolio construction as a trade-off between concentration, volatility, and expected return.",
+      "summary": "This is an optimization paper from another field that uses frontier or trade-off language similar to portfolio theory, but it is not a direct investing source.",
+      "whyItMatters": "Useful only as a cross-domain optimization analogue, not as a core portfolio-construction reference.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -4016,8 +4016,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Centers on the efficient frontier, the trade-off between return and risk when investors combine assets into a portfolio.",
-      "whyItMatters": "Best read when the real issue is how to build a portfolio instead of how to pick a single winner.",
+      "summary": "This paper asks how stable the efficient frontier is once estimation uncertainty is admitted into portfolio optimization.",
+      "whyItMatters": "Useful when you want to know how fragile optimized portfolios can become once inputs are noisy.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -4035,8 +4035,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Centers on the efficient frontier, the trade-off between return and risk when investors combine assets into a portfolio.",
-      "whyItMatters": "Best read when the real issue is how to build a portfolio instead of how to pick a single winner.",
+      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
+      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -4073,8 +4073,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Focuses on portfolio construction, diversification, and the trade-off between seeking return and controlling risk.",
-      "whyItMatters": "Best read when the real issue is how to build a portfolio instead of how to pick a single winner.",
+      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
+      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -4111,8 +4111,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Focuses on portfolio construction, diversification, and the trade-off between seeking return and controlling risk.",
-      "whyItMatters": "Useful if you want to understand what diversification is buying you and what it is not.",
+      "summary": "This is an optimization paper from another field that uses frontier or trade-off language similar to portfolio theory, but it is not a direct investing source.",
+      "whyItMatters": "Useful only as a cross-domain optimization analogue, not as a core portfolio-construction reference.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -4130,8 +4130,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Focuses on portfolio construction, diversification, and the trade-off between seeking return and controlling risk.",
-      "whyItMatters": "Useful if you want to understand what diversification is buying you and what it is not.",
+      "summary": "This paper is mainly about optimization methods and efficient-frontier mathematics rather than about real-world portfolio evidence.",
+      "whyItMatters": "Useful if you care about optimization technique; weaker as a direct source for household or portfolio decisions.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -4149,8 +4149,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Centers on the efficient frontier, the trade-off between return and risk when investors combine assets into a portfolio.",
-      "whyItMatters": "Best read when the real issue is how to build a portfolio instead of how to pick a single winner.",
+      "summary": "This paper derives an efficient frontier for cash-management choices, balancing competing goals in a treasury-style setting rather than a stock portfolio.",
+      "whyItMatters": "Useful if cash management is part of the allocation problem you care about.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -5034,7 +5034,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Choueifaty and Coignard propose a portfolio approach that explicitly tries to maximize diversification rather than only balancing mean and variance. The method focuses on spreading risk contributions more broadly across holdings.",
-      "whyItMatters": "This helps frame portfolio construction as a trade-off between concentration, volatility, and expected return.",
+      "whyItMatters": "Useful if you want a portfolio rule that spreads risk more deliberately than classic mean-variance optimization.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -5091,7 +5091,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "This book presents portfolio construction through an equilibrium lens and helped popularize ideas that later fed into Black-Litterman and other practical allocation frameworks.",
-      "whyItMatters": "Best read when the real issue is how to build a portfolio instead of how to pick a single winner.",
+      "whyItMatters": "Useful as a bridge from theoretical allocation models to practical institutional portfolio design.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -5110,7 +5110,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "This source examines why many investors remain underdiversified even when diversification is widely taught and easy to explain. It treats underdiversification as a persistent behavioral and structural problem.",
-      "whyItMatters": "This helps frame portfolio construction as a trade-off between concentration, volatility, and expected return.",
+      "whyItMatters": "Useful if you want to know why investors still stay underdiversified even after diversification became common knowledge.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -7171,7 +7171,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Bernstein explains asset allocation in practical language, with a strong emphasis on diversification, rebalancing, and staying realistic about risk. The book translates portfolio theory into decisions a household investor can actually use.",
-      "whyItMatters": "This helps frame portfolio construction as a trade-off between concentration, volatility, and expected return.",
+      "whyItMatters": "Useful if you want portfolio theory translated into plain household-investing language.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -7190,7 +7190,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Bernstein organizes investing around theory, history, psychology, and business practice. The book aims to show why portfolio success depends on behavior and structure, not just return chasing.",
-      "whyItMatters": "Best read when the real issue is how to build a portfolio instead of how to pick a single winner.",
+      "whyItMatters": "Useful if you want a behavior-aware explanation of why asset allocation and investor discipline matter more than prediction.",
       "focusTags": [
         "Portfolio design"
       ],
@@ -7209,7 +7209,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Swensen argues for a low-cost, disciplined, diversified approach for individual investors rather than manager chasing or stock picking. The book stresses structure, simplicity, and cost control.",
-      "whyItMatters": "Useful if you want to understand what diversification is buying you and what it is not.",
+      "whyItMatters": "Useful if you want a disciplined, low-cost portfolio philosophy built around asset allocation rather than manager selection.",
       "focusTags": [
         "Portfolio design"
       ],
