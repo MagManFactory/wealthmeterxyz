@@ -5855,7 +5855,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Campbell and Shiller study how yield spreads relate to later rate moves. They show that spreads carry information, but not always in the simple expectations-only way that textbook term-structure stories suggest.",
-      "whyItMatters": "This helps explain what a bond yield is paying you for and where that payment can disappear.",
+      "whyItMatters": "Useful if you want to know what the yield curve says about future rates without oversimplifying it.",
       "focusTags": [
         "Bonds and rates",
         "Yield curve"
@@ -5875,7 +5875,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "Cochrane and Piazzesi show that expected bond returns move over time and can be forecast using a combination of forward rates. Bond risk premia are not constant. They expand and contract with the cycle.",
-      "whyItMatters": "Useful if you want bond decisions grounded in rates, spreads, and market friction rather than headline yield alone.",
+      "whyItMatters": "This is one of the strongest papers showing that expected bond returns move over time instead of staying fixed.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -5895,7 +5895,7 @@
       "sourceLabel": "NBER working paper",
       "sourceLinkLabel": "View NBER working paper",
       "summary": "Hicks lays out early theoretical questions about why interest rates and bond yields move the way they do over long history. It is a foundational attempt to explain term structure rather than merely describe it.",
-      "whyItMatters": "Useful if you want bond decisions grounded in rates, spreads, and market friction rather than headline yield alone.",
+      "whyItMatters": "Useful if you want an early attempt to explain the yield curve before modern models took over.",
       "focusTags": [
         "Bonds and rates",
         "Bonds",
@@ -5916,7 +5916,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Cox, Ingersoll, and Ross develop an equilibrium model for how interest rates evolve across maturities. The paper became one of the classic foundations for term-structure modeling.",
-      "whyItMatters": "Best read when income looks attractive but you need to know which risks are sitting underneath it.",
+      "whyItMatters": "Useful when you want the term structure treated as an equilibrium object, not just a fitted curve.",
       "focusTags": [
         "Bonds and rates"
       ],
@@ -5935,7 +5935,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "Vasicek presents a tractable model of interest-rate movements that became a workhorse for pricing bonds and rate-sensitive securities. It is simple enough to use and rich enough to matter.",
-      "whyItMatters": "Useful if you want bond decisions grounded in rates, spreads, and market friction rather than headline yield alone.",
+      "whyItMatters": "This is one of the classic workhorse models behind later rate and bond-pricing work.",
       "focusTags": [
         "Bonds and rates"
       ],
@@ -5954,7 +5954,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Litterman and Scheinkman show that a small number of factors explain most Treasury return movements, especially level, slope, and curvature shifts in the curve. This became one of the most influential organizing ideas in bond investing.",
-      "whyItMatters": "This helps explain what a bond yield is paying you for and where that payment can disappear.",
+      "whyItMatters": "This is one of the standard references for thinking about level, slope, and curvature as the main bond-return drivers.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -5974,7 +5974,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Chen, Roll, and Ross study how broad economic forces affect stock returns and connect those forces to asset-pricing risk. The paper helps bridge macro variables and market returns across asset classes.",
-      "whyItMatters": "Useful if you want bond decisions grounded in rates, spreads, and market friction rather than headline yield alone.",
+      "whyItMatters": "Useful as a macro bridge paper when you want rates and markets discussed in one framework.",
       "focusTags": [
         "Bonds and rates"
       ],
@@ -5993,7 +5993,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Fama and French identify factors that help explain returns across both stocks and bonds, not just within one market. The paper helped unify cross-asset return thinking.",
-      "whyItMatters": "Useful if you want bond decisions grounded in rates, spreads, and market friction rather than headline yield alone.",
+      "whyItMatters": "This matters if you want one paper that links stock and bond returns through shared drivers.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -6033,7 +6033,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "This paper studies what drives changes in corporate credit spreads and shows that spreads move with more than just firm default risk. Marketwide and liquidity-related forces also play a role.",
-      "whyItMatters": "Best read when income looks attractive but you need to know which risks are sitting underneath it.",
+      "whyItMatters": "This is a core paper for anyone who wants to know why credit spreads move more than default models predict.",
       "focusTags": [
         "Bonds and rates",
         "Credit spreads"
@@ -6053,7 +6053,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Duffie and Singleton build a framework for pricing bonds that carry default risk rather than assuming Treasuries and corporates behave the same way. The model became a key building block in credit pricing.",
-      "whyItMatters": "Useful if you want bond decisions grounded in rates, spreads, and market friction rather than headline yield alone.",
+      "whyItMatters": "Useful when you need a proper framework for combining interest-rate risk with default risk.",
       "focusTags": [
         "Bonds and rates",
         "Defaults",
@@ -6074,7 +6074,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Merton offers a structural way to think about risky debt by linking debt value to the value and volatility of the underlying firm. It is a foundational step in modern credit-risk modeling.",
-      "whyItMatters": "Useful if you want bond decisions grounded in rates, spreads, and market friction rather than headline yield alone.",
+      "whyItMatters": "This is one of the foundational links between firm value and risky debt pricing.",
       "focusTags": [
         "Bonds and rates",
         "Debt payoff"
@@ -6094,7 +6094,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "This paper studies how transparency and market structure affect the cost of trading corporate bonds. It shows that bond-market frictions can be large and that better transparency can change who pays them.",
-      "whyItMatters": "This helps explain what a bond yield is paying you for and where that payment can disappear.",
+      "whyItMatters": "Useful when you want to know who pays for opacity in the corporate bond market.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -6114,7 +6114,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "This paper measures how illiquid corporate bonds can be relative to more transparent or actively traded markets. It shows that trading frictions are an important part of corporate bond returns.",
-      "whyItMatters": "Useful if you want bond decisions grounded in rates, spreads, and market friction rather than headline yield alone.",
+      "whyItMatters": "Useful if you suspect part of a bond yield is really a payment for not being able to trade easily.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -6134,7 +6134,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "This paper studies whether expected bond returns change through time across countries rather than staying fixed. The evidence suggests that bond return opportunities shift with global and local conditions.",
-      "whyItMatters": "Best read when income looks attractive but you need to know which risks are sitting underneath it.",
+      "whyItMatters": "Useful when bond opportunities are being described as stable even though the evidence says otherwise.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -6154,7 +6154,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Bekaert, Hodrick, and Marshall study why simple tests of the expectations hypothesis can be misleading. They show that statistical bias can distort the apparent evidence on how the yield curve works.",
-      "whyItMatters": "Useful if you want bond decisions grounded in rates, spreads, and market friction rather than headline yield alone.",
+      "whyItMatters": "Useful if you want to know whether a clean yield-curve result is real or partly a testing artifact.",
       "focusTags": [
         "Bonds and rates"
       ],
@@ -6173,7 +6173,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "This paper combines no-arbitrage bond pricing with macro variables and hidden state factors to model the yield curve more realistically. It links rates to both observable economics and latent dynamics.",
-      "whyItMatters": "Best read when income looks attractive but you need to know which risks are sitting underneath it.",
+      "whyItMatters": "Useful if you want the yield curve tied to macro forces rather than treated as a standalone shape.",
       "focusTags": [
         "Bonds and rates"
       ],
@@ -6212,7 +6212,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "This paper studies whether factor-style ideas such as value, carry, low risk, or momentum can also work in corporate bonds. It applies the factor lens to a market often treated as yield-only.",
-      "whyItMatters": "Useful if you want bond decisions grounded in rates, spreads, and market friction rather than headline yield alone.",
+      "whyItMatters": "Useful when you want to know whether factor language survives outside equities and into credit.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -6232,7 +6232,7 @@
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
       "summary": "The paper studies whether corporate bond returns can be organized around a small set of common drivers rather than many isolated security stories. It helps simplify a market that often looks fragmented.",
-      "whyItMatters": "Useful if you want bond decisions grounded in rates, spreads, and market friction rather than headline yield alone.",
+      "whyItMatters": "Useful if you want the bond-market version of factor thinking rather than a single-issuer story.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -6252,7 +6252,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "This paper measures how transparency changes transaction costs in the corporate bond market. It shows that market structure can materially affect investor execution.",
-      "whyItMatters": "This helps explain what a bond yield is paying you for and where that payment can disappear.",
+      "whyItMatters": "This is a direct check on whether market structure quietly eats part of bond returns.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -6272,7 +6272,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "This paper studies corporate-bond mutual funds using their actual holdings rather than only fund-level returns. It asks whether managers add value through security selection after costs and constraints.",
-      "whyItMatters": "This helps explain what a bond yield is paying you for and where that payment can disappear.",
+      "whyItMatters": "This matters when a bond manager claims security-selection skill rather than simple yield collection.",
       "focusTags": [
         "Bonds and rates",
         "Mutual funds",
@@ -6293,7 +6293,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "This paper measures the costs investors face when trading municipal bonds in the secondary market. It shows that transaction costs can be meaningful in a market many households treat as safe and sleepy.",
-      "whyItMatters": "Useful if you want bond decisions grounded in rates, spreads, and market friction rather than headline yield alone.",
+      "whyItMatters": "This matters if tax-free income is being judged without counting trading friction.",
       "focusTags": [
         "Bonds and rates",
         "Bonds"
@@ -6313,7 +6313,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "This paper shows that appraisal-based real estate return series often look smoother than the real market because appraisals lag and mute price changes. Reported property volatility can therefore look lower than actual economic risk.",
-      "whyItMatters": "Best read when housing or property looks safe on the surface but the pricing mechanics are doing more work than expected.",
+      "whyItMatters": "This is the classic warning that appraisal-based property volatility is often understated.",
       "focusTags": [
         "Housing and property"
       ],
@@ -6351,7 +6351,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "The paper links commercial real estate returns to broader economic risk factors rather than treating property as a world of its own. It shows that property returns move with macro conditions in ways investors can measure.",
-      "whyItMatters": "Best read when housing or property looks safe on the surface but the pricing mechanics are doing more work than expected.",
+      "whyItMatters": "Useful when you want commercial property tied back to macro risk rather than treated as a standalone world.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6371,7 +6371,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "This paper compares commercial property values with underlying fundamentals and investor mood. It argues that sentiment can push valuations away from the income and macro drivers that would normally anchor them.",
-      "whyItMatters": "This helps separate real-estate cash-flow economics from appraisal smoothing and market narrative.",
+      "whyItMatters": "This matters when commercial property pricing may be reflecting narrative as much as cash flow.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6391,7 +6391,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "The paper compares different ways to build commercial real estate price indices and shows that the method used can materially change the picture of returns and volatility.",
-      "whyItMatters": "Best read when housing or property looks safe on the surface but the pricing mechanics are doing more work than expected.",
+      "whyItMatters": "This is a reminder that property-index methodology can change the apparent return story.",
       "focusTags": [
         "Housing and property",
         "Real estate",
@@ -6412,7 +6412,7 @@
       "sourceLabel": "NBER working paper",
       "sourceLinkLabel": "View NBER working paper",
       "summary": "This NBER paper looks at why house prices and homeownership changed so sharply in the 2000s, with attention to credit conditions, demand, and supply. It tries to separate structural drivers from simple bubble talk.",
-      "whyItMatters": "Useful if you want to know whether property returns are coming from fundamentals, leverage, or stale pricing.",
+      "whyItMatters": "Useful if you want the 2000s housing run-up broken into structural drivers rather than sloganized as a bubble.",
       "focusTags": [
         "Housing and property",
         "Housing"
@@ -6451,7 +6451,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "Himmelberg, Mayer, and Sinai examine whether high house prices necessarily imply a bubble. They show that financing costs, rent equivalents, and local conditions can justify more of the price level than simple ratio-based arguments suggest.",
-      "whyItMatters": "Best read when housing or property looks safe on the surface but the pricing mechanics are doing more work than expected.",
+      "whyItMatters": "This is one of the better papers for separating expensive housing from obvious bubble claims.",
       "focusTags": [
         "Housing and property",
         "Housing"
@@ -6490,7 +6490,7 @@
       "sourceLabel": "NBER working paper",
       "sourceLinkLabel": "View NBER working paper",
       "summary": "The paper studies what drives real house prices over time, including income, construction costs, demographics, and financing conditions. It treats house prices as the result of several interacting forces rather than one single cycle story.",
-      "whyItMatters": "Useful if you want to know whether property returns are coming from fundamentals, leverage, or stale pricing.",
+      "whyItMatters": "This is a direct look at which variables actually move real house prices over time.",
       "focusTags": [
         "Housing and property",
         "Housing"
@@ -6510,7 +6510,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "The paper asks whether stock market information, especially from listed property vehicles, can help explain or forecast real estate returns. Public markets may reveal information faster than appraisals or private deals do.",
-      "whyItMatters": "Useful if you want to know whether property returns are coming from fundamentals, leverage, or stale pricing.",
+      "whyItMatters": "Useful if you want faster public-market signals for an asset class often measured slowly.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6530,7 +6530,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "This paper tests how closely stock and real estate prices move together across countries. The answer is mixed: there is some connection, but the link is not stable enough to treat the two assets as the same thing.",
-      "whyItMatters": "This helps separate real-estate cash-flow economics from appraisal smoothing and market narrative.",
+      "whyItMatters": "This matters when property is being treated as either totally separate from equities or just an equity proxy.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6550,7 +6550,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "The paper studies how the risk premium in real estate changes over time rather than staying constant. Property returns can therefore look very different across calm periods and stressed periods.",
-      "whyItMatters": "Best read when housing or property looks safe on the surface but the pricing mechanics are doing more work than expected.",
+      "whyItMatters": "Useful if you want to know whether property risk premia stay stable across cycles.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6570,7 +6570,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "This paper models real estate returns across countries using several common drivers instead of one local story at a time. It shows that global property returns share some common risk factors even when local details differ.",
-      "whyItMatters": "Useful if you want to know whether property returns are coming from fundamentals, leverage, or stale pricing.",
+      "whyItMatters": "Useful when global property is being sold as local intuition rather than a set of shared risk exposures.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6590,7 +6590,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "The paper studies how much diversification real estate actually adds and where the limits appear. Property can diversify a portfolio, but concentration by region, type, or cycle can shrink the benefit.",
-      "whyItMatters": "Best read when housing or property looks safe on the surface but the pricing mechanics are doing more work than expected.",
+      "whyItMatters": "Useful if the diversification case for property is being made without enough attention to concentration risk.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6610,7 +6610,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "This paper tests real estate as a diversifier across several countries. It finds that property can improve portfolio mix in some settings, but the strength of the benefit depends on market structure and correlation patterns.",
-      "whyItMatters": "Useful if you want to know whether property returns are coming from fundamentals, leverage, or stale pricing.",
+      "whyItMatters": "Useful if you want the diversification case for property tested across countries rather than assumed.",
       "focusTags": [
         "Housing and property",
         "Real estate",
@@ -6631,7 +6631,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "The paper separates current income from expected growth when thinking about commercial property returns. It shows that return expectations depend on more than cap rates alone.",
-      "whyItMatters": "Useful if you want to know whether property returns are coming from fundamentals, leverage, or stale pricing.",
+      "whyItMatters": "Useful when cap rates are being treated as the whole return story.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6651,7 +6651,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "This paper examines how well real estate prices can be forecast and which variables help. It suggests that prediction is possible to a degree, but far less cleanly than many market narratives imply.",
-      "whyItMatters": "Useful if you want to know whether property returns are coming from fundamentals, leverage, or stale pricing.",
+      "whyItMatters": "Useful if you want a reality check on how predictable property prices really are.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6671,7 +6671,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "The paper looks at whether managers running funds of REITs add value through selection and allocation. It tests whether layering active management on top of listed property vehicles actually improves investor outcomes.",
-      "whyItMatters": "Useful if you want to know whether property returns are coming from fundamentals, leverage, or stale pricing.",
+      "whyItMatters": "Useful if you want to know whether active management adds value even after you already chose listed real estate.",
       "focusTags": [
         "Housing and property",
         "Value"
@@ -6691,7 +6691,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "This paper studies the return and risk profile of equity REITs using public-market evidence. It helps frame listed real estate as a serious asset class with its own mix of income, leverage, and market sensitivity.",
-      "whyItMatters": "This helps separate real-estate cash-flow economics from appraisal smoothing and market narrative.",
+      "whyItMatters": "Useful if you want listed real estate treated as a real capital-market asset rather than a housing anecdote.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6711,7 +6711,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "The paper uses multiple benchmark indices to understand what drives REIT performance. It shows that listed property returns reflect more than one source of risk at the same time.",
-      "whyItMatters": "Best read when housing or property looks safe on the surface but the pricing mechanics are doing more work than expected.",
+      "whyItMatters": "Useful when one benchmark is not enough to explain REIT behavior.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6731,7 +6731,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "This paper compares private and public asset performance and highlights the valuation and liquidity issues that complicate direct comparisons. Private assets can look smoother partly because they are priced differently.",
-      "whyItMatters": "Useful if you want to know whether property returns are coming from fundamentals, leverage, or stale pricing.",
+      "whyItMatters": "Useful if you want to know how much private-asset smoothness is real and how much is measurement.",
       "focusTags": [
         "Housing and property"
       ],
@@ -6750,7 +6750,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "The paper compares listed and private real estate over a long horizon with a more careful method than simple headline return charts. It tries to isolate what is real performance difference and what is just measurement difference.",
-      "whyItMatters": "This helps separate real-estate cash-flow economics from appraisal smoothing and market narrative.",
+      "whyItMatters": "Useful when listed and private property are being compared as if the data were directly interchangeable.",
       "focusTags": [
         "Housing and property",
         "Real estate"
@@ -6770,7 +6770,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "This paper builds a commercial property return series using a repeated-measures method to improve on simpler index construction. It aims to give a cleaner long-run picture of private commercial real estate performance.",
-      "whyItMatters": "Useful if you want to know whether property returns are coming from fundamentals, leverage, or stale pricing.",
+      "whyItMatters": "Useful when private-commercial-property returns need a cleaner long-run benchmark.",
       "focusTags": [
         "Housing and property"
       ],
@@ -6789,7 +6789,7 @@
       "sourceLabel": "real estate journal",
       "sourceLinkLabel": "View real estate journal",
       "summary": "This paper looks at how search frictions and illiquidity shape real estate prices and transactions. Unlike stocks, property markets often involve slow matching, delayed sales, and uneven information.",
-      "whyItMatters": "Best read when housing or property looks safe on the surface but the pricing mechanics are doing more work than expected.",
+      "whyItMatters": "This is a clean explanation of why real estate can look stable while actually being slow and hard to clear.",
       "focusTags": [
         "Housing and property",
         "Real estate"
