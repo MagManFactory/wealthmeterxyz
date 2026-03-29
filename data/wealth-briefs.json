@@ -896,7 +896,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "Samuelson gives the formal argument that if information is already reflected in prices, price changes should look unpredictable. It is one of the classic statements behind the random-walk view of markets.",
-      "whyItMatters": "This helps separate a true pricing error from a situation where arbitrage is simply hard to execute.",
+      "whyItMatters": "This is one of the foundational formal statements behind the random-walk view of prices.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -1107,7 +1107,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Lo and MacKinlay test the random-walk idea directly and find patterns inconsistent with a pure random walk in stock prices. The paper gave strong empirical pushback against the simplest form of market efficiency.",
-      "whyItMatters": "This helps separate a true pricing error from a situation where arbitrage is simply hard to execute.",
+      "whyItMatters": "This is one of the classic empirical challenges to the strict random-walk view of markets.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -1126,7 +1126,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "Grossman and Stiglitz argue that perfectly efficient markets cannot exist in a literal sense because someone must have an incentive to gather costly information. If prices were perfectly informative, nobody would pay to produce that information.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "This is the classic argument that perfectly efficient markets would destroy the incentive to gather information.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -1164,7 +1164,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "This paper studies merger arbitrage and shows that the return pattern is tied to deal-specific risks rather than a free lunch. The strategy can look smooth until deal breaks expose the hidden downside.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "Useful if you want merger arbitrage described as a risky strategy rather than a mechanical free spread.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -1480,7 +1480,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Fama and French show that fewer firms pay dividends largely because the market has more young, lower-profit companies than it once did.",
-      "whyItMatters": "Useful if you want to know whether dividends change wealth creation or simply change how return is delivered.",
+      "whyItMatters": "Useful when falling dividend rates are being blamed on management preference alone.",
       "focusTags": [
         "Dividends"
       ],
@@ -1499,7 +1499,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Baker and Wurgler argue that managers sometimes shape dividend policy around investor appetite for dividend-paying stocks, not only around operating needs.",
-      "whyItMatters": "This helps separate payout preference from the underlying economics of the business.",
+      "whyItMatters": "Useful if you want to know whether dividend policy partly follows investor taste rather than pure corporate finance logic.",
       "focusTags": [
         "Dividends"
       ],
@@ -4188,7 +4188,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "This paper uses merger situations to show how limits to arbitrage can leave prices away from their likely end value. It treats M&A spreads as a live example of why mispricing can persist even in watched markets.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "Useful if you want a live transactional setting where mispricing survives despite plenty of professional attention.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4207,7 +4207,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "The paper studies how investor sentiment matters most in stocks that are difficult to value and hard to arbitrage. In those names, mood and narrative can push prices farther away from fundamentals.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "This is one of the clearer papers on where sentiment bites hardest: stocks that are difficult to value and difficult to arbitrage.",
       "focusTags": [
         "Market efficiency",
         "Value"
@@ -4227,7 +4227,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Explains why obvious mispricing can survive when shorting is costly, capital is limited, or investors face funding and career risk.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "Useful if you want a more specialized limits-to-arbitrage paper with liquidity and cognition at the center.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4246,7 +4246,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Explains why obvious mispricing can survive when shorting is costly, capital is limited, or investors face funding and career risk.",
-      "whyItMatters": "This helps separate a true pricing error from a situation where arbitrage is simply hard to execute.",
+      "whyItMatters": "Useful as a broad conceptual entry point into why mispricing can survive.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4265,7 +4265,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Examines whether investor mood and narrative push prices away from fundamentals, especially in hard-to-value securities.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "Useful when sentiment, short-sale limits, and behavior all need to be considered together in one return pattern.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4284,7 +4284,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Examines where prices track fundamentals and where behavior or market frictions let mispricing linger.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "Useful when you want to know whether even short sellers show the same bias patterns seen in long-only investors.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4303,7 +4303,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Examines whether investor mood and narrative push prices away from fundamentals, especially in hard-to-value securities.",
-      "whyItMatters": "This helps separate a true pricing error from a situation where arbitrage is simply hard to execute.",
+      "whyItMatters": "Useful if you want to know whether sentiment weakens cross-country anomaly results in the same way across markets.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4322,7 +4322,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Reviews the main behavioral explanations for mispricing, including bias, slow learning, and the practical limits on arbitrage.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "Useful as a survey of the limits-to-arbitrage literature rather than a single empirical test.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4341,7 +4341,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Examines where prices track fundamentals and where behavior or market frictions let mispricing linger.",
-      "whyItMatters": "This helps separate a true pricing error from a situation where arbitrage is simply hard to execute.",
+      "whyItMatters": "Useful if you want momentum discussed at the industry level rather than only at the single-stock level.",
       "focusTags": [
         "Market efficiency",
         "Momentum"
@@ -4361,7 +4361,7 @@
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
       "summary": "Barberis and Thaler review the main ideas in behavioral finance, including sentiment, overreaction, underreaction, and limits to arbitrage. The paper became a standard map of the field.",
-      "whyItMatters": "This helps separate a true pricing error from a situation where arbitrage is simply hard to execute.",
+      "whyItMatters": "This is still one of the best general maps of how behavioral finance explains underreaction, overreaction, and sentiment-driven mispricing.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4380,7 +4380,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Examines where prices track fundamentals and where behavior or market frictions let mispricing linger.",
-      "whyItMatters": "This helps separate a true pricing error from a situation where arbitrage is simply hard to execute.",
+      "whyItMatters": "Useful if you want a modern test of how much new instruments really reduce arbitrage frictions.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4399,7 +4399,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Examines where prices track fundamentals and where behavior or market frictions let mispricing linger.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "Useful if you want a modern test of how much new instruments really reduce arbitrage frictions.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4418,7 +4418,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "This paper argues that benchmark structure itself can limit arbitrage by pushing professional managers toward index-relative behavior. That helps explain why low-volatility stocks can perform better than a simple theory would suggest.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "Useful if you want to know why benchmark-aware managers may fail to arbitrage away low-volatility outperformance.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4437,7 +4437,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Examines merger arbitrage through a behavioral lens and asks whether investor bias changes how deal risk gets priced.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "Useful if you want merger arbitrage interpreted through investor behavior rather than only deal mechanics.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4456,7 +4456,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "This paper studies how constraints on arbitrage change over time instead of treating them as fixed. It shows that the force keeping mispricing alive can intensify during stress and relax during calmer periods.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "Useful when you want to know whether arbitrage constraints are stable or cyclical.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4475,7 +4475,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "The paper examines whether investor behavior helps explain why firms with rapid asset growth often earn weaker later returns. It links a well-known market anomaly to behavioral overreaction or misplaced optimism.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "Useful if you want a behavioral explanation for why fast asset growth can precede weaker later returns.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4494,7 +4494,7 @@
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
       "summary": "Examines where prices track fundamentals and where behavior or market frictions let mispricing linger.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "Useful if ambiguity itself is the friction you care about, rather than simple cost or funding limits.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4513,7 +4513,7 @@
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
       "summary": "Examines where prices track fundamentals and where behavior or market frictions let mispricing linger.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "Useful if you want to know whether disclosure policy can change how far mispricing persists.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4532,7 +4532,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Examines where prices track fundamentals and where behavior or market frictions let mispricing linger.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "Useful mainly as a behavioral strategy paper, not as a core capital-markets efficiency reference.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4551,7 +4551,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Reviews the main behavioral explanations for mispricing, including bias, slow learning, and the practical limits on arbitrage.",
-      "whyItMatters": "This helps separate a true pricing error from a situation where arbitrage is simply hard to execute.",
+      "whyItMatters": "Useful as a state-of-the-field review rather than as a core empirical anomaly paper.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4570,7 +4570,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Examines where prices track fundamentals and where behavior or market frictions let mispricing linger.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "Useful if you want to know whether behavioral distortions show up in credit as well as equities.",
       "focusTags": [
         "Market efficiency",
         "Bonds"
@@ -4590,7 +4590,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Examines where prices track fundamentals and where behavior or market frictions let mispricing linger.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "Useful as a narrow market-specific anomaly study rather than a general market-efficiency reference.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4609,7 +4609,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Reviews the main behavioral explanations for mispricing, including bias, slow learning, and the practical limits on arbitrage.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "Useful as a general review when you need breadth more than a sharp empirical test.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4628,7 +4628,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Reviews how overconfidence can increase trading, weaken discipline, and leave prices less tethered to intrinsic value.",
-      "whyItMatters": "This helps separate a true pricing error from a situation where arbitrage is simply hard to execute.",
+      "whyItMatters": "Useful if overconfidence is the specific bias you want isolated from the rest of behavioral finance.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4647,7 +4647,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Examines where prices track fundamentals and where behavior or market frictions let mispricing linger.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "Useful as a professional-investor application in one market, not as a field-defining paper.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4666,7 +4666,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Reviews the main behavioral explanations for mispricing, including bias, slow learning, and the practical limits on arbitrage.",
-      "whyItMatters": "This helps separate a true pricing error from a situation where arbitrage is simply hard to execute.",
+      "whyItMatters": "Useful as a quick review of the main behavioral-finance ideas behind mispricing.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4685,7 +4685,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Reviews the main behavioral explanations for mispricing, including bias, slow learning, and the practical limits on arbitrage.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "Useful as a chapter-length survey rather than as a single decisive paper.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4704,7 +4704,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Reviews the main behavioral explanations for mispricing, including bias, slow learning, and the practical limits on arbitrage.",
-      "whyItMatters": "This helps separate a true pricing error from a situation where arbitrage is simply hard to execute.",
+      "whyItMatters": "Useful as a chapter-length orientation to behavioral finance rather than a core source paper.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4723,7 +4723,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "This survey connects behavioral finance with larger macro questions such as asset booms, crashes, and cycles. It expands the discussion from single-stock anomalies to economy-wide behavior and pricing patterns.",
-      "whyItMatters": "This helps separate a true pricing error from a situation where arbitrage is simply hard to execute.",
+      "whyItMatters": "Useful if you want behavioral mispricing linked to macro booms, busts, and broad asset cycles.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4742,7 +4742,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Examines where prices track fundamentals and where behavior or market frictions let mispricing linger.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "Useful as a broad framing piece on how behavioral finance fits into a changing market structure.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4761,7 +4761,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Examines where prices track fundamentals and where behavior or market frictions let mispricing linger.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "Useful only if the essays line up with your subtopic; otherwise it is broader and less direct than the canonical papers.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4780,7 +4780,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Studies a case where investor interpretation drifts away from fundamentals and creates a measurable pricing mistake.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "Useful if you want a concrete example of optimism turning corporate-event news into a pricing mistake.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4799,7 +4799,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Compares market price with estimated intrinsic value and asks how closely the two stay linked in practice.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "Useful when you want the price-versus-value question stated directly rather than through a broader anomaly paper.",
       "focusTags": [
         "Market efficiency",
         "Value"
@@ -4819,7 +4819,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Studies how a newer market instrument finds its price and whether spreads or basis gaps reflect risk, friction, or mispricing.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "Useful if you want to see how efficiency questions carry into newer crypto-market instruments.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -4838,7 +4838,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "Applies an efficiency lens to credit markets and asks whether boom-period prices reflected fundamentals or behavioral overshoot.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "Useful when credit booms are being discussed without enough attention to behavioral overshoot.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -5741,7 +5741,7 @@
       "sourceLabel": "economics journal",
       "sourceLinkLabel": "View economics journal",
       "summary": "Roll studies whether weather affects orange juice prices and uses a very specific market to show how information gets into prices. It is often cited as an example of a market where fundamentals can dominate cleanly.",
-      "whyItMatters": "This helps separate a true pricing error from a situation where arbitrage is simply hard to execute.",
+      "whyItMatters": "Useful as the textbook example of a market where information processing can look unusually clean.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -5779,7 +5779,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "The paper studies recurring seasonal patterns in stock returns rather than treating returns as uniform through the calendar. It helped expand the literature on market seasonality beyond a single anomaly.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "Useful if you want the seasonality literature broadened beyond a single weekend or January effect.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -5798,7 +5798,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "This paper studies whether small-cap return anomalies are tied to specific parts of the calendar. It strengthens the case that market seasonality and firm size can interact in important ways.",
-      "whyItMatters": "Useful if you want to know where markets price information quickly and where mispricing can survive.",
+      "whyItMatters": "Useful if you want to know whether size effects strengthen or weaken in specific calendar windows.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -5817,7 +5817,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "This paper studies whether low price-to-earnings stocks earn higher returns because they are riskier or because markets misprice them. It is part of the early debate over whether value effects are compensation for risk or an anomaly.",
-      "whyItMatters": "Best read as evidence on how behavior and trading constraints can keep prices away from fundamentals.",
+      "whyItMatters": "Useful if you want an early direct test of whether cheap stocks win because of risk or mispricing.",
       "focusTags": [
         "Market efficiency"
       ],
@@ -6942,7 +6942,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Perkins argues that the goal is not to die rich but to time spending, saving, and gifting so money is used when it can create the most value.",
-      "whyItMatters": "This helps separate workable financial habits from advice that sounds good but rarely sticks.",
+      "whyItMatters": "Useful when the real decision is timing spending, not only maximizing the estate left behind.",
       "focusTags": [
         "Household finance"
       ],
@@ -6961,7 +6961,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Maggiulli focuses on the math of saving, investing, and staying invested, with an emphasis on behavior people can actually sustain.",
-      "whyItMatters": "Useful if you want a household money rule simple enough to survive real life.",
+      "whyItMatters": "Useful if you want a practical saving-and-investing framework that leans on consistency instead of optimization.",
       "focusTags": [
         "Household finance"
       ],
@@ -7000,7 +7000,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Fisher argues for buying outstanding businesses that can compound for long periods rather than trading in and out of average companies.",
-      "whyItMatters": "Useful if you want the discipline behind value investing rather than the marketing version of it.",
+      "whyItMatters": "Useful if you care more about finding exceptional businesses than buying statistically cheap ones.",
       "focusTags": [
         "Value investing"
       ],
@@ -7019,7 +7019,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Lynch argues that ordinary investors can find useful ideas by paying attention to products, industries, and businesses they actually know.",
-      "whyItMatters": "Best read when the question is how to value a business without paying up for excitement.",
+      "whyItMatters": "Useful when you want to see how everyday business observation can feed stock ideas.",
       "focusTags": [
         "Value investing"
       ],
@@ -7038,7 +7038,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Lynch extends his stock-picking approach and shows how business observation, category thinking, and patience fit together in practice.",
-      "whyItMatters": "This helps explain what a margin of safety looks like when you actually have to buy at a price.",
+      "whyItMatters": "Useful if you want Lynch's stock-picking style extended beyond the first book.",
       "focusTags": [
         "Value investing"
       ],
@@ -7057,7 +7057,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Greenblatt presents the magic formula, a simple ranking system that mixes earnings yield with return on capital.",
-      "whyItMatters": "Useful if you want the discipline behind value investing rather than the marketing version of it.",
+      "whyItMatters": "Useful if you want a very simplified systematic value screen, not a full valuation framework.",
       "focusTags": [
         "Value investing"
       ],
@@ -7152,7 +7152,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Marks centers investing on cycles, risk control, price discipline, and second-level thinking rather than forecasting brilliance.",
-      "whyItMatters": "Useful if you want the discipline behind value investing rather than the marketing version of it.",
+      "whyItMatters": "Useful if you want value investing framed through cycles, risk control, and second-level thinking.",
       "focusTags": [
         "Value investing"
       ],
@@ -7267,7 +7267,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Chilton packages basic money habits such as paying yourself first, controlling debt, and investing regularly into a simple household system.",
-      "whyItMatters": "Useful if you want a household money rule simple enough to survive real life.",
+      "whyItMatters": "Useful if you want a simple habit-based savings system rather than a complex financial plan.",
       "focusTags": [
         "Household finance"
       ],
@@ -7286,7 +7286,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Kiyosaki frames wealth building around assets, liabilities, cash flow, and financial independence, though the book is more motivational than empirical.",
-      "whyItMatters": "This helps separate workable financial habits from advice that sounds good but rarely sticks.",
+      "whyItMatters": "Useful as a motivational framing device, but weaker than evidence-led books on household finance.",
       "focusTags": [
         "Household finance"
       ],
@@ -7305,7 +7305,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Robin and Dominguez treat money as life energy and build a framework around spending awareness, savings discipline, and intentional work choices.",
-      "whyItMatters": "This helps separate workable financial habits from advice that sounds good but rarely sticks.",
+      "whyItMatters": "Useful if you want household finance tied to spending awareness and life-design choices.",
       "focusTags": [
         "Household finance"
       ],
@@ -7324,7 +7324,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Sethi emphasizes automation, low-cost investing, targeted spending, and system design over constant budgeting.",
-      "whyItMatters": "Useful if you want a household money rule simple enough to survive real life.",
+      "whyItMatters": "Useful if automation and system design matter more to you than meticulous budgeting.",
       "focusTags": [
         "Household finance"
       ],
@@ -7342,8 +7342,8 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Presents a household money system built around saving, spending control, debt management, or long-run investing.",
-      "whyItMatters": "Useful if you want a household money rule simple enough to survive real life.",
+      "summary": "Tobias gives a broad household-finance overview that covers saving, investing, taxes, and portfolio basics in plain language.",
+      "whyItMatters": "Useful as a broad household-finance overview, not as a single-topic authority.",
       "focusTags": [
         "Household finance"
       ],
@@ -7362,7 +7362,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Clason uses short parables to teach saving first, living below means, and putting money to work.",
-      "whyItMatters": "Useful if you want a household money rule simple enough to survive real life.",
+      "whyItMatters": "Useful if you want timeless saving rules presented as simple parables rather than formal analysis.",
       "focusTags": [
         "Household finance"
       ],
@@ -7494,8 +7494,8 @@
       "sourceType": "book",
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
-      "summary": "Uses a market history or case study to show how booms, crashes, leverage, and investor behavior play out in the real world.",
-      "whyItMatters": "Best read when you want to see how market stress unfolds outside tidy textbook models.",
+      "summary": "Lewis uses Salomon Brothers to show how incentives, status games, and trading culture shaped Wall Street in the bond-boom era.",
+      "whyItMatters": "Useful as a culture-and-incentives portrait of bond trading rather than a technical market manual.",
       "focusTags": [
         "Market history"
       ],
@@ -7514,7 +7514,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Lewis examines high-frequency trading, market structure, and how speed advantages can shape execution quality for ordinary investors.",
-      "whyItMatters": "This helps put abstract market risk into an actual historical sequence of decisions and consequences.",
+      "whyItMatters": "Useful when market structure and execution quality matter more than broad market direction.",
       "focusTags": [
         "Market history"
       ],
@@ -7533,7 +7533,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Chancellor surveys major speculative booms and busts to show how recurring patterns of leverage, crowd psychology, and narrative excess keep resurfacing.",
-      "whyItMatters": "Useful if you want a real case study in leverage, liquidity pressure, and crowd behavior.",
+      "whyItMatters": "Useful if you want a long historical pattern of speculative booms rather than a single crisis story.",
       "focusTags": [
         "Market history"
       ],
@@ -7552,7 +7552,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Kindleberger and Aliber lay out a recurring crisis sequence in which credit expansion, speculation, and reversal feed one another.",
-      "whyItMatters": "Useful if you want a real case study in leverage, liquidity pressure, and crowd behavior.",
+      "whyItMatters": "This is one of the standard historical frameworks for how crises build and unwind.",
       "focusTags": [
         "Market history"
       ],
@@ -7571,7 +7571,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "Mackay collects historical episodes of financial and social mania to show how group behavior can overpower sober judgment.",
-      "whyItMatters": "Best read when you want to see how market stress unfolds outside tidy textbook models.",
+      "whyItMatters": "Useful as a long-history catalog of how crowd behavior can overwhelm individual judgment.",
       "focusTags": [
         "Market history"
       ],
@@ -7590,7 +7590,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Soros explains reflexivity, the idea that market beliefs can change the underlying reality and then feed back into prices again.",
-      "whyItMatters": "Best read when you want to see how market stress unfolds outside tidy textbook models.",
+      "whyItMatters": "Useful if reflexivity is the concept you want, rather than a standard market-efficiency framework.",
       "focusTags": [
         "Market history"
       ],
@@ -7609,7 +7609,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "This classic market memoir follows a speculator through booms, losses, and trading errors, with constant attention to timing, leverage, and psychology.",
-      "whyItMatters": "Useful if you want a real case study in leverage, liquidity pressure, and crowd behavior.",
+      "whyItMatters": "Useful when you want market psychology and speculation shown through a lived trading narrative.",
       "focusTags": [
         "Market history"
       ],
@@ -7704,7 +7704,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Thorp recounts how probability, hedging, and disciplined sizing shaped his work in blackjack, options, and hedge funds.",
-      "whyItMatters": "Useful if you want a real case study in leverage, liquidity pressure, and crowd behavior.",
+      "whyItMatters": "Useful if you want a first-person record of probability, hedging, and disciplined risk-taking applied in markets.",
       "focusTags": [
         "Market history"
       ],
@@ -7723,7 +7723,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Hagstrom distills Buffett's approach into business quality, management judgment, capital allocation, and sensible purchase price.",
-      "whyItMatters": "Best read when the question is how to value a business without paying up for excitement.",
+      "whyItMatters": "Useful when you want Buffett-style investing broken into repeatable business-quality heuristics.",
       "focusTags": [
         "Value investing"
       ],
@@ -7742,7 +7742,7 @@
       "sourceLabel": "book",
       "sourceLinkLabel": "View book",
       "summary": "Lowenstein traces Buffett's development from cigar-butt investing toward buying superior businesses at fair prices.",
-      "whyItMatters": "Useful if you want the discipline behind value investing rather than the marketing version of it.",
+      "whyItMatters": "Useful if you want Buffett's development treated historically rather than as a rules-only summary.",
       "focusTags": [
         "Value investing"
       ],
