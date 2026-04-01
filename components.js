@@ -156,6 +156,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="liquidity-illusion.html">The Liquidity Illusion</a>
                     <a href="career-optionality-gap.html">The Career Optionality Gap</a>
                     <a href="asset-rich-cash-poor-paradox.html">The Asset-Rich, Cash-Poor Paradox</a>
                     <a href="housing-stall-2026-rates-inventory-delinquency.html">The 2026 Housing Stall</a>
