@@ -1,4 +1,4 @@
 # Plans
 
 ## Active
-- Publish the April 2 longform addition on the concentration versus diversification tradeoff with Nano Banana visuals, hub wiring, sitemap updates, repo checks, and live verification.
+- Publish the April 3 longform addition on the rent versus buy reversal with Nano Banana visuals, hub wiring, sitemap updates, repo checks, and live verification.
