@@ -156,6 +156,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="overconfidence-cycle.html">The Overconfidence Cycle</a>
                     <a href="hidden-costs-of-ownership.html">The Hidden Costs of Ownership</a>
                     <a href="rent-vs-buy-reversal.html">The Rent vs Buy Reversal</a>
                     <a href="concentration-vs-diversification-tradeoff.html">Concentration vs Diversification</a>
