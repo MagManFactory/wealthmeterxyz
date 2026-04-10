@@ -39,37 +39,37 @@
             <p>WealthMeter utilizes advanced stochastic modeling and logarithmic interpolation to synthesize global financial standing across 140+ sovereign jurisdictions.</p>
 
             <div class="badge-row">
-                <div class="badge">Last Updated: Feb 18, 2026</div>
+                <div class="badge">Last Updated: Apr 10, 2026</div>
             </div>
             
             <div class="method-box">
                 <div class="method-title">0. Coverage & Population Base</div>
-                <p>We provide two baselines. The default is the UBS Global Wealth Report 2024 wealth pyramid (56 markets covering ~92% of global wealth) with an adult sample of ~3.767B. The optional global baseline uses UN World Population Prospects 2024 adult (18+) totals (~5.75B). Toggle the baseline to compare denominators.</p>
+                <p>We provide two baselines. The default is the UBS Global Wealth Report 2025 wealth pyramid across 56 covered markets, with an adult sample of roughly 3.808 billion. The optional global baseline uses the latest available UN World Population Prospects adult (18+) totals from the 2024 revision, roughly 5.75 billion. Toggle the baseline to compare denominators.</p>
             </div>
             
             <div class="method-box">
                 <div class="method-title">1. Logarithmic Percentile Modeling</div>
-                <p>Because wealth distribution is non-linear, we utilize logarithmic interpolation to map individual net worth against the covered adult population (~3.767B). This ensures that rankings remain sensitive at both the median and the extreme "tail" of the distribution.</p>
+                <p>Because wealth distribution is non-linear, we use logarithmic interpolation to map individual net worth against the covered adult population of roughly 3.808 billion. This keeps rank estimates responsive both near the middle and in the upper tail.</p>
                 <div class="formula-block">
                     P(w) = 1 / (1 + (w / k)^α)
                 </div>
-                <p style="font-size: 0.95rem;">Where <em>w</em> represents net worth, <em>k</em> is the median wealth coefficient, and <em>α</em> represents the distribution's shape parameter derived from <strong>Global Institutional Wealth Aggregates</strong>.</p>
+                <p style="font-size: 0.95rem;">Where <em>w</em> represents net worth, <em>k</em> is the median wealth coefficient, and <em>α</em> represents the distribution shape inferred from the UBS 2025 wealth pyramid and the fitted upper-tail counts.</p>
             </div>
 
             <div class="method-box">
                 <div class="method-title">2. Pareto Power-Law Integration</div>
-                <p>For high-net-worth brackets, our engine transitions to a Pareto distribution model. This "Power Law" approach accurately reflects the disproportionate concentration of capital within the top 1% and 0.1% of global households.</p>
+                <p>For high-net-worth brackets, the engine transitions to a Pareto distribution model above USD 5 million. That tail is calibrated against UBS 2025 millionaire counts and Knight Frank 2025 tail estimates rather than extended mechanically from the mid-wealth bands.</p>
             </div>
 
             <div class="method-box">
                 <div class="method-title">3. Sovereign Weighting & Calibration</div>
-                <p>Global rankings are cross-referenced against regional Gini coefficients and periodically updated exchange benchmarks. This allows for a "Perspective" shift, showing how a single net worth value translates into relative standing within specific sovereign economic corridors.</p>
+                <p>Global rankings are cross-referenced against regional adult-population weights and current exchange assumptions. Country comparison panels are illustrative scaling views, not separate national household surveys.</p>
             </div>
 
             <p style="margin-top: 60px; font-size: 0.95rem; opacity: 0.8;"></strong></p>
         </div>
     </main>
     <div id="footer-placeholder"></div>
-    <script src="components.js?v=2026-04-10.1"></script>
+    <script src="components.js?v=2026-04-10.2"></script>
 </body>
 </html>
