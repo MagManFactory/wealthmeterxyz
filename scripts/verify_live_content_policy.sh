@@ -17,12 +17,13 @@ BANNED_REGEX='Visual[[:space:]]+Prompts?[[:space:]]+for[[:space:]]+the[[:space:]
 RETRIES=6
 SLEEP_SEC=20
 STAMP="$(date +%s)"
-
-TMP_URLS="/tmp/live_content_policy_urls.txt"
-TMP_FAIL="/tmp/live_content_policy_failures.txt"
-: > "$TMP_URLS"
-: > "$TMP_FAIL"
-TMP_PAGE="/tmp/live_content_policy_page.html"
+TMP_DIR="$(mktemp -d "/tmp/live_content_policy.XXXXXX")"
+TMP_URLS="${TMP_DIR}/urls.txt"
+TMP_FAIL="${TMP_DIR}/failures.txt"
+TMP_PAGE="${TMP_DIR}/page.html"
+TMP_HIT="${TMP_DIR}/hit.txt"
+touch "$TMP_URLS" "$TMP_FAIL" "$TMP_PAGE" "$TMP_HIT"
+trap 'rm -rf "$TMP_DIR"' EXIT
 
 fetch_status() {
   local url="$1"
@@ -40,6 +41,30 @@ normalize_url() {
   fi
 }
 
+sanitize_candidate() {
+  local raw="$1"
+  local cleaned="${raw%%#*}"
+  cleaned="${cleaned%%\?*}"
+  if [[ -z "$cleaned" ]]; then
+    return 1
+  fi
+
+  if [[ "$cleaned" =~ ^https?:// ]]; then
+    [[ "$cleaned" == "${DOMAIN}"/*.html ]] || return 1
+    printf '%s\n' "$cleaned"
+    return 0
+  fi
+
+  if [[ "$cleaned" =~ ^/ ]]; then
+    [[ "$cleaned" =~ \.html$ ]] || return 1
+    printf '%s\n' "$cleaned"
+    return 0
+  fi
+
+  [[ "$cleaned" =~ ^[A-Za-z0-9._/-]+\.html$ ]] || return 1
+  printf '%s\n' "$cleaned"
+}
+
 for hub in "$@"; do
   hub_url="$(normalize_url "$hub")"
   hub_code="$(fetch_status "$hub_url")"
@@ -53,7 +78,9 @@ for hub in "$@"; do
       | rg -o 'href="[^"]+\.html"' \
       | sed -E 's/^href="([^"]+)"$/\1/' \
       | while IFS= read -r rel; do
-          normalize_url "$rel"
+          sanitized="$(sanitize_candidate "$rel" || true)"
+          [ -n "$sanitized" ] || continue
+          normalize_url "$sanitized"
         done >> "$TMP_URLS"
   fi
 done
@@ -61,6 +88,11 @@ done
 sort -u "$TMP_URLS" -o "$TMP_URLS"
 
 echo "Live content policy scan URL count: $(wc -l < "$TMP_URLS")"
+
+if [ ! -s "$TMP_URLS" ]; then
+  echo "Live content policy check failed: no crawlable URLs were collected."
+  exit 1
+fi
 
 while IFS= read -r url; do
   [ -z "$url" ] && continue
@@ -73,7 +105,7 @@ while IFS= read -r url; do
         break
       fi
     elif [[ "$code" =~ ^4 ]]; then
-      echo "HTTP ${code} for ${url}" >/tmp/live_content_hit.txt
+      echo "HTTP ${code} for ${url}" > "$TMP_HIT"
       break
     fi
     sleep "$SLEEP_SEC"
@@ -82,8 +114,8 @@ while IFS= read -r url; do
   if [ "$ok" -ne 1 ]; then
     {
       echo "=== ${url}"
-      if [ -s /tmp/live_content_hit.txt ]; then
-        cat /tmp/live_content_hit.txt | head -n 20
+      if [ -s "$TMP_HIT" ]; then
+        cat "$TMP_HIT" | head -n 20
       else
         echo "No content fetched after retries."
       fi
