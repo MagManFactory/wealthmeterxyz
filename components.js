@@ -156,6 +156,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="timing-fallacy-public-markets.html">The Timing Fallacy</a>
                     <a href="indexing-saturation-problem.html">The Indexing Saturation Problem</a>
                     <a href="golden-handcuffs-equation.html">The Golden Handcuffs Equation</a>
                     <a href="illiquidity-premium-myth.html">The Illiquidity Premium Myth</a>
