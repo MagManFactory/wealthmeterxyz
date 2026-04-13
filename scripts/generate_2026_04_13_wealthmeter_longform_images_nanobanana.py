@@ -33,29 +33,30 @@ STYLE_BLOCK = (
 
 PROMPTS: list[dict[str, str]] = [
     {
-        "name": "second-home-carry-stack.png",
-        "title": "Second Home Carry Stack",
+        "name": "liquidity-illusion-friction-stack.png",
+        "title": "Liquidity Illusion Friction Stack",
         "prompt": (
-            "Create a 16:9 editorial systems infographic titled "
-            "'The Second-Home Wealth Drain'. "
-            "Use a vertical stacked-cost waterfall. "
-            "Start with 'purchase price' and layer upward into 'mortgage and interest', 'property tax', 'insurance', "
-            "'utilities', 'furnishing and setup', 'maintenance reserve', 'travel and logistics', and 'sale friction'. "
-            "Add a side label reading 'duplicated household carry'. "
-            "Use blue and teal with one amber accent on sale friction."
+            "Create a 16:9 editorial infographic titled "
+            "'The Liquidity Illusion'. "
+            "Show a top bar labeled 'headline balance-sheet value' feeding downward through four clearly labeled friction layers: "
+            "'settlement and timing', 'price uncertainty', 'tax drag', and 'borrowing side effects'. "
+            "At the bottom show a much smaller band labeled 'usable liquidity under stress'. "
+            "Add small side labels for asset types such as cash, taxable securities, retirement accounts, home equity, and private business value. "
+            "Use blue and teal with one amber accent on borrowing side effects."
         ),
     },
     {
-        "name": "second-home-decision-split-grid.png",
-        "title": "Second Home Decision Split Grid",
+        "name": "liquidity-illusion-stress-waterfall.png",
+        "title": "Liquidity Illusion Stress Waterfall",
         "prompt": (
-            "Create a 16:9 editorial comparison grid titled "
-            "'What Category Is The Property Really In?'. "
-            "Use three columns labeled 'lifestyle consumption', 'rental business', and 'investment thesis'. "
-            "Use four row labels 'utilization', 'tax treatment', 'carry burden', and 'balance-sheet flexibility'. "
-            "Show the lifestyle column as high emotional value but weak economics, the rental column as management heavy, "
-            "and the investment column as highly assumption dependent. "
-            "Add a footer note reading 'most buyers mix the columns and underprice the carry'."
+            "Create a 16:9 waterfall-style decision graphic titled "
+            "'What Happens When Stress Compresses Time'. "
+            "Start with a large bar labeled 'reported net worth'. "
+            "Then step down through bars labeled 'not immediately accessible', 'price discount risk', "
+            "'tax and penalty cost', 'credit dependence', and 'minimum operating reserve'. "
+            "End with a final bar labeled 'capital that can buy time'. "
+            "Add a short footer note reading 'wealth and liquidity overlap only partially'. "
+            "Use a clean institutional style with large readable labels and no decorative clutter."
         ),
     },
 ]
