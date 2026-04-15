@@ -679,12 +679,13 @@ document.getElementById('rankerForm').addEventListener('submit', function(e) {
     
     const country = countryData[countryCode];
     const percentile = calculatePercentile(networth, countryCode);
-    const rank = Math.round((percentile / 100) * country.pop);
-    const wealthierThan = country.pop - rank;
+    const adultsBelowYou = Math.round((percentile / 100) * country.pop);
+    const adultsAboveYou = Math.max(0, country.pop - adultsBelowYou);
+    const rank = Math.min(country.pop, adultsAboveYou + 1);
     
     // Update position card
     document.getElementById('percentile').textContent = `Top ${(100 - percentile).toFixed(1)}%`;
-    document.getElementById('description').innerHTML = `You are wealthier than <strong>${formatNumber(wealthierThan)}</strong> adults`;
+    document.getElementById('description').innerHTML = `You are wealthier than <strong>${formatNumber(adultsBelowYou)}</strong> adults`;
     document.getElementById('countryDisplay').textContent = `${country.flag} ${country.name}`;
     
     // Update stats
