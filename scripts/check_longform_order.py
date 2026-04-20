@@ -5,7 +5,7 @@ import argparse
 import re
 import sys
 from pathlib import Path
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 
 
 LONGFORM_BLOCK_RE = re.compile(
@@ -21,7 +21,8 @@ def load_local(path: Path) -> str:
 
 
 def load_remote(url: str) -> str:
-    with urlopen(url, timeout=30) as resp:
+    req = Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urlopen(req, timeout=30) as resp:
         return resp.read().decode("utf-8")
 
 
