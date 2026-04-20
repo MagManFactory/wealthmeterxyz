@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longform | LifeMeter.xyz</title>
+    <meta name="description" content="Longer-form LifeMeter essays and analysis on longevity, AI, and the clinical reality behind high-volatility claims.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lifemeter.xyz/longform.html">
+    <meta property="og:title" content="Longform | LifeMeter.xyz">
+    <meta property="og:description" content="Longer-form LifeMeter essays and analysis on longevity, AI, and evidence quality.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lifemeter.xyz/longform.html">
+    <meta property="og:image" content="https://lifemeter.xyz/images/longform/crm-human-evidence-stack-2026.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Longform | LifeMeter.xyz">
+    <meta name="twitter:description" content="Longer-form LifeMeter essays and analysis on longevity, AI, and evidence quality.">
+    <meta name="twitter:image" content="https://lifemeter.xyz/images/longform/crm-human-evidence-stack-2026.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0d121f;
+            --slate: #334155;
+            --line: #dbe4f0;
+            --blue: #0056b3;
+            --cyan: #00bcd4;
+        }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Outfit', sans-serif; color: var(--ink); background: #ffffff; }
+        .wrap {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 3.5rem 1.25rem 5rem;
+        }
+        .hero {
+            border: 2px solid var(--line);
+            border-radius: 20px;
+            padding: 2rem;
+            background: linear-gradient(145deg, #ffffff, #f8fbff 55%, #eef8ff);
+            margin-bottom: 2rem;
+        }
+        .kicker {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--blue);
+            margin-bottom: 0.9rem;
+            font-weight: 700;
+        }
+        h1 {
+            margin: 0 0 0.8rem;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            font-weight: 900;
+        }
+        .hero p {
+            margin: 0;
+            color: var(--slate);
+            font-size: 1.08rem;
+            max-width: 760px;
+        }
+        .card {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 0;
+            border: 2px solid var(--line);
+            border-radius: 20px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 18px 36px rgba(2, 6, 23, 0.12); }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #f1f5f9;
+            display: block;
+        }
+        .card-content { padding: 1.4rem 1.5rem; background: white; }
+        .meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 0.7rem;
+        }
+        h2 {
+            margin: 0 0 0.75rem;
+            font-size: 1.45rem;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        .card p { margin: 0; color: var(--slate); line-height: 1.6; }
+        @media (max-width: 860px) {
+            .card { grid-template-columns: 1fr; }
+            .card img { max-height: 280px; }
+        }
+    
+        /* dark-mode readability patch */
+        body.dark-mode .article { color: #e2e8f0 !important; }
+        body.dark-mode .article p,
+        body.dark-mode .article li,
+        body.dark-mode .article dd,
+        body.dark-mode .article dt,
+        body.dark-mode .article blockquote {
+            color: #cbd5e1 !important;
+        }
+        body.dark-mode .article .lead { color: #e2e8f0 !important; }
+        body.dark-mode .article .meta,
+        body.dark-mode .article .badge,
+        body.dark-mode .article figcaption,
+        body.dark-mode .article h2 {
+            color: #94a3b8 !important;
+        }
+        body.dark-mode .article strong,
+        body.dark-mode .article b,
+        body.dark-mode .article h1,
+        body.dark-mode .article h3,
+        body.dark-mode .article h4 {
+            color: #f8fafc !important;
+        }
+        body.dark-mode .article h2 { border-top-color: #334155 !important; }
+        body.dark-mode .article a { color: #7dd3fc !important; }
+        body.dark-mode .article figure {
+            background: #0b1220 !important;
+            border-color: #334155 !important;
+        }
+        body.dark-mode .article figcaption {
+            background: #0b1220 !important;
+            border-top: 1px solid #334155;
+        }
+        body.dark-mode .article .callout {
+            background: linear-gradient(130deg, #0f172a, #111c33) !important;
+            border-left-color: #22d3ee !important;
+            border-top: 1px solid #334155;
+            border-right: 1px solid #334155;
+            border-bottom: 1px solid #334155;
+        }
+        body.dark-mode .article .callout p,
+        body.dark-mode .article .callout li,
+        body.dark-mode .article .callout strong {
+            color: #e2e8f0 !important;
+        }
+
+    </style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+<main class="wrap">
+    <section class="hero">
+        <span class="kicker">Longform</span>
+        <h1>Deep analysis for high-volatility longevity claims.</h1>
+        <p>Extended essays that separate validated signal from narrative acceleration across longevity, AI biology, and clinical translation.</p>
+    </section>
+
+    <a class="card" href="caloric-restriction-mimetics-what-actually-works-humans.html">
+        <img src="images/longform/crm-human-evidence-stack-2026.png" alt="Evidence stack separating calorie restriction itself from bounded mimetic categories in humans." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 20, 2026 · 14 min read</div>
+            <h2>Caloric Restriction Mimetics: What Actually Works in Humans</h2>
+            <p>Why some compounds show bounded human signal while none has earned the stronger claim of true calorie-restriction replacement.</p>
+        </div>
+    </a>
+
+    <a class="card" href="partial-cellular-reprogramming-reset-without-cancer-risk.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/partial-reprogramming-control-architecture-2026.png" alt="Editorial systems diagram showing the narrow operating window between full pluripotency risk and insufficient effect in partial cellular reprogramming." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 19, 2026 · 14 min read</div>
+            <h2>Partial Cellular Reprogramming: Reset Without Cancer Risk?</h2>
+            <p>Why the serious question is now control architecture: bounded reset signal is real, but broad safety still fails without durable delivery and shutdown proof.</p>
+        </div>
+    </a>
+
+    <a class="card" href="sirtuins-in-humans-yeast-biology-clinical-relevance.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/sirtuin-evidence-ladder.png" alt="Evidence ladder showing strong mechanistic support for sirtuins in yeast and cell systems, conditional support in animal models, and unresolved proof for human longevity outcomes." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 17, 2026 · 14 min read</div>
+            <h2>Sirtuins in Humans: From Yeast Biology to Clinical Relevance</h2>
+            <p>Why sirtuins remain biologically important while the broad human longevity claim still fails on isoform specificity, pharmacology, and endpoint proof.</p>
+        </div>
+    </a>
+
+    <a class="card" href="regulatory-barriers-to-anti-aging-drugs.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/anti-aging-regulatory-gauntlet.png" alt="Editorial process map showing anti-aging drug development moving through indication choice, endpoint design, trial duration, safety burden, and reimbursement logic." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 16, 2026 · 14 min read</div>
+            <h2>Regulatory Barriers to Anti-Aging Drugs</h2>
+            <p>Why broad anti-aging claims keep narrowing into disease-adjacent programs once indication design, endpoint validation, and payer logic enter the room.</p>
+        </div>
+    </a>
+
+    <a class="card" href="longevity-escape-velocity-realistic-or-misleading.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/longevity-escape-velocity-proof-stack.png" alt="Editorial proof stack showing the evidence layers required for a credible longevity escape velocity claim from mechanism through human serial gains." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 14, 2026 · 14 min read</div>
+            <h2>Longevity Escape Velocity: Realistic or Misleading?</h2>
+            <p>Why LEV remains a serious strategic model for serial repair, but becomes misleading the moment a motivational frame is treated like a validated human timeline.</p>
+        </div>
+    </a>
+
+    <a class="card" href="digital-twins-aging-predictive-biology-scale.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/digital-twin-aging-stack-map.png" alt="Systems map showing an aging digital twin as a layered stack combining longitudinal biomarkers, omics, imaging, wearable signal, and clinical events into prediction, simulation, and intervention ranking outputs." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 13, 2026 · 14 min read</div>
+            <h2>Digital Twins for Aging: Predictive Biology at Scale</h2>
+            <p>Why aging digital twins should be read as predictive biology stacks, not as fully causal virtual humans ready to replace intervention evidence.</p>
+        </div>
+    </a>
+
+    <a class="card" href="extracellular-matrix-aging-forgotten-target.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/extracellular-matrix-aging-system-map.png" alt="Systems map showing how collagen cross-linking, elastin fragmentation, fibrosis, and altered signaling in the extracellular matrix drive vascular stiffness, weak regeneration, and organ decline." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 12, 2026 · 14 min read</div>
+            <h2>Extracellular Matrix Aging: The Forgotten Target</h2>
+            <p>Why tissue repair keeps hitting a ceiling when the scaffold itself is stiff, cross-linked, profibrotic, and still biologically old.</p>
+        </div>
+    </a>
+
+    <a class="card" href="senomorphics-vs-senolytics-slowing-vs-removing-damage.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/senomorphic-vs-senolytic-decision-map.png" alt="Decision map separating when senolytics fit best, when senomorphics fit best, and where the evidence remains too weak for either strategy." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 11, 2026 · 14 min read</div>
+            <h2>Senomorphics vs Senolytics: Slowing vs Removing Damage</h2>
+            <p>Why the real question in senescence medicine is not whether senescence matters, but whether a tissue needs suppression, clearance, or no direct intervention at all.</p>
+        </div>
+    </a>
+
+    <a class="card" href="metformin-as-longevity-drug-evidence-vs-assumption.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/metformin-evidence-assumption-ladder.png" alt="Evidence ladder separating established diabetes-prevention and metabolic evidence for metformin from the still-unproven broad longevity claim." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 10, 2026 · 14 min read</div>
+            <h2>Metformin as a Longevity Drug: Evidence vs Assumption</h2>
+            <p>Why metformin remains a serious geroscience candidate, but still lacks decisive proof as a broad human longevity intervention.</p>
+        </div>
+    </a>
+
+    <a class="card" href="yamanaka-factors-in-vivo-progress-constraints.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/yamanaka-in-vivo-progress-map.png" alt="Timeline-style map showing the shift from full pluripotency risk to cyclic partial reprogramming, tissue-specific rescue, and gene-therapy delivery in animal models." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 9, 2026 · 14 min read</div>
+            <h2>Yamanaka Factors in Vivo: Progress and Constraints</h2>
+            <p>Why partial reprogramming is now a real preclinical platform, and why delivery, safety, and cell-identity control still set the true boundary.</p>
+        </div>
+    </a>
+
+    <a class="card" href="nad-restoration-mechanism-hype-clinical-signal.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/nad-restoration-pathway-bottlenecks.png" alt="Pathway diagram showing precursor intake, blood NAD signals, tissue uptake, and downstream bottlenecks that limit broad clinical benefit." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 6, 2026 · 14 min read</div>
+            <h2>NAD+ Restoration: Mechanism, Hype, and Clinical Signal</h2>
+            <p>Why the pathway case is strong, the supplement story is weaker, and the clinical evidence is still narrower than the market implies.</p>
+        </div>
+    </a>
+
+    <a class="card" href="longevity-clinics-science-protocols-variability.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/longevity-clinic-stack-map.png" alt="Systems map showing how screening, prevention, hormone management, off-label therapeutics, and monitoring are combined inside real-world longevity clinics." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 5, 2026 · 14 min read</div>
+            <h2>Longevity Clinics: Science, Protocols, and Variability</h2>
+            <p>Why clinic-to-clinic differences are not superficial branding variation, but evidence-translation differences with real consequence.</p>
+        </div>
+    </a>
+
+    <a class="card" href="is-aging-a-disease-or-an-adaptive-program.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/aging-disease-vs-adaptive-program-map.png" alt="Comparison chart separating disease framing, shared overlap, and quasi-program explanations in the aging debate." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 4, 2026 · 14 min read</div>
+            <h2>Is Aging a Disease or an Adaptive Program?</h2>
+            <p>Why the cleanest current answer is pragmatic disease framing for medicine plus mixed-mechanism biology for explanation.</p>
+        </div>
+    </a>
+
+    <a class="card" href="ai-designed-longevity-drugs-early-successes-limits.html">
+        <img src="images/longform/ai-longevity-drug-pipeline-map.png" alt="Pipeline map showing where AI helps in longevity drug design and where validation bottlenecks still dominate." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 3, 2026 · 14 min read</div>
+            <h2>AI-Designed Longevity Drugs: Early Successes and Limits</h2>
+            <p>Where the real progress sits today, and why aging still imposes a harder validation problem than the headlines imply.</p>
+        </div>
+    </a>
+
+    <a class="card" href="stem-cell-exhaustion-replenishment-strategies.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/stem-cell-exhaustion-system-map.png" alt="Systems map showing how intrinsic damage, inflammatory niche drift, and lineage bias drive stem-cell exhaustion across multiple tissues." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 2, 2026 · 14 min read</div>
+            <h2>Stem Cell Exhaustion and Replenishment Strategies</h2>
+            <p>Why realistic regeneration starts with niche repair, lineage control, and functional reset before it tries wholesale cell replacement.</p>
+        </div>
+    </a>
+
+    <a class="card" href="hallmarks-of-aging-revisited-what-changed-since-2013.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/hallmarks-priority-tractability-grid-2026.png" alt="Editorial matrix comparing hallmarks by systems leverage and clinical tractability." loading="lazy">
+        <div class="card-content">
+            <div class="meta">Apr 17, 2026 · 15 min read</div>
+            <h2>Hallmarks of Aging Revisited: What Changed Since 2013</h2>
+            <p>Why the framework is more useful than ever as a maintenance map, yet still does not rank human leverage points cleanly enough to justify broad intervention claims.</p>
+        </div>
+    </a>
+
+    <a class="card" href="alzheimers-biomarkers-outpace-treatment-2026.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/alzheimers-biomarker-therapy-gap-2026.png" alt="Comparison showing that Alzheimer biomarker progress is moving faster than therapeutic progress" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Mar 29, 2026 · 14 min read</div>
+            <h2>Alzheimer Biomarkers Are Moving Faster Than Alzheimer Drugs</h2>
+            <p>Why March 2026 strengthened the case for biomarker-led triage while showing that therapeutic progress is still slower and less certain.</p>
+        </div>
+    </a>
+
+    <a class="card" href="multivitamins-biological-aging-clocks.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/multivitamin-clock-signal-boundary.png" alt="Infographic separating what the COSMOS multivitamin clock study established from what it did not prove" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Mar 28, 2026 · 12 min read</div>
+            <h2>Do Multivitamins Slow Biological Aging? What the New COSMOS Clock Trial Shows, and What It Does Not</h2>
+            <p>A rigorous read of the strongest new low-cost longevity signal in March 2026, with clear boundaries around what the trial actually proved.</p>
+        </div>
+    </a>
+
+    <a class="card" href="primary-care-alzheimers-pivot-blood-biomarkers.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/alzheimers-primary-care-pivot-triage-map.png" alt="Primary care triage map for Alzheimer blood biomarkers, referral timing, and confirmatory pathways" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Mar 28, 2026 · 15 min read</div>
+            <h2>The Primary-Care Alzheimer's Pivot: What Blood Biomarkers Can and Cannot Do</h2>
+            <p>How blood biomarkers reshape triage speed and referral logic, and where confirmatory staging still controls final diagnosis quality.</p>
+        </div>
+    </a>
+
+    <a class="card" href="oral-glp1-phase3-reality-convenience-adherence-longevity.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/oral-glp1-adherence-economics-map.png" alt="Adherence economics map comparing oral and injectable GLP-1 pathways and discontinuation risk" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Mar 28, 2026 · 14 min read</div>
+            <h2>Oral GLP-1 Enters Phase 3 Reality: Convenience, Adherence, and Longevity Tradeoffs</h2>
+            <p>Why convenience alone does not guarantee durable outcomes, and how persistence, cost, and side-effect dynamics determine long-run benefit.</p>
+        </div>
+    </a>
+
+    <a class="card" href="intermittent-fasting-after-hype-cycle-2026.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/intermittent-fasting-evidence-hierarchy-2026.png" alt="Evidence hierarchy showing where intermittent fasting claims are supported versus overstated in 2026" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Mar 28, 2026 · 13 min read</div>
+            <h2>Intermittent Fasting After the Hype Cycle: What the 2026 Evidence Actually Supports</h2>
+            <p>A practical reset on fasting claims with clear boundaries for effect size, adherence reality, and decision rules that hold under stress.</p>
+        </div>
+    </a>
+
+    <a class="card" href="dyslipidemia-2026-prevent-ascvd-lpa-apob.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/dyslipidemia-2026-risk-equation-flow.png" alt="Flowchart linking PREVENT equations, apoB and Lp(a) interpretation, and CAC-based reclassification" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Mar 28, 2026 · 15 min read</div>
+            <h2>The 2026 Dyslipidemia Rewrite: Lp(a), ApoB, and 30-Year Risk in Preventive Longevity</h2>
+            <p>How PREVENT-era risk modeling, apoB, and Lp(a) alter prevention strategy when short-horizon estimates understate lifetime exposure burden.</p>
+        </div>
+    </a>
+
+    <a class="card" href="glp1-beyond-diabetes-cardiorenal-safety-boundaries.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/glp1-cardiorenal-evidence-map-type1-type2.png" alt="Cardiorenal evidence map for GLP-1 use across type 1 and type 2 populations with safety boundaries" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Mar 28, 2026 · 14 min read</div>
+            <h2>GLP-1 Beyond Type 2 Diabetes: Cardiorenal Signals, Safety Boundaries, and Off-Label Drift</h2>
+            <p>How to read emerging cardiorenal signals without overextending into use patterns where DKA, hypoglycemia, and safety uncertainty dominate.</p>
+        </div>
+    </a>
+
+    <a class="card" href="epigenetic-reprogramming-enters-human-trials.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/epigenetic-reprogramming-trial-pathway.png" alt="Infographic showing progression from preclinical partial reprogramming evidence to first human retinal trial" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Mar 1, 2026 · 15 min read</div>
+            <h2>Epigenetic Reprogramming Enters Human Trials</h2>
+            <p>The first FDA-cleared human trial of partial epigenetic reprogramming sets a real test for safety engineering and functional outcomes.</p>
+        </div>
+    </a>
+
+    <a class="card" href="ai-accelerated-drug-discovery-aging.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/ai-drug-discovery-compression-map.png" alt="Infographic showing where AI compresses aging drug discovery and where bottlenecks persist" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Mar 1, 2026 · 14 min read</div>
+            <h2>AI-Accelerated Drug Discovery in Aging: Real Compression, Real Bottlenecks</h2>
+            <p>AI has changed upstream discovery speed, but clinical validation and endpoint quality still govern real-world therapeutic timelines.</p>
+        </div>
+    </a>
+
+    <a class="card" href="senolytics-clinical-translation.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/senolytics-evidence-ladder.png" alt="Evidence ladder for senolytics from mechanism and animal data to early human trials" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Mar 1, 2026 · 13 min read</div>
+            <h2>Senolytics Moving into Clinical Translation</h2>
+            <p>A grounded look at where senolytic evidence is strong, where it remains early, and what trial endpoints now matter most.</p>
+        </div>
+    </a>
+
+    <a class="card" href="glp1-drugs-as-longevity-bridge.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/glp1-longevity-benefit-risk-map.png" alt="Benefit-risk map for GLP-1 therapies as a near-term longevity bridge" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Mar 1, 2026 · 13 min read</div>
+            <h2>GLP-1 Drugs as Potential Longevity Agents</h2>
+            <p>Why GLP-1 therapies may be a practical longevity bridge and how functional safeguards determine whether outcomes improve or degrade.</p>
+        </div>
+    </a>
+
+    <a class="card" href="ai-systems-biology-age-clocks.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/ai-systems-biology-clocks-loop.png" alt="AI systems biology loop for biological age clocks and intervention decisions" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Mar 1, 2026 · 12 min read</div>
+            <h2>AI + Systems Biology for Biological Age Clocks</h2>
+            <p>How clock signals become decision-grade when AI, multi-omic inputs, functional markers, and stable measurement pipelines are combined.</p>
+        </div>
+    </a>
+
+    <a class="card" href="glp1-functional-age-weight-loss.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/glp1-functional-age-tradeoff.png" alt="Chart showing when GLP-1 weight loss helps longevity and when functional age worsens" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Feb 24, 2026 · 11 min read</div>
+            <h2>GLP-1 and Functional Age: When Weight Loss Helps Longevity and When It Hurts</h2>
+            <p>Why scale weight can mislead longevity strategy, and how to protect lean mass, strength, and cardiorespiratory fitness while using GLP-1 therapies.</p>
+        </div>
+    </a>
+
+    <a class="card" href="biological-age-clocks-decision-tools.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/biological-age-control-loop.png" alt="Control-loop diagram for using biological age clocks with functional and clinical outcomes" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Feb 24, 2026 · 12 min read</div>
+            <h2>Biological Age Clocks as Decision Tools: What Is Real, What Is Overstated, and How to Use Them Without Self-Deception</h2>
+            <p>A practical framework for using clocks without single-score delusion, anchored to function, risk markers, and stable measurement pipelines.</p>
+        </div>
+    </a>
+
+    <a class="card" href="did-ai-reverse-aging.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/ai-aging-research-reality-map.png" alt="Map of what is proven, promising, and unproven in AI-driven aging research" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Feb 20, 2026 · 10 min read</div>
+            <h2>Did AI Reverse Aging? What Is Real, What Is Overstated, and What Comes Next</h2>
+            <p>What we actually know from mice, epigenetic clocks, and model-assisted biology pipelines, and where human clinical reality still constrains timelines.</p>
+        </div>
+    </a>
+
+    <a class="card" href="one-injection-vs-lifetime-statins.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/crispr-vs-statins-evidence-curve.png" alt="Comparison chart of evidence maturity for CRISPR one-time lipid therapy versus long-established statin therapy" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Feb 20, 2026 · 11 min read</div>
+            <h2>One Injection vs Lifetime Statins: What the CRISPR Cholesterol Trial Actually Shows</h2>
+            <p>What the CTX310 data actually establishes today, what remains early, and where one-time lipid editing may fit alongside statin-standard care.</p>
+        </div>
+    </a>
+
+    <a class="card" href="alzheimers-blood-test-era.html" style="margin-top: 1.4rem;">
+        <img src="images/longform/alzheimers-blood-test-primary-care-workflow.png" alt="Primary care workflow diagram showing how Alzheimer’s blood testing fits with cognitive assessment, specialist referral, and confirmatory testing" loading="lazy">
+        <div class="card-content">
+            <div class="meta">Feb 20, 2026 · 11 min read</div>
+            <h2>The Alzheimer’s Blood Test Era Has Started: What Changes for Patients and Primary Care?</h2>
+            <p>What the first FDA-cleared blood-test pathway changes in primary care and what still requires staging, imaging, and clinical context.</p>
+        </div>
+    </a>
+</main>
+<div id="footer-placeholder"></div>
+<script src="components.js?v=2026-04-17.1"></script>
+</body>
+</html>
