@@ -24,6 +24,7 @@ if [ "$ACTUAL_BRANCH" != "$DEPLOY_BRANCH" ]; then
 fi
 
 bash scripts/check_content_policy.sh
+python3 scripts/check_longform_order.py
 
 if [ "${CONFIRM_DEPLOY:-0}" != "1" ]; then
   echo "Dry run complete. Set CONFIRM_DEPLOY=1 to push."
@@ -31,7 +32,7 @@ if [ "${CONFIRM_DEPLOY:-0}" != "1" ]; then
 fi
 
 git push origin "$DEPLOY_BRANCH"
+python3 scripts/check_longform_order.py --live "$TARGET_DOMAIN"
 bash scripts/verify_live_content_policy.sh "$TARGET_DOMAIN" "$TARGET_DOMAIN/longform.html"
 
 echo "Publish completed."
-
