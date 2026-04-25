@@ -156,6 +156,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="hidden-costs-of-ownership.html">The Hidden Costs of Ownership</a>
                     <a href="rent-vs-buy-reversal.html">The Rent vs Buy Reversal</a>
                     <a href="ai-displacement-timeline.html">The AI Displacement Timeline</a>
                     <a href="career-optionality-gap.html">The Career Optionality Gap</a>
@@ -169,7 +170,6 @@ const siteHeader = `
                     <a href="illiquidity-premium-myth.html">The Illiquidity Premium Myth</a>
                     <a href="cost-of-capital-trap.html">The Cost-of-Capital Trap</a>
                     <a href="overconfidence-cycle.html">The Overconfidence Cycle</a>
-                    <a href="hidden-costs-of-ownership.html">The Hidden Costs of Ownership</a>
                     <a href="concentration-vs-diversification-tradeoff.html">Concentration vs Diversification</a>
                     <a href="liquidity-illusion.html">The Liquidity Illusion</a>
                     <a href="housing-stall-2026-rates-inventory-delinquency.html">The 2026 Housing Stall</a>
