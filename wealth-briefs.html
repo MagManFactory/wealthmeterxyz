@@ -812,7 +812,7 @@ function render() {
 }
 
 async function loadBriefs() {
-    const response = await fetch("data/wealth-briefs.json?v=2026-04-20.01", { cache: "no-store" });
+    const response = await fetch("data/wealth-briefs.json?v=2026-04-27.01", { cache: "no-store" });
     const payload = await response.json();
     state.briefs = payload.briefs || [];
     state.featuredCount = payload.featuredCount || 0;
