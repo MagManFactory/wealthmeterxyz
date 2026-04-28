@@ -1,5 +1,6 @@
 // components.js - WealthMeter™ V25 Studio Standard
 
+// Refresh marker for 2026-04-28 WealthMeter longform publish.
 const sharedStyles = `
 <style>
     /* Monolith Pulse Animation */
