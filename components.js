@@ -1,6 +1,6 @@
 // components.js - WealthMeter™ V25 Studio Standard
 
-// Refresh marker for 2026-04-28 WealthMeter longform publish.
+// Refresh marker for 2026-04-29 WealthMeter longform publish retry.
 const sharedStyles = `
 <style>
     /* Monolith Pulse Animation */
@@ -157,6 +157,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="inflation-ladder-problem.html">The Inflation Ladder Problem</a>
                     <a href="loss-aversion-tax.html">The Loss Aversion Tax</a>
                     <a href="overconfidence-cycle.html">The Overconfidence Cycle</a>
                     <a href="hidden-costs-of-ownership.html">The Hidden Costs of Ownership</a>
@@ -166,33 +167,35 @@ const siteHeader = `
                     <a href="rich-but-not-famous-economy.html">The Rich but Not Famous Economy</a>
                     <a href="mobility-premium.html">The Mobility Premium</a>
                     <a href="second-home-wealth-drain.html">The Second-Home Wealth Drain</a>
-                    <a href="timing-fallacy-public-markets.html">The Timing Fallacy</a>
+                    <a href="timing-fallacy-public-markets.html">The Timing Fallacy in Public Markets</a>
                     <a href="indexing-saturation-problem.html">The Indexing Saturation Problem</a>
                     <a href="golden-handcuffs-equation.html">The Golden Handcuffs Equation</a>
                     <a href="illiquidity-premium-myth.html">The Illiquidity Premium Myth</a>
                     <a href="cost-of-capital-trap.html">The Cost-of-Capital Trap</a>
                     <a href="ai-displacement-timeline.html">The AI Displacement Timeline</a>
-                    <a href="concentration-vs-diversification-tradeoff.html">Concentration vs Diversification</a>
+                    <a href="concentration-vs-diversification-tradeoff.html">The Concentration vs Diversification Tradeoff</a>
                     <a href="liquidity-illusion.html">The Liquidity Illusion</a>
-                    <a href="housing-stall-2026-rates-inventory-delinquency.html">The 2026 Housing Stall</a>
-                    <a href="mortgage-lock-in-trap.html">The Mortgage Lock-In Trap</a>
-                    <a href="war-premium-iran-conflict-repricing-energy-credit-equities.html">The War Premium</a>
-                    <a href="end-of-safe-job-illusion-ai-labor-deflation-white-collar-income.html">The End of the Safe Job Illusion</a>
-                    <a href="inheritance-illusion.html">The Inheritance Illusion</a>
-                    <a href="dual-income-trap.html">The Dual-Income Trap</a>
-                    <a href="inside-wealth-germany-japan-canada.html">Inside Wealth: DE, JP, CA</a>
-                    <a href="equity-compensation-trap.html">The Equity Compensation Trap</a>
-                    <a href="retirement-age-lie.html">The Retirement Age Lie</a>
-                    <a href="longevity-capital-living-to-120.html">Longevity Capital</a>
-                    <a href="compounding-gap-after-1m.html">The Compounding Gap After $1M</a>
-                    <a href="ai-boom-portfolios-personal-wealth.html">AI Boom Portfolios</a>
-                    <a href="rich-or-just-in-a-bubble.html">Are You Rich or Just in a Bubble?</a>
-                    <a href="great-baseline-war.html">The Great Baseline War</a>
-                    <a href="one-salary-three-futures.html">One Salary, Three Futures</a>
-                    <a href="crypto-etf-wealth-effect.html">Crypto ETF Wealth Effect</a>
-                    <a href="new-middle-class-trap.html">The New Middle-Class Trap</a>
+                    <a href="housing-stall-2026-rates-inventory-delinquency.html">The 2026 Housing Stall: Rates, Inventory, and the New Delinquency Split</a>
+                    <a href="mortgage-lock-in-trap.html">The Mortgage Lock-In Trap: Why a 3% Loan Can Still Make You Poorer in 2026</a>
+                    <a href="war-premium-iran-conflict-repricing-energy-credit-equities.html">The War Premium: How the Iran Conflict Is Repricing Energy, Credit, and Equities</a>
+                    <a href="end-of-safe-job-illusion-ai-labor-deflation-white-collar-income.html">The End of the Safe Job Illusion: AI Labor Deflation in White-Collar Income</a>
+                    <a href="inheritance-illusion.html">The Inheritance Illusion: When Receiving Wealth Does Not Make You Wealthy</a>
+                    <a href="dual-income-trap.html">The Dual-Income Trap: Why Two Salaries Often Build Less Wealth Than One</a>
+                    <a href="inside-wealth-germany-japan-canada.html">Inside Wealth: Germany, Japan, and Canada</a>
+                    <a href="equity-compensation-trap.html">The Equity Compensation Trap: When Stock-Based Wealth Does Not Survive The Tax Year</a>
+                    <a href="retirement-age-lie.html">The Retirement Age Lie: Why Your Target Number Is Probably Wrong in 2026</a>
+                    <a href="longevity-capital-living-to-120.html">Longevity Capital: How Living to 120 Rewrites Wealth Planning Assumptions</a>
+                    <a href="compounding-gap-after-1m.html">The Compounding Gap: Why the Top 1% Pulls Away Faster After $1M</a>
+                    <a href="ai-boom-portfolios-personal-wealth.html">AI Boom Portfolios: Building Personal Wealth Without Concentration Blowups</a>
+                    <a href="rich-or-just-in-a-bubble.html">Are You Rich or Just in a Bubble? Recalculating Wealth in a 6% Mortgage World</a>
+                    <a href="great-baseline-war.html">The Great Baseline War: Why Your Wealth Rank Changes by Population Lens</a>
+                    <a href="one-salary-three-futures.html">One Salary, Three Futures: How the Same Income Produces Different Wealth Paths by City</a>
+                    <a href="crypto-etf-wealth-effect.html">Crypto ETF Wealth Effect: Durable Net Worth or Volatility Ride?</a>
+                    <a href="new-middle-class-trap.html">The New Middle-Class Trap: High Income, Low Net Worth</a>
                     <a href="inside-wealth-china-india.html">Inside Wealth in China + India</a>
                     <a href="realistic-projections-ubi.html">Realistic Projections on UBI</a>
+
+
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
                 </div>
             </div>
