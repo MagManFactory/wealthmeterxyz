@@ -5,14 +5,30 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Apr 2026 13:15:38 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2026 16:24:15 +0000</lastBuildDate>
     <item>
       <title>The Wealth Plateau Effect</title>
       <link>https://wealthmeter.xyz/wealth-plateau-effect.html</link>
       <guid>https://wealthmeter.xyz/wealth-plateau-effect.html</guid>
-      <pubDate>Thu, 30 Apr 2026 13:15:38 +0000</pubDate>
+      <pubDate>Thu, 30 Apr 2026 16:24:15 +0000</pubDate>
       <description>Why many households stop converting income into durable, optional wealth once assets become illiquid, contribution rates flatten, and lifestyle obligations start absorbing each new dollar of margin.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/wealth-plateau-compounding-curve-2026-apr30.png" type="image/png"/>
+    </item>
+    <item>
+      <title>The Illiquidity Premium Myth</title>
+      <link>https://wealthmeter.xyz/illiquidity-premium-myth.html</link>
+      <guid>https://wealthmeter.xyz/illiquidity-premium-myth.html</guid>
+      <pubDate>Thu, 30 Apr 2026 16:18:37 +0000</pubDate>
+      <description>Why the promise of extra return for locking up capital is often overstated, mismeasured, or consumed by fees, leverage, stale marks, and the option value of liquidity.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/illiquidity-premium-net-spread-waterfall-2026-apr30.png" type="image/png"/>
+    </item>
+    <item>
+      <title>The Career Optionality Gap</title>
+      <link>https://wealthmeter.xyz/career-optionality-gap.html</link>
+      <guid>https://wealthmeter.xyz/career-optionality-gap.html</guid>
+      <pubDate>Thu, 30 Apr 2026 16:18:37 +0000</pubDate>
+      <description>An April 2026 analysis of the career optionality gap: why liquidity, benefit portability, and work design determine who can absorb transition without wealth damage.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/career-optionality-runway-stack-2026.png" type="image/png"/>
     </item>
     <item>
       <title>The War Premium: How the Iran Conflict Is Repricing Energy, Credit, and Equities</title>
@@ -183,14 +199,6 @@
       <enclosure url="https://wealthmeter.xyz/images/longform/indexing-saturation-pressure-map.png" type="image/png"/>
     </item>
     <item>
-      <title>The Illiquidity Premium Myth</title>
-      <link>https://wealthmeter.xyz/illiquidity-premium-myth.html</link>
-      <guid>https://wealthmeter.xyz/illiquidity-premium-myth.html</guid>
-      <pubDate>Thu, 30 Apr 2026 13:15:38 +0000</pubDate>
-      <description>Why the promise of extra return for locking up capital is often overstated, mismeasured, or consumed by fees, stale marks, leverage, and selection risk.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/illiquidity-premium-claim-stack.png" type="image/png"/>
-    </item>
-    <item>
       <title>The 2026 Housing Stall: Rates, Inventory, and the New Delinquency Split</title>
       <link>https://wealthmeter.xyz/housing-stall-2026-rates-inventory-delinquency.html</link>
       <guid>https://wealthmeter.xyz/housing-stall-2026-rates-inventory-delinquency.html</guid>
@@ -277,14 +285,6 @@
       <pubDate>Thu, 30 Apr 2026 13:15:38 +0000</pubDate>
       <description>why wealth growth becomes non-linear after one million dollars due to access and governance effects.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/compounding-gap-after-1m.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Career Optionality Gap</title>
-      <link>https://wealthmeter.xyz/career-optionality-gap.html</link>
-      <guid>https://wealthmeter.xyz/career-optionality-gap.html</guid>
-      <pubDate>Thu, 30 Apr 2026 13:15:38 +0000</pubDate>
-      <description>An April 2026 analysis of the career optionality gap: why liquidity, benefit portability, and work design determine who can absorb transition without wealth damage.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/career-optionality-runway-stack-2026.png" type="image/png"/>
     </item>
     <item>
       <title>The Asset-Rich, Cash-Poor Paradox</title>
