@@ -2,7 +2,7 @@
 
 // Refresh marker for 2026-04-29 WealthMeter longform publish retry.
 const sharedStyles = `
-<style>
+<style id="wealthmeter-component-styles">
     /* Monolith Pulse Animation */
     @keyframes monolithPulse {
         0% { transform: scaleY(1); }
@@ -105,8 +105,95 @@ const sharedStyles = `
         .dropdown a { min-height: 44px; display: flex; align-items: center; font-size: 0.95rem; padding: 0.72rem 1.15rem; }
     }
 
-
     footer { padding: 5rem 2rem; text-align: center; border-top: 1px solid #e2e8f0; background: #f8fafc; margin-top: auto; }
+    .cross-property-band {
+        max-width: 980px;
+        margin: 0 auto 1.5rem;
+        padding: 1rem 1.25rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+        color: #1e293b;
+        font-weight: 700;
+        line-height: 1.55;
+    }
+    .cross-property-band a {
+        color: #2563eb;
+        font-weight: 900;
+        text-decoration: none;
+    }
+    .cross-property-band a:hover { text-decoration: underline; }
+    .article-bridge-cta {
+        margin: 2.5rem 0 0;
+        padding: 1.25rem 1.35rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+    }
+    .article-bridge-label {
+        display: inline-block;
+        margin-bottom: 0.55rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #2563eb;
+    }
+    .article-bridge-cta h2,
+    .article-bridge-cta h3 {
+        margin: 0 0 0.55rem;
+        padding: 0;
+        border: 0;
+        color: #0f172a;
+        font-size: 1.2rem;
+        letter-spacing: -0.02em;
+        text-transform: none;
+    }
+    .article-bridge-cta p {
+        margin: 0 0 0.9rem;
+        color: #334155;
+    }
+    .article-bridge-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 0 0 0.95rem;
+    }
+    .article-bridge-chip {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #bfdbfe;
+        border-radius: 999px;
+        padding: 0.34rem 0.65rem;
+        background: #ffffff;
+        color: #1d4ed8;
+        font-size: 0.76rem;
+        font-weight: 700;
+    }
+    .article-bridge-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: center;
+    }
+    .article-bridge-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+        border-radius: 0.85rem;
+        background: #2563eb;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 800;
+    }
+    .article-bridge-secondary {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    .article-bridge-secondary:hover { text-decoration: underline; }
     .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
     .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
 </style>
@@ -206,6 +293,9 @@ const siteHeader = `
 
 const siteFooter = `
 <footer>
+    <div class="cross-property-band">
+        Model the lifespan side of your balance sheet with <a href="https://lifemeter.xyz/?from=wealthmeter" target="_blank" rel="noopener">LifeMeter</a>, then compare the same household against survival horizon and medical-runway stress.
+    </div>
     <div class="footer-links">
         <a href="data-sources.html">Data Sources</a>
         <a href="methodology.html">Methodology</a>
@@ -215,7 +305,9 @@ const siteFooter = `
 </footer>`;
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.head.insertAdjacentHTML("beforeend", sharedStyles);
+    if (!document.getElementById("wealthmeter-component-styles")) {
+        document.head.insertAdjacentHTML("beforeend", sharedStyles);
+    }
     const headerEl = document.getElementById("header-placeholder");
     const footerEl = document.getElementById("footer-placeholder");
     if (headerEl) headerEl.innerHTML = siteHeader;

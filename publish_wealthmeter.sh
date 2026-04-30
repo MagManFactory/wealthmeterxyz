@@ -24,6 +24,7 @@ if [ "$ACTUAL_BRANCH" != "$DEPLOY_BRANCH" ]; then
 fi
 
 bash scripts/check_content_policy.sh
+python3 scripts/build_seo_artifacts.py --write
 python3 scripts/check_longform_order.py
 
 if [ "${CONFIRM_DEPLOY:-0}" != "1" ]; then

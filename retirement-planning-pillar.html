@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Dual-Income Trap | WealthMeter.xyz</title>
-  <meta name="description" content="why two salaries often underperform one salary in long-run wealth resilience.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://wealthmeter.xyz/dual-income-trap.html">
-  <style>
-    :root { --ink:#0f172a; --body:#334155; --muted:#64748b; --line:#dbe4f0; --blue:#2563eb; --soft:#f7fbff; }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family: Inter, "Segoe UI", Arial, sans-serif; color:var(--ink); background:#fff; }
-    .article { max-width:940px; margin:0 auto; padding:3rem 1.25rem 5rem; }
-    .badge { font-family:"Roboto Mono", monospace; font-size:0.73rem; text-transform:uppercase; letter-spacing:0.14em; color:var(--blue); font-weight:700; display:inline-block; margin-bottom:0.8rem; }
-    h1 { margin:0 0 1rem; font-size:clamp(2rem,4.2vw,3.2rem); line-height:1.05; letter-spacing:-0.03em; font-family: Outfit, Inter, sans-serif; }
-    .lead { font-size:1.2rem; line-height:1.58; color:#1e293b; font-weight:600; margin-bottom:1rem; }
-    .meta { font-family:"Roboto Mono", monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin-bottom:2rem; }
-    p { font-size:1.08rem; line-height:1.74; color:var(--body); margin:0 0 1rem; }
-    h2 { margin:2.6rem 0 1rem; padding-top:1rem; border-top:1px solid var(--line); text-transform:uppercase; letter-spacing:0.14em; font-size:0.84rem; color:var(--muted); }
-    h3 { margin:1.4rem 0 0.6rem; font-size:1.1rem; color:#10213a; }
-    figure { margin:2rem 0; border:2px solid var(--line); border-radius:16px; overflow:hidden; background:var(--soft); }
-    figure img { width:100%; display:block; }
-    figcaption { padding:0.8rem 1rem; font-family:"Roboto Mono", monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); }
-    .callout { border-left:4px solid #38bdf8; background:#eef8ff; border-radius:8px; padding:1rem 1rem 0.4rem; margin:1rem 0 1.5rem; }
-    .sources p { font-size:0.98rem; line-height:1.55; }
-    a { color:#1d4ed8; font-weight:700; }
-  </style>
-    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml">
-<style id="wealthmeter-component-styles">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement Planning | WEALTHMETER.XYZ</title>
+    <meta name="description" content="A WealthMeter pillar hub on retirement numbers, longevity planning, drawdown assumptions, and the fragility of standard retirement heuristics.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://wealthmeter.xyz/retirement-planning-pillar.html">
+    <meta property="og:title" content="Retirement Planning | WEALTHMETER.XYZ">
+    <meta property="og:description" content="A WealthMeter pillar hub on retirement numbers, longevity planning, drawdown assumptions, and the fragility of standard retirement heuristics.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wealthmeter.xyz/retirement-planning-pillar.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Retirement Planning | WEALTHMETER.XYZ">
+    <meta name="twitter:description" content="A WealthMeter pillar hub on retirement numbers, longevity planning, drawdown assumptions, and the fragility of standard retirement heuristics.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0f172a;
+            --body: #475569;
+            --line: #dbe4f0;
+            --accent: #2563eb;
+            --soft: #eef4ff;
+        }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Outfit', sans-serif; color: var(--ink); background: #ffffff; }
+        .wrap { max-width: 1100px; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+        .hero { border: 1px solid var(--line); border-radius: 24px; padding: 2rem; background: linear-gradient(145deg, #ffffff, var(--soft)); }
+        .kicker { display:inline-block; margin-bottom:0.8rem; font-family:'JetBrains Mono', monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.14em; color:var(--accent); font-weight:700; }
+        h1 { margin:0 0 0.8rem; font-size:clamp(2rem, 4.4vw, 3.25rem); line-height:1.02; letter-spacing:-0.03em; }
+        .hero p { margin:0.8rem 0 0; font-size:1.08rem; line-height:1.65; color:var(--body); max-width:820px; }
+        .cluster-nav { margin-top:1.2rem; display:flex; flex-wrap:wrap; gap:0.65rem; }
+        .cluster-nav a { display:inline-flex; align-items:center; border:1px solid #bfdbfe; border-radius:999px; padding:0.38rem 0.75rem; color:var(--accent); text-decoration:none; font-weight:700; font-size:0.82rem; }
+        .orientation { margin-top:1.5rem; border:1px solid var(--line); border-radius:20px; padding:1.5rem; background:#ffffff; }
+        .orientation h2 { margin:0 0 0.9rem; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.12em; color:#64748b; }
+        .orientation p { margin:0 0 1rem; color:var(--body); line-height:1.72; font-size:1.02rem; }
+        .grid { margin-top:1.5rem; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1rem; }
+        .card { display:grid; grid-template-columns:1fr; border:1px solid var(--line); border-radius:18px; overflow:hidden; text-decoration:none; color:inherit; background:#fff; }
+        .card img { width:100%; height:auto; object-fit:cover; display:block; }
+        .content { padding:1.2rem 1.25rem; }
+        .meta { font-family:'JetBrains Mono', monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.12em; color:#64748b; }
+        .content h2 { margin:0.55rem 0; font-size:1.2rem; line-height:1.2; }
+        .content p { margin:0; color:var(--body); line-height:1.65; }
+        .return-row { margin-top:1.25rem; display:flex; flex-wrap:wrap; gap:0.8rem; }
+        .return-row a { color:var(--accent); font-weight:800; text-decoration:none; }
+        @media (max-width: 860px) { .grid { grid-template-columns:1fr; } }
+    </style>
+    <style id="wealthmeter-component-styles">
     /* Monolith Pulse Animation */
     @keyframes monolithPulse {
         0% { transform: scaleY(1); }
@@ -222,19 +241,15 @@
     .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
     .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
 </style>
-    <meta property="og:title" content="The Dual-Income Trap | WealthMeter.xyz">
-    <meta property="og:description" content="why two salaries often underperform one salary in long-run wealth resilience.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://wealthmeter.xyz/dual-income-trap.html">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Dual-Income Trap | WealthMeter.xyz">
-    <meta name="twitter:description" content="why two salaries often underperform one salary in long-run wealth resilience.">
-    <meta property="og:image" content="https://wealthmeter.xyz/images/longform/dual-income-trap-cashflow-floor.png">
-    <meta name="twitter:image" content="https://wealthmeter.xyz/images/longform/dual-income-trap-cashflow-floor.png">
-    <meta property="og:image:width" content="1408">
+    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Retirement Planning","url":"https://wealthmeter.xyz/retirement-planning-pillar.html","description":"A WealthMeter pillar hub on retirement numbers, longevity planning, drawdown assumptions, and the fragility of standard retirement heuristics."}</script>
+    <meta property="og:image" content="https://wealthmeter.xyz/images/longform/retirement-age-lie-rate-inflation-stress.png">
+    <meta name="twitter:image" content="https://wealthmeter.xyz/images/longform/retirement-age-lie-rate-inflation-stress.png">
+    <meta property="og:image:width" content="1376">
     <meta property="og:image:height" content="768">
-    <meta property="og:image:alt" content="why two salaries often underperform one salary in long-run wealth resilience.">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WEALTHMETER.XYZ","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"Longform","item":"https://wealthmeter.xyz/longform.html"},{"@type":"ListItem","position":3,"name":"The Dual-Income Trap","item":"https://wealthmeter.xyz/dual-income-trap.html"}]}</script>
+    <meta property="og:image:alt" content="A WealthMeter pillar hub on retirement numbers, longevity planning, drawdown assumptions, and the fragility of standard retirement heuristics.">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WEALTHMETER.XYZ","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"Retirement Planning","item":"https://wealthmeter.xyz/retirement-planning-pillar.html"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Retirement Planning","itemListOrder":"https://schema.org/ItemListOrderDescending","numberOfItems":5,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://wealthmeter.xyz/retirement-age-lie.html","name":"The Retirement Age Lie","description":"stress-testing retirement target numbers under current inflation, rate, and longevity conditions."},{"@type":"ListItem","position":2,"url":"https://wealthmeter.xyz/longevity-capital-living-to-120.html","name":"Longevity Capital: Living to 120","description":"how potential lifespan extension changes long-horizon wealth architecture."},{"@type":"ListItem","position":3,"url":"https://wealthmeter.xyz/asset-rich-cash-poor-paradox.html","name":"The Asset-Rich, Cash-Poor Paradox","description":"Why households can look wealthy on paper while still lacking cash resilience, and what Federal Reserve data implies about the gap between nominal wealth and usable defense."},{"@type":"ListItem","position":4,"url":"https://wealthmeter.xyz/rich-or-just-in-a-bubble.html","name":"Are You Rich or Just in a Bubble? Recalculating Wealth in a 6% Mortgage World","description":"A practical framework for recalculating wealth in a 6% mortgage regime, where paper gains and real optionality can diverge."},{"@type":"ListItem","position":5,"url":"https://wealthmeter.xyz/inflation-ladder-problem.html","name":"The Inflation Ladder Problem","description":"Why inflation hits household wealth through a reset ladder: cash loses purchasing power immediately, contracts update on different schedules, and nominal ladders can fail long before net worth screens show stress."}]}</script>
 </head>
 <body>
 <div id="header-placeholder" data-static-component="1">
@@ -329,84 +344,69 @@
     </div>
 </header>
 </div>
-<main class="article">
-<span class="badge">Longform · Household Economics</span>
-  <h1>The Dual-Income Trap: Why Two Salaries Often Build Less Wealth Than One</h1>
-  <p class="lead">Two incomes increase gross earnings. They do not automatically improve wealth growth rate. Household structure determines whether the second salary compounds or disappears.</p>
-  <div class="meta">Published March 1, 2026 · ~12 min read</div>
+<main class="wrap">
+    <section class="hero">
+        <span class="kicker">Wealth Pillar</span>
+        <h1>Retirement Planning</h1>
+        <p>Retirement planning breaks first where time horizon and spending assumptions are too shallow. Higher rates, longer lives, and more expensive transitions widen the gap between nominal targets and real durability.</p>
+        <div class="cluster-nav"><a href="retirement-age-lie.html">The Retirement Age Lie</a><a href="longevity-capital-living-to-120.html">Longevity Capital: Living to 120</a><a href="asset-rich-cash-poor-paradox.html">The Asset-Rich, Cash-Poor Paradox</a><a href="rich-or-just-in-a-bubble.html">Are You Rich or Just in a Bubble? Recalculating Wealth in a 6% Mortgage World</a><a href="inflation-ladder-problem.html">The Inflation Ladder Problem</a></div>
+    </section>
+    <section class="orientation">
+        <h2>Orientation</h2>
+        <p>This cluster focuses on that gap. It links retirement assumptions to drawdown discipline, inflation pressure, liquidity quality, and the possibility that a long life changes the cost of time itself.</p>
+        <p>The practical lesson is that retirement math is not one target number. It is a living system involving spending flexibility, medical uncertainty, income replacement, and the structure of the assets expected to fund later decades.</p>
+        <p>For readers coming from either the wealth or longevity side of the portfolio, this hub is one of the most useful bridges because it shows how balance-sheet design and lifespan uncertainty interact directly.</p>
+        <div class="return-row">
+            <a href="longform.html">Return to Longform Hub</a>
+            <a href="/">Open Wealth Rank Tool</a>
+        </div>
+    </section>
+    <section class="grid">
+<a class="card" href="retirement-age-lie.html">
+        <img src="images/longform/retirement-age-lie-rate-inflation-stress.png" alt="stress-testing retirement target numbers under current inflation, rate, and longevity conditions." loading="lazy" width="1376" height="768">
+    <div class="content">
+        <div class="meta">Cluster Article</div>
+        <h2>The Retirement Age Lie</h2>
+        <p>stress-testing retirement target numbers under current inflation, rate, and longevity conditions.</p>
+    </div>
+</a>
 
-  <p>The common assumption in personal finance is linear: if one salary builds wealth, two salaries build more wealth faster. In real households, the relationship is often non-linear because costs rise quickly while savings habits lag. The result is a common paradox: households with high gross income but low savings buffer, weak flexibility, and fragile net worth growth. This pattern appears across income brackets, though the specific cost drivers may differ between middle-class and high-earning professional households.</p>
+<a class="card" href="longevity-capital-living-to-120.html">
+        <img src="images/longform/longevity-capital-horizon-reset.png" alt="how potential lifespan extension changes long-horizon wealth architecture." loading="lazy" width="1408" height="768">
+    <div class="content">
+        <div class="meta">Cluster Article</div>
+        <h2>Longevity Capital: Living to 120</h2>
+        <p>how potential lifespan extension changes long-horizon wealth architecture.</p>
+    </div>
+</a>
 
-  <figure>
-    <img src="images/longform/dual-income-trap-cashflow-floor.png" alt="Two-income household cashflow floor inflation versus controlled cost architecture." width="1408" height="768">
-    <figcaption>The second salary often funds fixed-cost inflation before funding compounding.</figcaption>
-  </figure>
+<a class="card" href="asset-rich-cash-poor-paradox.html">
+        <img src="images/longform/asset-rich-cash-poor-conversion-ladder-2026.png" alt="Why households can look wealthy on paper while still lacking cash resilience, and what Federal Reserve data implies about the gap between nominal wealth and usable defense." loading="lazy" width="1376" height="768">
+    <div class="content">
+        <div class="meta">Cluster Article</div>
+        <h2>The Asset-Rich, Cash-Poor Paradox</h2>
+        <p>Why households can look wealthy on paper while still lacking cash resilience, and what Federal Reserve data implies about the gap between nominal wealth and usable defense.</p>
+    </div>
+</a>
 
-  <h2>How The Trap Forms</h2>
-  <h3>Lifestyle floor inflation</h3>
-  <p>Two cars, larger housing, childcare, paid convenience, and expanded service spending can raise the monthly spending rate faster than the second salary raises savings potential. Once fixed costs rise, income volatility becomes more dangerous. This inflation often occurs through incremental decisions rather than conscious planning, creating a dependency on maintaining both incomes at current levels. The psychological effect of higher perceived earnings can accelerate this process, as households feel justified in upgrading their standard of living.</p>
+<a class="card" href="rich-or-just-in-a-bubble.html">
+        <img src="images/longform/wealth-bubble-affordability-gap.png" alt="A practical framework for recalculating wealth in a 6% mortgage regime, where paper gains and real optionality can diverge." loading="lazy" width="1408" height="768">
+    <div class="content">
+        <div class="meta">Cluster Article</div>
+        <h2>Are You Rich or Just in a Bubble? Recalculating Wealth in a 6% Mortgage World</h2>
+        <p>A practical framework for recalculating wealth in a 6% mortgage regime, where paper gains and real optionality can diverge.</p>
+    </div>
+</a>
 
-  <h3>Tax stacking and benefit phase-outs</h3>
-  <p>Combined income can push households into less favorable tax brackets and reduce eligibility for credits or subsidy structures. The actual value of the second salary can be materially lower than gross pay implies. This includes phase-outs for child tax credits, education benefits, retirement savings incentives, and healthcare subsidies. The marginal tax rate on the second income can approach 50% or higher when accounting for state taxes, phase-outs, and lost benefits, creating a significant obstacle against wealth accumulation.</p>
-
-  <h3>Flexibility loss</h3>
-  <p>When both earners are locked into servicing fixed costs, career choices shrink. The household loses resilience to layoffs, health disruptions, relocations, or caregiving shocks. This loss shows up as reduced ability to pursue career advancement opportunities requiring temporary income reduction, inability to care for family members during emergencies, and heightened financial stress during economic downturns. The household becomes a rigid system vulnerable to any disruption in its income streams.</p>
-
-  <h3>Resilience paradox</h3>
-  <p>High-income dual-earner households often assume diversification across two salaries provides safety. In practice, both incomes can still be correlated to one sector, one city, and one economic condition, especially in professional clusters. Geographic concentration in high-cost urban areas, industry concentration in technology or finance, and similar career trajectories can create shared risk despite apparent income diversification. True diversification requires separation across economic sectors, revenue models, and geographic risk exposures.</p>
-
-  <h2>Model: Same Gross Income, Different Outcomes</h2>
-  <p>Consider two households with the same combined gross earnings over ten years. Household A is a single high-earner family that caps fixed costs aggressively and automates asset accumulation. Household B is a dual-income family that scales lifestyle to current earnings. Household B often reports higher consumption quality in expansion years, but Household A can show higher savings rate, deeper reserves, and stronger weathering of downturns. The critical difference emerges during economic contractions: Household A maintains its savings rate and flexibility while Household B faces immediate pressure to maintain lifestyle commitments despite potential income reduction.</p>
-
-  <div class="callout">
-    <p><strong>Practical insight:</strong> income is an input. Wealth is an output of conversion rate, cost discipline, and shock absorption. The most successful households treat income increases as opportunities to accelerate asset accumulation rather than expand consumption, maintaining a strategic gap between earnings and fixed obligations.</p>
-  </div>
-
-  <h2>Childcare and Housing Are The Main Multipliers</h2>
-  <p>For many urban households, childcare plus housing costs consume most of the second salary during key accumulation years. If these costs are financed through recurring debt or long-term commitments, future flexibility declines further. The childcare expense often functions as a temporary but massive fixed cost that can eliminate the net benefit of the second income when calculated after taxes and work-related expenses. Housing decisions made during dual-income periods frequently create permanent cost structures that persist beyond the childcare years, locking in higher fixed obligations.</p>
-
-  <p>This does not imply dual-income households should reduce participation. It implies they need explicit structure. Without structure, growth in nominal income can coexist with flat or declining resilience. The structure must account for the temporal nature of childcare costs while preventing housing decisions from permanently elevating the household's cost structure beyond what one income could support.</p>
-
-  <h2>Income Architecture Scorecard</h2>
-  <figure>
-    <img src="images/longform/income-architecture-scorecard.png" alt="Five-factor scorecard for fixed costs, savings conversion, reserve depth, income concentration, and optionality." width="1408" height="768">
-    <figcaption>Wealth quality improves when both earners are optional contributors, not mandatory debt service inputs.</figcaption>
-  </figure>
-
-  <p>Track five metrics quarterly: fixed-cost ratio, savings conversion rate, reserve depth, income concentration, and flexibility buffer. A strong household can sustain at least one major income shock without forced asset sale. A weak household cannot survive one disruption despite high gross pay. The fixed-cost ratio should remain below 50% of net income, savings conversion should exceed 20% of gross, reserves should cover six months of essential expenses, income sources should demonstrate low correlation, and the flexibility buffer should allow for at least one career transition without financial distress.</p>
-
-  <h2>Execution Rules That Work</h2>
-  <h3>1) Cap lifestyle spending before bonuses and raises arrive</h3>
-  <p>Pre-commit fixed-cost ceilings so incremental income flows first to reserves and asset accumulation. Establish written guidelines for housing costs as a percentage of the lower income, vehicle expenses as a fixed amount regardless of income growth, and maximum recurring service subscriptions. This creates automatic discipline against lifestyle inflation and ensures new income primarily enhances financial security rather than recurring obligations.</p>
-
-  <h3>2) Run two stress tests annually</h3>
-  <p>Test one-income loss for 12 months and childcare/housing cost increase scenarios. If both fail, rebalance immediately. The stress testing should include realistic assumptions about job search duration, healthcare cost changes, and potential need for geographic mobility. Document the specific actions required to restore stability, such as which expenses would be eliminated first and which assets would be liquidated if necessary.</p>
-
-  <h3>3) Separate identity spending from structural spending</h3>
-  <p>Families can spend more where values matter, but recurring fixed obligations need strict limits. Identity spending includes education, experiences, and charitable giving that align with family values. Structural spending comprises housing, transportation, and utilities that create recurring obligations. By consciously allocating resources to value-aligned discretionary spending while minimizing structural fixed costs, households maintain flexibility without sacrificing meaningful consumption.</p>
-
-  <h3>4) Design for one-income survivability</h3>
-  <p>The strongest dual-income households are those where either income can drop without severe financial damage. This requires maintaining fixed costs sustainable on either income alone, building reserves equivalent to the lower income's annual earnings, and ensuring both careers maintain independent viability. This design principle creates true flexibility rather than dependency, allowing strategic career moves, sabbaticals, or caregiving periods without financial catastrophe.</p>
-
-<h2>Source List</h2>
-  <div class="sources">
-    <p>U.S. Bureau of Labor Statistics. (2024). <a href="https://www.bls.gov/cex/" target="_blank" rel="noopener noreferrer">Consumer Expenditure Survey</a>.</p>
-    <p>OECD. (2025). <a href="https://www.oecd.org/social/family/database.htm" target="_blank" rel="noopener noreferrer">Family Database (childcare and household structure indicators)</a>.</p>
-    <p>IRS. (2025). <a href="https://www.irs.gov/" target="_blank" rel="noopener noreferrer">Tax bracket and credit framework references</a>.</p>
-    <p>Federal Reserve. (2023). <a href="https://www.federalreserve.gov/econres/scfindex.htm" target="_blank" rel="noopener noreferrer">Survey of Consumer Finances</a>.</p>
-  </div>
-<!-- generated-article-bridge:start -->
-<section class="article-bridge-cta" aria-label="Paired LifeMeter scenario">
-  <span class="article-bridge-label">Run The Paired Scenario</span>
-  <h2>Stress-test the lifespan side of this balance-sheet story.</h2>
-  <p>Open the matching LifeMeter scenario with a prefilled planning profile so the wealth case and the health-runway case can be read together.</p>
-  <div class="article-bridge-chips"><span class="article-bridge-chip">Age 39</span><span class="article-bridge-chip">Net worth $650,000</span><span class="article-bridge-chip">Spending $78,000</span><span class="article-bridge-chip">Yield 5.0%</span></div>
-  <div class="article-bridge-actions">
-    <a class="article-bridge-button" href="https://lifemeter.xyz/?from=wealthmeter&age=39&netWorth=650000&annualSpend=78000&targetYield=0.05&region=77&gender=F&health=1.0" target="_blank" rel="noopener">Open Prefilled LifeMeter</a>
-    <a class="article-bridge-secondary" href="longform.html">Back to the wealth longform hub</a>
-  </div>
-</section>
-<!-- generated-article-bridge:end -->
+<a class="card" href="inflation-ladder-problem.html">
+        <img src="images/longform/inflation-ladder-purchasing-power-stack-2026-apr29.png" alt="Why inflation hits household wealth through a reset ladder: cash loses purchasing power immediately, contracts update on different schedules, and nominal ladders can fail long before net worth screens show stress." loading="lazy" width="1376" height="768">
+    <div class="content">
+        <div class="meta">Cluster Article</div>
+        <h2>The Inflation Ladder Problem</h2>
+        <p>Why inflation hits household wealth through a reset ladder: cash loses purchasing power immediately, contracts update on different schedules, and nominal ladders can fail long before net worth screens show stress.</p>
+    </div>
+</a>
+    </section>
 </main>
 <div id="footer-placeholder" data-static-component="1">
 <footer>
