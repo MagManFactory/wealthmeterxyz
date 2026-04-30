@@ -244,6 +244,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="illiquidity-premium-myth.html">The Illiquidity Premium Myth</a>
                     <a href="inflation-ladder-problem.html">The Inflation Ladder Problem</a>
                     <a href="loss-aversion-tax.html">The Loss Aversion Tax</a>
                     <a href="overconfidence-cycle.html">The Overconfidence Cycle</a>
@@ -257,7 +258,6 @@ const siteHeader = `
                     <a href="timing-fallacy-public-markets.html">The Timing Fallacy in Public Markets</a>
                     <a href="indexing-saturation-problem.html">The Indexing Saturation Problem</a>
                     <a href="golden-handcuffs-equation.html">The Golden Handcuffs Equation</a>
-                    <a href="illiquidity-premium-myth.html">The Illiquidity Premium Myth</a>
                     <a href="cost-of-capital-trap.html">The Cost-of-Capital Trap</a>
                     <a href="ai-displacement-timeline.html">The AI Displacement Timeline</a>
                     <a href="concentration-vs-diversification-tradeoff.html">The Concentration vs Diversification Tradeoff</a>
