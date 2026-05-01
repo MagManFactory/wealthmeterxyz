@@ -1,4 +1,4 @@
-// components.js - WealthMeter™ V25 Studio Standard
+// components.js - WealthMeter™ V25.1 Studio Standard
 
 // Refresh marker for 2026-04-29 WealthMeter longform publish retry.
 const sharedStyles = `
