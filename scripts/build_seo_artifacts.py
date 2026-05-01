@@ -106,6 +106,7 @@ PILLAR_CONFIG = [
             "dual-income-trap.html",
             "new-middle-class-trap.html",
             "career-optionality-gap.html",
+            "skill-obsolescence-curve.html",
             "golden-handcuffs-equation.html",
             "ai-boom-portfolios-personal-wealth.html",
         ],

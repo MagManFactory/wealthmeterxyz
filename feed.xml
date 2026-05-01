@@ -5,7 +5,23 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Apr 2026 16:24:15 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2026 13:22:33 +0000</lastBuildDate>
+    <item>
+      <title>The Skill Obsolescence Curve</title>
+      <link>https://wealthmeter.xyz/skill-obsolescence-curve.html</link>
+      <guid>https://wealthmeter.xyz/skill-obsolescence-curve.html</guid>
+      <pubDate>Fri, 01 May 2026 13:22:33 +0000</pubDate>
+      <description>Why career wealth fails when the market value of a worker skill stack decays faster than retraining, bargaining power, or liquidity can keep up.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/skill-obsolescence-half-life-2026-may01.png" type="image/png"/>
+    </item>
+    <item>
+      <title>The Career Optionality Gap</title>
+      <link>https://wealthmeter.xyz/career-optionality-gap.html</link>
+      <guid>https://wealthmeter.xyz/career-optionality-gap.html</guid>
+      <pubDate>Fri, 01 May 2026 13:22:33 +0000</pubDate>
+      <description>An April 2026 analysis of the career optionality gap: why liquidity, benefit portability, and work design determine who can absorb transition without wealth damage.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/career-optionality-runway-stack-2026.png" type="image/png"/>
+    </item>
     <item>
       <title>The Wealth Plateau Effect</title>
       <link>https://wealthmeter.xyz/wealth-plateau-effect.html</link>
@@ -21,14 +37,6 @@
       <pubDate>Thu, 30 Apr 2026 16:18:37 +0000</pubDate>
       <description>Why the promise of extra return for locking up capital is often overstated, mismeasured, or consumed by fees, leverage, stale marks, and the option value of liquidity.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/illiquidity-premium-net-spread-waterfall-2026-apr30.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Career Optionality Gap</title>
-      <link>https://wealthmeter.xyz/career-optionality-gap.html</link>
-      <guid>https://wealthmeter.xyz/career-optionality-gap.html</guid>
-      <pubDate>Thu, 30 Apr 2026 16:18:37 +0000</pubDate>
-      <description>An April 2026 analysis of the career optionality gap: why liquidity, benefit portability, and work design determine who can absorb transition without wealth damage.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/career-optionality-runway-stack-2026.png" type="image/png"/>
     </item>
     <item>
       <title>The War Premium: How the Iran Conflict Is Repricing Energy, Credit, and Equities</title>

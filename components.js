@@ -244,6 +244,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="skill-obsolescence-curve.html">The Skill Obsolescence Curve</a>
                     <a href="illiquidity-premium-myth.html">The Illiquidity Premium Myth</a>
                     <a href="wealth-plateau-effect.html">The Wealth Plateau Effect</a>
                     <a href="inflation-ladder-problem.html">The Inflation Ladder Problem</a>
