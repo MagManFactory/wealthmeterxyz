@@ -55,6 +55,202 @@
         table{width:100%;border-collapse:collapse;margin:.8rem 0 1.4rem;} th,td{border:1px solid var(--line);padding:.7rem;text-align:left;font-size:.98rem;line-height:1.55;color:var(--body);} th{background:#f8fbff;color:#1e293b;font-weight:700;}
         .sources p{font-size:1rem;line-height:1.55;margin-bottom:.7rem;}
     </style>
+    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml">
+<style id="wealthmeter-component-styles">
+    /* Monolith Pulse Animation */
+    @keyframes monolithPulse {
+        0% { transform: scaleY(1); }
+        50% { transform: scaleY(1.25); }
+        100% { transform: scaleY(1); }
+    }
+    .bar-rank { animation: monolithPulse 2s ease-in-out infinite; transform-origin: bottom; fill: #FF4B4B; }
+    .bar-analyze { animation: monolithPulse 2.4s ease-in-out infinite; animation-delay: 0.2s; transform-origin: bottom; fill: #0f172a; }
+    .bar-rate { animation: monolithPulse 1.8s ease-in-out infinite; animation-delay: 0.4s; transform-origin: bottom; fill: #0891b2; }
+
+    /* Pillar Colors */
+    .label-rank { color: #FF4B4B !important; }
+    .label-rate { color: #00bcd4 !important; }
+    .label-analyze { color: #2563eb !important; }
+    .label-longform { color: #0ea5e9 !important; }
+
+    /* Layout Standards */
+    header { 
+        width: 100%; 
+        position: sticky; 
+        top: 0; 
+        background: rgba(255,255,255,0.98); 
+        backdrop-filter: blur(12px); 
+        border-bottom: 1px solid #e2e8f0; 
+        z-index: 9999; 
+    }
+    .nav-container { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        padding: 0 3rem; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        height: 90px; 
+    }
+
+    /* Brand Wrapper: Prevents collision with nav items */
+    .brand-wrapper {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        margin-right: 3rem;
+    }
+
+    /* Navigation: Forces links to the right */
+    nav { 
+        display: flex; 
+        gap: 3rem; 
+        align-items: center; 
+        height: 100%; 
+        margin-left: auto; 
+    }
+    
+    .nav-group { 
+        position: relative; 
+        cursor: pointer; 
+        display: flex; 
+        align-items: center; 
+        height: 100%; 
+        white-space: nowrap; 
+    }
+    .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
+    .nav-group:hover .dropdown { display: block !important; }
+    .nav-group.open .dropdown { display: block !important; }
+    
+    .dropdown { 
+        display: none; 
+        position: absolute; 
+        top: 100%; 
+        left: 0; 
+        background: white; 
+        border: 1px solid #e2e8f0; 
+        border-radius: 0.5rem; 
+        padding: 1rem 0; 
+        min-width: 260px; 
+        box-shadow: 0 30px 60px rgba(0,0,0,0.1); 
+        z-index: 10000; 
+        margin-top: -5px; 
+    }
+    .dropdown a { 
+        display: block; 
+        padding: 0.8rem 1.5rem; 
+        text-decoration: none; 
+        color: #475569; 
+        font-size: 0.9rem; 
+        font-weight: 700; 
+        transition: 0.2s; 
+    }
+    .dropdown a:hover { background: #f8fafc; color: #020617; }
+
+    @media (max-width: 1024px) {
+        header { position: relative; }
+        .nav-container { height: auto; min-height: 72px; padding: 0.75rem 1rem; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+        .brand-wrapper { margin-right: 0; }
+        nav { width: 100%; gap: 0.75rem; overflow-x: auto; padding-bottom: 0.25rem; -ms-overflow-style: none; scrollbar-width: none; }
+        nav::-webkit-scrollbar { display: none; }
+        .nav-group { height: auto; }
+        .nav-group-label { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .dropdown { position: fixed; left: 0.9rem; right: 0.9rem; top: 74px; min-width: 0; max-height: 70vh; overflow-y: auto; margin-top: 0; border-radius: 0.9rem; padding: 0.7rem 0; box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16); }
+        .dropdown a { min-height: 44px; display: flex; align-items: center; font-size: 0.95rem; padding: 0.72rem 1.15rem; }
+    }
+
+    footer { padding: 5rem 2rem; text-align: center; border-top: 1px solid #e2e8f0; background: #f8fafc; margin-top: auto; }
+    .cross-property-band {
+        max-width: 980px;
+        margin: 0 auto 1.5rem;
+        padding: 1rem 1.25rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+        color: #1e293b;
+        font-weight: 700;
+        line-height: 1.55;
+    }
+    .cross-property-band a {
+        color: #2563eb;
+        font-weight: 900;
+        text-decoration: none;
+    }
+    .cross-property-band a:hover { text-decoration: underline; }
+    .article-bridge-cta {
+        margin: 2.5rem 0 0;
+        padding: 1.25rem 1.35rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+    }
+    .article-bridge-label {
+        display: inline-block;
+        margin-bottom: 0.55rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #2563eb;
+    }
+    .article-bridge-cta h2,
+    .article-bridge-cta h3 {
+        margin: 0 0 0.55rem;
+        padding: 0;
+        border: 0;
+        color: #0f172a;
+        font-size: 1.2rem;
+        letter-spacing: -0.02em;
+        text-transform: none;
+    }
+    .article-bridge-cta p {
+        margin: 0 0 0.9rem;
+        color: #334155;
+    }
+    .article-bridge-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 0 0 0.95rem;
+    }
+    .article-bridge-chip {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #bfdbfe;
+        border-radius: 999px;
+        padding: 0.34rem 0.65rem;
+        background: #ffffff;
+        color: #1d4ed8;
+        font-size: 0.76rem;
+        font-weight: 700;
+    }
+    .article-bridge-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: center;
+    }
+    .article-bridge-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+        border-radius: 0.85rem;
+        background: #2563eb;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 800;
+    }
+    .article-bridge-secondary {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    .article-bridge-secondary:hover { text-decoration: underline; }
+    .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+    .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
+</style>
 </head>
 <body>
 <div id="header-placeholder" data-static-component="1"></div>
@@ -154,8 +350,21 @@
         <p>Kogan L, Papanikolaou D, Schmidt LDW, Seegmiller B. <a href="https://www.nber.org/papers/w29552" target="_blank" rel="noopener noreferrer">Technology, Vintage-Specific Human Capital, and Labor Displacement: Evidence From Linking Patents With Occupations</a>. NBER Working Paper 29552. 2021, revised 2022.</p>
         <p>Bartel AP, Sicherman N. <a href="https://www.nber.org/papers/w5107" target="_blank" rel="noopener noreferrer">Technological Change and the Skill Acquisition of Young Workers</a>. NBER Working Paper 5107. 1995.</p>
     </div>
+
+<!-- generated-article-bridge:start -->
+<section class="article-bridge-cta" aria-label="Paired LifeMeter scenario">
+  <span class="article-bridge-label">Run The Paired Scenario</span>
+  <h2>Stress-test the lifespan side of this balance-sheet story.</h2>
+  <p>Open the matching LifeMeter scenario with a prefilled planning profile so the wealth case and the health-runway case can be read together.</p>
+  <div class="article-bridge-chips"><span class="article-bridge-chip">Age 45</span><span class="article-bridge-chip">Net worth $1,500,000</span><span class="article-bridge-chip">Spending $90,000</span><span class="article-bridge-chip">Yield 5.0%</span></div>
+  <div class="article-bridge-actions">
+    <a class="article-bridge-button" href="https://lifemeter.xyz/?from=wealthmeter&age=45&netWorth=1500000&annualSpend=90000&targetYield=0.05&region=77&gender=F&health=1.0" target="_blank" rel="noopener">Open Prefilled LifeMeter</a>
+    <a class="article-bridge-secondary" href="longform.html">Back to the wealth longform hub</a>
+  </div>
+</section>
+<!-- generated-article-bridge:end -->
 </main>
 <div id="footer-placeholder" data-static-component="1"></div>
-<script src="components.js"></script>
+<script src="components.js?v=2026-04-30.1"></script>
 </body>
 </html>
