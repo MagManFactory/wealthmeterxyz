@@ -5,6 +5,8 @@ import argparse
 import re
 import sys
 from pathlib import Path
+from urllib.error import HTTPError
+from urllib.parse import urljoin
 from urllib.request import Request, urlopen
 
 
@@ -14,6 +16,7 @@ LONGFORM_BLOCK_RE = re.compile(
 )
 HUB_CARD_RE = re.compile(r'<a class="card" href="([^"]+)"')
 HREF_RE = re.compile(r'<a href="([^"]+)"')
+COMPONENTS_SRC_RE = re.compile(r'<script[^>]+src="([^"]*components\.js[^"]*)"')
 
 
 def load_local(path: Path) -> str:
@@ -22,8 +25,23 @@ def load_local(path: Path) -> str:
 
 def load_remote(url: str) -> str:
     req = Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urlopen(req, timeout=30) as resp:
-        return resp.read().decode("utf-8")
+    try:
+        with urlopen(req, timeout=30) as resp:
+            return resp.read().decode("utf-8")
+    except HTTPError as exc:
+        if exc.code not in {301, 302, 303, 307, 308}:
+            raise
+        location = exc.headers.get("Location")
+        if not location:
+            raise
+        return load_remote(urljoin(url, location))
+
+
+def extract_components_url(hub_html: str, hub_url: str) -> str:
+    match = COMPONENTS_SRC_RE.search(hub_html)
+    if not match:
+        return urljoin(hub_url, "components.js")
+    return urljoin(hub_url, match.group(1))
 
 
 def extract_dropdown_order(js: str) -> list[str]:
@@ -69,9 +87,10 @@ def main() -> int:
 
     if args.live:
         base = args.live.rstrip("/")
-        components = load_remote(f"{base}/components.js")
-        hub = load_remote(f"{base}/longform.html")
-        source_label = base
+        hub_url = f"{base}/longform.html"
+        hub = load_remote(hub_url)
+        components = load_remote(extract_components_url(hub, hub_url))
+        source_label = hub_url
     else:
         root = Path.cwd()
         components = load_local(root / "components.js")
