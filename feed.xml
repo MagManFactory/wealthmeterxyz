@@ -5,12 +5,20 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 02 May 2026 19:05:44 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2026 17:51:41 +0000</lastBuildDate>
+    <item>
+      <title>The Rebalancing Illusion</title>
+      <link>https://wealthmeter.xyz/rebalancing-illusion.html</link>
+      <guid>https://wealthmeter.xyz/rebalancing-illusion.html</guid>
+      <pubDate>Sun, 03 May 2026 17:51:41 +0000</pubDate>
+      <description>Why rebalancing is not automatic wealth magic, where it truly helps, and how taxes, spreads, behavior, and weak policy design turn a good principle into an illusion.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/rebalancing-illusion-flow-2026-may03.png" type="image/png"/>
+    </item>
     <item>
       <title>The Private Markets Mirage</title>
       <link>https://wealthmeter.xyz/private-markets-mirage.html</link>
       <guid>https://wealthmeter.xyz/private-markets-mirage.html</guid>
-      <pubDate>Sat, 02 May 2026 19:05:44 +0000</pubDate>
+      <pubDate>Sat, 02 May 2026 20:56:07 +0000</pubDate>
       <description>Why private-market prestige often exceeds private-market net investor economics, and why access, valuation lag, fee dispersion, and lockup risk matter more than the exclusivity story.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/private-markets-premium-haircut-2026-may02.png" type="image/png"/>
     </item>
