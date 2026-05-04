@@ -145,6 +145,7 @@ PILLAR_CONFIG = [
         ],
         "articles": [
             "great-baseline-war.html",
+            "geographic-arbitrage-window.html",
             "inside-wealth-germany-japan-canada.html",
             "inside-wealth-china-india.html",
             "rich-but-not-famous-economy.html",

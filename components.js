@@ -244,6 +244,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="geographic-arbitrage-window.html">The Geographic Arbitrage Window</a>
                     <a href="rebalancing-illusion.html">The Rebalancing Illusion</a>
                     <a href="private-markets-mirage.html">The Private Markets Mirage</a>
                     <a href="skill-obsolescence-curve.html">The Skill Obsolescence Curve</a>
