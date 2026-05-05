@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 set -euo pipefail
 
 TARGET_DOMAIN="https://wealthmeter.xyz"
@@ -23,8 +23,8 @@ if [ "$ACTUAL_BRANCH" != "$DEPLOY_BRANCH" ]; then
   exit 1
 fi
 
-bash scripts/check_content_policy.sh
 python3 scripts/build_seo_artifacts.py --write
+bash scripts/check_content_policy.sh
 python3 scripts/check_longform_order.py
 
 if [ "${CONFIRM_DEPLOY:-0}" != "1" ]; then
