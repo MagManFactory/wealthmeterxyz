@@ -26,38 +26,32 @@ API_URL_TMPL = (
 
 STYLE_BLOCK = (
     "Institutional editorial infographic only. Use a clean white or warm-white background. "
-    "Use crisp, highly legible sans typography. Minimalist financial systems aesthetic. "
+    "Use only crisp, highly legible sans typography. Minimalist systems aesthetic. "
     "No logos, no watermarks, no decorative clutter, no fake user-interface chrome, no photorealism. "
     "Landscape 16:9 format, publication quality, with labels large enough to read."
 )
 
-PROMPTS: list[dict[str, str]] = [
+PROMPTS = [
     {
         "name": "scarcity-mindset-loop-2026-may07.png",
         "title": "Scarcity Mindset Loop",
         "prompt": (
-            "Create a 16:9 editorial feedback-loop diagram titled "
-            "'How Financial Scarcity Reinforces Itself'. "
-            "Use a circular sequence with seven nodes labeled 'low cash buffer', 'urgent bill pressure', "
-            "'attention tunneling', 'short-horizon choice', 'high-cost borrowing or missed opportunity', "
-            "'reduced slack', and 'weaker future decision room'. "
-            "Add side tags such as 'late fees', 'mental bandwidth', 'present bias', "
-            "'liquidity discount', and 'sleep loss'. "
-            "Footer: 'Scarcity is partly cognitive and strongly structural.'"
+            "Create a 16:9 editorial loop diagram titled 'The Scarcity Mindset Loop'. "
+            "Use a circular flow with five labeled steps: 'past instability', 'cash fixation', 'underinvestment', "
+            "'slower cushion growth', and 'renewed feeling of scarcity'. "
+            "Add a side note reading 'income can rise while operating mode stays defensive'. "
+            "Keep the design analytical, spare, and highly legible."
         ),
     },
     {
-        "name": "scarcity-buffer-reset-grid-2026-may07.png",
-        "title": "Scarcity Buffer Reset Grid",
+        "name": "scarcity-horizon-compression-2026-may07.png",
+        "title": "Scarcity Horizon Compression",
         "prompt": (
-            "Create a 16:9 editorial decision grid titled "
-            "'What Actually Breaks A Scarcity Loop'. "
-            "Use a 2x2 matrix. Horizontal axis: 'structural relief low to high'. "
-            "Vertical axis: 'behavioral support low to high'. "
-            "Label quadrants 'advice without slack', 'temporary breathing room', 'fragile discipline', and 'durable reset'. "
-            "Add short callouts such as 'automatic transfers', 'income smoothing', 'fee elimination', "
-            "'debt refinance', and 'default savings'. "
-            "Footer: 'Better choices last only when slack and systems improve together.'"
+            "Create a 16:9 editorial ladder diagram titled 'How Scarcity Shrinks The Planning Window'. "
+            "Show descending rungs labeled 'decade planning', 'multi-year investing', 'annual positioning', "
+            "'monthly control', and 'immediate survival'. "
+            "On the side add arrows labeled 'optionality falls' and 'felt control rises'. "
+            "Include a footer note: 'The safer decision can become the poorer long-run decision.'"
         ),
     },
 ]
@@ -92,7 +86,7 @@ def extract_image_bytes(resp: dict[str, Any]) -> bytes | None:
 
 
 def extract_text(resp: dict[str, Any]) -> str:
-    chunks: list[str] = []
+    chunks = []
     for cand in resp.get("candidates", []):
         content = cand.get("content", {})
         for part in content.get("parts", []):
