@@ -244,6 +244,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="lifestyle-lock-in-curve.html">The Lifestyle Lock-In Curve</a>
                     <a href="scarcity-mindset-loop.html">The Scarcity Mindset Loop</a>
                     <a href="comparison-trap-digital-age.html">The Comparison Trap in the Digital Age</a>
                     <a href="geographic-arbitrage-window.html">The Geographic Arbitrage Window</a>
