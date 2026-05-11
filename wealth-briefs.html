@@ -979,11 +979,11 @@ function renderStats(payload) {
         (payload.sourceTypes?.["working paper"] || 0) +
         (payload.sourceTypes?.["NBER working paper"] || 0);
     const stats = [
-        { label: "Real sources", value: payload.count, copy: "A searchable shelf of papers, reports, scorecards, and books." },
-        { label: "Featured", value: payload.featuredCount || 0, copy: "A shorter starting list if you want the strongest first reads." },
-        { label: "Categories", value: categories, copy: "Coverage across investing, money behavior, housing, taxes, and retirement." },
-        { label: "Journal papers", value: journals, copy: "Peer-reviewed and academic research still make up the largest share." },
-        { label: "Reports + books", value: reports + books, copy: "Broader reports, working papers, scorecards, and books round out the shelf." }
+        { label: "Sources", value: payload.count, copy: "Finance papers, reports, scorecards, and books in one place." },
+        { label: "Start here", value: payload.featuredCount || 0, copy: "A smaller list of strong starting points." },
+        { label: "Topics", value: categories, copy: "From investing and taxes to housing and retirement." },
+        { label: "Research papers", value: journals, copy: "Academic papers for readers who want the deeper evidence." },
+        { label: "Reports + books", value: reports + books, copy: "Practical reports, working papers, scorecards, and books." }
     ];
     document.getElementById("statsGrid").innerHTML = stats.map((stat) => `
         <article class="stat-card">
