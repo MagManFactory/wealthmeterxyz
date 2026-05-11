@@ -1,4 +1,4 @@
 # Plans
 
 ## Active
-- The paired topic-1 refresh is in commit/publish stage.
+- Deploy the WealthMeter structural SEO layer from the live repo after the local generator and audit pass.
