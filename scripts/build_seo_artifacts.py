@@ -102,6 +102,7 @@ PILLAR_CONFIG = [
             "This is the right starting point for readers who arrive through percentile curiosity. Rank tells you where a balance sheet stands today. Income architecture tells you whether that position is likely to strengthen, stall, or reverse under stress.",
         ],
         "articles": [
+            "salary-ceiling-illusion.html",
             "one-salary-three-futures.html",
             "dual-income-trap.html",
             "new-middle-class-trap.html",
