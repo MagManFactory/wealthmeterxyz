@@ -818,9 +818,9 @@
         <h1>Real sources. Plain language. Fast browsing.</h1>
         <p>This page is a searchable shelf of finance research, reports, and books. Every card points to a real source from the master list. The copy is kept simple so you can scan quickly before opening the original source.</p>
         <div class="meta-line">
-            <span class="hero-chip">No placeholder entries</span>
-            <span class="hero-chip">Real source links only</span>
-            <span class="hero-chip">Search by topic or source type</span>
+            <span class="hero-chip">Every card links to a real source</span>
+            <span class="hero-chip">Plain-language summaries</span>
+            <span class="hero-chip">Browse by topic, year, or source type</span>
         </div>
     </section>
 
@@ -910,16 +910,16 @@
             <h2>Evidence policy</h2>
             <div class="mini-list">
                 <div class="mini-row">
-                    <strong>No hypothetical articles</strong>
-                    <span>If a source is not real and linked, it does not belong in the database.</span>
+                    <strong>Only real sources</strong>
+                    <span>Every entry has to point to a real paper, report, scorecard, or book before it appears on the shelf.</span>
                 </div>
                 <div class="mini-row">
-                    <strong>Source type is shown, not inflated</strong>
-                    <span>Journal papers, working papers, reports, and books are labeled directly instead of being forced into a fake certainty score.</span>
+                    <strong>Source types stay visible</strong>
+                    <span>You can see whether you are opening a journal paper, working paper, report, scorecard, or book before you click.</span>
                 </div>
                 <div class="mini-row">
-                    <strong>Books are context, not proof</strong>
-                    <span>Books can be useful, but they should not be treated the same way as a journal paper or a scorecard.</span>
+                    <strong>Books are context, not final proof</strong>
+                    <span>Books can frame a topic well, but they should not carry the same evidentiary weight as a paper or scorecard on their own.</span>
                 </div>
             </div>
         </article>
@@ -979,11 +979,11 @@ function renderStats(payload) {
         (payload.sourceTypes?.["working paper"] || 0) +
         (payload.sourceTypes?.["NBER working paper"] || 0);
     const stats = [
-        { label: "Real sources", value: payload.count, copy: "No placeholder entries in the live dataset." },
-        { label: "Featured", value: payload.featuredCount || 0, copy: "A tighter starter shelf for the highest-signal items." },
-        { label: "Categories", value: categories, copy: "Coverage across investing, behavior, housing, taxes, and retirement." },
-        { label: "Journal papers", value: journals, copy: "Academic work remains the largest source bucket." },
-        { label: "Reports + books", value: reports + books, copy: "Reports and books stay visible but clearly labeled." }
+        { label: "Real sources", value: payload.count, copy: "A searchable shelf of papers, reports, scorecards, and books." },
+        { label: "Featured", value: payload.featuredCount || 0, copy: "A shorter starting list if you want the strongest first reads." },
+        { label: "Categories", value: categories, copy: "Coverage across investing, money behavior, housing, taxes, and retirement." },
+        { label: "Journal papers", value: journals, copy: "Peer-reviewed and academic research still make up the largest share." },
+        { label: "Reports + books", value: reports + books, copy: "Broader reports, working papers, scorecards, and books round out the shelf." }
     ];
     document.getElementById("statsGrid").innerHTML = stats.map((stat) => `
         <article class="stat-card">
