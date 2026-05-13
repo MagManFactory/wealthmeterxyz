@@ -18,7 +18,7 @@ DOMAIN = "https://wealthmeter.xyz"
 DISPLAY_NAME = "WEALTHMETER.XYZ"
 FEED_URL = f"{DOMAIN}/feed.xml"
 RSS_LIMIT = 50
-COMPONENT_VERSION = "2026-05-07.1"
+COMPONENT_VERSION = "2026-05-13.1"
 PRIVATE_OR_STAGING = {"adsense_block.html"}
 DESCRIPTION_FALLBACKS = {
     "data-lab.html": "Explore WealthMeter's analytical lab for distribution views, exploratory finance tools, and supporting wealth datasets.",
@@ -102,6 +102,7 @@ PILLAR_CONFIG = [
             "This is the right starting point for readers who arrive through percentile curiosity. Rank tells you where a balance sheet stands today. Income architecture tells you whether that position is likely to strengthen, stall, or reverse under stress.",
         ],
         "articles": [
+            "productivity-income-disconnect.html",
             "salary-ceiling-illusion.html",
             "one-salary-three-futures.html",
             "dual-income-trap.html",
