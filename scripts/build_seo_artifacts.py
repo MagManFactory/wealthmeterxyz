@@ -187,6 +187,7 @@ PILLAR_CONFIG = [
             "This is the right hub for readers who want the mechanics rather than the motivational cliché. It focuses on the conditions under which returns become durable household wealth.",
         ],
         "articles": [
+            "venture-capital-power-law-reality.html",
             "compounding-gap-after-1m.html",
             "crypto-etf-wealth-effect.html",
             "concentration-vs-diversification-tradeoff.html",
