@@ -244,6 +244,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="urban-premium-collapse.html">The Urban Premium Collapse</a>
                     <a href="opportunity-cost-of-cash.html">The Opportunity Cost of Cash</a>
                     <a href="venture-capital-power-law-reality.html">The Venture Capital Power Law Reality</a>
                     <a href="productivity-income-disconnect.html">The Productivity-Income Disconnect</a>
