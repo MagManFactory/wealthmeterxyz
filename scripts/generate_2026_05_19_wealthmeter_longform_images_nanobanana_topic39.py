@@ -33,8 +33,8 @@ STYLE_BLOCK = (
 
 PROMPTS: list[dict[str, str]] = [
     {
-        "name": "windfall-allocation-stack-2026-may19.png",
-        "title": "Windfall Allocation Stack",
+        "name": "windfall-decision-waterfall-2026-may19.png",
+        "title": "Windfall Decision Waterfall",
         "prompt": (
             "Create a 16:9 editorial stacked framework titled "
             "'What A Windfall Must Fund First'. "
@@ -45,8 +45,8 @@ PROMPTS: list[dict[str, str]] = [
         ),
     },
     {
-        "name": "windfall-misallocation-timeline-grid-2026-may19.png",
-        "title": "Windfall Misallocation Timeline Grid",
+        "name": "windfall-fragility-grid-2026-may19.png",
+        "title": "Windfall Fragility Grid",
         "prompt": (
             "Create a 16:9 editorial timeline grid titled "
             "'The First 90 Days Decide The Outcome'. "
