@@ -5,7 +5,15 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 May 2026 13:21:10 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 13:13:09 +0000</lastBuildDate>
+    <item>
+      <title>The Windfall Misallocation Problem</title>
+      <link>https://wealthmeter.xyz/windfall-misallocation-problem.html</link>
+      <guid>https://wealthmeter.xyz/windfall-misallocation-problem.html</guid>
+      <pubDate>Tue, 19 May 2026 13:13:09 +0000</pubDate>
+      <description>A WealthMeter analysis of why inheritances, equity payouts, business exits, and other windfalls are often allocated badly because recipients confuse one-time liquidity with durable balance-sheet strength.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/windfall-decision-waterfall-2026-may19.png" type="image/png"/>
+    </item>
     <item>
       <title>The Risk Tolerance Illusion</title>
       <link>https://wealthmeter.xyz/risk-tolerance-illusion.html</link>
@@ -397,14 +405,6 @@
       <pubDate>Mon, 18 May 2026 13:15:50 +0000</pubDate>
       <description>Why households can look wealthy on paper while still lacking cash resilience, and what Federal Reserve data implies about the gap between nominal wealth and usable defense.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/asset-rich-cash-poor-conversion-ladder-2026.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The AI Displacement Timeline</title>
-      <link>https://wealthmeter.xyz/ai-displacement-timeline.html</link>
-      <guid>https://wealthmeter.xyz/ai-displacement-timeline.html</guid>
-      <pubDate>Mon, 18 May 2026 13:15:50 +0000</pubDate>
-      <description>An April 2026 WealthMeter analysis of AI labor displacement, separating task exposure, job churn, wage pressure, and household balance-sheet timing.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/ai-displacement-timeline-stack-2026.png" type="image/png"/>
     </item>
   </channel>
 </rss>
