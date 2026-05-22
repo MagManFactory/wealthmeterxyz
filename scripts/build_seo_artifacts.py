@@ -18,7 +18,7 @@ DOMAIN = "https://wealthmeter.xyz"
 DISPLAY_NAME = "WEALTHMETER.XYZ"
 FEED_URL = f"{DOMAIN}/feed.xml"
 RSS_LIMIT = 50
-COMPONENT_VERSION = "2026-05-19.1"
+COMPONENT_VERSION = "2026-05-22.1"
 PRIVATE_OR_STAGING = {"adsense_block.html"}
 DESCRIPTION_FALLBACKS = {
     "data-lab.html": "Explore WealthMeter's analytical lab for distribution views, exploratory finance tools, and supporting wealth datasets.",
@@ -90,6 +90,26 @@ CRAWL_INDEX_RE = re.compile(r'(<section class="crawl-index".*?</section>)', re.D
 
 
 PILLAR_CONFIG = [
+    {
+        "slug": "structural-wealth-traps-pillar.html",
+        "title": "Structural Wealth Traps",
+        "description": "A WealthMeter pillar hub on debt drag, liquidity illusion, financing friction, and the hidden structures that make households look wealthier than they are.",
+        "kicker": "Wealth Pillar",
+        "lede": "Some balance sheets fail not because income is low or assets are absent, but because hidden structure converts nominal progress into operational fragility.",
+        "sections": [
+            "This cluster follows those hidden structures directly. It covers debt service, liquidity mismatches, false affordability, and the financing terms that let households expand today at the cost of future freedom.",
+            "The common theme is that apparent wealth can be manufactured temporarily. Borrowed consumption, locked-up assets, and thin cash buffers can all flatter a household before stress exposes how little real option value remained.",
+            "Readers should treat this pillar as a translation layer between headline net worth and actual resilience. It asks what can be sold, what must be paid, and what choices disappear first when the cycle turns.",
+        ],
+        "articles": [
+            "debt-illusion-cycle.html",
+            "liquidity-illusion.html",
+            "asset-rich-cash-poor-paradox.html",
+            "cost-of-capital-trap.html",
+            "inflation-ladder-problem.html",
+            "mortgage-lock-in-trap.html",
+        ],
+    },
     {
         "slug": "income-architecture-pillar.html",
         "title": "Income Architecture",
@@ -888,7 +908,7 @@ def build_pillar_grid() -> str:
         '<div style="background:#fff;border:1px solid #dbe4f0;border-radius:20px;padding:1.2rem 1.2rem 1.3rem;">'
         '<div style="font-family:JetBrains Mono, monospace;font-size:0.76rem;text-transform:uppercase;letter-spacing:0.14em;color:#2563eb;margin-bottom:0.55rem;">Topical Clusters</div>'
         '<h2 style="margin:0 0 0.55rem;font-family:Outfit, sans-serif;font-size:1.45rem;line-height:1.15;color:#0f172a;">Explore Wealth Pillars</h2>'
-        '<p style="margin:0 0 1rem;color:#475569;line-height:1.65;font-size:1rem;">Grouped entry pages for WealthMeter’s core themes: income architecture, real estate, distribution, transfer, compounding, geography, retirement, and tax friction.</p>'
+        '<p style="margin:0 0 1rem;color:#475569;line-height:1.65;font-size:1rem;">Grouped entry pages for WealthMeter’s core themes: structural traps, income architecture, real estate, distribution, transfer, compounding, geography, retirement, and tax friction.</p>'
         '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.8rem;">'
         + "".join(cards)
         + '</div></div></section>\n<!-- generated-pillar-grid:end -->\n'
