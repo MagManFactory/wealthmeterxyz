@@ -5,7 +5,15 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 May 2026 13:12:44 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2026 17:07:00 +0000</lastBuildDate>
+    <item>
+      <title>The Debt Illusion Cycle</title>
+      <link>https://wealthmeter.xyz/debt-illusion-cycle.html</link>
+      <guid>https://wealthmeter.xyz/debt-illusion-cycle.html</guid>
+      <pubDate>Fri, 22 May 2026 13:20:37 +0000</pubDate>
+      <description>A WealthMeter analysis of why debt feels like wealth during expansion, how fixed obligations compound fragility, and where productive leverage differs from household self-deception.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/debt-illusion-balance-sheet-flywheel-2026-may22.png" type="image/png"/>
+    </item>
     <item>
       <title>The Windfall Misallocation Problem</title>
       <link>https://wealthmeter.xyz/windfall-misallocation-problem.html</link>
@@ -349,14 +357,6 @@
       <pubDate>Fri, 22 May 2026 13:12:16 +0000</pubDate>
       <description>why two salaries often underperform one salary in long-run wealth resilience.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/dual-income-trap-cashflow-floor.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Debt Illusion Cycle</title>
-      <link>https://wealthmeter.xyz/debt-illusion-cycle.html</link>
-      <guid>https://wealthmeter.xyz/debt-illusion-cycle.html</guid>
-      <pubDate>Fri, 22 May 2026 13:12:16 +0000</pubDate>
-      <description>A WealthMeter analysis of why debt makes households feel richer during the acquisition phase, poorer during the servicing phase, and less mobile when the cycle turns against them.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/debt-illusion-balance-sheet-cycle-2026-may22.png" type="image/png"/>
     </item>
     <item>
       <title>Crypto ETF Wealth Effect: Durable Net Worth or Volatility?</title>

@@ -33,27 +33,27 @@ STYLE_BLOCK = (
 
 PROMPTS: list[dict[str, str]] = [
     {
-        "name": "debt-illusion-balance-sheet-cycle-2026-may22.png",
-        "title": "Debt Illusion Balance Sheet Cycle",
+        "name": "debt-illusion-balance-sheet-flywheel-2026-may22.png",
+        "title": "Debt Illusion Balance Sheet Flywheel",
         "prompt": (
-            "Create a 16:9 editorial cycle diagram titled "
-            "'How Borrowing Pretends To Be Wealth'. "
-            "Show five stages in a clockwise loop labeled 'acquisition', 'status jump', "
-            "'payment normalization', 'stress trigger', and 'optionality loss'. "
-            "Use concise side labels such as 'future income sold forward' and 'fixed obligations rise'. "
-            "Add a footer note reading 'speed now, less freedom later'."
+            "Create a 16:9 editorial systems flywheel titled "
+            "'How Debt Feels Like Wealth Before It Feels Like Constraint'. "
+            "Show a cycle with labeled stages 'new borrowing', 'bigger lifestyle or asset', "
+            "'fixed payment normalization', 'reduced optionality', and 'stress reveal'. "
+            "Use restrained arrows and short sublabels. "
+            "Add a footer note reading 'borrowed reach is not earned resilience'."
         ),
     },
     {
-        "name": "debt-service-optionality-grid-2026-may22.png",
-        "title": "Debt Service Optionality Grid",
+        "name": "debt-service-fragility-grid-2026-may22.png",
+        "title": "Debt Service Fragility Grid",
         "prompt": (
             "Create a 16:9 editorial comparison grid titled "
-            "'Different Debt Types, Different Traps'. "
-            "Use columns labeled 'mortgage', 'student debt', 'consumer debt', and 'business debt'. "
-            "Use rows labeled 'what it buys now', 'what it locks later', 'main risk channel', and 'best correction'. "
-            "Keep labels large, minimal, and publication-ready. "
-            "Add a side note reading 'all debt spends future flexibility'."
+            "'Which Debt Structures Break First'. "
+            "Use columns labeled 'mortgage', 'revolving credit', 'auto debt', and 'business borrowing'. "
+            "Use rows labeled 'rate risk', 'income shock', 'asset exit', and 'cash reserve need'. "
+            "Keep the labels large, compact, and publication-ready. "
+            "Add a side note reading 'fragility depends on path, not just balance size'."
         ),
     },
 ]
