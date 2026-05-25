@@ -5,7 +5,23 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 May 2026 17:42:22 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2026 13:14:50 +0000</lastBuildDate>
+    <item>
+      <title>The Yield Trap in a High-Rate World</title>
+      <link>https://wealthmeter.xyz/yield-trap-high-rate-world.html</link>
+      <guid>https://wealthmeter.xyz/yield-trap-high-rate-world.html</guid>
+      <pubDate>Mon, 25 May 2026 13:14:50 +0000</pubDate>
+      <description>A WealthMeter analysis of why headline yield can rise while real household resilience falls, and how investors misprice duration, credit, tax, and liquidity risk when income becomes the only target.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/yield-trap-headline-vs-real-yield-bridge-2026-may25.png" type="image/png"/>
+    </item>
+    <item>
+      <title>The Promotion Paradox</title>
+      <link>https://wealthmeter.xyz/promotion-paradox.html</link>
+      <guid>https://wealthmeter.xyz/promotion-paradox.html</guid>
+      <pubDate>Sun, 24 May 2026 17:45:08 +0000</pubDate>
+      <description>A WealthMeter analysis of why career promotions often increase status and gross income while weakening net surplus, mobility, and long-run wealth conversion.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/promotion-surplus-conversion-waterfall-2026-may24.png" type="image/png"/>
+    </item>
     <item>
       <title>The Windfall Misallocation Problem</title>
       <link>https://wealthmeter.xyz/windfall-misallocation-problem.html</link>
@@ -141,14 +157,6 @@
       <pubDate>Sun, 24 May 2026 17:42:22 +0000</pubDate>
       <description>Evidence-based analysis of UBI timelines, pilot outcomes, fiscal realities, and why households should not assume near-term guaranteed income.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/ubi-evidence-map-country-trials.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Promotion Paradox</title>
-      <link>https://wealthmeter.xyz/promotion-paradox.html</link>
-      <guid>https://wealthmeter.xyz/promotion-paradox.html</guid>
-      <pubDate>Sun, 24 May 2026 17:42:22 +0000</pubDate>
-      <description>A WealthMeter analysis of why career promotions often increase status and gross income while weakening net surplus, mobility, and long-run wealth conversion.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/promotion-surplus-conversion-waterfall-2026-may24.png" type="image/png"/>
     </item>
     <item>
       <title>The Productivity-Income Disconnect</title>
@@ -397,14 +405,6 @@
       <pubDate>Sun, 24 May 2026 17:42:22 +0000</pubDate>
       <description>why wealth growth becomes non-linear after one million dollars due to access and governance effects.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/compounding-gap-after-1m.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Comparison Trap in the Digital Age</title>
-      <link>https://wealthmeter.xyz/comparison-trap-digital-age.html</link>
-      <guid>https://wealthmeter.xyz/comparison-trap-digital-age.html</guid>
-      <pubDate>Sun, 24 May 2026 17:42:22 +0000</pubDate>
-      <description>A WealthMeter analysis of how digital comparison distorts wealth perception, inflates lifestyle pressure, and weakens household decision quality.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/comparison-trap-reference-escalator-2026-may05.png" type="image/png"/>
     </item>
   </channel>
 </rss>

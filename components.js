@@ -244,6 +244,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="yield-trap-high-rate-world.html">The Yield Trap in a High-Rate World</a>
                     <a href="promotion-paradox.html">The Promotion Paradox</a>
                     <a href="debt-illusion-cycle.html">The Debt Illusion Cycle</a>
                     <a href="windfall-misallocation-problem.html">The Windfall Misallocation Problem</a>

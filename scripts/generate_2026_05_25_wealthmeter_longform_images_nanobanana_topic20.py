@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Nano Banana Pro visuals for the 2026-05-24 WealthMeter topic-10 article."""
+"""Generate Nano Banana Pro visuals for the 2026-05-25 WealthMeter topic-20 article."""
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "images" / "longform"
-ARTIFACT_DIR = ROOT / "output" / "review" / "longform-pair-2026-05-24" / "wealthmeter-nanobanana"
+ARTIFACT_DIR = ROOT / "output" / "review" / "longform-pair-2026-05-25" / "wealthmeter-nanobanana"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 ARTIFACT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -33,29 +33,28 @@ STYLE_BLOCK = (
 
 PROMPTS: list[dict[str, str]] = [
     {
-        "name": "promotion-surplus-conversion-waterfall-2026-may24.png",
-        "title": "Promotion Surplus Conversion Waterfall",
+        "name": "yield-trap-headline-vs-real-yield-bridge-2026-may25.png",
+        "title": "Yield Trap Headline vs Real Yield Bridge",
         "prompt": (
-            "Create a 16:9 editorial waterfall chart titled "
-            "'Where the Promotion Raise Actually Goes'. "
-            "Start with a block labeled 'headline raise' and step downward through "
-            "'tax drag', 'commute and time cost', 'childcare or support cost', "
-            "'lifestyle ratchet', and 'remaining investable surplus'. "
-            "Keep labels compact, bold, and easy to read. "
-            "Add a footer note reading 'gross pay is not net optionality'."
+            "Create a 16:9 editorial bridge diagram titled "
+            "'How Headline Yield Shrinks Into Real Household Income'. "
+            "Start with a block labeled 'advertised yield' and bridge across five reduction points labeled "
+            "'default risk', 'duration risk', 'tax drag', 'inflation loss', and 'illiquidity penalty'. "
+            "End with a final block labeled 'usable household income'. "
+            "Add a footer note reading 'coupon size is not balance-sheet safety'."
         ),
     },
     {
-        "name": "promotion-optionality-fragility-grid-2026-may24.png",
-        "title": "Promotion Optionality Fragility Grid",
+        "name": "yield-regime-risk-grid-2026-may25.png",
+        "title": "Yield Regime Risk Grid",
         "prompt": (
             "Create a 16:9 editorial comparison grid titled "
-            "'Which Promotions Build Wealth and Which Build Dependence'. "
-            "Use columns labeled 'high-leverage role', 'status promotion', "
-            "'golden-handcuffs role', and 'relocation promotion'. "
-            "Use rows labeled 'surplus gain', 'time burden', 'mobility preserved', and 'failure risk'. "
-            "Keep labels concise, large, and publication-ready. "
-            "Add a side note reading 'the best title is not always the best balance-sheet move'."
+            "'Which Yield Sources Hold Up in a High-Rate World?'. "
+            "Use columns labeled 'cash and T-bills', 'investment-grade bonds', "
+            "'high-yield credit', and 'private or leveraged income'. "
+            "Use rows labeled 'liquidity', 'credit fragility', 'duration sensitivity', and 'role in a household balance sheet'. "
+            "Keep labels concise, bold, and publication-ready. "
+            "Add a side note reading 'the highest payout often carries the weakest rescue path'."
         ),
     },
 ]
