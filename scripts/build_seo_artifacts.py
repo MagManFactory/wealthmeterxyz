@@ -147,6 +147,7 @@ PILLAR_CONFIG = [
             "For planning, the relevant question is not whether real estate matters. It is how much of the balance sheet is trapped inside one asset regime and what that implies for optionality when rates, jobs, or location priorities change.",
         ],
         "articles": [
+            "global-housing-divergence.html",
             "housing-stall-2026-rates-inventory-delinquency.html",
             "mortgage-lock-in-trap.html",
             "rent-vs-buy-reversal.html",
