@@ -519,7 +519,10 @@ def ensure_component_version(text: str) -> str:
 
 def ensure_static_components(text: str, shared_styles: str, header_html: str, footer_html: str) -> str:
     text = collapse_component_styles(text)
-    if "wealthmeter-component-styles" not in text:
+    empty_style_tag = "<style id=\"wealthmeter-component-styles\"></style>"
+    if empty_style_tag in text:
+        text = text.replace(empty_style_tag, shared_styles, 1)
+    elif "wealthmeter-component-styles" not in text:
         text = text.replace("</head>", f"{shared_styles}\n</head>")
     header_markup = f'<div id="header-placeholder" data-static-component="1">\n{header_html}\n</div>'
     footer_markup = f'<div id="footer-placeholder" data-static-component="1">\n{footer_html}\n</div>'

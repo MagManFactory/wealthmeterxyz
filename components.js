@@ -325,8 +325,13 @@ const siteFooter = `
 </footer>`;
 
 document.addEventListener("DOMContentLoaded", () => {
-    if (!document.getElementById("wealthmeter-component-styles")) {
-        document.head.insertAdjacentHTML("beforeend", sharedStyles);
+    const sharedStyleEl = document.getElementById("wealthmeter-component-styles");
+    if (!sharedStyleEl || !sharedStyleEl.textContent.trim()) {
+        if (sharedStyleEl) {
+            sharedStyleEl.outerHTML = sharedStyles;
+        } else {
+            document.head.insertAdjacentHTML("beforeend", sharedStyles);
+        }
     }
     const headerEl = document.getElementById("header-placeholder");
     const footerEl = document.getElementById("footer-placeholder");
