@@ -244,6 +244,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="property-tax-drag.html">The Property Tax Drag</a>
                     <a href="global-housing-divergence.html">The Global Housing Divergence</a>
                     <a href="freelance-freedom-tradeoff.html">The Freelance Freedom Tradeoff</a>
                     <a href="yield-trap-high-rate-world.html">The Yield Trap in a High-Rate World</a>

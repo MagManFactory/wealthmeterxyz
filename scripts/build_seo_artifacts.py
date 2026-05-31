@@ -271,6 +271,7 @@ PILLAR_CONFIG = [
             "Readers should treat this hub as a reminder that net wealth is always partly a policy artifact. Planning quality improves when those frictions are modeled directly instead of treated as minor footnotes.",
         ],
         "articles": [
+            "property-tax-drag.html",
             "equity-compensation-trap.html",
             "loss-aversion-tax.html",
             "realistic-projections-ubi.html",
