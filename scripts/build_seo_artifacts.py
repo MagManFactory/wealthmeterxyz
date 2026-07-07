@@ -87,6 +87,15 @@ PILLAR_GRID_RE = re.compile(
     re.DOTALL,
 )
 CRAWL_INDEX_RE = re.compile(r'(<section class="crawl-index".*?</section>)', re.DOTALL)
+LONGFORM_DROPDOWN_RE = re.compile(
+    r'(<div class="nav-group"><span class="nav-group-label label-longform">Longform</span>\s*<div class="dropdown">\s*<a href="longform\.html">Longform Hub</a>\s*)(.*?)(\s*<a href="reports\.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>)',
+    re.DOTALL,
+)
+LONGFORM_CARDS_RE = re.compile(
+    r'(<!-- generated-pillar-grid:end -->\s*)(.*?)(\s*</main>)',
+    re.DOTALL,
+)
+BADGE_RE = re.compile(r'<(?:span|div) class="badge">(.*?)</(?:span|div)>', re.IGNORECASE | re.DOTALL)
 
 
 PILLAR_CONFIG = [
@@ -378,6 +387,20 @@ def article_urls_from_longform() -> set[str]:
     }
 
 
+def is_longform_article(path: Path, html_text: str, article_urls: set[str]) -> bool:
+    if path.name in article_urls:
+      return True
+    if path.name in generated_hub_names():
+      return False
+    if '<main class="article">' not in html_text:
+      return False
+    if re.search(r'<span class="badge">\s*Longform\b', html_text, re.IGNORECASE):
+      return True
+    if re.search(r'<meta[^>]+property=["\']og:type["\'][^>]+content=["\']article["\']', html_text, re.IGNORECASE):
+      return True
+    return False
+
+
 def generated_hub_names() -> set[str]:
     return {pillar["slug"] for pillar in PILLAR_CONFIG} | {"longform.html"}
 
@@ -396,7 +419,7 @@ def classify_page(path: Path, html_text: str, article_urls: set[str]) -> PageInf
         title=title_of(html_text),
         description=description_of(html_text),
         robots=robots_of(html_text),
-        is_article=path.name in article_urls,
+        is_article=is_longform_article(path, html_text, article_urls),
         is_hub=path.name in generated_hub_names(),
         modified_at=modified_at,
         image_url=image_match.group(1).strip() if image_match else None,
@@ -773,6 +796,46 @@ def article_card_markup(path: str, title: str, description: str) -> str:
     )
 
 
+def badge_of(text: str) -> str | None:
+    match = BADGE_RE.search(text)
+    if not match:
+        return None
+    badge = re.sub(r"\s+", " ", html.unescape(match.group(1))).strip()
+    return badge or None
+
+
+def article_meta_label(page: PageInfo) -> str:
+    badge = badge_of(page.html_text)
+    if badge:
+        return f"{badge} · {page.modified_at.strftime('%B')} {page.modified_at.day}, {page.modified_at.year}"
+    return f"Longform · {page.modified_at.strftime('%B')} {page.modified_at.day}, {page.modified_at.year}"
+
+
+def article_card_markup_from_page(page: PageInfo) -> str:
+    path = page.path.name
+    title = page.title.split("|")[0].strip()
+    description = page.description or title
+    image_ref = page.image_url or first_local_image_ref(page.html_text) or ""
+    if image_ref.startswith(DOMAIN):
+        image_ref = urlparse(image_ref).path.lstrip("/")
+    alt = html.escape(page.image_alt or description, quote=True)
+    image_tag = ""
+    if image_ref:
+        size = image_size(local_image_path(image_ref) or Path())
+        size_attrs = f' width="{size[0]}" height="{size[1]}"' if size else ""
+        image_tag = f'    <img src="{image_ref}" alt="{alt}" loading="lazy"{size_attrs}>\n'
+    return (
+        f'<a class="card" href="{path}" style="margin-top: 1.4rem;">\n'
+        f"{image_tag}"
+        '    <div class="content">\n'
+        f'        <div class="meta">{html.escape(article_meta_label(page))}</div>\n'
+        f"        <h2>{html.escape(title)}</h2>\n"
+        f"        <p>{html.escape(description)}</p>\n"
+        "    </div>\n"
+        "</a>"
+    )
+
+
 def page_description(path: str) -> str:
     return description_of(read_text(ROOT / path))
 
@@ -931,6 +994,52 @@ def ensure_pillar_grid(text: str) -> str:
     return updated.replace("</main>", f"{grid}</main>")
 
 
+def article_pages_in_display_order(pages: list[PageInfo]) -> list[PageInfo]:
+    return sorted(
+        (page for page in pages if page.is_article and page.is_indexable),
+        key=sort_key,
+        reverse=True,
+    )
+
+
+def generated_longform_dropdown(article_pages: list[PageInfo]) -> str:
+    lines = [
+        f'                    <a href="{page.path.name}">{html.escape(page.title.split("|")[0].strip())}</a>'
+        for page in article_pages
+    ]
+    return "\n".join(lines)
+
+
+def update_components_longform_dropdown(text: str, article_pages: list[PageInfo]) -> str:
+    dropdown = generated_longform_dropdown(article_pages)
+    return LONGFORM_DROPDOWN_RE.sub(rf"\1{dropdown}\3", text, count=1)
+
+
+def generated_longform_cards(article_pages: list[PageInfo]) -> str:
+    return "\n\n".join(article_card_markup_from_page(page) for page in article_pages)
+
+
+def update_longform_cards(text: str, article_pages: list[PageInfo]) -> str:
+    cards = generated_longform_cards(article_pages)
+    return LONGFORM_CARDS_RE.sub(rf"\1{cards}\3", text, count=1)
+
+
+def sync_longform_surfaces(apply: bool, pages: list[PageInfo]) -> int:
+    article_pages = article_pages_in_display_order(pages)
+    changes = 0
+
+    components_path = ROOT / "components.js"
+    components_text = read_text(components_path)
+    updated_components = update_components_longform_dropdown(components_text, article_pages)
+    changes += int(write_text(components_path, updated_components, apply))
+
+    longform_path = ROOT / "longform.html"
+    longform_text = read_text(longform_path)
+    updated_longform = update_longform_cards(longform_text, article_pages)
+    changes += int(write_text(longform_path, updated_longform, apply))
+    return changes
+
+
 def update_html_inventory(apply: bool) -> tuple[list[PageInfo], int]:
     component_file = ROOT / "components.js"
     shared_styles = extract_template(component_file, "sharedStyles")
@@ -1067,6 +1176,8 @@ def main() -> int:
 
     pillar_changes = generate_pillar_pages(args.write, shared_styles, header_html, footer_html)
     pages, html_changes = update_html_inventory(args.write)
+    sync_changes = sync_longform_surfaces(args.write, pages)
+    pages, html_changes_second = update_html_inventory(args.write)
     indexable_pages = [page for page in pages if page.is_indexable]
     article_pages = [page for page in indexable_pages if page.is_article]
 
@@ -1077,7 +1188,7 @@ def main() -> int:
         ROOT / "feed.xml": generate_feed(article_pages),
     }
 
-    file_changes = html_changes + pillar_changes
+    file_changes = html_changes + sync_changes + html_changes_second + pillar_changes
     for path, content in generated_files.items():
         file_changes += int(write_text(path, content, args.write))
 

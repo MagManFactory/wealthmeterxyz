@@ -5,7 +5,15 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jul 2026 03:51:30 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2026 03:57:07 +0000</lastBuildDate>
+    <item>
+      <title>Sequence Risk Before Retirement: The Fragility Nobody Prices Early Enough</title>
+      <link>https://wealthmeter.xyz/sequence-risk-before-retirement-fragility-priced-too-late.html</link>
+      <guid>https://wealthmeter.xyz/sequence-risk-before-retirement-fragility-priced-too-late.html</guid>
+      <pubDate>Tue, 07 Jul 2026 03:53:58 +0000</pubDate>
+      <description>Why sequence risk starts before retirement begins, why the danger is really a shrinking margin problem, and why households usually notice it only when the flexibility window is already narrower.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/sequence-risk-fragility-wedge-2026-jul06.png" type="image/png"/>
+    </item>
     <item>
       <title>The Yield Trap in a High-Rate World</title>
       <link>https://wealthmeter.xyz/yield-trap-high-rate-world.html</link>
@@ -397,14 +405,6 @@
       <pubDate>Tue, 07 Jul 2026 03:34:35 +0000</pubDate>
       <description>A WealthMeter analysis of why debt feels like wealth during expansion, how fixed obligations compound fragility, and where productive leverage differs from household self-deception.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/debt-illusion-balance-sheet-flywheel-2026-may22.png" type="image/png"/>
-    </item>
-    <item>
-      <title>Crypto ETF Wealth Effect: Durable Net Worth or Volatility?</title>
-      <link>https://wealthmeter.xyz/crypto-etf-wealth-effect.html</link>
-      <guid>https://wealthmeter.xyz/crypto-etf-wealth-effect.html</guid>
-      <pubDate>Tue, 07 Jul 2026 03:34:35 +0000</pubDate>
-      <description>How to evaluate whether crypto ETF gains are compounding into durable wealth or simply increasing cycle sensitivity.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/crypto-etf-wealth-effect-chart.png" type="image/png"/>
     </item>
   </channel>
 </rss>
