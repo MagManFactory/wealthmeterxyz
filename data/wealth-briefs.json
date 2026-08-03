@@ -1,20 +1,20 @@
 {
   "schemaVersion": 10,
-  "updatedAt": "2026-07-27T12:00:00Z",
-  "count": 685,
+  "updatedAt": "2026-08-03T12:00:00Z",
+  "count": 705,
   "categories": {
-    "Decumulation": 41,
+    "Decumulation": 43,
     "Asset Pricing": 104,
     "Active vs Passive": 46,
-    "Behavioral Economics": 104,
+    "Behavioral Economics": 105,
     "Tax & Sequence": 24,
     "Portfolio Theory": 56,
     "Market Efficiency": 51,
     "Market History": 20,
     "Dividend Policy": 8,
     "Fixed Income": 45,
-    "Real Estate": 76,
-    "Personal Finance": 97,
+    "Real Estate": 81,
+    "Personal Finance": 109,
     "Value Investing": 13
   },
   "sourceTypes": {
@@ -25,9 +25,9 @@
     "book": 60,
     "business journal": 2,
     "economics journal": 56,
-    "research report": 178,
+    "research report": 189,
     "academic journal": 57,
-    "NBER working paper": 131,
+    "NBER working paper": 140,
     "real estate journal": 17
   },
   "briefs": [
@@ -177,7 +177,7 @@
     },
     {
       "id": "1992-the-cross-section-of-expected-stock-returns",
-      "title": "The cross\u2010section of expected stock returns",
+      "title": "The cross‐section of expected stock returns",
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 1992,
@@ -253,7 +253,7 @@
     },
     {
       "id": "2010-luck-versus-skill-in-the-cross-section-of-mutual-fund-returns",
-      "title": "Luck versus skill in the cross\u2010section of mutual fund returns",
+      "title": "Luck versus skill in the cross‐section of mutual fund returns",
       "category": "Active vs Passive",
       "categoryLabel": "Active vs passive",
       "year": 2010,
@@ -433,7 +433,7 @@
     },
     {
       "id": "2001-loss-harvesting-what-s-it-worth-to-the-taxable-investor",
-      "title": "Loss harvesting: What\u2019s it worth to the taxable investor?",
+      "title": "Loss harvesting: What’s it worth to the taxable investor?",
       "category": "Tax & Sequence",
       "categoryLabel": "Taxes and account order",
       "year": 2001,
@@ -1512,7 +1512,7 @@
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 2018,
-      "authors": "Matev\u017e Sko\u010dir Igor Lon\u010darski",
+      "authors": "Matevž Skočir Igor Lončarski",
       "publication": "Journal of international financial markets institutions and money",
       "sourceType": "research report",
       "sourceLabel": "research report",
@@ -1550,7 +1550,7 @@
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 2024,
-      "authors": "F. G\u00f6kg\u00f6z Canan Seyhan",
+      "authors": "F. Gökgöz Canan Seyhan",
       "publication": "Journal of Economic Studies",
       "sourceType": "research report",
       "sourceLabel": "research report",
@@ -1622,7 +1622,7 @@
     },
     {
       "id": "2022-an-empirical-investigation-of-tobin-s-q-augmented-various-asset-pricing-models-evidence-from-pakistan",
-      "title": "An empirical investigation of Tobin\u2019s-Q augmented various Asset Pricing Models: Evidence from Pakistan",
+      "title": "An empirical investigation of Tobin’s-Q augmented various Asset Pricing Models: Evidence from Pakistan",
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 2022,
@@ -1631,7 +1631,7 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "This paper adds Tobin\u2019s Q to asset-pricing models in Pakistan and tests whether investment-related valuation signals improve model fit.",
+      "summary": "This paper adds Tobin’s Q to asset-pricing models in Pakistan and tests whether investment-related valuation signals improve model fit.",
       "whyItMatters": "Useful if you want to know whether balance-sheet investment signals add value in an applied pricing model.",
       "focusTags": [
         "Return drivers"
@@ -1679,7 +1679,7 @@
     },
     {
       "id": "2025-how-do-climate-related-risks-and-opportunities-affect-portfolio-allocation-and-asset-pricing",
-      "title": "How Do Climate\u2010Related Risks and Opportunities Affect Portfolio Allocation and Asset Pricing?",
+      "title": "How Do Climate‐Related Risks and Opportunities Affect Portfolio Allocation and Asset Pricing?",
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 2025,
@@ -1723,7 +1723,7 @@
       "categoryLabel": "Return drivers",
       "year": 2020,
       "authors": "Emine Kaya",
-      "publication": "Spanish Journal of Finance and Accounting / Revista Espa\u00f1ola de Financiaci\u00f3n y Contabilidad",
+      "publication": "Spanish Journal of Finance and Accounting / Revista Española de Financiación y Contabilidad",
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
@@ -1889,7 +1889,7 @@
     },
     {
       "id": "2023-the-asset-pricing-implications-of-carbon-risk-in-korea",
-      "title": "The asset\u2010pricing implications of carbon risk in Korea",
+      "title": "The asset‐pricing implications of carbon risk in Korea",
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 2023,
@@ -1908,7 +1908,7 @@
     },
     {
       "id": "2017-unconditional-tests-of-linear-asset-pricing-models-with-time-varying-betas",
-      "title": "Unconditional Tests of Linear Asset Pricing Models with Time\u2010Varying Betas",
+      "title": "Unconditional Tests of Linear Asset Pricing Models with Time‐Varying Betas",
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 2017,
@@ -1931,7 +1931,7 @@
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 2016,
-      "authors": "Vitor Azevedo Andr\u00e9 A. P. Santos L. M. Campos",
+      "authors": "Vitor Azevedo André A. P. Santos L. M. Campos",
       "publication": "Academic Journal",
       "sourceType": "academic journal",
       "sourceLabel": "academic journal",
@@ -1970,7 +1970,7 @@
       "categoryLabel": "Return drivers",
       "year": 2022,
       "authors": "Abdul Qadeer Lieven De Moor Ashfaq Ahmad",
-      "publication": "Economic Research-Ekonomska Istra\u017eivanja",
+      "publication": "Economic Research-Ekonomska Istraživanja",
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
@@ -2008,7 +2008,7 @@
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 2021,
-      "authors": "Te-Feng Chen Tarun Chordia San\u2010Lin Chung et al.",
+      "authors": "Te-Feng Chen Tarun Chordia San‐Lin Chung et al.",
       "publication": "Social Science Research Network",
       "sourceType": "working paper",
       "sourceLabel": "working paper",
@@ -2023,7 +2023,7 @@
     },
     {
       "id": "2018-asset-pricing-with-omitted-factors",
-      "title": "Asset Pricing with Omitted Factors\u2217",
+      "title": "Asset Pricing with Omitted Factors∗",
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 2018,
@@ -2100,7 +2100,7 @@
     },
     {
       "id": "1999-two-pass-tests-of-asset-pricing-models-with-useless-factors",
-      "title": "Two\u2010Pass Tests of Asset Pricing Models with Useless Factors",
+      "title": "Two‐Pass Tests of Asset Pricing Models with Useless Factors",
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 1999,
@@ -2177,7 +2177,7 @@
     },
     {
       "id": "1992-the-cross-section-of-expected-stock-returns-v2",
-      "title": "The Cross\u2010Section of Expected Stock Returns",
+      "title": "The Cross‐Section of Expected Stock Returns",
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 1992,
@@ -2367,7 +2367,7 @@
     },
     {
       "id": "2025-war-discourse-and-the-cross-section-of-expected-stock-returns",
-      "title": "War Discourse and the Cross Section\u00a0of Expected Stock Returns",
+      "title": "War Discourse and the Cross Section of Expected Stock Returns",
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 2025,
@@ -2502,7 +2502,7 @@
     },
     {
       "id": "2016-editor-s-choice-and-the-cross-section-of-expected-returns",
-      "title": "Editor's Choice \u2026 and the Cross-Section of Expected Returns",
+      "title": "Editor's Choice … and the Cross-Section of Expected Returns",
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 2016,
@@ -2579,7 +2579,7 @@
     },
     {
       "id": "2024-sentiment-and-the-cross-section-of-expected-stock-returns",
-      "title": "Sentiment and the cross\u2010section of expected stock returns",
+      "title": "Sentiment and the cross‐section of expected stock returns",
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 2024,
@@ -2660,7 +2660,7 @@
       "category": "Asset Pricing",
       "categoryLabel": "Return drivers",
       "year": 2026,
-      "authors": "Murat Tini\u00e7 A. \u015eensoy Muge Demir et al.",
+      "authors": "Murat Tiniç A. Şensoy Muge Demir et al.",
       "publication": "Annals of Operations Research",
       "sourceType": "research report",
       "sourceLabel": "research report",
@@ -2850,7 +2850,7 @@
       "category": "Behavioral Economics",
       "categoryLabel": "Money behavior",
       "year": 2024,
-      "authors": "Paulo Christian Morais Rodopoulos Aldery Silveira J\u00fanior",
+      "authors": "Paulo Christian Morais Rodopoulos Aldery Silveira Júnior",
       "publication": "International Journal of Economics and Finance",
       "sourceType": "research report",
       "sourceLabel": "research report",
@@ -2884,11 +2884,11 @@
     },
     {
       "id": "2011-behavioral-finance-prospect-theory-a-vliv-typu-vysoko-kolsk-ho-vzd-l-n-na-ty-d-ln-chov-n",
-      "title": "Behavioral Finance - Prospect Theory a vliv typu vysoko\u0161kolsk\u00e9ho vzd\u011bl\u00e1n\u00ed na \u010dty\u0159d\u00edln\u00e9 chov\u00e1n\u00ed",
+      "title": "Behavioral Finance - Prospect Theory a vliv typu vysokoškolského vzdělání na čtyřdílné chování",
       "category": "Behavioral Economics",
       "categoryLabel": "Money behavior",
       "year": 2011,
-      "authors": "Petra Karamonov\u00e1",
+      "authors": "Petra Karamonová",
       "publication": "Academic Journal",
       "sourceType": "academic journal",
       "sourceLabel": "academic journal",
@@ -2913,7 +2913,7 @@
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
       "summary": "This paper revisits prospect theory and asks where the model still fits well and where its limits may be showing.",
-      "whyItMatters": "Useful when you want to know whether the field\u2019s core framework is still being challenged.",
+      "whyItMatters": "Useful when you want to know whether the field’s core framework is still being challenged.",
       "focusTags": [
         "Money behavior"
       ],
@@ -2960,7 +2960,7 @@
     },
     {
       "id": "2020-finan-as-comportamentais-um-estudo-sobre-os-artigos-publicados-com-base-na-teoria-do-prospecto-behavioral-finance-a-study-on-articles-published-based-on-prospect-theory",
-      "title": "FINAN\u00c7AS COMPORTAMENTAIS: UM ESTUDO SOBRE OS ARTIGOS PUBLICADOS COM BASE NA TEORIA DO PROSPECTO / BEHAVIORAL FINANCE: A STUDY ON ARTICLES PUBLISHED BASED ON PROSPECT THEORY",
+      "title": "FINANÇAS COMPORTAMENTAIS: UM ESTUDO SOBRE OS ARTIGOS PUBLICADOS COM BASE NA TEORIA DO PROSPECTO / BEHAVIORAL FINANCE: A STUDY ON ARTICLES PUBLISHED BASED ON PROSPECT THEORY",
       "category": "Behavioral Economics",
       "categoryLabel": "Money behavior",
       "year": 2020,
@@ -2998,7 +2998,7 @@
     },
     {
       "id": "2024-behavioral-biases-of-cryptocurrency-investors-a-prospect-theory-model-to-explain-cryptocurrency-returns",
-      "title": "Behavioral biases of cryptocurrency investors: a\u00a0prospect theory model to explain cryptocurrency returns",
+      "title": "Behavioral biases of cryptocurrency investors: a prospect theory model to explain cryptocurrency returns",
       "category": "Behavioral Economics",
       "categoryLabel": "Money behavior",
       "year": 2024,
@@ -3046,7 +3046,7 @@
       "sourceLabel": "academic journal",
       "sourceLinkLabel": "View academic journal",
       "summary": "This paper surveys where prospect theory has been used most heavily inside behavioral-finance research and what kinds of results it helps explain.",
-      "whyItMatters": "Useful as a narrower guide to prospect theory\u2019s direct use inside finance.",
+      "whyItMatters": "Useful as a narrower guide to prospect theory’s direct use inside finance.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3093,7 +3093,7 @@
     },
     {
       "id": "2015-teoria-do-prospecto-evid-ncias-aplicadas-em-finan-as-comportamentais-prospect-theory-applied-evidence-in-behavioral-finance",
-      "title": "Teoria Do Prospecto: Evid\u00eancias Aplicadas Em Finan\u00e7as Comportamentais (Prospect Theory: Applied Evidence in Behavioral Finance)",
+      "title": "Teoria Do Prospecto: Evidências Aplicadas Em Finanças Comportamentais (Prospect Theory: Applied Evidence in Behavioral Finance)",
       "category": "Behavioral Economics",
       "categoryLabel": "Money behavior",
       "year": 2015,
@@ -3274,7 +3274,7 @@
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
       "summary": "This review traces how behavioral-finance research evolved from a challenge to rational models into a broader field with many subtopics and methods.",
-      "whyItMatters": "Useful when you want the field\u2019s intellectual arc rather than a single anomaly paper.",
+      "whyItMatters": "Useful when you want the field’s intellectual arc rather than a single anomaly paper.",
       "focusTags": [
         "Money behavior"
       ],
@@ -3401,7 +3401,7 @@
       "category": "Behavioral Economics",
       "categoryLabel": "Money behavior",
       "year": 2025,
-      "authors": "Sadi Evren \u015eeker Ba\u015fak Turan I\u00e7ke Serhat Yanik et al.",
+      "authors": "Sadi Evren Şeker Başak Turan Içke Serhat Yanik et al.",
       "publication": "SN Business & Economics",
       "sourceType": "research report",
       "sourceLabel": "research report",
@@ -3458,7 +3458,7 @@
       "category": "Behavioral Economics",
       "categoryLabel": "Money behavior",
       "year": 2014,
-      "authors": "Fabricio Haubert Carlos Rog\u00e9rio Montenegro de Lima M. Lima",
+      "authors": "Fabricio Haubert Carlos Rogério Montenegro de Lima M. Lima",
       "publication": "Academic Journal",
       "sourceType": "academic journal",
       "sourceLabel": "academic journal",
@@ -3588,7 +3588,7 @@
     },
     {
       "id": "2021-mean-variance-hedging-for-production-planning-with-multiple-products",
-      "title": "Mean\u2013Variance Hedging for Production Planning with Multiple Products",
+      "title": "Mean–Variance Hedging for Production Planning with Multiple Products",
       "category": "Portfolio Theory",
       "categoryLabel": "Portfolio design",
       "year": 2021,
@@ -3683,7 +3683,7 @@
     },
     {
       "id": "2022-portfolio-optimization-in-stocks-using-mean-variance-optimization-and-the-efficient-frontier",
-      "title": "Portfolio optimization in stocks using mean\u2013variance optimization and the efficient frontier",
+      "title": "Portfolio optimization in stocks using mean–variance optimization and the efficient frontier",
       "category": "Portfolio Theory",
       "categoryLabel": "Portfolio design",
       "year": 2022,
@@ -3721,7 +3721,7 @@
     },
     {
       "id": "2020-a-comparison-on-particle-swarm-optimization-and-genetic-algorithm-performances-in-deriving-the-efficient-frontier-of-stocks-portfolios-based-on-amean-lowerpartial-moment-model",
-      "title": "A comparison on particle swarm optimization and genetic algorithm performances in deriving the efficient frontier of stocks portfolios based on amean\u2010lowerpartial moment model",
+      "title": "A comparison on particle swarm optimization and genetic algorithm performances in deriving the efficient frontier of stocks portfolios based on amean‐lowerpartial moment model",
       "category": "Portfolio Theory",
       "categoryLabel": "Portfolio design",
       "year": 2020,
@@ -3801,7 +3801,7 @@
       "category": "Portfolio Theory",
       "categoryLabel": "Portfolio design",
       "year": 2023,
-      "authors": "Francisco Salas\u2010Molina D. Pl\u00e0-Santamaria J. Rodr\u00edguez-Aguilar",
+      "authors": "Francisco Salas‐Molina D. Plà-Santamaria J. Rodríguez-Aguilar",
       "publication": "Annals of Operations Research",
       "sourceType": "research report",
       "sourceLabel": "research report",
@@ -4084,7 +4084,7 @@
     },
     {
       "id": "2014-behavioral-factors-in-risk-arbitrage",
-      "title": "Behavioral Factors in Risk Arbitrage\u2217",
+      "title": "Behavioral Factors in Risk Arbitrage∗",
       "category": "Market Efficiency",
       "categoryLabel": "Market efficiency",
       "year": 2014,
@@ -4237,7 +4237,7 @@
     },
     {
       "id": "2021-short-and-long-horizon-behavioral-anomalies-and-institutional-investors-nudge-behavior-based-on-the-data-of-listed-chinese-tobacco-companies",
-      "title": "Short- and Long-Horizon Behavioral Anomalies and Institutional Investors\u2019 Nudge Behavior: Based on the Data of Listed Chinese Tobacco Companies",
+      "title": "Short- and Long-Horizon Behavioral Anomalies and Institutional Investors’ Nudge Behavior: Based on the Data of Listed Chinese Tobacco Companies",
       "category": "Market Efficiency",
       "categoryLabel": "Market efficiency",
       "year": 2021,
@@ -4489,7 +4489,7 @@
       "category": "Market Efficiency",
       "categoryLabel": "Market efficiency",
       "year": 2015,
-      "authors": "David Pe\u00f3n Anxo Calvo M. Antelo",
+      "authors": "David Peón Anxo Calvo M. Antelo",
       "publication": "Academic Journal",
       "sourceType": "academic journal",
       "sourceLabel": "academic journal",
@@ -4554,7 +4554,7 @@
       "sourceType": "working paper",
       "sourceLabel": "working paper",
       "sourceLinkLabel": "View working paper",
-      "summary": "Blanchett and Frank propose reviewing the sustainability of a withdrawal rate every year instead of deciding once at retirement and never revisiting it. Their method raises or lowers the rate based on the remaining horizon and the portfolio\u2019s current condition.",
+      "summary": "Blanchett and Frank propose reviewing the sustainability of a withdrawal rate every year instead of deciding once at retirement and never revisiting it. Their method raises or lowers the rate based on the remaining horizon and the portfolio’s current condition.",
       "whyItMatters": "Useful if you want a withdrawal rule that survives bad timing, inflation, and long retirements.",
       "focusTags": [
         "Retirement spending"
@@ -5316,7 +5316,7 @@
       "sourceLabel": "finance journal",
       "sourceLinkLabel": "View finance journal",
       "summary": "Fama and French test whether mutual fund outperformance survives once luck, factor exposure, and costs are stripped out. They find very little evidence that many managers deliver persistent skill net of fees.",
-      "whyItMatters": "Useful when a fund\u2019s past outperformance may just be noise rather than repeatable manager edge.",
+      "whyItMatters": "Useful when a fund’s past outperformance may just be noise rather than repeatable manager edge.",
       "focusTags": [
         "Active vs passive",
         "Mutual funds"
@@ -5843,7 +5843,7 @@
       "category": "Fixed Income",
       "categoryLabel": "Bonds and rates",
       "year": 2007,
-      "authors": "G\u00fcrkaynak R. S., Sack B., & Wright J. H.",
+      "authors": "Gürkaynak R. S., Sack B., & Wright J. H.",
       "publication": "Journal of Monetary Economics",
       "sourceType": "economics journal",
       "sourceLabel": "economics journal",
@@ -7471,7 +7471,7 @@
     },
     {
       "id": "2024-morningstars-2024-annual-us-fund-fee-study",
-      "title": "Morningstar\u2019s 2024 Annual US Fund Fee Study",
+      "title": "Morningstar’s 2024 Annual US Fund Fee Study",
       "category": "Active vs Passive",
       "categoryLabel": "Active vs passive",
       "year": 2024,
@@ -7543,7 +7543,7 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "The Fed\u2019s 2024 SHED shows that overall financial well-being stayed below the 2021 peak, inflation remained the dominant concern, and many households still lacked emergency savings even with a solid labor market.",
+      "summary": "The Fed’s 2024 SHED shows that overall financial well-being stayed below the 2021 peak, inflation remained the dominant concern, and many households still lacked emergency savings even with a solid labor market.",
       "whyItMatters": "A good reality check on day-to-day household balance-sheet stress that does not show up in market indexes.",
       "focusTags": [
         "Household finance",
@@ -7585,7 +7585,7 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "The OECD surveys pension rules across member countries, updates replacement-rate projections for today\u2019s workers, and examines how inflation, reform design, and early-retirement rules shape retirement income security.",
+      "summary": "The OECD surveys pension rules across member countries, updates replacement-rate projections for today’s workers, and examines how inflation, reform design, and early-retirement rules shape retirement income security.",
       "whyItMatters": "Useful when you need retirement policy evidence that goes beyond one country and shows how pension design changes the spending floor retirees can rely on.",
       "focusTags": [
         "Retirement spending",
@@ -7627,7 +7627,7 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Using Morningstar\u2019s new retirement-outcomes model, this paper estimates that retirement shortfalls are concentrated among workers who lack access to employer plans, lower-income workers, and people retiring earlier.",
+      "summary": "Using Morningstar’s new retirement-outcomes model, this paper estimates that retirement shortfalls are concentrated among workers who lack access to employer plans, lower-income workers, and people retiring earlier.",
       "whyItMatters": "It moves the retirement-crisis debate away from slogans and toward which households are actually at risk of running short.",
       "focusTags": [
         "Retirement spending",
@@ -12980,7 +12980,7 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "The Fed\u2019s annual SHED report tracks savings, credit use, retirement progress, housing stress, fraud losses, and the share of adults who can cover emergency expenses with cash or its equivalent.",
+      "summary": "The Fed’s annual SHED report tracks savings, credit use, retirement progress, housing stress, fraud losses, and the share of adults who can cover emergency expenses with cash or its equivalent.",
       "whyItMatters": "This is one of the broadest official snapshots of how U.S. households are actually handling money, debt, and financial shocks.",
       "focusTags": [
         "Household balance sheets",
@@ -13001,7 +13001,7 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "The New York Fed\u2019s Q4 2025 debt report shows household liabilities reaching $18.8 trillion, with mortgage delinquencies rising while most early-stage delinquency rates outside housing largely steadied.",
+      "summary": "The New York Fed’s Q4 2025 debt report shows household liabilities reaching $18.8 trillion, with mortgage delinquencies rising while most early-stage delinquency rates outside housing largely steadied.",
       "whyItMatters": "A good baseline for checking whether rising consumer stress is broad or concentrated in a few debt categories.",
       "focusTags": [
         "Household debt",
@@ -13085,7 +13085,7 @@
       "sourceType": "industry scorecard",
       "sourceLabel": "industry scorecard",
       "sourceLinkLabel": "View industry scorecard",
-      "summary": "S&P\u2019s persistence study finds that even when active funds outperform for a year or two, very few stay in the top tier over longer periods.",
+      "summary": "S&P’s persistence study finds that even when active funds outperform for a year or two, very few stay in the top tier over longer periods.",
       "whyItMatters": "This sharpens the active-versus-passive debate by testing not just one-year wins, but whether skill persists.",
       "focusTags": [
         "Manager persistence",
@@ -13148,7 +13148,7 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "FHFA\u2019s quarterly HPI report shows national house prices up 1.7 percent year over year in Q1 2026, with comparable breakout tables for states, metros, and census divisions.",
+      "summary": "FHFA’s quarterly HPI report shows national house prices up 1.7 percent year over year in Q1 2026, with comparable breakout tables for states, metros, and census divisions.",
       "whyItMatters": "Useful when housing discussions need a broad official price benchmark rather than local anecdotes.",
       "focusTags": [
         "Home prices",
@@ -13286,7 +13286,7 @@
       "id": "2025-student-loan-delinquencies-are-back-and-credit-scores-take-a-tumble"
     },
     {
-      "title": "The Role of IRAs in US Households\u2019 Saving for Retirement, 2025",
+      "title": "The Role of IRAs in US Households’ Saving for Retirement, 2025",
       "category": "Decumulation",
       "categoryLabel": "Retirement savings",
       "year": 2026,
@@ -13295,7 +13295,7 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "ICI\u2019s annual IRA study tracks ownership, rollovers, contributions, and withdrawals, showing how IRAs function alongside workplace plans in household retirement balance sheets.",
+      "summary": "ICI’s annual IRA study tracks ownership, rollovers, contributions, and withdrawals, showing how IRAs function alongside workplace plans in household retirement balance sheets.",
       "whyItMatters": "Useful when retirement saving discussions need actual household participation and withdrawal behavior, not just account-size anecdotes.",
       "focusTags": [
         "Retirement savings",
@@ -13316,7 +13316,7 @@
       "sourceType": "research report",
       "sourceLabel": "research report",
       "sourceLinkLabel": "View research report",
-      "summary": "Vanguard\u2019s retirement report studies how participants draw income, preserve balances, and behave once they move from saving into spending and distribution decisions.",
+      "summary": "Vanguard’s retirement report studies how participants draw income, preserve balances, and behave once they move from saving into spending and distribution decisions.",
       "whyItMatters": "Good context when retirement planning shifts from accumulation math to the harder question of how households actually spend portfolios down.",
       "focusTags": [
         "Retirement income",
@@ -13787,6 +13787,426 @@
         "Long-term saving"
       ],
       "sourceUrl": "https://www.urban.org/research/publication/how-wealth-building-accounts-can-help-families-access-capital-markets",
+      "featured": false
+    },
+    {
+      "title": "Does Homeownership Matter? The Long-Term Consequences of Losing a House during the Great Recession",
+      "category": "Real Estate",
+      "categoryLabel": "Homeownership wealth",
+      "year": 2025,
+      "authors": "Artigue H., Bayer P., Ferreira F. V., & Ross S.",
+      "publication": "National Bureau of Economic Research",
+      "sourceType": "NBER working paper",
+      "summary": "Using mortgage-modification variation during the Great Recession, the paper finds that households that kept their homes retained much larger housing gains years later, but saw little lasting edge in credit scores or neighborhood quality.",
+      "whyItMatters": "Useful when homeownership debates assume the wealth case automatically carries over to every other household outcome.",
+      "focusTags": [
+        "Homeownership wealth",
+        "Foreclosure",
+        "Housing gains"
+      ],
+      "sourceUrl": "https://www.nber.org/papers/w33692",
+      "id": "2025-does-homeownership-matter-the-long-term-consequences-of-losing-a-house-during-the-great-recession",
+      "sourceLabel": "NBER working paper",
+      "sourceLinkLabel": "View NBER working paper",
+      "featured": false
+    },
+    {
+      "title": "Income and Wealth Inequality in the United States: An Update Including the 2022 Wave",
+      "category": "Personal Finance",
+      "categoryLabel": "Wealth distribution",
+      "year": 2025,
+      "authors": "Kuhn M. & Rios-Rull J.-V.",
+      "publication": "National Bureau of Economic Research",
+      "sourceType": "NBER working paper",
+      "summary": "Using the 2022 Survey of Consumer Finances, the paper updates how earnings, income, and wealth are spread across households and shows that the top 1 percent still controls a very large share even after housing gains lifted middle-class balance sheets.",
+      "whyItMatters": "A current inequality baseline helps separate broad wealth growth from who actually captured it.",
+      "focusTags": [
+        "Wealth distribution",
+        "Survey of Consumer Finances",
+        "Household wealth"
+      ],
+      "sourceUrl": "https://www.nber.org/papers/w33823",
+      "id": "2025-income-and-wealth-inequality-in-the-united-states-an-update-including-the-2022-wave",
+      "sourceLabel": "NBER working paper",
+      "sourceLinkLabel": "View NBER working paper",
+      "featured": false
+    },
+    {
+      "title": "Financial Advisors and Investors' Bias",
+      "category": "Behavioral Economics",
+      "categoryLabel": "Investor psychology",
+      "year": 2025,
+      "authors": "Andries M., Bonelli M., & Sraer D.",
+      "publication": "National Bureau of Economic Research",
+      "sourceType": "NBER working paper",
+      "summary": "Studying a brokerage-platform change, the paper finds that removing advisers' visibility into unrealized gains and losses sharply reduced clients' disposition effect, especially among heavily advised investors.",
+      "whyItMatters": "This is concrete evidence that choice architecture inside advice channels can change real investor behavior.",
+      "focusTags": [
+        "Investor psychology",
+        "Financial advice",
+        "Disposition effect"
+      ],
+      "sourceUrl": "https://www.nber.org/papers/w34130",
+      "id": "2025-financial-advisors-and-investors-bias",
+      "sourceLabel": "NBER working paper",
+      "sourceLinkLabel": "View NBER working paper",
+      "featured": false
+    },
+    {
+      "title": "Student Loan Forgiveness",
+      "category": "Personal Finance",
+      "categoryLabel": "Student debt",
+      "year": 2025,
+      "authors": "Dinerstein M., Earnest S., Koustas D. K., & Yannelis C.",
+      "publication": "National Bureau of Economic Research",
+      "sourceType": "NBER working paper",
+      "summary": "Using credit-bureau data around large federal forgiveness episodes, the paper finds that forgiven borrowers increased other borrowing and saw lower employment and earnings relative to comparison groups.",
+      "whyItMatters": "A strong addition when student-debt relief is discussed as a pure balance-sheet win with no behavioral response.",
+      "focusTags": [
+        "Student debt",
+        "Debt forgiveness",
+        "Borrower behavior"
+      ],
+      "sourceUrl": "https://www.nber.org/papers/w33462",
+      "id": "2025-student-loan-forgiveness",
+      "sourceLabel": "NBER working paper",
+      "sourceLinkLabel": "View NBER working paper",
+      "featured": false
+    },
+    {
+      "title": "Pricing Residential Mortgage Credit Risk in the Post-GFC Era",
+      "category": "Real Estate",
+      "categoryLabel": "Housing finance",
+      "year": 2026,
+      "authors": "Capponi A., Van Nieuwerburgh S., & Wu X.",
+      "publication": "National Bureau of Economic Research",
+      "sourceType": "NBER working paper",
+      "summary": "The paper models the post-crisis credit-risk-transfer market and finds that mortgage credit is priced roughly fairly on average, while showing where low-risk and high-risk borrowers are cross-subsidized.",
+      "whyItMatters": "Useful if you want to see how mortgage pricing, guarantee fees, and borrower risk now connect after the crisis-era redesign.",
+      "focusTags": [
+        "Housing finance",
+        "Mortgage credit",
+        "Credit risk"
+      ],
+      "sourceUrl": "https://www.nber.org/papers/w34708",
+      "id": "2026-pricing-residential-mortgage-credit-risk-in-the-post-gfc-era",
+      "sourceLabel": "NBER working paper",
+      "sourceLinkLabel": "View NBER working paper",
+      "featured": false
+    },
+    {
+      "title": "Stimulus through Insurance: the Marginal Propensity to Repay Debt",
+      "category": "Personal Finance",
+      "categoryLabel": "Household debt",
+      "year": 2025,
+      "authors": "Kosar G., Melcangi D., Pilossoph L., & Wiczer D. G.",
+      "publication": "National Bureau of Economic Research",
+      "sourceType": "NBER working paper",
+      "summary": "The authors show that heavily indebted households often use transfer payments to pay down debt rather than spend immediately, because reducing future interest costs can dominate near-term consumption.",
+      "whyItMatters": "Helpful when fiscal-transfer debates treat every extra dollar as if it will be spent the same way across households.",
+      "focusTags": [
+        "Household debt",
+        "Stimulus",
+        "Debt repayment"
+      ],
+      "sourceUrl": "https://www.nber.org/papers/w34399",
+      "id": "2025-stimulus-through-insurance-the-marginal-propensity-to-repay-debt",
+      "sourceLabel": "NBER working paper",
+      "sourceLinkLabel": "View NBER working paper",
+      "featured": false
+    },
+    {
+      "title": "Moral Hazard and the Sustainability of Income-Driven Repayment Plans",
+      "category": "Personal Finance",
+      "categoryLabel": "Student debt",
+      "year": 2025,
+      "authors": "Fu C., Li X., & Zafar B.",
+      "publication": "National Bureau of Economic Research",
+      "sourceType": "NBER working paper",
+      "summary": "Survey and model evidence suggest that income-driven repayment softens some underinvestment caused by debt, but also changes job choices in ways that can increase expected forgiveness costs.",
+      "whyItMatters": "This captures the tradeoff between easing borrower strain and creating new incentives inside student-loan policy.",
+      "focusTags": [
+        "Student debt",
+        "Income-driven repayment",
+        "Borrower incentives"
+      ],
+      "sourceUrl": "https://www.nber.org/papers/w33411",
+      "id": "2025-moral-hazard-and-the-sustainability-of-income-driven-repayment-plans",
+      "sourceLabel": "NBER working paper",
+      "sourceLinkLabel": "View NBER working paper",
+      "featured": false
+    },
+    {
+      "title": "College Loans and Human Capital Investment",
+      "category": "Personal Finance",
+      "categoryLabel": "Student debt",
+      "year": 2025,
+      "authors": "Fu C., Lin H.-C., & Tanaka A.",
+      "publication": "National Bureau of Economic Research",
+      "sourceType": "NBER working paper",
+      "summary": "This structural paper models how borrowing limits and repayment rules affect schooling and later skill investment, concluding that income-driven plans can modestly raise attainment and lifetime earnings.",
+      "whyItMatters": "Useful if you want student-loan policy tied back to education and earnings rather than balance totals alone.",
+      "focusTags": [
+        "Student debt",
+        "College finance",
+        "Human capital"
+      ],
+      "sourceUrl": "https://www.nber.org/papers/w34221",
+      "id": "2025-college-loans-and-human-capital-investment",
+      "sourceLabel": "NBER working paper",
+      "sourceLinkLabel": "View NBER working paper",
+      "featured": false
+    },
+    {
+      "title": "How Do Financial and Longevity Literacy Affect Annuity Demand?",
+      "category": "Decumulation",
+      "categoryLabel": "Retirement income",
+      "year": 2026,
+      "authors": "Brown J. R.",
+      "publication": "National Bureau of Economic Research",
+      "sourceType": "NBER working paper",
+      "summary": "Brown reviews the evidence on annuity decisions and shows that financial and longevity literacy do not cleanly explain take-up rates, but do shape planning quality and how retirees react to framing and choice design.",
+      "whyItMatters": "A good addition for readers who want to know why annuities remain underused even when longevity risk is obvious.",
+      "focusTags": [
+        "Retirement income",
+        "Annuities",
+        "Financial literacy"
+      ],
+      "sourceUrl": "https://www.nber.org/papers/w35323",
+      "id": "2026-how-do-financial-and-longevity-literacy-affect-annuity-demand",
+      "sourceLabel": "NBER working paper",
+      "sourceLinkLabel": "View NBER working paper",
+      "featured": false
+    },
+    {
+      "title": "Wealth Heterogeneity and Consumer Spending",
+      "category": "Personal Finance",
+      "categoryLabel": "Household balance sheets",
+      "year": 2025,
+      "authors": "Beach S., Gamber W., & Moran P.",
+      "publication": "Federal Reserve Board",
+      "sourceType": "research report",
+      "summary": "The note argues that rising wealth concentration lowers the average propensity to consume out of wealth, making household spending less responsive to asset-price gains than older models imply.",
+      "whyItMatters": "A balance-sheet boom does not mean a proportionate spending boom. This explains one reason why.",
+      "focusTags": [
+        "Household balance sheets",
+        "Consumer spending",
+        "Wealth concentration"
+      ],
+      "sourceUrl": "https://www.federalreserve.gov/econres/notes/feds-notes/wealth-heterogeneity-and-consumer-spending-20250805.html",
+      "id": "2025-wealth-heterogeneity-and-consumer-spending",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false
+    },
+    {
+      "title": "The State of Retirement Withdrawal Strategies for 2025",
+      "category": "Decumulation",
+      "categoryLabel": "Retirement spending",
+      "year": 2025,
+      "authors": "Morningstar Research Services",
+      "publication": "Morningstar",
+      "sourceType": "research report",
+      "summary": "Morningstar's annual report updates safe starting withdrawal guidance using forward-looking capital-market assumptions and compares static and flexible drawdown methods under current valuations and yields.",
+      "whyItMatters": "Useful when the 4 percent rule is quoted without checking whether current market conditions support it.",
+      "focusTags": [
+        "Retirement spending",
+        "Withdrawal rates",
+        "Retirement income"
+      ],
+      "sourceUrl": "https://marketing.morningstar.com/business/insights/research/the-state-of-retirement-income",
+      "id": "2025-the-state-of-retirement-withdrawal-strategies-for-2025",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false
+    },
+    {
+      "title": "Assessing Black Wealth Using Public Datasets and Case Study Interviews",
+      "category": "Personal Finance",
+      "categoryLabel": "Wealth distribution",
+      "year": 2026,
+      "authors": "Neal M. & Pang D.",
+      "publication": "Urban Institute",
+      "sourceType": "research report",
+      "summary": "Urban combines public data with interviews to show how asset ownership, debt burdens, and local conditions continue to hold down Black wealth relative to white households even when income measures look less extreme.",
+      "whyItMatters": "A useful reminder that wealth gaps cannot be read off income gaps alone.",
+      "focusTags": [
+        "Wealth distribution",
+        "Black wealth",
+        "Household balance sheets"
+      ],
+      "sourceUrl": "https://www.urban.org/research/publication/assessing-black-wealth-using-public-datasets-and-case-study-interviews",
+      "id": "2026-assessing-black-wealth-using-public-datasets-and-case-study-interviews",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false
+    },
+    {
+      "title": "Evaluating Paths to Building Black Wealth through Education and Entrepreneurship",
+      "category": "Personal Finance",
+      "categoryLabel": "Wealth building",
+      "year": 2026,
+      "authors": "Neal M. & Walsh J.",
+      "publication": "Urban Institute",
+      "sourceType": "research report",
+      "summary": "The report compares the wealth outcomes associated with professional education and business ownership and finds that both paths correlate with higher net worth, though racial gaps persist at each stage.",
+      "whyItMatters": "It adds structure to wealth-building debates by showing which channels have historically moved net worth and where they still fall short.",
+      "focusTags": [
+        "Wealth building",
+        "Entrepreneurship",
+        "Education"
+      ],
+      "sourceUrl": "https://www.urban.org/research/publication/evaluating-paths-building-black-wealth-through-education-and-entrepreneurship",
+      "id": "2026-evaluating-paths-to-building-black-wealth-through-education-and-entrepreneurship",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false
+    },
+    {
+      "title": "Student Loan Balance and Repayment Trends Since the Pandemic Disruption",
+      "category": "Personal Finance",
+      "categoryLabel": "Student debt",
+      "year": 2025,
+      "authors": "Mangrum D. & Wang C.",
+      "publication": "Federal Reserve Bank of New York",
+      "sourceType": "research report",
+      "summary": "The New York Fed tracks how payment pauses, resumed interest, and later forgiveness programs broke long-running repayment trends and left an unusually large share of borrowers with flat or rising balances.",
+      "whyItMatters": "A strong operating read on how the student-loan market changed after the pandemic rather than simply returning to its old path.",
+      "focusTags": [
+        "Student debt",
+        "Repayment",
+        "Borrower balances"
+      ],
+      "sourceUrl": "https://libertystreeteconomics.newyorkfed.org/2025/03/student-loan-balance-and-repayment-trends-since-the-pandemic-disruption/",
+      "id": "2025-student-loan-balance-and-repayment-trends-since-the-pandemic-disruption",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false
+    },
+    {
+      "title": "Credit Score Impacts from Past Due Student Loan Payments",
+      "category": "Personal Finance",
+      "categoryLabel": "Student debt",
+      "year": 2025,
+      "authors": "Mangrum D. & Wang C.",
+      "publication": "Federal Reserve Bank of New York",
+      "sourceType": "research report",
+      "summary": "Using credit-bureau histories, the post estimates that the return of negative reporting on delinquent student loans could knock more than 150 points off scores for many previously prime borrowers.",
+      "whyItMatters": "Student-loan delinquency does not stay inside the loan itself. It spills into borrowing costs and credit access across the household balance sheet.",
+      "focusTags": [
+        "Student debt",
+        "Credit scores",
+        "Delinquencies"
+      ],
+      "sourceUrl": "https://libertystreeteconomics.newyorkfed.org/2025/03/credit-score-impacts-from-past-due-student-loan-payments/",
+      "id": "2025-credit-score-impacts-from-past-due-student-loan-payments",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false
+    },
+    {
+      "title": "Change in Household Debt Balances Mixed; Student Loan Delinquencies Rise Sharply",
+      "category": "Personal Finance",
+      "categoryLabel": "Household debt",
+      "year": 2025,
+      "authors": "Federal Reserve Bank of New York",
+      "publication": "Federal Reserve Bank of New York",
+      "sourceType": "research report",
+      "summary": "The New York Fed's quarterly household-debt release shows overall debt still growing in early 2025 while reported serious student-loan delinquency jumps back after the credit-reporting pause ended.",
+      "whyItMatters": "A useful reference point for where U.S. household leverage and repayment stress actually stood once student-loan reporting resumed.",
+      "focusTags": [
+        "Household debt",
+        "Student debt",
+        "Delinquencies"
+      ],
+      "sourceUrl": "https://www.newyorkfed.org/newsevents/news/research/2025/20250513",
+      "id": "2025-change-in-household-debt-balances-mixed-student-loan-delinquencies-rise-sharply",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false
+    },
+    {
+      "title": "Household Debt Growth Remains Steady; Auto Loan Originations Pick Up",
+      "category": "Personal Finance",
+      "categoryLabel": "Household debt",
+      "year": 2025,
+      "authors": "Federal Reserve Bank of New York",
+      "publication": "Federal Reserve Bank of New York",
+      "sourceType": "research report",
+      "summary": "The Q2 2025 debt release shows mortgage and credit-card balances still rising, auto originations recovering, and student-loan stress continuing even as aggregate household debt growth looks moderate.",
+      "whyItMatters": "Useful when broad debt totals look calm but the composition of new borrowing and delinquency pressure is shifting underneath.",
+      "focusTags": [
+        "Household debt",
+        "Auto loans",
+        "Mortgage balances"
+      ],
+      "sourceUrl": "https://www.newyorkfed.org/newsevents/news/research/2025/20250805",
+      "id": "2025-household-debt-growth-remains-steady-auto-loan-originations-pick-up",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false
+    },
+    {
+      "title": "Homeownership and Housing Equity in the Mid-Twentieth Century",
+      "category": "Real Estate",
+      "categoryLabel": "Homeownership wealth",
+      "year": 2025,
+      "authors": "Frydman C., Molloy R., & Palis A.",
+      "publication": "Federal Reserve Board",
+      "sourceType": "research report",
+      "summary": "Using historical census microdata, the note shows how the postwar jump in homeownership changed housing-equity accumulation and helps explain why owner-occupied housing became central to middle-class wealth.",
+      "whyItMatters": "A useful historical anchor for today's arguments about whether housing wealth is a policy choice, a market outcome, or both.",
+      "focusTags": [
+        "Homeownership wealth",
+        "Housing history",
+        "Middle-class wealth"
+      ],
+      "sourceUrl": "https://www.federalreserve.gov/econres/notes/feds-notes/homeownership-and-housing-equity-in-the-mid-twentieth-century-20250924.html",
+      "id": "2025-homeownership-and-housing-equity-in-the-mid-twentieth-century",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false
+    },
+    {
+      "title": "Black Housing Wealth Varies across Local Markets, Despite Recent Improvement in the Black Homeownership Rate Nationally",
+      "category": "Real Estate",
+      "categoryLabel": "Homeownership wealth",
+      "year": 2025,
+      "authors": "Walsh J. & Choi J. H.",
+      "publication": "Urban Institute",
+      "sourceType": "research report",
+      "summary": "Urban shows that the national rise in Black homeownership masks large local differences in how much housing wealth Black households actually hold relative to their share of households.",
+      "whyItMatters": "National ownership rates can look better while local wealth gaps remain severe. This piece shows where that split matters.",
+      "focusTags": [
+        "Homeownership wealth",
+        "Black wealth",
+        "Local housing markets"
+      ],
+      "sourceUrl": "https://www.urban.org/urban-wire/black-housing-wealth-varies-across-local-markets-despite-recent-improvement-black",
+      "id": "2025-black-housing-wealth-varies-across-local-markets-despite-recent-improvement-in-the-black-homeownership-rate-nationally",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false
+    },
+    {
+      "title": "High Interest Rates and Expensive Home Prices Continued to Make Homeownership Less Affordable in 2025, New Data Show",
+      "category": "Real Estate",
+      "categoryLabel": "Housing affordability",
+      "year": 2026,
+      "authors": "Walsh J. & Choi J. H.",
+      "publication": "Urban Institute",
+      "sourceType": "research report",
+      "summary": "Using newly released HMDA data, Urban documents how high rates and elevated prices kept debt-to-income ratios, cash-to-close burdens, and first-time-buyer pressure uncomfortably high through 2025.",
+      "whyItMatters": "A clear data point on why affordability stayed broken even without another obvious boom in home sales.",
+      "focusTags": [
+        "Housing affordability",
+        "Mortgage rates",
+        "First-time buyers"
+      ],
+      "sourceUrl": "https://www.urban.org/urban-wire/high-interest-rates-and-expensive-home-prices-continued-make-homeownership-less",
+      "id": "2026-high-interest-rates-and-expensive-home-prices-continued-to-make-homeownership-less-affordable-in-2025-new-data-show",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
       "featured": false
     }
   ],
