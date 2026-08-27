@@ -257,6 +257,7 @@ const sharedStyles = `
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        justify-self: start;
         min-height: 44px;
         padding: 0.65rem 1.1rem;
         border: 0;
@@ -277,6 +278,11 @@ const sharedStyles = `
         font-size: 0.92rem;
         font-weight: 700;
         line-height: 1.5;
+    }
+    .wm-feedback.is-sent {
+        border-color: transparent;
+        background: transparent;
+        padding: 0.35rem 0.15rem;
     }
     .wm-feedback.is-sent .wm-feedback-lede,
     .wm-feedback.is-sent .wm-feedback-fields { display: none; }
