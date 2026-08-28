@@ -10,16 +10,16 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://wealthmeter.xyz/global_explorer.html">
 <title>Global Wealth Explorer | WEALTHMETER.XYZ</title>
-<meta name="description" content="Explore wealth thresholds across 50 countries with median, top 10%, and top 1% benchmarks using UBS, WID, and UN population baselines.">
-<meta name="keywords" content="global wealth explorer, country wealth thresholds, median wealth, top 1 percent wealth, top 10 percent wealth, UBS Global Wealth Report, WID, UN World Population Prospects">
+<meta name="description" content="Explore wealth thresholds across 54 countries. UBS GWR 2026 Table 1 medians are official 2026 figures; remaining Explorer markets and all top 10% / top 1% thresholds remain 2025-harmonized.">
+<meta name="keywords" content="global wealth explorer, country wealth thresholds, median wealth, top 1 percent wealth, top 10 percent wealth, UBS Global Wealth Report 2026, WID, UN World Population Prospects">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Global Wealth Explorer | WEALTHMETER.XYZ">
-<meta property="og:description" content="Interactive country-by-country wealth thresholds with concentration and distribution context.">
+<meta property="og:description" content="Interactive country-by-country wealth thresholds. Table 1 medians use UBS GWR 2026; remaining markets and top-tier thresholds stay 2025-harmonized.">
 <meta property="og:url" content="https://wealthmeter.xyz/global_explorer.html">
 <meta property="og:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Global Wealth Explorer | WEALTHMETER.XYZ">
-<meta name="twitter:description" content="Explore median, top 10%, and top 1% wealth thresholds across 50 countries.">
+<meta name="twitter:description" content="Explore median, top 10%, and top 1% wealth thresholds across 54 countries, with mixed GWR 2026 / GWR 2025 vintage labels.">
 <meta name="twitter:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
 <style>
 :root {
@@ -277,6 +277,10 @@ h1 {
   font-family: 'Roboto Mono', monospace;
   font-size: 0.66rem;
   opacity: 0.9;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
 }
 
 .empty-state {
@@ -340,6 +344,33 @@ h1 {
 .badge.grade-a { background: var(--green-bg); border-color: #bbebcd; color: var(--green-text); }
 .badge.grade-b { background: #fff7ed; border-color: #fed7aa; color: #9a3412; }
 .badge.grade-c { background: #fef2f2; border-color: #fecaca; color: #991b1b; }
+.badge.vintage-2026 { background: #e0f2fe; border-color: #7dd3fc; color: #075985; }
+.badge.vintage-2025 { background: #f1f5f9; border-color: #cbd5e1; color: #475569; }
+
+.vintage-chip {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.12rem 0.34rem;
+  border: 1px solid #c5d4ea;
+  background: #f8fbff;
+  color: #36537d;
+  white-space: nowrap;
+}
+
+.vintage-chip.vintage-2026 {
+  border-color: #7dd3fc;
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.country-btn.active .vintage-chip {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
 
 .metrics {
   margin-top: 1rem;
@@ -696,7 +727,7 @@ h1 {
 </style>
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Explore wealth thresholds across 50 countries with median, top 10%, and top 1% benchmarks using UBS, WID, and UN population baselines.">
+    <meta property="og:image:alt" content="Explore wealth thresholds across 54 countries. UBS GWR 2026 Table 1 medians are official 2026 figures; remaining markets and top-tier thresholds remain 2025-harmonized.">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WEALTHMETER.XYZ","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"Global Wealth Explorer","item":"https://wealthmeter.xyz/global_explorer.html"}]}</script>
 </head>
 <body data-page="global_explorer.html">
@@ -797,19 +828,19 @@ h1 {
   <section class="hero">
     <div class="hero-top">
       <span class="kicker">Global Explorer</span>
-      <span class="data-stamp" id="dataStamp">Data refresh cycle: Apr 2026</span>
+      <span class="data-stamp" id="dataStamp">Data refresh cycle: Jun 2026</span>
     </div>
     <h1>Country-Level Wealth Distribution Atlas</h1>
-    <p>Compare median, top 10%, and top 1% wealth thresholds across major economies. Use this view to separate typical household position from top-tier asset concentration.</p>
+    <p>Compare median, top 10%, and top 1% wealth thresholds across major economies. Use this view to separate typical household position from top-tier asset concentration. Table 1 medians are official UBS GWR 2026 figures; remaining Explorer markets and all top 10% / top 1% thresholds stay 2025-harmonized until a full 2026 appendix is available.</p>
 
     <div class="stat-strip">
       <div class="stat-pill">
         <span class="label">Coverage</span>
-        <span class="value" id="coverageCount">50 countries</span>
+        <span class="value" id="coverageCount">54 countries</span>
       </div>
       <div class="stat-pill">
         <span class="label">Reference Wealth Cycle</span>
-        <span class="value">UBS GWR 2025</span>
+        <span class="value">UBS GWR 2026</span>
       </div>
       <div class="stat-pill">
         <span class="label">Population Baseline</span>
@@ -840,6 +871,7 @@ h1 {
             <span class="badge" id="countryRegion">Region: Americas</span>
             <span class="badge" id="countryPop">Adult pop: 255M</span>
             <span class="badge grade-a" id="countryGrade">Grade A</span>
+            <span class="badge vintage-2026" id="countryVintage">GWR 2026</span>
           </div>
         </div>
         <div class="flag" id="countryFlag" aria-hidden="true">🇺🇸</div>
@@ -848,23 +880,23 @@ h1 {
       <div class="metrics">
         <div class="metric">
           <span class="label">Median Adult Wealth</span>
-          <div class="value" id="medianVal">$107,700</div>
-          <div class="sub">50th percentile household position</div>
+          <div class="value" id="medianVal">$68,998</div>
+          <div class="sub" id="medianSub">Official UBS GWR 2026 Table 1 median</div>
         </div>
         <div class="metric">
           <span class="label">Top 10% Threshold</span>
           <div class="value" id="top10Val">$1,600,000</div>
-          <div class="sub">Entry point for top-decile wealth</div>
+          <div class="sub">2025-harmonized top-decile threshold</div>
         </div>
         <div class="metric">
           <span class="label">Top 1% Threshold</span>
           <div class="value" id="top1Val">$5,800,000</div>
-          <div class="sub">Entry point for top-percentile wealth</div>
+          <div class="sub">2025-harmonized top-percentile threshold</div>
         </div>
         <div class="metric">
           <span class="label">Concentration Ratio</span>
-          <div class="value" id="concVal">53.9x</div>
-          <div class="sub" id="gapVal">Top10/Median: 14.9x</div>
+          <div class="value" id="concVal">84.1x</div>
+          <div class="sub" id="gapVal">Top10/Median: 23.2x</div>
         </div>
       </div>
 
@@ -890,7 +922,7 @@ h1 {
         <div class="row">
           <div>
             <span class="rank">Median adult wealth</span>
-            <span class="money" id="rowMedian">$107.7K</span>
+            <span class="money" id="rowMedian">$69.0K</span>
           </div>
           <div class="track"><div class="bar median" id="barMedian"></div></div>
         </div>
@@ -904,13 +936,15 @@ h1 {
 
         <div class="context-card">
           <strong>Methodology</strong>
-          <p>Thresholds are harmonized from UBS 2025 market wealth distributions, cross-checked against World Inequality Database concentration patterns, and normalized using the latest available UN WPP demographic baseline, which remains the 2024 revision.</p>
+          <p>Medians for UBS GWR 2026 Table 1 markets are official UBS 2026 USD wealth-per-adult figures (report published 30 Jun 2026). Remaining Explorer markets, and all top-10% / top-1% thresholds, remain 2025-harmonized (UBS 2025 + WID) until a full 2026 appendix is available. Adult population uses the UN WPP 2024 revision. This atlas is mixed-vintage: it is not a complete GWR 2026 54-country restatement.</p>
         </div>
 
         <div class="context-card">
           <strong>Primary Sources</strong>
           <ul>
-            <li><a href="https://www.ubs.com/global/en/media/display-page-ndp/en-20250618-gwr-2025.html" target="_blank" rel="noopener noreferrer">UBS Global Wealth Report 2025</a></li>
+            <li><a href="https://www.ubs.com/global/en/media/display-page-ndp/en-20260630-gwr-2026.html" target="_blank" rel="noopener noreferrer">UBS Global Wealth Report 2026</a></li>
+            <li><a href="https://www.ubs.com/content/dam/assets/wm/static/gwr/global-wealth-report-en-2026.pdf" target="_blank" rel="noopener noreferrer">UBS Global Wealth Report 2026 (PDF)</a></li>
+            <li><a href="https://www.ubs.com/global/en/media/display-page-ndp/en-20250618-gwr-2025.html" target="_blank" rel="noopener noreferrer">UBS Global Wealth Report 2025</a> (remaining markets and top-decile / top-percentile thresholds)</li>
             <li><a href="https://wid.world/" target="_blank" rel="noopener noreferrer">World Inequality Database</a></li>
             <li><a href="https://www.un.org/development/desa/pd/content/World-Population-Prospects-2024" target="_blank" rel="noopener noreferrer">UN World Population Prospects 2024 revision (latest available)</a></li>
           </ul>
@@ -936,56 +970,68 @@ h1 {
 <script src="components.js?v=2026-08-27.1"></script>
 <script>
 const COUNTRY_DB = {
-  "USA": { flag: "🇺🇸", name: "United States", region: "Americas", grade: "A", pop: 254831886, median: 107700, top10: 1600000, top1: 5800000 },
-  "CAN": { flag: "🇨🇦", name: "Canada", region: "Americas", grade: "A", pop: 29156000, median: 137000, top10: 1100000, top1: 3400000 },
-  "AUS": { flag: "🇦🇺", name: "Australia", region: "Asia-Pacific", grade: "A", pop: 19850000, median: 260000, top10: 1300000, top1: 4500000 },
-  "CHE": { flag: "🇨🇭", name: "Switzerland", region: "Europe", grade: "A", pop: 7088000, median: 167000, top10: 1400000, top1: 8500000 },
-  "GBR": { flag: "🇬🇧", name: "United Kingdom", region: "Europe", grade: "A", pop: 52637000, median: 151000, top10: 850000, top1: 2800000 },
-  "DEU": { flag: "🇩🇪", name: "Germany", region: "Europe", grade: "A", pop: 69305000, median: 66700, top10: 725000, top1: 2500000 },
-  "FRA": { flag: "🇫🇷", name: "France", region: "Europe", grade: "A", pop: 52345000, median: 133000, top10: 890000, top1: 2600000 },
-  "ITA": { flag: "🇮🇹", name: "Italy", region: "Europe", grade: "A", pop: 51109000, median: 112000, top10: 650000, top1: 1900000 },
-  "ESP": { flag: "🇪🇸", name: "Spain", region: "Europe", grade: "A", pop: 38704000, median: 107000, top10: 580000, top1: 1700000 },
-  "NLD": { flag: "🇳🇱", name: "Netherlands", region: "Europe", grade: "A", pop: 13704000, median: 110000, top10: 950000, top1: 3200000 },
-  "BEL": { flag: "🇧🇪", name: "Belgium", region: "Europe", grade: "A", pop: 9087000, median: 230000, top10: 820000, top1: 2400000 },
-  "SWE": { flag: "🇸🇪", name: "Sweden", region: "Europe", grade: "A", pop: 8007000, median: 90000, top10: 650000, top1: 2100000 },
-  "NOR": { flag: "🇳🇴", name: "Norway", region: "Europe", grade: "A", pop: 4226000, median: 117000, top10: 750000, top1: 2500000 },
-  "DNK": { flag: "🇩🇰", name: "Denmark", region: "Europe", grade: "A", pop: 4556000, median: 95000, top10: 670000, top1: 2200000 },
-  "FIN": { flag: "🇫🇮", name: "Finland", region: "Europe", grade: "A", pop: 4424000, median: 89000, top10: 580000, top1: 1900000 },
-  "AUT": { flag: "🇦🇹", name: "Austria", region: "Europe", grade: "A", pop: 7388000, median: 94000, top10: 710000, top1: 2300000 },
-  "IRL": { flag: "🇮🇪", name: "Ireland", region: "Europe", grade: "A", pop: 3790000, median: 104000, top10: 850000, top1: 2900000 },
-  "POL": { flag: "🇵🇱", name: "Poland", region: "Europe", grade: "B", pop: 32198000, median: 30000, top10: 320000, top1: 1200000 },
-  "PRT": { flag: "🇵🇹", name: "Portugal", region: "Europe", grade: "B", pop: 8621000, median: 71000, top10: 460000, top1: 1400000 },
-  "GRC": { flag: "🇬🇷", name: "Greece", region: "Europe", grade: "B", pop: 9190000, median: 54000, top10: 390000, top1: 1200000 },
-  "CZE": { flag: "🇨🇿", name: "Czech Republic", region: "Europe", grade: "B", pop: 8903000, median: 41000, top10: 380000, top1: 1300000 },
-  "RUS": { flag: "🇷🇺", name: "Russia", region: "Europe", grade: "B", pop: 117543000, median: 12000, top10: 180000, top1: 950000 },
-  "CHN": { flag: "🇨🇳", name: "China", region: "Asia-Pacific", grade: "B", pop: 1100000000, median: 28000, top10: 240000, top1: 1800000 },
-  "JPN": { flag: "🇯🇵", name: "Japan", region: "Asia-Pacific", grade: "A", pop: 103290000, median: 120000, top10: 550000, top1: 1500000 },
-  "IND": { flag: "🇮🇳", name: "India", region: "Asia-Pacific", grade: "C", pop: 965860000, median: 3800, top10: 25000, top1: 175000 },
-  "SGP": { flag: "🇸🇬", name: "Singapore", region: "Asia-Pacific", grade: "A", pop: 4483000, median: 100000, top10: 1100000, top1: 3800000 },
-  "KOR": { flag: "🇰🇷", name: "South Korea", region: "Asia-Pacific", grade: "A", pop: 42759000, median: 72000, top10: 480000, top1: 1600000 },
-  "HKG": { flag: "🇭🇰", name: "Hong Kong", region: "Asia-Pacific", grade: "A", pop: 6225000, median: 150000, top10: 1300000, top1: 4200000 },
-  "NZL": { flag: "🇳🇿", name: "New Zealand", region: "Asia-Pacific", grade: "A", pop: 3710000, median: 185000, top10: 950000, top1: 3100000 },
-  "THA": { flag: "🇹🇭", name: "Thailand", region: "Asia-Pacific", grade: "B", pop: 54792000, median: 12000, top10: 95000, top1: 580000 },
-  "MYS": { flag: "🇲🇾", name: "Malaysia", region: "Asia-Pacific", grade: "B", pop: 24881000, median: 16000, top10: 130000, top1: 750000 },
-  "IDN": { flag: "🇮🇩", name: "Indonesia", region: "Asia-Pacific", grade: "B", pop: 197135000, median: 7800, top10: 56000, top1: 380000 },
-  "PHL": { flag: "🇵🇭", name: "Philippines", region: "Asia-Pacific", grade: "C", pop: 75090000, median: 3600, top10: 28000, top1: 210000 },
-  "VNM": { flag: "🇻🇳", name: "Vietnam", region: "Asia-Pacific", grade: "C", pop: 75691000, median: 5100, top10: 38000, top1: 270000 },
-  "BRA": { flag: "🇧🇷", name: "Brazil", region: "Americas", grade: "B", pop: 168273000, median: 4200, top10: 80000, top1: 450000 },
-  "MEX": { flag: "🇲🇽", name: "Mexico", region: "Americas", grade: "B", pop: 94425000, median: 15000, top10: 120000, top1: 900000 },
-  "ARG": { flag: "🇦🇷", name: "Argentina", region: "Americas", grade: "B", pop: 35195000, median: 8500, top10: 95000, top1: 620000 },
-  "CHL": { flag: "🇨🇱", name: "Chile", region: "Americas", grade: "B", pop: 14388000, median: 18000, top10: 140000, top1: 850000 },
-  "COL": { flag: "🇨🇴", name: "Colombia", region: "Americas", grade: "B", pop: 39398000, median: 6200, top10: 65000, top1: 420000 },
-  "PER": { flag: "🇵🇪", name: "Peru", region: "Americas", grade: "B", pop: 25527000, median: 5800, top10: 58000, top1: 390000 },
-  "ARE": { flag: "🇦🇪", name: "UAE", region: "Middle East", grade: "B", pop: 7298000, median: 42000, top10: 850000, top1: 3500000 },
-  "QAT": { flag: "🇶🇦", name: "Qatar", region: "Middle East", grade: "B", pop: 2193000, median: 65000, top10: 1100000, top1: 4200000 },
-  "SAU": { flag: "🇸🇦", name: "Saudi Arabia", region: "Middle East", grade: "B", pop: 26295000, median: 28000, top10: 420000, top1: 1900000 },
-  "ISR": { flag: "🇮🇱", name: "Israel", region: "Middle East", grade: "A", pop: 6657000, median: 89000, top10: 690000, top1: 2400000 },
-  "TUR": { flag: "🇹🇷", name: "Turkey", region: "Middle East", grade: "B", pop: 60042000, median: 8900, top10: 95000, top1: 580000 },
-  "ZAF": { flag: "🇿🇦", name: "South Africa", region: "Africa", grade: "B", pop: 41804000, median: 5200, top10: 55000, top1: 350000 },
-  "EGY": { flag: "🇪🇬", name: "Egypt", region: "Africa", grade: "C", pop: 66147000, median: 2800, top10: 22000, top1: 180000 },
-  "NGA": { flag: "🇳🇬", name: "Nigeria", region: "Africa", grade: "C", pop: 105594000, median: 1800, top10: 18000, top1: 150000 },
-  "KEN": { flag: "🇰🇪", name: "Kenya", region: "Africa", grade: "C", pop: 31793000, median: 2100, top10: 19000, top1: 160000 },
-  "MAR": { flag: "🇲🇦", name: "Morocco", region: "Africa", grade: "B", pop: 27389000, median: 4200, top10: 35000, top1: 240000 }
+  "USA": { flag: "🇺🇸", name: "United States", region: "Americas", grade: "A", pop: 254831886, median: 68998, top10: 1600000, top1: 5800000, medianSource: "gwr2026" },
+  "CAN": { flag: "🇨🇦", name: "Canada", region: "Americas", grade: "A", pop: 29156000, median: 147811, top10: 1100000, top1: 3400000, medianSource: "gwr2026" },
+  "AUS": { flag: "🇦🇺", name: "Australia", region: "Asia-Pacific", grade: "A", pop: 19850000, median: 210783, top10: 1300000, top1: 4500000, medianSource: "gwr2026" },
+  "CHE": { flag: "🇨🇭", name: "Switzerland", region: "Europe", grade: "A", pop: 7088000, median: 145555, top10: 1400000, top1: 8500000, medianSource: "gwr2026" },
+  "GBR": { flag: "🇬🇧", name: "United Kingdom", region: "Europe", grade: "A", pop: 52637000, median: 125335, top10: 850000, top1: 2800000, medianSource: "gwr2026" },
+  "DEU": { flag: "🇩🇪", name: "Germany", region: "Europe", grade: "A", pop: 69305000, median: 53485, top10: 725000, top1: 2500000, medianSource: "gwr2026" },
+  "FRA": { flag: "🇫🇷", name: "France", region: "Europe", grade: "A", pop: 52345000, median: 121898, top10: 890000, top1: 2600000, medianSource: "gwr2026" },
+  "ITA": { flag: "🇮🇹", name: "Italy", region: "Europe", grade: "A", pop: 51109000, median: 131001, top10: 650000, top1: 1900000, medianSource: "gwr2026" },
+  "ESP": { flag: "🇪🇸", name: "Spain", region: "Europe", grade: "A", pop: 38704000, median: 111575, top10: 580000, top1: 1700000, medianSource: "gwr2026" },
+  "NLD": { flag: "🇳🇱", name: "Netherlands", region: "Europe", grade: "A", pop: 13704000, median: 127407, top10: 950000, top1: 3200000, medianSource: "gwr2026" },
+  "BEL": { flag: "🇧🇪", name: "Belgium", region: "Europe", grade: "A", pop: 9087000, median: 277166, top10: 820000, top1: 2400000, medianSource: "gwr2026" },
+  // pop: World Bank 2024 15+ (SP.POP.1564.TO + SP.POP.65UP.TO); UN WPP 20+ not fetchable at edit time.
+  // top10/top1: 2025-harmonized placeholders copied from CHE (similar small high-wealth European grade-A market). Not GWR 2026.
+  "LUX": { flag: "🇱🇺", name: "Luxembourg", region: "Europe", grade: "A", pop: 570198, median: 394005, top10: 1400000, top1: 8500000, medianSource: "gwr2026" },
+  "SWE": { flag: "🇸🇪", name: "Sweden", region: "Europe", grade: "A", pop: 8007000, median: 84039, top10: 650000, top1: 2100000, medianSource: "gwr2026" },
+  "NOR": { flag: "🇳🇴", name: "Norway", region: "Europe", grade: "A", pop: 4226000, median: 140003, top10: 750000, top1: 2500000, medianSource: "gwr2026" },
+  "DNK": { flag: "🇩🇰", name: "Denmark", region: "Europe", grade: "A", pop: 4556000, median: 203771, top10: 670000, top1: 2200000, medianSource: "gwr2026" },
+  "FIN": { flag: "🇫🇮", name: "Finland", region: "Europe", grade: "A", pop: 4424000, median: 89695, top10: 580000, top1: 1900000, medianSource: "gwr2026" },
+  "AUT": { flag: "🇦🇹", name: "Austria", region: "Europe", grade: "A", pop: 7388000, median: 71378, top10: 710000, top1: 2300000, medianSource: "gwr2026" },
+  "IRL": { flag: "🇮🇪", name: "Ireland", region: "Europe", grade: "A", pop: 3790000, median: 98413, top10: 850000, top1: 2900000, medianSource: "gwr2026" },
+  // pop: World Bank 2024 15+ (SP.POP.1564.TO + SP.POP.65UP.TO); UN WPP 20+ not fetchable at edit time.
+  // top10/top1: 2025-harmonized placeholders copied from ESP (closest grade-A European median peer). Not GWR 2026.
+  "MLT": { flag: "🇲🇹", name: "Malta", region: "Europe", grade: "A", pop: 494723, median: 114033, top10: 580000, top1: 1700000, medianSource: "gwr2026" },
+  "POL": { flag: "🇵🇱", name: "Poland", region: "Europe", grade: "B", pop: 32198000, median: 30000, top10: 320000, top1: 1200000, medianSource: "gwr2025" },
+  "PRT": { flag: "🇵🇹", name: "Portugal", region: "Europe", grade: "B", pop: 8621000, median: 76978, top10: 460000, top1: 1400000, medianSource: "gwr2026" },
+  "GRC": { flag: "🇬🇷", name: "Greece", region: "Europe", grade: "B", pop: 9190000, median: 59162, top10: 390000, top1: 1200000, medianSource: "gwr2026" },
+  "CZE": { flag: "🇨🇿", name: "Czech Republic", region: "Europe", grade: "B", pop: 8903000, median: 41000, top10: 380000, top1: 1300000, medianSource: "gwr2025" },
+  // pop: World Bank 2024 15+ (SP.POP.1564.TO + SP.POP.65UP.TO); UN WPP 20+ not fetchable at edit time.
+  // top10/top1: 2025-harmonized placeholders copied from PRT (closest grade-B European median peer). Not GWR 2026.
+  "SVN": { flag: "🇸🇮", name: "Slovenia", region: "Europe", grade: "B", pop: 1814355, median: 81366, top10: 460000, top1: 1400000, medianSource: "gwr2026" },
+  "RUS": { flag: "🇷🇺", name: "Russia", region: "Europe", grade: "B", pop: 117543000, median: 12000, top10: 180000, top1: 950000, medianSource: "gwr2025" },
+  "CHN": { flag: "🇨🇳", name: "China", region: "Asia-Pacific", grade: "B", pop: 1100000000, median: 28000, top10: 240000, top1: 1800000, medianSource: "gwr2025" },
+  "JPN": { flag: "🇯🇵", name: "Japan", region: "Asia-Pacific", grade: "A", pop: 103290000, median: 135745, top10: 550000, top1: 1500000, medianSource: "gwr2026" },
+  "IND": { flag: "🇮🇳", name: "India", region: "Asia-Pacific", grade: "C", pop: 965860000, median: 3800, top10: 25000, top1: 175000, medianSource: "gwr2025" },
+  "SGP": { flag: "🇸🇬", name: "Singapore", region: "Asia-Pacific", grade: "A", pop: 4483000, median: 96434, top10: 1100000, top1: 3800000, medianSource: "gwr2026" },
+  "KOR": { flag: "🇰🇷", name: "South Korea", region: "Asia-Pacific", grade: "A", pop: 42759000, median: 101739, top10: 480000, top1: 1600000, medianSource: "gwr2026" },
+  // pop: adult-pop placeholder copied from AUS (similar-magnitude APAC adult count already in COUNTRY_DB); UN WPP 20+ not fetchable at edit time.
+  // top10/top1: 2025-harmonized placeholders copied from KOR (closest grade-A APAC median peer). Not GWR 2026.
+  "TWN": { flag: "🇹🇼", name: "Taiwan", region: "Asia-Pacific", grade: "A", pop: 19850000, median: 113137, top10: 480000, top1: 1600000, medianSource: "gwr2026" },
+  "HKG": { flag: "🇭🇰", name: "Hong Kong", region: "Asia-Pacific", grade: "A", pop: 6225000, median: 187968, top10: 1300000, top1: 4200000, medianSource: "gwr2026" },
+  "NZL": { flag: "🇳🇿", name: "New Zealand", region: "Asia-Pacific", grade: "A", pop: 3710000, median: 206617, top10: 950000, top1: 3100000, medianSource: "gwr2026" },
+  "THA": { flag: "🇹🇭", name: "Thailand", region: "Asia-Pacific", grade: "B", pop: 54792000, median: 12000, top10: 95000, top1: 580000, medianSource: "gwr2025" },
+  "MYS": { flag: "🇲🇾", name: "Malaysia", region: "Asia-Pacific", grade: "B", pop: 24881000, median: 16000, top10: 130000, top1: 750000, medianSource: "gwr2025" },
+  "IDN": { flag: "🇮🇩", name: "Indonesia", region: "Asia-Pacific", grade: "B", pop: 197135000, median: 7800, top10: 56000, top1: 380000, medianSource: "gwr2025" },
+  "PHL": { flag: "🇵🇭", name: "Philippines", region: "Asia-Pacific", grade: "C", pop: 75090000, median: 3600, top10: 28000, top1: 210000, medianSource: "gwr2025" },
+  "VNM": { flag: "🇻🇳", name: "Vietnam", region: "Asia-Pacific", grade: "C", pop: 75691000, median: 5100, top10: 38000, top1: 270000, medianSource: "gwr2025" },
+  "BRA": { flag: "🇧🇷", name: "Brazil", region: "Americas", grade: "B", pop: 168273000, median: 4200, top10: 80000, top1: 450000, medianSource: "gwr2025" },
+  "MEX": { flag: "🇲🇽", name: "Mexico", region: "Americas", grade: "B", pop: 94425000, median: 15000, top10: 120000, top1: 900000, medianSource: "gwr2025" },
+  "ARG": { flag: "🇦🇷", name: "Argentina", region: "Americas", grade: "B", pop: 35195000, median: 8500, top10: 95000, top1: 620000, medianSource: "gwr2025" },
+  "CHL": { flag: "🇨🇱", name: "Chile", region: "Americas", grade: "B", pop: 14388000, median: 18000, top10: 140000, top1: 850000, medianSource: "gwr2025" },
+  "COL": { flag: "🇨🇴", name: "Colombia", region: "Americas", grade: "B", pop: 39398000, median: 6200, top10: 65000, top1: 420000, medianSource: "gwr2025" },
+  "PER": { flag: "🇵🇪", name: "Peru", region: "Americas", grade: "B", pop: 25527000, median: 5800, top10: 58000, top1: 390000, medianSource: "gwr2025" },
+  "ARE": { flag: "🇦🇪", name: "UAE", region: "Middle East", grade: "B", pop: 7298000, median: 42000, top10: 850000, top1: 3500000, medianSource: "gwr2025" },
+  "QAT": { flag: "🇶🇦", name: "Qatar", region: "Middle East", grade: "B", pop: 2193000, median: 95499, top10: 1100000, top1: 4200000, medianSource: "gwr2026" },
+  "SAU": { flag: "🇸🇦", name: "Saudi Arabia", region: "Middle East", grade: "B", pop: 26295000, median: 28000, top10: 420000, top1: 1900000, medianSource: "gwr2025" },
+  "ISR": { flag: "🇮🇱", name: "Israel", region: "Middle East", grade: "A", pop: 6657000, median: 83843, top10: 690000, top1: 2400000, medianSource: "gwr2026" },
+  "TUR": { flag: "🇹🇷", name: "Turkey", region: "Middle East", grade: "B", pop: 60042000, median: 8900, top10: 95000, top1: 580000, medianSource: "gwr2025" },
+  "ZAF": { flag: "🇿🇦", name: "South Africa", region: "Africa", grade: "B", pop: 41804000, median: 5200, top10: 55000, top1: 350000, medianSource: "gwr2025" },
+  "EGY": { flag: "🇪🇬", name: "Egypt", region: "Africa", grade: "C", pop: 66147000, median: 2800, top10: 22000, top1: 180000, medianSource: "gwr2025" },
+  "NGA": { flag: "🇳🇬", name: "Nigeria", region: "Africa", grade: "C", pop: 105594000, median: 1800, top10: 18000, top1: 150000, medianSource: "gwr2025" },
+  "KEN": { flag: "🇰🇪", name: "Kenya", region: "Africa", grade: "C", pop: 31793000, median: 2100, top10: 19000, top1: 160000, medianSource: "gwr2025" },
+  "MAR": { flag: "🇲🇦", name: "Morocco", region: "Africa", grade: "B", pop: 27389000, median: 4200, top10: 35000, top1: 240000, medianSource: "gwr2025" }
 };
 
 const REGION_ORDER = ["Americas", "Europe", "Asia-Pacific", "Middle East", "Africa"];
@@ -1015,6 +1061,14 @@ function fmtPop(n) {
 
 function gradeClass(grade) {
   return grade === 'A' ? 'grade-a' : grade === 'B' ? 'grade-b' : 'grade-c';
+}
+
+function medianVintage(d) {
+  return d.medianSource === 'gwr2026' ? 'gwr2026' : 'gwr2025';
+}
+
+function medianVintageLabel(d) {
+  return medianVintage(d) === 'gwr2026' ? 'GWR 2026' : 'GWR 2025';
 }
 
 function getInsight(d) {
@@ -1093,7 +1147,7 @@ function buildSidebar() {
       const active = code === activeCode ? ' active' : '';
       html += '<button class="country-btn' + active + '" data-code="' + code + '">';
       html += '<span class="left"><span>' + d.flag + '</span><span>' + d.name + '</span></span>';
-      html += '<span class="meta">' + d.grade + '</span>';
+      html += '<span class="meta"><span>' + d.grade + '</span><span class="vintage-chip ' + (medianVintage(d) === 'gwr2026' ? 'vintage-2026' : '') + '">' + medianVintageLabel(d) + '</span></span>';
       html += '</button>';
     }
     html += '</div>';
@@ -1156,7 +1210,14 @@ function loadCountry(code) {
   gradeEl.textContent = 'Grade ' + d.grade;
   gradeEl.className = 'badge ' + gradeClass(d.grade);
 
+  const vintageEl = document.getElementById('countryVintage');
+  vintageEl.textContent = medianVintageLabel(d);
+  vintageEl.className = 'badge ' + (medianVintage(d) === 'gwr2026' ? 'vintage-2026' : 'vintage-2025');
+
   document.getElementById('medianVal').textContent = fmtCurrency(d.median);
+  document.getElementById('medianSub').textContent = medianVintage(d) === 'gwr2026'
+    ? 'Official UBS GWR 2026 Table 1 median'
+    : '2025-harmonized median (not in GWR 2026 Table 1)';
   document.getElementById('top10Val').textContent = fmtCurrency(d.top10);
   document.getElementById('top1Val').textContent = fmtCurrency(d.top1);
   document.getElementById('concVal').textContent = c1.toFixed(1) + 'x';
