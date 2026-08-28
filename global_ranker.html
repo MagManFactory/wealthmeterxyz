@@ -144,6 +144,56 @@ header {
     font-weight: 500;
 }
 
+.page-report-line {
+    max-width: 640px;
+    margin: 16px auto 0;
+    font-size: 0.95rem;
+    color: var(--gray-600);
+    line-height: 1.55;
+}
+
+.page-report-line a {
+    color: var(--blue-primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.page-report-line a:hover { text-decoration: underline; }
+
+.geo-report-offer {
+    max-width: 1200px;
+    margin: 24px auto 0;
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 20px;
+    padding: 28px 32px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+}
+
+.geo-report-offer p {
+    margin: 0 0 14px;
+    color: var(--gray-600);
+    font-size: 0.98rem;
+    line-height: 1.55;
+}
+
+.geo-report-offer a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.7rem 1.15rem;
+    border-radius: 12px;
+    background: var(--blue-primary);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+}
+
+.geo-report-offer a:hover { background: #1d4ed8; }
+
 /* INPUT SECTION */
 .input-card {
     background: white;
@@ -747,6 +797,7 @@ footer {
     <div class="page-header">
         <h1 class="page-title">Country Wealth Ranker</h1>
         <p class="page-subtitle">See exactly where you stand within any country's wealth distribution</p>
+        <p class="page-report-line">A country rank is local. <a href="https://payhip.com/b/3Ta9A" target="_blank" rel="noopener">The Geography of Global Wealth — $19.99</a> maps where that standing actually travels.</p>
     </div>
 
     <div class="input-card">
@@ -857,6 +908,11 @@ footer {
         <div class="ladder-card">
             <div class="ladder-title">Wealth Distribution Ladder</div>
             <div id="ladderContainer"></div>
+        </div>
+
+        <div class="geo-report-offer">
+            <p>Country rank is only half the map. The Geography of Global Wealth covers how that standing translates across markets.</p>
+            <a href="https://payhip.com/b/3Ta9A" target="_blank" rel="noopener">Get The Geography of Global Wealth — $19.99</a>
         </div>
     </div>
 </div>
