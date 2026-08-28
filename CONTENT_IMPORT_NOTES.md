@@ -2,7 +2,7 @@
 
 ## Longform Import Rule (added 2026-02-20)
 - For imported longform article HTML, remove the visible `Stay Connected` section from page body content.
-- Keep those terms only in SEO metadata (for example `meta keywords` and/or JSON-LD `keywords`) when requested.
+- Do not keep Lexicon Labs / Stay Connected tokens in SEO metadata (`meta keywords`, JSON-LD `keywords`, og, or twitter). Strip `@leolexicon`, `@lexiconlabs`, `lexiconlabs.store`, and `Lexicon Labs Newsletter` if they appear. Do not leave trailing commas in keyword lists. Do not invent a replacement newsletter.
 - Keep article sources and image references while adapting layout to WealthMeter design language.
 
 ## Theme + Toggle Integration Rule (added 2026-02-21)
