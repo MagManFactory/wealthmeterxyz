@@ -195,6 +195,15 @@
         .social-btn svg { width: 22px; height: 22px; fill: white; }
         .btn-recalibrate { background: none; border: none; color: var(--text-muted); font-weight: 800; text-transform: uppercase; font-size: 11px; cursor: pointer; letter-spacing: 1.5px; margin-top: 1rem; }
 
+        .report-offer { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--card-border); text-align: center; }
+        .report-offer-kicker { font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary); margin: 0 0 8px; }
+        .report-offer-copy { font-size: 14px; color: var(--text-muted); line-height: 1.5; margin: 0 0 14px; }
+        .report-offer-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 48px; padding: 14px 18px; border-radius: 12px; background: var(--accent-gradient); color: #fff; text-decoration: none; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; box-sizing: border-box; }
+        .report-offer-btn:hover { transform: translateY(-1px); }
+        .report-offer-secondary { margin: 12px 0 0; font-size: 13px; color: var(--text-muted); }
+        .report-offer-secondary a { color: var(--primary); font-weight: 700; text-decoration: none; }
+        .report-offer-secondary a:hover { text-decoration: underline; }
+
         #secondary-content { display: none; margin-top: 30px; }
         .comparison-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
         .country-card { background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 14px; border-radius: 12px; }
@@ -648,6 +657,12 @@
                             <button class="social-btn" style="background:#34C759;" onclick="shareTo('IM')"><svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 20.2A1 1 0 0 0 3.8 21.454l3.032-.892A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 2c4.411 0 8 3.589 8 8s-3.589 8-8 8a7.96 7.96 0 0 1-4.126-1.147 1 1 0 0 0-.773-.105l-2.125.625.625-2.125a1 1 0 0 0-.105-.773A7.96 7.96 0 0 1 4 12c0-4.411 3.589-8 8-8z"/></svg></button>
                             <button class="social-btn" style="background:#DC2626;" onclick="shareTo('EM')"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></button>
                             <button class="social-btn" style="background:#475569;" onclick="downloadCard()"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></button>
+                        </div>
+                        <div class="report-offer">
+                            <p class="report-offer-kicker">What that percentile actually buys</p>
+                            <p class="report-offer-copy">Wealth Thresholds maps the capital milestones behind the rank.</p>
+                            <a class="report-offer-btn" href="https://payhip.com/b/dcRCe" target="_blank" rel="noopener">Get Wealth Thresholds — $12.99</a>
+                            <p class="report-offer-secondary">Also: <a href="https://payhip.com/b/ZeVGv" target="_blank" rel="noopener">The Velocity of Capital — $12.99</a></p>
                         </div>
                         <button class="btn-recalibrate" onclick="location.reload()">Recalibrate</button>
                         <div id="result-feedback-slot"></div>

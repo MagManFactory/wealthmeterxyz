@@ -60,22 +60,24 @@
         .report-name { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 15px; }
         .report-desc { font-size: 0.95rem; color: var(--slate); line-height: 1.6; margin-bottom: 30px; flex-grow: 1; }
 
-        /* Lock Mechanism Architecture */
-        .lock-footer { 
+        .buy-footer { 
             display: flex; align-items: center; justify-content: space-between; 
+            gap: 16px; flex-wrap: wrap;
             padding-top: 25px; border-top: 1px solid var(--border); 
         }
-        .status-badge { 
-            font-size: 0.65rem; font-weight: 800; text-transform: uppercase; 
-            letter-spacing: 0.1em; color: var(--slate); 
+        .price-badge { 
+            font-size: 1.05rem; font-weight: 800; font-family: var(--font-heading);
+            letter-spacing: -0.02em; color: var(--dark); 
         }
-        .lock-icon { font-size: 1.2rem; opacity: 0.4; }
-
-        .coming-soon-banner {
-            grid-column: 1 / -1; background: var(--dark); color: white; border-radius: 20px;
-            padding: 30px; text-align: center; margin-top: 20px;
+        .buy-cta {
+            display: inline-flex; align-items: center; justify-content: center;
+            min-height: 44px; padding: 0.7rem 1.15rem;
+            border-radius: 12px; background: var(--primary); color: #ffffff;
+            text-decoration: none; font-weight: 800; font-size: 0.8rem;
+            letter-spacing: 0.06em; text-transform: uppercase;
+            white-space: nowrap;
         }
-        .coming-soon-banner p { margin: 0; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.85rem; }
+        .buy-cta:hover { background: #1d4ed8; }
     </style>
     <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml">
 <style id="wealthmeter-component-styles">
@@ -387,22 +389,22 @@
 
     <div class="report-grid">
         <div class="report-card">
-            <span class="report-icon">📊</span>
-            <h2 class="report-name">Global Wealth Trends Report</h2>
-            <p class="report-desc">An analytical take on multi-decade wealth accumulation patterns and the acceleration of the global middle class.</p>
-            <div class="lock-footer">
-                <span class="status-badge">Available Q1 2026</span>
-                <span class="lock-icon">🔒</span>
+            <span class="report-icon">📈</span>
+            <h2 class="report-name">Wealth Thresholds Report</h2>
+            <p class="report-desc">What does it really take? Identifying the specific capital milestones required at various thresholds.</p>
+            <div class="buy-footer">
+                <span class="price-badge">$12.99</span>
+                <a class="buy-cta" href="https://payhip.com/b/dcRCe" target="_blank" rel="noopener">Buy — $12.99</a>
             </div>
         </div>
 
         <div class="report-card">
-            <span class="report-icon">📈</span>
-            <h2 class="report-name">Wealth Thresholds Report</h2>
-            <p class="report-desc">What does it really take? Identifying the specific capital milestones required at various thresholds.</p>
-            <div class="lock-footer">
-                <span class="status-badge">Available Q1 2026</span>
-                <span class="lock-icon">🔒</span>
+            <span class="report-icon">📊</span>
+            <h2 class="report-name">The Velocity of Capital</h2>
+            <p class="report-desc">Rank is a snapshot. This report looks at how fast capital actually compounds — and why velocity, not a percentile, determines who pulls away.</p>
+            <div class="buy-footer">
+                <span class="price-badge">$12.99</span>
+                <a class="buy-cta" href="https://payhip.com/b/ZeVGv" target="_blank" rel="noopener">Buy — $12.99</a>
             </div>
         </div>
 
@@ -410,14 +412,10 @@
             <span class="report-icon">🌍</span>
             <h2 class="report-name">The Geography of Global Wealth</h2>
             <p class="report-desc">How do wealth and location mix? Are there certain geographies where your wealth would translate better?</p>
-            <div class="lock-footer">
-                <span class="status-badge">Available Q2 2026</span>
-                <span class="lock-icon">🔒</span>
+            <div class="buy-footer">
+                <span class="price-badge">$19.99</span>
+                <a class="buy-cta" href="https://payhip.com/b/3Ta9A" target="_blank" rel="noopener">Buy — $19.99</a>
             </div>
-        </div>
-
-        <div class="coming-soon-banner">
-            <p>COMING SOON! STAY TUNED FOR UPDATES</p>
         </div>
     </div>
 </main>
