@@ -355,8 +355,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
-                                        <a href="sequence-risk-before-retirement-fragility-priced-too-late.html">Sequence Risk Before Retirement: The Fragility Nobody Prices Early Enough</a>
-                    <a href="yield-trap-high-rate-world.html">The Yield Trap in a High-Rate World</a>
+                                                            <a href="yield-trap-high-rate-world.html">The Yield Trap in a High-Rate World</a>
                     <a href="windfall-misallocation-problem.html">The Windfall Misallocation Problem</a>
                     <a href="wealth-plateau-effect.html">The Wealth Plateau Effect</a>
                     <a href="war-premium-iran-conflict-repricing-energy-credit-equities.html">The War Premium: How the Iran Conflict Is Repricing Energy, Credit, and Equities</a>
@@ -364,6 +363,7 @@ const siteHeader = `
                     <a href="urban-premium-collapse.html">The Urban Premium Collapse</a>
                     <a href="timing-fallacy-public-markets.html">The Timing Fallacy in Public Markets</a>
                     <a href="skill-obsolescence-curve.html">The Skill Obsolescence Curve</a>
+                    <a href="sequence-risk-before-retirement-fragility-priced-too-late.html">Sequence Risk Before Retirement: The Fragility Nobody Prices Early Enough</a>
                     <a href="second-home-wealth-drain.html">The Second-Home Wealth Drain</a>
                     <a href="scarcity-mindset-loop.html">The Scarcity Mindset Loop</a>
                     <a href="salary-ceiling-illusion.html">The Salary Ceiling Illusion</a>
@@ -395,6 +395,7 @@ const siteHeader = `
                     <a href="indexing-saturation-problem.html">The Indexing Saturation Problem</a>
                     <a href="illiquidity-premium-myth.html">The Illiquidity Premium Myth</a>
                     <a href="housing-stall-2026-rates-inventory-delinquency.html">The 2026 Housing Stall: Rates, Inventory, and the New Delinquency Split</a>
+                    <a href="home-equity-is-not-emergency-liquidity.html">Home Equity Is Not Emergency Liquidity</a>
                     <a href="hidden-costs-of-ownership.html">The Hidden Costs of Ownership</a>
                     <a href="great-baseline-war.html">The Great Baseline War: Why Your Wealth Rank Changes by Population Lens</a>
                     <a href="golden-handcuffs-equation.html">The Golden Handcuffs Equation</a>
@@ -419,7 +420,6 @@ const siteHeader = `
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
                 </div>
             </div>
-            <a href="https://lifemeter.xyz" target="_blank" style="font-weight:900; font-size:0.85rem; color:#FF4B4B; text-decoration:none; text-transform:uppercase; letter-spacing:0.12em; white-space: nowrap;">LifeMeter ↗</a>
         </nav>
     </div>
 </header>`;
@@ -449,9 +449,6 @@ function wealthMeterFeedbackForm(variant) {
 
 const siteFooter = `
 <footer>
-    <div class="cross-property-band">
-        Model the lifespan side of your balance sheet with <a href="https://lifemeter.xyz/?from=wealthmeter" target="_blank" rel="noopener">LifeMeter</a>, then compare the same household against survival horizon and medical-runway stress.
-    </div>
     <form class="wm-feedback" data-wm-feedback action="https://docs.google.com/forms/d/e/1FAIpQLSdW_INDPOwoI_XjecCzhp38-IEu-GeA5oTUlPT59V1kKT5fKw/formResponse" method="POST" target="wm-feedback-sink">
         <p class="wm-feedback-lede">Something off? Tell us.</p>
         <div class="wm-feedback-fields">

@@ -744,24 +744,7 @@ def wealth_to_lifemeter_query(page: PageInfo) -> tuple[str, list[str]]:
 
 
 def article_bridge_markup(page: PageInfo) -> str | None:
-    if not page.is_article or not page.is_indexable:
-        return None
-    href, chips = wealth_to_lifemeter_query(page)
-    chip_html = "".join(f'<span class="article-bridge-chip">{chip}</span>' for chip in chips)
-    return (
-        "\n<!-- generated-article-bridge:start -->\n"
-        '<section class="article-bridge-cta" aria-label="Paired LifeMeter scenario">\n'
-        '  <span class="article-bridge-label">Run The Paired Scenario</span>\n'
-        '  <h2>Stress-test the lifespan side of this balance-sheet story.</h2>\n'
-        '  <p>Open the matching LifeMeter scenario with a prefilled planning profile so the wealth case and the health-runway case can be read together.</p>\n'
-        f'  <div class="article-bridge-chips">{chip_html}</div>\n'
-        '  <div class="article-bridge-actions">\n'
-        f'    <a class="article-bridge-button" href="{href}" target="_blank" rel="noopener">Open Prefilled LifeMeter</a>\n'
-        '    <a class="article-bridge-secondary" href="longform.html">Back to the wealth longform hub</a>\n'
-        '  </div>\n'
-        '</section>\n'
-        "<!-- generated-article-bridge:end -->\n"
-    )
+    return None
 
 
 def ensure_article_bridge(text: str, page: PageInfo) -> str:
