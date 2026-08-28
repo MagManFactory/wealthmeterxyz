@@ -59,6 +59,31 @@ publish_script_for_site() {
   esac
 }
 
+site_base_url() {
+  case "${1}" in
+    wealthmeter) printf '%s\n' "https://wealthmeter.xyz" ;;
+    lifemeter) printf '%s\n' "https://lifemeter.xyz" ;;
+    *)
+      echo "Unknown site: ${1}" >&2
+      return 1
+      ;;
+  esac
+}
+
+site_longform_url() {
+  printf '%s/longform.html\n' "$(site_base_url "${1}")"
+}
+
+site_sitemap_url() {
+  printf '%s/sitemap.xml\n' "$(site_base_url "${1}")"
+}
+
+site_article_url() {
+  local site="${1}"
+  local slug="${2}"
+  printf '%s/%s.html\n' "$(site_base_url "${site}")" "${slug}"
+}
+
 load_google_env() {
   if [[ ! -f "${GOOGLE_ENV}" ]]; then
     echo "Missing Google env file: ${GOOGLE_ENV}" >&2
