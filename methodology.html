@@ -370,6 +370,22 @@
     <div class="cross-property-band">
         Model the lifespan side of your balance sheet with <a href="https://lifemeter.xyz/?from=wealthmeter" target="_blank" rel="noopener">LifeMeter</a>, then compare the same household against survival horizon and medical-runway stress.
     </div>
+    <form class="wm-feedback" data-wm-feedback action="https://docs.google.com/forms/d/e/1FAIpQLSdW_INDPOwoI_XjecCzhp38-IEu-GeA5oTUlPT59V1kKT5fKw/formResponse" method="POST" target="wm-feedback-sink">
+        <p class="wm-feedback-lede">Something off? Tell us.</p>
+        <div class="wm-feedback-fields">
+            <input type="text" class="wm-feedback-hp" data-wm-honeypot name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="entry.652485851" value="WealthMeter">
+            <input type="hidden" name="entry.2128319260" value="" data-wm-feedback-page>
+            <label>Email <span class="wm-feedback-optional">(optional)</span>
+                <input type="email" name="entry.1004053268" autocomplete="email" placeholder="you@example.com">
+            </label>
+            <label>Feedback
+                <textarea name="entry.1773870348" required rows="3" placeholder="What should we fix?"></textarea>
+            </label>
+            <button class="wm-feedback-submit" type="submit">Send</button>
+        </div>
+        <p class="wm-feedback-thanks" data-wm-feedback-thanks hidden>Got it. We'll use this to fix the site.</p>
+    </form>
     <div class="footer-links">
         <a href="data-sources.html">Data Sources</a>
         <a href="methodology.html">Methodology</a>
@@ -378,6 +394,6 @@
     </div>
 </footer>
 </div>
-    <script src="components.js?v=2026-05-27.1"></script>
+    <script src="components.js?v=2026-08-27.1"></script>
 </body>
 </html>

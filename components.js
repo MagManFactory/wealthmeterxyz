@@ -196,6 +196,117 @@ const sharedStyles = `
     .article-bridge-secondary:hover { text-decoration: underline; }
     .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
     .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
+
+    .wm-feedback {
+        max-width: 28rem;
+        margin: 1.75rem auto 0;
+        padding: 1rem 1.15rem 1.1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 1rem;
+        background: #ffffff;
+        text-align: left;
+    }
+    .wm-feedback-lede {
+        font-family: 'Outfit', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: #0f172a;
+        margin: 0 0 0.8rem;
+    }
+    .wm-feedback-fields { display: grid; gap: 0.65rem; }
+    .wm-feedback label {
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #64748b;
+        font-weight: 800;
+        margin: 0;
+    }
+    .wm-feedback-optional {
+        text-transform: none;
+        letter-spacing: 0;
+        font-weight: 600;
+        opacity: 0.8;
+    }
+    .wm-feedback input[type="email"],
+    .wm-feedback textarea {
+        display: block;
+        width: 100%;
+        margin-top: 0.35rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 0.7rem;
+        background: #f8fafc;
+        color: #0f172a;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.92rem;
+        font-weight: 600;
+    }
+    .wm-feedback input[type="email"] {
+        height: 44px;
+        padding: 0 0.85rem;
+    }
+    .wm-feedback textarea {
+        min-height: 72px;
+        padding: 0.7rem 0.85rem;
+        resize: vertical;
+        line-height: 1.45;
+    }
+    .wm-feedback-submit {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        justify-self: start;
+        min-height: 44px;
+        padding: 0.65rem 1.1rem;
+        border: 0;
+        border-radius: 0.75rem;
+        background: #2563eb;
+        color: #ffffff;
+        font-family: 'Outfit', sans-serif;
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    .wm-feedback-submit:hover { background: #1d4ed8; }
+    .wm-feedback-thanks {
+        margin: 0;
+        color: #334155;
+        font-size: 0.92rem;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+    .wm-feedback.is-sent {
+        border-color: transparent;
+        background: transparent;
+        padding: 0.35rem 0.15rem;
+    }
+    .wm-feedback.is-sent .wm-feedback-lede,
+    .wm-feedback.is-sent .wm-feedback-fields { display: none; }
+    .wm-feedback-hp {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+    .wm-feedback--result {
+        margin: 1.25rem auto 0;
+        background: var(--card-bg, #ffffff);
+        border-color: var(--card-border, #e2e8f0);
+    }
+    .wm-feedback--result .wm-feedback-lede { color: var(--text-main, #0f172a); }
+    .wm-feedback--result label { color: var(--text-muted, #64748b); }
+    .wm-feedback--result input[type="email"],
+    .wm-feedback--result textarea {
+        background: var(--input-bg, #f8fafc);
+        border-color: var(--input-border, #cbd5e1);
+        color: var(--text-main, #0f172a);
+    }
+    .wm-feedback--result .wm-feedback-thanks { color: var(--text-muted, #64748b); }
 </style>
 `;
 
@@ -313,11 +424,50 @@ const siteHeader = `
     </div>
 </header>`;
 
+const WM_FEEDBACK_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdW_INDPOwoI_XjecCzhp38-IEu-GeA5oTUlPT59V1kKT5fKw/formResponse";
+
+function wealthMeterFeedbackForm(variant) {
+    const extraClass = variant === "result" ? " wm-feedback--result" : "";
+    return `
+<form class="wm-feedback${extraClass}" data-wm-feedback action="${WM_FEEDBACK_ACTION}" method="POST" target="wm-feedback-sink">
+    <p class="wm-feedback-lede">Something off? Tell us.</p>
+    <div class="wm-feedback-fields">
+        <input type="text" class="wm-feedback-hp" data-wm-honeypot name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="entry.652485851" value="WealthMeter">
+        <input type="hidden" name="entry.2128319260" value="" data-wm-feedback-page>
+        <label>Email <span class="wm-feedback-optional">(optional)</span>
+            <input type="email" name="entry.1004053268" autocomplete="email" placeholder="you@example.com">
+        </label>
+        <label>Feedback
+            <textarea name="entry.1773870348" required rows="3" placeholder="What should we fix?"></textarea>
+        </label>
+        <button class="wm-feedback-submit" type="submit">Send</button>
+    </div>
+    <p class="wm-feedback-thanks" data-wm-feedback-thanks hidden aria-live="polite">Got it. We'll use this to fix the site.</p>
+</form>`;
+}
+
 const siteFooter = `
 <footer>
     <div class="cross-property-band">
         Model the lifespan side of your balance sheet with <a href="https://lifemeter.xyz/?from=wealthmeter" target="_blank" rel="noopener">LifeMeter</a>, then compare the same household against survival horizon and medical-runway stress.
     </div>
+    <form class="wm-feedback" data-wm-feedback action="https://docs.google.com/forms/d/e/1FAIpQLSdW_INDPOwoI_XjecCzhp38-IEu-GeA5oTUlPT59V1kKT5fKw/formResponse" method="POST" target="wm-feedback-sink">
+        <p class="wm-feedback-lede">Something off? Tell us.</p>
+        <div class="wm-feedback-fields">
+            <input type="text" class="wm-feedback-hp" data-wm-honeypot name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="entry.652485851" value="WealthMeter">
+            <input type="hidden" name="entry.2128319260" value="" data-wm-feedback-page>
+            <label>Email <span class="wm-feedback-optional">(optional)</span>
+                <input type="email" name="entry.1004053268" autocomplete="email" placeholder="you@example.com">
+            </label>
+            <label>Feedback
+                <textarea name="entry.1773870348" required rows="3" placeholder="What should we fix?"></textarea>
+            </label>
+            <button class="wm-feedback-submit" type="submit">Send</button>
+        </div>
+        <p class="wm-feedback-thanks" data-wm-feedback-thanks hidden aria-live="polite">Got it. We'll use this to fix the site.</p>
+    </form>
     <div class="footer-links">
         <a href="data-sources.html">Data Sources</a>
         <a href="methodology.html">Methodology</a>
@@ -325,6 +475,61 @@ const siteFooter = `
         <a href="disclaimer.html">Disclaimer</a>
     </div>
 </footer>`;
+
+function ensureFeedbackSink() {
+    if (document.getElementById("wm-feedback-sink")) return;
+    const iframe = document.createElement("iframe");
+    iframe.id = "wm-feedback-sink";
+    iframe.name = "wm-feedback-sink";
+    iframe.title = "Feedback submission";
+    iframe.setAttribute("aria-hidden", "true");
+    iframe.style.display = "none";
+    document.body.appendChild(iframe);
+}
+
+function submitWealthMeterFeedback(form) {
+    const honeypot = form.querySelector("[data-wm-honeypot]");
+    if (honeypot && honeypot.value.trim()) return true;
+
+    const feedback = form.querySelector('[name="entry.1773870348"]');
+    const message = (feedback && feedback.value ? feedback.value : "").trim();
+    if (!message) {
+        if (feedback) feedback.reportValidity();
+        return false;
+    }
+
+    const email = (form.querySelector('[name="entry.1004053268"]')?.value || "").trim();
+    const page = window.location.pathname || "/";
+    const body = new FormData();
+    body.append("entry.652485851", "WealthMeter");
+    body.append("entry.1004053268", email);
+    body.append("entry.1773870348", message);
+    body.append("entry.2128319260", page);
+
+    fetch(WM_FEEDBACK_ACTION, { method: "POST", mode: "no-cors", body }).catch(() => {});
+    return true;
+}
+
+function showFeedbackThanks(form) {
+    form.classList.add("is-sent");
+    const thanks = form.querySelector("[data-wm-feedback-thanks]");
+    if (thanks) thanks.hidden = false;
+}
+
+function bindFeedbackForms(root) {
+    ensureFeedbackSink();
+    (root || document).querySelectorAll("[data-wm-feedback]").forEach((form) => {
+        if (form.dataset.wmBound === "1") return;
+        form.dataset.wmBound = "1";
+        const pageInput = form.querySelector("[data-wm-feedback-page]");
+        if (pageInput) pageInput.value = window.location.pathname || "/";
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            if (!submitWealthMeterFeedback(form)) return;
+            showFeedbackThanks(form);
+        });
+    });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     const sharedStyleEl = document.getElementById("wealthmeter-component-styles");
@@ -334,11 +539,23 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             document.head.insertAdjacentHTML("beforeend", sharedStyles);
         }
+    } else if (!document.getElementById("wm-feedback-styles")) {
+        const feedbackCss = document.createElement("style");
+        feedbackCss.id = "wm-feedback-styles";
+        const sharedCss = sharedStyles.replace(/^[\s\S]*<style[^>]*>/, "").replace(/<\/style>[\s\S]*$/, "");
+        const feedbackStart = sharedCss.indexOf(".wm-feedback {");
+        if (feedbackStart !== -1) feedbackCss.textContent = sharedCss.slice(feedbackStart);
+        document.head.appendChild(feedbackCss);
     }
     const headerEl = document.getElementById("header-placeholder");
     const footerEl = document.getElementById("footer-placeholder");
     if (headerEl) headerEl.innerHTML = siteHeader;
     if (footerEl) footerEl.innerHTML = siteFooter;
+    const resultSlot = document.getElementById("result-feedback-slot");
+    if (resultSlot && !resultSlot.querySelector("[data-wm-feedback]")) {
+        resultSlot.innerHTML = wealthMeterFeedbackForm("result");
+    }
+    bindFeedbackForms(document);
 
     const isMobile = window.matchMedia("(max-width: 1024px)").matches;
     const navGroups = Array.from(document.querySelectorAll(".nav-group"));
