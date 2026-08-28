@@ -154,6 +154,20 @@
         .hero-badge:hover { background: rgba(37,99,235,0.18); border-color: rgba(37,99,235,0.35); }
         .hero-title { font-family: 'Outfit', sans-serif; font-size: 52px; line-height: 1.05; letter-spacing: -0.02em; margin: 18px 0 12px; }
         .hero-sub { color: var(--text-muted); font-size: 16px; line-height: 1.75; max-width: 520px; }
+        .gwr-pointer {
+            margin: 16px 0 0;
+            padding: 12px 14px;
+            border: 1px solid rgba(37,99,235,0.28);
+            background: rgba(37,99,235,0.08);
+            border-radius: 12px;
+            color: var(--text-main);
+            font-size: 13px;
+            line-height: 1.55;
+            max-width: 520px;
+        }
+        .gwr-pointer a { color: var(--primary); font-weight: 800; text-decoration: none; }
+        .gwr-pointer a:hover { text-decoration: underline; }
+        .gwr-pointer-compact { margin: 12px 0 0; max-width: none; text-align: left; font-size: 12px; }
         .hero-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
         .hero-metric { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 16px 18px; }
         .metric-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-muted); font-weight: 700; }
@@ -573,6 +587,7 @@
             <a class="hero-badge" href="reports.html">2026 Reports Hub</a>
             <div class="hero-title">Discover Your True Global Wealth Rank</div>
             <div class="hero-sub">Instantly benchmark your net worth against global distribution models. Compare UBS covered‑market adults against a UN WPP global adult baseline for a clearer perspective.</div>
+            <p class="gwr-pointer">This homepage ranker is the covered-market wealth pyramid / adult-denominator tool, not the country-median table. GWR 2026 country medians (USA $68,998) live on <a href="global_explorer.html">Wealth Explorer</a>.</p>
             <div class="hero-metrics">
                 <div class="hero-metric">
                     <div class="metric-label">Covered Markets</div>
@@ -592,6 +607,7 @@
                 </div>
             </div>
             <div class="hero-links">
+                <a href="global_explorer.html">Wealth Explorer</a>
                 <a href="methodology.html">Methodology</a>
                 <a href="data-sources.html">Data Sources</a>
                 <a href="reports.html">2026 Reports Hub</a>
@@ -625,13 +641,14 @@
                     <label>Population Baseline</label>
                     <span class="baseline-help" style="position: relative;">
                         <span class="baseline-help-dot">?</span>
-                        <span class="baseline-tooltip">UBS baseline reflects the 2025 Global Wealth Report wealth pyramid across 56 covered markets. Global baseline uses the latest available UN World Population Prospects adult (18+) totals from the 2024 revision. Toggle to compare denominators; percentile shape stays consistent.</span>
+                        <span class="baseline-tooltip">UBS baseline reflects the UBS Global Wealth Report 2026 year-end 2025 covered-market wealth pyramid across 56 markets. Rank percentiles here are not GWR 2026 Table 1 country medians. Global baseline uses the latest available UN World Population Prospects adult (18+) totals from the 2024 revision. Toggle to compare denominators; percentile shape stays consistent.</span>
                     </span>
                     <div class="baseline-options">
                         <label class="baseline-option"><input type="radio" name="baseline" value="ubs" checked> UBS Covered Markets (3.808B adults)</label>
                         <label class="baseline-option"><input type="radio" name="baseline" value="global"> Global Adults 18+ (UN WPP 2024 revision)</label>
                     </div>
-                    <div class="baseline-note" id="baselineNote">UBS baseline uses the 2025 wealth pyramid across 56 markets. Global estimate uses the latest available UN WPP adult totals from the 2024 revision.</div>
+                    <div class="baseline-note" id="baselineNote">UBS baseline uses the GWR 2026 · YE 2025 covered-market pyramid (56 markets). Global estimate uses the latest available UN WPP adult totals from the 2024 revision.</div>
+                    <p class="gwr-pointer gwr-pointer-compact">This calculator ranks against the covered-market pyramid, not GWR 2026 Table 1 medians. Country medians (USA $68,998) live on <a href="global_explorer.html">Wealth Explorer</a>.</p>
                 </div>
                 <button class="cta-btn" onclick="calculate()">Find My Global Rank</button>
             </div>
@@ -752,7 +769,7 @@
     </div>
 </footer>
 </div>
-<div class="build-stamp">Build 2026.02.18.4</div>
+<div class="build-stamp">Build 2026.08.28.1</div>
 
 <!-- DIAGNOSTIC CARD TEMPLATE (Hidden, used for generating images) -->
 <div id="shareCardTemplate">
@@ -796,7 +813,7 @@
     let currentPopBase = 0;
 
     /* Population baselines */
-    const ADULT_POP_UBS = 3.808e9; // UBS Global Wealth Report 2025 wealth pyramid (56 markets)
+    const ADULT_POP_UBS = 3.808e9; // UBS GWR 2026 · YE 2025 covered-market pyramid (56 markets)
     const ADULT_POP_GLOBAL = 5.749e9; // UN WPP 2024 revision adults 18+ (latest available, approx)
     currentPopBase = ADULT_POP_UBS;
 
@@ -806,12 +823,13 @@
     };
 
     /*
-      Calibrated wealth distribution anchors (UBS 2025 + latest demographic baseline)
+      Calibrated wealth distribution anchors (UBS GWR 2026 · YE 2025 pyramid + latest demographic baseline)
       These represent empirical percentile breakpoints, not linear guesses.
       Source alignment:
-      - UBS Global Wealth Report 2025 wealth pyramid
+      - UBS Global Wealth Report 2026 year-end 2025 covered-market wealth pyramid
       - UN World Population Prospects 2024 revision
       - Pareto tail fitted above ~$5M using UBS millionaire counts and Knight Frank tail estimates
+      Homepage rank percentiles are not GWR 2026 Table 1 country medians.
     */
     const WEALTH_CURVE = [
         [1000,        0.92],
@@ -825,7 +843,7 @@
       Pareto tail parameters for extreme high net worth
       Applied above PARETO_START
       alpha chosen to balance:
-      ~60M millionaires globally (UBS 2025)
+      ~60M millionaires globally (UBS GWR 2026 · YE 2025 pyramid)
       ~2.3M with $10M+ (Knight Frank 2025)
       ~100k with $100M+ (Knight Frank 2025)
     */
@@ -869,7 +887,7 @@
             currentPopBase = popBase;
             const baselineLabel = baseline === 'global'
                 ? 'Global adults 18+ (UN WPP 2024 revision)'
-                : 'UBS 2025 covered markets (adult sample)';
+                : 'UBS GWR 2026 · YE 2025 pyramid (adult sample)';
             const globalRank = Math.max(1, Math.round(popBase * topShare));
 
             currentRank = globalRank;
@@ -974,10 +992,10 @@
             const baseline = document.querySelector('input[name="baseline"]:checked')?.value || 'ubs';
             const note = baseline === 'global'
                 ? 'Global baseline uses the latest available UN WPP adults 18+ totals from the 2024 revision.'
-                : 'UBS baseline uses the 2025 wealth pyramid across 56 markets (adult sample ~3.808B).';
+                : 'UBS baseline uses the GWR 2026 · YE 2025 covered-market pyramid across 56 markets (adult sample ~3.808B).';
             const label = baseline === 'global'
                 ? 'Global adults 18+ (UN WPP 2024 revision)'
-                : 'UBS 2025 covered markets (adult sample)';
+                : 'UBS GWR 2026 · YE 2025 pyramid (adult sample)';
             const noteEl = document.getElementById('baselineNote');
             const labelEl = document.getElementById('baselineLabel');
             if (noteEl) noteEl.textContent = note;
