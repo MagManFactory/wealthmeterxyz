@@ -24,11 +24,11 @@
     <meta name="twitter:description" content="Calculate your global wealth rank and percentile with UBS and UN WPP baselines.">
     <meta name="twitter:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
     <title>Global Wealth Rank Calculator | WEALTHMETER.XYZ</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
-    
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5589641656748708" crossorigin="anonymous"></script>
     <!-- Added html2canvas for Diagnostic Card generation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -108,10 +108,10 @@
             --success: #10b981;
             --warning: #f59e0b;
             --toggle-icon: #0f172a;
-            
+
             /* Vercel App Variables for Card Consistency */
-            --brand-red: #ef4444; 
-            --brand-teal: #0891b2; 
+            --brand-red: #ef4444;
+            --brand-teal: #0891b2;
             --slate: #64748b;
         }
 
@@ -135,16 +135,16 @@
 
         * { box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; }
 
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg-body); 
-            background-image: var(--bg-gradient); 
-            color: var(--text-main); 
-            margin: 0; 
-            min-height: 100vh; 
-            display: flex; 
-            flex-direction: column; 
-            transition: background .3s ease, color .3s ease; 
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            background-image: var(--bg-gradient);
+            color: var(--text-main);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background .3s ease, color .3s ease;
         }
 
         .app-content-area { flex-grow: 1; display: flex; align-items: flex-start; justify-content: center; padding: 70px 20px 50px; }
@@ -265,11 +265,11 @@
         }
 
         /* DIAGNOSTIC CARD (From Vercel App) */
-        #shareCardTemplate { 
+        #shareCardTemplate {
             position: absolute; left: -9999px; top: -9999px;
             width: 1080px; min-height: 1920px; background: #ffffff; color: #0f172a;
             padding: 80px; border: 40px solid #2563eb;
-            display: flex; flex-direction: column; 
+            display: flex; flex-direction: column;
         }
         .card-header { border-bottom: 15px solid #2563eb; padding-bottom: 40px; margin-bottom: 60px; display: flex; align-items: flex-end; gap: 25px; }
         .card-logo-bars { display: flex; align-items: flex-end; gap: 10px; height: 80px; }
@@ -299,23 +299,23 @@
     .label-longform { color: #0ea5e9 !important; }
 
     /* Layout Standards */
-    header { 
-        width: 100%; 
-        position: sticky; 
-        top: 0; 
-        background: rgba(255,255,255,0.98); 
-        backdrop-filter: blur(12px); 
-        border-bottom: 1px solid #e2e8f0; 
-        z-index: 9999; 
+    header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e2e8f0;
+        z-index: 9999;
     }
-    .nav-container { 
-        max-width: 1400px; 
-        margin: 0 auto; 
-        padding: 0 3rem; 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        height: 90px; 
+    .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
     }
 
     /* Brand Wrapper: Prevents collision with nav items */
@@ -327,48 +327,48 @@
     }
 
     /* Navigation: Forces links to the right */
-    nav { 
-        display: flex; 
-        gap: 3rem; 
-        align-items: center; 
-        height: 100%; 
-        margin-left: auto; 
+    nav {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+        height: 100%;
+        margin-left: auto;
     }
-    
-    .nav-group { 
-        position: relative; 
-        cursor: pointer; 
-        display: flex; 
-        align-items: center; 
-        height: 100%; 
-        white-space: nowrap; 
+
+    .nav-group {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        white-space: nowrap;
     }
     .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
     .nav-group:hover .dropdown { display: block !important; }
     .nav-group.open .dropdown { display: block !important; }
-    
-    .dropdown { 
-        display: none; 
-        position: absolute; 
-        top: 100%; 
-        left: 0; 
-        background: white; 
-        border: 1px solid #e2e8f0; 
-        border-radius: 0.5rem; 
-        padding: 1rem 0; 
-        min-width: 260px; 
-        box-shadow: 0 30px 60px rgba(0,0,0,0.1); 
-        z-index: 10000; 
-        margin-top: -5px; 
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        padding: 1rem 0;
+        min-width: 260px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        z-index: 10000;
+        margin-top: -5px;
     }
-    .dropdown a { 
-        display: block; 
-        padding: 0.8rem 1.5rem; 
-        text-decoration: none; 
-        color: #475569; 
-        font-size: 0.9rem; 
-        font-weight: 700; 
-        transition: 0.2s; 
+    .dropdown a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        color: #475569;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: 0.2s;
     }
     .dropdown a:hover { background: #f8fafc; color: #020617; }
 
@@ -661,7 +661,7 @@
                 <div class="main-rank-box" id="mainRankBox">
                     <div class="rank-label">YOUR ESTIMATED WEALTH RANK</div>
                     <div class="flip-counter" id="flipCounterMain"></div>
-                    
+
                     <!-- UPDATED: Sharing Section from Vercel App -->
                     <div class="share-container" id="shareSection">
                         <span style="font-size: 11px; font-weight: 900; letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase;">Share Diagnostic Card</span>
@@ -781,9 +781,9 @@
         </div>
         <div style="font-family:'Outfit'; font-size: 80px; font-weight: 900; letter-spacing: -0.05em;">WEALTH<span>METER</span>.XYZ</div>
     </div>
-    
+
     <div style="background: #2563eb; color: white; padding: 40px; border-radius: 20px; font-size: 40px; font-weight: 900; text-align: center; margin-bottom: 60px; text-transform: uppercase;">DIAGNOSTIC</div>
-    
+
     <div class="card-rank-wrap">
         <div style="font-size: 30px; text-transform: uppercase; letter-spacing: 5px; color: #64748b; font-weight: 900;">Global Wealth Rank</div>
         <div id="cardRank" class="card-rank-val">#--</div>
@@ -1011,11 +1011,11 @@
         // Update Rank and Percentile
         document.getElementById('cardRank').innerText = "#" + rank.toLocaleString();
         document.getElementById('cardPercentile').innerText = (topShare * 100).toFixed(3) + "%";
-        
+
         // Update Date
         const options = { month: 'long', day: 'numeric', year: 'numeric' };
         document.getElementById('cardDate').innerText = new Date().toLocaleDateString('en-US', options);
-        
+
         // Inject Random Perspective (3 countries)
         injectPerspective(rank);
     }
@@ -1042,15 +1042,15 @@
         const canvas = await html2canvas(document.getElementById('shareCardTemplate'), { scale: 1 });
         const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
         const file = new File([blob], 'WealthMeter_Diagnostic.png', { type: 'image/png' });
-        
+
         if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
             try { await navigator.share({ files: [file], title: 'WealthMeter Diagnostic', text: text }); return; } catch (e) {}
         }
-        
+
         const url = encodeURIComponent("https://wealthmeter.xyz");
-        const shareMap = { 
-            'X': `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${url}`, 
-            'IN': `https://www.linkedin.com/sharing/share-offsite/?url=${url}`, 
+        const shareMap = {
+            'X': `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${url}`,
+            'IN': `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
             'WA': `https://wa.me/?text=${encodeURIComponent(text)}%20${url}`,
             'TG': `https://t.me/share/url?url=${url}&text=${encodeURIComponent(text)}`,
             'RD': `https://reddit.com/submit?url=${url}&title=${encodeURIComponent(text)}`,

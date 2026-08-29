@@ -6,11 +6,11 @@
         <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://wealthmeter.xyz/reports.html">
 <title>Advanced Strategic Reports | WealthMeter Studio</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --bg-body: #f8fafc;
@@ -23,51 +23,51 @@
         }
 
         * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-        body { 
-            font-family: var(--font-ui); background-color: var(--bg-body); 
-            color: var(--dark); margin: 0; min-height: 100vh; display: flex; 
-            flex-direction: column; 
+        body {
+            font-family: var(--font-ui); background-color: var(--bg-body);
+            color: var(--dark); margin: 0; min-height: 100vh; display: flex;
+            flex-direction: column;
         }
 
         .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; flex-grow: 1; }
 
         /* NYER-Style Header Section [cite: 2025-11-11] */
         .page-header { text-align: center; margin-bottom: 80px; }
-        .page-category { 
-            font-size: 0.75rem; font-weight: 800; text-transform: uppercase; 
-            letter-spacing: 0.2em; color: var(--primary); margin-bottom: 15px; display: block; 
+        .page-category {
+            font-size: 0.75rem; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 0.2em; color: var(--primary); margin-bottom: 15px; display: block;
         }
-        .page-title { 
-            font-family: var(--font-heading); font-size: 3.5rem; font-weight: 900; 
-            letter-spacing: -0.04em; line-height: 1; margin: 0; 
+        .page-title {
+            font-family: var(--font-heading); font-size: 3.5rem; font-weight: 900;
+            letter-spacing: -0.04em; line-height: 1; margin: 0;
         }
-        .page-subtitle { 
-            font-size: 1.1rem; color: var(--slate); max-width: 600px; 
-            margin: 25px auto 0; line-height: 1.6; 
+        .page-subtitle {
+            font-size: 1.1rem; color: var(--slate); max-width: 600px;
+            margin: 25px auto 0; line-height: 1.6;
         }
 
         /* Report Gallery Grid */
         .report-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        
-        .report-card { 
-            background: white; border: 1px solid var(--border); border-radius: 24px; 
+
+        .report-card {
+            background: white; border: 1px solid var(--border); border-radius: 24px;
             padding: 40px; position: relative; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex; flex-direction: column;
         }
         .report-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08); }
-        
+
         .report-icon { font-size: 2.5rem; margin-bottom: 25px; display: block; }
         .report-name { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 15px; }
         .report-desc { font-size: 0.95rem; color: var(--slate); line-height: 1.6; margin-bottom: 30px; flex-grow: 1; }
 
-        .buy-footer { 
-            display: flex; align-items: center; justify-content: space-between; 
+        .buy-footer {
+            display: flex; align-items: center; justify-content: space-between;
             gap: 16px; flex-wrap: wrap;
-            padding-top: 25px; border-top: 1px solid var(--border); 
+            padding-top: 25px; border-top: 1px solid var(--border);
         }
-        .price-badge { 
+        .price-badge {
             font-size: 1.05rem; font-weight: 800; font-family: var(--font-heading);
-            letter-spacing: -0.02em; color: var(--dark); 
+            letter-spacing: -0.02em; color: var(--dark);
         }
         .buy-cta {
             display: inline-flex; align-items: center; justify-content: center;
@@ -98,23 +98,23 @@
     .label-longform { color: #0ea5e9 !important; }
 
     /* Layout Standards */
-    header { 
-        width: 100%; 
-        position: sticky; 
-        top: 0; 
-        background: rgba(255,255,255,0.98); 
-        backdrop-filter: blur(12px); 
-        border-bottom: 1px solid #e2e8f0; 
-        z-index: 9999; 
+    header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e2e8f0;
+        z-index: 9999;
     }
-    .nav-container { 
-        max-width: 1400px; 
-        margin: 0 auto; 
-        padding: 0 3rem; 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        height: 90px; 
+    .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
     }
 
     /* Brand Wrapper: Prevents collision with nav items */
@@ -126,48 +126,48 @@
     }
 
     /* Navigation: Forces links to the right */
-    nav { 
-        display: flex; 
-        gap: 3rem; 
-        align-items: center; 
-        height: 100%; 
-        margin-left: auto; 
+    nav {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+        height: 100%;
+        margin-left: auto;
     }
-    
-    .nav-group { 
-        position: relative; 
-        cursor: pointer; 
-        display: flex; 
-        align-items: center; 
-        height: 100%; 
-        white-space: nowrap; 
+
+    .nav-group {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        white-space: nowrap;
     }
     .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
     .nav-group:hover .dropdown { display: block !important; }
     .nav-group.open .dropdown { display: block !important; }
-    
-    .dropdown { 
-        display: none; 
-        position: absolute; 
-        top: 100%; 
-        left: 0; 
-        background: white; 
-        border: 1px solid #e2e8f0; 
-        border-radius: 0.5rem; 
-        padding: 1rem 0; 
-        min-width: 260px; 
-        box-shadow: 0 30px 60px rgba(0,0,0,0.1); 
-        z-index: 10000; 
-        margin-top: -5px; 
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        padding: 1rem 0;
+        min-width: 260px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        z-index: 10000;
+        margin-top: -5px;
     }
-    .dropdown a { 
-        display: block; 
-        padding: 0.8rem 1.5rem; 
-        text-decoration: none; 
-        color: #475569; 
-        font-size: 0.9rem; 
-        font-weight: 700; 
-        transition: 0.2s; 
+    .dropdown a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        color: #475569;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: 0.2s;
     }
     .dropdown a:hover { background: #f8fafc; color: #020617; }
 

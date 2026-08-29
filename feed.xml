@@ -5,7 +5,7 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Aug 2026 00:19:17 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 29 Aug 2026 00:32:23 +0000</lastBuildDate>
     <item>
       <title>The Retirement Age Lie</title>
       <link>https://wealthmeter.xyz/retirement-age-lie.html</link>
@@ -61,6 +61,14 @@
       <pubDate>Sat, 29 Aug 2026 00:19:17 +0000</pubDate>
       <description>why wealth growth becomes non-linear after one million dollars due to access and governance effects.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/compounding-gap-after-1m.png" type="image/png"/>
+    </item>
+    <item>
+      <title>Home Equity Is Not Emergency Liquidity</title>
+      <link>https://wealthmeter.xyz/home-equity-is-not-emergency-liquidity.html</link>
+      <guid>https://wealthmeter.xyz/home-equity-is-not-emergency-liquidity.html</guid>
+      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Federal Reserve and CFPB sources point to the same conclusion: home equity is real wealth, but it is not emergency liquidity on the timetable most households imagine.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/home-equity-liquidity-timeline-2026-aug28.png" type="image/png"/>
     </item>
     <item>
       <title>Sequence Risk Before Retirement: The Fragility Nobody Prices Early Enough</title>
@@ -122,14 +130,6 @@
       <title>The Windfall Misallocation Problem</title>
       <link>https://wealthmeter.xyz/windfall-misallocation-problem.html</link>
       <guid>https://wealthmeter.xyz/windfall-misallocation-problem.html</guid>
-      <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
-      <description>A WealthMeter analysis of why inheritances, equity payouts, business exits, and other windfalls are often allocated badly because recipients confuse one-time liquidity with durable balance-sheet strength.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/windfall-decision-waterfall-2026-may19.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The New Middle-Class Trap: High Income, Low Net Worth</title>
-      <link>https://wealthmeter.xyz/new-middle-class-trap.html</link>
-      <guid>https://wealthmeter.xyz/new-middle-class-trap.html</guid>
       <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
       <description>A WealthMeter analysis of why inheritances, equity payouts, business exits, and other windfalls are often allocated badly because recipients confuse one-time liquidity with durable balance-sheet strength.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/windfall-decision-waterfall-2026-may19.png" type="image/png"/>

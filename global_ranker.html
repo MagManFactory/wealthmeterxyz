@@ -474,24 +474,24 @@ footer {
     .page-title {
         font-size: 2rem;
     }
-    
+
     .input-card {
         padding: 30px 20px;
     }
-    
+
     .input-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .ladder-row {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .position-percentile {
         font-size: 3.5rem;
     }
-    
+
     .nav-links {
         display: none;
     }
@@ -516,23 +516,23 @@ footer {
     .label-longform { color: #0ea5e9 !important; }
 
     /* Layout Standards */
-    header { 
-        width: 100%; 
-        position: sticky; 
-        top: 0; 
-        background: rgba(255,255,255,0.98); 
-        backdrop-filter: blur(12px); 
-        border-bottom: 1px solid #e2e8f0; 
-        z-index: 9999; 
+    header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e2e8f0;
+        z-index: 9999;
     }
-    .nav-container { 
-        max-width: 1400px; 
-        margin: 0 auto; 
-        padding: 0 3rem; 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        height: 90px; 
+    .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
     }
 
     /* Brand Wrapper: Prevents collision with nav items */
@@ -544,48 +544,48 @@ footer {
     }
 
     /* Navigation: Forces links to the right */
-    nav { 
-        display: flex; 
-        gap: 3rem; 
-        align-items: center; 
-        height: 100%; 
-        margin-left: auto; 
+    nav {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+        height: 100%;
+        margin-left: auto;
     }
-    
-    .nav-group { 
-        position: relative; 
-        cursor: pointer; 
-        display: flex; 
-        align-items: center; 
-        height: 100%; 
-        white-space: nowrap; 
+
+    .nav-group {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        white-space: nowrap;
     }
     .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
     .nav-group:hover .dropdown { display: block !important; }
     .nav-group.open .dropdown { display: block !important; }
-    
-    .dropdown { 
-        display: none; 
-        position: absolute; 
-        top: 100%; 
-        left: 0; 
-        background: white; 
-        border: 1px solid #e2e8f0; 
-        border-radius: 0.5rem; 
-        padding: 1rem 0; 
-        min-width: 260px; 
-        box-shadow: 0 30px 60px rgba(0,0,0,0.1); 
-        z-index: 10000; 
-        margin-top: -5px; 
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        padding: 1rem 0;
+        min-width: 260px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        z-index: 10000;
+        margin-top: -5px;
     }
-    .dropdown a { 
-        display: block; 
-        padding: 0.8rem 1.5rem; 
-        text-decoration: none; 
-        color: #475569; 
-        font-size: 0.9rem; 
-        font-weight: 700; 
-        transition: 0.2s; 
+    .dropdown a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        color: #475569;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: 0.2s;
     }
     .dropdown a:hover { background: #f8fafc; color: #020617; }
 
@@ -807,7 +807,7 @@ footer {
                     <label for="networth">Your Net Worth (USD)</label>
                     <input type="number" id="networth" placeholder="0" min="0" step="1000" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="country">Compare Against</label>
                     <select id="country" required>
@@ -875,7 +875,7 @@ footer {
                     </select>
                 </div>
             </div>
-            
+
             <button type="submit" class="btn-primary">Analyze My Position</button>
         </form>
     </div>
@@ -1011,7 +1011,7 @@ function formatNumber(num) {
 
 function calculatePercentile(networth, country) {
     const data = countryData[country];
-    
+
     // Simplified percentile estimation based on thresholds
     if (networth >= data.top1) {
         return 99 + (Math.min(networth / data.top1, 10) - 1) * 0.1;
@@ -1027,31 +1027,31 @@ function calculatePercentile(networth, country) {
 
 document.getElementById('rankerForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
     const networth = parseFloat(document.getElementById('networth').value);
     const countryCode = document.getElementById('country').value;
-    
+
     if (!networth || !countryCode) {
         alert('Please enter your net worth and select a country');
         return;
     }
-    
+
     const country = countryData[countryCode];
     const percentile = calculatePercentile(networth, countryCode);
     const adultsBelowYou = Math.round((percentile / 100) * country.pop);
     const adultsAboveYou = Math.max(0, country.pop - adultsBelowYou);
     const rank = Math.min(country.pop, adultsAboveYou + 1);
-    
+
     // Update position card
     document.getElementById('percentile').textContent = `Top ${(100 - percentile).toFixed(1)}%`;
     document.getElementById('description').innerHTML = `You are wealthier than <strong>${formatNumber(adultsBelowYou)}</strong> adults`;
     document.getElementById('countryDisplay').textContent = `${country.flag} ${country.name}`;
-    
+
     // Update stats
     document.getElementById('totalPop').textContent = formatNumber(country.pop);
     document.getElementById('yourRank').textContent = `#${formatNumber(rank)}`;
     document.getElementById('medianWealth').textContent = formatCurrency(country.median);
-    
+
     // Build ladder
     const ladderData = [
         { label: 'Top 1%', value: country.top1, class: 'top1' },
@@ -1059,13 +1059,13 @@ document.getElementById('rankerForm').addEventListener('submit', function(e) {
         { label: 'Median (50%)', value: country.median, class: 'median' },
         { label: 'YOU', value: networth, class: 'user', isUser: true }
     ];
-    
+
     ladderData.sort((a, b) => b.value - a.value);
-    
+
     const maxValue = country.top1;
     const ladderContainer = document.getElementById('ladderContainer');
     ladderContainer.innerHTML = '';
-    
+
     ladderData.forEach(item => {
         const percentage = (item.value / maxValue) * 100;
         const row = document.createElement('div');
@@ -1082,7 +1082,7 @@ document.getElementById('rankerForm').addEventListener('submit', function(e) {
         `;
         ladderContainer.appendChild(row);
     });
-    
+
     // Show results
     document.getElementById('resultsContainer').classList.add('active');
     document.getElementById('resultsContainer').scrollIntoView({ behavior: 'smooth' });

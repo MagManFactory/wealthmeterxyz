@@ -26,7 +26,7 @@
         }
 
         .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
-        
+
         .simulator-grid {
             display: grid;
             grid-template-columns: 420px 1fr;
@@ -40,12 +40,12 @@
 
         .input-pane { display: flex; flex-direction: column; gap: 24px; }
         .input-group { display: flex; flex-direction: column; gap: 8px; }
-        
-        label { 
-            font-size: 0.75rem; 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            letter-spacing: 0.12em; 
+
+        label {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
             color: var(--slate-900);
         }
 
@@ -71,18 +71,18 @@
             justify-content: center;
         }
 
-        .runway-label { 
-            font-size: 0.85rem; 
+        .runway-label {
+            font-size: 0.85rem;
             font-weight: 800;
             color: var(--blue-600);
-            text-transform: uppercase; 
-            letter-spacing: 0.15em; 
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
         }
 
-        .runway-value { 
-            font-size: 5.5rem; 
-            font-weight: 900; 
-            margin: 10px 0; 
+        .runway-value {
+            font-size: 5.5rem;
+            font-weight: 900;
+            margin: 10px 0;
             color: var(--slate-900);
             letter-spacing: -0.04em;
         }
@@ -146,23 +146,23 @@
     .label-longform { color: #0ea5e9 !important; }
 
     /* Layout Standards */
-    header { 
-        width: 100%; 
-        position: sticky; 
-        top: 0; 
-        background: rgba(255,255,255,0.98); 
-        backdrop-filter: blur(12px); 
-        border-bottom: 1px solid #e2e8f0; 
-        z-index: 9999; 
+    header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e2e8f0;
+        z-index: 9999;
     }
-    .nav-container { 
-        max-width: 1400px; 
-        margin: 0 auto; 
-        padding: 0 3rem; 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        height: 90px; 
+    .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
     }
 
     /* Brand Wrapper: Prevents collision with nav items */
@@ -174,48 +174,48 @@
     }
 
     /* Navigation: Forces links to the right */
-    nav { 
-        display: flex; 
-        gap: 3rem; 
-        align-items: center; 
-        height: 100%; 
-        margin-left: auto; 
+    nav {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+        height: 100%;
+        margin-left: auto;
     }
-    
-    .nav-group { 
-        position: relative; 
-        cursor: pointer; 
-        display: flex; 
-        align-items: center; 
-        height: 100%; 
-        white-space: nowrap; 
+
+    .nav-group {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        white-space: nowrap;
     }
     .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
     .nav-group:hover .dropdown { display: block !important; }
     .nav-group.open .dropdown { display: block !important; }
-    
-    .dropdown { 
-        display: none; 
-        position: absolute; 
-        top: 100%; 
-        left: 0; 
-        background: white; 
-        border: 1px solid #e2e8f0; 
-        border-radius: 0.5rem; 
-        padding: 1rem 0; 
-        min-width: 260px; 
-        box-shadow: 0 30px 60px rgba(0,0,0,0.1); 
-        z-index: 10000; 
-        margin-top: -5px; 
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        padding: 1rem 0;
+        min-width: 260px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        z-index: 10000;
+        margin-top: -5px;
     }
-    .dropdown a { 
-        display: block; 
-        padding: 0.8rem 1.5rem; 
-        text-decoration: none; 
-        color: #475569; 
-        font-size: 0.9rem; 
-        font-weight: 700; 
-        transition: 0.2s; 
+    .dropdown a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        color: #475569;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: 0.2s;
     }
     .dropdown a:hover { background: #f8fafc; color: #020617; }
 
@@ -511,7 +511,7 @@
                 <label>Annual Yield / SWR (%)</label>
                 <input type="number" id="yield" value="4.0" step="0.1">
             </div>
-            
+
             <hr style="border: 0; border-top: 1px solid var(--gray-200); margin: 10px 0;">
             <label style="color: var(--cyan-500);">Geo-Arbitrage Targets</label>
             <div class="input-group">
@@ -553,7 +553,7 @@
         <div class="results-pane">
             <div class="runway-label">Total Survival Runway</div>
             <div class="runway-value" id="runwayDisplay">0 Years</div>
-            
+
             <div class="assessment-box" id="assessmentText">Define parameters to begin simulation.</div>
 
             <div class="geo-arbitrage-box">
@@ -594,7 +594,7 @@
         const baseBurn = parseFloat(document.getElementById('burn').value);
         const yRate = parseFloat(document.getElementById('yield').value) / 100;
         const currentModifier = parseFloat(document.getElementById('currentLoc').value);
-        
+
         // Dynamic Extraction of Select Data
         const t1Mod = parseFloat(document.getElementById('target1').value);
         const t1Name = document.getElementById('target1').options[document.getElementById('target1').selectedIndex].text;
@@ -610,7 +610,7 @@
         updateDisplay('runwayDisplay', baselineYears);
         updateDisplay('valT1', t1Years);
         updateDisplay('valT2', t2Years);
-        
+
         document.getElementById('labelT1').textContent = t1Name;
         document.getElementById('labelT2').textContent = t2Name;
 

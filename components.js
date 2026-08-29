@@ -355,13 +355,14 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
-                                                                                                                                                                                                                            <a href="retirement-age-lie.html">The Retirement Age Lie</a>
+                                                                                                                                                                                                                                                                    <a href="retirement-age-lie.html">The Retirement Age Lie</a>
                     <a href="longevity-capital-living-to-120.html">Longevity Capital: Living to 120</a>
                     <a href="inside-wealth-germany-japan-canada.html">Inside Wealth: Germany, Japan, and Canada</a>
                     <a href="inheritance-illusion.html">The Inheritance Illusion</a>
                     <a href="equity-compensation-trap.html">The Equity Compensation Trap</a>
                     <a href="dual-income-trap.html">The Dual-Income Trap</a>
                     <a href="compounding-gap-after-1m.html">The Compounding Gap After $1M</a>
+                    <a href="home-equity-is-not-emergency-liquidity.html">Home Equity Is Not Emergency Liquidity</a>
                     <a href="sequence-risk-before-retirement-fragility-priced-too-late.html">Sequence Risk Before Retirement: The Fragility Nobody Prices Early Enough</a>
                     <a href="property-tax-drag.html">The Property Tax Drag</a>
                     <a href="global-housing-divergence.html">The Global Housing Divergence</a>
@@ -370,7 +371,6 @@ const siteHeader = `
                     <a href="promotion-paradox.html">The Promotion Paradox</a>
                     <a href="debt-illusion-cycle.html">The Debt Illusion Cycle</a>
                     <a href="windfall-misallocation-problem.html">The Windfall Misallocation Problem</a>
-                    <a href="home-equity-is-not-emergency-liquidity.html">The New Middle-Class Trap: High Income, Low Net Worth</a>
                     <a href="risk-tolerance-illusion.html">The Risk Tolerance Illusion</a>
                     <a href="urban-premium-collapse.html">The Urban Premium Collapse</a>
                     <a href="opportunity-cost-of-cash.html">The Opportunity Cost of Cash</a>
@@ -420,6 +420,7 @@ const siteHeader = `
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
                 </div>
             </div>
+            <a href="https://lifemeter.xyz" target="_blank" rel="noopener" style="font-weight:900; font-size:0.85rem; color:#FF4B4B; text-decoration:none; text-transform:uppercase; letter-spacing:0.12em; white-space: nowrap;">LifeMeter ↗</a>
         </nav>
     </div>
 </header>`;

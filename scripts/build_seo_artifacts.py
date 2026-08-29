@@ -66,6 +66,10 @@ JSON_LD_RE = re.compile(
     r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>\s*(.*?)\s*</script>',
     re.IGNORECASE | re.DOTALL,
 )
+JSON_LD_SCRIPT_RE = re.compile(
+    r'(<script[^>]+type=["\']application/ld\+json["\'][^>]*>\s*)(.*?)(\s*</script>)',
+    re.IGNORECASE | re.DOTALL,
+)
 HEADER_RE = re.compile(r'<div id="header-placeholder">.*?</div>', re.DOTALL)
 FOOTER_RE = re.compile(r'<div id="footer-placeholder">.*?</div>', re.DOTALL)
 IMG_TAG_RE = re.compile(r"<img\b[^>]*>", re.IGNORECASE | re.DOTALL)
@@ -683,8 +687,6 @@ def enforce_duplicate_controls(text: str, path: Path) -> str:
 
 
 def build_breadcrumb_schema(page: PageInfo) -> str | None:
-    if has_schema(page.html_text, "BreadcrumbList"):
-        return None
     items = [{"@type": "ListItem", "position": 1, "name": "WEALTHMETER.XYZ", "item": f"{DOMAIN}/"}]
     if page.path.name == "index.html":
         items[0]["name"] = "Home"
@@ -717,7 +719,7 @@ def hub_item_entries(text: str) -> list[dict]:
 
 
 def build_itemlist_schema(page: PageInfo) -> str | None:
-    if not page.is_hub or has_schema(page.html_text, "ItemList"):
+    if not page.is_hub:
         return None
     items = hub_item_entries(page.html_text)
     if not items:
@@ -733,10 +735,20 @@ def build_itemlist_schema(page: PageInfo) -> str | None:
     return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
 
-def inject_json_ld(text: str, payload_json: str | None) -> str:
+def upsert_json_ld(text: str, schema_type: str, payload_json: str | None) -> str:
     if not payload_json:
         return text
-    return text.replace("</head>", f'    <script type="application/ld+json">{payload_json}</script>\n</head>')
+    replacement = f'<script type="application/ld+json">{payload_json}</script>'
+    for match in JSON_LD_SCRIPT_RE.finditer(text):
+        block = match.group(2)
+        try:
+            data = json.loads(block)
+        except json.JSONDecodeError:
+            continue
+        payloads = data if isinstance(data, list) else [data]
+        if any(isinstance(item, dict) and item.get("@type") == schema_type for item in payloads):
+            return text[:match.start()] + replacement + text[match.end():]
+    return text.replace("</head>", f"    {replacement}\n</head>")
 
 
 def wealth_to_lifemeter_query(page: PageInfo) -> tuple[str, list[str]]:
@@ -958,8 +970,16 @@ def pillar_page_html(pillar: dict, shared_styles: str, header_html: str, footer_
     page = classify_page(ROOT / pillar["slug"], body, article_urls_from_longform())
     body = ensure_social_metadata(body, page)
     body = ensure_og_image_metadata(body, page)
-    body = inject_json_ld(body, build_breadcrumb_schema(classify_page(ROOT / pillar["slug"], body, article_urls_from_longform())))
-    body = inject_json_ld(body, build_itemlist_schema(classify_page(ROOT / pillar["slug"], body, article_urls_from_longform())))
+    body = upsert_json_ld(
+        body,
+        "BreadcrumbList",
+        build_breadcrumb_schema(classify_page(ROOT / pillar["slug"], body, article_urls_from_longform())),
+    )
+    body = upsert_json_ld(
+        body,
+        "ItemList",
+        build_itemlist_schema(classify_page(ROOT / pillar["slug"], body, article_urls_from_longform())),
+    )
     return body
 
 
@@ -1089,9 +1109,9 @@ def update_html_inventory(apply: bool) -> tuple[list[PageInfo], int]:
         updated = ensure_og_image_metadata(updated, classify_page(path, updated, article_urls))
         updated = ensure_article_bridge(updated, classify_page(path, updated, article_urls))
         page = classify_page(path, updated, article_urls)
-        updated = inject_json_ld(updated, build_breadcrumb_schema(page))
+        updated = upsert_json_ld(updated, "BreadcrumbList", build_breadcrumb_schema(page))
         page = classify_page(path, updated, article_urls)
-        updated = inject_json_ld(updated, build_itemlist_schema(page))
+        updated = upsert_json_ld(updated, "ItemList", build_itemlist_schema(page))
         changes += int(write_text(path, updated, apply))
         pages.append(classify_page(path, updated, article_urls))
     return pages, changes

@@ -762,11 +762,11 @@ footer {
     .comparison-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .input-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .ladder-row {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -777,24 +777,24 @@ footer {
     .page-title {
         font-size: 2rem;
     }
-    
+
     .input-card, .ladder-section, .country-result-card {
         padding: 30px 20px;
     }
-    
+
     .percentile-value {
         font-size: 3rem;
     }
-    
+
     .nav-links {
         display: none;
     }
-    
+
     .income-input-row {
         grid-template-columns: 80px 1fr;
         gap: 10px;
     }
-    
+
     .share-buttons {
         grid-template-columns: repeat(4, 1fr);
         gap: 8px;
@@ -820,23 +820,23 @@ footer {
     .label-longform { color: #0ea5e9 !important; }
 
     /* Layout Standards */
-    header { 
-        width: 100%; 
-        position: sticky; 
-        top: 0; 
-        background: rgba(255,255,255,0.98); 
-        backdrop-filter: blur(12px); 
-        border-bottom: 1px solid #e2e8f0; 
-        z-index: 9999; 
+    header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e2e8f0;
+        z-index: 9999;
     }
-    .nav-container { 
-        max-width: 1400px; 
-        margin: 0 auto; 
-        padding: 0 3rem; 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        height: 90px; 
+    .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
     }
 
     /* Brand Wrapper: Prevents collision with nav items */
@@ -848,48 +848,48 @@ footer {
     }
 
     /* Navigation: Forces links to the right */
-    nav { 
-        display: flex; 
-        gap: 3rem; 
-        align-items: center; 
-        height: 100%; 
-        margin-left: auto; 
+    nav {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+        height: 100%;
+        margin-left: auto;
     }
-    
-    .nav-group { 
-        position: relative; 
-        cursor: pointer; 
-        display: flex; 
-        align-items: center; 
-        height: 100%; 
-        white-space: nowrap; 
+
+    .nav-group {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        white-space: nowrap;
     }
     .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
     .nav-group:hover .dropdown { display: block !important; }
     .nav-group.open .dropdown { display: block !important; }
-    
-    .dropdown { 
-        display: none; 
-        position: absolute; 
-        top: 100%; 
-        left: 0; 
-        background: white; 
-        border: 1px solid #e2e8f0; 
-        border-radius: 0.5rem; 
-        padding: 1rem 0; 
-        min-width: 260px; 
-        box-shadow: 0 30px 60px rgba(0,0,0,0.1); 
-        z-index: 10000; 
-        margin-top: -5px; 
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        padding: 1rem 0;
+        min-width: 260px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        z-index: 10000;
+        margin-top: -5px;
     }
-    .dropdown a { 
-        display: block; 
-        padding: 0.8rem 1.5rem; 
-        text-decoration: none; 
-        color: #475569; 
-        font-size: 0.9rem; 
-        font-weight: 700; 
-        transition: 0.2s; 
+    .dropdown a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        color: #475569;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: 0.2s;
     }
     .dropdown a:hover { background: #f8fafc; color: #020617; }
 
@@ -1106,13 +1106,13 @@ footer {
     <div class="input-card">
         <form id="incomeForm">
             <div class="section-label">📊 Your Demographics</div>
-            
+
             <div class="input-grid">
                 <div class="form-group">
                     <label for="age">Age</label>
                     <input type="number" id="age" placeholder="35" min="18" max="100" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label>Gender</label>
                     <div class="gender-toggle">
@@ -1121,7 +1121,7 @@ footer {
                     </div>
                     <input type="hidden" id="gender" value="male">
                 </div>
-                
+
                 <div class="form-group input-grid-full">
                     <label for="income">Annual Income</label>
                     <div class="income-input-row">
@@ -1141,7 +1141,7 @@ footer {
                         <input type="number" id="income" placeholder="75000" min="0" step="1000" required>
                     </div>
                 </div>
-                
+
                 <div class="form-group input-grid-full">
                     <label for="primaryCountry">Your Country</label>
                     <select id="primaryCountry" required>
@@ -1175,12 +1175,12 @@ footer {
                     </select>
                 </div>
             </div>
-            
+
             <div class="comparison-toggle">
                 <input type="checkbox" id="enableComparison">
                 <label for="enableComparison">Compare to another country</label>
             </div>
-            
+
             <div class="comparison-section" id="comparisonSection">
                 <div class="section-label">🌍 Compare Against</div>
                 <div class="form-group">
@@ -1216,7 +1216,7 @@ footer {
                     </select>
                 </div>
             </div>
-            
+
             <button type="submit" class="btn-primary">Analyze My Income Position</button>
         </form>
     </div>
@@ -1226,11 +1226,11 @@ footer {
             <h2 class="results-title">Your Income Position Analysis</h2>
             <p class="results-subtitle" id="resultsSubtitle"></p>
         </div>
-        
+
         <div class="comparison-grid" id="comparisonGrid">
             <!-- Results will be inserted here -->
         </div>
-        
+
         <div class="ladder-section">
             <div class="ladder-header">
                 <h3 class="ladder-title">Income Distribution Ladder</h3>
@@ -1238,11 +1238,11 @@ footer {
             </div>
             <div class="ladder-container" id="ladderContainer"></div>
         </div>
-        
+
         <div class="data-note">
             <div class="data-note-title">Data Sources & Methodology</div>
             <p class="data-note-text">
-                Income estimates are based on the most recent representative data available from multiple international sources. 
+                Income estimates are based on the most recent representative data available from multiple international sources.
                 Data recency varies by country due to different reporting methodologies and statistical cycles (typically 2019-2023).
             </p>
             <ul class="data-sources-list">
@@ -1738,13 +1738,13 @@ function calculatePercentile(income, countryCode, age, gender) {
     const data = incomeData[countryCode];
     const ageGroup = getAgeGroup(age);
     let baseMedian = data.medianByAge[ageGroup];
-    
+
     if (gender === "female") {
         baseMedian *= data.genderGap;
     }
-    
+
     const ratio = income / baseMedian;
-    
+
     if (ratio < data.p10) {
         return (ratio / data.p10) * 10;
     } else if (ratio < data.p25) {
@@ -1769,9 +1769,9 @@ function getInsights(income, countryCode, age, gender, percentile) {
     const ageGroup = getAgeGroup(age);
     const baseMedian = data.medianByAge[ageGroup];
     const adjustedMedian = gender === "female" ? baseMedian * data.genderGap : baseMedian;
-    
+
     const insights = [];
-    
+
     if (percentile >= 90) {
         insights.push({
             icon: "🎯",
@@ -1793,7 +1793,7 @@ function getInsights(income, countryCode, age, gender, percentile) {
             text: `The median income for your demographic is ${formatCurrency(adjustedMedian)}.`
         });
     }
-    
+
     if (gender === "female") {
         const gapPercent = ((1 - data.genderGap) * 100).toFixed(0);
         insights.push({
@@ -1801,14 +1801,14 @@ function getInsights(income, countryCode, age, gender, percentile) {
             text: `Women in ${data.name} earn approximately ${gapPercent}% less than men on average.`
         });
     }
-    
+
     if (getAgeGroup(age) === "35-44" || getAgeGroup(age) === "45-54") {
         insights.push({
             icon: "⏰",
             text: `You're in peak earning years - this age group typically has the highest incomes.`
         });
     }
-    
+
     return insights;
 }
 
@@ -1824,30 +1824,30 @@ function createCountryResultCard(countryCode, income, age, gender, isPrimary = t
     const rank = Math.round(((100 - percentile) / 100) * data.pop);
     const wealthierThan = data.pop - rank;
     const insights = getInsights(income, countryCode, age, gender, percentile);
-    
+
     const ageGroup = getAgeGroup(age);
     const baseMedian = data.medianByAge[ageGroup];
     const adjustedMedian = gender === "female" ? baseMedian * data.genderGap : baseMedian;
-    
+
     const shareText = encodeURIComponent(generateShareText(countryCode, percentile));
     const shareUrl = encodeURIComponent(window.location.href);
     const emailSubject = encodeURIComponent('Check Your Global Income Position');
     const emailBody = encodeURIComponent(`I'm in the top ${(100 - percentile).toFixed(1)}% of income earners in ${data.name}! 💰\n\nCheck your global income position at ${window.location.href}`);
-    
+
     return `
         <div class="country-result-card ${isPrimary ? 'primary' : 'comparison'}">
             <div class="country-header">
                 <div class="country-name">${data.name}</div>
                 <div class="country-flag">${data.flag}</div>
             </div>
-            
+
             <div class="percentile-display">
                 <div class="percentile-label">Your Income Position</div>
                 <div class="percentile-value">Top ${(100 - percentile).toFixed(1)}%</div>
                 <div class="percentile-description">
                     Wealthier than ${formatNumber(wealthierThan)} adults
                 </div>
-                
+
                 <div class="share-section" id="shareSection${isPrimary ? 'Primary' : 'Comparison'}">
                     <div class="share-header">
                         <span class="share-icon-header">📤</span>
@@ -1881,7 +1881,7 @@ function createCountryResultCard(countryCode, income, age, gender, isPrimary = t
                     </div>
                 </div>
             </div>
-            
+
             <div class="stats-mini-grid">
                 <div class="stat-mini">
                     <div class="stat-mini-label">Your Rank</div>
@@ -1892,7 +1892,7 @@ function createCountryResultCard(countryCode, income, age, gender, isPrimary = t
                     <div class="stat-mini-value">${formatCurrency(adjustedMedian)}</div>
                 </div>
             </div>
-            
+
             <div class="insights-section">
                 <div class="insights-title">Key Insights</div>
                 ${insights.map(insight => `
@@ -1908,11 +1908,11 @@ function createCountryResultCard(countryCode, income, age, gender, isPrimary = t
 
 function copyShareLink(countryName, topPercent, button) {
     const text = `I'm in the top ${topPercent}% of income earners in ${countryName}! 💰 Check your global income position at ${window.location.href}`;
-    
+
     navigator.clipboard.writeText(text).then(() => {
         button.classList.add('copied');
         button.innerHTML = '<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
-        
+
         setTimeout(() => {
             button.classList.remove('copied');
             button.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>';
@@ -1925,7 +1925,7 @@ function buildIncomeLadder(countryCode, income, age, gender) {
     const ageGroup = getAgeGroup(age);
     const baseMedian = data.medianByAge[ageGroup];
     const adjustedMedian = gender === "female" ? baseMedian * data.genderGap : baseMedian;
-    
+
     const ladderData = [
         { label: 'Top 1%', value: adjustedMedian * data.p99, percentile: 99 },
         { label: 'Top 5%', value: adjustedMedian * data.p95, percentile: 95 },
@@ -1934,11 +1934,11 @@ function buildIncomeLadder(countryCode, income, age, gender) {
         { label: 'Median', value: adjustedMedian, percentile: 50 },
         { label: 'YOU', value: income, percentile: calculatePercentile(income, countryCode, age, gender), isUser: true }
     ];
-    
+
     ladderData.sort((a, b) => b.value - a.value);
-    
+
     const maxValue = ladderData[0].value;
-    
+
     return ladderData.map(item => {
         const percentage = (item.value / maxValue) * 100;
         return `
@@ -1975,7 +1975,7 @@ document.getElementById('enableComparison').addEventListener('change', function(
 
 document.getElementById('incomeForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
     const age = parseInt(document.getElementById('age').value);
     const gender = document.getElementById('gender').value;
     const incomeInput = parseFloat(document.getElementById('income').value);
@@ -1983,28 +1983,28 @@ document.getElementById('incomeForm').addEventListener('submit', function(e) {
     const primaryCountry = document.getElementById('primaryCountry').value;
     const comparisonEnabled = document.getElementById('enableComparison').checked;
     const comparisonCountry = document.getElementById('comparisonCountry').value;
-    
+
     if (!primaryCountry) {
         alert('Please select your country');
         return;
     }
-    
+
     if (comparisonEnabled && !comparisonCountry) {
         alert('Please select a comparison country');
         return;
     }
-    
+
     if (comparisonEnabled && primaryCountry === comparisonCountry) {
         alert('Please select different countries for comparison');
         return;
     }
-    
+
     const incomeUSD = incomeInput * FX_RATES[currency];
-    
+
     const genderText = gender === 'male' ? 'Male' : 'Female';
-    document.getElementById('resultsSubtitle').textContent = 
+    document.getElementById('resultsSubtitle').textContent =
         `${genderText}, Age ${age}, Annual Income: ${currency} ${incomeInput.toLocaleString()}`;
-    
+
     const grid = document.getElementById('comparisonGrid');
     if (comparisonEnabled) {
         grid.classList.remove('single');
@@ -2014,20 +2014,20 @@ document.getElementById('incomeForm').addEventListener('submit', function(e) {
         grid.classList.add('single');
         grid.innerHTML = createCountryResultCard(primaryCountry, incomeUSD, age, gender, true);
     }
-    
-    document.getElementById('ladderSubtitle').textContent = 
+
+    document.getElementById('ladderSubtitle').textContent =
         `Income distribution for ${genderText}s aged ${getAgeGroup(age)} in ${incomeData[primaryCountry].name}`;
-    document.getElementById('ladderContainer').innerHTML = 
+    document.getElementById('ladderContainer').innerHTML =
         buildIncomeLadder(primaryCountry, incomeUSD, age, gender);
-    
+
     document.getElementById('resultsContainer').classList.add('active');
     document.getElementById('resultsContainer').scrollIntoView({ behavior: 'smooth' });
-    
+
     // Animate share buttons appearance
     setTimeout(() => {
         const shareSection = document.getElementById('shareSectionPrimary');
         if (shareSection) shareSection.classList.add('visible');
-        
+
         if (comparisonEnabled) {
             const shareSection2 = document.getElementById('shareSectionComparison');
             if (shareSection2) shareSection2.classList.add('visible');
