@@ -30,9 +30,9 @@ const sharedStyles = `
         z-index: 9999;
     }
     .nav-container {
-        max-width: 1400px;
+        max-width: 1580px;
         margin: 0 auto;
-        padding: 0 3rem;
+        padding: 0 1.75rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -44,13 +44,13 @@ const sharedStyles = `
         display: flex;
         align-items: center;
         flex-shrink: 0;
-        margin-right: 3rem;
+        margin-right: 2rem;
     }
 
     /* Navigation: Forces links to the right */
     nav {
         display: flex;
-        gap: 3rem;
+        gap: clamp(1.1rem, 1.7vw, 2.25rem);
         align-items: center;
         height: 100%;
         margin-left: auto;
@@ -65,8 +65,29 @@ const sharedStyles = `
         white-space: nowrap;
     }
     .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
+    .sister-site-link {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        margin-left: 0.35rem;
+        font-weight: 900;
+        font-size: 0.82rem;
+        color: #FF4B4B;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.11em;
+        white-space: nowrap;
+    }
     .nav-group:hover .dropdown { display: block !important; }
     .nav-group.open .dropdown { display: block !important; }
+
+    @media (max-width: 1360px) {
+        .nav-container { padding: 0 1.25rem; }
+        .brand-wrapper { margin-right: 1.25rem; }
+        nav { gap: 1rem; }
+        .nav-group-label,
+        .sister-site-link { font-size: 0.76rem; letter-spacing: 0.09em; }
+    }
 
     .dropdown {
         display: none;
@@ -420,7 +441,7 @@ const siteHeader = `
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
                 </div>
             </div>
-            <a href="https://lifemeter.xyz" target="_blank" rel="noopener" style="font-weight:900; font-size:0.85rem; color:#FF4B4B; text-decoration:none; text-transform:uppercase; letter-spacing:0.12em; white-space: nowrap;">LifeMeter ↗</a>
+            <a href="https://lifemeter.xyz" target="_blank" rel="noopener" class="sister-site-link">LifeMeter ↗</a>
         </nav>
     </div>
 </header>`;
