@@ -95,6 +95,7 @@ LONGFORM_CARDS_RE = re.compile(
     r'(<!-- generated-pillar-grid:end -->\s*)(.*?)(\s*</main>)',
     re.DOTALL,
 )
+LONGFORM_CARD_HREF_RE = re.compile(r'<a class="card" href="([^"]+)"')
 BADGE_RE = re.compile(r'<(?:span|div) class="badge">(.*?)</(?:span|div)>', re.IGNORECASE | re.DOTALL)
 
 
@@ -1032,19 +1033,35 @@ def update_longform_cards(text: str, article_pages: list[PageInfo]) -> str:
     return LONGFORM_CARDS_RE.sub(rf"\1{cards}\3", text, count=1)
 
 
+def article_pages_from_hub_cards(text: str, article_pages: list[PageInfo]) -> list[PageInfo]:
+    by_name = {page.path.name: page for page in article_pages}
+    ordered: list[PageInfo] = []
+    seen: set[str] = set()
+    for href in LONGFORM_CARD_HREF_RE.findall(text):
+        page = by_name.get(href)
+        if page is None or href in seen:
+            continue
+        ordered.append(page)
+        seen.add(href)
+    ordered.extend(page for page in article_pages if page.path.name not in seen)
+    return ordered
+
+
 def sync_longform_surfaces(apply: bool, pages: list[PageInfo]) -> int:
     article_pages = article_pages_in_display_order(pages)
     changes = 0
 
-    components_path = ROOT / "components.js"
-    components_text = read_text(components_path)
-    updated_components = update_components_longform_dropdown(components_text, article_pages)
-    changes += int(write_text(components_path, updated_components, apply))
-
     longform_path = ROOT / "longform.html"
     longform_text = read_text(longform_path)
     updated_longform = update_longform_cards(longform_text, article_pages)
+    display_order_pages = article_pages_from_hub_cards(updated_longform, article_pages)
+    updated_longform = update_components_longform_dropdown(updated_longform, display_order_pages)
     changes += int(write_text(longform_path, updated_longform, apply))
+
+    components_path = ROOT / "components.js"
+    components_text = read_text(components_path)
+    updated_components = update_components_longform_dropdown(components_text, display_order_pages)
+    changes += int(write_text(components_path, updated_components, apply))
     return changes
 
 
