@@ -300,6 +300,7 @@ class PageInfo:
     robots: str
     is_article: bool
     is_hub: bool
+    published_at: datetime | None
     modified_at: datetime
     image_url: str | None
     image_alt: str | None
@@ -379,6 +380,19 @@ def has_schema(text: str, schema_type: str) -> bool:
     return False
 
 
+def parse_dt(value: object) -> datetime | None:
+    if not isinstance(value, str) or not value.strip():
+        return None
+    raw = value.strip()
+    try:
+        parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
 def article_urls_from_longform() -> set[str]:
     text = read_text(ROOT / "longform.html")
     return {
@@ -408,6 +422,15 @@ def generated_hub_names() -> set[str]:
 def classify_page(path: Path, html_text: str, article_urls: set[str]) -> PageInfo:
     image_match = OG_IMAGE_RE.search(html_text)
     alt_match = OG_ALT_RE.search(html_text)
+    article_schema = next(
+        (
+            payload for payload in parse_json_ld_objects(html_text)
+            if payload.get("@type") == "Article"
+        ),
+        None,
+    )
+    published_at = parse_dt(article_schema.get("datePublished")) if article_schema else None
+    schema_modified_at = parse_dt(article_schema.get("dateModified")) if article_schema else None
     modified_at = (
         datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
         if path.exists()
@@ -421,7 +444,8 @@ def classify_page(path: Path, html_text: str, article_urls: set[str]) -> PageInf
         robots=robots_of(html_text),
         is_article=is_longform_article(path, html_text, article_urls),
         is_hub=path.name in generated_hub_names(),
-        modified_at=modified_at,
+        published_at=published_at,
+        modified_at=schema_modified_at or modified_at,
         image_url=image_match.group(1).strip() if image_match else None,
         image_alt=alt_match.group(1).strip() if alt_match else None,
         html_text=html_text,
@@ -788,10 +812,11 @@ def badge_of(text: str) -> str | None:
 
 
 def article_meta_label(page: PageInfo) -> str:
+    stamp = page.published_at or page.modified_at
     badge = badge_of(page.html_text)
     if badge:
-        return f"{badge} · {page.modified_at.strftime('%B')} {page.modified_at.day}, {page.modified_at.year}"
-    return f"Longform · {page.modified_at.strftime('%B')} {page.modified_at.day}, {page.modified_at.year}"
+        return f"{badge} · {stamp.strftime('%B')} {stamp.day}, {stamp.year}"
+    return f"Longform · {stamp.strftime('%B')} {stamp.day}, {stamp.year}"
 
 
 def article_card_markup_from_page(page: PageInfo) -> str:
@@ -1055,8 +1080,8 @@ def update_html_inventory(apply: bool) -> tuple[list[PageInfo], int]:
     return pages, changes
 
 
-def sort_key(page: PageInfo) -> tuple[datetime, str]:
-    return (page.modified_at, page.canonical_url)
+def sort_key(page: PageInfo) -> tuple[datetime, datetime, str]:
+    return (page.published_at or page.modified_at, page.modified_at, page.canonical_url)
 
 
 def lastmod_value(page: PageInfo) -> str:
@@ -1127,7 +1152,7 @@ def generate_feed(pages: list[PageInfo]) -> str:
             f"      <title>{xml_escape(title)}</title>\n"
             f"      <link>{xml_escape(page.canonical_url)}</link>\n"
             f"      <guid>{xml_escape(page.canonical_url)}</guid>\n"
-            f"      <pubDate>{format_datetime(page.modified_at.astimezone(timezone.utc))}</pubDate>\n"
+            f"      <pubDate>{format_datetime((page.published_at or page.modified_at).astimezone(timezone.utc))}</pubDate>\n"
             f"      <description>{xml_escape(page.description or title)}</description>{enclosure}\n"
             "    </item>"
         )

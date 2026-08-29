@@ -20,23 +20,23 @@ const sharedStyles = `
     .label-longform { color: #0ea5e9 !important; }
 
     /* Layout Standards */
-    header { 
-        width: 100%; 
-        position: sticky; 
-        top: 0; 
-        background: rgba(255,255,255,0.98); 
-        backdrop-filter: blur(12px); 
-        border-bottom: 1px solid #e2e8f0; 
-        z-index: 9999; 
+    header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e2e8f0;
+        z-index: 9999;
     }
-    .nav-container { 
-        max-width: 1400px; 
-        margin: 0 auto; 
-        padding: 0 3rem; 
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        height: 90px; 
+    .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
     }
 
     /* Brand Wrapper: Prevents collision with nav items */
@@ -48,48 +48,48 @@ const sharedStyles = `
     }
 
     /* Navigation: Forces links to the right */
-    nav { 
-        display: flex; 
-        gap: 3rem; 
-        align-items: center; 
-        height: 100%; 
-        margin-left: auto; 
+    nav {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+        height: 100%;
+        margin-left: auto;
     }
-    
-    .nav-group { 
-        position: relative; 
-        cursor: pointer; 
-        display: flex; 
-        align-items: center; 
-        height: 100%; 
-        white-space: nowrap; 
+
+    .nav-group {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        white-space: nowrap;
     }
     .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
     .nav-group:hover .dropdown { display: block !important; }
     .nav-group.open .dropdown { display: block !important; }
-    
-    .dropdown { 
-        display: none; 
-        position: absolute; 
-        top: 100%; 
-        left: 0; 
-        background: white; 
-        border: 1px solid #e2e8f0; 
-        border-radius: 0.5rem; 
-        padding: 1rem 0; 
-        min-width: 260px; 
-        box-shadow: 0 30px 60px rgba(0,0,0,0.1); 
-        z-index: 10000; 
-        margin-top: -5px; 
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        padding: 1rem 0;
+        min-width: 260px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        z-index: 10000;
+        margin-top: -5px;
     }
-    .dropdown a { 
-        display: block; 
-        padding: 0.8rem 1.5rem; 
-        text-decoration: none; 
-        color: #475569; 
-        font-size: 0.9rem; 
-        font-weight: 700; 
-        transition: 0.2s; 
+    .dropdown a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        color: #475569;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: 0.2s;
     }
     .dropdown a:hover { background: #f8fafc; color: #020617; }
 
@@ -355,66 +355,66 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
-                                                            <a href="yield-trap-high-rate-world.html">The Yield Trap in a High-Rate World</a>
-                    <a href="windfall-misallocation-problem.html">The Windfall Misallocation Problem</a>
-                    <a href="wealth-plateau-effect.html">The Wealth Plateau Effect</a>
-                    <a href="war-premium-iran-conflict-repricing-energy-credit-equities.html">The War Premium: How the Iran Conflict Is Repricing Energy, Credit, and Equities</a>
-                    <a href="venture-capital-power-law-reality.html">The Venture Capital Power Law Reality</a>
-                    <a href="urban-premium-collapse.html">The Urban Premium Collapse</a>
-                    <a href="timing-fallacy-public-markets.html">The Timing Fallacy in Public Markets</a>
-                    <a href="skill-obsolescence-curve.html">The Skill Obsolescence Curve</a>
-                    <a href="sequence-risk-before-retirement-fragility-priced-too-late.html">Sequence Risk Before Retirement: The Fragility Nobody Prices Early Enough</a>
-                    <a href="second-home-wealth-drain.html">The Second-Home Wealth Drain</a>
-                    <a href="scarcity-mindset-loop.html">The Scarcity Mindset Loop</a>
-                    <a href="salary-ceiling-illusion.html">The Salary Ceiling Illusion</a>
-                    <a href="risk-tolerance-illusion.html">The Risk Tolerance Illusion</a>
-                    <a href="rich-or-just-in-a-bubble.html">Are You Rich or Just in a Bubble? Recalculating Wealth in a 6% Mortgage World</a>
-                    <a href="rich-but-not-famous-economy.html">The Rich but Not Famous Economy</a>
-                    <a href="retirement-age-lie.html">The Retirement Age Lie</a>
-                    <a href="rent-vs-buy-reversal.html">The Rent vs Buy Reversal</a>
-                    <a href="rebalancing-illusion.html">The Rebalancing Illusion</a>
-                    <a href="realistic-projections-ubi.html">Realistic Projections on UBI (Universal Basic Income): Don’t Bet Your Future on It</a>
-                    <a href="property-tax-drag.html">The Property Tax Drag</a>
-                    <a href="promotion-paradox.html">The Promotion Paradox</a>
-                    <a href="productivity-income-disconnect.html">The Productivity-Income Disconnect</a>
-                    <a href="private-markets-mirage.html">The Private Markets Mirage</a>
-                    <a href="overconfidence-cycle.html">The Overconfidence Cycle</a>
-                    <a href="opportunity-cost-of-cash.html">The Opportunity Cost of Cash</a>
-                    <a href="one-salary-three-futures.html">One Salary, Three Futures: How the Same Income Produces Totally Different Wealth Paths by City</a>
-                    <a href="new-middle-class-trap.html">The New Middle-Class Trap: High Income, Low Net Worth</a>
-                    <a href="mortgage-lock-in-trap.html">The Mortgage Lock-In Trap: Why a 3% Loan Can Still Make You Poorer in 2026</a>
-                    <a href="mobility-premium.html">The Mobility Premium</a>
-                    <a href="loss-aversion-tax.html">The Loss Aversion Tax</a>
+                                                                                                                        <a href="retirement-age-lie.html">The Retirement Age Lie</a>
                     <a href="longevity-capital-living-to-120.html">Longevity Capital: Living to 120</a>
-                    <a href="liquidity-illusion.html">The Liquidity Illusion</a>
-                    <a href="lifestyle-lock-in-curve.html">The Lifestyle Lock-In Curve</a>
                     <a href="inside-wealth-germany-japan-canada.html">Inside Wealth: Germany, Japan, and Canada</a>
-                    <a href="inside-wealth-china-india.html">Inside Wealth in China and India: Top 10%, Top 1%, and the New Middle Class</a>
                     <a href="inheritance-illusion.html">The Inheritance Illusion</a>
-                    <a href="inflation-ladder-problem.html">The Inflation Ladder Problem</a>
-                    <a href="indexing-saturation-problem.html">The Indexing Saturation Problem</a>
-                    <a href="illiquidity-premium-myth.html">The Illiquidity Premium Myth</a>
-                    <a href="housing-stall-2026-rates-inventory-delinquency.html">The 2026 Housing Stall: Rates, Inventory, and the New Delinquency Split</a>
-                    <a href="home-equity-is-not-emergency-liquidity.html">Home Equity Is Not Emergency Liquidity</a>
-                    <a href="hidden-costs-of-ownership.html">The Hidden Costs of Ownership</a>
-                    <a href="great-baseline-war.html">The Great Baseline War: Why Your Wealth Rank Changes by Population Lens</a>
-                    <a href="golden-handcuffs-equation.html">The Golden Handcuffs Equation</a>
-                    <a href="global-housing-divergence.html">The Global Housing Divergence</a>
-                    <a href="geographic-arbitrage-window.html">The Geographic Arbitrage Window</a>
-                    <a href="freelance-freedom-tradeoff.html">The Freelance Freedom Tradeoff</a>
                     <a href="equity-compensation-trap.html">The Equity Compensation Trap</a>
-                    <a href="end-of-safe-job-illusion-ai-labor-deflation-white-collar-income.html">The End of the Safe Job Illusion: AI Labor Deflation in White-Collar Income</a>
                     <a href="dual-income-trap.html">The Dual-Income Trap</a>
-                    <a href="debt-illusion-cycle.html">The Debt Illusion Cycle</a>
-                    <a href="crypto-etf-wealth-effect.html">Crypto ETF Wealth Effect: Durable Net Worth or Volatility?</a>
-                    <a href="cost-of-capital-trap.html">The Cost-of-Capital Trap</a>
-                    <a href="concentration-vs-diversification-tradeoff.html">The Concentration vs Diversification Tradeoff</a>
                     <a href="compounding-gap-after-1m.html">The Compounding Gap After $1M</a>
+                    <a href="sequence-risk-before-retirement-fragility-priced-too-late.html">Sequence Risk Before Retirement: The Fragility Nobody Prices Early Enough</a>
+                    <a href="property-tax-drag.html">The Property Tax Drag</a>
+                    <a href="global-housing-divergence.html">The Global Housing Divergence</a>
+                    <a href="yield-trap-high-rate-world.html">The Yield Trap in a High-Rate World</a>
+                    <a href="freelance-freedom-tradeoff.html">The Freelance Freedom Tradeoff</a>
+                    <a href="promotion-paradox.html">The Promotion Paradox</a>
+                    <a href="debt-illusion-cycle.html">The Debt Illusion Cycle</a>
+                    <a href="windfall-misallocation-problem.html">The Windfall Misallocation Problem</a>
+                    <a href="home-equity-is-not-emergency-liquidity.html">The New Middle-Class Trap: High Income, Low Net Worth</a>
+                    <a href="risk-tolerance-illusion.html">The Risk Tolerance Illusion</a>
+                    <a href="urban-premium-collapse.html">The Urban Premium Collapse</a>
+                    <a href="opportunity-cost-of-cash.html">The Opportunity Cost of Cash</a>
+                    <a href="venture-capital-power-law-reality.html">The Venture Capital Power Law Reality</a>
+                    <a href="productivity-income-disconnect.html">The Productivity-Income Disconnect</a>
+                    <a href="salary-ceiling-illusion.html">The Salary Ceiling Illusion</a>
+                    <a href="lifestyle-lock-in-curve.html">The Lifestyle Lock-In Curve</a>
+                    <a href="scarcity-mindset-loop.html">The Scarcity Mindset Loop</a>
                     <a href="comparison-trap-digital-age.html">The Comparison Trap in the Digital Age</a>
+                    <a href="geographic-arbitrage-window.html">The Geographic Arbitrage Window</a>
+                    <a href="rebalancing-illusion.html">The Rebalancing Illusion</a>
+                    <a href="private-markets-mirage.html">The Private Markets Mirage</a>
+                    <a href="skill-obsolescence-curve.html">The Skill Obsolescence Curve</a>
+                    <a href="wealth-plateau-effect.html">The Wealth Plateau Effect</a>
+                    <a href="illiquidity-premium-myth.html">The Illiquidity Premium Myth</a>
+                    <a href="inflation-ladder-problem.html">The Inflation Ladder Problem</a>
+                    <a href="loss-aversion-tax.html">The Loss Aversion Tax</a>
+                    <a href="cost-of-capital-trap.html">The Cost-of-Capital Trap</a>
+                    <a href="overconfidence-cycle.html">The Overconfidence Cycle</a>
+                    <a href="hidden-costs-of-ownership.html">The Hidden Costs of Ownership</a>
+                    <a href="ai-displacement-timeline.html">The AI Displacement Timeline</a>
+                    <a href="rich-but-not-famous-economy.html">The Rich but Not Famous Economy</a>
+                    <a href="liquidity-illusion.html">The Liquidity Illusion</a>
+                    <a href="mobility-premium.html">The Mobility Premium</a>
+                    <a href="second-home-wealth-drain.html">The Second-Home Wealth Drain</a>
+                    <a href="timing-fallacy-public-markets.html">The Timing Fallacy in Public Markets</a>
+                    <a href="indexing-saturation-problem.html">The Indexing Saturation Problem</a>
+                    <a href="golden-handcuffs-equation.html">The Golden Handcuffs Equation</a>
+                    <a href="rent-vs-buy-reversal.html">The Rent vs Buy Reversal</a>
+                    <a href="concentration-vs-diversification-tradeoff.html">The Concentration vs Diversification Tradeoff</a>
                     <a href="career-optionality-gap.html">The Career Optionality Gap</a>
                     <a href="asset-rich-cash-poor-paradox.html">The Asset-Rich, Cash-Poor Paradox</a>
-                    <a href="ai-displacement-timeline.html">The AI Displacement Timeline</a>
+                    <a href="housing-stall-2026-rates-inventory-delinquency.html">The 2026 Housing Stall: Rates, Inventory, and the New Delinquency Split</a>
+                    <a href="mortgage-lock-in-trap.html">The Mortgage Lock-In Trap: Why a 3% Loan Can Still Make You Poorer in 2026</a>
+                    <a href="war-premium-iran-conflict-repricing-energy-credit-equities.html">The War Premium: How the Iran Conflict Is Repricing Energy, Credit, and Equities</a>
+                    <a href="end-of-safe-job-illusion-ai-labor-deflation-white-collar-income.html">The End of the Safe Job Illusion: AI Labor Deflation in White-Collar Income</a>
                     <a href="ai-boom-portfolios-personal-wealth.html">AI Boom Portfolios: Building Personal Wealth Without Concentration Blowups</a>
+                    <a href="rich-or-just-in-a-bubble.html">Are You Rich or Just in a Bubble? Recalculating Wealth in a 6% Mortgage World</a>
+                    <a href="realistic-projections-ubi.html">Realistic Projections on UBI (Universal Basic Income): Don’t Bet Your Future on It</a>
+                    <a href="one-salary-three-futures.html">One Salary, Three Futures: How the Same Income Produces Totally Different Wealth Paths by City</a>
+                    <a href="new-middle-class-trap.html">The New Middle-Class Trap: High Income, Low Net Worth</a>
+                    <a href="inside-wealth-china-india.html">Inside Wealth in China and India: Top 10%, Top 1%, and the New Middle Class</a>
+                    <a href="great-baseline-war.html">The Great Baseline War: Why Your Wealth Rank Changes by Population Lens</a>
+                    <a href="crypto-etf-wealth-effect.html">Crypto ETF Wealth Effect: Durable Net Worth or Volatility?</a>
 
 
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
