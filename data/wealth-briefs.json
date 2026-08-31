@@ -1,7 +1,7 @@
 {
   "schemaVersion": 10,
-  "updatedAt": "2026-08-24T12:00:00Z",
-  "count": 769,
+  "updatedAt": "2026-08-31T12:00:00Z",
+  "count": 789,
   "categories": {
     "Decumulation": 48,
     "Asset Pricing": 104,
@@ -13,8 +13,8 @@
     "Market History": 23,
     "Dividend Policy": 8,
     "Fixed Income": 58,
-    "Real Estate": 93,
-    "Personal Finance": 133,
+    "Real Estate": 103,
+    "Personal Finance": 143,
     "Value Investing": 13
   },
   "sourceTypes": {
@@ -25,7 +25,7 @@
     "book": 60,
     "business journal": 2,
     "economics journal": 56,
-    "research report": 236,
+    "research report": 256,
     "academic journal": 57,
     "NBER working paper": 154,
     "real estate journal": 17
@@ -15552,6 +15552,426 @@
       "sourceLinkLabel": "View research report",
       "featured": false,
       "id": "2026-distribution-of-household-wealth-in-the-u-s-since-1989"
+    },
+    {
+      "title": "Debt Burdens Among Credit-Linked Consumers in the United States",
+      "category": "Personal Finance",
+      "categoryLabel": "Household debt",
+      "year": 2026,
+      "authors": "Consumer Financial Protection Bureau",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "CFPB links consumers who share credit with likely household members and shows that a household-style credit view captures different debt burdens and risk patterns than an individual-only file.",
+      "whyItMatters": "Good for reading leverage through a shared-household lens instead of assuming every debt decision is individual.",
+      "focusTags": [
+        "Household debt",
+        "Credit records",
+        "Shared credit"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/debt-burdens-among-credit-linked-consumers-in-the-united-states/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2026-debt-burdens-among-credit-linked-consumers-in-the-united-states"
+    },
+    {
+      "title": "How the Basel Re-Proposal Will Impact the Mortgage Market",
+      "category": "Real Estate",
+      "categoryLabel": "Mortgage markets",
+      "year": 2026,
+      "authors": "Parrott J., Goodman L., & Zandi M. M.",
+      "publication": "Urban Institute",
+      "sourceType": "research report",
+      "summary": "Parrott, Goodman, and Zandi argue that the March 2026 Basel re-proposal would modestly shift banks toward lower-risk mortgages and could pull more bank capital back into housing finance if key definitions are clarified.",
+      "whyItMatters": "Worth reading if you want to know how capital rules can change mortgage pricing and who originates loans.",
+      "focusTags": [
+        "Mortgage markets",
+        "Bank capital",
+        "Housing finance"
+      ],
+      "sourceUrl": "https://www.urban.org/research/publication/how-basel-re-proposal-will-impact-mortgage-market",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2026-how-the-basel-re-proposal-will-impact-the-mortgage-market"
+    },
+    {
+      "title": "When the Mortgage Becomes the Backup Plan: Debt and Disaster Insurance",
+      "category": "Real Estate",
+      "categoryLabel": "Mortgage stress",
+      "year": 2026,
+      "authors": "Phan T.",
+      "publication": "Federal Reserve Bank of Richmond",
+      "sourceType": "research report",
+      "summary": "Phan explains how highly leveraged homeowners can treat default as an implicit substitute for flood insurance, concentrating uninsured disaster risk in the mortgage market rather than the insurance system.",
+      "whyItMatters": "Useful when home-insurance stress is discussed as a climate story without tracing the balance-sheet consequences for borrowers and lenders.",
+      "focusTags": [
+        "Mortgage stress",
+        "Flood insurance",
+        "Housing finance"
+      ],
+      "sourceUrl": "https://www.richmondfed.org/publications/research/economic_brief/2026/eb_26-22",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2026-when-the-mortgage-becomes-the-backup-plan-debt-and-disaster-insurance"
+    },
+    {
+      "title": "A Check-In on the Mortgage Market",
+      "category": "Real Estate",
+      "categoryLabel": "Mortgage markets",
+      "year": 2025,
+      "authors": "Haughwout A. F., Lee D., Lee J., Scally J., & van der Klaauw W.",
+      "publication": "Federal Reserve Bank of New York",
+      "sourceType": "research report",
+      "summary": "Using the New York Fed Consumer Credit Panel, the authors show mortgage balances kept rising in 2025 while delinquency and product risks remained uneven across regions and loan types.",
+      "whyItMatters": "Useful when aggregate mortgage growth obscures where credit risk is actually building.",
+      "focusTags": [
+        "Mortgage markets",
+        "Household debt",
+        "Credit risk"
+      ],
+      "sourceUrl": "https://libertystreeteconomics.newyorkfed.org/2025/08/a-check-in-on-the-mortgage-market/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2025-a-check-in-on-the-mortgage-market"
+    },
+    {
+      "title": "Technical correction and update to the CFPB's credit invisibles estimate",
+      "category": "Personal Finance",
+      "categoryLabel": "Household finance",
+      "year": 2025,
+      "authors": "Consumer Financial Protection Bureau",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "CFPB revises its widely cited credit-invisibility estimate, cutting the 2010 share roughly in half after data corrections and showing that more adults held scored credit files by 2020.",
+      "whyItMatters": "A reminder that baseline claims about who is outside the credit system can drift when the measurement changes.",
+      "focusTags": [
+        "Household finance",
+        "Credit access",
+        "Credit records"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/technical-correction-and-update-to-the-cfpbs-credit-invisibles-estimate/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2025-technical-correction-and-update-to-the-cfpb-s-credit-invisibles-estimate"
+    },
+    {
+      "title": "Auto Lending to Servicemembers",
+      "category": "Personal Finance",
+      "categoryLabel": "Consumer credit",
+      "year": 2025,
+      "authors": "Consumer Financial Protection Bureau",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "Using loan-level data from six lenders, CFPB finds servicemembers face elevated risks across the auto-loan life cycle, including downstream financial strain that can affect military careers and clearances.",
+      "whyItMatters": "Useful for anyone who treats auto debt as generic consumer credit without the added institutional risks servicemembers face.",
+      "focusTags": [
+        "Consumer credit",
+        "Auto loans",
+        "Servicemembers"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/auto-lending-to-servicemembers/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2025-auto-lending-to-servicemembers"
+    },
+    {
+      "title": "An Introduction to the CFPB’s Rental Payment Data and Analysis",
+      "category": "Real Estate",
+      "categoryLabel": "Housing and property",
+      "year": 2025,
+      "authors": "Consumer Financial Protection Bureau",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "This technical report introduces CFPB rental-payment data on leases, delinquencies, inquiries, and collections, and benchmarks the coverage against outside housing sources.",
+      "whyItMatters": "Good background if you want higher-frequency evidence on rent stress instead of waiting for slower household surveys.",
+      "focusTags": [
+        "Housing and property",
+        "Rent",
+        "Data"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/an-introduction-to-the-cfpbs-rental-payment-data-and-analysis/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2025-an-introduction-to-the-cfpb-s-rental-payment-data-and-analysis"
+    },
+    {
+      "title": "Behind on Rent? Examining Rental Housing Delinquencies in New Payment Data",
+      "category": "Real Estate",
+      "categoryLabel": "Housing affordability",
+      "year": 2025,
+      "authors": "Witzen B. H.",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "Witzen uses CFPB rental-payment data to show late-fee incidence rose sharply into early 2023 before easing by late 2024, while repeated late and NSF fees remained common among struggling renters.",
+      "whyItMatters": "Useful because rent delinquency often shows up before more visible housing distress.",
+      "focusTags": [
+        "Housing affordability",
+        "Rent",
+        "Payment stress"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/behind-on-rent-examining-rental-housing-delinquencies-in-new-payment-data/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2025-behind-on-rent-examining-rental-housing-delinquencies-in-new-payment-data"
+    },
+    {
+      "title": "Cash-Out Refinances and Paydown Behavior of Non-mortgage Debt Balances",
+      "category": "Real Estate",
+      "categoryLabel": "Housing finance",
+      "year": 2025,
+      "authors": "Consumer Financial Protection Bureau",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "CFPB tracks 2014 to 2021 cash-out refinance borrowers and finds many use extracted home equity to reduce credit card and other nonmortgage balances, with credit scores improving after the refinance event.",
+      "whyItMatters": "Useful when home equity is treated as abstract wealth rather than a source of household debt restructuring.",
+      "focusTags": [
+        "Housing finance",
+        "Cash-out refinance",
+        "Household debt"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/cash-out-refinances-and-paydown-behavior-of-non-mortgage-debt-balances/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2025-cash-out-refinances-and-paydown-behavior-of-non-mortgage-debt-balances"
+    },
+    {
+      "title": "Consumer Use of Buy Now, Pay Later and Other Unsecured Debt",
+      "category": "Personal Finance",
+      "categoryLabel": "Consumer credit",
+      "year": 2025,
+      "authors": "Consumer Financial Protection Bureau",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "Using matched BNPL applications, originations, and credit records from six large firms, CFPB shows how loan stacking and unsecured debt exposure build outside traditional credit reporting.",
+      "whyItMatters": "Good for understanding why headline credit-bureau balances can miss a growing layer of short-duration consumer borrowing.",
+      "focusTags": [
+        "Consumer credit",
+        "BNPL",
+        "Unsecured debt"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/consumer-use-of-buy-now-pay-later-and-other-unsecured-debt/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2025-consumer-use-of-buy-now-pay-later-and-other-unsecured-debt"
+    },
+    {
+      "title": "Flood Risk and the U.S. Mortgage Market",
+      "category": "Real Estate",
+      "categoryLabel": "Mortgage markets",
+      "year": 2025,
+      "authors": "Consumer Financial Protection Bureau",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "CFPB merges HMDA mortgage data with FEMA and First Street flood measures and finds mortgage-market flood exposure is broader and more inland than traditional maps imply, leaving many borrowers underinsured.",
+      "whyItMatters": "Useful if you want to see how climate-linked property risk leaks into mortgage underwriting and household resilience.",
+      "focusTags": [
+        "Mortgage markets",
+        "Flood risk",
+        "Insurance"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/flood-risk-and-the-us-mortgage-market/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2025-flood-risk-and-the-u-s-mortgage-market"
+    },
+    {
+      "title": "The Financial Security of Small Business Owners: Evidence from the Making Ends Meet Survey",
+      "category": "Personal Finance",
+      "categoryLabel": "Financial well-being",
+      "year": 2025,
+      "authors": "Brennecke C., Caldwell I., & Witzen B. H.",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "Using the Making Ends Meet survey, the authors find small business owners tend to have higher income and wealth than nonowners but also face more month-to-month income volatility and more credit friction.",
+      "whyItMatters": "Worth reading if you want the household-finance tradeoff behind the small-business success story.",
+      "focusTags": [
+        "Financial well-being",
+        "Small business",
+        "Income volatility"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/the-financial-security-of-small-business-owners-evidence-from-the-making-ends-meet-survey/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2025-the-financial-security-of-small-business-owners-evidence-from-the-making-ends-meet-survey"
+    },
+    {
+      "title": "2023 Mortgage Market Activity and Trends",
+      "category": "Real Estate",
+      "categoryLabel": "Mortgage markets",
+      "year": 2024,
+      "authors": "Consumer Financial Protection Bureau",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "This CFPB HMDA review maps 2023 mortgage originations, application outcomes, borrower characteristics, and pricing, giving a clean snapshot of who received housing credit and on what terms.",
+      "whyItMatters": "Useful as a broad reference point for mortgage access, pricing, and lending composition after the rate shock.",
+      "focusTags": [
+        "Mortgage markets",
+        "HMDA",
+        "Housing credit"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/2023-mortgage-market-activity-and-trends/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2024-2023-mortgage-market-activity-and-trends"
+    },
+    {
+      "title": "An analysis of the first seven months of the federal student loan return to repayment",
+      "category": "Personal Finance",
+      "categoryLabel": "Student debt",
+      "year": 2024,
+      "authors": "Consumer Financial Protection Bureau",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "Using credit-record data after the payment pause ended, CFPB finds around 40 percent of borrowers were making payments by April 2024 while roughly 30 percent missed a payment and millions used the on-ramp policy.",
+      "whyItMatters": "Useful for gauging how quickly student debt payment stress returned once the emergency pause ended.",
+      "focusTags": [
+        "Student debt",
+        "Repayment",
+        "Household cash flow"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/analysis-of-first-seven-months-of-federal-student-loan-return-to-repayment/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2024-an-analysis-of-the-first-seven-months-of-the-federal-student-loan-return-to-repayment"
+    },
+    {
+      "title": "Making Ends Meet in 2024: Insights from the Making Ends Meet Survey",
+      "category": "Personal Finance",
+      "categoryLabel": "Financial well-being",
+      "year": 2024,
+      "authors": "Consumer Financial Protection Bureau",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "CFPB reports that household financial stability and well-being deteriorated from 2023 to 2024, with more trouble paying bills, weaker emergency resilience, and persistent gaps across income and racial groups.",
+      "whyItMatters": "Good baseline evidence when claims about consumer resilience rely too heavily on aggregate spending or labor-market headlines.",
+      "focusTags": [
+        "Financial well-being",
+        "Emergency savings",
+        "Household finance"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/making-ends-meet-in-2024-insights-from-the-making-ends-meet-survey/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2024-making-ends-meet-in-2024-insights-from-the-making-ends-meet-survey"
+    },
+    {
+      "title": "Insights from the 2023-2024 Student Loan Borrower Survey",
+      "category": "Personal Finance",
+      "categoryLabel": "Student debt",
+      "year": 2024,
+      "authors": "Consumer Financial Protection Bureau",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "This borrower survey finds repayment difficulty is widespread, many borrowers do not understand or access income-driven repayment options, and debt relief often changes major life decisions.",
+      "whyItMatters": "Useful when student debt is framed only as a balance-sheet number instead of an administrative and behavioral problem.",
+      "focusTags": [
+        "Student debt",
+        "Repayment",
+        "Loan forgiveness"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/insights-from-the-2023-2024-student-loan-borrower-survey/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2024-insights-from-the-2023-2024-student-loan-borrower-survey"
+    },
+    {
+      "title": "Data Spotlight: The Impact of Changing Mortgage Interest Rates",
+      "category": "Real Estate",
+      "categoryLabel": "Housing affordability",
+      "year": 2024,
+      "authors": "CFPB Office of Mortgage Markets",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "CFPB shows that the jump in mortgage rates from 2021 to 2023 raised principal-and-interest payments dramatically, squeezed affordability, and left a large stock of borrowers locked into older low-rate loans.",
+      "whyItMatters": "Good context for why even modest rate declines do not quickly fix housing affordability or mobility.",
+      "focusTags": [
+        "Housing affordability",
+        "Mortgage rates",
+        "Refinancing"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/data-spotlight-the-impact-of-changing-mortgage-interest-rates/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2024-data-spotlight-the-impact-of-changing-mortgage-interest-rates"
+    },
+    {
+      "title": "Borrower Experiences with Mortgage Servicing During the COVID-19 Pandemic",
+      "category": "Real Estate",
+      "categoryLabel": "Mortgage stress",
+      "year": 2024,
+      "authors": "CFPB Office of Research",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "Using the 2020 American Survey of Mortgage Borrowers, CFPB finds distressed borrowers often struggled to access loss-mitigation programs, understand forbearance exits, and navigate servicing in languages other than English.",
+      "whyItMatters": "Useful because mortgage distress depends on servicing frictions, not just whether a hardship program exists on paper.",
+      "focusTags": [
+        "Mortgage stress",
+        "Mortgage servicing",
+        "Forbearance"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/borrower-experiences-with-mortgage-servicing-during-the-covid-19-pandemic/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2024-borrower-experiences-with-mortgage-servicing-during-the-covid-19-pandemic"
+    },
+    {
+      "title": "Negative Equity Findings from the Auto Finance Data Pilot",
+      "category": "Personal Finance",
+      "categoryLabel": "Consumer credit",
+      "year": 2024,
+      "authors": "Consumer Financial Protection Bureau",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "This first report from CFPB's auto-finance data pilot examines how rolled-over negative equity pushes borrowers deeper underwater on replacement vehicles and raises future distress risk.",
+      "whyItMatters": "Useful when used-car affordability is discussed without looking at how trade-in debt compounds the next loan.",
+      "focusTags": [
+        "Consumer credit",
+        "Auto loans",
+        "Negative equity"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/data-spotlight-negative-equity-findings-from-the-auto-finance-data-pilot/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2024-negative-equity-findings-from-the-auto-finance-data-pilot"
+    },
+    {
+      "title": "Repossession in Auto Finance",
+      "category": "Personal Finance",
+      "categoryLabel": "Consumer credit",
+      "year": 2025,
+      "authors": "Consumer Financial Protection Bureau",
+      "publication": "Consumer Financial Protection Bureau",
+      "sourceType": "research report",
+      "summary": "CFPB uses its auto-finance data pilot to measure repossession patterns, showing how pandemic-era servicing changes and later vehicle-price swings affected defaults, losses, and borrower outcomes.",
+      "whyItMatters": "Useful because repossession is a severe consumer-credit failure point that standard delinquency tables often understate.",
+      "focusTags": [
+        "Consumer credit",
+        "Auto loans",
+        "Repossession"
+      ],
+      "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/repossession-in-auto-finance/",
+      "sourceLabel": "research report",
+      "sourceLinkLabel": "View research report",
+      "featured": false,
+      "id": "2025-repossession-in-auto-finance"
     }
   ],
   "featuredCount": 43
