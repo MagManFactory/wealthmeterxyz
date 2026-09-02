@@ -5,12 +5,12 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Aug 2026 00:32:23 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 01:21:19 +0000</lastBuildDate>
     <item>
       <title>The Retirement Age Lie</title>
       <link>https://wealthmeter.xyz/retirement-age-lie.html</link>
       <guid>https://wealthmeter.xyz/retirement-age-lie.html</guid>
-      <pubDate>Sat, 29 Aug 2026 00:19:17 +0000</pubDate>
+      <pubDate>Wed, 02 Sep 2026 01:19:19 +0000</pubDate>
       <description>stress-testing retirement target numbers under current inflation, rate, and longevity conditions.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/retirement-age-lie-rate-inflation-stress.png" type="image/png"/>
     </item>
@@ -18,7 +18,7 @@
       <title>Longevity Capital: Living to 120</title>
       <link>https://wealthmeter.xyz/longevity-capital-living-to-120.html</link>
       <guid>https://wealthmeter.xyz/longevity-capital-living-to-120.html</guid>
-      <pubDate>Sat, 29 Aug 2026 00:19:17 +0000</pubDate>
+      <pubDate>Wed, 02 Sep 2026 01:19:19 +0000</pubDate>
       <description>how potential lifespan extension changes long-horizon wealth architecture.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/longevity-capital-horizon-reset.png" type="image/png"/>
     </item>
@@ -26,7 +26,7 @@
       <title>Inside Wealth: Germany, Japan, and Canada</title>
       <link>https://wealthmeter.xyz/inside-wealth-germany-japan-canada.html</link>
       <guid>https://wealthmeter.xyz/inside-wealth-germany-japan-canada.html</guid>
-      <pubDate>Sat, 29 Aug 2026 00:19:17 +0000</pubDate>
+      <pubDate>Wed, 02 Sep 2026 01:19:19 +0000</pubDate>
       <description>structural comparison of top wealth outcomes in Germany, Japan, and Canada.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/inside-wealth-de-jp-ca-structural-lens.png" type="image/png"/>
     </item>
@@ -34,7 +34,7 @@
       <title>The Inheritance Illusion</title>
       <link>https://wealthmeter.xyz/inheritance-illusion.html</link>
       <guid>https://wealthmeter.xyz/inheritance-illusion.html</guid>
-      <pubDate>Sat, 29 Aug 2026 00:19:17 +0000</pubDate>
+      <pubDate>Wed, 02 Sep 2026 01:19:19 +0000</pubDate>
       <description>why receiving wealth does not automatically create durable wealth outcomes.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/inheritance-illusion-liquidity-gap.png" type="image/png"/>
     </item>
@@ -42,7 +42,7 @@
       <title>The Equity Compensation Trap</title>
       <link>https://wealthmeter.xyz/equity-compensation-trap.html</link>
       <guid>https://wealthmeter.xyz/equity-compensation-trap.html</guid>
-      <pubDate>Sat, 29 Aug 2026 00:19:17 +0000</pubDate>
+      <pubDate>Wed, 02 Sep 2026 01:19:19 +0000</pubDate>
       <description>RSU, ISO, and ESPP concentration risk and tax leakage in household wealth outcomes.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/equity-compensation-tax-fragility-map.png" type="image/png"/>
     </item>
@@ -50,7 +50,7 @@
       <title>The Dual-Income Trap</title>
       <link>https://wealthmeter.xyz/dual-income-trap.html</link>
       <guid>https://wealthmeter.xyz/dual-income-trap.html</guid>
-      <pubDate>Sat, 29 Aug 2026 00:19:17 +0000</pubDate>
+      <pubDate>Wed, 02 Sep 2026 01:19:19 +0000</pubDate>
       <description>why two salaries often underperform one salary in long-run wealth resilience.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/dual-income-trap-cashflow-floor.png" type="image/png"/>
     </item>
@@ -58,9 +58,25 @@
       <title>The Compounding Gap After $1M</title>
       <link>https://wealthmeter.xyz/compounding-gap-after-1m.html</link>
       <guid>https://wealthmeter.xyz/compounding-gap-after-1m.html</guid>
-      <pubDate>Sat, 29 Aug 2026 00:19:17 +0000</pubDate>
+      <pubDate>Wed, 02 Sep 2026 01:19:19 +0000</pubDate>
       <description>why wealth growth becomes non-linear after one million dollars due to access and governance effects.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/compounding-gap-after-1m.png" type="image/png"/>
+    </item>
+    <item>
+      <title>America Is 2nd by Average Wealth, 15th by Median Wealth</title>
+      <link>https://wealthmeter.xyz/america-is-second-by-average-wealth-fifteenth-by-median-wealth.html</link>
+      <guid>https://wealthmeter.xyz/america-is-second-by-average-wealth-fifteenth-by-median-wealth.html</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <description>UBS</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/mean-median-wealth-gap-2026-sep01.png" type="image/png"/>
+    </item>
+    <item>
+      <title>The Typical American Is 28th. The Average American Is 2nd.</title>
+      <link>https://wealthmeter.xyz/the-typical-american-is-28th-the-average-american-is-2nd.html</link>
+      <guid>https://wealthmeter.xyz/the-typical-american-is-28th-the-average-american-is-2nd.html</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Mean wealth makes the United States look exceptional. Median wealth shows what the middle household actually owns. Both figures answer different questions.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/mean-median-wealth-gap-2026-sep01.png" type="image/png"/>
     </item>
     <item>
       <title>Home Equity Is Not Emergency Liquidity</title>
@@ -389,22 +405,6 @@
       <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
       <description>Why households can look wealthy on paper while still lacking cash resilience, and what Federal Reserve data implies about the gap between nominal wealth and usable defense.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/asset-rich-cash-poor-conversion-ladder-2026.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The 2026 Housing Stall: Rates, Inventory, and the New Delinquency Split</title>
-      <link>https://wealthmeter.xyz/housing-stall-2026-rates-inventory-delinquency.html</link>
-      <guid>https://wealthmeter.xyz/housing-stall-2026-rates-inventory-delinquency.html</guid>
-      <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
-      <description>Why 2026 housing data looks better at the margin yet still supports a weak-turnover, uneven-stress housing regime.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/housing-stall-2026-signal-map.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Mortgage Lock-In Trap: Why a 3% Loan Can Still Make You Poorer in 2026</title>
-      <link>https://wealthmeter.xyz/mortgage-lock-in-trap.html</link>
-      <guid>https://wealthmeter.xyz/mortgage-lock-in-trap.html</guid>
-      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
-      <description>A practical WealthMeter analysis of mortgage lock-in in 2026: why a low fixed rate can preserve monthly cash flow while still reducing mobility, optionality, and real household wealth.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/mortgage-lock-in-mobility-trap.png" type="image/png"/>
     </item>
   </channel>
 </rss>
