@@ -5,7 +5,7 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Sep 2026 01:21:19 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 01:23:47 +0000</lastBuildDate>
     <item>
       <title>The Retirement Age Lie</title>
       <link>https://wealthmeter.xyz/retirement-age-lie.html</link>
@@ -68,14 +68,6 @@
       <guid>https://wealthmeter.xyz/america-is-second-by-average-wealth-fifteenth-by-median-wealth.html</guid>
       <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
       <description>UBS</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/mean-median-wealth-gap-2026-sep01.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Typical American Is 28th. The Average American Is 2nd.</title>
-      <link>https://wealthmeter.xyz/the-typical-american-is-28th-the-average-american-is-2nd.html</link>
-      <guid>https://wealthmeter.xyz/the-typical-american-is-28th-the-average-american-is-2nd.html</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Mean wealth makes the United States look exceptional. Median wealth shows what the middle household actually owns. Both figures answer different questions.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/mean-median-wealth-gap-2026-sep01.png" type="image/png"/>
     </item>
     <item>
@@ -405,6 +397,14 @@
       <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
       <description>Why households can look wealthy on paper while still lacking cash resilience, and what Federal Reserve data implies about the gap between nominal wealth and usable defense.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/asset-rich-cash-poor-conversion-ladder-2026.png" type="image/png"/>
+    </item>
+    <item>
+      <title>The 2026 Housing Stall: Rates, Inventory, and the New Delinquency Split</title>
+      <link>https://wealthmeter.xyz/housing-stall-2026-rates-inventory-delinquency.html</link>
+      <guid>https://wealthmeter.xyz/housing-stall-2026-rates-inventory-delinquency.html</guid>
+      <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
+      <description>Why 2026 housing data looks better at the margin yet still supports a weak-turnover, uneven-stress housing regime.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/housing-stall-2026-signal-map.png" type="image/png"/>
     </item>
   </channel>
 </rss>
