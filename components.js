@@ -69,13 +69,12 @@ const sharedStyles = `
         display: inline-flex;
         align-items: center;
         flex-shrink: 0;
-        margin-left: 0.35rem;
-        font-weight: 900;
-        font-size: 0.82rem;
+        font-weight: 800;
+        font-size: 0.85rem;
         color: #FF4B4B;
         text-decoration: none;
         text-transform: uppercase;
-        letter-spacing: 0.11em;
+        letter-spacing: 0.12em;
         white-space: nowrap;
     }
     .nav-group:hover .dropdown { display: block !important; }
@@ -122,6 +121,7 @@ const sharedStyles = `
         nav::-webkit-scrollbar { display: none; }
         .nav-group { height: auto; }
         .nav-group-label { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .sister-site-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
         .dropdown { position: fixed; left: 0.9rem; right: 0.9rem; top: 74px; min-width: 0; max-height: 70vh; overflow-y: auto; margin-top: 0; border-radius: 0.9rem; padding: 0.7rem 0; box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16); }
         .dropdown a { min-height: 44px; display: flex; align-items: center; font-size: 0.95rem; padding: 0.72rem 1.15rem; }
     }
@@ -328,6 +328,13 @@ const sharedStyles = `
         color: var(--text-main, #0f172a);
     }
     .wm-feedback--result .wm-feedback-thanks { color: var(--text-muted, #64748b); }
+
+    main.article figure img {
+        max-width: 100%;
+        width: 100%;
+        height: auto !important;
+        object-fit: contain;
+    }
 </style>
 `;
 
@@ -376,13 +383,14 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
-                                                                                                                                                                                                                                                                                                                                                    <a href="retirement-age-lie.html">The Retirement Age Lie</a>
+                                                                                                                                                                                                                                                                                                                                                                                            <a href="retirement-age-lie.html">The Retirement Age Lie</a>
                     <a href="longevity-capital-living-to-120.html">Longevity Capital: Living to 120</a>
                     <a href="inside-wealth-germany-japan-canada.html">Inside Wealth: Germany, Japan, and Canada</a>
                     <a href="inheritance-illusion.html">The Inheritance Illusion</a>
                     <a href="equity-compensation-trap.html">The Equity Compensation Trap</a>
                     <a href="dual-income-trap.html">The Dual-Income Trap</a>
                     <a href="compounding-gap-after-1m.html">The Compounding Gap After $1M</a>
+                    <a href="disability-insurance-leaves-many-paychecks-unprotected.html">Disability Insurance Leaves Many Paychecks Unprotected</a>
                     <a href="america-is-second-by-average-wealth-fifteenth-by-median-wealth.html">America Is 2nd by Average Wealth, 15th by Median Wealth</a>
                     <a href="home-equity-is-not-emergency-liquidity.html">Home Equity Is Not Emergency Liquidity</a>
                     <a href="sequence-risk-before-retirement-fragility-priced-too-late.html">Sequence Risk Before Retirement: The Fragility Nobody Prices Early Enough</a>
