@@ -18,7 +18,7 @@ DOMAIN = "https://wealthmeter.xyz"
 DISPLAY_NAME = "WEALTHMETER.XYZ"
 FEED_URL = f"{DOMAIN}/feed.xml"
 RSS_LIMIT = 50
-COMPONENT_VERSION = "2026-08-29.1"
+COMPONENT_VERSION = "2026-09-02.1"
 PRIVATE_OR_STAGING = {"adsense_block.html"}
 DESCRIPTION_FALLBACKS = {
     "data-lab.html": "Explore WealthMeter's analytical lab for distribution views, exploratory finance tools, and supporting wealth datasets.",
@@ -70,8 +70,14 @@ JSON_LD_SCRIPT_RE = re.compile(
     r'(<script[^>]+type=["\']application/ld\+json["\'][^>]*>\s*)(.*?)(\s*</script>)',
     re.IGNORECASE | re.DOTALL,
 )
-HEADER_RE = re.compile(r'<div id="header-placeholder">.*?</div>', re.DOTALL)
-FOOTER_RE = re.compile(r'<div id="footer-placeholder">.*?</div>', re.DOTALL)
+HEADER_RE = re.compile(
+    r'<div id="header-placeholder"[^>]*>(?:\s*<header>.*?</header>\s*)?</div>',
+    re.DOTALL,
+)
+FOOTER_RE = re.compile(
+    r'<div id="footer-placeholder"[^>]*>(?:\s*<footer>.*?</footer>\s*)?</div>',
+    re.DOTALL,
+)
 IMG_TAG_RE = re.compile(r"<img\b[^>]*>", re.IGNORECASE | re.DOTALL)
 SRC_RE = re.compile(r'\bsrc=["\']([^"\']+)["\']', re.IGNORECASE)
 WIDTH_RE = re.compile(r'\bwidth=["\']\d+["\']', re.IGNORECASE)
@@ -572,9 +578,8 @@ def ensure_component_version(text: str) -> str:
 
 def ensure_static_components(text: str, shared_styles: str, header_html: str, footer_html: str) -> str:
     text = collapse_component_styles(text)
-    empty_style_tag = "<style id=\"wealthmeter-component-styles\"></style>"
-    if empty_style_tag in text:
-        text = text.replace(empty_style_tag, shared_styles, 1)
+    if WEALTH_STYLE_RE.search(text):
+        text = WEALTH_STYLE_RE.sub(shared_styles, text, count=1)
     elif "wealthmeter-component-styles" not in text:
         text = text.replace("</head>", f"{shared_styles}\n</head>")
     header_markup = f'<div id="header-placeholder" data-static-component="1">\n{header_html}\n</div>'

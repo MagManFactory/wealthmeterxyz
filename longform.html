@@ -39,8 +39,7 @@
         .crawl-links a { text-decoration:none; color:var(--blue); font-weight:700; font-size:.92rem; }
         @media (max-width: 900px){ .card { grid-template-columns:1fr; } .card img { max-height:260px; } }
     </style>
-    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml">
-<style id="wealthmeter-component-styles">
+    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml"><style id="wealthmeter-component-styles">
     /* Monolith Pulse Animation */
     @keyframes monolithPulse {
         0% { transform: scaleY(1); }
@@ -107,13 +106,12 @@
         display: inline-flex;
         align-items: center;
         flex-shrink: 0;
-        margin-left: 0.35rem;
-        font-weight: 900;
-        font-size: 0.82rem;
+        font-weight: 800;
+        font-size: 0.85rem;
         color: #FF4B4B;
         text-decoration: none;
         text-transform: uppercase;
-        letter-spacing: 0.11em;
+        letter-spacing: 0.12em;
         white-space: nowrap;
     }
     .nav-group:hover .dropdown { display: block !important; }
@@ -160,6 +158,7 @@
         nav::-webkit-scrollbar { display: none; }
         .nav-group { height: auto; }
         .nav-group-label { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .sister-site-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
         .dropdown { position: fixed; left: 0.9rem; right: 0.9rem; top: 74px; min-width: 0; max-height: 70vh; overflow-y: auto; margin-top: 0; border-radius: 0.9rem; padding: 0.7rem 0; box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16); }
         .dropdown a { min-height: 44px; display: flex; align-items: center; font-size: 0.95rem; padding: 0.72rem 1.15rem; }
     }
@@ -255,8 +254,125 @@
     .article-bridge-secondary:hover { text-decoration: underline; }
     .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
     .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
-</style>
-    <meta property="og:image:width" content="1376">
+
+    .wm-feedback {
+        max-width: 28rem;
+        margin: 1.75rem auto 0;
+        padding: 1rem 1.15rem 1.1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 1rem;
+        background: #ffffff;
+        text-align: left;
+    }
+    .wm-feedback-lede {
+        font-family: 'Outfit', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: #0f172a;
+        margin: 0 0 0.8rem;
+    }
+    .wm-feedback-fields { display: grid; gap: 0.65rem; }
+    .wm-feedback label {
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #64748b;
+        font-weight: 800;
+        margin: 0;
+    }
+    .wm-feedback-optional {
+        text-transform: none;
+        letter-spacing: 0;
+        font-weight: 600;
+        opacity: 0.8;
+    }
+    .wm-feedback input[type="email"],
+    .wm-feedback textarea {
+        display: block;
+        width: 100%;
+        margin-top: 0.35rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 0.7rem;
+        background: #f8fafc;
+        color: #0f172a;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.92rem;
+        font-weight: 600;
+    }
+    .wm-feedback input[type="email"] {
+        height: 44px;
+        padding: 0 0.85rem;
+    }
+    .wm-feedback textarea {
+        min-height: 72px;
+        padding: 0.7rem 0.85rem;
+        resize: vertical;
+        line-height: 1.45;
+    }
+    .wm-feedback-submit {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        justify-self: start;
+        min-height: 44px;
+        padding: 0.65rem 1.1rem;
+        border: 0;
+        border-radius: 0.75rem;
+        background: #2563eb;
+        color: #ffffff;
+        font-family: 'Outfit', sans-serif;
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    .wm-feedback-submit:hover { background: #1d4ed8; }
+    .wm-feedback-thanks {
+        margin: 0;
+        color: #334155;
+        font-size: 0.92rem;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+    .wm-feedback.is-sent {
+        border-color: transparent;
+        background: transparent;
+        padding: 0.35rem 0.15rem;
+    }
+    .wm-feedback.is-sent .wm-feedback-lede,
+    .wm-feedback.is-sent .wm-feedback-fields { display: none; }
+    .wm-feedback-hp {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+    .wm-feedback--result {
+        margin: 1.25rem auto 0;
+        background: var(--card-bg, #ffffff);
+        border-color: var(--card-border, #e2e8f0);
+    }
+    .wm-feedback--result .wm-feedback-lede { color: var(--text-main, #0f172a); }
+    .wm-feedback--result label { color: var(--text-muted, #64748b); }
+    .wm-feedback--result input[type="email"],
+    .wm-feedback--result textarea {
+        background: var(--input-bg, #f8fafc);
+        border-color: var(--input-border, #cbd5e1);
+        color: var(--text-main, #0f172a);
+    }
+    .wm-feedback--result .wm-feedback-thanks { color: var(--text-muted, #64748b); }
+
+    main.article figure img {
+        max-width: 100%;
+        width: 100%;
+        height: auto !important;
+        object-fit: contain;
+    }
+</style><meta property="og:image:width" content="1376">
     <meta property="og:image:height" content="768">
     <meta property="og:image:alt" content="Long-form WealthMeter analysis on wealth structure, household resilience, retirement architecture, and practical balance-sheet strategy.">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WEALTHMETER.XYZ","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"Longform","item":"https://wealthmeter.xyz/longform.html"}]}</script>
@@ -308,7 +424,7 @@
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
-                                                                                                                                                                                                                            <a href="retirement-age-lie.html">The Retirement Age Lie</a>
+                                                                                                                                                                                                                                                                                                                                                                                            <a href="retirement-age-lie.html">The Retirement Age Lie</a>
                     <a href="longevity-capital-living-to-120.html">Longevity Capital: Living to 120</a>
                     <a href="inside-wealth-germany-japan-canada.html">Inside Wealth: Germany, Japan, and Canada</a>
                     <a href="inheritance-illusion.html">The Inheritance Illusion</a>
@@ -961,9 +1077,22 @@
 </main>
 <div id="footer-placeholder" data-static-component="1">
 <footer>
-    <div class="cross-property-band">
-        Model the lifespan side of your balance sheet with <a href="https://lifemeter.xyz/?from=wealthmeter" target="_blank" rel="noopener">LifeMeter</a>, then compare the same household against survival horizon and medical-runway stress.
-    </div>
+    <form class="wm-feedback" data-wm-feedback action="https://docs.google.com/forms/d/e/1FAIpQLSdW_INDPOwoI_XjecCzhp38-IEu-GeA5oTUlPT59V1kKT5fKw/formResponse" method="POST" target="wm-feedback-sink">
+        <p class="wm-feedback-lede">Something off? Tell us.</p>
+        <div class="wm-feedback-fields">
+            <input type="text" class="wm-feedback-hp" data-wm-honeypot name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="entry.652485851" value="WealthMeter">
+            <input type="hidden" name="entry.2128319260" value="" data-wm-feedback-page>
+            <label>Email <span class="wm-feedback-optional">(optional)</span>
+                <input type="email" name="entry.1004053268" autocomplete="email" placeholder="you@example.com">
+            </label>
+            <label>Feedback
+                <textarea name="entry.1773870348" required rows="3" placeholder="What should we fix?"></textarea>
+            </label>
+            <button class="wm-feedback-submit" type="submit">Send</button>
+        </div>
+        <p class="wm-feedback-thanks" data-wm-feedback-thanks hidden aria-live="polite">Got it. We'll use this to fix the site.</p>
+    </form>
     <div class="footer-links">
         <a href="data-sources.html">Data Sources</a>
         <a href="methodology.html">Methodology</a>
@@ -972,6 +1101,6 @@
     </div>
 </footer>
 </div>
-<script src="components.js?v=2026-08-29.1"></script>
+<script src="components.js?v=2026-09-02.1"></script>
 </body>
 </html>

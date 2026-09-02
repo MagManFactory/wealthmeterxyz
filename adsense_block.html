@@ -57,8 +57,7 @@
   </style>
     <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://wealthmeter.xyz/">
-    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml">
-<style id="wealthmeter-component-styles">
+    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml"><style id="wealthmeter-component-styles">
     /* Monolith Pulse Animation */
     @keyframes monolithPulse {
         0% { transform: scaleY(1); }
@@ -86,9 +85,9 @@
         z-index: 9999;
     }
     .nav-container {
-        max-width: 1400px;
+        max-width: 1580px;
         margin: 0 auto;
-        padding: 0 3rem;
+        padding: 0 1.75rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -100,13 +99,13 @@
         display: flex;
         align-items: center;
         flex-shrink: 0;
-        margin-right: 3rem;
+        margin-right: 2rem;
     }
 
     /* Navigation: Forces links to the right */
     nav {
         display: flex;
-        gap: 3rem;
+        gap: clamp(1.1rem, 1.7vw, 2.25rem);
         align-items: center;
         height: 100%;
         margin-left: auto;
@@ -121,8 +120,28 @@
         white-space: nowrap;
     }
     .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
+    .sister-site-link {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        font-weight: 800;
+        font-size: 0.85rem;
+        color: #FF4B4B;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+    }
     .nav-group:hover .dropdown { display: block !important; }
     .nav-group.open .dropdown { display: block !important; }
+
+    @media (max-width: 1360px) {
+        .nav-container { padding: 0 1.25rem; }
+        .brand-wrapper { margin-right: 1.25rem; }
+        nav { gap: 1rem; }
+        .nav-group-label,
+        .sister-site-link { font-size: 0.76rem; letter-spacing: 0.09em; }
+    }
 
     .dropdown {
         display: none;
@@ -157,6 +176,7 @@
         nav::-webkit-scrollbar { display: none; }
         .nav-group { height: auto; }
         .nav-group-label { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .sister-site-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
         .dropdown { position: fixed; left: 0.9rem; right: 0.9rem; top: 74px; min-width: 0; max-height: 70vh; overflow-y: auto; margin-top: 0; border-radius: 0.9rem; padding: 0.7rem 0; box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16); }
         .dropdown a { min-height: 44px; display: flex; align-items: center; font-size: 0.95rem; padding: 0.72rem 1.15rem; }
     }
@@ -252,8 +272,125 @@
     .article-bridge-secondary:hover { text-decoration: underline; }
     .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
     .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
-</style>
-    <meta property="og:title" content="Advertising Cookies | WealthMeter">
+
+    .wm-feedback {
+        max-width: 28rem;
+        margin: 1.75rem auto 0;
+        padding: 1rem 1.15rem 1.1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 1rem;
+        background: #ffffff;
+        text-align: left;
+    }
+    .wm-feedback-lede {
+        font-family: 'Outfit', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: #0f172a;
+        margin: 0 0 0.8rem;
+    }
+    .wm-feedback-fields { display: grid; gap: 0.65rem; }
+    .wm-feedback label {
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #64748b;
+        font-weight: 800;
+        margin: 0;
+    }
+    .wm-feedback-optional {
+        text-transform: none;
+        letter-spacing: 0;
+        font-weight: 600;
+        opacity: 0.8;
+    }
+    .wm-feedback input[type="email"],
+    .wm-feedback textarea {
+        display: block;
+        width: 100%;
+        margin-top: 0.35rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 0.7rem;
+        background: #f8fafc;
+        color: #0f172a;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.92rem;
+        font-weight: 600;
+    }
+    .wm-feedback input[type="email"] {
+        height: 44px;
+        padding: 0 0.85rem;
+    }
+    .wm-feedback textarea {
+        min-height: 72px;
+        padding: 0.7rem 0.85rem;
+        resize: vertical;
+        line-height: 1.45;
+    }
+    .wm-feedback-submit {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        justify-self: start;
+        min-height: 44px;
+        padding: 0.65rem 1.1rem;
+        border: 0;
+        border-radius: 0.75rem;
+        background: #2563eb;
+        color: #ffffff;
+        font-family: 'Outfit', sans-serif;
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    .wm-feedback-submit:hover { background: #1d4ed8; }
+    .wm-feedback-thanks {
+        margin: 0;
+        color: #334155;
+        font-size: 0.92rem;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+    .wm-feedback.is-sent {
+        border-color: transparent;
+        background: transparent;
+        padding: 0.35rem 0.15rem;
+    }
+    .wm-feedback.is-sent .wm-feedback-lede,
+    .wm-feedback.is-sent .wm-feedback-fields { display: none; }
+    .wm-feedback-hp {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+    .wm-feedback--result {
+        margin: 1.25rem auto 0;
+        background: var(--card-bg, #ffffff);
+        border-color: var(--card-border, #e2e8f0);
+    }
+    .wm-feedback--result .wm-feedback-lede { color: var(--text-main, #0f172a); }
+    .wm-feedback--result label { color: var(--text-muted, #64748b); }
+    .wm-feedback--result input[type="email"],
+    .wm-feedback--result textarea {
+        background: var(--input-bg, #f8fafc);
+        border-color: var(--input-border, #cbd5e1);
+        color: var(--text-main, #0f172a);
+    }
+    .wm-feedback--result .wm-feedback-thanks { color: var(--text-muted, #64748b); }
+
+    main.article figure img {
+        max-width: 100%;
+        width: 100%;
+        height: auto !important;
+        object-fit: contain;
+    }
+</style><meta property="og:title" content="Advertising Cookies | WealthMeter">
     <meta property="og:description" content="Advertising Cookies | WealthMeter">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wealthmeter.xyz/">

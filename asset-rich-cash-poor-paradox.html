@@ -53,8 +53,7 @@
         table{width:100%;border-collapse:collapse;margin:.8rem 0 1.4rem;} th,td{border:1px solid var(--line);padding:.7rem;text-align:left;font-size:.98rem;line-height:1.55;color:var(--body);} th{background:#f8fbff;color:#1e293b;font-weight:700;}
         .sources p{font-size:1rem;line-height:1.55;margin-bottom:.7rem;}
     </style>
-    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml">
-<style id="wealthmeter-component-styles">
+    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml"><style id="wealthmeter-component-styles">
     /* Monolith Pulse Animation */
     @keyframes monolithPulse {
         0% { transform: scaleY(1); }
@@ -82,9 +81,9 @@
         z-index: 9999;
     }
     .nav-container {
-        max-width: 1400px;
+        max-width: 1580px;
         margin: 0 auto;
-        padding: 0 3rem;
+        padding: 0 1.75rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -96,13 +95,13 @@
         display: flex;
         align-items: center;
         flex-shrink: 0;
-        margin-right: 3rem;
+        margin-right: 2rem;
     }
 
     /* Navigation: Forces links to the right */
     nav {
         display: flex;
-        gap: 3rem;
+        gap: clamp(1.1rem, 1.7vw, 2.25rem);
         align-items: center;
         height: 100%;
         margin-left: auto;
@@ -117,8 +116,28 @@
         white-space: nowrap;
     }
     .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
+    .sister-site-link {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        font-weight: 800;
+        font-size: 0.85rem;
+        color: #FF4B4B;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+    }
     .nav-group:hover .dropdown { display: block !important; }
     .nav-group.open .dropdown { display: block !important; }
+
+    @media (max-width: 1360px) {
+        .nav-container { padding: 0 1.25rem; }
+        .brand-wrapper { margin-right: 1.25rem; }
+        nav { gap: 1rem; }
+        .nav-group-label,
+        .sister-site-link { font-size: 0.76rem; letter-spacing: 0.09em; }
+    }
 
     .dropdown {
         display: none;
@@ -153,6 +172,7 @@
         nav::-webkit-scrollbar { display: none; }
         .nav-group { height: auto; }
         .nav-group-label { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .sister-site-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
         .dropdown { position: fixed; left: 0.9rem; right: 0.9rem; top: 74px; min-width: 0; max-height: 70vh; overflow-y: auto; margin-top: 0; border-radius: 0.9rem; padding: 0.7rem 0; box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16); }
         .dropdown a { min-height: 44px; display: flex; align-items: center; font-size: 0.95rem; padding: 0.72rem 1.15rem; }
     }
@@ -248,8 +268,125 @@
     .article-bridge-secondary:hover { text-decoration: underline; }
     .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
     .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
-</style>
-    <meta property="og:image:width" content="1376">
+
+    .wm-feedback {
+        max-width: 28rem;
+        margin: 1.75rem auto 0;
+        padding: 1rem 1.15rem 1.1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 1rem;
+        background: #ffffff;
+        text-align: left;
+    }
+    .wm-feedback-lede {
+        font-family: 'Outfit', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: #0f172a;
+        margin: 0 0 0.8rem;
+    }
+    .wm-feedback-fields { display: grid; gap: 0.65rem; }
+    .wm-feedback label {
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #64748b;
+        font-weight: 800;
+        margin: 0;
+    }
+    .wm-feedback-optional {
+        text-transform: none;
+        letter-spacing: 0;
+        font-weight: 600;
+        opacity: 0.8;
+    }
+    .wm-feedback input[type="email"],
+    .wm-feedback textarea {
+        display: block;
+        width: 100%;
+        margin-top: 0.35rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 0.7rem;
+        background: #f8fafc;
+        color: #0f172a;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.92rem;
+        font-weight: 600;
+    }
+    .wm-feedback input[type="email"] {
+        height: 44px;
+        padding: 0 0.85rem;
+    }
+    .wm-feedback textarea {
+        min-height: 72px;
+        padding: 0.7rem 0.85rem;
+        resize: vertical;
+        line-height: 1.45;
+    }
+    .wm-feedback-submit {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        justify-self: start;
+        min-height: 44px;
+        padding: 0.65rem 1.1rem;
+        border: 0;
+        border-radius: 0.75rem;
+        background: #2563eb;
+        color: #ffffff;
+        font-family: 'Outfit', sans-serif;
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    .wm-feedback-submit:hover { background: #1d4ed8; }
+    .wm-feedback-thanks {
+        margin: 0;
+        color: #334155;
+        font-size: 0.92rem;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+    .wm-feedback.is-sent {
+        border-color: transparent;
+        background: transparent;
+        padding: 0.35rem 0.15rem;
+    }
+    .wm-feedback.is-sent .wm-feedback-lede,
+    .wm-feedback.is-sent .wm-feedback-fields { display: none; }
+    .wm-feedback-hp {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+    .wm-feedback--result {
+        margin: 1.25rem auto 0;
+        background: var(--card-bg, #ffffff);
+        border-color: var(--card-border, #e2e8f0);
+    }
+    .wm-feedback--result .wm-feedback-lede { color: var(--text-main, #0f172a); }
+    .wm-feedback--result label { color: var(--text-muted, #64748b); }
+    .wm-feedback--result input[type="email"],
+    .wm-feedback--result textarea {
+        background: var(--input-bg, #f8fafc);
+        border-color: var(--input-border, #cbd5e1);
+        color: var(--text-main, #0f172a);
+    }
+    .wm-feedback--result .wm-feedback-thanks { color: var(--text-muted, #64748b); }
+
+    main.article figure img {
+        max-width: 100%;
+        width: 100%;
+        height: auto !important;
+        object-fit: contain;
+    }
+</style><meta property="og:image:width" content="1376">
     <meta property="og:image:height" content="768">
     <meta property="og:image:alt" content="Why households can look wealthy on paper while still lacking cash resilience, and what Federal Reserve data implies about the gap between nominal wealth and usable defense.">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WEALTHMETER.XYZ","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"Longform","item":"https://wealthmeter.xyz/longform.html"},{"@type":"ListItem","position":3,"name":"The Asset-Rich, Cash-Poor Paradox","item":"https://wealthmeter.xyz/asset-rich-cash-poor-paradox.html"}]}</script>
@@ -300,49 +437,74 @@
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                                                                                                                                                                                                                                                                                                                                                                                            <a href="retirement-age-lie.html">The Retirement Age Lie</a>
+                    <a href="longevity-capital-living-to-120.html">Longevity Capital: Living to 120</a>
+                    <a href="inside-wealth-germany-japan-canada.html">Inside Wealth: Germany, Japan, and Canada</a>
+                    <a href="inheritance-illusion.html">The Inheritance Illusion</a>
+                    <a href="equity-compensation-trap.html">The Equity Compensation Trap</a>
+                    <a href="dual-income-trap.html">The Dual-Income Trap</a>
+                    <a href="compounding-gap-after-1m.html">The Compounding Gap After $1M</a>
+                    <a href="disability-insurance-leaves-many-paychecks-unprotected.html">Disability Insurance Leaves Many Paychecks Unprotected</a>
+                    <a href="america-is-second-by-average-wealth-fifteenth-by-median-wealth.html">America Is 2nd by Average Wealth, 15th by Median Wealth</a>
+                    <a href="home-equity-is-not-emergency-liquidity.html">Home Equity Is Not Emergency Liquidity</a>
+                    <a href="sequence-risk-before-retirement-fragility-priced-too-late.html">Sequence Risk Before Retirement: The Fragility Nobody Prices Early Enough</a>
+                    <a href="property-tax-drag.html">The Property Tax Drag</a>
+                    <a href="global-housing-divergence.html">The Global Housing Divergence</a>
+                    <a href="yield-trap-high-rate-world.html">The Yield Trap in a High-Rate World</a>
+                    <a href="freelance-freedom-tradeoff.html">The Freelance Freedom Tradeoff</a>
+                    <a href="promotion-paradox.html">The Promotion Paradox</a>
+                    <a href="debt-illusion-cycle.html">The Debt Illusion Cycle</a>
+                    <a href="windfall-misallocation-problem.html">The Windfall Misallocation Problem</a>
+                    <a href="risk-tolerance-illusion.html">The Risk Tolerance Illusion</a>
+                    <a href="urban-premium-collapse.html">The Urban Premium Collapse</a>
+                    <a href="opportunity-cost-of-cash.html">The Opportunity Cost of Cash</a>
+                    <a href="venture-capital-power-law-reality.html">The Venture Capital Power Law Reality</a>
+                    <a href="productivity-income-disconnect.html">The Productivity-Income Disconnect</a>
+                    <a href="salary-ceiling-illusion.html">The Salary Ceiling Illusion</a>
+                    <a href="lifestyle-lock-in-curve.html">The Lifestyle Lock-In Curve</a>
+                    <a href="scarcity-mindset-loop.html">The Scarcity Mindset Loop</a>
+                    <a href="comparison-trap-digital-age.html">The Comparison Trap in the Digital Age</a>
+                    <a href="geographic-arbitrage-window.html">The Geographic Arbitrage Window</a>
+                    <a href="rebalancing-illusion.html">The Rebalancing Illusion</a>
+                    <a href="private-markets-mirage.html">The Private Markets Mirage</a>
+                    <a href="skill-obsolescence-curve.html">The Skill Obsolescence Curve</a>
+                    <a href="wealth-plateau-effect.html">The Wealth Plateau Effect</a>
+                    <a href="illiquidity-premium-myth.html">The Illiquidity Premium Myth</a>
                     <a href="inflation-ladder-problem.html">The Inflation Ladder Problem</a>
                     <a href="loss-aversion-tax.html">The Loss Aversion Tax</a>
+                    <a href="cost-of-capital-trap.html">The Cost-of-Capital Trap</a>
                     <a href="overconfidence-cycle.html">The Overconfidence Cycle</a>
                     <a href="hidden-costs-of-ownership.html">The Hidden Costs of Ownership</a>
-                    <a href="rent-vs-buy-reversal.html">The Rent vs Buy Reversal</a>
-                    <a href="career-optionality-gap.html">The Career Optionality Gap</a>
-                    <a href="asset-rich-cash-poor-paradox.html">The Asset-Rich, Cash-Poor Paradox</a>
+                    <a href="ai-displacement-timeline.html">The AI Displacement Timeline</a>
                     <a href="rich-but-not-famous-economy.html">The Rich but Not Famous Economy</a>
+                    <a href="liquidity-illusion.html">The Liquidity Illusion</a>
                     <a href="mobility-premium.html">The Mobility Premium</a>
                     <a href="second-home-wealth-drain.html">The Second-Home Wealth Drain</a>
                     <a href="timing-fallacy-public-markets.html">The Timing Fallacy in Public Markets</a>
                     <a href="indexing-saturation-problem.html">The Indexing Saturation Problem</a>
                     <a href="golden-handcuffs-equation.html">The Golden Handcuffs Equation</a>
-                    <a href="illiquidity-premium-myth.html">The Illiquidity Premium Myth</a>
-                    <a href="cost-of-capital-trap.html">The Cost-of-Capital Trap</a>
-                    <a href="ai-displacement-timeline.html">The AI Displacement Timeline</a>
+                    <a href="rent-vs-buy-reversal.html">The Rent vs Buy Reversal</a>
                     <a href="concentration-vs-diversification-tradeoff.html">The Concentration vs Diversification Tradeoff</a>
-                    <a href="liquidity-illusion.html">The Liquidity Illusion</a>
+                    <a href="career-optionality-gap.html">The Career Optionality Gap</a>
+                    <a href="asset-rich-cash-poor-paradox.html">The Asset-Rich, Cash-Poor Paradox</a>
                     <a href="housing-stall-2026-rates-inventory-delinquency.html">The 2026 Housing Stall: Rates, Inventory, and the New Delinquency Split</a>
                     <a href="mortgage-lock-in-trap.html">The Mortgage Lock-In Trap: Why a 3% Loan Can Still Make You Poorer in 2026</a>
                     <a href="war-premium-iran-conflict-repricing-energy-credit-equities.html">The War Premium: How the Iran Conflict Is Repricing Energy, Credit, and Equities</a>
                     <a href="end-of-safe-job-illusion-ai-labor-deflation-white-collar-income.html">The End of the Safe Job Illusion: AI Labor Deflation in White-Collar Income</a>
-                    <a href="inheritance-illusion.html">The Inheritance Illusion: When Receiving Wealth Does Not Make You Wealthy</a>
-                    <a href="dual-income-trap.html">The Dual-Income Trap: Why Two Salaries Often Build Less Wealth Than One</a>
-                    <a href="inside-wealth-germany-japan-canada.html">Inside Wealth: Germany, Japan, and Canada</a>
-                    <a href="equity-compensation-trap.html">The Equity Compensation Trap: When Stock-Based Wealth Does Not Survive The Tax Year</a>
-                    <a href="retirement-age-lie.html">The Retirement Age Lie: Why Your Target Number Is Probably Wrong in 2026</a>
-                    <a href="longevity-capital-living-to-120.html">Longevity Capital: How Living to 120 Rewrites Wealth Planning Assumptions</a>
-                    <a href="compounding-gap-after-1m.html">The Compounding Gap: Why the Top 1% Pulls Away Faster After $1M</a>
                     <a href="ai-boom-portfolios-personal-wealth.html">AI Boom Portfolios: Building Personal Wealth Without Concentration Blowups</a>
                     <a href="rich-or-just-in-a-bubble.html">Are You Rich or Just in a Bubble? Recalculating Wealth in a 6% Mortgage World</a>
-                    <a href="great-baseline-war.html">The Great Baseline War: Why Your Wealth Rank Changes by Population Lens</a>
-                    <a href="one-salary-three-futures.html">One Salary, Three Futures: How the Same Income Produces Different Wealth Paths by City</a>
-                    <a href="crypto-etf-wealth-effect.html">Crypto ETF Wealth Effect: Durable Net Worth or Volatility Ride?</a>
+                    <a href="realistic-projections-ubi.html">Realistic Projections on UBI (Universal Basic Income): Don’t Bet Your Future on It</a>
+                    <a href="one-salary-three-futures.html">One Salary, Three Futures: How the Same Income Produces Totally Different Wealth Paths by City</a>
                     <a href="new-middle-class-trap.html">The New Middle-Class Trap: High Income, Low Net Worth</a>
-                    <a href="inside-wealth-china-india.html">Inside Wealth in China + India</a>
-                    <a href="realistic-projections-ubi.html">Realistic Projections on UBI</a>
+                    <a href="inside-wealth-china-india.html">Inside Wealth in China and India: Top 10%, Top 1%, and the New Middle Class</a>
+                    <a href="great-baseline-war.html">The Great Baseline War: Why Your Wealth Rank Changes by Population Lens</a>
+                    <a href="crypto-etf-wealth-effect.html">Crypto ETF Wealth Effect: Durable Net Worth or Volatility?</a>
 
 
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
                 </div>
             </div>
-            <a href="https://lifemeter.xyz" target="_blank" style="font-weight:900; font-size:0.85rem; color:#FF4B4B; text-decoration:none; text-transform:uppercase; letter-spacing:0.12em; white-space: nowrap;">LifeMeter ↗</a>
+            <a href="https://lifemeter.xyz" target="_blank" rel="noopener" class="sister-site-link">LifeMeter ↗</a>
         </nav>
     </div>
 </header>
@@ -432,9 +594,22 @@
     </div></main>
 <div id="footer-placeholder" data-static-component="1">
 <footer>
-    <div class="cross-property-band">
-        Model the lifespan side of your balance sheet with <a href="https://lifemeter.xyz/?from=wealthmeter" target="_blank" rel="noopener">LifeMeter</a>, then compare the same household against survival horizon and medical-runway stress.
-    </div>
+    <form class="wm-feedback" data-wm-feedback action="https://docs.google.com/forms/d/e/1FAIpQLSdW_INDPOwoI_XjecCzhp38-IEu-GeA5oTUlPT59V1kKT5fKw/formResponse" method="POST" target="wm-feedback-sink">
+        <p class="wm-feedback-lede">Something off? Tell us.</p>
+        <div class="wm-feedback-fields">
+            <input type="text" class="wm-feedback-hp" data-wm-honeypot name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="entry.652485851" value="WealthMeter">
+            <input type="hidden" name="entry.2128319260" value="" data-wm-feedback-page>
+            <label>Email <span class="wm-feedback-optional">(optional)</span>
+                <input type="email" name="entry.1004053268" autocomplete="email" placeholder="you@example.com">
+            </label>
+            <label>Feedback
+                <textarea name="entry.1773870348" required rows="3" placeholder="What should we fix?"></textarea>
+            </label>
+            <button class="wm-feedback-submit" type="submit">Send</button>
+        </div>
+        <p class="wm-feedback-thanks" data-wm-feedback-thanks hidden aria-live="polite">Got it. We'll use this to fix the site.</p>
+    </form>
     <div class="footer-links">
         <a href="data-sources.html">Data Sources</a>
         <a href="methodology.html">Methodology</a>
@@ -443,6 +618,6 @@
     </div>
 </footer>
 </div>
-<script src="components.js?v=2026-08-29.1"></script>
+<script src="components.js?v=2026-09-02.1"></script>
 </body>
 </html>

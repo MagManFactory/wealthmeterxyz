@@ -45,8 +45,7 @@
         .return-row { margin-top:1.25rem; display:flex; flex-wrap:wrap; gap:0.8rem; }
         .return-row a { color:var(--accent); font-weight:800; text-decoration:none; }
         @media (max-width: 860px) { .grid { grid-template-columns:1fr; } }
-    </style>
-    <style id="wealthmeter-component-styles">
+    </style><style id="wealthmeter-component-styles">
     /* Monolith Pulse Animation */
     @keyframes monolithPulse {
         0% { transform: scaleY(1); }
@@ -74,9 +73,9 @@
         z-index: 9999;
     }
     .nav-container {
-        max-width: 1400px;
+        max-width: 1580px;
         margin: 0 auto;
-        padding: 0 3rem;
+        padding: 0 1.75rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -88,13 +87,13 @@
         display: flex;
         align-items: center;
         flex-shrink: 0;
-        margin-right: 3rem;
+        margin-right: 2rem;
     }
 
     /* Navigation: Forces links to the right */
     nav {
         display: flex;
-        gap: 3rem;
+        gap: clamp(1.1rem, 1.7vw, 2.25rem);
         align-items: center;
         height: 100%;
         margin-left: auto;
@@ -109,8 +108,28 @@
         white-space: nowrap;
     }
     .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
+    .sister-site-link {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        font-weight: 800;
+        font-size: 0.85rem;
+        color: #FF4B4B;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+    }
     .nav-group:hover .dropdown { display: block !important; }
     .nav-group.open .dropdown { display: block !important; }
+
+    @media (max-width: 1360px) {
+        .nav-container { padding: 0 1.25rem; }
+        .brand-wrapper { margin-right: 1.25rem; }
+        nav { gap: 1rem; }
+        .nav-group-label,
+        .sister-site-link { font-size: 0.76rem; letter-spacing: 0.09em; }
+    }
 
     .dropdown {
         display: none;
@@ -145,6 +164,7 @@
         nav::-webkit-scrollbar { display: none; }
         .nav-group { height: auto; }
         .nav-group-label { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .sister-site-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
         .dropdown { position: fixed; left: 0.9rem; right: 0.9rem; top: 74px; min-width: 0; max-height: 70vh; overflow-y: auto; margin-top: 0; border-radius: 0.9rem; padding: 0.7rem 0; box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16); }
         .dropdown a { min-height: 44px; display: flex; align-items: center; font-size: 0.95rem; padding: 0.72rem 1.15rem; }
     }
@@ -351,8 +371,14 @@
         color: var(--text-main, #0f172a);
     }
     .wm-feedback--result .wm-feedback-thanks { color: var(--text-muted, #64748b); }
-</style>
-    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml">
+
+    main.article figure img {
+        max-width: 100%;
+        width: 100%;
+        height: auto !important;
+        object-fit: contain;
+    }
+</style><link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Structural Wealth Traps","url":"https://wealthmeter.xyz/structural-wealth-traps-pillar.html","description":"A WealthMeter pillar hub on debt drag, liquidity illusion, financing friction, and the hidden structures that make households look wealthier than they are."}</script>
     <meta property="og:image" content="https://wealthmeter.xyz/images/longform/debt-illusion-balance-sheet-flywheel-2026-may22.png">
     <meta name="twitter:image" content="https://wealthmeter.xyz/images/longform/debt-illusion-balance-sheet-flywheel-2026-may22.png">
@@ -408,13 +434,16 @@
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
-                                                                                                                                                                                                                                                <a href="retirement-age-lie.html">The Retirement Age Lie</a>
+                                                                                                                                                                                                                                                                                                                                                                                            <a href="retirement-age-lie.html">The Retirement Age Lie</a>
                     <a href="longevity-capital-living-to-120.html">Longevity Capital: Living to 120</a>
                     <a href="inside-wealth-germany-japan-canada.html">Inside Wealth: Germany, Japan, and Canada</a>
                     <a href="inheritance-illusion.html">The Inheritance Illusion</a>
                     <a href="equity-compensation-trap.html">The Equity Compensation Trap</a>
                     <a href="dual-income-trap.html">The Dual-Income Trap</a>
                     <a href="compounding-gap-after-1m.html">The Compounding Gap After $1M</a>
+                    <a href="disability-insurance-leaves-many-paychecks-unprotected.html">Disability Insurance Leaves Many Paychecks Unprotected</a>
+                    <a href="america-is-second-by-average-wealth-fifteenth-by-median-wealth.html">America Is 2nd by Average Wealth, 15th by Median Wealth</a>
+                    <a href="home-equity-is-not-emergency-liquidity.html">Home Equity Is Not Emergency Liquidity</a>
                     <a href="sequence-risk-before-retirement-fragility-priced-too-late.html">Sequence Risk Before Retirement: The Fragility Nobody Prices Early Enough</a>
                     <a href="property-tax-drag.html">The Property Tax Drag</a>
                     <a href="global-housing-divergence.html">The Global Housing Divergence</a>
@@ -423,7 +452,6 @@
                     <a href="promotion-paradox.html">The Promotion Paradox</a>
                     <a href="debt-illusion-cycle.html">The Debt Illusion Cycle</a>
                     <a href="windfall-misallocation-problem.html">The Windfall Misallocation Problem</a>
-                    <a href="home-equity-is-not-emergency-liquidity.html">The New Middle-Class Trap: High Income, Low Net Worth</a>
                     <a href="risk-tolerance-illusion.html">The Risk Tolerance Illusion</a>
                     <a href="urban-premium-collapse.html">The Urban Premium Collapse</a>
                     <a href="opportunity-cost-of-cash.html">The Opportunity Cost of Cash</a>
@@ -473,7 +501,7 @@
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
                 </div>
             </div>
-            <a href="https://lifemeter.xyz" target="_blank" rel="noopener" style="font-weight:900; font-size:0.85rem; color:#FF4B4B; text-decoration:none; text-transform:uppercase; letter-spacing:0.12em; white-space: nowrap;">LifeMeter ↗</a>
+            <a href="https://lifemeter.xyz" target="_blank" rel="noopener" class="sister-site-link">LifeMeter ↗</a>
         </nav>
     </div>
 </header>
@@ -577,6 +605,6 @@
     </div>
 </footer>
 </div>
-<script src="components.js?v=2026-08-29.1"></script>
+<script src="components.js?v=2026-09-02.1"></script>
 </body>
 </html>
