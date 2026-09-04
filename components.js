@@ -18,6 +18,31 @@
 // components.js - WealthMeter™ V25.1 Studio Standard
 
 // Refresh marker for 2026-04-29 WealthMeter longform publish retry.
+const GA_MEASUREMENT_ID = "G-8NF91REL39";
+
+const ga4Snippet = `
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NF91REL39"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8NF91REL39');
+    </script>`;
+
+(function ensureGa4() {
+    if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
+    const loader = document.createElement("script");
+    loader.async = true;
+    loader.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(loader);
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", GA_MEASUREMENT_ID);
+})();
+
 const sharedStyles = `
 <style id="wealthmeter-component-styles">
     /* Monolith Pulse Animation */
@@ -400,7 +425,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
-                                                                                                                                                                                                                                                                                                                                                                                            <a href="retirement-age-lie.html">The Retirement Age Lie</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                    <a href="retirement-age-lie.html">The Retirement Age Lie</a>
                     <a href="longevity-capital-living-to-120.html">Longevity Capital: Living to 120</a>
                     <a href="inside-wealth-germany-japan-canada.html">Inside Wealth: Germany, Japan, and Canada</a>
                     <a href="inheritance-illusion.html">The Inheritance Illusion</a>

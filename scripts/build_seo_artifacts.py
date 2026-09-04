@@ -18,7 +18,7 @@ DOMAIN = "https://wealthmeter.xyz"
 DISPLAY_NAME = "WEALTHMETER.XYZ"
 FEED_URL = f"{DOMAIN}/feed.xml"
 RSS_LIMIT = 50
-COMPONENT_VERSION = "2026-09-02.1"
+COMPONENT_VERSION = "2026-09-04.1"
 PRIVATE_OR_STAGING = {"adsense_block.html"}
 DESCRIPTION_FALLBACKS = {
     "data-lab.html": "Explore WealthMeter's analytical lab for distribution views, exploratory finance tools, and supporting wealth datasets.",
@@ -88,6 +88,10 @@ SCRIPT_COMPONENT_RE = re.compile(
     re.IGNORECASE,
 )
 WEALTH_STYLE_RE = re.compile(r'\s*<style id="wealthmeter-component-styles">.*?</style>\s*', re.DOTALL)
+GA_BLOCK_RE = re.compile(
+    r"\s*<!-- Google Analytics -->.*?</script>\s*<script>\s*window\.dataLayer.*?gtag\(['\"]config['\"].*?</script>\s*",
+    re.DOTALL | re.IGNORECASE,
+)
 BRIDGE_RE = re.compile(
     r"\s*<!-- generated-article-bridge:start -->.*?<!-- generated-article-bridge:end -->\s*",
     re.DOTALL,
@@ -576,6 +580,21 @@ def ensure_component_version(text: str) -> str:
     return text
 
 
+def strip_legacy_ga(text: str) -> str:
+    while GA_BLOCK_RE.search(text):
+        text = GA_BLOCK_RE.sub("", text, count=1)
+    return text
+
+
+def ensure_ga4_snippet(text: str, ga4_snippet: str, path: Path) -> str:
+    if path.name in PRIVATE_OR_STAGING:
+        return text
+    text = strip_legacy_ga(text)
+    if "G-8NF91REL39" in text and "googletagmanager.com/gtag/js" in text:
+        return text
+    return text.replace("</head>", f"{ga4_snippet}\n</head>", 1)
+
+
 def ensure_static_components(text: str, shared_styles: str, header_html: str, footer_html: str) -> str:
     text = collapse_component_styles(text)
     if WEALTH_STYLE_RE.search(text):
@@ -870,7 +889,7 @@ def page_title(path: str) -> str:
     return title_of(read_text(ROOT / path)).split("|")[0].strip()
 
 
-def pillar_page_html(pillar: dict, shared_styles: str, header_html: str, footer_html: str) -> str:
+def pillar_page_html(pillar: dict, shared_styles: str, header_html: str, footer_html: str, ga4_snippet: str) -> str:
     cards = "\n\n".join(
         article_card_markup(article, page_title(article), page_description(article))
         for article in pillar["articles"]
@@ -939,6 +958,7 @@ def pillar_page_html(pillar: dict, shared_styles: str, header_html: str, footer_
     {shared_styles}
     <link rel="alternate" type="application/rss+xml" title="{DISPLAY_NAME} Feed" href="{FEED_URL}">
     <script type="application/ld+json">{json.dumps(payload, ensure_ascii=False, separators=(",", ":"))}</script>
+    {ga4_snippet}
 </head>
 <body>
 <div id="header-placeholder" data-static-component="1">
@@ -988,10 +1008,10 @@ def pillar_page_html(pillar: dict, shared_styles: str, header_html: str, footer_
     return body
 
 
-def generate_pillar_pages(apply: bool, shared_styles: str, header_html: str, footer_html: str) -> int:
+def generate_pillar_pages(apply: bool, shared_styles: str, header_html: str, footer_html: str, ga4_snippet: str) -> int:
     changes = 0
     for pillar in PILLAR_CONFIG:
-        content = pillar_page_html(pillar, shared_styles, header_html, footer_html)
+        content = pillar_page_html(pillar, shared_styles, header_html, footer_html, ga4_snippet)
         changes += int(write_text(ROOT / pillar["slug"], content, apply))
     return changes
 
@@ -1090,7 +1110,7 @@ def sync_longform_surfaces(apply: bool, pages: list[PageInfo]) -> int:
     return changes
 
 
-def update_html_inventory(apply: bool) -> tuple[list[PageInfo], int]:
+def update_html_inventory(apply: bool, ga4_snippet: str) -> tuple[list[PageInfo], int]:
     component_file = ROOT / "components.js"
     shared_styles = extract_template(component_file, "sharedStyles")
     header_html = extract_template(component_file, "siteHeader")
@@ -1107,6 +1127,7 @@ def update_html_inventory(apply: bool) -> tuple[list[PageInfo], int]:
         updated = ensure_meta_description(updated, path, page.title)
         updated = ensure_feed_link(updated)
         updated = ensure_static_components(updated, shared_styles, header_html, footer_html)
+        updated = ensure_ga4_snippet(updated, ga4_snippet, path)
         if path.name == "longform.html":
             updated = ensure_pillar_grid(updated)
         updated = ensure_social_metadata(updated, page)
@@ -1223,11 +1244,12 @@ def main() -> int:
     shared_styles = extract_template(component_file, "sharedStyles")
     header_html = extract_template(component_file, "siteHeader")
     footer_html = extract_template(component_file, "siteFooter")
+    ga4_snippet = extract_template(component_file, "ga4Snippet")
 
-    pillar_changes = generate_pillar_pages(args.write, shared_styles, header_html, footer_html)
-    pages, html_changes = update_html_inventory(args.write)
+    pillar_changes = generate_pillar_pages(args.write, shared_styles, header_html, footer_html, ga4_snippet)
+    pages, html_changes = update_html_inventory(args.write, ga4_snippet)
     sync_changes = sync_longform_surfaces(args.write, pages)
-    pages, html_changes_second = update_html_inventory(args.write)
+    pages, html_changes_second = update_html_inventory(args.write, ga4_snippet)
     indexable_pages = [page for page in pages if page.is_indexable]
     article_pages = [page for page in indexable_pages if page.is_article]
 
