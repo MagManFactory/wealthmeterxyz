@@ -1,3 +1,20 @@
+
+// GA4 — Measurement ID G-8NF91REL39 (do not reuse Lexicon G-5MC05WB07R)
+(function() {
+  if (window.__wmGa4) return;
+  window.__wmGa4 = true;
+  var id = "G-8NF91REL39";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = window.gtag || gtag;
+  var s = document.createElement("script");
+  s.async = true;
+  s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+  document.head.appendChild(s);
+  gtag("js", new Date());
+  gtag("config", id);
+})();
+
 // components.js - WealthMeter™ V25.1 Studio Standard
 
 // Refresh marker for 2026-04-29 WealthMeter longform publish retry.
@@ -408,7 +425,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
-                                                                                                                                                                                                                                                                                                                                                                                                                <a href="retirement-age-lie.html">The Retirement Age Lie</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                    <a href="retirement-age-lie.html">The Retirement Age Lie</a>
                     <a href="longevity-capital-living-to-120.html">Longevity Capital: Living to 120</a>
                     <a href="inside-wealth-germany-japan-canada.html">Inside Wealth: Germany, Japan, and Canada</a>
                     <a href="inheritance-illusion.html">The Inheritance Illusion</a>
