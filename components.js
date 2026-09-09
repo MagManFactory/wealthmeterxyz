@@ -425,13 +425,14 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
-                                                                                                                                                                                                                                                                                                                                                                                                                                    <a href="retirement-age-lie.html">The Retirement Age Lie</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        <a href="retirement-age-lie.html">The Retirement Age Lie</a>
                     <a href="longevity-capital-living-to-120.html">Longevity Capital: Living to 120</a>
                     <a href="inside-wealth-germany-japan-canada.html">Inside Wealth: Germany, Japan, and Canada</a>
                     <a href="inheritance-illusion.html">The Inheritance Illusion</a>
                     <a href="equity-compensation-trap.html">The Equity Compensation Trap</a>
                     <a href="dual-income-trap.html">The Dual-Income Trap</a>
                     <a href="compounding-gap-after-1m.html">The Compounding Gap After $1M</a>
+                    <a href="job-loss-hurts-more-when-benefits-are-not-portable.html">Job Loss Hurts More When Benefits Are Not Portable</a>
                     <a href="disability-insurance-leaves-many-paychecks-unprotected.html">Disability Insurance Leaves Many Paychecks Unprotected</a>
                     <a href="america-is-second-by-average-wealth-fifteenth-by-median-wealth.html">America Is 2nd by Average Wealth, 15th by Median Wealth</a>
                     <a href="home-equity-is-not-emergency-liquidity.html">Home Equity Is Not Emergency Liquidity</a>
