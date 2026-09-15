@@ -595,7 +595,39 @@ def ensure_ga4_snippet(text: str, ga4_snippet: str, path: Path) -> str:
     return text.replace("</head>", f"{ga4_snippet}\n</head>", 1)
 
 
-def ensure_static_components(text: str, shared_styles: str, header_html: str, footer_html: str) -> str:
+SISTER_NAV_GROUP_RE = re.compile(
+    r'\s*<div class="nav-group nav-group-sister">.*?</div>',
+    re.DOTALL,
+)
+SISTER_LINK_RE = re.compile(
+    r'\s*<a\b[^>]*class="[^"]*sister-site-link[^"]*"[^>]*>.*?</a>',
+    re.DOTALL,
+)
+CROSS_PROPERTY_BAND_RE = re.compile(
+    r'\s*<div class="cross-property-band">.*?</div>',
+    re.DOTALL,
+)
+
+
+def article_firewall_markup(header_html: str, footer_html: str) -> tuple[str, str]:
+    """Remove sister-brand calls from article chrome while preserving site navigation."""
+    header_html = SISTER_NAV_GROUP_RE.sub("", header_html)
+    header_html = SISTER_LINK_RE.sub("", header_html)
+    footer_html = CROSS_PROPERTY_BAND_RE.sub("", footer_html)
+    footer_html = SISTER_LINK_RE.sub("", footer_html)
+    return header_html, footer_html
+
+
+def ensure_static_components(
+    text: str,
+    shared_styles: str,
+    header_html: str,
+    footer_html: str,
+    *,
+    article_firewall: bool = False,
+) -> str:
+    if article_firewall:
+        header_html, footer_html = article_firewall_markup(header_html, footer_html)
     text = collapse_component_styles(text)
     if WEALTH_STYLE_RE.search(text):
         text = WEALTH_STYLE_RE.sub(shared_styles, text, count=1)
@@ -1110,7 +1142,11 @@ def sync_longform_surfaces(apply: bool, pages: list[PageInfo]) -> int:
     return changes
 
 
-def update_html_inventory(apply: bool, ga4_snippet: str) -> tuple[list[PageInfo], int]:
+def update_html_inventory(
+    apply: bool,
+    ga4_snippet: str,
+    only_paths: set[Path] | None = None,
+) -> tuple[list[PageInfo], int]:
     component_file = ROOT / "components.js"
     shared_styles = extract_template(component_file, "sharedStyles")
     header_html = extract_template(component_file, "siteHeader")
@@ -1120,13 +1156,22 @@ def update_html_inventory(apply: bool, ga4_snippet: str) -> tuple[list[PageInfo]
     changes = 0
     for path in sorted(ROOT.glob("*.html")):
         original = read_text(path)
+        if only_paths is not None and path.resolve() not in only_paths:
+            pages.append(classify_page(path, original, article_urls))
+            continue
         page = classify_page(path, original, article_urls)
         updated = original
         updated = enforce_duplicate_controls(updated, path)
         page = classify_page(path, updated, article_urls)
         updated = ensure_meta_description(updated, path, page.title)
         updated = ensure_feed_link(updated)
-        updated = ensure_static_components(updated, shared_styles, header_html, footer_html)
+        updated = ensure_static_components(
+            updated,
+            shared_styles,
+            header_html,
+            footer_html,
+            article_firewall=page.is_article,
+        )
         updated = ensure_ga4_snippet(updated, ga4_snippet, path)
         if path.name == "longform.html":
             updated = ensure_pillar_grid(updated)
@@ -1238,7 +1283,25 @@ def generate_feed(pages: list[PageInfo]) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Rebuild WealthMeter SEO artifacts and harden HTML metadata.")
     parser.add_argument("--write", action="store_true", help="Write changes to disk.")
+    parser.add_argument(
+        "--only",
+        action="append",
+        default=[],
+        metavar="HTML_FILE",
+        help="Rewrite only the named root-level HTML file. May be repeated.",
+    )
     args = parser.parse_args()
+
+    only_paths: set[Path] | None = None
+    if args.only:
+        only_paths = set()
+        for value in args.only:
+            candidate = (ROOT / value).resolve()
+            if candidate.parent != ROOT.resolve() or candidate.suffix.lower() != ".html":
+                parser.error(f"--only must name a root-level HTML file: {value}")
+            if not candidate.exists():
+                parser.error(f"--only file does not exist: {value}")
+            only_paths.add(candidate)
 
     component_file = ROOT / "components.js"
     shared_styles = extract_template(component_file, "sharedStyles")
@@ -1246,10 +1309,14 @@ def main() -> int:
     footer_html = extract_template(component_file, "siteFooter")
     ga4_snippet = extract_template(component_file, "ga4Snippet")
 
-    pillar_changes = generate_pillar_pages(args.write, shared_styles, header_html, footer_html, ga4_snippet)
-    pages, html_changes = update_html_inventory(args.write, ga4_snippet)
+    pillar_changes = (
+        0
+        if only_paths is not None
+        else generate_pillar_pages(args.write, shared_styles, header_html, footer_html, ga4_snippet)
+    )
+    pages, html_changes = update_html_inventory(args.write, ga4_snippet, only_paths=only_paths)
     sync_changes = sync_longform_surfaces(args.write, pages)
-    pages, html_changes_second = update_html_inventory(args.write, ga4_snippet)
+    pages, html_changes_second = update_html_inventory(args.write, ga4_snippet, only_paths=only_paths)
     indexable_pages = [page for page in pages if page.is_indexable]
     article_pages = [page for page in indexable_pages if page.is_article]
 
