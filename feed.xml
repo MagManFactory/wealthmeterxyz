@@ -5,12 +5,12 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Sep 2026 13:08:46 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2026 23:39:50 +0000</lastBuildDate>
     <item>
       <title>The Retirement Age Lie</title>
       <link>https://wealthmeter.xyz/retirement-age-lie.html</link>
       <guid>https://wealthmeter.xyz/retirement-age-lie.html</guid>
-      <pubDate>Tue, 08 Sep 2026 13:08:46 +0000</pubDate>
+      <pubDate>Tue, 15 Sep 2026 23:28:41 +0000</pubDate>
       <description>stress-testing retirement target numbers under current inflation, rate, and longevity conditions.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/retirement-age-lie-rate-inflation-stress.png" type="image/png"/>
     </item>
@@ -18,7 +18,7 @@
       <title>Longevity Capital: Living to 120</title>
       <link>https://wealthmeter.xyz/longevity-capital-living-to-120.html</link>
       <guid>https://wealthmeter.xyz/longevity-capital-living-to-120.html</guid>
-      <pubDate>Tue, 08 Sep 2026 13:08:46 +0000</pubDate>
+      <pubDate>Tue, 15 Sep 2026 23:28:41 +0000</pubDate>
       <description>how potential lifespan extension changes long-horizon wealth architecture.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/longevity-capital-horizon-reset.png" type="image/png"/>
     </item>
@@ -26,7 +26,7 @@
       <title>Inside Wealth: Germany, Japan, and Canada</title>
       <link>https://wealthmeter.xyz/inside-wealth-germany-japan-canada.html</link>
       <guid>https://wealthmeter.xyz/inside-wealth-germany-japan-canada.html</guid>
-      <pubDate>Tue, 08 Sep 2026 13:08:46 +0000</pubDate>
+      <pubDate>Tue, 15 Sep 2026 23:28:41 +0000</pubDate>
       <description>structural comparison of top wealth outcomes in Germany, Japan, and Canada.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/inside-wealth-de-jp-ca-structural-lens.png" type="image/png"/>
     </item>
@@ -34,7 +34,7 @@
       <title>The Inheritance Illusion</title>
       <link>https://wealthmeter.xyz/inheritance-illusion.html</link>
       <guid>https://wealthmeter.xyz/inheritance-illusion.html</guid>
-      <pubDate>Tue, 08 Sep 2026 13:08:46 +0000</pubDate>
+      <pubDate>Tue, 15 Sep 2026 23:28:41 +0000</pubDate>
       <description>why receiving wealth does not automatically create durable wealth outcomes.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/inheritance-illusion-liquidity-gap.png" type="image/png"/>
     </item>
@@ -42,7 +42,7 @@
       <title>The Equity Compensation Trap</title>
       <link>https://wealthmeter.xyz/equity-compensation-trap.html</link>
       <guid>https://wealthmeter.xyz/equity-compensation-trap.html</guid>
-      <pubDate>Tue, 08 Sep 2026 13:08:46 +0000</pubDate>
+      <pubDate>Tue, 15 Sep 2026 23:28:41 +0000</pubDate>
       <description>RSU, ISO, and ESPP concentration risk and tax leakage in household wealth outcomes.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/equity-compensation-tax-fragility-map.png" type="image/png"/>
     </item>
@@ -50,7 +50,7 @@
       <title>The Dual-Income Trap</title>
       <link>https://wealthmeter.xyz/dual-income-trap.html</link>
       <guid>https://wealthmeter.xyz/dual-income-trap.html</guid>
-      <pubDate>Tue, 08 Sep 2026 13:08:46 +0000</pubDate>
+      <pubDate>Tue, 15 Sep 2026 23:28:41 +0000</pubDate>
       <description>why two salaries often underperform one salary in long-run wealth resilience.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/dual-income-trap-cashflow-floor.png" type="image/png"/>
     </item>
@@ -58,9 +58,17 @@
       <title>The Compounding Gap After $1M</title>
       <link>https://wealthmeter.xyz/compounding-gap-after-1m.html</link>
       <guid>https://wealthmeter.xyz/compounding-gap-after-1m.html</guid>
-      <pubDate>Tue, 08 Sep 2026 13:08:46 +0000</pubDate>
+      <pubDate>Tue, 15 Sep 2026 23:28:41 +0000</pubDate>
       <description>why wealth growth becomes non-linear after one million dollars due to access and governance effects.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/compounding-gap-after-1m.png" type="image/png"/>
+    </item>
+    <item>
+      <title>How Insurance Deductibles Become a Household Balance-Sheet Shock</title>
+      <link>https://wealthmeter.xyz/how-insurance-deductibles-become-a-household-balance-sheet-shock.html</link>
+      <guid>https://wealthmeter.xyz/how-insurance-deductibles-become-a-household-balance-sheet-shock.html</guid>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
+      <description>A health deductible is a dated cash demand. A simple liquidity test shows whether a household can absorb it without expensive financing.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/deductible-liquidity-waterfall-2026-sep15.png" type="image/png"/>
     </item>
     <item>
       <title>Job Loss Hurts More When Benefits Are Not Portable</title>
@@ -397,14 +405,6 @@
       <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
       <description>Why diversification is still the default for most households, when concentration can be rational, and how to distinguish a real edge from a fragile story.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/concentration-diversification-barbell-2026-refresh.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Career Optionality Gap</title>
-      <link>https://wealthmeter.xyz/career-optionality-gap.html</link>
-      <guid>https://wealthmeter.xyz/career-optionality-gap.html</guid>
-      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <description>An April 2026 analysis of the career optionality gap: why liquidity, benefit portability, and work design determine who can absorb transition without wealth damage.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/career-optionality-runway-stack-2026.png" type="image/png"/>
     </item>
   </channel>
 </rss>

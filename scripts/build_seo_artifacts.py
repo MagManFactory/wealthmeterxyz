@@ -637,8 +637,24 @@ def ensure_static_components(
     footer_markup = f'<div id="footer-placeholder" data-static-component="1">\n{footer_html}\n</div>'
     if HEADER_RE.search(text):
         text = HEADER_RE.sub(header_markup, text, count=1)
+    elif 'id="header-placeholder"' not in text:
+        text = re.sub(
+            r"(<body[^>]*>)",
+            rf"\1\n{header_markup}",
+            text,
+            count=1,
+            flags=re.IGNORECASE,
+        )
     if FOOTER_RE.search(text):
         text = FOOTER_RE.sub(footer_markup, text, count=1)
+    elif 'id="footer-placeholder"' not in text:
+        text = re.sub(
+            r"(</body>)",
+            rf"{footer_markup}\n\1",
+            text,
+            count=1,
+            flags=re.IGNORECASE,
+        )
     return ensure_component_version(text)
 
 

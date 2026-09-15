@@ -1,50 +1,21 @@
-
-// GA4 — Measurement ID G-8NF91REL39 (do not reuse Lexicon G-5MC05WB07R)
-(function() {
-  if (window.__wmGa4) return;
-  window.__wmGa4 = true;
-  var id = "G-8NF91REL39";
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  window.gtag = window.gtag || gtag;
-  var s = document.createElement("script");
-  s.async = true;
-  s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
-  document.head.appendChild(s);
-  gtag("js", new Date());
-  gtag("config", id);
-})();
-
-// components.js - WealthMeter™ V25.1 Studio Standard
-
-// Refresh marker for 2026-04-29 WealthMeter longform publish retry.
-const GA_MEASUREMENT_ID = "G-8NF91REL39";
-
-const ga4Snippet = `
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NF91REL39"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-8NF91REL39');
-    </script>`;
-
-(function ensureGa4() {
-    if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
-    const loader = document.createElement("script");
-    loader.async = true;
-    loader.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-    document.head.appendChild(loader);
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag("js", new Date());
-    gtag("config", GA_MEASUREMENT_ID);
-})();
-
-const sharedStyles = `
-<style id="wealthmeter-component-styles">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>How Insurance Deductibles Become a Household Balance-Sheet Shock | WEALTHMETER.XYZ</title>
+  <meta name="description" content="A health deductible is a dated cash demand. A simple liquidity test shows whether a household can absorb it without expensive financing.">
+  <link rel="canonical" href="https://wealthmeter.xyz/how-insurance-deductibles-become-a-household-balance-sheet-shock.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How Insurance Deductibles Become a Household Balance-Sheet Shock">
+  <meta property="og:description" content="A health deductible becomes a financial shock when the bill arrives before usable cash.">
+  <meta property="og:image" content="https://wealthmeter.xyz/images/longform/deductible-liquidity-waterfall-2026-sep15.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How Insurance Deductibles Become a Household Balance-Sheet Shock","datePublished":"2026-09-15","dateModified":"2026-09-15","author":{"@type":"Organization","name":"WEALTHMETER.XYZ"},"mainEntityOfPage":"https://wealthmeter.xyz/how-insurance-deductibles-become-a-household-balance-sheet-shock.html","image":"https://wealthmeter.xyz/images/longform/deductible-liquidity-waterfall-2026-sep15.png"}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;color:#0f172a;font-family:Inter,Arial,sans-serif}.article{max-width:900px;margin:auto;padding:3rem 1.25rem 5rem}.badge,.meta,figcaption{font:700 .75rem/1.5 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.1em;color:#64748b}h1{font:900 clamp(2.25rem,5vw,4.15rem)/1.02 Outfit,Inter,sans-serif;letter-spacing:-.045em;margin:.7rem 0 1rem}.lead{font-size:1.3rem;line-height:1.55;font-weight:600;color:#1e293b}p,li,td,th{font-size:1.06rem;line-height:1.75;color:#334155}h2{margin:2.65rem 0 1rem;padding-top:1rem;border-top:1px solid #dbe4f0;font-size:.92rem;text-transform:uppercase;letter-spacing:.12em}.callout{border-left:4px solid #0b829b;background:#f0f8fb;padding:1rem 1.25rem;margin:1.6rem 0;font-weight:700}figure{margin:2.2rem 0;border:1px solid #dbe4f0;border-radius:14px;overflow:hidden;background:#fff}figure img{display:block;width:100%;height:auto}figcaption{padding:.8rem 1rem}a{color:#194d7a;font-weight:700}table{border-collapse:collapse;width:100%;margin:1.5rem 0}td,th{border:1px solid #dbe4f0;padding:.7rem;text-align:left;vertical-align:top}th{color:#0f172a;background:#f8fafc}.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem;margin:1.25rem 0}.related a{display:block;padding:1rem;border:1px solid #bfdbfe;border-radius:12px;background:#f8fbff;text-decoration:none}.sources{font-size:.98rem}.note{font-size:.92rem;color:#64748b}
+  </style>
+    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml"><style id="wealthmeter-component-styles">
     /* Monolith Pulse Animation */
     @keyframes monolithPulse {
         0% { transform: scaleY(1); }
@@ -377,10 +348,25 @@ const sharedStyles = `
         height: auto !important;
         object-fit: contain;
     }
-</style>
-`;
-
-const siteHeader = `
+</style><meta property="og:url" content="https://wealthmeter.xyz/how-insurance-deductibles-become-a-household-balance-sheet-shock.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How Insurance Deductibles Become a Household Balance-Sheet Shock | WEALTHMETER.XYZ">
+    <meta name="twitter:description" content="A health deductible is a dated cash demand. A simple liquidity test shows whether a household can absorb it without expensive financing.">
+    <meta name="twitter:image" content="https://wealthmeter.xyz/images/longform/deductible-liquidity-waterfall-2026-sep15.png">
+    <meta property="og:image:width" content="1376">
+    <meta property="og:image:height" content="768">
+    <meta property="og:image:alt" content="A health deductible is a dated cash demand. A simple liquidity test shows whether a household can absorb it without expensive financing.">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WEALTHMETER.XYZ","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"Longform","item":"https://wealthmeter.xyz/longform.html"},{"@type":"ListItem","position":3,"name":"How Insurance Deductibles Become a Household Balance-Sheet Shock","item":"https://wealthmeter.xyz/how-insurance-deductibles-become-a-household-balance-sheet-shock.html"}]}</script><!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NF91REL39"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8NF91REL39');
+    </script>
+</head>
+<body>
+<div id="header-placeholder" data-static-component="1">
 <header>
     <div class="nav-container">
         <div class="brand-wrapper">
@@ -494,35 +480,75 @@ const siteHeader = `
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
                 </div>
             </div>
-            <a href="https://lifemeter.xyz" target="_blank" rel="noopener" class="sister-site-link">LifeMeter ↗</a>
         </nav>
     </div>
-</header>`;
+</header>
+</div>
+<main class="article">
+  <div class="badge">Household liquidity · September 15, 2026</div>
+  <h1>How Insurance Deductibles Become a Household Balance-Sheet Shock</h1>
+  <p class="lead">A deductible is a contract term until somebody needs care. Then it becomes a cash demand with a due date.</p>
+  <p class="meta">One medical event · two financial pressures · a test for usable reserves</p>
 
-const WM_FEEDBACK_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdW_INDPOwoI_XjecCzhp38-IEu-GeA5oTUlPT59V1kKT5fKw/formResponse";
+  <p>Health insurance limits exposure, but it does not make the first part of a medical bill disappear. In the 2025 KFF Employer Health Benefits Survey, 88 percent of covered workers with single coverage were enrolled in a plan with a general annual deductible. Among workers whose plans had one, the average deductible for single coverage was $1,886. Thirty-four percent of covered workers faced a single-coverage deductible of at least $2,000.</p>
+  <p>Those figures describe plan design, not a household's ability to pay. The financial question is whether the bill can be met on the timetable of treatment without revolving credit, a retirement withdrawal, a forced asset sale, or a loan against the house. Net worth can look substantial while cash available this week is thin.</p>
+  <div class="callout">Insurance limits the loss. Liquidity determines whether the household can finance the first part of it.</div>
 
-function wealthMeterFeedbackForm(variant) {
-    const extraClass = variant === "result" ? " wm-feedback--result" : "";
-    return `
-<form class="wm-feedback${extraClass}" data-wm-feedback action="${WM_FEEDBACK_ACTION}" method="POST" target="wm-feedback-sink">
-    <p class="wm-feedback-lede">Something off? Tell us.</p>
-    <div class="wm-feedback-fields">
-        <input type="text" class="wm-feedback-hp" data-wm-honeypot name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <input type="hidden" name="entry.652485851" value="WealthMeter">
-        <input type="hidden" name="entry.2128319260" value="" data-wm-feedback-page>
-        <label>Email <span class="wm-feedback-optional">(optional)</span>
-            <input type="email" name="entry.1004053268" autocomplete="email" placeholder="you@example.com">
-        </label>
-        <label>Feedback
-            <textarea name="entry.1773870348" required rows="3" placeholder="What should we fix?"></textarea>
-        </label>
-        <button class="wm-feedback-submit" type="submit">Send</button>
-    </div>
-    <p class="wm-feedback-thanks" data-wm-feedback-thanks hidden aria-live="polite">Got it. We'll use this to fix the site.</p>
-</form>`;
-}
+  <h2>The shock is larger than the deductible</h2>
+  <p>A deductible is the amount a patient pays for certain covered services before the plan begins paying, subject to the plan's rules. It is not the same as the out-of-pocket maximum. Copayments and coinsurance may continue after the deductible has been met. Premiums, uncovered services, some out-of-network care, and charges above an insurer's allowed amount may not count toward the maximum.</p>
+  <p>The medical event can also reduce income. Time away from work, unpaid leave, travel, caregiving, and follow-up visits can arrive beside the bill. A household that plans only for the deductible may therefore understate the full cash demand.</p>
+  <figure>
+    <img src="/images/longform/deductible-liquidity-waterfall-2026-sep15.png" alt="Waterfall showing how a medical deductible and related costs can consume household cash" width="1376" height="768">
+    <figcaption>The pressure comes from several obligations arriving in the same period.</figcaption>
+  </figure>
 
-const siteFooter = `
+  <h2>Run a dated cash-flow test</h2>
+  <p>Start with the household's actual summary of benefits and coverage. Record the individual and family deductibles, the family structure of those deductibles, the coinsurance rules, and the out-of-pocket maximum. Then separate money that can be used within days from wealth that requires a sale, loan, penalty, or long settlement period.</p>
+  <table>
+    <thead><tr><th>Input</th><th>Use the household's number</th><th>Common error</th></tr></thead>
+    <tbody>
+      <tr><td>Near-term medical exposure</td><td>Deductible plus likely coinsurance and copayments</td><td>Using the deductible as the maximum possible bill</td></tr>
+      <tr><td>Accessible cash</td><td>Cash and insured deposits available within days</td><td>Counting home equity or retirement assets as immediate cash</td></tr>
+      <tr><td>Essential monthly spending</td><td>Housing, food, transport, premiums, debt payments, and care</td><td>Assuming normal spending stops during recovery</td></tr>
+      <tr><td>Income interruption</td><td>Unpaid leave, reduced hours, or caregiving time</td><td>Testing the bill but not the lost income</td></tr>
+    </tbody>
+  </table>
+  <p>The output is a financing gap, not a generic rule of thumb:</p>
+  <div class="callout">Near-term medical costs + essential spending + income lost during recovery − cash available within days = the amount that would need financing.</div>
+
+  <p>Consider an illustrative household with a $3,000 family deductible, another $1,000 of plausible coinsurance and copayments, $4,500 of essential monthly spending, and $1,500 of income lost during recovery. If $6,000 is accessible within days, the test exposes a $4,000 financing gap. The example is not a reserve target. It shows why one annual deductible number is not enough.</p>
+  <figure>
+    <img src="/images/longform/deductible-cashflow-test-2026-sep15.png" alt="Checklist for testing a household's ability to absorb a medical deductible" width="1376" height="768" loading="lazy">
+    <figcaption>Use plan documents and current cash balances, not remembered estimates.</figcaption>
+  </figure>
+
+  <h2>An HSA helps, but it is not the whole plan</h2>
+  <p>A funded health savings account can create a dedicated, tax-advantaged source for eligible medical expenses. Employer contributions can materially reduce the household's effective exposure. KFF's survey also shows that many employer contributions do not fully cover the deductible, and the account may not cover the income interruption or ordinary bills that continue during recovery.</p>
+  <p>The account's investment policy matters. Money intended for near-term medical claims should not be treated as fully available if it is exposed to market losses or requires time to settle. The same distinction applies to a credit line. Borrowing capacity may provide a backstop, but it is not equivalent to a reserve because the medical event leaves a repayment obligation behind.</p>
+
+  <h2>Build the reserve in layers</h2>
+  <p>The first layer is immediate cash for routine deductibles, copayments, and a brief disruption. The second is a broader emergency reserve for a longer income gap. Insurance is the third layer, limiting losses that would overwhelm ordinary savings. The layers work together. None should be assumed to perform the job of all three.</p>
+  <p>Recheck the test at open enrollment, after a job change, when adding a dependent, and after a material change in savings or debt. Deductibles reset. Family rules differ. A plan that fit last year may produce a different financing gap this year.</p>
+
+  <h2>Connect the number to the rest of the balance sheet</h2>
+  <p>This analysis is the medical version of a broader wealth problem: an asset can be valuable without being liquid. WealthMeter's <a href="/home-equity-is-not-emergency-liquidity.html">home-equity analysis</a> explains why a house does not automatically fund an emergency. The <a href="/asset-rich-cash-poor-paradox.html">asset-rich, cash-poor guide</a> shows how strong net worth can coexist with fragile monthly finances.</p>
+  <p>Use the <a href="/runway_lab.html">Financial Runway Lab</a> to test how cash reserves, fixed obligations, and an income interruption interact. The result should support a household decision, not create a false promise that one reserve number fits every plan and family.</p>
+
+  <div class="related">
+    <a href="/runway_lab.html">Stress-test the household's financial runway</a>
+    <a href="/home-equity-is-not-emergency-liquidity.html">Why home equity is not emergency cash</a>
+    <a href="/reports.html">Browse WealthMeter reports</a>
+  </div>
+
+  <h2>Sources</h2>
+  <div class="sources">
+    <p><a href="https://www.kff.org/health-costs/2025-employer-health-benefits-survey/">KFF, 2025 Employer Health Benefits Survey.</a></p>
+    <p><a href="https://www.healthcare.gov/choose-a-plan/your-total-costs/">HealthCare.gov guide to premiums, deductibles, and out-of-pocket costs.</a></p>
+    <p><a href="https://www.healthcare.gov/glossary/out-of-pocket-maximum-limit/">HealthCare.gov definition of the out-of-pocket maximum and its exclusions.</a></p>
+  </div>
+  <p class="note">This article is educational and does not provide financial, insurance, or medical advice.</p>
+</main>
+<div id="footer-placeholder" data-static-component="1">
 <footer>
     <form class="wm-feedback" data-wm-feedback action="https://docs.google.com/forms/d/e/1FAIpQLSdW_INDPOwoI_XjecCzhp38-IEu-GeA5oTUlPT59V1kKT5fKw/formResponse" method="POST" target="wm-feedback-sink">
         <p class="wm-feedback-lede">Something off? Tell us.</p>
@@ -546,146 +572,7 @@ const siteFooter = `
         <a href="privacy.html">Privacy Policy</a>
         <a href="disclaimer.html">Disclaimer</a>
     </div>
-</footer>`;
-
-function ensureFeedbackSink() {
-    if (document.getElementById("wm-feedback-sink")) return;
-    const iframe = document.createElement("iframe");
-    iframe.id = "wm-feedback-sink";
-    iframe.name = "wm-feedback-sink";
-    iframe.title = "Feedback submission";
-    iframe.setAttribute("aria-hidden", "true");
-    iframe.style.display = "none";
-    document.body.appendChild(iframe);
-}
-
-function submitWealthMeterFeedback(form) {
-    const honeypot = form.querySelector("[data-wm-honeypot]");
-    if (honeypot && honeypot.value.trim()) return true;
-
-    const feedback = form.querySelector('[name="entry.1773870348"]');
-    const message = (feedback && feedback.value ? feedback.value : "").trim();
-    if (!message) {
-        if (feedback) feedback.reportValidity();
-        return false;
-    }
-
-    const email = (form.querySelector('[name="entry.1004053268"]')?.value || "").trim();
-    const page = window.location.pathname || "/";
-    const body = new FormData();
-    body.append("entry.652485851", "WealthMeter");
-    body.append("entry.1004053268", email);
-    body.append("entry.1773870348", message);
-    body.append("entry.2128319260", page);
-
-    fetch(WM_FEEDBACK_ACTION, { method: "POST", mode: "no-cors", body }).catch(() => {});
-    return true;
-}
-
-function showFeedbackThanks(form) {
-    form.classList.add("is-sent");
-    const thanks = form.querySelector("[data-wm-feedback-thanks]");
-    if (thanks) thanks.hidden = false;
-}
-
-function bindFeedbackForms(root) {
-    ensureFeedbackSink();
-    (root || document).querySelectorAll("[data-wm-feedback]").forEach((form) => {
-        if (form.dataset.wmBound === "1") return;
-        form.dataset.wmBound = "1";
-        const pageInput = form.querySelector("[data-wm-feedback-page]");
-        if (pageInput) pageInput.value = window.location.pathname || "/";
-        form.addEventListener("submit", (event) => {
-            event.preventDefault();
-            if (!submitWealthMeterFeedback(form)) return;
-            showFeedbackThanks(form);
-        });
-    });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    const sharedStyleEl = document.getElementById("wealthmeter-component-styles");
-    if (!sharedStyleEl || !sharedStyleEl.textContent.trim()) {
-        if (sharedStyleEl) {
-            sharedStyleEl.outerHTML = sharedStyles;
-        } else {
-            document.head.insertAdjacentHTML("beforeend", sharedStyles);
-        }
-    } else if (!document.getElementById("wm-feedback-styles")) {
-        const feedbackCss = document.createElement("style");
-        feedbackCss.id = "wm-feedback-styles";
-        const sharedCss = sharedStyles.replace(/^[\s\S]*<style[^>]*>/, "").replace(/<\/style>[\s\S]*$/, "");
-        const feedbackStart = sharedCss.indexOf(".wm-feedback {");
-        if (feedbackStart !== -1) feedbackCss.textContent = sharedCss.slice(feedbackStart);
-        document.head.appendChild(feedbackCss);
-    }
-    const headerEl = document.getElementById("header-placeholder");
-    const footerEl = document.getElementById("footer-placeholder");
-    if (headerEl && headerEl.dataset.staticComponent !== "1") {
-        headerEl.innerHTML = siteHeader;
-    }
-    if (footerEl && footerEl.dataset.staticComponent !== "1") {
-        footerEl.innerHTML = siteFooter;
-    }
-    const resultSlot = document.getElementById("result-feedback-slot");
-    if (resultSlot && !resultSlot.querySelector("[data-wm-feedback]")) {
-        resultSlot.innerHTML = wealthMeterFeedbackForm("result");
-    }
-    bindFeedbackForms(document);
-
-    const isMobile = window.matchMedia("(max-width: 1024px)").matches;
-    const navGroups = Array.from(document.querySelectorAll(".nav-group"));
-    const labels = navGroups.map((group, index) => {
-        const label = group.querySelector(".nav-group-label");
-        const dropdown = group.querySelector(".dropdown");
-        if (!label || !dropdown) return null;
-        if (!dropdown.id) dropdown.id = `wm-nav-dropdown-${index + 1}`;
-        label.setAttribute("role", "button");
-        label.setAttribute("tabindex", "0");
-        label.setAttribute("aria-haspopup", "true");
-        label.setAttribute("aria-controls", dropdown.id);
-        label.setAttribute("aria-expanded", "false");
-        return label;
-    }).filter(Boolean);
-
-    const closeAllMenus = () => {
-        navGroups.forEach((group) => group.classList.remove("open"));
-        labels.forEach((label) => label.setAttribute("aria-expanded", "false"));
-    };
-
-    if (isMobile) {
-        navGroups.forEach((group) => {
-            const label = group.querySelector(".nav-group-label");
-            if (!label) return;
-            label.addEventListener("click", (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                const willOpen = !group.classList.contains("open");
-                closeAllMenus();
-                if (willOpen) {
-                    group.classList.add("open");
-                    label.setAttribute("aria-expanded", "true");
-                }
-            });
-            label.addEventListener("keydown", (event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    label.click();
-                }
-            });
-        });
-
-        document.addEventListener("click", (event) => {
-            if (!event.target.closest(".nav-group")) closeAllMenus();
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape") closeAllMenus();
-        });
-
-        document.querySelectorAll(".dropdown a").forEach((link) => {
-            link.addEventListener("click", () => closeAllMenus());
-        });
-    }
-
-});
+</footer>
+</div>
+</body>
+</html>
