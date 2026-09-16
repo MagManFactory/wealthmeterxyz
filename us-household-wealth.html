@@ -46,6 +46,7 @@
         .source-pill { display:inline-flex; margin-top:26px; padding:10px 16px; border:1px solid #bfdbfe; background:#eff6ff; border-radius:999px; color:#1d4ed8; font-size:.78rem; font-weight:800; letter-spacing:.05em; }
         .shell { width:min(1120px,calc(100% - 32px)); margin:0 auto 80px; }
         .calculator { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); background:var(--card); border:1px solid var(--line); border-radius:30px; overflow:hidden; box-shadow:0 28px 80px rgba(15,23,42,.08); }
+        .inputs,.result,.stat,.diag-metric { min-width:0; }
         .inputs { padding:48px; border-right:1px solid var(--line); }
         .inputs h2,.result h2,.method h2 { font:800 1.55rem/1.15 Outfit,sans-serif; margin:0 0 12px; }
         .helper { color:var(--muted); line-height:1.65; font-size:.94rem; }
@@ -70,21 +71,38 @@
         .segment { min-width:3px; background:#cbd5e1; transition:.25s ease; }
         .segment.active { background:linear-gradient(90deg,var(--blue),var(--cyan)); transform:scaleY(1.28); }
         .band-note { color:var(--muted); font-size:.84rem; line-height:1.55; }
-        .share-row { display:flex; flex-wrap:wrap; gap:9px; margin-top:28px; }
-        .share-row button { padding:12px 15px; border-radius:10px; background:#eaf1ff; color:#1d4ed8; }
+        .share-section { margin-top:28px; padding-top:24px; border-top:1px solid var(--line); text-align:center; }
+        .share-label { color:var(--muted); font-size:.68rem; font-weight:900; letter-spacing:.15em; text-transform:uppercase; }
+        .social-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:16px; }
+        .social-btn { width:48px; height:48px; display:flex; align-items:center; justify-content:center; padding:0; border:0; border-radius:10px; cursor:pointer; transition:transform .2s ease,box-shadow .2s ease; }
+        .social-btn:hover { transform:translateY(-2px); box-shadow:0 8px 18px rgba(15,23,42,.18); }
+        .social-btn svg { width:22px; height:22px; fill:#fff; }
         .method { margin-top:28px; padding:44px; border:1px solid var(--line); border-radius:28px; background:#fff; }
         .method-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px; }
         .method-card { padding:22px; border-radius:18px; background:#f8fafc; border:1px solid var(--line); }
         .method-card h3 { margin:0 0 8px; font:800 1rem Outfit,sans-serif; }
         .method-card p { margin:0; color:var(--muted); font-size:.88rem; line-height:1.6; }
         .sources { margin-top:30px; padding-top:24px; border-top:1px solid var(--line); color:var(--muted); font-size:.86rem; line-height:1.8; }
-        #shareCard { position:fixed; left:-10000px; top:0; width:1200px; min-height:1200px; padding:90px; background:#f8fafc; color:#0f172a; }
-        #shareCard .share-brand { font:900 34px Outfit,sans-serif; letter-spacing:.08em; }
-        #shareCard .share-title { margin-top:120px; color:#2563eb; font:900 24px Inter,sans-serif; letter-spacing:.18em; text-transform:uppercase; }
-        #shareCard .share-band { margin-top:25px; font:900 80px/1 Outfit,sans-serif; letter-spacing:-.04em; }
-        #shareCard .share-percent { margin-top:70px; padding:46px; border-radius:28px; background:#fff; border:2px solid #dbe4ef; font:900 74px Roboto Mono,monospace; }
-        #shareCard .share-source { margin-top:90px; color:#64748b; font:700 24px/1.6 Inter,sans-serif; }
-        @media(max-width:800px){ .hero{padding-top:64px}.calculator{grid-template-columns:1fr}.inputs{padding:30px;border-right:0;border-bottom:1px solid var(--line)}.result{padding:30px;min-height:520px}.method{padding:30px}.method-grid{grid-template-columns:1fr} }
+        #shareCard { width:100%; aspect-ratio:1; display:flex; flex-direction:column; margin-top:28px; padding:clamp(24px,5vw,42px); border-radius:24px; overflow:hidden; position:relative; background:linear-gradient(150deg,#07111f 0%,#101f36 70%,#0b2940 100%); color:#f8fafc; box-shadow:0 24px 60px rgba(15,23,42,.22); text-align:left; }
+        #shareCard::after { content:''; position:absolute; right:-18%; bottom:-28%; width:70%; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,rgba(8,145,178,.3),transparent 66%); }
+        .diag-header,.diag-metrics,.diag-benchmark,.diag-footer { position:relative; z-index:1; }
+        .diag-header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+        .diag-brand { display:flex; align-items:center; gap:9px; font:900 clamp(13px,2.4vw,20px) Outfit,sans-serif; letter-spacing:-.03em; }
+        .diag-mark { display:flex; align-items:flex-end; gap:3px; height:24px; }
+        .diag-mark span { width:5px; border-radius:2px 2px 0 0; }
+        .diag-mark span:nth-child(1){height:13px;background:#ff4b4b}.diag-mark span:nth-child(2){height:22px;background:#f8fafc}.diag-mark span:nth-child(3){height:10px;background:#22d3ee}
+        .diag-pill { padding:6px 9px; border:1px solid rgba(250,204,21,.5); border-radius:999px; background:rgba(250,204,21,.12); color:#fde047; font-size:clamp(7px,1.4vw,10px); font-weight:900; letter-spacing:.09em; text-transform:uppercase; }
+        .diag-kicker { position:relative; z-index:1; margin-top:auto; color:#38bdf8; font-size:clamp(8px,1.5vw,11px); font-weight:900; letter-spacing:.17em; text-transform:uppercase; }
+        #shareCard .share-band { position:relative; z-index:1; margin-top:7px; font:900 clamp(27px,6vw,48px)/.98 Outfit,sans-serif; letter-spacing:-.045em; }
+        .diag-metrics { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:20px; }
+        .diag-metric { padding:clamp(12px,2.5vw,19px); border:1px solid rgba(148,163,184,.24); border-radius:15px; background:rgba(255,255,255,.07); }
+        .diag-metric-label { color:#94a3b8; font-size:clamp(7px,1.3vw,9px); font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+        .diag-metric-value { margin-top:6px; color:#fff; font:800 clamp(13px,4vw,30px) Roboto Mono,monospace; letter-spacing:-.05em; white-space:nowrap; }
+        .diag-benchmark { margin-top:10px; padding:11px 13px; border-left:3px solid #facc15; background:rgba(250,204,21,.08); color:#dbeafe; font-size:clamp(9px,1.7vw,12px); font-weight:700; line-height:1.45; }
+        .diag-footer { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-top:15px; padding-top:12px; border-top:1px solid rgba(148,163,184,.22); color:#94a3b8; font-size:clamp(7px,1.35vw,9px); line-height:1.45; }
+        .diag-url { color:#fff; font-weight:900; white-space:nowrap; }
+        @media(max-width:800px){ .hero{padding-top:64px}.calculator{grid-template-columns:minmax(0,1fr)}.inputs{padding:30px;border-right:0;border-bottom:1px solid var(--line)}.result{padding:30px;min-height:520px}.method{padding:30px}.method-grid{grid-template-columns:1fr} }
+        @media(max-width:480px){ .hero h1{font-size:2.55rem}.hero p{font-size:1rem}.inputs,.result,.method{padding:26px}.band{font-size:1.65rem}.stat-grid{grid-template-columns:1fr}.diag-brand{font-size:11px}.diag-pill{font-size:6.5px;padding:5px 7px}.diag-metric-value{font-size:12px}.diag-benchmark{font-size:8px}.diag-footer{font-size:6px}.social-grid{gap:8px}.social-btn{width:44px;height:44px} }
         body.dark-mode { --ink:#f8fafc; --muted:#a8b4c7; --line:#334155; --paper:#08111f; --card:#101b2c; --soft:#172554; }
         body.dark-mode .result { background:linear-gradient(160deg,#101b2c,#0b1423); }
         body.dark-mode input,body.dark-mode select,body.dark-mode .method-card,body.dark-mode .stat { background:#0b1423; color:#f8fafc; }
@@ -453,8 +471,32 @@
                         </div>
                         <div class="distribution" id="distribution" aria-label="Published wealth distribution"></div>
                         <p class="band-note" id="bandNote"></p>
-                        <div class="share-row">
-                            <button type="button" onclick="shareResult('X')">Share on X</button><button type="button" onclick="shareResult('IN')">LinkedIn</button><button type="button" onclick="shareResult('WA')">WhatsApp</button><button type="button" onclick="downloadResult()">Download card</button>
+                        <div id="shareCard" aria-label="U.S. household wealth diagnostic card">
+                            <div class="diag-header">
+                                <div class="diag-brand"><span class="diag-mark"><span></span><span></span><span></span></span>WEALTHMETER.XYZ</div>
+                                <div class="diag-pill">U.S. household wealth</div>
+                            </div>
+                            <div class="diag-kicker">2024 Census wealth diagnostic</div>
+                            <div class="share-band" id="shareBand">—</div>
+                            <div class="diag-metrics">
+                                <div class="diag-metric"><div class="diag-metric-label">Percentile interval</div><div class="diag-metric-value" id="sharePercent">—</div></div>
+                                <div class="diag-metric"><div class="diag-metric-label">Household rank interval</div><div class="diag-metric-value" id="shareRank">—</div></div>
+                            </div>
+                            <div class="diag-benchmark" id="shareBenchmark">—</div>
+                            <div class="diag-footer"><span>U.S. Census Bureau · 2025 SIPP<br>Wealth year 2024 · Released July 2026</span><span class="diag-url">wealthmeter.xyz</span></div>
+                        </div>
+                        <div class="share-section">
+                            <div class="share-label">Share diagnostic card</div>
+                            <div class="social-grid">
+                                <button class="social-btn" style="background:#000" type="button" title="Share on X" aria-label="Share on X" onclick="shareResult('X')"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+                                <button class="social-btn" style="background:#0A66C2" type="button" title="Share on LinkedIn" aria-label="Share on LinkedIn" onclick="shareResult('IN')"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></button>
+                                <button class="social-btn" style="background:#25D366" type="button" title="Share on WhatsApp" aria-label="Share on WhatsApp" onclick="shareResult('WA')"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg></button>
+                                <button class="social-btn" style="background:#0088cc" type="button" title="Share on Telegram" aria-label="Share on Telegram" onclick="shareResult('TG')"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.87 1.18-5.26 3.47-.5.34-.95.5-1.34.49-.44-.01-1.28-.24-1.9-.45-.77-.25-1.38-.39-1.32-.82.03-.22.33-.45.89-.69 3.48-1.51 5.8-2.51 6.96-2.99 3.31-1.37 3.99-1.61 4.44-1.61.1 0 .33.02.48.15.12.1.16.23.18.33.02.1.03.24.01.32z"/></svg></button>
+                                <button class="social-btn" style="background:#FF4500" type="button" title="Share on Reddit" aria-label="Share on Reddit" onclick="shareResult('RD')"><svg viewBox="0 0 24 24"><path d="M22 11.5c0-1.38-1.12-2.5-2.5-2.5-.54 0-1.04.18-1.44.48-1.63-1.12-3.83-1.85-6.26-1.93l1.1-5.17 3.6.75c.08.7.67 1.25 1.4 1.25 1.38 0 2.5-1.12 2.5-2.5S19.38 0 18 0c-1.1 0-2.02.71-2.34 1.7l-4.13-.88c-.19-.04-.38.08-.43.27l-1.3 6.1c-2.48.05-4.73.78-6.39 1.93-.4-.3-.9-.48-1.44-.48-1.38 0-2.5 1.12-2.5 2.5 0 .96.54 1.8 1.34 2.22-.06.24-.09.5-.09.76 0 3.1 3.58 5.62 8 5.62s8-2.52 8-5.62c0-.26-.03-.52-.09-.76.8-.42 1.34-1.26 1.34-2.22m-13.5 0c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5m6.81 4.73c-1.03 1.03-2.98 1.11-3.31 1.11-.33 0-2.28-.08-3.31-1.11-.1-.1-.1-.26 0-.35.1-.1.26-.1.35 0 .8.8 2.37.93 2.96.93s2.16-.13 2.96-.93c.1-.1.26-.1.35 0 .1.09.1.25 0 .35m-.31-3.23c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></button>
+                                <button class="social-btn" style="background:#34C759" type="button" title="Share by message" aria-label="Share by message" onclick="shareResult('IM')"><svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 20.2A1 1 0 0 0 3.8 21.454l3.032-.892A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 2c4.411 0 8 3.589 8 8s-3.589 8-8 8a7.96 7.96 0 0 1-4.126-1.147 1 1 0 0 0-.773-.105l-2.125.625.625-2.125a1 1 0 0 0-.105-.773A7.96 7.96 0 0 1 4 12c0-4.411 3.589-8 8-8z"/></svg></button>
+                                <button class="social-btn" style="background:#DC2626" type="button" title="Share by email" aria-label="Share by email" onclick="shareResult('EM')"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></button>
+                                <button class="social-btn" style="background:#475569" type="button" title="Download diagnostic card" aria-label="Download diagnostic card" onclick="downloadResult()"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -508,15 +550,6 @@
 </footer>
 </div>
 
-    <div id="shareCard" aria-hidden="true">
-        <div class="share-brand">WEALTHMETER.XYZ</div>
-        <div class="share-title">U.S. household wealth diagnostic</div>
-        <div class="share-band" id="shareBand">—</div>
-        <div class="share-percent" id="sharePercent">—</div>
-        <div class="share-source" id="shareBenchmark">—</div>
-        <div class="share-source">Source: U.S. Census Bureau 2025 SIPP, wealth year 2024 · Released July 2026<br>wealthmeter.xyz/us-household-wealth.html</div>
-    </div>
-
     <script src="components.js?v=2026-09-15.2"></script>
     <script>
     const BINS = [
@@ -560,23 +593,33 @@
         document.getElementById('bandNote').textContent=`${group.p[binIndex].toFixed(1)}% of this comparison group is in the same published band. Rank 1 represents the wealthiest household. Percentages are rounded in the source table.`;
         document.getElementById('distribution').innerHTML=group.p.map((v,i)=>`<span class="segment ${i===binIndex?'active':''}" style="flex:${v}" title="${BINS[i].label}: ${v}%"></span>`).join('');
         document.getElementById('shareBand').textContent=BINS[binIndex].label;
-        document.getElementById('sharePercent').textContent=`${lower.toFixed(1)}–${upper.toFixed(1)} percentile`;
-        document.getElementById('shareBenchmark').textContent=`Benchmark: ${group.name} · household rank #${compact(richerLow)}–#${compact(richerHigh)}`;
+        document.getElementById('sharePercent').textContent=`${lower.toFixed(1)}–${upper.toFixed(1)}`;
+        document.getElementById('shareRank').textContent=`#${compact(richerLow)}–#${compact(richerHigh)}`;
+        document.getElementById('shareBenchmark').textContent=`Benchmark: ${group.name} · ${compact(group.count)} households`;
     }
     function resultText(){ return `My household net worth is in the ${BINS[latest.binIndex].label} Census wealth band — the ${latest.lower.toFixed(1)}–${latest.upper.toFixed(1)} percentile for ${latest.group.name.toLowerCase()}.`; }
     async function shareResult(platform){
         if(!latest) calculateHousehold();
         const text=resultText(), page='https://wealthmeter.xyz/us-household-wealth.html';
-        const canvas=await html2canvas(document.getElementById('shareCard'),{scale:1});
+        const canvas=await html2canvas(document.getElementById('shareCard'),{scale:2,backgroundColor:'#07111f'});
         const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));
         const file=new File([blob],'WealthMeter_US_Household_Wealth.png',{type:'image/png'});
         if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){ try{await navigator.share({files:[file],title:'U.S. Household Wealth Diagnostic',text});return;}catch(_){} }
-        const maps={X:`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(page)}`,IN:`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(page)}`,WA:`https://wa.me/?text=${encodeURIComponent(text+' '+page)}`};
+        const url=encodeURIComponent(page), message=encodeURIComponent(text);
+        const maps={
+            X:`https://twitter.com/intent/tweet?text=${message}&url=${url}`,
+            IN:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+            WA:`https://wa.me/?text=${encodeURIComponent(text+' '+page)}`,
+            TG:`https://t.me/share/url?url=${url}&text=${message}`,
+            RD:`https://reddit.com/submit?url=${url}&title=${message}`,
+            IM:`sms:&body=${encodeURIComponent(text+' '+page)}`,
+            EM:`mailto:?subject=${encodeURIComponent('U.S. Household Wealth Diagnostic')}&body=${encodeURIComponent(text+' '+page)}`
+        };
         if(maps[platform]) window.open(maps[platform],'_blank','noopener');
     }
     function downloadResult(){
         if(!latest) calculateHousehold();
-        html2canvas(document.getElementById('shareCard'),{scale:1}).then(canvas=>{const a=document.createElement('a');a.download='WealthMeter_US_Household_Wealth.png';a.href=canvas.toDataURL('image/png');a.click();});
+        html2canvas(document.getElementById('shareCard'),{scale:2,backgroundColor:'#07111f'}).then(canvas=>{const a=document.createElement('a');a.download='WealthMeter_US_Household_Wealth.png';a.href=canvas.toDataURL('image/png');a.click();});
     }
     document.addEventListener('DOMContentLoaded',()=>{
         calculateHousehold();
