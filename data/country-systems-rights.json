@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "reviewed": "2026-09-16",
+  "releaseRule": "Only indicators marked approved may be included in a public build.",
+  "providers": {
+    "world-bank": {
+      "status": "approved_with_indicator_review",
+      "licence": "CC BY 4.0 unless indicator metadata states otherwise",
+      "terms": "https://data.worldbank.org/summary-terms-of-use",
+      "requirements": [
+        "Name the World Bank, dataset, indicator, observation year and access date",
+        "Preserve the original provider shown in indicator metadata",
+        "Do not imply endorsement or use the World Bank logo",
+        "Exclude indicators carrying incompatible third-party restrictions"
+      ]
+    },
+    "undata": {
+      "status": "approved_with_source_attribution",
+      "terms": "https://data.un.org/Host.aspx?Content=UNdataUse",
+      "requirements": [
+        "Cite UNdata as the reference",
+        "Name the original custodian agency",
+        "Preserve source metadata and observation year"
+      ]
+    },
+    "oecd": {
+      "status": "approved_per_dataset",
+      "terms": "https://www.oecd.org/en/about/oecd-open-by-default-policy.html",
+      "requirements": [
+        "Verify the licence on each dataset",
+        "Identify adaptations",
+        "Do not use the OECD logo or imply endorsement"
+      ]
+    },
+    "itu": {
+      "status": "permission_pending",
+      "licence": "CC BY-NC-SA 3.0 IGO",
+      "trackingId": "CS-ITU-20260916",
+      "productionUse": false
+    },
+    "who": {
+      "status": "permission_pending",
+      "trackingId": "CS-WHO-20260916",
+      "productionUse": false
+    },
+    "irena": {
+      "status": "permission_pending",
+      "trackingId": "CS-IRENA-20260916",
+      "productionUse": false
+    }
+  }
+}

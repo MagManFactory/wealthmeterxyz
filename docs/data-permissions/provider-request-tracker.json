@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "owner": "Michelle Martin",
+  "project": "Country Systems Atlas",
+  "updated": "2026-09-16",
+  "requests": [
+    {
+      "trackingId": "CS-ITU-20260916",
+      "provider": "International Telecommunication Union",
+      "to": ["indicators@itu.int"],
+      "cc": [],
+      "status": "draft_sent_for_clearance",
+      "sentByMichelleAt": null,
+      "responseReceivedAt": null,
+      "decision": null,
+      "conditions": [],
+      "evidence": null
+    },
+    {
+      "trackingId": "CS-WHO-20260916",
+      "provider": "World Health Organization",
+      "to": ["gho_info@who.int"],
+      "cc": [],
+      "status": "draft_sent_for_clearance",
+      "sentByMichelleAt": null,
+      "responseReceivedAt": null,
+      "decision": null,
+      "conditions": [],
+      "evidence": null
+    },
+    {
+      "trackingId": "CS-IRENA-20260916",
+      "provider": "International Renewable Energy Agency",
+      "to": ["statistics@irena.org"],
+      "cc": ["info@irena.org"],
+      "status": "draft_sent_for_clearance",
+      "sentByMichelleAt": null,
+      "responseReceivedAt": null,
+      "decision": null,
+      "conditions": [],
+      "evidence": null
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Country Systems Atlas — Phase 1 Prototype | WEALTHMETER.XYZ</title>
+  <meta name="description" content="Internal Phase 1 prototype for comparing how national systems translate capital into practical opportunity.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/country-systems.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <main class="systems-shell">
+    <section class="systems-hero">
+      <div class="systems-kicker">Country Systems Atlas · WealthMeter lens</div>
+      <h1>Where does capital become capability?</h1>
+      <p>Compare the systems that determine what wealth can actually do: productive capacity, infrastructure, logistics, essential access, and the longevity outcomes that sit downstream.</p>
+      <span class="prototype-flag">Phase 1 · internal prototype · not indexed</span>
+    </section>
+
+    <section class="systems-controls" aria-label="Country comparison controls">
+      <div class="control-field"><label for="country-a">Country one</label><select id="country-a" data-country-select></select></div>
+      <div class="control-field"><label for="country-b">Country two</label><select id="country-b" data-country-select></select></div>
+      <div class="control-field"><label for="country-c">Country three</label><select id="country-c" data-country-select></select></div>
+      <div class="control-field"><label for="country-d">Country four</label><select id="country-d" data-country-select></select></div>
+    </section>
+
+    <div class="systems-grid">
+      <section class="systems-card">
+        <div class="card-heading"><div><span class="systems-eyebrow">Comparison matrix</span><h2>Eight measures. Years exposed.</h2><p>Bars show position within this 30-country prototype, not a global rank. Settlement and investment shares are descriptive, not scored as inherently good or bad.</p></div></div>
+        <div class="comparison-table-wrap" data-comparison-matrix aria-live="polite"></div>
+      </section>
+
+      <div>
+        <section class="systems-card">
+          <div class="card-heading"><div><span class="systems-eyebrow">System conversion</span><h2>Income versus lifespan</h2><p>Selected countries are highlighted against the full prototype set.</p></div></div>
+          <div class="chart-frame" data-scatter></div>
+        </section>
+        <section class="systems-card">
+          <div class="card-heading"><div><span class="systems-eyebrow">Direction matters</span><h2 data-trend-title>Life expectancy</h2></div><div class="control-field"><label for="trend-metric">Trend measure</label><select id="trend-metric" data-focus-select></select></div></div>
+          <div class="chart-frame" data-trend></div>
+        </section>
+      </div>
+    </div>
+
+    <section class="systems-method">
+      <article class="systems-card">
+        <span class="systems-eyebrow">Interpretation rules</span>
+        <h2>Comparison without a false master score</h2>
+        <ul class="method-list">
+          <li>Every value carries its own observation year; “latest” is not treated as one common date.</li>
+          <li>No overall development score is calculated.</li>
+          <li>Percentile-style bars are confined to the 30 countries in this prototype.</li>
+          <li>Mobile coverage, WHO health-system measures, and IRENA renewable statistics remain excluded while permissions are pending.</li>
+          <li>Source snapshots are generated from the World Bank Indicators API rather than fetched in a visitor’s browser.</li>
+        </ul>
+        <p class="systems-note">Snapshot generated <span data-generated>—</span>. Data may be revised by the publisher. This prototype is analytical, not investment, medical, migration, or policy advice.</p>
+      </article>
+      <article class="systems-card">
+        <span class="systems-eyebrow">Source register</span>
+        <h2>Indicator-level provenance</h2>
+        <div class="source-list" data-source-list></div>
+        <p class="systems-note">Primary delivery source: <a class="systems-link" href="https://data.worldbank.org/" rel="noopener">World Development Indicators</a>. Reuse is governed by the World Bank dataset terms and applicable indicator-level third-party metadata. No source organization endorses this prototype.</p>
+      </article>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="components.js?v=2026-09-15.2"></script>
+  <script src="assets/country-systems.js"></script>
+</body>
+</html>
