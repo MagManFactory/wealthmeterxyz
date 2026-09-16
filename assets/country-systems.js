@@ -174,7 +174,7 @@
     const indicator = atlas.indicators[focusSelect.value];
     const entries = shareEntries();
     const values = entries.map((entry) => `<div class="share-preview-country"><strong>${escapeHtml(entry.country.name)}</strong><b>${escapeHtml(entry.value)}</b><span>${entry.position ? `Value position ${entry.position} of ${entry.total}` : "No current observation"}${entry.point ? ` · ${entry.point.year} data` : ""}</span></div>`).join("");
-    sharePreview.innerHTML = `<div class="share-preview-top"><span class="share-preview-brand">${site.name}</span><span>${comparisonSize}-country comparison</span></div><div class="share-preview-title">Country Systems Atlas</div><div class="share-preview-metric">${escapeHtml(indicator.shortLabel)}</div><div class="share-preview-values" data-view="${comparisonSize}">${values}</div><div class="share-preview-foot">Positions are within this 60-country comparison set · World Development Indicators · ${site.host}</div>`;
+    sharePreview.innerHTML = `<div class="share-preview-top"><span class="share-preview-brand">${site.name}</span><span>${comparisonSize}-country comparison</span></div><div class="share-preview-title">Country Systems Atlas</div><div class="share-preview-metric">${escapeHtml(indicator.shortLabel)}</div><div class="share-preview-values" data-view="${comparisonSize}">${values}</div><div class="share-preview-foot">Positions are within this ${atlas.coverage.countryCount}-country comparison set · World Development Indicators · ${site.host}</div>`;
   }
 
   function productionShareUrl() {
@@ -261,7 +261,7 @@
     });
     context.fillStyle = "#9fb0c6";
     context.font = "600 18px Arial, sans-serif";
-    context.fillText("Positions within 60-country set · World Development Indicators", side, 553);
+    context.fillText(`Positions within ${atlas.coverage.countryCount}-country set · World Development Indicators`, side, 553);
     context.fillStyle = "#f8fafc";
     context.font = "700 21px Arial, sans-serif";
     context.textAlign = "right";
@@ -429,7 +429,7 @@
     }
   }
 
-  fetch("data/country-systems-atlas.json")
+  fetch("data/country-systems-atlas.json?v=2026-09-16.2")
     .then((response) => { if (!response.ok) throw new Error(`Data request failed: ${response.status}`); return response.json(); })
     .then((data) => {
       atlas = data;

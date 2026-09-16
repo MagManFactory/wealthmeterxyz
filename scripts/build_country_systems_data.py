@@ -12,6 +12,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "data" / "country-systems-atlas.json"
+START_YEAR = 2014
+END_YEAR = date.today().year
 
 COUNTRIES = {
     "ARG": "Argentina",
@@ -74,6 +76,20 @@ COUNTRIES = {
     "USA": "United States",
     "VNM": "Vietnam",
     "ZAF": "South Africa",
+}
+
+NAME_OVERRIDES = {
+    "BOL": "Bolivia",
+    "COD": "Democratic Republic of the Congo",
+    "COG": "Republic of the Congo",
+    "CIV": "Côte d’Ivoire",
+    "GMB": "Gambia",
+    "HKG": "Hong Kong",
+    "IRN": "Iran",
+    "KGZ": "Kyrgyzstan",
+    "LAO": "Laos",
+    "RUS": "Russia",
+    "SVK": "Slovakia",
 }
 
 INDICATORS = {
@@ -166,33 +182,60 @@ def fetch_json(url: str):
         return json.load(response)
 
 
-def indicator_series(code: str) -> dict[str, list[dict]]:
-    country_path = ";".join(COUNTRIES)
-    params = urllib.parse.urlencode(
-        {"format": "json", "date": "2014:2025", "per_page": "2000", "source": "2"}
+def country_catalog() -> dict[str, dict]:
+    payload = fetch_json(
+        "https://api.worldbank.org/v2/country?format=json&per_page=400&source=2"
     )
-    url = f"https://api.worldbank.org/v2/country/{country_path}/indicator/{code}?{params}"
+    rows = payload[1] if isinstance(payload, list) and len(payload) > 1 else []
+    return {
+        row["id"]: row
+        for row in rows
+        if row.get("id")
+        and row.get("region", {}).get("id")
+        and row.get("region", {}).get("id") != "NA"
+    }
+
+
+def indicator_series(code: str) -> dict[str, list[dict]]:
+    params = urllib.parse.urlencode(
+        {"format": "json", "date": f"{START_YEAR}:{END_YEAR}", "per_page": "30000", "source": "2"}
+    )
+    url = f"https://api.worldbank.org/v2/country/all/indicator/{code}?{params}"
     payload = fetch_json(url)
     rows = payload[1] if isinstance(payload, list) and len(payload) > 1 else []
-    grouped: dict[str, list[dict]] = {country: [] for country in COUNTRIES}
+    grouped: dict[str, list[dict]] = {}
     for row in rows:
         country = row.get("countryiso3code")
         value = row.get("value")
-        if country in grouped and value is not None:
-            grouped[country].append({"year": int(row["date"]), "value": value})
+        if country and value is not None:
+            grouped.setdefault(country, []).append({"year": int(row["date"]), "value": value})
     for values in grouped.values():
         values.sort(key=lambda item: item["year"])
     return grouped
 
 
 def main() -> None:
+    catalog = country_catalog()
+    series_by_indicator = {
+        key: indicator_series(metadata["code"])
+        for key, metadata in INDICATORS.items()
+    }
+    eligible = sorted(
+        code for code in catalog
+        if all(series_by_indicator[key].get(code) for key in INDICATORS)
+    )
     country_rows = {
-        code: {"code": code, "name": name, "metrics": {}}
-        for code, name in COUNTRIES.items()
+        code: {
+            "code": code,
+            "name": NAME_OVERRIDES.get(code, COUNTRIES.get(code, catalog[code]["name"])),
+            "metrics": {},
+        }
+        for code in eligible
     }
     for key, metadata in INDICATORS.items():
-        series = indicator_series(metadata["code"])
-        for country, values in series.items():
+        series = series_by_indicator[key]
+        for country in eligible:
+            values = series[country]
             latest = values[-1] if values else None
             country_rows[country]["metrics"][key] = {
                 "latest": latest,
@@ -201,13 +244,14 @@ def main() -> None:
 
     output = {
         "schemaVersion": 1,
-        "prototype": True,
+        "prototype": False,
         "generated": date.today().isoformat(),
         "coverage": {
-            "countryCount": len(COUNTRIES),
+            "countryCount": len(eligible),
             "indicatorCount": len(INDICATORS),
-            "seriesStart": 2014,
-            "seriesEnd": 2025,
+            "seriesStart": START_YEAR,
+            "seriesEnd": END_YEAR,
+            "selectionRule": "World Bank economies with at least one observation for all eight measures in the selected series window",
         },
         "licence": {
             "publisher": "World Bank",

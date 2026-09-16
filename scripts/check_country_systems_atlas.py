@@ -50,7 +50,9 @@ def main() -> None:
 
     countries = data.get("countries") or []
     indicators = data.get("indicators") or {}
-    require(len(countries) == 60, "expected exactly 60 countries")
+    require(len(countries) >= 140, "expected at least 140 countries after the coverage expansion")
+    require(data.get("coverage", {}).get("countryCount") == len(countries), "coverage country count is stale")
+    require(data.get("prototype") is False, "production dataset must not be labelled as a prototype")
     require(len(indicators) == 8, "expected exactly eight indicators")
     require(len({country["code"] for country in countries}) == len(countries), "country codes must be unique")
     for country in countries:
@@ -58,7 +60,7 @@ def main() -> None:
         require(set(metrics) == set(indicators), f"{country['code']} has incomplete indicator coverage")
         for key, metric in metrics.items():
             latest = metric.get("latest")
-            require(latest is None or {"value", "year"} <= set(latest), f"{country['code']} {key} latest observation is incomplete")
+            require(latest is not None and {"value", "year"} <= set(latest), f"{country['code']} {key} latest observation is incomplete")
 
     for provider in ("itu", "who", "irena"):
         record = rights["providers"][provider]
