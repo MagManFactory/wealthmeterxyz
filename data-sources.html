@@ -309,6 +309,7 @@
             <div class="nav-group"><span class="nav-group-label label-rank">Rank</span>
                 <div class="dropdown">
                     <a href="/">Global Wealth Rank</a>
+                    <a href="us-household-wealth.html">U.S. Household Wealth</a>
                     <a href="global_ranker.html">Country-Specific Rank</a>
                     <a href="income_ranker.html">Income Percentile</a>
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
@@ -361,30 +362,42 @@
         <div class="info-card">
             <h1>Data Sources.</h1>
             <div class="section-break"></div>
-            <p>WealthMeter anchors its distribution model to publicly available, tier‑one research. Coverage, population baselines, and percentile calibration are sourced from global financial and demographic datasets.</p>
-            <p style="font-size: 0.95rem; opacity: 0.8;">Last updated: Apr 10, 2026</p>
+            <p>WealthMeter anchors each calculator to current primary research and identifies which sources drive calculations versus contextual analysis.</p>
+            <p style="font-size: 0.95rem; opacity: 0.8;">Last updated: Sep 15, 2026</p>
 
             <div class="source-grid">
                 <div class="source-item">
-                    <span class="source-label">Institutional Baseline</span>
-                    <span class="source-name"><a href="https://wid.world" target="_blank" rel="noopener">World Inequality Database (WID)</a></span>
+                    <span class="source-label">Primary Global Distribution</span>
+                    <span class="source-name"><a href="https://www.ubs.com/content/dam/assets/wm/static/gwr/global-wealth-report-en-2026.pdf" target="_blank" rel="noopener">UBS Global Wealth Report 2026</a></span>
+                    <div style="margin-top: 8px; font-size: 0.9rem; color: var(--text-muted);">Year-end 2025 wealth pyramid, covered-market adult denominator, millionaire tiers, and billionaire counts.</div>
                 </div>
                 <div class="source-item">
-                    <span class="source-label">Primary Wealth Distribution</span>
-                    <span class="source-name"><a href="https://www.ubs.com/us/en/wealth-management/insights/global-wealth-report/_jcr_content/root/contentarea/mainpar/gridcontrol_1151638581/col_2/inner/col_1/actionbutton_copy.0923865505.file/PS9jb250ZW50L2RhbS9hc3NldHMvd20vc3RhdGljL25vaW5kZXgvZ3dyLTIwMjUtZGlnaXRhbC5wZGY%3D/gwr-2025-digital.pdf" target="_blank" rel="noopener">UBS Global Wealth Report 2025 (Wealth Pyramid)</a></span>
+                    <span class="source-label">Upper-Tail Cross-Check</span>
+                    <span class="source-name"><a href="https://www.knightfrank.com/research/article/2026/4/wealth-sizing-model-2026-results" target="_blank" rel="noopener">Knight Frank Wealth Sizing Model 2026</a></span>
+                    <div style="margin-top: 8px; font-size: 0.9rem; color: var(--text-muted);">Published count of people with net worth above USD 30 million.</div>
                 </div>
                 <div class="source-item">
-                    <span class="source-label">Population Baselines</span>
-                    <span class="source-name"><a href="https://population.un.org/wpp/" target="_blank" rel="noopener">UN World Population Prospects 2024 revision (latest available)</a></span>
+                    <span class="source-label">Currency Conversion</span>
+                    <span class="source-name"><a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" target="_blank" rel="noopener">European Central Bank Reference Rates</a></span>
+                    <div style="margin-top: 8px; font-size: 0.9rem; color: var(--text-muted);">Calculator snapshot dated September 15, 2026.</div>
                 </div>
                 <div class="source-item">
-                    <span class="source-label">Population By Age</span>
-                    <span class="source-name"><a href="https://data.worldbank.org/indicator/SP.POP.1564.TO.ZS" target="_blank" rel="noopener">World Bank WDI (Population ages 15–64, %)</a></span>
-                    <div style="margin-top: 8px; font-size: 0.9rem; color: var(--text-muted);">Included for cross‑checking age‑share assumptions against UN WPP totals.</div>
+                    <span class="source-label">U.S. Household Wealth</span>
+                    <span class="source-name"><a href="https://www.census.gov/data/tables/2024/demo/wealth/wealth-asset-ownership.html" target="_blank" rel="noopener">U.S. Census Bureau 2024 Wealth and Asset Ownership Tables</a></span>
+                    <div style="margin-top: 8px; font-size: 0.9rem; color: var(--text-muted);">2025 SIPP household wealth bands for calendar year 2024, released July 15, 2026. <a href="https://www2.census.gov/programs-surveys/demo/tables/wealth/2023/wealth-asset-ownership/wealth_tables_dy2024.xlsx">Download the official workbook.</a></div>
+                </div>
+                <div class="source-item">
+                    <span class="source-label">U.S. Survey Methodology</span>
+                    <span class="source-name"><a href="https://www.census.gov/programs-surveys/sipp/methodology.html" target="_blank" rel="noopener">Survey of Income and Program Participation Methodology</a></span>
+                </div>
+                <div class="source-item">
+                    <span class="source-label">Contextual Inequality Research</span>
+                    <span class="source-name"><a href="https://wid.world" target="_blank" rel="noopener">World Inequality Database</a></span>
+                    <div style="margin-top: 8px; font-size: 0.9rem; color: var(--text-muted);">Used for editorial context, not as an operational anchor in the current homepage calculator.</div>
                 </div>
             </div>
 
-            <p style="margin-top: 60px; font-size: 0.95rem; opacity: 0.8;">Our modeling protocol cross-references the UBS 2025 wealth pyramid with the latest available UN WPP demographic baseline, which remains the 2024 revision as of Apr 10, 2026. Wealth Explorer Table 1 country medians are from UBS Global Wealth Report 2026; the homepage ranker remains the year-end 2025 covered-market pyramid.</p>
+            <p style="margin-top: 60px; font-size: 0.95rem; opacity: 0.8;">The homepage uses UBS 2026 covered-market counts and a Knight Frank 2026 upper-tail anchor. The separate U.S. calculator uses Census household wealth bands without within-band interpolation. Wealth Explorer country medians are also drawn from UBS 2026 but answer a different question from the rank calculator.</p>
         </div>
     </main>
     <div id="footer-placeholder" data-static-component="1">
