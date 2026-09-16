@@ -17,12 +17,11 @@
   const copyStatus = document.querySelector("[data-copy-status]");
   const sharePreview = document.querySelector("[data-share-preview]");
   const shareStatus = document.querySelector("[data-share-status]");
-  const nativeShareButton = document.querySelector("[data-share-native]");
   const downloadCardButton = document.querySelector("[data-download-card]");
   const siteKey = document.documentElement.dataset.atlasSite || "lifemeter";
   const site = siteKey === "wealthmeter"
-    ? { name: "WEALTHMETER.XYZ", host: "wealthmeter.xyz", accent: "#facc15" }
-    : { name: "LIFEMETER.XYZ", host: "lifemeter.xyz", accent: "#22d3ee" };
+    ? { name: "WEALTHMETER.XYZ", host: "wealthmeter.xyz", accent: "#facc15", cardEnd: "#104b63" }
+    : { name: "LIFEMETER.XYZ", host: "lifemeter.xyz", accent: "#22d3ee", cardEnd: "#075e68" };
   let comparisonSize = 3;
   let atlas;
 
@@ -225,10 +224,12 @@
     const side = 76;
     const gap = 22;
     const cardWidth = (canvas.width - side * 2 - gap * (entries.length - 1)) / entries.length;
-    context.fillStyle = "#071427";
+    const background = context.createLinearGradient(0, 0, canvas.width, canvas.height);
+    background.addColorStop(0, "#071427");
+    background.addColorStop(.58, "#0c1d35");
+    background.addColorStop(1, site.cardEnd);
+    context.fillStyle = background;
     context.fillRect(0, 0, canvas.width, canvas.height);
-    context.fillStyle = "#0d3d59";
-    context.fillRect(850, 0, 350, canvas.height);
     context.fillStyle = site.accent;
     context.fillRect(side, 62, 10, 48);
     context.fillStyle = "#f8fafc";
@@ -381,15 +382,22 @@
   }
 
   function shareOnPlatform(platform) {
-    const url = encodeURIComponent(productionShareUrl());
-    const text = encodeURIComponent(shareText());
+    const rawUrl = productionShareUrl();
+    const rawText = shareText();
+    const url = encodeURIComponent(rawUrl);
+    const text = encodeURIComponent(rawText);
     const destinations = {
       x: `https://x.com/intent/post?text=${text}&url=${url}`,
       linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
       whatsapp: `https://wa.me/?text=${text}%20${url}`,
+      telegram: `https://t.me/share/url?url=${url}&text=${text}`,
+      reddit: `https://www.reddit.com/submit?url=${url}&title=${text}`,
+      message: `sms:&body=${text}%20${url}`,
+      email: `mailto:?subject=${encodeURIComponent(`${site.name} Country Systems comparison`)}&body=${encodeURIComponent(`${rawText}\n\n${rawUrl}`)}`,
     };
     if (!destinations[platform]) return;
-    window.open(destinations[platform], "_blank", "noopener,noreferrer");
+    if (platform === "message" || platform === "email") window.location.href = destinations[platform];
+    else window.open(destinations[platform], "_blank", "noopener,noreferrer");
     track("country_systems_share", { method: platform, comparison_size: comparisonSize, metric: focusSelect.value });
   }
 
@@ -454,7 +462,6 @@
         }).catch(() => { copyStatus.textContent = "Copy unavailable"; });
       });
       document.querySelectorAll("[data-share-platform]").forEach((button) => button.addEventListener("click", () => shareOnPlatform(button.dataset.sharePlatform)));
-      nativeShareButton.addEventListener("click", nativeShare);
       downloadCardButton.addEventListener("click", downloadShareCard);
       document.querySelectorAll("[data-related-link]").forEach((link) => link.addEventListener("click", () => track("country_systems_related_click", { destination: link.getAttribute("href") })));
       track("country_systems_view", { comparison_size: comparisonSize, metric: focusSelect.value });

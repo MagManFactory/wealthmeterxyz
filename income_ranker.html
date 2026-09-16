@@ -478,13 +478,16 @@ input[type="number"] {
 
 .share-buttons {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(4, 56px);
+    justify-content: center;
+    gap: 12px;
+    max-width: 260px;
+    margin: 0 auto;
 }
 
 .share-icon-btn {
-    width: 100%;
-    aspect-ratio: 1;
+    width: 56px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -796,8 +799,13 @@ footer {
     }
 
     .share-buttons {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 48px);
         gap: 8px;
+    }
+
+    .share-icon-btn {
+        width: 48px;
+        height: 48px;
     }
 }
 </style>

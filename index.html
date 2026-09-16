@@ -208,8 +208,10 @@
         /* Social Share Section Styles (Updated from Vercel App) */
         .share-container { margin: 2rem 0; border-top: 1px solid var(--card-border); padding-top: 2rem; opacity: 0; transform: translateY(10px); transition: all 0.5s ease; }
         .share-container.visible { opacity: 1; transform: translateY(0); }
-        .social-grid { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 1.5rem 0; }
-        .social-btn { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; transition: 0.2s; }
+        .social-grid { display: grid; grid-template-columns: repeat(4, 56px); gap: 12px; justify-content: center; margin: 1.5rem auto; max-width: 260px; }
+        .social-btn { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; transition: transform .2s ease, box-shadow .2s ease; }
+        .social-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(15,23,42,.18); }
+        .social-btn:focus-visible { outline: 3px solid rgba(37,99,235,.28); outline-offset: 3px; }
         .social-btn svg { width: 22px; height: 22px; fill: white; }
         .btn-recalibrate { background: none; border: none; color: var(--text-muted); font-weight: 800; text-transform: uppercase; font-size: 11px; cursor: pointer; letter-spacing: 1.5px; margin-top: 1rem; }
 
