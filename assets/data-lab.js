@@ -21,7 +21,7 @@
   };
 
   const state = {
-    mode: 'explore',
+    mode: 'surprise',
     countries: DEFAULT_COUNTRIES.slice(),
     view: 3,
     metric: 'top1_wealth',
@@ -204,7 +204,7 @@
     const pool = surprisePool();
     let record = pool.find((item) => item.id === state.insightId);
     if (!record) {
-      record = pool.find((item) => item.id.includes('-USA-')) || pool[0];
+      record = pool[Math.floor(Math.random() * pool.length)];
       state.insightId = record?.id || null;
     }
     return record;
