@@ -260,116 +260,23 @@ const sharedStyles = `
     .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
     .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
 
-    .wm-feedback {
-        max-width: 28rem;
-        margin: 1.75rem auto 0;
-        padding: 1rem 1.15rem 1.1rem;
-        border: 1px solid #e2e8f0;
-        border-radius: 1rem;
-        background: #ffffff;
-        text-align: left;
-    }
-    .wm-feedback-lede {
-        font-family: 'Outfit', sans-serif;
-        font-size: 0.95rem;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        color: #0f172a;
-        margin: 0 0 0.8rem;
-    }
-    .wm-feedback-fields { display: grid; gap: 0.65rem; }
-    .wm-feedback label {
-        display: block;
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: #64748b;
-        font-weight: 800;
-        margin: 0;
-    }
-    .wm-feedback-optional {
-        text-transform: none;
-        letter-spacing: 0;
-        font-weight: 600;
-        opacity: 0.8;
-    }
-    .wm-feedback input[type="email"],
-    .wm-feedback textarea {
-        display: block;
-        width: 100%;
-        margin-top: 0.35rem;
-        border: 1px solid #cbd5e1;
-        border-radius: 0.7rem;
-        background: #f8fafc;
-        color: #0f172a;
-        font-family: 'Inter', sans-serif;
-        font-size: 0.92rem;
-        font-weight: 600;
-    }
-    .wm-feedback input[type="email"] {
-        height: 44px;
-        padding: 0 0.85rem;
-    }
-    .wm-feedback textarea {
-        min-height: 72px;
-        padding: 0.7rem 0.85rem;
-        resize: vertical;
-        line-height: 1.45;
-    }
-    .wm-feedback-submit {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        justify-self: start;
-        min-height: 44px;
-        padding: 0.65rem 1.1rem;
-        border: 0;
-        border-radius: 0.75rem;
-        background: #2563eb;
-        color: #ffffff;
-        font-family: 'Outfit', sans-serif;
-        font-size: 0.82rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        cursor: pointer;
-    }
-    .wm-feedback-submit:hover { background: #1d4ed8; }
-    .wm-feedback-thanks {
-        margin: 0;
-        color: #334155;
-        font-size: 0.92rem;
-        font-weight: 700;
-        line-height: 1.5;
-    }
-    .wm-feedback.is-sent {
-        border-color: transparent;
-        background: transparent;
-        padding: 0.35rem 0.15rem;
-    }
-    .wm-feedback.is-sent .wm-feedback-lede,
-    .wm-feedback.is-sent .wm-feedback-fields { display: none; }
-    .wm-feedback-hp {
-        position: absolute;
-        left: -10000px;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-    }
-    .wm-feedback--result {
-        margin: 1.25rem auto 0;
-        background: var(--card-bg, #ffffff);
-        border-color: var(--card-border, #e2e8f0);
-    }
-    .wm-feedback--result .wm-feedback-lede { color: var(--text-main, #0f172a); }
-    .wm-feedback--result label { color: var(--text-muted, #64748b); }
-    .wm-feedback--result input[type="email"],
-    .wm-feedback--result textarea {
-        background: var(--input-bg, #f8fafc);
-        border-color: var(--input-border, #cbd5e1);
-        color: var(--text-main, #0f172a);
-    }
-    .wm-feedback--result .wm-feedback-thanks { color: var(--text-muted, #64748b); }
+    .site-newsletter { max-width:720px; margin:2rem auto 0; padding:1.4rem; border:1px solid #dbe4f0; border-radius:1rem; background:#f8fbff; text-align:left; }
+    .site-newsletter h2 { margin:0 0 .35rem; font-size:1.3rem; color:#0f172a; }
+    .site-newsletter-copy { margin:0 0 1rem; color:#475569; line-height:1.55; }
+    .site-newsletter-form { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; }
+    .site-newsletter-field { display:grid; gap:.3rem; color:#334155; font-size:.76rem; font-weight:800; }
+    .site-newsletter-field-email,.site-newsletter-actions { grid-column:1 / -1; }
+    .site-newsletter-field input { width:100%; min-height:46px; padding:.75rem .8rem; border:1px solid #cbd5e1; border-radius:.7rem; background:#fff; color:#0f172a; font-family:inherit; font-size:1rem; font-weight:600; line-height:1.3; }
+    .site-newsletter-actions { display:flex; align-items:center; gap:.85rem; flex-wrap:wrap; }
+    .site-newsletter button { min-height:46px; padding:.75rem 1.15rem; border:0; border-radius:.7rem; background:#2563eb; color:#fff; font-family:inherit; font-size:.84rem; font-weight:800; line-height:1; cursor:pointer; }
+    .site-newsletter button:disabled { opacity:.65; cursor:default; }
+    .site-newsletter-status { margin:0; color:#475569; font-size:.86rem; font-weight:700; }
+    .site-newsletter-note,.site-newsletter-address { margin:.85rem 0 0; color:#64748b; font-size:.78rem; line-height:1.5; }
+    body.dark-mode .site-newsletter { background:#0f172a; border-color:#334155; }
+    body.dark-mode .site-newsletter h2 { color:#f8fafc; }
+    body.dark-mode .site-newsletter-copy,body.dark-mode .site-newsletter-status,body.dark-mode .site-newsletter-note,body.dark-mode .site-newsletter-address,body.dark-mode .site-newsletter-field { color:#cbd5e1; }
+    body.dark-mode .site-newsletter-field input { background:#0b1220; border-color:#475569; color:#f8fafc; }
+    @media (max-width:640px) { .site-newsletter-form { grid-template-columns:1fr; } .site-newsletter-field-email,.site-newsletter-actions { grid-column:1; } }
 
     main.article figure img {
         max-width: 100%;
@@ -425,7 +332,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <a href="retirement-age-lie.html">The Retirement Age Lie</a>
+                    <a href="retirement-age-lie.html">The Retirement Age Lie</a>
                     <a href="longevity-capital-living-to-120.html">Longevity Capital: Living to 120</a>
                     <a href="inside-wealth-germany-japan-canada.html">Inside Wealth: Germany, Japan, and Canada</a>
                     <a href="inheritance-illusion.html">The Inheritance Illusion</a>
@@ -499,47 +406,60 @@ const siteHeader = `
     </div>
 </header>`;
 
-const WM_FEEDBACK_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdW_INDPOwoI_XjecCzhp38-IEu-GeA5oTUlPT59V1kKT5fKw/formResponse";
+const NEWSLETTER_ENDPOINT = "https://lifemeter.xyz/api/newsletter";
 
-function wealthMeterFeedbackForm(variant) {
-    const extraClass = variant === "result" ? " wm-feedback--result" : "";
+function newsletterHTML(source) {
     return `
-<form class="wm-feedback${extraClass}" data-wm-feedback action="${WM_FEEDBACK_ACTION}" method="POST" target="wm-feedback-sink">
-    <p class="wm-feedback-lede">Something off? Tell us.</p>
-    <div class="wm-feedback-fields">
-        <input type="text" class="wm-feedback-hp" data-wm-honeypot name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <input type="hidden" name="entry.652485851" value="WealthMeter">
-        <input type="hidden" name="entry.2128319260" value="" data-wm-feedback-page>
-        <label>Email <span class="wm-feedback-optional">(optional)</span>
-            <input type="email" name="entry.1004053268" autocomplete="email" placeholder="you@example.com">
+<section class="site-newsletter" aria-labelledby="newsletter-heading-${source}">
+    <h2 id="newsletter-heading-${source}">WealthMeter news and updates</h2>
+    <p class="site-newsletter-copy">Receive new longform analysis, wealth brief updates, and report releases.</p>
+    <form class="site-newsletter-form" data-newsletter-form data-source="${source}">
+        <input type="hidden" name="newsletter" value="yes">
+        <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+        <label class="site-newsletter-field">First name
+            <input type="text" name="firstName" autocomplete="given-name" required>
         </label>
-        <label>Feedback
-            <textarea name="entry.1773870348" required rows="3" placeholder="What should we fix?"></textarea>
+        <label class="site-newsletter-field">Last name
+            <input type="text" name="lastName" autocomplete="family-name" required>
         </label>
-        <button class="wm-feedback-submit" type="submit">Send</button>
-    </div>
-    <p class="wm-feedback-thanks" data-wm-feedback-thanks hidden aria-live="polite">Got it. We'll use this to fix the site.</p>
-</form>`;
+        <label class="site-newsletter-field site-newsletter-field-email">Email address
+            <input type="email" name="email" autocomplete="email" inputmode="email" required>
+        </label>
+        <div class="site-newsletter-actions">
+            <button type="submit">Sign up</button>
+            <p class="site-newsletter-status" data-newsletter-status aria-live="polite"></p>
+        </div>
+    </form>
+    <p class="site-newsletter-note">By signing up, you agree to receive WealthMeter news and updates. You can unsubscribe at any time. See our <a href="privacy.html">Privacy Policy</a>.</p>
+    <p class="site-newsletter-address">Mailing Address: 1968 S. Coast Hwy #5495, Laguna Beach, CA 92651</p>
+</section>`;
 }
 
 const siteFooter = `
 <footer>
-    <form class="wm-feedback" data-wm-feedback action="https://docs.google.com/forms/d/e/1FAIpQLSdW_INDPOwoI_XjecCzhp38-IEu-GeA5oTUlPT59V1kKT5fKw/formResponse" method="POST" target="wm-feedback-sink">
-        <p class="wm-feedback-lede">Something off? Tell us.</p>
-        <div class="wm-feedback-fields">
-            <input type="text" class="wm-feedback-hp" data-wm-honeypot name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <input type="hidden" name="entry.652485851" value="WealthMeter">
-            <input type="hidden" name="entry.2128319260" value="" data-wm-feedback-page>
-            <label>Email <span class="wm-feedback-optional">(optional)</span>
-                <input type="email" name="entry.1004053268" autocomplete="email" placeholder="you@example.com">
+    <section class="site-newsletter" aria-labelledby="newsletter-heading-footer">
+        <h2 id="newsletter-heading-footer">WealthMeter news and updates</h2>
+        <p class="site-newsletter-copy">Receive new longform analysis, wealth brief updates, and report releases.</p>
+        <form class="site-newsletter-form" data-newsletter-form data-source="footer">
+            <input type="hidden" name="newsletter" value="yes">
+            <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+            <label class="site-newsletter-field">First name
+                <input type="text" name="firstName" autocomplete="given-name" required>
             </label>
-            <label>Feedback
-                <textarea name="entry.1773870348" required rows="3" placeholder="What should we fix?"></textarea>
+            <label class="site-newsletter-field">Last name
+                <input type="text" name="lastName" autocomplete="family-name" required>
             </label>
-            <button class="wm-feedback-submit" type="submit">Send</button>
-        </div>
-        <p class="wm-feedback-thanks" data-wm-feedback-thanks hidden aria-live="polite">Got it. We'll use this to fix the site.</p>
-    </form>
+            <label class="site-newsletter-field site-newsletter-field-email">Email address
+                <input type="email" name="email" autocomplete="email" inputmode="email" required>
+            </label>
+            <div class="site-newsletter-actions">
+                <button type="submit">Sign up</button>
+                <p class="site-newsletter-status" data-newsletter-status aria-live="polite"></p>
+            </div>
+        </form>
+        <p class="site-newsletter-note">By signing up, you agree to receive WealthMeter news and updates. You can unsubscribe at any time. See our <a href="privacy.html">Privacy Policy</a>.</p>
+        <p class="site-newsletter-address">Mailing Address: 1968 S. Coast Hwy #5495, Laguna Beach, CA 92651</p>
+    </section>
     <div class="footer-links">
         <a href="data-sources.html">Data Sources</a>
         <a href="methodology.html">Methodology</a>
@@ -548,60 +468,42 @@ const siteFooter = `
     </div>
 </footer>`;
 
-function ensureFeedbackSink() {
-    if (document.getElementById("wm-feedback-sink")) return;
-    const iframe = document.createElement("iframe");
-    iframe.id = "wm-feedback-sink";
-    iframe.name = "wm-feedback-sink";
-    iframe.title = "Feedback submission";
-    iframe.setAttribute("aria-hidden", "true");
-    iframe.style.display = "none";
-    document.body.appendChild(iframe);
-}
+document.addEventListener("submit", async (event) => {
+    const form = event.target.closest("[data-newsletter-form]");
+    if (!form) return;
+    event.preventDefault();
+    if (!form.reportValidity()) return;
 
-function submitWealthMeterFeedback(form) {
-    const honeypot = form.querySelector("[data-wm-honeypot]");
-    if (honeypot && honeypot.value.trim()) return true;
+    const status = form.querySelector("[data-newsletter-status]");
+    const button = form.querySelector('button[type="submit"]');
+    const formData = new FormData(form);
+    if (status) status.textContent = "Signing you up...";
+    if (button) button.disabled = true;
 
-    const feedback = form.querySelector('[name="entry.1773870348"]');
-    const message = (feedback && feedback.value ? feedback.value : "").trim();
-    if (!message) {
-        if (feedback) feedback.reportValidity();
-        return false;
-    }
-
-    const email = (form.querySelector('[name="entry.1004053268"]')?.value || "").trim();
-    const page = window.location.pathname || "/";
-    const body = new FormData();
-    body.append("entry.652485851", "WealthMeter");
-    body.append("entry.1004053268", email);
-    body.append("entry.1773870348", message);
-    body.append("entry.2128319260", page);
-
-    fetch(WM_FEEDBACK_ACTION, { method: "POST", mode: "no-cors", body }).catch(() => {});
-    return true;
-}
-
-function showFeedbackThanks(form) {
-    form.classList.add("is-sent");
-    const thanks = form.querySelector("[data-wm-feedback-thanks]");
-    if (thanks) thanks.hidden = false;
-}
-
-function bindFeedbackForms(root) {
-    ensureFeedbackSink();
-    (root || document).querySelectorAll("[data-wm-feedback]").forEach((form) => {
-        if (form.dataset.wmBound === "1") return;
-        form.dataset.wmBound = "1";
-        const pageInput = form.querySelector("[data-wm-feedback-page]");
-        if (pageInput) pageInput.value = window.location.pathname || "/";
-        form.addEventListener("submit", (event) => {
-            event.preventDefault();
-            if (!submitWealthMeterFeedback(form)) return;
-            showFeedbackThanks(form);
+    try {
+        const response = await fetch(NEWSLETTER_ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                site: "wealthmeter",
+                source: form.dataset.source || "footer",
+                page: window.location.pathname || "/",
+                newsletter: formData.get("newsletter"),
+                company: formData.get("company"),
+                firstName: formData.get("firstName"),
+                lastName: formData.get("lastName"),
+                email: formData.get("email")
+            })
         });
-    });
-}
+        if (!response.ok) throw new Error("Newsletter request failed");
+        form.reset();
+        if (status) status.textContent = "You are signed up.";
+    } catch (error) {
+        if (status) status.textContent = "We could not complete the signup. Please try again.";
+    } finally {
+        if (button) button.disabled = false;
+    }
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     const sharedStyleEl = document.getElementById("wealthmeter-component-styles");
@@ -611,13 +513,6 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             document.head.insertAdjacentHTML("beforeend", sharedStyles);
         }
-    } else if (!document.getElementById("wm-feedback-styles")) {
-        const feedbackCss = document.createElement("style");
-        feedbackCss.id = "wm-feedback-styles";
-        const sharedCss = sharedStyles.replace(/^[\s\S]*<style[^>]*>/, "").replace(/<\/style>[\s\S]*$/, "");
-        const feedbackStart = sharedCss.indexOf(".wm-feedback {");
-        if (feedbackStart !== -1) feedbackCss.textContent = sharedCss.slice(feedbackStart);
-        document.head.appendChild(feedbackCss);
     }
     const headerEl = document.getElementById("header-placeholder");
     const footerEl = document.getElementById("footer-placeholder");
@@ -628,10 +523,9 @@ document.addEventListener("DOMContentLoaded", () => {
         footerEl.innerHTML = siteFooter;
     }
     const resultSlot = document.getElementById("result-feedback-slot");
-    if (resultSlot && !resultSlot.querySelector("[data-wm-feedback]")) {
-        resultSlot.innerHTML = wealthMeterFeedbackForm("result");
+    if (resultSlot && !resultSlot.querySelector("[data-newsletter-form]")) {
+        resultSlot.innerHTML = newsletterHTML("result");
     }
-    bindFeedbackForms(document);
 
     const isMobile = window.matchMedia("(max-width: 1024px)").matches;
     const navGroups = Array.from(document.querySelectorAll(".nav-group"));

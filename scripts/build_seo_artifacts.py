@@ -18,7 +18,7 @@ DOMAIN = "https://wealthmeter.xyz"
 DISPLAY_NAME = "WEALTHMETER.XYZ"
 FEED_URL = f"{DOMAIN}/feed.xml"
 RSS_LIMIT = 50
-COMPONENT_VERSION = "2026-09-04.1"
+COMPONENT_VERSION = "2026-09-15.1"
 PRIVATE_OR_STAGING = {"adsense_block.html"}
 DESCRIPTION_FALLBACKS = {
     "data-lab.html": "Explore WealthMeter's analytical lab for distribution views, exploratory finance tools, and supporting wealth datasets.",
@@ -96,13 +96,17 @@ BRIDGE_RE = re.compile(
     r"\s*<!-- generated-article-bridge:start -->.*?<!-- generated-article-bridge:end -->\s*",
     re.DOTALL,
 )
+RELATED_READING_BLOCK_RE = re.compile(
+    r"\s*<!-- generated-related-reading:start -->.*?<!-- generated-related-reading:end -->\s*",
+    re.DOTALL,
+)
 PILLAR_GRID_RE = re.compile(
     r"\s*<!-- generated-pillar-grid:start -->.*?<!-- generated-pillar-grid:end -->\s*",
     re.DOTALL,
 )
 CRAWL_INDEX_RE = re.compile(r'(<section class="crawl-index".*?</section>)', re.DOTALL)
 LONGFORM_DROPDOWN_RE = re.compile(
-    r'(<div class="nav-group"><span class="nav-group-label label-longform">Longform</span>\s*<div class="dropdown">\s*<a href="longform\.html">Longform Hub</a>\s*)(.*?)(\s*<a href="reports\.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>)',
+    r'(<div class="nav-group"><span class="nav-group-label label-longform">Longform</span>\s*<div class="dropdown">\s*<a href="longform\.html">Longform Hub</a>)\s*(.*?)(\s*<a href="reports\.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>)',
     re.DOTALL,
 )
 LONGFORM_CARDS_RE = re.compile(
@@ -1114,7 +1118,7 @@ def generated_longform_dropdown(article_pages: list[PageInfo]) -> str:
 
 def update_components_longform_dropdown(text: str, article_pages: list[PageInfo]) -> str:
     dropdown = generated_longform_dropdown(article_pages)
-    return LONGFORM_DROPDOWN_RE.sub(rf"\1{dropdown}\3", text, count=1)
+    return LONGFORM_DROPDOWN_RE.sub(rf"\1\n{dropdown}\3", text, count=1)
 
 
 def generated_longform_cards(article_pages: list[PageInfo]) -> str:
@@ -1155,6 +1159,99 @@ def sync_longform_surfaces(apply: bool, pages: list[PageInfo]) -> int:
     components_text = read_text(components_path)
     updated_components = update_components_longform_dropdown(components_text, display_order_pages)
     changes += int(write_text(components_path, updated_components, apply))
+    return changes
+
+
+RELATED_OVERRIDES = {
+    "retirement-age-lie.html": ["longevity-capital-living-to-120.html", "sequence-risk-before-retirement-fragility-priced-too-late.html"],
+    "longevity-capital-living-to-120.html": ["retirement-age-lie.html", "sequence-risk-before-retirement-fragility-priced-too-late.html"],
+    "inside-wealth-germany-japan-canada.html": ["america-is-second-by-average-wealth-fifteenth-by-median-wealth.html", "inside-wealth-china-india.html"],
+    "inheritance-illusion.html": ["windfall-misallocation-problem.html", "compounding-gap-after-1m.html"],
+    "equity-compensation-trap.html": ["concentration-vs-diversification-tradeoff.html", "ai-boom-portfolios-personal-wealth.html"],
+    "dual-income-trap.html": ["job-loss-hurts-more-when-benefits-are-not-portable.html", "disability-insurance-leaves-many-paychecks-unprotected.html"],
+    "compounding-gap-after-1m.html": ["opportunity-cost-of-cash.html", "wealth-plateau-effect.html"],
+    "how-insurance-deductibles-become-a-household-balance-sheet-shock.html": ["disability-insurance-leaves-many-paychecks-unprotected.html", "job-loss-hurts-more-when-benefits-are-not-portable.html"],
+    "job-loss-hurts-more-when-benefits-are-not-portable.html": ["disability-insurance-leaves-many-paychecks-unprotected.html", "dual-income-trap.html"],
+    "disability-insurance-leaves-many-paychecks-unprotected.html": ["job-loss-hurts-more-when-benefits-are-not-portable.html", "how-insurance-deductibles-become-a-household-balance-sheet-shock.html"],
+    "america-is-second-by-average-wealth-fifteenth-by-median-wealth.html": ["inside-wealth-germany-japan-canada.html", "great-baseline-war.html"],
+    "home-equity-is-not-emergency-liquidity.html": ["asset-rich-cash-poor-paradox.html", "liquidity-illusion.html"],
+    "sequence-risk-before-retirement-fragility-priced-too-late.html": ["retirement-age-lie.html", "longevity-capital-living-to-120.html"],
+    "property-tax-drag.html": ["mortgage-lock-in-trap.html", "housing-stall-2026-rates-inventory-delinquency.html"],
+    "global-housing-divergence.html": ["housing-stall-2026-rates-inventory-delinquency.html", "mortgage-lock-in-trap.html"],
+    "yield-trap-high-rate-world.html": ["opportunity-cost-of-cash.html", "cost-of-capital-trap.html"],
+    "freelance-freedom-tradeoff.html": ["disability-insurance-leaves-many-paychecks-unprotected.html", "job-loss-hurts-more-when-benefits-are-not-portable.html"],
+    "promotion-paradox.html": ["salary-ceiling-illusion.html", "equity-compensation-trap.html"],
+    "debt-illusion-cycle.html": ["cost-of-capital-trap.html", "new-middle-class-trap.html"],
+    "windfall-misallocation-problem.html": ["inheritance-illusion.html", "compounding-gap-after-1m.html"],
+}
+
+
+def related_tokens(page: PageInfo) -> set[str]:
+    words = re.findall(r"[a-z0-9]+", f"{page.title} {page.description}".lower())
+    stop = {"about", "after", "again", "also", "because", "before", "being", "from", "have", "into", "more", "than", "that", "their", "these", "this", "through", "what", "when", "where", "which", "while", "with", "wealthmeter"}
+    return {word for word in words if len(word) >= 4 and word not in stop}
+
+
+def choose_related(page: PageInfo, candidates: list[PageInfo]) -> list[PageInfo]:
+    by_name = {candidate.path.name: candidate for candidate in candidates}
+    preferred = [
+        by_name[name]
+        for name in RELATED_OVERRIDES.get(page.path.name, [])
+        if name in by_name and name != page.path.name
+    ]
+    if len(preferred) >= 2:
+        return preferred[:2]
+    source_tokens = related_tokens(page)
+    scored = []
+    for candidate in candidates:
+        if candidate.path.name == page.path.name:
+            continue
+        shared = source_tokens & related_tokens(candidate)
+        score = sum(3 if len(token) >= 8 else 1 for token in shared)
+        scored.append((score, sort_key(candidate), candidate))
+    scored.sort(key=lambda item: (item[0], item[1]), reverse=True)
+    for _, _, candidate in scored:
+        if candidate not in preferred:
+            preferred.append(candidate)
+        if len(preferred) == 2:
+            break
+    return preferred
+
+
+def related_reading_html(related: list[PageInfo]) -> str:
+    links = "".join(
+        f'<li><a href="{item.path.name}">{html.escape(item.title.split("|")[0].strip())}</a></li>'
+        for item in related
+    )
+    return (
+        "\n<!-- generated-related-reading:start -->\n"
+        '<section class="related-reading" aria-labelledby="related-reading-heading">\n'
+        '  <h2 id="related-reading-heading">Related reading</h2>\n'
+        f"  <ul>{links}</ul>\n"
+        '  <p><a href="reports.html">Explore WealthMeter reports</a></p>\n'
+        "</section>\n"
+        "<!-- generated-related-reading:end -->\n"
+    )
+
+
+def generate_related_reading(pages: list[PageInfo], apply: bool) -> int:
+    articles = article_pages_in_display_order(pages)
+    by_name = {page.path.name: page for page in articles}
+    hub_text = read_text(ROOT / "longform.html")
+    targets = [name for name in LONGFORM_CARD_HREF_RE.findall(hub_text)[:20] if name in by_name]
+    changes = 0
+    for filename in targets:
+        page = by_name[filename]
+        current = read_text(page.path)
+        related = choose_related(page, articles)
+        if len(related) < 2:
+            continue
+        block = related_reading_html(related)
+        if RELATED_READING_BLOCK_RE.search(current):
+            updated = RELATED_READING_BLOCK_RE.sub("\n" + block.strip() + "\n", current)
+        else:
+            updated = current.replace("</main>", block + "</main>", 1)
+        changes += int(write_text(page.path, updated, apply))
     return changes
 
 
@@ -1333,6 +1430,7 @@ def main() -> int:
     pages, html_changes = update_html_inventory(args.write, ga4_snippet, only_paths=only_paths)
     sync_changes = sync_longform_surfaces(args.write, pages)
     pages, html_changes_second = update_html_inventory(args.write, ga4_snippet, only_paths=only_paths)
+    related_changes = 0 if only_paths is not None else generate_related_reading(pages, args.write)
     indexable_pages = [page for page in pages if page.is_indexable]
     article_pages = [page for page in indexable_pages if page.is_article]
 
@@ -1343,7 +1441,7 @@ def main() -> int:
         ROOT / "feed.xml": generate_feed(article_pages),
     }
 
-    file_changes = html_changes + sync_changes + html_changes_second + pillar_changes
+    file_changes = html_changes + sync_changes + html_changes_second + pillar_changes + related_changes
     for path, content in generated_files.items():
         file_changes += int(write_text(path, content, args.write))
 
