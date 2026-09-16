@@ -1,7 +1,7 @@
-+# Country Systems Atlas production-readiness plan
+# Country Systems Atlas production release
 
-**Status:** Internal production candidate  
-**Release gate:** Do not merge, index, or announce until owner approval  
+**Status:** Approved for production on 2026-09-16
+**Release gate:** Owner approval received; merge and verify both production domains
 **Current scope:** 60 countries, eight World Bank-delivered indicators, two- or three-country comparison
 
 ## Product decision
@@ -15,11 +15,9 @@ The evidence layer remains shared so the sites cannot drift into conflicting val
 
 ## Production URL and compatibility
 
-Use `/country-systems-atlas.html` as the permanent public URL on both sites. At release, retain `/country-systems-phase1.html` as a query-preserving redirect so saved review links do not break. Update sister-site links, global components, analytics, canonical tags, and share URLs to the permanent route in the same release.
+Use `/country-systems-atlas` as the LifeMeter canonical URL and `/country-systems-atlas.html` as the WealthMeter canonical URL, matching each site's established routing convention. Retain `/country-systems-phase1.html` as a query-preserving redirect so saved review links do not break. Sister-site links, global components, analytics, canonical tags, and share URLs use the permanent route.
 
-The review build intentionally remains at the prototype route with `noindex, nofollow`.
-
-## Integration already built for review
+## Production integration
 
 - A two-country and three-country selector controls the matrix, charts, metric cards, social card, and URL.
 - URL state preserves comparison size, selected countries, and focus metric.
@@ -83,4 +81,4 @@ Do not scatter links across unrelated longform. Contextual links should explain 
 
 ## Approval boundary
 
-The current branches are suitable for internal review. The remaining live-release changes are intentionally withheld: permanent-route migration, indexing, sitemap and `llms.txt` inclusion, production social metadata, static-component regeneration across the full site, and merge to the production branches.
+Owner approval to take both atlases live was received on 2026-09-16. Provider-specific ITU, WHO, and IRENA measures remain behind separate written-permission gates.

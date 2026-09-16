@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "data" / "country-systems-phase1.json"
+OUTPUT = ROOT / "data" / "country-systems-atlas.json"
 
 COUNTRIES = {
     "ARG": "Argentina",

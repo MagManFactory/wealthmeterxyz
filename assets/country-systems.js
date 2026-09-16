@@ -130,11 +130,11 @@
     const sign = difference > 0 ? "+" : "";
     if (indicator.format === "currency") {
       const percentage = midpoint ? (difference / midpoint) * 100 : 0;
-      return `${percentage > 0 ? "+" : ""}${percentage.toFixed(1)}% versus prototype median`;
+      return `${percentage > 0 ? "+" : ""}${percentage.toFixed(1)}% versus comparison-set median`;
     }
     if (indicator.format === "percent") return `${sign}${difference.toFixed(1)} percentage points versus median`;
     if (indicator.format === "years") return `${sign}${difference.toFixed(1)} years versus median`;
-    return `${sign}${difference.toFixed(2)} versus prototype median`;
+    return `${sign}${difference.toFixed(2)} versus comparison-set median`;
   }
 
   function renderProfiles() {
@@ -421,7 +421,7 @@
     }
   }
 
-  fetch("data/country-systems-phase1.json")
+  fetch("data/country-systems-atlas.json")
     .then((response) => { if (!response.ok) throw new Error(`Data request failed: ${response.status}`); return response.json(); })
     .then((data) => {
       atlas = data;
@@ -461,6 +461,6 @@
       document.querySelector("[data-generated]").textContent = atlas.generated;
     })
     .catch((error) => {
-      matrix.innerHTML = `<p class="empty-note">The prototype data could not be loaded. ${escapeHtml(error.message)}</p>`;
+      matrix.innerHTML = `<p class="empty-note">The atlas data could not be loaded. ${escapeHtml(error.message)}</p>`;
     });
 })();
