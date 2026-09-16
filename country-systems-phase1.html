@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-atlas-site="wealthmeter">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Country Systems Atlas — Phase 2 Prototype | WEALTHMETER.XYZ</title>
-  <meta name="description" content="Internal Phase 2 prototype for comparing how national systems translate capital into practical opportunity.">
+  <title>Country Systems Atlas — Production Candidate | WEALTHMETER.XYZ</title>
+  <meta name="description" content="Compare two or three countries across productive capacity, infrastructure, logistics, essential access, and longevity.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/country-systems.css">
+  <link rel="stylesheet" href="assets/country-systems.css?v=2026-09-16.3">
 </head>
 <body>
   <div id="header-placeholder"></div>
@@ -18,17 +18,23 @@
       <div class="systems-kicker">Country Systems Atlas · WealthMeter lens</div>
       <h1>Where does capital become capability?</h1>
       <p>Compare the systems that determine what wealth can actually do: productive capacity, infrastructure, logistics, essential access, and the longevity outcomes that sit downstream.</p>
-      <span class="prototype-flag">Phase 2 · 60 countries · internal prototype · not indexed</span>
+      <span class="prototype-flag">Production candidate · 60 countries · internal review · not indexed</span>
     </section>
+
+    <fieldset class="systems-view-toggle" aria-label="Comparison size">
+      <legend>Comparison view</legend>
+      <label><input type="radio" name="comparison-size" value="2" data-view-mode><span>2 countries</span></label>
+      <label><input type="radio" name="comparison-size" value="3" data-view-mode checked><span>3 countries</span></label>
+    </fieldset>
 
     <section class="systems-controls" aria-label="Country comparison controls">
       <div class="control-field"><label for="country-a">Country one</label><select id="country-a" data-country-select></select></div>
       <div class="control-field"><label for="country-b">Country two</label><select id="country-b" data-country-select></select></div>
-      <div class="control-field"><label for="country-c">Country three</label><select id="country-c" data-country-select></select></div>
+      <div class="control-field" data-third-country><label for="country-c">Country three</label><select id="country-c" data-country-select></select></div>
     </section>
 
     <div class="systems-toolbar">
-      <span>Three-country view · eight source-backed measures</span>
+      <span data-view-summary>Three-country view · eight source-backed measures</span>
       <button class="systems-copy-button" type="button" data-copy-link>Copy comparison link</button>
       <span class="systems-copy-status" data-copy-status role="status" aria-live="polite"></span>
     </div>
@@ -36,6 +42,21 @@
     <section class="systems-card systems-profile-section">
       <div class="card-heading"><div><span class="systems-eyebrow">Metric spotlight</span><h2>See the selected measure in context.</h2><p>Positions are descriptive and confined to the countries with data in this 60-country set.</p></div></div>
       <div class="systems-profile-grid" data-profile-cards aria-live="polite"></div>
+    </section>
+
+    <section class="systems-card systems-share-section" aria-labelledby="share-comparison-title">
+      <div class="card-heading"><div><span class="systems-eyebrow">Share the comparison</span><h2 id="share-comparison-title">Turn the selected result into a clear social card.</h2><p>The image includes the measure, countries, values, comparison-set positions, source context, and WealthMeter address.</p></div></div>
+      <div class="systems-share-layout">
+        <div class="systems-share-preview" data-share-preview aria-live="polite"></div>
+        <div class="systems-share-actions" aria-label="Share comparison actions">
+          <button type="button" data-share-native>Share result</button>
+          <button type="button" data-share-platform="x">Share on X</button>
+          <button type="button" data-share-platform="linkedin">Share on LinkedIn</button>
+          <button type="button" data-share-platform="whatsapp">Share on WhatsApp</button>
+          <button type="button" data-download-card>Download image</button>
+          <p class="systems-share-status" data-share-status role="status" aria-live="polite"></p>
+        </div>
+      </div>
     </section>
 
     <div class="systems-grid">
@@ -75,9 +96,20 @@
         <p class="systems-note">Primary delivery source: <a class="systems-link" href="https://data.worldbank.org/" rel="noopener">World Development Indicators</a>. Reuse is governed by the World Bank dataset terms and applicable indicator-level third-party metadata. No source organization endorses this prototype.</p>
       </article>
     </section>
+
+    <section class="systems-card systems-continue" aria-labelledby="continue-title">
+      <span class="systems-eyebrow">Continue through the portfolio</span>
+      <h2 id="continue-title">Move from national systems to household position and strategy.</h2>
+      <div class="systems-continue-grid">
+        <a href="index.html" data-related-link><strong>Discover your Global Wealth Rank</strong><span>Place household wealth in the broader global distribution.</span></a>
+        <a href="global_explorer.html" data-related-link><strong>Open Wealth Explorer</strong><span>Compare country wealth medians and distribution context.</span></a>
+        <a href="longform.html" data-related-link><strong>Read the supporting analysis</strong><span>Connect system capacity to household resilience, mobility, and capital conversion.</span></a>
+        <a href="https://lifemeter.xyz/country-systems-phase1.html" data-related-link><strong>Switch to the LifeMeter lens</strong><span>View the same evidence through longevity and human-capacity outcomes.</span></a>
+      </div>
+    </section>
   </main>
   <div id="footer-placeholder"></div>
-  <script src="components.js?v=2026-09-15.2"></script>
-  <script src="assets/country-systems.js"></script>
+  <script src="components.js?v=2026-09-16.3"></script>
+  <script src="assets/country-systems.js?v=2026-09-16.3"></script>
 </body>
 </html>
