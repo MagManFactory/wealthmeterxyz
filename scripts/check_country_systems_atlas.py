@@ -12,6 +12,7 @@ JS = ROOT / "assets/country-systems.js"
 DATA = ROOT / "data/country-systems-atlas.json"
 RIGHTS = ROOT / "data/country-systems-rights.json"
 COMPONENTS = ROOT / "components.js"
+LEGACY_HTML = ROOT / "country-systems-phase1.html"
 REDIRECTS = ROOT / "_redirects"
 SITEMAP = ROOT / "sitemap.xml"
 LLMS = ROOT / "llms.txt"
@@ -26,6 +27,7 @@ def main() -> None:
     html = HTML.read_text(encoding="utf-8")
     js = JS.read_text(encoding="utf-8")
     components = COMPONENTS.read_text(encoding="utf-8")
+    legacy_html = LEGACY_HTML.read_text(encoding="utf-8")
     redirects = REDIRECTS.read_text(encoding="utf-8")
     sitemap = SITEMAP.read_text(encoding="utf-8")
     llms = LLMS.read_text(encoding="utf-8")
@@ -42,6 +44,7 @@ def main() -> None:
         require(token in js, f"missing behavior {token}")
     require("country-systems-atlas.html" in components, "global components lack atlas link")
     require("/country-systems-phase1.html /country-systems-atlas.html 301" in redirects, "missing legacy redirect")
+    require('window.location.replace("country-systems-atlas.html" + window.location.search + window.location.hash)' in legacy_html, "legacy GitHub Pages shim must preserve query and fragment")
     require("https://wealthmeter.xyz/country-systems-atlas.html" in sitemap, "sitemap lacks atlas")
     require("https://wealthmeter.xyz/country-systems-atlas.html" in llms, "llms.txt lacks atlas")
 
