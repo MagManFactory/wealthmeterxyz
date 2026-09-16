@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the Phase 1 Country Systems Atlas snapshot from the World Bank API."""
+"""Build the Phase 2 Country Systems Atlas snapshot from the World Bank API."""
 
 from __future__ import annotations
 
@@ -14,8 +14,14 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "data" / "country-systems-phase1.json"
 
 COUNTRIES = {
+    "ARG": "Argentina",
     "AUS": "Australia",
+    "AUT": "Austria",
+    "BEL": "Belgium",
+    "BGD": "Bangladesh",
+    "BGR": "Bulgaria",
     "BRA": "Brazil",
+    "KHM": "Cambodia",
     "CAN": "Canada",
     "CHL": "Chile",
     "CHN": "China",
@@ -24,25 +30,49 @@ COUNTRIES = {
     "DEU": "Germany",
     "DNK": "Denmark",
     "EGY": "Egypt",
+    "ETH": "Ethiopia",
     "ESP": "Spain",
+    "FIN": "Finland",
     "FRA": "France",
     "GBR": "United Kingdom",
     "GRC": "Greece",
+    "GHA": "Ghana",
+    "HUN": "Hungary",
     "IDN": "Indonesia",
     "IND": "India",
+    "IRL": "Ireland",
+    "ISR": "Israel",
     "ITA": "Italy",
     "JPN": "Japan",
     "KEN": "Kenya",
     "KOR": "South Korea",
     "MEX": "Mexico",
+    "MAR": "Morocco",
+    "MYS": "Malaysia",
     "NGA": "Nigeria",
     "NLD": "Netherlands",
     "NOR": "Norway",
+    "NZL": "New Zealand",
+    "PAK": "Pakistan",
+    "PER": "Peru",
+    "PHL": "Philippines",
     "POL": "Poland",
     "PRT": "Portugal",
+    "QAT": "Qatar",
+    "ROU": "Romania",
+    "SAU": "Saudi Arabia",
+    "SEN": "Senegal",
     "SGP": "Singapore",
+    "SWE": "Sweden",
+    "CHE": "Switzerland",
+    "TZA": "Tanzania",
     "THA": "Thailand",
+    "TUR": "Turkey",
+    "UGA": "Uganda",
+    "UKR": "Ukraine",
+    "ARE": "United Arab Emirates",
     "USA": "United States",
+    "VNM": "Vietnam",
     "ZAF": "South Africa",
 }
 
@@ -131,7 +161,7 @@ INDICATORS = {
 
 
 def fetch_json(url: str):
-    request = urllib.request.Request(url, headers={"User-Agent": "CountrySystemsAtlas/phase1"})
+    request = urllib.request.Request(url, headers={"User-Agent": "CountrySystemsAtlas/phase2"})
     with urllib.request.urlopen(request, timeout=45) as response:
         return json.load(response)
 

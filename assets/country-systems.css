@@ -80,6 +80,39 @@ body {
 .control-field select { width: 100%; min-height: 46px; border: 1px solid #cbd8e8; border-radius: 11px; padding: .65rem .75rem; background: #fff; color: var(--systems-ink); font: 700 .9rem Inter, sans-serif; }
 .control-field select:focus { outline: 3px solid rgba(37,99,235,.14); border-color: var(--systems-primary); }
 
+.systems-toolbar {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  min-height: 42px;
+  margin: -.2rem 0 1rem;
+  color: var(--systems-muted);
+  font-size: .78rem;
+}
+.systems-copy-button {
+  margin-left: auto;
+  border: 1px solid #cbd8e8;
+  border-radius: 999px;
+  padding: .58rem .82rem;
+  background: #fff;
+  color: var(--systems-primary);
+  font: 800 .68rem/1 "Roboto Mono", monospace;
+  letter-spacing: .04em;
+  cursor: pointer;
+}
+.systems-copy-button:hover { border-color: var(--systems-primary); }
+.systems-copy-button:focus { outline: 3px solid rgba(37,99,235,.14); }
+.systems-copy-status { min-width: 4.8rem; font-size: .72rem; }
+
+.systems-profile-section { margin-bottom: 1rem; }
+.systems-profile-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; }
+.systems-profile-card { border: 1px solid #e4ebf4; border-radius: 16px; padding: 1rem; background: #fbfdff; }
+.systems-profile-country { color: var(--systems-primary); font: 800 .68rem/1.3 "Roboto Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.systems-profile-card h3 { margin: .35rem 0 .2rem; font: 800 1.1rem/1.2 Outfit, Inter, sans-serif; }
+.systems-profile-value { margin-top: .7rem; font: 800 1.65rem/1.05 "Roboto Mono", monospace; letter-spacing: -.04em; }
+.systems-profile-rank { margin-top: .55rem; color: var(--systems-ink); font-size: .78rem; font-weight: 700; }
+.systems-profile-note { margin-top: .22rem; color: var(--systems-muted); font-size: .72rem; line-height: 1.45; }
+
 .systems-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(360px, .8fr); gap: 1rem; align-items: start; }
 .systems-card { border: 1px solid var(--systems-line); border-radius: 22px; background: var(--systems-panel); padding: 1.2rem; box-shadow: 0 18px 50px rgba(15,23,42,.045); }
 .systems-card + .systems-card { margin-top: 1rem; }
@@ -124,10 +157,13 @@ body {
 @media (max-width: 980px) {
   .systems-controls { grid-template-columns: repeat(2, 1fr); }
   .systems-grid, .systems-method { grid-template-columns: 1fr; }
+  .systems-profile-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 580px) {
   .systems-shell { padding: 1rem .75rem 3rem; }
   .systems-hero { border-radius: 20px; }
   .systems-controls { grid-template-columns: 1fr; }
+  .systems-toolbar { align-items: flex-start; flex-wrap: wrap; }
+  .systems-copy-button { margin-left: 0; }
   .systems-card { border-radius: 17px; padding: .9rem; }
 }

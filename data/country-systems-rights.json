@@ -36,16 +36,31 @@
       "status": "permission_pending",
       "licence": "CC BY-NC-SA 3.0 IGO",
       "trackingId": "CS-ITU-20260916",
+      "requestStatus": "sent",
+      "clearedDate": "2026-09-16",
+      "sentAt": "2026-09-16T19:23:11Z",
+      "sentFrom": "michelle.martin@wealthmeter.xyz",
+      "responseStatus": "awaiting_response",
       "productionUse": false
     },
     "who": {
       "status": "permission_pending",
       "trackingId": "CS-WHO-20260916",
+      "requestStatus": "sent",
+      "clearedDate": "2026-09-16",
+      "sentAt": "2026-09-16T19:23:11Z",
+      "sentFrom": "michelle.martin@lifemeter.xyz",
+      "responseStatus": "awaiting_response",
       "productionUse": false
     },
     "irena": {
       "status": "permission_pending",
       "trackingId": "CS-IRENA-20260916",
+      "requestStatus": "sent",
+      "clearedDate": "2026-09-16",
+      "sentAt": "2026-09-16T19:23:12Z",
+      "sentFrom": "michelle.martin@wealthmeter.xyz",
+      "responseStatus": "awaiting_response",
       "productionUse": false
     }
   }

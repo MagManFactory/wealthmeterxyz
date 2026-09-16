@@ -8,6 +8,9 @@
   const scatter = document.querySelector("[data-scatter]");
   const trend = document.querySelector("[data-trend]");
   const sourceList = document.querySelector("[data-source-list]");
+  const profileCards = document.querySelector("[data-profile-cards]");
+  const copyButton = document.querySelector("[data-copy-link]");
+  const copyStatus = document.querySelector("[data-copy-status]");
   let atlas;
 
   const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (char) => ({
@@ -42,13 +45,63 @@
   }
 
   function populateControls() {
-    const options = atlas.countries.map((country) => `<option value="${country.code}">${escapeHtml(country.name)}</option>`).join("");
+    const options = [...atlas.countries]
+      .sort((left, right) => left.name.localeCompare(right.name))
+      .map((country) => `<option value="${country.code}">${escapeHtml(country.name)}</option>`)
+      .join("");
     selectors.forEach((select) => { select.innerHTML = options; });
-    ["USA", "JPN", "DEU"].forEach((code, index) => { if (selectors[index]) selectors[index].value = code; });
+    const validCodes = new Set(atlas.countries.map((country) => country.code));
+    const requestedCodes = new URLSearchParams(window.location.search).get("countries")?.split(",").filter((code, index, values) => validCodes.has(code) && values.indexOf(code) === index);
+    const initialCodes = requestedCodes?.length === 3 ? requestedCodes : ["USA", "JPN", "DEU"];
+    initialCodes.forEach((code, index) => { if (selectors[index]) selectors[index].value = code; });
     focusSelect.innerHTML = Object.entries(atlas.indicators).map(([key, indicator]) =>
       `<option value="${key}">${escapeHtml(indicator.shortLabel)}</option>`
     ).join("");
-    focusSelect.value = "life_expectancy";
+    const requestedMetric = new URLSearchParams(window.location.search).get("metric");
+    focusSelect.value = requestedMetric && atlas.indicators[requestedMetric] ? requestedMetric : "life_expectancy";
+  }
+
+  function median(values) {
+    const sorted = values.filter(Number.isFinite).sort((a, b) => a - b);
+    if (!sorted.length) return null;
+    const middle = Math.floor(sorted.length / 2);
+    return sorted.length % 2 ? sorted[middle] : (sorted[middle - 1] + sorted[middle]) / 2;
+  }
+
+  function medianComparison(value, midpoint, indicator) {
+    if (!Number.isFinite(midpoint)) return "Prototype median unavailable";
+    const difference = value - midpoint;
+    const sign = difference > 0 ? "+" : "";
+    if (indicator.format === "currency") {
+      const percentage = midpoint ? (difference / midpoint) * 100 : 0;
+      return `${percentage > 0 ? "+" : ""}${percentage.toFixed(1)}% versus prototype median`;
+    }
+    if (indicator.format === "percent") return `${sign}${difference.toFixed(1)} percentage points versus median`;
+    if (indicator.format === "years") return `${sign}${difference.toFixed(1)} years versus median`;
+    return `${sign}${difference.toFixed(2)} versus prototype median`;
+  }
+
+  function renderProfiles() {
+    const key = focusSelect.value;
+    const indicator = atlas.indicators[key];
+    const ranked = atlas.countries.map((country) => ({ country, point: country.metrics[key].latest }))
+      .filter(({ point }) => Number.isFinite(point?.value))
+      .sort((a, b) => b.point.value - a.point.value);
+    const midpoint = median(ranked.map(({ point }) => point.value));
+    profileCards.innerHTML = selectedCountries().map((country) => {
+      const point = country.metrics[key].latest;
+      const rank = ranked.findIndex((entry) => entry.country.code === country.code) + 1;
+      const available = Object.values(country.metrics).filter((metric) => Number.isFinite(metric.latest?.value)).length;
+      if (!point) return `<article class="systems-profile-card"><div class="systems-profile-country">${escapeHtml(country.name)}</div><h3>${escapeHtml(indicator.shortLabel)}</h3><div class="systems-profile-value">—</div><div class="systems-profile-note">No current observation in this snapshot · ${available} of ${Object.keys(atlas.indicators).length} measures available</div></article>`;
+      return `<article class="systems-profile-card"><div class="systems-profile-country">${escapeHtml(country.name)}</div><h3>${escapeHtml(indicator.shortLabel)}</h3><div class="systems-profile-value">${escapeHtml(formatValue(point.value, indicator))}</div><div class="systems-profile-rank">Value position ${rank} of ${ranked.length}</div><div class="systems-profile-note">${escapeHtml(medianComparison(point.value, midpoint, indicator))} · ${point.year} data · ${available} of ${Object.keys(atlas.indicators).length} measures available</div></article>`;
+    }).join("");
+  }
+
+  function syncComparisonUrl() {
+    const url = new URL(window.location.href);
+    url.searchParams.set("countries", selectedCountries().map((country) => country.code).join(","));
+    url.searchParams.set("metric", focusSelect.value);
+    window.history.replaceState({}, "", url);
   }
 
   function renderMatrix() {
@@ -99,7 +152,7 @@
       const color = selected ? palette[index] : "#b9c6d6";
       return `<circle cx="${xScale(point.x)}" cy="${yScale(point.y)}" r="${selected ? 7 : 4}" class="chart-dot${selected ? " selected" : ""}" style="fill:${color}"><title>${escapeHtml(point.country.name)}: ${formatValue(point.x, atlas.indicators.gdp_ppp)}, ${formatValue(point.y, atlas.indicators.life_expectancy)}</title></circle>${selected ? svgText(xScale(point.x) + 10, yScale(point.y) - 10, point.country.name, "chart-dot-label", "start") : ""}`;
     }).join("");
-    scatter.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="GDP per person plotted against life expectancy for thirty countries">${grid}<line x1="${margin.left}" y1="${height - margin.bottom}" x2="${width - margin.right}" y2="${height - margin.bottom}" class="chart-axis"/><line x1="${margin.left}" y1="${margin.top}" x2="${margin.left}" y2="${height - margin.bottom}" class="chart-axis"/>${dots}${svgText(width / 2, height - 7, "GDP per person, purchasing-power parity", "chart-label")}${svgText(16, height / 2, "Life expectancy (years)", "chart-label")}</svg>`;
+    scatter.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="GDP per person plotted against life expectancy for ${atlas.countries.length} countries">${grid}<line x1="${margin.left}" y1="${height - margin.bottom}" x2="${width - margin.right}" y2="${height - margin.bottom}" class="chart-axis"/><line x1="${margin.left}" y1="${margin.top}" x2="${margin.left}" y2="${height - margin.bottom}" class="chart-axis"/>${dots}${svgText(width / 2, height - 7, "GDP per person, purchasing-power parity", "chart-label")}${svgText(16, height / 2, "Life expectancy (years)", "chart-label")}</svg>`;
   }
 
   function renderTrend() {
@@ -135,7 +188,7 @@
     sourceList.innerHTML = Object.values(atlas.indicators).map((indicator) => `<div class="source-row"><strong>${escapeHtml(indicator.label)} · ${escapeHtml(indicator.code)}</strong><span>${escapeHtml(indicator.sourceClass)}. World Development Indicators; observation year appears with each value.</span></div>`).join("");
   }
 
-  function render() { renderMatrix(); renderScatter(); renderTrend(); }
+  function render() { renderMatrix(); renderScatter(); renderTrend(); renderProfiles(); syncComparisonUrl(); }
 
   fetch("data/country-systems-phase1.json")
     .then((response) => { if (!response.ok) throw new Error(`Data request failed: ${response.status}`); return response.json(); })
@@ -145,7 +198,17 @@
       renderSources();
       render();
       selectors.forEach((select) => select.addEventListener("change", render));
-      focusSelect.addEventListener("change", renderTrend);
+      focusSelect.addEventListener("change", render);
+      copyButton.addEventListener("click", () => {
+        if (!navigator.clipboard?.writeText) {
+          copyStatus.textContent = "Copy unavailable";
+          return;
+        }
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          copyStatus.textContent = "Link copied";
+          window.setTimeout(() => { copyStatus.textContent = ""; }, 2500);
+        }).catch(() => { copyStatus.textContent = "Copy unavailable"; });
+      });
       document.querySelector("[data-generated]").textContent = atlas.generated;
     })
     .catch((error) => {
