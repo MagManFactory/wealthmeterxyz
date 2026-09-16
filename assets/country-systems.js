@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const palette = ["#2563eb", "#0891b2", "#f97316", "#7c3aed"];
+  const palette = ["#2563eb", "#0891b2", "#f97316"];
   const selectors = [...document.querySelectorAll("[data-country-select]")];
   const focusSelect = document.querySelector("[data-focus-select]");
   const matrix = document.querySelector("[data-comparison-matrix]");
@@ -44,7 +44,7 @@
   function populateControls() {
     const options = atlas.countries.map((country) => `<option value="${country.code}">${escapeHtml(country.name)}</option>`).join("");
     selectors.forEach((select) => { select.innerHTML = options; });
-    ["USA", "JPN", "DEU", "BRA"].forEach((code, index) => { if (selectors[index]) selectors[index].value = code; });
+    ["USA", "JPN", "DEU"].forEach((code, index) => { if (selectors[index]) selectors[index].value = code; });
     focusSelect.innerHTML = Object.entries(atlas.indicators).map(([key, indicator]) =>
       `<option value="${key}">${escapeHtml(indicator.shortLabel)}</option>`
     ).join("");
