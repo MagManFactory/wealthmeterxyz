@@ -27,4 +27,28 @@ if [ "$FOUND" -eq 1 ]; then
   exit 1
 fi
 
+> /tmp/wealthmeter_payhip_route_hits.txt
+FOUND=0
+while IFS= read -r f; do
+  [ -z "$f" ] && continue
+  [ -f "$f" ] || continue
+  case "$f" in
+    report-wealth-thresholds.html|report-velocity-of-capital.html|report-geography-global-wealth.html)
+      continue
+      ;;
+  esac
+  if rg -n 'https://payhip\.com/' "$f" >>/tmp/wealthmeter_payhip_route_hits.txt; then
+    FOUND=1
+  fi
+done <<EOF
+$HTML_FILES
+EOF
+
+if [ "$FOUND" -eq 1 ]; then
+  echo "Report routing violation: Payhip links are allowed only on report detail pages."
+  cat /tmp/wealthmeter_payhip_route_hits.txt
+  exit 1
+fi
+
 echo "Content policy check passed: no banned internal prompt text found."
+echo "Report routing check passed: external checkout appears only on report detail pages."
