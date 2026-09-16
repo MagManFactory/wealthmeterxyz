@@ -95,7 +95,7 @@
         .source-footnote { margin:14px 0 0; font-size:.8rem; }
         #shareCard { width:100%; aspect-ratio:1; display:flex; flex-direction:column; margin-top:28px; padding:clamp(24px,5vw,42px); border-radius:24px; overflow:hidden; position:relative; background:linear-gradient(150deg,#07111f 0%,#101f36 70%,#0b2940 100%); color:#f8fafc; box-shadow:0 24px 60px rgba(15,23,42,.22); text-align:left; }
         #shareCard::after { content:''; position:absolute; right:-18%; bottom:-28%; width:70%; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,rgba(8,145,178,.3),transparent 66%); }
-        .diag-header,.diag-metrics,.diag-benchmark,.diag-footer { position:relative; z-index:1; }
+        .diag-header,.diag-metrics,.diag-benchmark,.diag-footer,.diag-band-explainer { position:relative; z-index:1; }
         .diag-header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
         .diag-brand { display:flex; align-items:center; gap:9px; font:900 clamp(13px,2.4vw,20px) Outfit,sans-serif; letter-spacing:-.03em; }
         .diag-mark { display:flex; align-items:flex-end; gap:3px; height:24px; }
@@ -104,6 +104,7 @@
         .diag-pill { padding:6px 9px; border:1px solid rgba(250,204,21,.5); border-radius:999px; background:rgba(250,204,21,.12); color:#fde047; font-size:clamp(7px,1.4vw,10px); font-weight:900; letter-spacing:.09em; text-transform:uppercase; }
         .diag-kicker { position:relative; z-index:1; margin-top:auto; color:#38bdf8; font-size:clamp(8px,1.5vw,11px); font-weight:900; letter-spacing:.17em; text-transform:uppercase; }
         #shareCard .share-band { position:relative; z-index:1; margin-top:7px; font:900 clamp(27px,6vw,48px)/.98 Outfit,sans-serif; letter-spacing:-.045em; }
+        .diag-band-explainer { margin-top:8px; color:#cbd5e1; font-size:clamp(8px,1.55vw,11px); font-weight:700; line-height:1.4; }
         .diag-metrics { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:20px; }
         .diag-metric { padding:clamp(12px,2.5vw,19px); border:1px solid rgba(148,163,184,.24); border-radius:15px; background:rgba(255,255,255,.07); }
         .diag-metric-label { color:#94a3b8; font-size:clamp(7px,1.3vw,9px); font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
@@ -490,8 +491,9 @@
                                 <div class="diag-brand"><span class="diag-mark"><span></span><span></span><span></span></span>WEALTHMETER.XYZ</div>
                                 <div class="diag-pill">U.S. household wealth</div>
                             </div>
-                            <div class="diag-kicker" id="shareModel">2024 Census wealth diagnostic</div>
+                            <div class="diag-kicker">Your U.S. household net-worth position</div>
                             <div class="share-band" id="shareBand">—</div>
+                            <div class="diag-band-explainer">Estimated wealth band containing your entered household net worth</div>
                             <div class="diag-metrics">
                                 <div class="diag-metric"><div class="diag-metric-label">Percentile interval</div><div class="diag-metric-value" id="sharePercent">—</div></div>
                                 <div class="diag-metric"><div class="diag-metric-label">Household rank interval</div><div class="diag-metric-value" id="shareRank">—</div></div>
@@ -696,7 +698,6 @@
         document.getElementById('sharePercent').textContent=`${formatPercent(lower)}–${formatPercent(upper)}`;
         document.getElementById('shareRank').textContent=`#${compactRank(richerLow)}–#${compactRank(richerHigh)}`;
         document.getElementById('shareBenchmark').textContent=positionSummary(group,lower,upper);
-        document.getElementById('shareModel').textContent=model==='hybrid'?'Census + Federal Reserve hybrid diagnostic':'2024 Census wealth diagnostic';
         document.getElementById('shareSource').innerHTML=model==='hybrid'
             ? 'Census 2025 SIPP + Federal Reserve 2022 SCF<br>SCF dollars adjusted to 2024 with CPI-U'
             : 'U.S. Census Bureau · 2025 SIPP<br>Wealth year 2024 · Released July 2026';
