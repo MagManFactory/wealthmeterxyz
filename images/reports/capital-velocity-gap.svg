@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">Asset price growth compared with wage growth, 1990 to 2025</title>
+  <desc id="desc">Paired horizontal bars compare cumulative asset price growth and wage growth for the United States, China, Germany, India, Japan, and Brazil.</desc>
+  <rect width="1200" height="780" rx="36" fill="#07111f"/>
+  <text x="70" y="76" fill="#93c5fd" font-family="Roboto Mono, monospace" font-size="18" font-weight="700" letter-spacing="3">THE VELOCITY GAP / 1990-2025</text>
+  <text x="70" y="130" fill="#ffffff" font-family="Outfit, Arial, sans-serif" font-size="42" font-weight="900">Assets and wages did not move together.</text>
+  <rect x="792" y="62" width="24" height="12" rx="6" fill="#3b82f6"/><text x="828" y="75" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="16">Asset prices</text>
+  <rect x="954" y="62" width="24" height="12" rx="6" fill="#22d3ee"/><text x="990" y="75" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="16">Wages</text>
+  <g font-family="Inter, Arial, sans-serif" font-size="18" fill="#e2e8f0">
+    <text x="70" y="213" font-weight="700">United States</text>
+    <rect x="270" y="184" width="318" height="22" rx="11" fill="#3b82f6"/><text x="600" y="202" fill="#93c5fd">+410%</text>
+    <rect x="270" y="214" width="45" height="22" rx="11" fill="#22d3ee"/><text x="327" y="232" fill="#67e8f9">+58%</text>
+    <text x="70" y="303" font-weight="700">China</text>
+    <rect x="270" y="274" width="481" height="22" rx="11" fill="#3b82f6"/><text x="763" y="292" fill="#93c5fd">+620%</text>
+    <rect x="270" y="304" width="605" height="22" rx="11" fill="#22d3ee"/><text x="887" y="322" fill="#67e8f9">+780%</text>
+    <text x="70" y="393" font-weight="700">Germany</text>
+    <rect x="270" y="364" width="163" height="22" rx="11" fill="#3b82f6"/><text x="445" y="382" fill="#93c5fd">+210%</text>
+    <rect x="270" y="394" width="40" height="22" rx="11" fill="#22d3ee"/><text x="322" y="412" fill="#67e8f9">+52%</text>
+    <text x="70" y="483" font-weight="700">India</text>
+    <rect x="270" y="454" width="302" height="22" rx="11" fill="#3b82f6"/><text x="584" y="472" fill="#93c5fd">+390%</text>
+    <rect x="270" y="484" width="372" height="22" rx="11" fill="#22d3ee"/><text x="654" y="502" fill="#67e8f9">+480%</text>
+    <text x="70" y="573" font-weight="700">Japan</text>
+    <rect x="270" y="544" width="66" height="22" rx="11" fill="#3b82f6"/><text x="348" y="562" fill="#93c5fd">+85%</text>
+    <rect x="270" y="574" width="4" height="22" rx="2" fill="#22d3ee"/><text x="286" y="592" fill="#67e8f9">+5%</text>
+    <text x="70" y="663" font-weight="700">Brazil</text>
+    <rect x="270" y="634" width="124" height="22" rx="11" fill="#3b82f6"/><text x="406" y="652" fill="#93c5fd">+160%</text>
+    <rect x="270" y="664" width="29" height="22" rx="11" fill="#22d3ee"/><text x="311" y="682" fill="#67e8f9">+38%</text>
+  </g>
+  <line x1="270" y1="708" x2="875" y2="708" stroke="#334155"/>
+  <text x="70" y="744" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="14">Cumulative growth. Source: report Appendix B; World Inequality Lab (2025), World Bank (2024), OECD (2025), national statistical agencies.</text>
+</svg>

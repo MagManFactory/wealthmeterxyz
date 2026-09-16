@@ -23,6 +23,9 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body)}
 .sales-kicker{margin:0 0 .75rem;color:var(--blue);font:900 .74rem/1 var(--mono);letter-spacing:.17em;text-transform:uppercase}
 .sales-heading{max-width:850px;margin:0 0 1rem;font:900 clamp(2.15rem,4.5vw,4rem)/1 var(--display);letter-spacing:-.045em;text-wrap:balance}
 .sales-intro{max-width:760px;margin:0 0 2.2rem;color:var(--muted);font-size:1.08rem;line-height:1.7}
+.report-visual{width:min(1120px,calc(100% - 3rem));margin:0 auto clamp(4rem,7vw,6.5rem);padding:1rem;border:1px solid var(--line);border-radius:28px;background:#fff;box-shadow:0 24px 70px rgba(15,23,42,.09)}
+.report-visual img{display:block;width:100%;height:auto;border-radius:20px}
+.report-visual figcaption{padding:.9rem .35rem .2rem;color:var(--muted);font-size:.83rem;line-height:1.55}
 .payoff-grid,.inside-grid,.fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .payoff-card,.inside-card,.fit-card{padding:1.45rem;border:1px solid var(--line);border-radius:20px;background:#fff}
 .payoff-num{display:block;margin-bottom:1rem;color:var(--blue);font:900 1rem var(--mono)}
@@ -44,3 +47,4 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body)}
 .bottom-cta{text-align:center;background:#07111f;color:#fff}
 .bottom-cta .sales-heading,.bottom-cta .sales-intro{margin-left:auto;margin-right:auto}.bottom-cta .sales-intro{color:#b9c7d9}.bottom-cta .sales-actions{justify-content:center}
 @media(max-width:820px){html,body{width:100%;max-width:100%;overflow-x:hidden}header .nav-container{width:100%!important;max-width:100%!important;height:auto!important;min-height:90px;flex-wrap:wrap;padding:.8rem .75rem!important;overflow:hidden}.brand-wrapper{width:100%;min-width:0;margin:0 0 .65rem!important;justify-content:center}.brand-wrapper div{font-size:21px!important}header nav{width:100%;min-width:0;max-width:100%;height:auto!important;gap:.5rem!important;justify-content:center!important;overflow:hidden;padding-bottom:.35rem}.nav-group-label,.sister-site-link{font-size:.54rem!important;letter-spacing:.045em!important}.sales-wrap{width:100%;max-width:100%;min-width:0}.payoff-grid,.inside-grid,.fit-grid{grid-template-columns:1fr}.deliverable{grid-template-columns:1fr}.cover{position:relative;top:auto;min-height:430px}.sales-hero{padding-top:4rem}.sales-title{display:block;width:100%;max-width:100%;font-size:2.35rem;line-height:.95;letter-spacing:-.05em;text-wrap:wrap;overflow-wrap:break-word}.sales-deck{width:100%;max-width:100%;font-size:1.04rem}.sales-proof{max-width:100%;flex-wrap:wrap}.sales-actions{max-width:100%;align-items:stretch}.sales-buy,.sales-learn{width:100%;max-width:100%;text-align:center}.sales-section{padding-left:1.2rem;padding-right:1.2rem}}
+@media(max-width:820px){.report-visual{width:calc(100% - 2rem);padding:.55rem;border-radius:18px}.report-visual img{border-radius:13px}.report-visual figcaption{font-size:.75rem}}
