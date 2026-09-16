@@ -84,7 +84,13 @@
         .method-card { padding:22px; border-radius:18px; background:#f8fafc; border:1px solid var(--line); }
         .method-card h3 { margin:0 0 8px; font:800 1rem Outfit,sans-serif; }
         .method-card p { margin:0; color:var(--muted); font-size:.88rem; line-height:1.6; }
-        .sources { margin-top:30px; padding-top:24px; border-top:1px solid var(--line); color:var(--muted); font-size:.86rem; line-height:1.8; }
+        .sources { margin-top:30px; padding-top:24px; border-top:1px solid var(--line); color:var(--muted); font-size:.86rem; line-height:1.65; }
+        .sources h3 { margin:0 0 14px; color:var(--ink); font:800 1rem Outfit,sans-serif; }
+        .source-list { display:grid; gap:12px; margin:0; padding:0; list-style:none; }
+        .source-list li { padding:14px 16px; border:1px solid var(--line); border-radius:14px; background:#f8fafc; }
+        .source-list strong { display:block; margin-bottom:3px; color:var(--ink); }
+        .source-list a { font-weight:700; }
+        .source-footnote { margin:14px 0 0; font-size:.8rem; }
         #shareCard { width:100%; aspect-ratio:1; display:flex; flex-direction:column; margin-top:28px; padding:clamp(24px,5vw,42px); border-radius:24px; overflow:hidden; position:relative; background:linear-gradient(150deg,#07111f 0%,#101f36 70%,#0b2940 100%); color:#f8fafc; box-shadow:0 24px 60px rgba(15,23,42,.22); text-align:left; }
         #shareCard::after { content:''; position:absolute; right:-18%; bottom:-28%; width:70%; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,rgba(8,145,178,.3),transparent 66%); }
         .diag-header,.diag-metrics,.diag-benchmark,.diag-footer { position:relative; z-index:1; }
@@ -515,7 +521,15 @@
                     <article class="method-card"><h3>Hybrid upper tail</h3><p>At $500,000 and above, the selected group's Census share is divided using the weighted national upper-tail shape in the Federal Reserve's 2022 SCF, converted to 2024 dollars.</p></article>
                     <article class="method-card"><h3>Precision limit</h3><p>The upper tail is a modeled range, not a published Census rank. Census households and SCF families are not identical units, uncertainty increases above $100 million, and the $1 billion-plus result remains open-ended.</p></article>
                 </div>
-                <div class="sources"><strong>Sources:</strong> U.S. Census Bureau, <a href="https://www.census.gov/data/tables/2024/demo/wealth/wealth-asset-ownership.html">Wealth and Asset Ownership tables</a>; <a href="https://www2.census.gov/programs-surveys/demo/tables/wealth/2023/wealth-asset-ownership/wealth_tables_dy2024.xlsx">2024 detailed workbook</a>; <a href="https://www.census.gov/library/publications/2026/demo/p70br-218.html">Household Wealth in the United States: 2024</a>; <a href="https://www.federalreserve.gov/econres/scf-documentation.htm">Federal Reserve 2022 SCF public data and documentation</a>; and <a href="https://www.bls.gov/cpi/tables/supplemental-files/historical-cpi-u-202412.pdf">BLS CPI-U annual averages</a>. See the full <a href="methodology.html">WealthMeter methodology</a> and <a href="data-sources.html">data sources</a>.</div>
+                <div class="sources">
+                    <h3>Calculator sources</h3>
+                    <ul class="source-list">
+                        <li><strong>Census core and group shares</strong><a href="https://www.census.gov/data/tables/2024/demo/wealth/wealth-asset-ownership.html">2024 Wealth and Asset Ownership tables</a> · <a href="https://www2.census.gov/programs-surveys/demo/tables/wealth/2023/wealth-asset-ownership/wealth_tables_dy2024.xlsx">official detailed workbook</a> · <a href="https://www.census.gov/programs-surveys/sipp/methodology.html">SIPP methodology</a>. Table 4 supplies the nine household wealth bands and the age, region, and housing-tenure shares.</li>
+                        <li><strong>Upper-tail shape</strong><a href="https://www.federalreserve.gov/econres/scf-documentation.htm">Federal Reserve 2022 Survey of Consumer Finances documentation</a> · <a href="https://www.federalreserve.gov/econres/files/scfp2022s.zip">public summary extract</a>. The weighted conditional distribution above $500,000 divides the Census table's open highest band.</li>
+                        <li><strong>Dollar-year adjustment</strong><a href="https://www.bls.gov/cpi/tables/supplemental-files/historical-cpi-u-202412.pdf">BLS historical CPI-U annual averages</a>. SCF values are converted from 2022 to 2024 dollars using 313.689 ÷ 292.655 = 1.071873.</li>
+                    </ul>
+                    <p class="source-footnote">Source set reviewed September 16, 2026. See the full <a href="methodology.html">methodology</a> and <a href="data-sources.html">data-source register</a>.</p>
+                </div>
             </section>
         </div>
     </main>
