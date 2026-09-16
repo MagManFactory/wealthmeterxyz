@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/country-systems.css?v=2026-09-16.5">
+  <link rel="stylesheet" href="assets/country-systems.css?v=2026-09-16.6">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Country Systems Atlas","url":"https://wealthmeter.xyz/country-systems-atlas.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","description":"An interactive comparison of productive capacity, infrastructure, logistics, essential access, settlement patterns, and longevity across 145 countries and economies.","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"WEALTHMETER.XYZ","url":"https://wealthmeter.xyz/"}},{"@type":"Dataset","name":"WealthMeter Country Systems Atlas comparison dataset","url":"https://wealthmeter.xyz/country-systems-atlas.html","description":"A generated static snapshot of eight World Development Indicators for 145 countries and economies, with an observation year attached to every value.","dateModified":"2026-09-16","spatialCoverage":"145 countries and economies","temporalCoverage":"2014/2026","measurementTechnique":"Latest available observations and annual time series delivered through the World Bank Indicators API","variableMeasured":["GDP per capita, purchasing power parity","Life expectancy at birth","Population with access to electricity","Urban population share","Trade and transport infrastructure quality","Logistics Performance Index","Manufacturing value added share","Gross fixed capital formation share"],"isBasedOn":"https://data.worldbank.org/indicator","creator":{"@type":"Organization","name":"WEALTHMETER.XYZ","url":"https://wealthmeter.xyz/"}}]}</script>
     <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml"><style id="wealthmeter-component-styles">
     /* Monolith Pulse Animation */
@@ -396,6 +396,20 @@
       <section class="systems-card">
         <div class="card-heading"><div><span class="systems-eyebrow">Comparison matrix</span><h2>Eight measures. Years exposed.</h2><p>Bars show position within this 145-country comparison set, not a global rank. Settlement and investment shares are descriptive, not scored as inherently good or bad.</p></div></div>
         <div class="comparison-table-wrap" data-comparison-matrix aria-live="polite"></div>
+        <details class="metric-guide">
+          <summary>What these numbers mean</summary>
+          <div class="metric-guide-grid">
+            <p><strong>GDP / person</strong> Annual economic output per resident, adjusted for national price levels and expressed in current international dollars. It is not household income.</p>
+            <p><strong>Life expectancy</strong> Expected years of life at birth if that year’s mortality rates continued. It is not a forecast for a person who is already an adult.</p>
+            <p><strong>Electricity access</strong> Percentage of the population with an electricity connection.</p>
+            <p><strong>Urban population</strong> Percentage living in areas each country classifies as urban. It describes settlement, not urban quality.</p>
+            <p><strong>Transport infrastructure</strong> World Bank Logistics Performance Index survey score for trade and transport infrastructure, from 1 (low) to 5 (high).</p>
+            <p><strong>Logistics performance</strong> Overall World Bank Logistics Performance Index score across customs, infrastructure, shipment ease, service quality, tracking, and timeliness, from 1 (low) to 5 (high).</p>
+            <p><strong>Manufacturing share</strong> Manufacturing value added as a percentage of GDP. A larger share is not automatically better.</p>
+            <p><strong>Capital formation</strong> Investment in fixed assets such as buildings, machinery, roads, and other infrastructure as a percentage of GDP. It is not household saving.</p>
+          </div>
+          <p class="metric-guide-note"><strong>About the bars:</strong> Each bar places that value between the lowest and highest observation in this 145-economy set for the same measure. Bars cannot be compared across different rows and are not an overall score.</p>
+        </details>
       </section>
 
       <div>
@@ -478,6 +492,6 @@
 </footer>
 </div>
   <script src="components.js?v=2026-09-16.1"></script>
-  <script src="assets/country-systems.js?v=2026-09-16.6"></script>
+  <script src="assets/country-systems.js?v=2026-09-16.7"></script>
 </body>
 </html>

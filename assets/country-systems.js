@@ -300,7 +300,7 @@
         const normalized = ((point.value - min) / (max - min)) * 100;
         return `<td><span class="metric-number">${escapeHtml(formatValue(point.value, indicator))}</span><span class="metric-year">${point.year} data</span><div class="metric-track" aria-hidden="true"><span class="metric-fill" style="width:${Math.max(3, normalized).toFixed(1)}%"></span></div></td>`;
       }).join("");
-      return `<tr><th scope="row" class="metric-name"><strong>${escapeHtml(indicator.shortLabel)}</strong><span>${escapeHtml(indicator.domain)}</span></th>${cells}</tr>`;
+      return `<tr><th scope="row" class="metric-name"><strong>${escapeHtml(indicator.shortLabel)}</strong><span>${escapeHtml(indicator.domain)} · ${escapeHtml(indicator.unit)}</span></th>${cells}</tr>`;
     }).join("");
     matrix.innerHTML = `<table class="comparison-table"><thead><tr><th scope="col">System measure</th>${header}</tr></thead><tbody>${rows}</tbody></table>`;
   }

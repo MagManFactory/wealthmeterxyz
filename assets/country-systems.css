@@ -183,6 +183,14 @@ body {
 .metric-track { height: 5px; margin-top: .42rem; border-radius: 8px; background: #e7edf5; overflow: hidden; }
 .metric-fill { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--systems-primary), var(--systems-accent)); }
 
+.metric-guide { margin-top: .9rem; border-top: 1px solid var(--systems-line); padding-top: .8rem; }
+.metric-guide summary { color: var(--systems-ink); font: 800 .75rem/1.4 "Roboto Mono", monospace; letter-spacing: .04em; cursor: pointer; }
+.metric-guide summary::marker { color: var(--systems-primary); }
+.metric-guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .55rem 1rem; margin-top: .75rem; }
+.metric-guide-grid p { margin: 0; color: var(--systems-muted); font-size: .72rem; line-height: 1.5; }
+.metric-guide-grid strong, .metric-guide-note strong { color: var(--systems-ink); }
+.metric-guide-note { margin: .75rem 0 0; border-left: 3px solid var(--systems-accent); padding: .55rem .7rem; color: var(--systems-muted); background: #f8fafc; font-size: .72rem; line-height: 1.5; }
+
 .chart-frame { min-height: 330px; border: 1px solid #e7edf5; border-radius: 16px; background: #fbfdff; padding: .5rem; }
 .chart-frame svg { display: block; width: 100%; height: auto; overflow: visible; }
 .chart-axis { stroke: #bac7d6; stroke-width: 1; }
@@ -222,6 +230,7 @@ body {
 }
 @media (max-width: 580px) {
   .systems-shell { padding: 1rem .75rem 3rem; }
+  .metric-guide-grid { grid-template-columns: 1fr; }
   .systems-hero { border-radius: 20px; }
   .systems-controls { grid-template-columns: 1fr; }
   .systems-toolbar { align-items: flex-start; flex-wrap: wrap; }

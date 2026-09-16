@@ -40,8 +40,11 @@ def main() -> None:
     require("images/country-systems-atlas-social.png" in html, "missing social image metadata")
     for hook in ("data-view-mode", "data-country-select", "data-share-preview", "data-download-card", "data-related-link"):
         require(hook in html, f"missing UI hook {hook}")
+    require("What these numbers mean" in html, "missing metric definitions disclosure")
+    require("Bars cannot be compared across different rows" in html, "missing bar-scale explanation")
     for token in ('searchParams.set("view"', "ensureActiveUnique", "buildShareCanvas", "country_systems_share"):
         require(token in js, f"missing behavior {token}")
+    require("indicator.unit" in js, "matrix rows must expose each indicator unit")
     require("country-systems-atlas.html" in components, "global components lack atlas link")
     require("/country-systems-phase1.html /country-systems-atlas.html 301" in redirects, "missing legacy redirect")
     require('window.location.replace("country-systems-atlas.html" + window.location.search + window.location.hash)' in legacy_html, "legacy GitHub Pages shim must preserve query and fragment")
