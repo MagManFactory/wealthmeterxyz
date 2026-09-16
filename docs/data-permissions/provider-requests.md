@@ -1,8 +1,10 @@
 # Country Systems Atlas provider permission requests
 
-Prepared for review on 2026-09-16. These messages are drafts only. Michelle Martin sends them after clearance. Preserve each tracking ID in the subject line so replies remain auditable.
+Prepared and cleared on 2026-09-16. Michelle Martin sent the approved messages through the site-specific AgentMail identities on 2026-09-16. Preserve each tracking ID in the subject line so replies remain auditable.
 
 ## ITU
+
+**Dispatch status:** Sent 2026-09-16 from `michelle.martin@wealthmeter.xyz`; awaiting response.
 
 **To:** indicators@itu.int  
 **Subject:** [CS-ITU-20260916] Permission request: selected ITU indicators in free country-comparison atlas
@@ -26,6 +28,8 @@ WealthMeter.xyz and LifeMeter.xyz
 
 ## WHO
 
+**Dispatch status:** Sent 2026-09-16 from `michelle.martin@lifemeter.xyz`; awaiting response.
+
 **To:** gho_info@who.int  
 **Subject:** [CS-WHO-20260916] Permission request: selected GHO indicators in free country-comparison atlas
 
@@ -47,6 +51,8 @@ Michelle Martin
 LifeMeter.xyz and WealthMeter.xyz
 
 ## IRENA
+
+**Dispatch status:** Sent 2026-09-16 from `michelle.martin@wealthmeter.xyz`; awaiting response.
 
 **To:** statistics@irena.org  
 **Cc:** info@irena.org  
