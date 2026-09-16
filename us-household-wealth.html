@@ -106,9 +106,11 @@
         #shareCard .share-band { position:relative; z-index:1; margin-top:7px; font:900 clamp(27px,6vw,48px)/.98 Outfit,sans-serif; letter-spacing:-.045em; }
         .diag-band-explainer { margin-top:8px; color:#cbd5e1; font-size:clamp(8px,1.55vw,11px); font-weight:700; line-height:1.4; }
         .diag-metrics { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:20px; }
-        .diag-metric { padding:clamp(12px,2.5vw,19px); border:1px solid rgba(148,163,184,.24); border-radius:15px; background:rgba(255,255,255,.07); }
+        .diag-metric { padding:clamp(12px,2.5vw,19px); border:1px solid rgba(148,163,184,.24); border-radius:15px; background:rgba(255,255,255,.07); overflow:hidden; }
         .diag-metric-label { color:#94a3b8; font-size:clamp(7px,1.3vw,9px); font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
         .diag-metric-value { margin-top:6px; color:#fff; font:800 clamp(13px,4vw,30px) Roboto Mono,monospace; letter-spacing:-.05em; white-space:nowrap; }
+        .diag-metric-value.is-compact { font-size:clamp(11px,3vw,20px); letter-spacing:-.06em; }
+        .diag-metric-value.is-tight { font-size:clamp(10px,2.5vw,17px); letter-spacing:-.07em; }
         .diag-benchmark { margin-top:10px; padding:11px 13px; border-left:3px solid #facc15; background:rgba(250,204,21,.08); color:#dbeafe; font-size:clamp(9px,1.7vw,12px); font-weight:700; line-height:1.45; }
         .diag-footer { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-top:15px; padding-top:12px; border-top:1px solid rgba(148,163,184,.22); color:#94a3b8; font-size:clamp(7px,1.35vw,9px); line-height:1.45; }
         .diag-url { color:#fff; font-weight:900; white-space:nowrap; }
@@ -648,6 +650,12 @@
             : `${formatTopShare(topLow)}%–${formatTopShare(topHigh)}%`;
         return `Your household is in approximately the top ${topRange} of ${comparisonDescription(group)}.`;
     }
+    function setFittedMetric(id,value){
+        const element=document.getElementById(id);
+        element.textContent=value;
+        element.classList.toggle('is-compact',value.length>=13);
+        element.classList.toggle('is-tight',value.length>=16);
+    }
     function calculateHousehold(){
         const wealthInput = document.getElementById('householdWealth');
         const rawWealth = wealthInput.value.trim();
@@ -695,8 +703,8 @@
             : '<strong>Published Census interval:</strong> No within-band distribution is assumed below $500,000.';
         document.getElementById('distribution').innerHTML=group.p.map((v,i)=>`<span class="segment ${i===binIndex?'active':''}" style="flex:${v}" title="${BINS[i].label}: ${v}%"></span>`).join('');
         document.getElementById('shareBand').textContent=bandLabel;
-        document.getElementById('sharePercent').textContent=`${formatPercent(lower)}–${formatPercent(upper)}`;
-        document.getElementById('shareRank').textContent=`#${compactRank(richerLow)}–#${compactRank(richerHigh)}`;
+        setFittedMetric('sharePercent',`${formatPercent(lower)}–${formatPercent(upper)}`);
+        setFittedMetric('shareRank',`#${compactRank(richerLow)}–#${compactRank(richerHigh)}`);
         document.getElementById('shareBenchmark').textContent=positionSummary(group,lower,upper);
         document.getElementById('shareSource').innerHTML=model==='hybrid'
             ? 'Census 2025 SIPP + Federal Reserve 2022 SCF<br>SCF dollars adjusted to 2024 with CPI-U'
