@@ -18,8 +18,8 @@ DOMAIN = "https://wealthmeter.xyz"
 DISPLAY_NAME = "WEALTHMETER.XYZ"
 FEED_URL = f"{DOMAIN}/feed.xml"
 RSS_LIMIT = 50
-COMPONENT_VERSION = "2026-09-15.1"
-PRIVATE_OR_STAGING = {"adsense_block.html"}
+COMPONENT_VERSION = "2026-09-15.2"
+PRIVATE_OR_STAGING = {"404.html", "adsense_block.html"}
 DESCRIPTION_FALLBACKS = {
     "data-lab.html": "Explore WealthMeter's analytical lab for distribution views, exploratory finance tools, and supporting wealth datasets.",
     "data-sources.html": "Review the primary datasets, sources, and reference inputs used across WealthMeter calculators and analysis pages.",
@@ -775,6 +775,36 @@ def build_breadcrumb_schema(page: PageInfo) -> str | None:
     return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
 
+def build_article_schema(page: PageInfo) -> str | None:
+    if not page.is_article:
+        return None
+    published_match = re.search(
+        r"Published\s+([A-Z][a-z]+\s+\d{1,2},\s+\d{4})",
+        page.html_text,
+    )
+    published = None
+    if published_match:
+        try:
+            published = datetime.strptime(published_match.group(1), "%B %d, %Y").date().isoformat()
+        except ValueError:
+            published = None
+    payload: dict[str, object] = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": page.title.split("|")[0].strip(),
+        "description": page.description or page.title.split("|")[0].strip(),
+        "mainEntityOfPage": {"@type": "WebPage", "@id": page.canonical_url},
+        "author": {"@type": "Organization", "name": "WEALTHMETER.XYZ", "url": f"{DOMAIN}/about.html"},
+        "publisher": {"@type": "Organization", "name": "WEALTHMETER.XYZ", "url": f"{DOMAIN}/"},
+        "dateModified": page.modified_at.date().isoformat(),
+    }
+    if published:
+        payload["datePublished"] = published
+    if page.image_url:
+        payload["image"] = absolute_asset_url(page.image_url)
+    return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+
+
 def hub_item_entries(text: str) -> list[dict]:
     card_re = re.compile(r'<a class="card" href="([^"]+)".*?<h2>(.*?)</h2>.*?<p>(.*?)</p>', re.IGNORECASE | re.DOTALL)
     entries = []
@@ -1109,7 +1139,7 @@ def article_pages_in_display_order(pages: list[PageInfo]) -> list[PageInfo]:
 def generated_longform_dropdown(article_pages: list[PageInfo]) -> str:
     lines = [
         f'                    <a href="{page.path.name}">{html.escape(page.title.split("|")[0].strip())}</a>'
-        for page in article_pages
+        for page in article_pages[:12]
     ]
     return "\n".join(lines)
 
@@ -1290,6 +1320,8 @@ def update_html_inventory(
         updated = ensure_img_dimensions(updated)
         updated = ensure_og_image_metadata(updated, classify_page(path, updated, article_urls))
         updated = ensure_article_bridge(updated, classify_page(path, updated, article_urls))
+        page = classify_page(path, updated, article_urls)
+        updated = upsert_json_ld(updated, "Article", build_article_schema(page))
         page = classify_page(path, updated, article_urls)
         updated = upsert_json_ld(updated, "BreadcrumbList", build_breadcrumb_schema(page))
         page = classify_page(path, updated, article_urls)

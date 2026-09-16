@@ -5,62 +5,30 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Sep 2026 02:58:56 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 03:32:02 +0000</lastBuildDate>
     <item>
-      <title>The Retirement Age Lie</title>
-      <link>https://wealthmeter.xyz/retirement-age-lie.html</link>
-      <guid>https://wealthmeter.xyz/retirement-age-lie.html</guid>
-      <pubDate>Wed, 16 Sep 2026 02:58:56 +0000</pubDate>
-      <description>stress-testing retirement target numbers under current inflation, rate, and longevity conditions.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/retirement-age-lie-rate-inflation-stress.png" type="image/png"/>
+      <title>Job Loss Hurts More When Benefits Are Not Portable</title>
+      <link>https://wealthmeter.xyz/job-loss-hurts-more-when-benefits-are-not-portable.html</link>
+      <guid>https://wealthmeter.xyz/job-loss-hurts-more-when-benefits-are-not-portable.html</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <description>A job loss changes more than wages. Health coverage, retirement contributions and insurance can reprice the household balance sheet at once.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/job-loss-benefits-cliff-2026-sep06.png" type="image/png"/>
     </item>
     <item>
-      <title>Longevity Capital: Living to 120</title>
-      <link>https://wealthmeter.xyz/longevity-capital-living-to-120.html</link>
-      <guid>https://wealthmeter.xyz/longevity-capital-living-to-120.html</guid>
-      <pubDate>Wed, 16 Sep 2026 02:58:56 +0000</pubDate>
-      <description>how potential lifespan extension changes long-horizon wealth architecture.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/longevity-capital-horizon-reset.png" type="image/png"/>
+      <title>Disability Insurance Leaves Many Paychecks Unprotected</title>
+      <link>https://wealthmeter.xyz/disability-insurance-leaves-many-paychecks-unprotected.html</link>
+      <guid>https://wealthmeter.xyz/disability-insurance-leaves-many-paychecks-unprotected.html</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <description>BLS reported that 44 percent of private-industry workers had access to short-term disability insurance and 37 percent to long-term coverage in March 2025.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/disability-income-gap-2026-sep02.png" type="image/png"/>
     </item>
     <item>
-      <title>Inside Wealth: Germany, Japan, and Canada</title>
-      <link>https://wealthmeter.xyz/inside-wealth-germany-japan-canada.html</link>
-      <guid>https://wealthmeter.xyz/inside-wealth-germany-japan-canada.html</guid>
-      <pubDate>Wed, 16 Sep 2026 02:58:56 +0000</pubDate>
-      <description>structural comparison of top wealth outcomes in Germany, Japan, and Canada.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/inside-wealth-de-jp-ca-structural-lens.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Inheritance Illusion</title>
-      <link>https://wealthmeter.xyz/inheritance-illusion.html</link>
-      <guid>https://wealthmeter.xyz/inheritance-illusion.html</guid>
-      <pubDate>Wed, 16 Sep 2026 02:58:56 +0000</pubDate>
-      <description>why receiving wealth does not automatically create durable wealth outcomes.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/inheritance-illusion-liquidity-gap.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Equity Compensation Trap</title>
-      <link>https://wealthmeter.xyz/equity-compensation-trap.html</link>
-      <guid>https://wealthmeter.xyz/equity-compensation-trap.html</guid>
-      <pubDate>Wed, 16 Sep 2026 02:58:56 +0000</pubDate>
-      <description>RSU, ISO, and ESPP concentration risk and tax leakage in household wealth outcomes.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/equity-compensation-tax-fragility-map.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Dual-Income Trap</title>
-      <link>https://wealthmeter.xyz/dual-income-trap.html</link>
-      <guid>https://wealthmeter.xyz/dual-income-trap.html</guid>
-      <pubDate>Wed, 16 Sep 2026 02:58:56 +0000</pubDate>
-      <description>why two salaries often underperform one salary in long-run wealth resilience.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/dual-income-trap-cashflow-floor.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Compounding Gap After $1M</title>
-      <link>https://wealthmeter.xyz/compounding-gap-after-1m.html</link>
-      <guid>https://wealthmeter.xyz/compounding-gap-after-1m.html</guid>
-      <pubDate>Wed, 16 Sep 2026 02:58:56 +0000</pubDate>
-      <description>why wealth growth becomes non-linear after one million dollars due to access and governance effects.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/compounding-gap-after-1m.png" type="image/png"/>
+      <title>America Is 2nd by Average Wealth, 15th by Median Wealth</title>
+      <link>https://wealthmeter.xyz/america-is-second-by-average-wealth-fifteenth-by-median-wealth.html</link>
+      <guid>https://wealthmeter.xyz/america-is-second-by-average-wealth-fifteenth-by-median-wealth.html</guid>
+      <pubDate>Wed, 16 Sep 2026 00:00:00 +0000</pubDate>
+      <description>UBS</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/mean-median-wealth-gap-2026-sep01.png" type="image/png"/>
     </item>
     <item>
       <title>How Insurance Deductibles Become a Household Balance-Sheet Shock</title>
@@ -69,30 +37,6 @@
       <pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate>
       <description>A health deductible is a dated cash demand. A simple liquidity test shows whether a household can absorb it without expensive financing.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/deductible-liquidity-waterfall-2026-sep15.png" type="image/png"/>
-    </item>
-    <item>
-      <title>Job Loss Hurts More When Benefits Are Not Portable</title>
-      <link>https://wealthmeter.xyz/job-loss-hurts-more-when-benefits-are-not-portable.html</link>
-      <guid>https://wealthmeter.xyz/job-loss-hurts-more-when-benefits-are-not-portable.html</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
-      <description>A job loss changes more than wages. Health coverage, retirement contributions and insurance can reprice the household balance sheet at once.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/job-loss-benefits-cliff-2026-sep06.png" type="image/png"/>
-    </item>
-    <item>
-      <title>Disability Insurance Leaves Many Paychecks Unprotected</title>
-      <link>https://wealthmeter.xyz/disability-insurance-leaves-many-paychecks-unprotected.html</link>
-      <guid>https://wealthmeter.xyz/disability-insurance-leaves-many-paychecks-unprotected.html</guid>
-      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
-      <description>BLS reported that 44 percent of private-industry workers had access to short-term disability insurance and 37 percent to long-term coverage in March 2025.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/disability-income-gap-2026-sep02.png" type="image/png"/>
-    </item>
-    <item>
-      <title>America Is 2nd by Average Wealth, 15th by Median Wealth</title>
-      <link>https://wealthmeter.xyz/america-is-second-by-average-wealth-fifteenth-by-median-wealth.html</link>
-      <guid>https://wealthmeter.xyz/america-is-second-by-average-wealth-fifteenth-by-median-wealth.html</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
-      <description>UBS</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/mean-median-wealth-gap-2026-sep01.png" type="image/png"/>
     </item>
     <item>
       <title>Home Equity Is Not Emergency Liquidity</title>
@@ -109,6 +53,14 @@
       <pubDate>Mon, 06 Jul 2026 00:00:00 +0000</pubDate>
       <description>Why sequence risk starts before retirement begins, why the danger is really a shrinking margin problem, and why households usually notice it only when the flexibility window is already narrower.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/sequence-risk-fragility-wedge-2026-jul06.png" type="image/png"/>
+    </item>
+    <item>
+      <title>The Liquidity Illusion</title>
+      <link>https://wealthmeter.xyz/liquidity-illusion.html</link>
+      <guid>https://wealthmeter.xyz/liquidity-illusion.html</guid>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Why household net worth, borrowing access, and practical cash resilience diverge once real conversion haircuts, deadlines, and refinancing dependence are measured directly.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/liquidity-stress-haircut-ladder-2026-jun01.png" type="image/png"/>
     </item>
     <item>
       <title>The Property Tax Drag</title>
@@ -327,12 +279,20 @@
       <enclosure url="https://wealthmeter.xyz/images/longform/ownership-carry-system-stack-2026-apr25.png" type="image/png"/>
     </item>
     <item>
-      <title>The AI Displacement Timeline</title>
-      <link>https://wealthmeter.xyz/ai-displacement-timeline.html</link>
-      <guid>https://wealthmeter.xyz/ai-displacement-timeline.html</guid>
-      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
-      <description>An April 2026 WealthMeter analysis of AI labor displacement, separating task exposure, job churn, wage pressure, and household balance-sheet timing.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/ai-displacement-timeline-stack-2026.png" type="image/png"/>
+      <title>The Rent vs Buy Reversal</title>
+      <link>https://wealthmeter.xyz/rent-vs-buy-reversal.html</link>
+      <guid>https://wealthmeter.xyz/rent-vs-buy-reversal.html</guid>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
+      <description>A 2026 refresh on why the rent-versus-buy decision now turns on financing cost, owner carry, tenure, and mobility value rather than on the old automatic ownership script.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/rent-buy-full-cost-stack-2026-refresh.png" type="image/png"/>
+    </item>
+    <item>
+      <title>The Concentration vs Diversification Tradeoff</title>
+      <link>https://wealthmeter.xyz/concentration-vs-diversification-tradeoff.html</link>
+      <guid>https://wealthmeter.xyz/concentration-vs-diversification-tradeoff.html</guid>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 +0000</pubDate>
+      <description>Why diversification is still the default for most households, when concentration can be rational, and how to distinguish a real edge from a fragile story.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/concentration-diversification-barbell-2026-refresh.png" type="image/png"/>
     </item>
     <item>
       <title>The Rich but Not Famous Economy</title>
@@ -341,14 +301,6 @@
       <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
       <description>Why much of modern wealth sits with business owners, executives, partners, and quiet capital allocators whose income and asset position are real but socially under-recognized.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/rich-not-famous-income-map.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Liquidity Illusion</title>
-      <link>https://wealthmeter.xyz/liquidity-illusion.html</link>
-      <guid>https://wealthmeter.xyz/liquidity-illusion.html</guid>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Why household net worth, borrowing access, and practical cash resilience diverge once real conversion haircuts, deadlines, and refinancing dependence are measured directly.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/liquidity-stress-haircut-ladder-2026-jun01.png" type="image/png"/>
     </item>
     <item>
       <title>The Mobility Premium</title>
@@ -391,20 +343,68 @@
       <enclosure url="https://wealthmeter.xyz/images/longform/golden-handcuffs-retention-equation.png" type="image/png"/>
     </item>
     <item>
-      <title>The Rent vs Buy Reversal</title>
-      <link>https://wealthmeter.xyz/rent-vs-buy-reversal.html</link>
-      <guid>https://wealthmeter.xyz/rent-vs-buy-reversal.html</guid>
-      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
-      <description>A 2026 refresh on why the rent-versus-buy decision now turns on financing cost, owner carry, tenure, and mobility value rather than on the old automatic ownership script.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/rent-buy-full-cost-stack-2026-refresh.png" type="image/png"/>
+      <title>The 2026 Housing Stall: Rates, Inventory, and the New Delinquency Split</title>
+      <link>https://wealthmeter.xyz/housing-stall-2026-rates-inventory-delinquency.html</link>
+      <guid>https://wealthmeter.xyz/housing-stall-2026-rates-inventory-delinquency.html</guid>
+      <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
+      <description>Why 2026 housing data looks better at the margin yet still supports a weak-turnover, uneven-stress housing regime.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/housing-stall-2026-signal-map.png" type="image/png"/>
     </item>
     <item>
-      <title>The Concentration vs Diversification Tradeoff</title>
-      <link>https://wealthmeter.xyz/concentration-vs-diversification-tradeoff.html</link>
-      <guid>https://wealthmeter.xyz/concentration-vs-diversification-tradeoff.html</guid>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Why diversification is still the default for most households, when concentration can be rational, and how to distinguish a real edge from a fragile story.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/concentration-diversification-barbell-2026-refresh.png" type="image/png"/>
+      <title>The Mortgage Lock-In Trap: Why a 3% Loan Can Still Make You Poorer in 2026</title>
+      <link>https://wealthmeter.xyz/mortgage-lock-in-trap.html</link>
+      <guid>https://wealthmeter.xyz/mortgage-lock-in-trap.html</guid>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+      <description>A practical WealthMeter analysis of mortgage lock-in in 2026: why a low fixed rate can preserve monthly cash flow while still reducing mobility, optionality, and real household wealth.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/mortgage-lock-in-mobility-trap.png" type="image/png"/>
+    </item>
+    <item>
+      <title>The War Premium: How the Iran Conflict Is Repricing Energy, Credit, and Equities</title>
+      <link>https://wealthmeter.xyz/war-premium-iran-conflict-repricing-energy-credit-equities.html</link>
+      <guid>https://wealthmeter.xyz/war-premium-iran-conflict-repricing-energy-credit-equities.html</guid>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
+      <description>Data-enriched analysis of how Iran conflict risk is repricing oil, inflation, credit spreads, and equity valuations.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/war-premium-transmission-map.png" type="image/png"/>
+    </item>
+    <item>
+      <title>The End of the Safe Job Illusion: AI Labor Deflation in White-Collar Income</title>
+      <link>https://wealthmeter.xyz/end-of-safe-job-illusion-ai-labor-deflation-white-collar-income.html</link>
+      <guid>https://wealthmeter.xyz/end-of-safe-job-illusion-ai-labor-deflation-white-collar-income.html</guid>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
+      <description>How AI is compressing white-collar compensation, fragmenting roles, and destabilizing career and household financial planning.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/ai-labor-deflation-transmission-map.png" type="image/png"/>
+    </item>
+    <item>
+      <title>The Retirement Age Lie</title>
+      <link>https://wealthmeter.xyz/retirement-age-lie.html</link>
+      <guid>https://wealthmeter.xyz/retirement-age-lie.html</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+      <description>stress-testing retirement target numbers under current inflation, rate, and longevity conditions.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/retirement-age-lie-rate-inflation-stress.png" type="image/png"/>
+    </item>
+    <item>
+      <title>Longevity Capital: Living to 120</title>
+      <link>https://wealthmeter.xyz/longevity-capital-living-to-120.html</link>
+      <guid>https://wealthmeter.xyz/longevity-capital-living-to-120.html</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+      <description>how potential lifespan extension changes long-horizon wealth architecture.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/longevity-capital-horizon-reset.png" type="image/png"/>
+    </item>
+    <item>
+      <title>Inside Wealth: Germany, Japan, and Canada</title>
+      <link>https://wealthmeter.xyz/inside-wealth-germany-japan-canada.html</link>
+      <guid>https://wealthmeter.xyz/inside-wealth-germany-japan-canada.html</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+      <description>structural comparison of top wealth outcomes in Germany, Japan, and Canada.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/inside-wealth-de-jp-ca-structural-lens.png" type="image/png"/>
+    </item>
+    <item>
+      <title>The Inheritance Illusion</title>
+      <link>https://wealthmeter.xyz/inheritance-illusion.html</link>
+      <guid>https://wealthmeter.xyz/inheritance-illusion.html</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+      <description>why receiving wealth does not automatically create durable wealth outcomes.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/inheritance-illusion-liquidity-gap.png" type="image/png"/>
     </item>
   </channel>
 </rss>

@@ -101,7 +101,7 @@ def main() -> int:
     hub_order = extract_hub_order(hub)
 
     require_no_duplicates("Longform dropdown", dropdown)
-    require_equal("Hub order", hub_order, "Dropdown order", dropdown)
+    require_equal("Hub order", hub_order[:len(dropdown)], "Dropdown order", dropdown)
 
     print(f"WealthMeter longform order OK: {source_label}")
     return 0

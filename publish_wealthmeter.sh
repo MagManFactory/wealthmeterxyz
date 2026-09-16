@@ -54,5 +54,6 @@ fi
 git push origin "HEAD:${DEPLOY_BRANCH}"
 python3 scripts/check_longform_order.py --live "$TARGET_DOMAIN"
 bash scripts/verify_live_content_policy.sh "$TARGET_DOMAIN" "$TARGET_DOMAIN/longform.html"
+python3 scripts/submit_indexnow.py || echo "IndexNow submission failed; deployment remains successful."
 
 echo "Publish completed."
