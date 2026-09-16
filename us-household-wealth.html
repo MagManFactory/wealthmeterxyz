@@ -53,6 +53,7 @@
         label { display:block; margin:27px 0 9px; font-size:.76rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#475569; }
         input,select { width:100%; min-height:58px; border:1px solid #cbd5e1; border-radius:14px; background:#f8fafc; padding:0 16px; color:var(--ink); font:700 1rem Inter,sans-serif; }
         input:focus,select:focus { outline:3px solid #bfdbfe; border-color:var(--blue); }
+        .input-error { display:none; margin:8px 0 0; color:#b91c1c; font-size:.8rem; font-weight:700; }
         button { border:0; cursor:pointer; font:800 .86rem Inter,sans-serif; letter-spacing:.07em; text-transform:uppercase; }
         .primary { width:100%; min-height:58px; margin-top:28px; border-radius:14px; color:#fff; background:linear-gradient(135deg,var(--blue),var(--cyan)); box-shadow:0 12px 30px rgba(37,99,235,.22); }
         .switch-link { display:block; margin-top:22px; text-align:center; font-size:.86rem; font-weight:700; }
@@ -451,7 +452,8 @@
                     <h2>Enter household net worth</h2>
                     <p class="helper">Use the combined value of household assets minus debts. Negative and zero values are valid.</p>
                     <label for="householdWealth">Household net worth (USD)</label>
-                    <input id="householdWealth" type="number" step="1000" value="204900" inputmode="decimal">
+                    <input id="householdWealth" type="number" step="1000" placeholder="e.g., 750000" inputmode="decimal" aria-describedby="wealthError">
+                    <p class="input-error" id="wealthError" role="alert">Enter a household net-worth amount to calculate your range.</p>
                     <label for="benchmark">Comparison group</label>
                     <select id="benchmark">
                         <option value="all">All U.S. households</option>
@@ -623,8 +625,15 @@
         return value.toFixed(1);
     }
     function calculateHousehold(){
-        const wealth = Number(document.getElementById('householdWealth').value);
-        if (!Number.isFinite(wealth)) return;
+        const wealthInput = document.getElementById('householdWealth');
+        const rawWealth = wealthInput.value.trim();
+        const wealth = Number(rawWealth);
+        if (rawWealth==='' || !Number.isFinite(wealth)) {
+            document.getElementById('wealthError').style.display='block';
+            wealthInput.focus();
+            return false;
+        }
+        document.getElementById('wealthError').style.display='none';
         const group = BENCHMARKS[document.getElementById('benchmark').value];
         let binIndex,bandLabel,lower,upper,richerLow,richerHigh,bandShare,model;
         if(wealth>=500_000){
@@ -668,10 +677,11 @@
         document.getElementById('shareSource').innerHTML=model==='hybrid'
             ? 'Census 2025 SIPP + Federal Reserve 2022 SCF<br>SCF dollars adjusted to 2024 with CPI-U'
             : 'U.S. Census Bureau · 2025 SIPP<br>Wealth year 2024 · Released July 2026';
+        return true;
     }
     function resultText(){ return `My household net worth is in the ${latest.bandLabel} ${latest.model==='hybrid'?'hybrid upper-tail':'Census'} wealth band — the ${formatPercent(latest.lower)}–${formatPercent(latest.upper)} percentile for ${latest.group.name.toLowerCase()}.`; }
     async function shareResult(platform){
-        if(!latest) calculateHousehold();
+        if(!latest && !calculateHousehold()) return;
         const text=resultText(), page='https://wealthmeter.xyz/us-household-wealth.html';
         const canvas=await html2canvas(document.getElementById('shareCard'),{scale:2,backgroundColor:'#07111f'});
         const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));
@@ -690,13 +700,19 @@
         if(maps[platform]) window.open(maps[platform],'_blank','noopener');
     }
     function downloadResult(){
-        if(!latest) calculateHousehold();
+        if(!latest && !calculateHousehold()) return;
         html2canvas(document.getElementById('shareCard'),{scale:2,backgroundColor:'#07111f'}).then(canvas=>{const a=document.createElement('a');a.download='WealthMeter_US_Household_Wealth.png';a.href=canvas.toDataURL('image/png');a.click();});
     }
     document.addEventListener('DOMContentLoaded',()=>{
-        calculateHousehold();
-        document.getElementById('householdWealth').addEventListener('keydown',event=>{if(event.key==='Enter') calculateHousehold();});
-        document.getElementById('benchmark').addEventListener('change',calculateHousehold);
+        const wealthInput=document.getElementById('householdWealth');
+        wealthInput.addEventListener('keydown',event=>{if(event.key==='Enter') calculateHousehold();});
+        wealthInput.addEventListener('input',()=>{
+            document.getElementById('wealthError').style.display='none';
+            latest=null;
+            document.getElementById('resultContent').style.display='none';
+            document.getElementById('emptyState').style.display='grid';
+        });
+        document.getElementById('benchmark').addEventListener('change',()=>{if(latest) calculateHousehold();});
     });
     </script>
 </body>
