@@ -209,9 +209,12 @@
         .social-btn svg { width: 22px; height: 22px; fill: white; }
         .btn-recalibrate { background: none; border: none; color: var(--text-muted); font-weight: 800; text-transform: uppercase; font-size: 11px; cursor: pointer; letter-spacing: 1.5px; margin-top: 1rem; }
 
-        .report-offer { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--card-border); text-align: center; }
+        .report-offer { margin-top: 1.5rem; padding: 1.4rem; border: 1px solid var(--card-border); border-radius: 18px; background: linear-gradient(145deg,rgba(37,99,235,.08),rgba(8,145,178,.05)); text-align: left; }
         .report-offer-kicker { font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary); margin: 0 0 8px; }
-        .report-offer-copy { font-size: 14px; color: var(--text-muted); line-height: 1.5; margin: 0 0 14px; }
+        .report-offer-title { margin:0 0 8px; color:var(--text-main); font-family:'Outfit',sans-serif; font-size:22px; line-height:1.08; }
+        .report-offer-copy { font-size: 14px; color: var(--text-muted); line-height: 1.55; margin: 0 0 14px; }
+        .report-offer-list { display:grid; gap:6px; margin:0 0 15px; padding:0; list-style:none; color:var(--text-main); font-size:12px; font-weight:700; }
+        .report-offer-list li::before { content:'✓ '; color:var(--primary); font-weight:900; }
         .report-offer-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 48px; padding: 14px 18px; border-radius: 12px; background: var(--accent-gradient); color: #fff; text-decoration: none; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; box-sizing: border-box; }
         .report-offer-btn:hover { transform: translateY(-1px); }
         .report-offer-secondary { margin: 12px 0 0; font-size: 13px; color: var(--text-muted); }
@@ -703,10 +706,12 @@
                             <button class="social-btn" style="background:#475569;" onclick="downloadCard()"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></button>
                         </div>
                         <div class="report-offer">
-                            <p class="report-offer-kicker">What that percentile actually buys</p>
-                            <p class="report-offer-copy">Rank is not a plan. This report maps the capital milestones that actually change your options: the jump from wage-earner to asset-owner, and the compounding machinery that only unlocks at each tier. Use it to see what your number is for, and what it still cannot buy.</p>
-                            <a class="report-offer-btn" href="https://payhip.com/buy?link=dcRCe" target="_blank" rel="noopener">Get Wealth Thresholds — $12.99</a>
-                            <p class="report-offer-secondary">Also: <a href="https://payhip.com/buy?link=ZeVGv" target="_blank" rel="noopener">The Velocity of Capital — $12.99</a></p>
+                            <p class="report-offer-kicker">Your percentile is the beginning, not the answer</p>
+                            <h3 class="report-offer-title">What does your number actually unlock?</h3>
+                            <p class="report-offer-copy">The Wealth Thresholds report reveals the access, structures, and constraints that change across four capital bands. See where you really sit and which barrier matters next.</p>
+                            <ul class="report-offer-list"><li>Four wealth access bands</li><li>Three realistic pathway scenarios</li><li>Compounding, fees, and legal structures</li></ul>
+                            <a class="report-offer-btn" href="report-wealth-thresholds.html">See What Is Inside - $12.99</a>
+                            <p class="report-offer-secondary">Or <a href="reports.html">compare all three WealthMeter reports</a></p>
                         </div>
                         <button class="btn-recalibrate" onclick="location.reload()">Recalibrate</button>
                         <div id="result-feedback-slot"></div>

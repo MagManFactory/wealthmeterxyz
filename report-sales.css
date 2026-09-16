@@ -1,0 +1,46 @@
+:root{--ink:#07111f;--muted:#536176;--line:#dbe4f0;--paper:#f5f8fc;--blue:#2563eb;--cyan:#0891b2;--red:#ef4444;--gold:#f59e0b;--mono:'Roboto Mono',monospace;--display:'Outfit',sans-serif;--body:'Inter',sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body)}
+.sales-page{overflow:hidden}
+.sales-hero{position:relative;isolation:isolate;padding:clamp(5rem,9vw,8rem) 1.5rem;background:#07111f;color:#fff}
+.sales-hero:before{content:"";position:absolute;inset:-20%;z-index:-2;background:radial-gradient(circle at 18% 25%,rgba(37,99,235,.45),transparent 28%),radial-gradient(circle at 82% 72%,rgba(8,145,178,.35),transparent 30%)}
+.sales-hero:after{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,#000,transparent)}
+.sales-wrap{width:min(1120px,100%);margin:0 auto}
+.sales-eyebrow{display:inline-flex;align-items:center;gap:.55rem;margin:0 0 1.4rem;color:#93c5fd;font:800 .73rem/1 var(--mono);letter-spacing:.17em;text-transform:uppercase}
+.sales-eyebrow:before{content:"";width:34px;height:3px;background:#3b82f6;border-radius:10px}
+.sales-title{max-width:960px;margin:0;font:900 clamp(3rem,7vw,6.7rem)/.92 var(--display);letter-spacing:-.065em;text-wrap:balance}
+.sales-deck{max-width:800px;margin:1.8rem 0 0;color:#cbd5e1;font-size:clamp(1.1rem,2vw,1.4rem);line-height:1.55}
+.sales-proof{display:flex;flex-wrap:wrap;gap:.7rem;margin:2rem 0 0;padding:0;list-style:none}
+.sales-proof li{padding:.55rem .8rem;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.06);color:#e2e8f0;font:700 .78rem/1.2 var(--mono)}
+.sales-actions{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:2rem}
+.sales-buy,.sales-learn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 1.35rem;border-radius:14px;font-weight:900;text-decoration:none}
+.sales-buy{background:linear-gradient(135deg,#2563eb,#0891b2);color:#fff;box-shadow:0 14px 40px rgba(37,99,235,.28)}
+.sales-buy:hover{transform:translateY(-2px)}
+.sales-learn{border:1px solid rgba(255,255,255,.24);color:#fff}
+.sales-note{margin:.85rem 0 0;color:#94a3b8;font-size:.78rem}
+.sales-section{padding:clamp(4rem,7vw,6.5rem) 1.5rem}
+.sales-section.white{background:#fff}
+.sales-kicker{margin:0 0 .75rem;color:var(--blue);font:900 .74rem/1 var(--mono);letter-spacing:.17em;text-transform:uppercase}
+.sales-heading{max-width:850px;margin:0 0 1rem;font:900 clamp(2.15rem,4.5vw,4rem)/1 var(--display);letter-spacing:-.045em;text-wrap:balance}
+.sales-intro{max-width:760px;margin:0 0 2.2rem;color:var(--muted);font-size:1.08rem;line-height:1.7}
+.payoff-grid,.inside-grid,.fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.payoff-card,.inside-card,.fit-card{padding:1.45rem;border:1px solid var(--line);border-radius:20px;background:#fff}
+.payoff-num{display:block;margin-bottom:1rem;color:var(--blue);font:900 1rem var(--mono)}
+.payoff-card h3,.inside-card h3,.fit-card h3{margin:0 0 .55rem;font:800 1.22rem/1.15 var(--display)}
+.payoff-card p,.inside-card p,.fit-card p{margin:0;color:var(--muted);line-height:1.6}
+.inside-card{background:#0b1728;border-color:#1e3049;color:#fff}
+.inside-card p{color:#b9c7d9}
+.deliverable{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.cover{position:sticky;top:120px;min-height:520px;padding:2rem;border-radius:28px;background:linear-gradient(145deg,#0b1728,#111f36);color:#fff;box-shadow:0 30px 80px rgba(15,23,42,.25);overflow:hidden}
+.cover:after{content:"";position:absolute;right:-90px;bottom:-90px;width:280px;height:280px;border:50px solid rgba(37,99,235,.4);border-radius:50%}
+.cover-series{font:800 .7rem var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#93c5fd}
+.cover h2{position:relative;z-index:1;margin:7rem 0 1rem;font:900 clamp(2.8rem,5vw,4.5rem)/.92 var(--display);letter-spacing:-.055em}
+.cover p{position:relative;z-index:1;max-width:360px;color:#cbd5e1;line-height:1.55}
+.cover-meta{position:absolute;left:2rem;bottom:2rem;z-index:1;font:700 .72rem var(--mono);color:#93c5fd;text-transform:uppercase;letter-spacing:.1em}
+.deliverable-list{display:grid;gap:.8rem;margin:0;padding:0;list-style:none}
+.deliverable-list li{position:relative;padding:1.15rem 1.2rem 1.15rem 3rem;border:1px solid var(--line);border-radius:15px;background:#fff;color:#334155;line-height:1.55}
+.deliverable-list li:before{content:"✓";position:absolute;left:1.1rem;top:1.05rem;color:var(--blue);font-weight:900}
+.fit-card.yes{border-top:5px solid #22c55e}.fit-card.no{border-top:5px solid #f59e0b}
+.bottom-cta{text-align:center;background:#07111f;color:#fff}
+.bottom-cta .sales-heading,.bottom-cta .sales-intro{margin-left:auto;margin-right:auto}.bottom-cta .sales-intro{color:#b9c7d9}.bottom-cta .sales-actions{justify-content:center}
+@media(max-width:820px){html,body{width:100%;max-width:100%;overflow-x:hidden}header .nav-container{width:100%!important;max-width:100%!important;height:auto!important;min-height:90px;flex-wrap:wrap;padding:.8rem .75rem!important;overflow:hidden}.brand-wrapper{width:100%;min-width:0;margin:0 0 .65rem!important;justify-content:center}.brand-wrapper div{font-size:21px!important}header nav{width:100%;min-width:0;max-width:100%;height:auto!important;gap:.5rem!important;justify-content:center!important;overflow:hidden;padding-bottom:.35rem}.nav-group-label,.sister-site-link{font-size:.54rem!important;letter-spacing:.045em!important}.sales-wrap{width:100%;max-width:100%;min-width:0}.payoff-grid,.inside-grid,.fit-grid{grid-template-columns:1fr}.deliverable{grid-template-columns:1fr}.cover{position:relative;top:auto;min-height:430px}.sales-hero{padding-top:4rem}.sales-title{display:block;width:100%;max-width:100%;font-size:2.35rem;line-height:.95;letter-spacing:-.05em;text-wrap:wrap;overflow-wrap:break-word}.sales-deck{width:100%;max-width:100%;font-size:1.04rem}.sales-proof{max-width:100%;flex-wrap:wrap}.sales-actions{max-width:100%;align-items:stretch}.sales-buy,.sales-learn{width:100%;max-width:100%;text-align:center}.sales-section{padding-left:1.2rem;padding-right:1.2rem}}

@@ -25,6 +25,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://wealthmeter.xyz/report-wealth-thresholds.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wealthmeter.xyz/report-velocity-of-capital.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wealthmeter.xyz/report-geography-global-wealth.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://wealthmeter.xyz/inheritance-transfer-pillar.html</loc>
     <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -55,6 +73,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://wealthmeter.xyz/reports.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://wealthmeter.xyz/</loc>
     <lastmod>2026-09-16</lastmod>
     <changefreq>daily</changefreq>
@@ -80,12 +104,6 @@
   </url>
   <url>
     <loc>https://wealthmeter.xyz/runway_lab.html</loc>
-    <lastmod>2026-09-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://wealthmeter.xyz/reports.html</loc>
     <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -1,95 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://wealthmeter.xyz/reports.html">
-<title>WealthMeter Research Reports | Turn Your Rank Into a Strategy</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --bg-body: #f8fafc;
-            --primary: #2563eb;
-            --dark: #0f172a;
-            --slate: #475569;
-            --border: #e2e8f0;
-            --font-ui: 'Inter', sans-serif;
-            --font-heading: 'Outfit', sans-serif;
-        }
-
-        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-        body {
-            font-family: var(--font-ui); background-color: var(--bg-body);
-            color: var(--dark); margin: 0; min-height: 100vh; display: flex;
-            flex-direction: column;
-        }
-
-        .container { max-width: 1220px; margin: 60px auto; padding: 0 20px; flex-grow: 1; }
-
-        /* NYER-Style Header Section [cite: 2025-11-11] */
-        .page-header { text-align: center; margin: 30px auto 70px; max-width: 980px; }
-        .page-category {
-            font-size: 0.75rem; font-weight: 800; text-transform: uppercase;
-            letter-spacing: 0.2em; color: var(--primary); margin-bottom: 15px; display: block;
-        }
-        .page-title {
-            font-family: var(--font-heading); font-size: clamp(3.2rem, 7vw, 6.5rem); font-weight: 900;
-            letter-spacing: -0.04em; line-height: 1; margin: 0;
-        }
-        .page-subtitle {
-            font-size: 1.2rem; color: var(--slate); max-width: 760px;
-            margin: 25px auto 0; line-height: 1.6;
-        }
-
-        /* Report Gallery Grid */
-        .report-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-
-        .report-card {
-            background: white; border: 1px solid var(--border); border-radius: 24px;
-            padding: 34px; position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex; flex-direction: column;
-        }
-        .report-card::before { content:""; position:absolute; inset:0 0 auto; height:7px; background:linear-gradient(90deg,#2563eb,#0891b2); }
-        .report-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08); }
-
-        .report-index { color:var(--primary); font:800 .72rem/1 'Roboto Mono',monospace; letter-spacing:.16em; text-transform:uppercase; margin-bottom:20px; }
-        .report-hook { font-family:var(--font-heading); font-size:1.12rem; line-height:1.25; margin:0 0 14px; color:var(--dark); }
-        .report-name { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 15px; }
-        .report-desc { font-size: 0.95rem; color: var(--slate); line-height: 1.6; margin-bottom: 18px; }
-        .report-includes { display:grid; gap:9px; margin:0 0 24px; padding:0; list-style:none; color:#334155; font-size:.84rem; flex-grow:1; }
-        .report-includes li { position:relative; padding-left:18px; }
-        .report-includes li::before { content:"✓"; position:absolute; left:0; color:var(--primary); font-weight:900; }
-        .report-details { display:inline-flex; color:var(--primary); font-weight:800; text-decoration:none; margin:0 0 20px; }
-        .report-details:hover { text-decoration:underline; }
-
-        .buy-footer {
-            display: flex; align-items: center; justify-content: space-between;
-            gap: 16px; flex-wrap: wrap;
-            padding-top: 25px; border-top: 1px solid var(--border);
-        }
-        .price-badge {
-            font-size: 1.05rem; font-weight: 800; font-family: var(--font-heading);
-            letter-spacing: -0.02em; color: var(--dark);
-        }
-        .buy-cta {
-            display: inline-flex; align-items: center; justify-content: center;
-            min-height: 44px; padding: 0.7rem 1.15rem;
-            border-radius: 12px; background: var(--primary); color: #ffffff;
-            text-decoration: none; font-weight: 800; font-size: 0.8rem;
-            letter-spacing: 0.06em; text-transform: uppercase;
-            white-space: nowrap;
-        }
-        .buy-cta:hover { background: #1d4ed8; }
-        .hub-proof { display:flex; justify-content:center; flex-wrap:wrap; gap:.7rem; margin-top:28px; }
-        .hub-proof span { padding:.55rem .75rem; border:1px solid var(--border); border-radius:999px; background:#fff; color:#475569; font:700 .75rem/1.2 'Roboto Mono',monospace; }
-        @media(max-width:960px){html,body{width:100%;max-width:100%;overflow-x:hidden}header .nav-container{width:100%!important;max-width:100%!important;height:auto!important;min-height:90px;flex-wrap:wrap;padding:.8rem .75rem!important;overflow:hidden}.brand-wrapper{width:100%;min-width:0;margin:0 0 .65rem!important;justify-content:center}.brand-wrapper div{font-size:21px!important}header nav{width:100%;min-width:0;max-width:100%;height:auto!important;gap:.5rem!important;justify-content:center!important;overflow:hidden;padding-bottom:.35rem}.nav-group-label,.sister-site-link{font-size:.54rem!important;letter-spacing:.045em!important}.container,.page-header{width:100%;max-width:100%;min-width:0}.report-grid{grid-template-columns:1fr}.report-card{padding:30px;min-width:0}.page-header{margin-bottom:45px}.page-title{display:block;width:100%;max-width:100%;font-size:2.45rem;line-height:.95;letter-spacing:-.045em;text-wrap:wrap;overflow-wrap:break-word}.page-subtitle{width:100%;max-width:100%;font-size:1rem}.hub-proof{max-width:100%;gap:.45rem}.hub-proof span{font-size:.66rem}}
-    </style>
-    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml"><style id="wealthmeter-component-styles">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Velocity of Capital | Why the Wealth Ladder Moved</title><meta name="description" content="Trace the forces separating wages from assets: geographic rebalancing, financial inclusion, intergenerational transfer, automation, and ownership concentration."><meta name="robots" content="index, follow"><link rel="canonical" href="https://wealthmeter.xyz/report-velocity-of-capital.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="report-sales.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"The Velocity of Capital","description":"A 13-page WealthMeter research report on asset-wage decoupling, geographic wealth rebalancing, financial inclusion, intergenerational transfer, inequality, and conditional exposure profiles.","brand":{"@type":"Brand","name":"WEALTHMETER.XYZ"},"offers":{"@type":"Offer","price":"12.99","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://payhip.com/buy?link=ZeVGv"}}</script>    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml"><style id="wealthmeter-component-styles">
     /* Monolith Pulse Animation */
     @keyframes monolithPulse {
         0% { transform: scaleY(1); }
@@ -329,27 +241,23 @@
         height: auto !important;
         object-fit: contain;
     }
-</style><meta property="og:title" content="Advanced Strategic Reports | WealthMeter Studio">
-    <meta property="og:description" content="Advanced Strategic Reports | WealthMeter Studio">
+</style><meta property="og:title" content="The Velocity of Capital | Why the Wealth Ladder Moved">
+    <meta property="og:description" content="Trace the forces separating wages from assets: geographic rebalancing, financial inclusion, intergenerational transfer, automation, and ownership concentration.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wealthmeter.xyz/reports.html">
+    <meta property="og:url" content="https://wealthmeter.xyz/report-velocity-of-capital.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Advanced Strategic Reports | WealthMeter Studio">
-    <meta name="twitter:description" content="Advanced Strategic Reports | WealthMeter Studio">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WEALTHMETER.XYZ","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"WealthMeter Research Reports","item":"https://wealthmeter.xyz/reports.html"}]}</script>
-    <meta name="description" content="Browse WealthMeter&#x27;s advanced strategic reports on wealth structure, planning risk, and household resilience.">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NF91REL39"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8NF91REL39');
-</script>
-</head>
-<body>
-
-<div id="header-placeholder" data-static-component="1">
+    <meta name="twitter:title" content="The Velocity of Capital | Why the Wealth Ladder Moved">
+    <meta name="twitter:description" content="Trace the forces separating wages from assets: geographic rebalancing, financial inclusion, intergenerational transfer, automation, and ownership concentration.">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WEALTHMETER.XYZ","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"The Velocity of Capital","item":"https://wealthmeter.xyz/report-velocity-of-capital.html"}]}</script>
+<!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NF91REL39"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8NF91REL39');
+    </script>
+</head><body><div id="header-placeholder" data-static-component="1">
 <header>
     <div class="nav-container">
         <div class="brand-wrapper">
@@ -416,58 +324,11 @@
     </div>
 </header>
 </div>
-
-<main class="container">
-    <div class="page-header">
-        <span class="page-category">Your result was the starting point</span>
-        <h1 class="page-title">Your wealth number is not a strategy.</h1>
-        <p class="page-subtitle">Three research reports answer the questions your percentile cannot: what your capital actually unlocks, which forces are moving underneath it, and where in the world it buys the strongest life.</p>
-        <div class="hub-proof"><span>Source-linked research</span><span>Decision tables</span><span>Explicit limits</span><span>Immediate PDF access</span></div>
-    </div>
-
-    <div class="report-grid">
-        <div class="report-card">
-            <span class="report-index">Report 01 / Access</span>
-            <h2 class="report-name">Wealth Thresholds Report</h2>
-            <p class="report-hook">Your net worth number is hiding the part that matters.</p>
-            <p class="report-desc">See what actually changes at $10K-$100K, $1M-$5M, $30M+, and billionaire scale - from liquidity and lending to institutional access and governance.</p>
-            <ul class="report-includes"><li>Four access bands</li><li>Three pathway scenarios</li><li>Compounding and legal-structure comparisons</li><li>15-page PDF</li></ul>
-            <a class="report-details" href="report-wealth-thresholds.html">See exactly what you get →</a>
-            <div class="buy-footer">
-                <span class="price-badge">$12.99</span>
-                <a class="buy-cta" href="https://payhip.com/buy?link=dcRCe" target="_blank" rel="noopener">Buy — $12.99</a>
-            </div>
-        </div>
-
-        <div class="report-card">
-            <span class="report-index">Report 02 / Movement</span>
-            <h2 class="report-name">The Velocity of Capital</h2>
-            <p class="report-hook">The wealth ladder moved while millions were still climbing it.</p>
-            <p class="report-desc">Trace the structural forces separating wages from assets: geographic rebalancing, ownership, financial inclusion, inheritance, and automation.</p>
-            <ul class="report-includes"><li>1990-2025 structural view</li><li>Country-level velocity index</li><li>Automation impact timeline</li><li>13-page PDF</li></ul>
-            <a class="report-details" href="report-velocity-of-capital.html">See exactly what you get →</a>
-            <div class="buy-footer">
-                <span class="price-badge">$12.99</span>
-                <a class="buy-cta" href="https://payhip.com/buy?link=ZeVGv" target="_blank" rel="noopener">Buy — $12.99</a>
-            </div>
-        </div>
-
-        <div class="report-card">
-            <span class="report-index">Report 03 / Geography</span>
-            <h2 class="report-name">The Geography of Global Wealth</h2>
-            <p class="report-hook">Your money has a geography problem.</p>
-            <p class="report-desc">Compare ten destinations using the variables that relocation content usually buries: tax, healthcare, visas, schools, currency risk, and minimum viable net worth.</p>
-            <ul class="report-includes"><li>Ten destination profiles</li><li>Seven-factor comparison</li><li>Capital scenarios and threshold table</li><li>46-page PDF and worksheet</li></ul>
-            <a class="report-details" href="report-geography-global-wealth.html">See exactly what you get →</a>
-            <div class="buy-footer">
-                <span class="price-badge">$19.99</span>
-                <a class="buy-cta" href="https://payhip.com/buy?link=3Ta9A" target="_blank" rel="noopener">Buy — $19.99</a>
-            </div>
-        </div>
-    </div>
-</main>
-
-<div id="footer-placeholder" data-static-component="1">
+<main class="sales-page"><section class="sales-hero"><div class="sales-wrap"><p class="sales-eyebrow">Capital movement briefing</p><h1 class="sales-title">The wealth ladder moved while millions were still climbing it.</h1><p class="sales-deck">Wages, homes, equities, inheritance, and global growth no longer move together. This report reveals the forces that decide who compounds, who stalls, and why a high income can still lose ground.</p><ul class="sales-proof"><li>13-page PDF</li><li>1990-2025 structural view</li><li>Country velocity index</li><li>Automation timeline</li></ul><div class="sales-actions"><a class="sales-buy" href="https://payhip.com/buy?link=ZeVGv" target="_blank" rel="noopener">See What Is Moving Capital - $12.99</a><a class="sales-learn" href="#inside">Open the briefing outline</a></div><p class="sales-note">Immediate PDF access. Forecasts are conditional scenarios, not predictions.</p></div></section>
+<section class="sales-section white"><div class="sales-wrap"><p class="sales-kicker">The question beneath your rank</p><h2 class="sales-heading">Are you standing high on the old ladder - or positioned for the new one?</h2><p class="sales-intro">A wealth percentile is a still image. The Velocity of Capital examines motion: where ownership is concentrating, how capital is shifting geographically, why assets detached from wages, and which exposures benefit or break under different futures.</p><div class="payoff-grid"><article class="payoff-card"><span class="payoff-num">01</span><h3>Decode the divergence</h3><p>Separate asset appreciation, exchange-rate effects, saving, ownership concentration, and wage growth instead of compressing them into one story.</p></article><article class="payoff-card"><span class="payoff-num">02</span><h3>Track the transfer</h3><p>Understand the scale and limits of intergenerational wealth transfer, financial inclusion, and the eastward tilt in global wealth.</p></article><article class="payoff-card"><span class="payoff-num">03</span><h3>Stress-test your exposure</h3><p>Use conditional profiles to examine how asset holders, inheritors, and globally mobile technical professionals respond to different scenarios.</p></article></div></div></section>
+<section class="sales-section" id="inside"><div class="sales-wrap deliverable"><div class="cover"><span class="cover-series">WealthMeter Research / 2026</span><h2>The Velocity<br>of Capital</h2><p>Why assets outran wages, wealth moved east, and ownership became the dividing line.</p><span class="cover-meta">13 pages / PDF / $12.99</span></div><div><p class="sales-kicker">Inside the report</p><h2 class="sales-heading">The macro map your percentile cannot show.</h2><ul class="deliverable-list"><li><strong>Dayton and Shenzhen:</strong> a concrete opening frame for the simultaneous geographic and domestic wealth inversion.</li><li><strong>Asset-wage decoupling:</strong> the monetary, housing, and ownership mechanics behind the widening gap.</li><li><strong>The eastward tilt:</strong> how regional wealth growth and currency translation change the global picture.</li><li><strong>The great transfer and automation shock:</strong> what the headline numbers mean, and what they do not prove.</li><li><strong>Country-level wealth velocity index:</strong> a comparative appendix covering 1990-2025.</li><li><strong>Automation impact timeline and exposure profiles:</strong> conditional tools for testing where your income and assets sit.</li></ul></div></div></section>
+<section class="sales-section white"><div class="sales-wrap"><p class="sales-kicker">Fit check</p><h2 class="sales-heading">Read this before mistaking position for momentum.</h2><div class="fit-grid"><article class="fit-card yes"><h3>Buy it if</h3><p>You earn well but feel asset prices are pulling away faster than income can close the gap.</p></article><article class="fit-card yes"><h3>Buy it if</h3><p>You want a sourced model of how inheritance, automation, geography, and asset ownership interact.</p></article><article class="fit-card no"><h3>Skip it if</h3><p>You want a prediction of next year's winning country or asset. The report separates conditional exposure from certainty.</p></article></div></div></section>
+<section class="sales-section bottom-cta"><div class="sales-wrap"><p class="sales-kicker">Position is not trajectory</p><h2 class="sales-heading">See the forces moving underneath your number.</h2><p class="sales-intro">The report turns a static rank into a structural view of ownership, geography, transfer, and technological exposure.</p><div class="sales-actions"><a class="sales-buy" href="https://payhip.com/buy?link=ZeVGv" target="_blank" rel="noopener">Get The Velocity of Capital - $12.99</a><a class="sales-learn" href="reports.html">Compare all reports</a></div></div></section></main><div id="footer-placeholder" data-static-component="1">
 <footer>
     <section class="site-newsletter" aria-labelledby="newsletter-heading-footer">
         <h2 id="newsletter-heading-footer">WealthMeter news and updates</h2>
@@ -501,8 +362,4 @@
         <a href="disclaimer.html">Disclaimer</a>
     </div>
 </footer>
-</div>
-
-<script src="components.js?v=2026-09-15.2"></script>
-</body>
-</html>
+</div><script src="components.js?v=2026-09-15.2"></script></body></html>
