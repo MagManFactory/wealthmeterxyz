@@ -1,0 +1,133 @@
+:root {
+  --systems-ink: #0f172a;
+  --systems-muted: #64748b;
+  --systems-line: #dbe4f0;
+  --systems-panel: #ffffff;
+  --systems-bg: #f4f7fb;
+  --systems-primary: #2563eb;
+  --systems-accent: #0891b2;
+  --systems-warm: #facc15;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--systems-bg);
+  color: var(--systems-ink);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.systems-shell { max-width: 1440px; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+.systems-hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--systems-line);
+  border-radius: 28px;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  background: linear-gradient(135deg, #fff 0%, #eef4ff 58%, #e8fbff 100%);
+}
+.systems-hero::after {
+  content: "";
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  right: -90px;
+  top: -130px;
+  background: radial-gradient(circle, rgba(8,145,178,.22), rgba(37,99,235,0));
+}
+.systems-kicker,
+.systems-eyebrow {
+  color: var(--systems-primary);
+  font: 800 .72rem/1.4 "Roboto Mono", monospace;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.systems-hero h1 {
+  max-width: 980px;
+  margin: .75rem 0 .8rem;
+  font-family: Outfit, Inter, sans-serif;
+  font-size: clamp(2.5rem, 6.6vw, 5.8rem);
+  line-height: .94;
+  letter-spacing: -.055em;
+}
+.systems-hero p { max-width: 850px; margin: 0; color: var(--systems-muted); font-size: 1.05rem; line-height: 1.7; }
+.prototype-flag {
+  display: inline-flex;
+  margin-top: 1.25rem;
+  border: 1px solid #e4bd13;
+  background: #fff7c2;
+  color: #664d03;
+  border-radius: 999px;
+  padding: .55rem .8rem;
+  font: 800 .68rem/1 "Roboto Mono", monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.systems-controls {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .85rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid var(--systems-line);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(15,23,42,.05);
+}
+.control-field label { display: block; margin: 0 0 .4rem; color: var(--systems-muted); font: 800 .66rem/1.3 "Roboto Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.control-field select { width: 100%; min-height: 46px; border: 1px solid #cbd8e8; border-radius: 11px; padding: .65rem .75rem; background: #fff; color: var(--systems-ink); font: 700 .9rem Inter, sans-serif; }
+.control-field select:focus { outline: 3px solid rgba(37,99,235,.14); border-color: var(--systems-primary); }
+
+.systems-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(360px, .8fr); gap: 1rem; align-items: start; }
+.systems-card { border: 1px solid var(--systems-line); border-radius: 22px; background: var(--systems-panel); padding: 1.2rem; box-shadow: 0 18px 50px rgba(15,23,42,.045); }
+.systems-card + .systems-card { margin-top: 1rem; }
+.card-heading { display: flex; gap: 1rem; justify-content: space-between; align-items: start; margin-bottom: 1rem; }
+.card-heading h2 { margin: .25rem 0 0; font-family: Outfit, Inter, sans-serif; font-size: 1.65rem; letter-spacing: -.025em; }
+.card-heading p { max-width: 540px; margin: .3rem 0 0; color: var(--systems-muted); font-size: .86rem; line-height: 1.5; }
+
+.comparison-table-wrap { overflow-x: auto; }
+.comparison-table { width: 100%; min-width: 720px; border-collapse: collapse; }
+.comparison-table th,
+.comparison-table td { padding: .8rem .65rem; border-bottom: 1px solid #edf1f6; text-align: left; vertical-align: middle; }
+.comparison-table thead th { color: var(--systems-muted); font: 800 .68rem/1.3 "Roboto Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.metric-name { width: 29%; }
+.metric-name strong { display: block; font-size: .84rem; }
+.metric-name span { display: block; margin-top: .2rem; color: var(--systems-muted); font: 600 .65rem/1.3 "Roboto Mono", monospace; }
+.metric-number { display: block; font-family: "Roboto Mono", monospace; font-weight: 800; }
+.metric-year { color: var(--systems-muted); font-size: .67rem; }
+.metric-track { height: 5px; margin-top: .42rem; border-radius: 8px; background: #e7edf5; overflow: hidden; }
+.metric-fill { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--systems-primary), var(--systems-accent)); }
+
+.chart-frame { min-height: 330px; border: 1px solid #e7edf5; border-radius: 16px; background: #fbfdff; padding: .5rem; }
+.chart-frame svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart-axis { stroke: #bac7d6; stroke-width: 1; }
+.chart-grid { stroke: #e5ebf3; stroke-width: 1; }
+.chart-label { fill: #64748b; font: 600 11px Inter, sans-serif; }
+.chart-dot { fill: #b9c6d6; opacity: .55; }
+.chart-dot.selected { opacity: 1; stroke: white; stroke-width: 2.5; }
+.chart-dot-label { fill: var(--systems-ink); font: 800 11px Inter, sans-serif; paint-order: stroke; stroke: #fff; stroke-width: 4px; stroke-linejoin: round; }
+.trend-line { fill: none; stroke-width: 3; }
+.trend-dot { stroke: #fff; stroke-width: 2; }
+.empty-note { padding: 5rem 1rem; color: var(--systems-muted); text-align: center; }
+
+.systems-method { margin-top: 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.method-list { margin: .7rem 0 0; padding-left: 1.2rem; color: var(--systems-muted); line-height: 1.65; font-size: .88rem; }
+.source-list { display: grid; gap: .65rem; margin-top: .8rem; }
+.source-row { padding: .8rem; border: 1px solid #e4ebf4; border-radius: 12px; }
+.source-row strong { display: block; font-size: .8rem; }
+.source-row span { display: block; margin-top: .2rem; color: var(--systems-muted); font-size: .72rem; line-height: 1.45; }
+.systems-link { color: var(--systems-primary); font-weight: 800; }
+.systems-note { margin-top: 1rem; color: var(--systems-muted); font-size: .75rem; line-height: 1.55; }
+
+@media (max-width: 980px) {
+  .systems-controls { grid-template-columns: repeat(2, 1fr); }
+  .systems-grid, .systems-method { grid-template-columns: 1fr; }
+}
+@media (max-width: 580px) {
+  .systems-shell { padding: 1rem .75rem 3rem; }
+  .systems-hero { border-radius: 20px; }
+  .systems-controls { grid-template-columns: 1fr; }
+  .systems-card { border-radius: 17px; padding: .9rem; }
+}
