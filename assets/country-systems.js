@@ -62,7 +62,7 @@
         const point = country.metrics[key].latest;
         if (!point) return "<td><span class=\"metric-number\">—</span></td>";
         const normalized = ((point.value - min) / (max - min)) * 100;
-        return `<td><span class="metric-number">${escapeHtml(formatValue(point.value, indicator))}</span><span class="metric-year">Observation year ${point.year}</span><div class="metric-track" aria-hidden="true"><span class="metric-fill" style="width:${Math.max(3, normalized).toFixed(1)}%"></span></div></td>`;
+        return `<td><span class="metric-number">${escapeHtml(formatValue(point.value, indicator))}</span><span class="metric-year">${point.year} data</span><div class="metric-track" aria-hidden="true"><span class="metric-fill" style="width:${Math.max(3, normalized).toFixed(1)}%"></span></div></td>`;
       }).join("");
       return `<tr><th scope="row" class="metric-name"><strong>${escapeHtml(indicator.shortLabel)}</strong><span>${escapeHtml(indicator.domain)}</span></th>${cells}</tr>`;
     }).join("");
