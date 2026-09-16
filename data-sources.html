@@ -391,13 +391,23 @@
                     <span class="source-name"><a href="https://www.census.gov/programs-surveys/sipp/methodology.html" target="_blank" rel="noopener">Survey of Income and Program Participation Methodology</a></span>
                 </div>
                 <div class="source-item">
+                    <span class="source-label">U.S. Household Upper Tail</span>
+                    <span class="source-name"><a href="https://www.federalreserve.gov/econres/scf-documentation.htm" target="_blank" rel="noopener">Federal Reserve 2022 Survey of Consumer Finances</a></span>
+                    <div style="margin-top: 8px; font-size: 0.9rem; color: var(--text-muted);">Weighted public summary extract used to divide the Census table's open USD 500,000-or-more category. The current public SCF release remains 2022. Its family definition is not identical to the Census household definition, so the result is a calibrated model rather than a published rank.</div>
+                </div>
+                <div class="source-item">
+                    <span class="source-label">Dollar-Year Adjustment</span>
+                    <span class="source-name"><a href="https://www.bls.gov/cpi/tables/supplemental-files/historical-cpi-u-202412.pdf" target="_blank" rel="noopener">BLS CPI-U Annual Averages</a></span>
+                    <div style="margin-top: 8px; font-size: 0.9rem; color: var(--text-muted);">SCF 2022 net-worth values are converted to 2024 dollars using 313.689 ÷ 292.655.</div>
+                </div>
+                <div class="source-item">
                     <span class="source-label">Contextual Inequality Research</span>
                     <span class="source-name"><a href="https://wid.world" target="_blank" rel="noopener">World Inequality Database</a></span>
                     <div style="margin-top: 8px; font-size: 0.9rem; color: var(--text-muted);">Used for editorial context, not as an operational anchor in the current homepage calculator.</div>
                 </div>
             </div>
 
-            <p style="margin-top: 60px; font-size: 0.95rem; opacity: 0.8;">The homepage uses UBS 2026 covered-market counts and a Knight Frank 2026 upper-tail anchor. The separate U.S. calculator uses Census household wealth bands without within-band interpolation. Wealth Explorer country medians are also drawn from UBS 2026 but answer a different question from the rank calculator.</p>
+            <p style="margin-top: 60px; font-size: 0.95rem; opacity: 0.8;">The homepage uses UBS 2026 covered-market counts and a Knight Frank 2026 upper-tail anchor. The U.S. calculator uses published Census household bands below USD 500,000 and a Census-calibrated Federal Reserve SCF curve above that threshold. Wealth Explorer country medians are also drawn from UBS 2026 but answer a different question from the rank calculator.</p>
         </div>
     </main>
     <div id="footer-placeholder" data-static-component="1">

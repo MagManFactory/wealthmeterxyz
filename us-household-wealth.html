@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Find your U.S. household wealth band and published percentile range using the Census Bureau's latest 2024 wealth tables, released in July 2026.">
+    <meta name="description" content="Estimate your U.S. household wealth percentile using Census 2024 tables and a Federal Reserve SCF upper-tail model for values above $500,000.">
     <link rel="canonical" href="https://wealthmeter.xyz/us-household-wealth.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="U.S. Household Wealth Calculator | WealthMeter">
-    <meta property="og:description" content="Compare household net worth with the latest Census Bureau wealth tables and benchmark by age, region, or housing tenure.">
+    <meta property="og:description" content="Compare household net worth using Census 2024 tables with Federal Reserve upper-tail refinement above $500,000.">
     <meta property="og:url" content="https://wealthmeter.xyz/us-household-wealth.html">
     <meta property="og:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
     <meta property="og:site_name" content="WEALTHMETER.XYZ">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="U.S. Household Wealth Calculator | WealthMeter">
-    <meta name="twitter:description" content="Compare household net worth with the Census Bureau's latest published wealth bands.">
+    <meta name="twitter:description" content="A Census-based household wealth calculator with Federal Reserve upper-tail refinement above $500,000.">
     <meta name="twitter:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
     <title>U.S. Household Wealth Calculator | WealthMeter</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,9 +29,9 @@
       "url": "https://wealthmeter.xyz/us-household-wealth.html",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "Any",
-      "description": "A household wealth-band and percentile-range calculator based on the U.S. Census Bureau's 2024 wealth tables released in 2026.",
+      "description": "A household wealth percentile-range calculator based on Census 2024 tables and a Federal Reserve SCF upper-tail model.",
       "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
-      "isBasedOn": "https://www.census.gov/data/tables/2024/demo/wealth/wealth-asset-ownership.html"
+      "isBasedOn": ["https://www.census.gov/data/tables/2024/demo/wealth/wealth-asset-ownership.html","https://www.federalreserve.gov/econres/scf-documentation.htm"]
     }
     </script>
     <style>
@@ -71,6 +71,8 @@
         .segment { min-width:3px; background:#cbd5e1; transition:.25s ease; }
         .segment.active { background:linear-gradient(90deg,var(--blue),var(--cyan)); transform:scaleY(1.28); }
         .band-note { color:var(--muted); font-size:.84rem; line-height:1.55; }
+        .model-note { margin:16px 0 0; padding:13px 15px; border:1px solid #f2c94c; border-radius:12px; background:#fff8cf; color:#713f12; font-size:.78rem; line-height:1.55; }
+        .model-note strong { color:#422006; }
         .share-section { margin-top:28px; padding-top:24px; border-top:1px solid var(--line); text-align:center; }
         .share-label { color:var(--muted); font-size:.68rem; font-weight:900; letter-spacing:.15em; text-transform:uppercase; }
         .social-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:16px; }
@@ -78,7 +80,7 @@
         .social-btn:hover { transform:translateY(-2px); box-shadow:0 8px 18px rgba(15,23,42,.18); }
         .social-btn svg { width:22px; height:22px; fill:#fff; }
         .method { margin-top:28px; padding:44px; border:1px solid var(--line); border-radius:28px; background:#fff; }
-        .method-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px; }
+        .method-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:28px; }
         .method-card { padding:22px; border-radius:18px; background:#f8fafc; border:1px solid var(--line); }
         .method-card h3 { margin:0 0 8px; font:800 1rem Outfit,sans-serif; }
         .method-card p { margin:0; color:var(--muted); font-size:.88rem; line-height:1.6; }
@@ -101,6 +103,7 @@
         .diag-benchmark { margin-top:10px; padding:11px 13px; border-left:3px solid #facc15; background:rgba(250,204,21,.08); color:#dbeafe; font-size:clamp(9px,1.7vw,12px); font-weight:700; line-height:1.45; }
         .diag-footer { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-top:15px; padding-top:12px; border-top:1px solid rgba(148,163,184,.22); color:#94a3b8; font-size:clamp(7px,1.35vw,9px); line-height:1.45; }
         .diag-url { color:#fff; font-weight:900; white-space:nowrap; }
+        @media(max-width:1000px){.method-grid{grid-template-columns:repeat(2,1fr)}}
         @media(max-width:800px){ .hero{padding-top:64px}.calculator{grid-template-columns:minmax(0,1fr)}.inputs{padding:30px;border-right:0;border-bottom:1px solid var(--line)}.result{padding:30px;min-height:520px}.method{padding:30px}.method-grid{grid-template-columns:1fr} }
         @media(max-width:480px){ .hero h1{font-size:2.55rem}.hero p{font-size:1rem}.inputs,.result,.method{padding:26px}.band{font-size:1.65rem}.stat-grid{grid-template-columns:1fr}.diag-brand{font-size:11px}.diag-pill{font-size:6.5px;padding:5px 7px}.diag-metric-value{font-size:12px}.diag-benchmark{font-size:8px}.diag-footer{font-size:6px}.social-grid{gap:8px}.social-btn{width:44px;height:44px} }
         body.dark-mode { --ink:#f8fafc; --muted:#a8b4c7; --line:#334155; --paper:#08111f; --card:#101b2c; --soft:#172554; }
@@ -432,8 +435,8 @@
         <section class="hero">
             <div class="eyebrow">Latest U.S. household data</div>
             <h1>Where Does Your Household Wealth Sit in America?</h1>
-            <p>Compare household assets minus debts with the Census Bureau's latest published wealth bands. Change the benchmark to see the distribution for an age group, region, or housing-tenure group.</p>
-            <div class="source-pill">2025 SIPP · wealth measured for 2024 · released July 2026</div>
+            <p>Compare household assets minus debts with the latest Census wealth bands, refined above $500,000 with the Federal Reserve's upper-tail data. Change the benchmark to see the distribution for an age group, region, or housing-tenure group.</p>
+            <div class="source-pill">Census 2025 SIPP core · Federal Reserve 2022 SCF upper tail</div>
         </section>
 
         <div class="shell">
@@ -456,34 +459,35 @@
                             <option value="tenure-owner">Owner-occupied</option><option value="tenure-renter">Renter-occupied</option>
                         </optgroup>
                     </select>
-                    <button class="primary" type="button" onclick="calculateHousehold()">Show My Published Range</button>
+                    <button class="primary" type="button" onclick="calculateHousehold()">Show My Wealth Range</button>
                     <a class="switch-link" href="index.html">Looking for the global adult calculator?</a>
                 </div>
                 <div class="result">
-                    <div class="empty" id="emptyState"><div><div class="empty-mark">%</div><h2>Your source-backed range will appear here</h2><p class="helper">The Census tables publish broad bands, so WealthMeter reports an interval instead of inventing precision within a band.</p></div></div>
+                    <div class="empty" id="emptyState"><div><div class="empty-mark">%</div><h2>Your source-backed range will appear here</h2><p class="helper">WealthMeter reports intervals: published Census bands below $500,000 and modeled ranges within the upper tier.</p></div></div>
                     <div class="result-content" id="resultContent" aria-live="polite">
-                        <div class="result-kicker">Your published wealth band</div>
+                        <div class="result-kicker">Your household wealth range</div>
                         <div class="band" id="bandLabel"></div>
                         <div class="benchmark-name" id="benchmarkLabel"></div>
                         <div class="stat-grid">
                             <div class="stat"><div class="stat-label">Percentile interval</div><div class="stat-value" id="percentileRange"></div></div>
                             <div class="stat"><div class="stat-label">Household rank interval</div><div class="stat-value" id="rankRange"></div></div>
                         </div>
-                        <div class="distribution" id="distribution" aria-label="Published wealth distribution"></div>
+                        <div class="distribution" id="distribution" aria-label="Household wealth distribution"></div>
                         <p class="band-note" id="bandNote"></p>
+                        <p class="model-note" id="modelNote"></p>
                         <div id="shareCard" aria-label="U.S. household wealth diagnostic card">
                             <div class="diag-header">
                                 <div class="diag-brand"><span class="diag-mark"><span></span><span></span><span></span></span>WEALTHMETER.XYZ</div>
                                 <div class="diag-pill">U.S. household wealth</div>
                             </div>
-                            <div class="diag-kicker">2024 Census wealth diagnostic</div>
+                            <div class="diag-kicker" id="shareModel">2024 Census wealth diagnostic</div>
                             <div class="share-band" id="shareBand">—</div>
                             <div class="diag-metrics">
                                 <div class="diag-metric"><div class="diag-metric-label">Percentile interval</div><div class="diag-metric-value" id="sharePercent">—</div></div>
                                 <div class="diag-metric"><div class="diag-metric-label">Household rank interval</div><div class="diag-metric-value" id="shareRank">—</div></div>
                             </div>
                             <div class="diag-benchmark" id="shareBenchmark">—</div>
-                            <div class="diag-footer"><span>U.S. Census Bureau · 2025 SIPP<br>Wealth year 2024 · Released July 2026</span><span class="diag-url">wealthmeter.xyz</span></div>
+                            <div class="diag-footer"><span id="shareSource">U.S. Census Bureau · 2025 SIPP<br>Wealth year 2024 · Released July 2026</span><span class="diag-url">wealthmeter.xyz</span></div>
                         </div>
                         <div class="share-section">
                             <div class="share-label">Share diagnostic card</div>
@@ -507,10 +511,11 @@
                 <h2>What this calculator does — and does not do</h2>
                 <div class="method-grid">
                     <article class="method-card"><h3>Household measure</h3><p>This page uses household net worth from the Census Bureau's Survey of Income and Program Participation. It is separate from WealthMeter's per-adult global model.</p></article>
-                    <article class="method-card"><h3>Published intervals</h3><p>Results use the nine bands in Census Table 4. No distribution is assumed inside a band, so the output is a defensible percentile and rank interval.</p></article>
-                    <article class="method-card"><h3>Current release</h3><p>The source is the 2025 SIPP wealth table for calendar year 2024, published July 15, 2026. The national median in Table 1 is $204,900.</p></article>
+                    <article class="method-card"><h3>Published Census core</h3><p>Below $500,000, results use the published bands in Census Table 4 without assuming a distribution inside each band.</p></article>
+                    <article class="method-card"><h3>Hybrid upper tail</h3><p>At $500,000 and above, the selected group's Census share is divided using the weighted national upper-tail shape in the Federal Reserve's 2022 SCF, converted to 2024 dollars.</p></article>
+                    <article class="method-card"><h3>Precision limit</h3><p>The upper tail is a modeled range, not a published Census rank. Census households and SCF families are not identical units, uncertainty increases above $100 million, and the $1 billion-plus result remains open-ended.</p></article>
                 </div>
-                <div class="sources"><strong>Sources:</strong> U.S. Census Bureau, <a href="https://www.census.gov/data/tables/2024/demo/wealth/wealth-asset-ownership.html">Wealth and Asset Ownership tables</a>; <a href="https://www2.census.gov/programs-surveys/demo/tables/wealth/2023/wealth-asset-ownership/wealth_tables_dy2024.xlsx">2024 detailed workbook</a>; <a href="https://www.census.gov/library/publications/2026/demo/p70br-218.html">Household Wealth in the United States: 2024</a>; and <a href="https://www.census.gov/programs-surveys/sipp/methodology.html">SIPP methodology</a>. See the full <a href="methodology.html">WealthMeter methodology</a> and <a href="data-sources.html">data sources</a>.</div>
+                <div class="sources"><strong>Sources:</strong> U.S. Census Bureau, <a href="https://www.census.gov/data/tables/2024/demo/wealth/wealth-asset-ownership.html">Wealth and Asset Ownership tables</a>; <a href="https://www2.census.gov/programs-surveys/demo/tables/wealth/2023/wealth-asset-ownership/wealth_tables_dy2024.xlsx">2024 detailed workbook</a>; <a href="https://www.census.gov/library/publications/2026/demo/p70br-218.html">Household Wealth in the United States: 2024</a>; <a href="https://www.federalreserve.gov/econres/scf-documentation.htm">Federal Reserve 2022 SCF public data and documentation</a>; and <a href="https://www.bls.gov/cpi/tables/supplemental-files/historical-cpi-u-202412.pdf">BLS CPI-U annual averages</a>. See the full <a href="methodology.html">WealthMeter methodology</a> and <a href="data-sources.html">data sources</a>.</div>
             </section>
         </div>
     </main>
@@ -557,6 +562,25 @@
         {max:24999,label:'$10,000–$24,999'}, {max:49999,label:'$25,000–$49,999'}, {max:99999,label:'$50,000–$99,999'},
         {max:249999,label:'$100,000–$249,999'}, {max:499999,label:'$250,000–$499,999'}, {max:Infinity,label:'$500,000 or more'}
     ];
+    /*
+      Conditional survival ratios within the $500,000+ population.
+      Derived from the Federal Reserve 2022 SCF summary extract using WGT across
+      all five implicates. NETWORTH is converted to 2024 dollars with CPI-U
+      annual averages (313.689 / 292.655), then normalized at $500,000.
+    */
+    const SCF_UPPER_TAIL = [
+        {min:500_000,max:999_999,label:'$500,000–$999,999',lower:1,upper:0.61931235},
+        {min:1_000_000,max:2_499_999,label:'$1 million–$2.49 million',lower:0.61931235,upper:0.26371988},
+        {min:2_500_000,max:4_999_999,label:'$2.5 million–$4.99 million',lower:0.26371988,upper:0.13014203},
+        {min:5_000_000,max:9_999_999,label:'$5 million–$9.99 million',lower:0.13014203,upper:0.05909572},
+        {min:10_000_000,max:24_999_999,label:'$10 million–$24.99 million',lower:0.05909572,upper:0.01347995},
+        {min:25_000_000,max:49_999_999,label:'$25 million–$49.99 million',lower:0.01347995,upper:0.00507243},
+        {min:50_000_000,max:99_999_999,label:'$50 million–$99.99 million',lower:0.00507243,upper:0.00177476},
+        {min:100_000_000,max:249_999_999,label:'$100 million–$249.99 million',lower:0.00177476,upper:0.00043691},
+        {min:250_000_000,max:499_999_999,label:'$250 million–$499.99 million',lower:0.00043691,upper:0.00014627},
+        {min:500_000_000,max:999_999_999,label:'$500 million–$999.99 million',lower:0.00014627,upper:0.00004377},
+        {min:1_000_000_000,max:Infinity,label:'$1 billion or more',lower:0.00004377,upper:0}
+    ];
     const BENCHMARKS = {
         all:{name:'All U.S. households',count:134.4e6,p:[11.3,6.2,3.3,5.5,5.4,7.1,14.4,15.2,31.5]},
         'age-under35':{name:'Householder under 35',count:23.760e6,p:[21.5,7.5,5.3,9.5,10.6,11.3,15.8,9.1,9.4]},
@@ -574,30 +598,64 @@
     let latest = null;
 
     function compact(value){ return value >= 1e6 ? `${(value/1e6).toFixed(value >= 1e8 ? 0 : 1)}M` : Math.round(value).toLocaleString(); }
+    function compactRank(value){
+        if(value>=1e6) return `${(value/1e6).toFixed(value>=100e6?0:1)}M`;
+        if(value>=1e3) return `${(value/1e3).toFixed(value>=100e3?0:1)}K`;
+        return Math.max(1,Math.round(value)).toLocaleString();
+    }
+    function formatPercent(value){
+        if(value>=99.9) return value.toFixed(4);
+        if(value>=99) return value.toFixed(3);
+        return value.toFixed(1);
+    }
     function calculateHousehold(){
         const wealth = Number(document.getElementById('householdWealth').value);
         if (!Number.isFinite(wealth)) return;
         const group = BENCHMARKS[document.getElementById('benchmark').value];
-        const binIndex = BINS.findIndex(bin => wealth <= bin.max);
-        const lower = group.p.slice(0,binIndex).reduce((a,b)=>a+b,0);
-        const upper = Math.min(100,lower + group.p[binIndex]);
-        const richerLow = Math.max(1,Math.round(group.count * (1-upper/100)));
-        const richerHigh = Math.max(richerLow,Math.round(group.count * (1-lower/100)));
-        latest = {wealth,group,binIndex,lower,upper,richerLow,richerHigh};
+        let binIndex,bandLabel,lower,upper,richerLow,richerHigh,bandShare,model;
+        if(wealth>=500_000){
+            const tail=SCF_UPPER_TAIL.find(bin=>wealth>=bin.min&&wealth<=bin.max);
+            const censusTopShare=group.p[8]/100;
+            const survivalAtLower=censusTopShare*tail.lower;
+            const survivalAtUpper=censusTopShare*tail.upper;
+            lower=100*(1-survivalAtLower);
+            upper=100*(1-survivalAtUpper);
+            richerLow=Math.max(1,Math.round(group.count*survivalAtUpper));
+            richerHigh=Math.max(richerLow,Math.round(group.count*survivalAtLower));
+            bandShare=(survivalAtLower-survivalAtUpper)*100;
+            binIndex=8; bandLabel=tail.label; model='hybrid';
+        }else{
+            binIndex=BINS.findIndex(bin=>wealth<=bin.max);
+            lower=group.p.slice(0,binIndex).reduce((a,b)=>a+b,0);
+            upper=Math.min(100,lower+group.p[binIndex]);
+            richerLow=Math.max(1,Math.round(group.count*(1-upper/100)));
+            richerHigh=Math.max(richerLow,Math.round(group.count*(1-lower/100)));
+            bandShare=group.p[binIndex]; bandLabel=BINS[binIndex].label; model='census';
+        }
+        latest = {wealth,group,binIndex,bandLabel,lower,upper,richerLow,richerHigh,bandShare,model};
         document.getElementById('emptyState').style.display='none';
         document.getElementById('resultContent').style.display='block';
-        document.getElementById('bandLabel').textContent=BINS[binIndex].label;
+        document.getElementById('bandLabel').textContent=bandLabel;
         document.getElementById('benchmarkLabel').textContent=`Benchmark: ${group.name} · ${compact(group.count)} households`;
-        document.getElementById('percentileRange').textContent=`${lower.toFixed(1)}–${upper.toFixed(1)}`;
-        document.getElementById('rankRange').textContent=`#${compact(richerLow)}–#${compact(richerHigh)}`;
-        document.getElementById('bandNote').textContent=`${group.p[binIndex].toFixed(1)}% of this comparison group is in the same published band. Rank 1 represents the wealthiest household. Percentages are rounded in the source table.`;
+        document.getElementById('percentileRange').textContent=`${formatPercent(lower)}–${formatPercent(upper)}`;
+        document.getElementById('rankRange').textContent=`#${compactRank(richerLow)}–#${compactRank(richerHigh)}`;
+        document.getElementById('bandNote').textContent=model==='hybrid'
+            ? `An estimated ${bandShare<0.01?bandShare.toFixed(4):bandShare.toFixed(2)}% of this comparison group falls in this modeled upper-tail band. Rank 1 represents the wealthiest household.`
+            : `${bandShare.toFixed(1)}% of this comparison group is in the same published Census band. Rank 1 represents the wealthiest household. Percentages are rounded in the source table.`;
+        document.getElementById('modelNote').innerHTML=model==='hybrid'
+            ? '<strong>Hybrid estimate:</strong> Census 2024 establishes the selected group’s share at $500,000 or more. The weighted national Federal Reserve 2022 SCF determines how that upper tier is divided after conversion to 2024 dollars. Census households and SCF families are not identical units. This is a modeled interval, not a published Census rank; uncertainty rises above $100 million.'
+            : '<strong>Published Census interval:</strong> No within-band distribution is assumed below $500,000.';
         document.getElementById('distribution').innerHTML=group.p.map((v,i)=>`<span class="segment ${i===binIndex?'active':''}" style="flex:${v}" title="${BINS[i].label}: ${v}%"></span>`).join('');
-        document.getElementById('shareBand').textContent=BINS[binIndex].label;
-        document.getElementById('sharePercent').textContent=`${lower.toFixed(1)}–${upper.toFixed(1)}`;
-        document.getElementById('shareRank').textContent=`#${compact(richerLow)}–#${compact(richerHigh)}`;
+        document.getElementById('shareBand').textContent=bandLabel;
+        document.getElementById('sharePercent').textContent=`${formatPercent(lower)}–${formatPercent(upper)}`;
+        document.getElementById('shareRank').textContent=`#${compactRank(richerLow)}–#${compactRank(richerHigh)}`;
         document.getElementById('shareBenchmark').textContent=`Benchmark: ${group.name} · ${compact(group.count)} households`;
+        document.getElementById('shareModel').textContent=model==='hybrid'?'Census + Federal Reserve hybrid diagnostic':'2024 Census wealth diagnostic';
+        document.getElementById('shareSource').innerHTML=model==='hybrid'
+            ? 'Census 2025 SIPP + Federal Reserve 2022 SCF<br>SCF dollars adjusted to 2024 with CPI-U'
+            : 'U.S. Census Bureau · 2025 SIPP<br>Wealth year 2024 · Released July 2026';
     }
-    function resultText(){ return `My household net worth is in the ${BINS[latest.binIndex].label} Census wealth band — the ${latest.lower.toFixed(1)}–${latest.upper.toFixed(1)} percentile for ${latest.group.name.toLowerCase()}.`; }
+    function resultText(){ return `My household net worth is in the ${latest.bandLabel} ${latest.model==='hybrid'?'hybrid upper-tail':'Census'} wealth band — the ${formatPercent(latest.lower)}–${formatPercent(latest.upper)} percentile for ${latest.group.name.toLowerCase()}.`; }
     async function shareResult(platform){
         if(!latest) calculateHousehold();
         const text=resultText(), page='https://wealthmeter.xyz/us-household-wealth.html';
