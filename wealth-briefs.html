@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wealth Briefs | WEALTHMETER.XYZ</title>
+    <meta name="description" content="A searchable shelf of real finance research, reports, and books across saving, investing, taxes, retirement, and household money decisions.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://wealthmeter.xyz/wealth-briefs.html">
+    <meta property="og:title" content="Wealth Briefs | WEALTHMETER.XYZ">
+    <meta property="og:description" content="Real wealth research and reports in plain language, organized for fast browsing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wealthmeter.xyz/wealth-briefs.html">
+    <meta property="og:image" content="https://wealthmeter.xyz/images/longform/ai-wealth-compounding-playbook.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wealth Briefs | WEALTHMETER.XYZ">
+    <meta name="twitter:description" content="A searchable shelf of real finance research, reports, and books in plain language.">
+    <meta name="twitter:image" content="https://wealthmeter.xyz/images/longform/ai-wealth-compounding-playbook.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Wealth Briefs",
+      "url": "https://wealthmeter.xyz/wealth-briefs.html",
+      "description": "A searchable shelf of real finance research, reports, and books for practical wealth decisions.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "WEALTHMETER.XYZ",
+        "url": "https://wealthmeter.xyz"
+      }
+    }
+    </script>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --ink: #0f172a;
+            --muted: #64748b;
+            --line: #dbe4f0;
+            --blue: #2563eb;
+            --blue-soft: #eff6ff;
+            --cyan: #0891b2;
+            --green: #059669;
+            --amber: #d97706;
+        }
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 30%),
+                radial-gradient(circle at top right, rgba(8, 145, 178, 0.12), transparent 26%),
+                #f8fafc;
+        }
+        .page {
+            width: 100%;
+            max-width: 1280px;
+            margin: 72px auto;
+            padding: 0 20px 56px;
+        }
+        .hero {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 30px;
+            padding: 36px 32px 34px;
+            color: #fff;
+            background:
+                linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(17, 43, 89, 0.94) 52%, rgba(37, 99, 235, 0.92)),
+                linear-gradient(45deg, #0f172a, #1d4ed8);
+            box-shadow: 0 24px 54px rgba(15, 23, 42, 0.24);
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: auto -120px -120px auto;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.18), rgba(255,255,255,0));
+            pointer-events: none;
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            padding: 7px 12px;
+            border: 1px solid rgba(255,255,255,0.22);
+            background: rgba(255,255,255,0.1);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+        h1 {
+            margin: 16px 0 10px;
+            max-width: 860px;
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.4rem, 5.2vw, 4.4rem);
+            line-height: 0.98;
+            letter-spacing: -0.05em;
+        }
+        .hero p {
+            margin: 0;
+            max-width: 760px;
+            font-size: 1.06rem;
+            line-height: 1.64;
+            color: #dbeafe;
+        }
+        .meta-line {
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .hero-chip {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08);
+            color: #eff6ff;
+            padding: 7px 11px;
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .stats-grid {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+        }
+        .stat-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 18px 18px 16px;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+        }
+        .stat-label {
+            display: block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+        }
+        .stat-value {
+            margin-top: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            line-height: 1;
+            letter-spacing: -0.04em;
+            color: var(--ink);
+        }
+        .stat-copy {
+            margin-top: 6px;
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .crawl-index {
+            margin-top: 18px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: #fff;
+            padding: 16px 18px;
+        }
+        .crawl-index h2 {
+            margin: 0 0 10px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+        }
+        .crawl-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem 0.85rem;
+        }
+        .crawl-links a {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .featured-shell {
+            margin-top: 18px;
+            border: 1px solid rgba(37, 99, 235, 0.16);
+            border-radius: 22px;
+            background: linear-gradient(180deg, rgba(239, 246, 255, 0.88), rgba(255, 255, 255, 0.98));
+            padding: 20px 18px 18px;
+            box-shadow: 0 10px 24px rgba(37, 99, 235, 0.08);
+        }
+        .featured-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            align-items: end;
+            margin-bottom: 14px;
+        }
+        .featured-head h2 {
+            margin: 0 0 4px;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+        }
+        .featured-head p {
+            margin: 0;
+            color: #475569;
+            font-size: 0.94rem;
+            line-height: 1.55;
+            max-width: 700px;
+        }
+        .featured-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 88px;
+            padding: 10px 12px;
+            border-radius: 999px;
+            background: #dbeafe;
+            color: #1d4ed8;
+            font-size: 0.76rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+        }
+        .featured-card {
+            border: 1px solid rgba(37, 99, 235, 0.16);
+            border-radius: 18px;
+            background: rgba(255,255,255,0.96);
+            padding: 14px;
+        }
+        .featured-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 10px;
+            font-size: 0.7rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #1d4ed8;
+        }
+        .featured-card h3 {
+            margin: 0 0 8px;
+            font-size: 1rem;
+            line-height: 1.35;
+        }
+        .featured-card p {
+            margin: 0;
+            color: #475569;
+            font-size: 0.92rem;
+            line-height: 1.56;
+        }
+        .featured-card a {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 800;
+        }
+        .controls {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: 1.45fr 1fr 1fr 1fr 1fr;
+            gap: 12px;
+        }
+        .control {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: #fff;
+            padding: 12px;
+        }
+        .control label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.68rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 0.09em;
+        }
+        .control input, .control select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--ink);
+            background: #fff;
+        }
+        .control-note {
+            margin-top: 7px;
+            font-size: 0.75rem;
+            line-height: 1.45;
+            color: var(--muted);
+        }
+        .filter-row-label {
+            margin-top: 16px;
+            font-size: 0.72rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+        }
+        .chip-row {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .chip-btn {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            border: 1px solid #dbeafe;
+            background: var(--blue-soft);
+            color: #1d4ed8;
+            padding: 7px 11px;
+            font-size: 0.74rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+        .chip-btn.active {
+            border-color: #1d4ed8;
+            background: #1d4ed8;
+            color: #eff6ff;
+        }
+        .count-row {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .count-chip {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            border: 1px solid #a7f3d0;
+            background: #ecfdf5;
+            color: #065f46;
+            padding: 7px 11px;
+            font-size: 0.74rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 4px 8px;
+            font-size: 0.68rem;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin: 0 0 10px;
+        }
+        .board {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 14px;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            min-height: 290px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: var(--card);
+            padding: 18px;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+        }
+        .topline {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        .category {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            background: #eff6ff;
+            color: #1d4ed8;
+            padding: 5px 10px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .year {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.76rem;
+            color: var(--muted);
+        }
+        h2.card-title {
+            margin: 0.35rem 0 0.75rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.34rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+        .card-copy {
+            color: #334155;
+            line-height: 1.62;
+            font-size: 0.98rem;
+        }
+        .focus-tags {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .focus-tag {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            border: 1px solid #dbeafe;
+            background: #f8fbff;
+            color: #2563eb;
+            padding: 4px 8px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+        .meta-block {
+            margin-top: auto;
+            padding-top: 14px;
+            border-top: 1px solid var(--line);
+            display: grid;
+            gap: 6px;
+        }
+        .meta-line-small {
+            color: #475569;
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+        .source-link {
+            color: var(--blue);
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .bottom-grid {
+            margin-top: 26px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 14px;
+        }
+        .panel {
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: #fff;
+            padding: 18px;
+        }
+        .panel h2 {
+            margin: 0 0 10px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            letter-spacing: -0.02em;
+        }
+        .panel p {
+            margin: 0;
+            color: #334155;
+            line-height: 1.65;
+        }
+        .mini-list {
+            display: grid;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .mini-row {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: #f8fafc;
+            padding: 12px 13px;
+        }
+        .mini-row strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--ink);
+        }
+        .mini-row span {
+            color: #475569;
+            line-height: 1.55;
+            font-size: 0.95rem;
+        }
+        .empty {
+            border: 1px dashed #cbd5e1;
+            border-radius: 18px;
+            background: #fff;
+            padding: 22px;
+            color: var(--muted);
+        }
+        @media (max-width: 1100px) {
+            .stats-grid, .controls, .bottom-grid { grid-template-columns: 1fr 1fr; }
+            .featured-head { align-items: start; flex-direction: column; }
+        }
+        @media (max-width: 760px) {
+            .stats-grid, .controls, .bottom-grid, .featured-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml"><style id="wealthmeter-component-styles">
+    /* Monolith Pulse Animation */
+    @keyframes monolithPulse {
+        0% { transform: scaleY(1); }
+        50% { transform: scaleY(1.25); }
+        100% { transform: scaleY(1); }
+    }
+    .bar-rank { animation: monolithPulse 2s ease-in-out infinite; transform-origin: bottom; fill: #FF4B4B; }
+    .bar-analyze { animation: monolithPulse 2.4s ease-in-out infinite; animation-delay: 0.2s; transform-origin: bottom; fill: #0f172a; }
+    .bar-rate { animation: monolithPulse 1.8s ease-in-out infinite; animation-delay: 0.4s; transform-origin: bottom; fill: #0891b2; }
+
+    /* Pillar Colors */
+    .label-rank { color: #FF4B4B !important; }
+    .label-rate { color: #00bcd4 !important; }
+    .label-analyze { color: #2563eb !important; }
+    .label-longform { color: #0ea5e9 !important; }
+
+    /* Layout Standards */
+    header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e2e8f0;
+        z-index: 9999;
+    }
+    .nav-container {
+        max-width: 1580px;
+        margin: 0 auto;
+        padding: 0 1.75rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+    }
+
+    /* Brand Wrapper: Prevents collision with nav items */
+    .brand-wrapper {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        margin-right: 2rem;
+    }
+
+    /* Navigation: Forces links to the right */
+    nav {
+        display: flex;
+        gap: clamp(1.1rem, 1.7vw, 2.25rem);
+        align-items: center;
+        height: 100%;
+        margin-left: auto;
+    }
+
+    .nav-group {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        white-space: nowrap;
+    }
+    .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
+    .sister-site-link {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        font-weight: 800;
+        font-size: 0.85rem;
+        color: #FF4B4B;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+    }
+    .nav-group:hover .dropdown { display: block !important; }
+    .nav-group.open .dropdown { display: block !important; }
+
+    @media (max-width: 1360px) {
+        .nav-container { padding: 0 1.25rem; }
+        .brand-wrapper { margin-right: 1.25rem; }
+        nav { gap: 1rem; }
+        .nav-group-label,
+        .sister-site-link { font-size: 0.76rem; letter-spacing: 0.09em; }
+    }
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        padding: 1rem 0;
+        min-width: 260px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        z-index: 10000;
+        margin-top: -5px;
+    }
+    .dropdown a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        color: #475569;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: 0.2s;
+    }
+    .dropdown a:hover { background: #f8fafc; color: #020617; }
+
+    @media (max-width: 1024px) {
+        header { position: relative; }
+        .nav-container { height: auto; min-height: 72px; padding: 0.75rem 1rem; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+        .brand-wrapper { margin-right: 0; }
+        nav { width: 100%; gap: 0.75rem; overflow-x: auto; padding-bottom: 0.25rem; -ms-overflow-style: none; scrollbar-width: none; }
+        nav::-webkit-scrollbar { display: none; }
+        .nav-group { height: auto; }
+        .nav-group-label { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .sister-site-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .dropdown { position: fixed; left: 0.9rem; right: 0.9rem; top: 74px; min-width: 0; max-height: 70vh; overflow-y: auto; margin-top: 0; border-radius: 0.9rem; padding: 0.7rem 0; box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16); }
+        .dropdown a { min-height: 44px; display: flex; align-items: center; font-size: 0.95rem; padding: 0.72rem 1.15rem; }
+    }
+
+    footer { padding: 5rem 2rem; text-align: center; border-top: 1px solid #e2e8f0; background: #f8fafc; margin-top: auto; }
+    .cross-property-band {
+        max-width: 980px;
+        margin: 0 auto 1.5rem;
+        padding: 1rem 1.25rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+        color: #1e293b;
+        font-weight: 700;
+        line-height: 1.55;
+    }
+    .cross-property-band a {
+        color: #2563eb;
+        font-weight: 900;
+        text-decoration: none;
+    }
+    .cross-property-band a:hover { text-decoration: underline; }
+    .article-bridge-cta {
+        margin: 2.5rem 0 0;
+        padding: 1.25rem 1.35rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+    }
+    .article-bridge-label {
+        display: inline-block;
+        margin-bottom: 0.55rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #2563eb;
+    }
+    .article-bridge-cta h2,
+    .article-bridge-cta h3 {
+        margin: 0 0 0.55rem;
+        padding: 0;
+        border: 0;
+        color: #0f172a;
+        font-size: 1.2rem;
+        letter-spacing: -0.02em;
+        text-transform: none;
+    }
+    .article-bridge-cta p {
+        margin: 0 0 0.9rem;
+        color: #334155;
+    }
+    .article-bridge-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 0 0 0.95rem;
+    }
+    .article-bridge-chip {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #bfdbfe;
+        border-radius: 999px;
+        padding: 0.34rem 0.65rem;
+        background: #ffffff;
+        color: #1d4ed8;
+        font-size: 0.76rem;
+        font-weight: 700;
+    }
+    .article-bridge-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: center;
+    }
+    .article-bridge-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+        border-radius: 0.85rem;
+        background: #2563eb;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 800;
+    }
+    .article-bridge-secondary {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    .article-bridge-secondary:hover { text-decoration: underline; }
+    .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+    .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
+
+    .site-newsletter { max-width:720px; margin:2rem auto 0; padding:1.4rem; border:1px solid #dbe4f0; border-radius:1rem; background:#f8fbff; text-align:left; }
+    .site-newsletter h2 { margin:0 0 .35rem; font-size:1.3rem; color:#0f172a; }
+    .site-newsletter-copy { margin:0 0 1rem; color:#475569; line-height:1.55; }
+    .site-newsletter-form { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; }
+    .site-newsletter-field { display:grid; gap:.3rem; color:#334155; font-size:.76rem; font-weight:800; }
+    .site-newsletter-field-email,.site-newsletter-actions { grid-column:1 / -1; }
+    .site-newsletter-field input { width:100%; min-height:46px; padding:.75rem .8rem; border:1px solid #cbd5e1; border-radius:.7rem; background:#fff; color:#0f172a; font-family:inherit; font-size:1rem; font-weight:600; line-height:1.3; }
+    .site-newsletter-actions { display:flex; align-items:center; gap:.85rem; flex-wrap:wrap; }
+    .site-newsletter button { min-height:46px; padding:.75rem 1.15rem; border:0; border-radius:.7rem; background:#2563eb; color:#fff; font-family:inherit; font-size:.84rem; font-weight:800; line-height:1; cursor:pointer; }
+    .site-newsletter button:disabled { opacity:.65; cursor:default; }
+    .site-newsletter-status { margin:0; color:#475569; font-size:.86rem; font-weight:700; }
+    .site-newsletter-note,.site-newsletter-address { margin:.85rem 0 0; color:#64748b; font-size:.78rem; line-height:1.5; }
+    body.dark-mode .site-newsletter { background:#0f172a; border-color:#334155; }
+    body.dark-mode .site-newsletter h2 { color:#f8fafc; }
+    body.dark-mode .site-newsletter-copy,body.dark-mode .site-newsletter-status,body.dark-mode .site-newsletter-note,body.dark-mode .site-newsletter-address,body.dark-mode .site-newsletter-field { color:#cbd5e1; }
+    body.dark-mode .site-newsletter-field input { background:#0b1220; border-color:#475569; color:#f8fafc; }
+    @media (max-width:640px) { .site-newsletter-form { grid-template-columns:1fr; } .site-newsletter-field-email,.site-newsletter-actions { grid-column:1; } }
+
+    main.article figure img {
+        max-width: 100%;
+        width: 100%;
+        height: auto !important;
+        object-fit: contain;
+    }
+</style><meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="900">
+    <meta property="og:image:alt" content="A searchable shelf of real finance research, reports, and books across saving, investing, taxes, retirement, and household money decisions.">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WEALTHMETER.XYZ","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"Wealth Briefs","item":"https://wealthmeter.xyz/wealth-briefs.html"}]}</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NF91REL39"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8NF91REL39');
+</script>
+</head>
+<body>
+<div id="header-placeholder" data-static-component="1">
+<header>
+    <div class="nav-container">
+        <div class="brand-wrapper">
+            <a href="/" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="bar-rank" x="15" y="45" width="16" height="40" rx="2"/>
+                    <rect class="bar-analyze" x="42" y="25" width="16" height="60" rx="2"/>
+                    <rect class="bar-rate" x="69" y="55" width="16" height="30" rx="2"/>
+                </svg>
+                <div style="font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 900; letter-spacing: -0.04em; display: flex; line-height: 1; white-space: nowrap;">
+                    <span style="color: #0f172a;">WEALTH</span><span style="color: #2563eb;">METER</span><span style="color: #0891b2;">.XYZ</span>
+                </div>
+            </a>
+        </div>
+        <nav>
+            <div class="nav-group"><span class="nav-group-label label-rank">Rank</span>
+                <div class="dropdown">
+                    <a href="/">Global Wealth Rank</a>
+                    <a href="us-household-wealth.html">U.S. Household Wealth</a>
+                    <a href="global_ranker.html">Country-Specific Rank</a>
+                    <a href="income_ranker.html">Income Percentile</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-rate">Rate</span>
+                <div class="dropdown">
+                    <a href="networth.html">Net Worth Calibration</a>
+                    <a href="fire_timeline.html">FIRE Timeline Planner</a>
+                    <a href="portfolio_alpha.html">Portfolio Alpha Simulator</a>
+                    <a href="runway_lab.html">Financial Runway Lab</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-analyze">Analyze</span>
+                <div class="dropdown">
+                    <a href="global_explorer.html">Wealth Explorer</a>
+                    <a href="atlas.html">Longevity Atlas</a>
+                    <a href="data-lab.html">Data Lab</a>
+                    <a href="wealth-briefs.html">Wealth Briefs</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
+                <div class="dropdown">
+                    <a href="longform.html">Longform Hub</a>
+                    <a href="job-loss-hurts-more-when-benefits-are-not-portable.html">Job Loss Hurts More When Benefits Are Not Portable</a>
+                    <a href="disability-insurance-leaves-many-paychecks-unprotected.html">Disability Insurance Leaves Many Paychecks Unprotected</a>
+                    <a href="america-is-second-by-average-wealth-fifteenth-by-median-wealth.html">America Is 2nd by Average Wealth, 15th by Median Wealth</a>
+                    <a href="how-insurance-deductibles-become-a-household-balance-sheet-shock.html">How Insurance Deductibles Become a Household Balance-Sheet Shock</a>
+                    <a href="home-equity-is-not-emergency-liquidity.html">Home Equity Is Not Emergency Liquidity</a>
+                    <a href="sequence-risk-before-retirement-fragility-priced-too-late.html">Sequence Risk Before Retirement: The Fragility Nobody Prices Early Enough</a>
+                    <a href="liquidity-illusion.html">The Liquidity Illusion</a>
+                    <a href="property-tax-drag.html">The Property Tax Drag</a>
+                    <a href="global-housing-divergence.html">The Global Housing Divergence</a>
+                    <a href="yield-trap-high-rate-world.html">The Yield Trap in a High-Rate World</a>
+                    <a href="freelance-freedom-tradeoff.html">The Freelance Freedom Tradeoff</a>
+                    <a href="promotion-paradox.html">The Promotion Paradox</a>
+
+
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <a href="https://lifemeter.xyz" target="_blank" rel="noopener" class="sister-site-link">LifeMeter ↗</a>
+        </nav>
+    </div>
+</header>
+</div>
+<main class="page">
+    <section class="hero">
+        <span class="eyebrow">Analyze / Wealth Briefs</span>
+        <h1>Real sources. Plain language. Fast browsing.</h1>
+        <p>This page is a searchable shelf of finance research, reports, and books. Every card points to a real source from the master list. The copy is kept simple so you can scan quickly before opening the original source.</p>
+        <div class="meta-line">
+            <span class="hero-chip">Every card links to a real source</span>
+            <span class="hero-chip">Plain-language summaries</span>
+            <span class="hero-chip">Browse by topic, year, or source type</span>
+        </div>
+    </section>
+
+    <section class="stats-grid" id="statsGrid"></section>
+
+    <section class="featured-shell" aria-label="Featured Wealth Briefs">
+        <div class="featured-head">
+            <div>
+                <h2>Start Here</h2>
+                <p>A smaller high-signal set for first-pass reading. These cards cover the strongest baseline papers, scorecards, and books across core money decisions.</p>
+            </div>
+            <div class="featured-pill" id="featuredPill">Featured</div>
+        </div>
+        <div class="featured-grid" id="featuredGrid"></div>
+    </section>
+
+    <section class="crawl-index" aria-label="WealthMeter internal links">
+        <h2>Explore WealthMeter Tools</h2>
+        <div class="crawl-links">
+            <a href="/">Global Wealth Rank</a>
+            <a href="index.html">Wealth Rank App</a>
+            <a href="global_explorer.html">Wealth Explorer</a>
+            <a href="data-lab.html">Data Lab</a>
+            <a href="wealth-longform.html">Longform Hub</a>
+        </div>
+    </section>
+
+    <section class="controls" aria-label="Brief filters">
+        <div class="control">
+            <label for="searchInput">Search</label>
+            <input id="searchInput" type="search" placeholder="Search title, author, topic, or publication">
+            <div class="control-note">Search looks across titles, authors, publications, categories, and tags.</div>
+        </div>
+        <div class="control">
+            <label for="categoryFilter">Category</label>
+            <select id="categoryFilter"></select>
+        </div>
+        <div class="control">
+            <label for="sourceTypeFilter">Source type</label>
+            <select id="sourceTypeFilter"></select>
+        </div>
+        <div class="control">
+            <label for="yearFilter">Year</label>
+            <select id="yearFilter"></select>
+        </div>
+        <div class="control">
+            <label for="sortFilter">Sort</label>
+            <select id="sortFilter">
+                <option value="featured">Featured first</option>
+                <option value="newest">Newest first</option>
+                <option value="oldest">Oldest first</option>
+                <option value="title">Title A-Z</option>
+            </select>
+        </div>
+    </section>
+
+    <div class="filter-row-label">Categories</div>
+    <div class="chip-row" id="categoryRow"></div>
+
+    <div class="filter-row-label">Browse tags</div>
+    <div class="chip-row" id="focusRow"></div>
+
+    <div class="count-row" id="countRow"></div>
+    <section class="board" id="board"></section>
+
+    <section class="bottom-grid">
+        <article class="panel">
+            <h2>What this section is for</h2>
+            <p>Wealth Briefs is not a set of made-up advice cards. It is a source shelf. Each card gives you the topic, the source, and a short plain-language note on why that source matters. If you want the original argument, data, or method, open the linked paper, report, or book listing.</p>
+            <div class="mini-list">
+                <div class="mini-row">
+                    <strong>Simple on purpose</strong>
+                    <span>The card text avoids technical language where possible. It is there to help you sort sources quickly, not replace them.</span>
+                </div>
+                <div class="mini-row">
+                    <strong>Real entries only</strong>
+                    <span>Every card is tied to a row in the master source file and keeps the original title, publication, year, and link.</span>
+                </div>
+                <div class="mini-row">
+                    <strong>Useful for follow-up work</strong>
+                    <span>This page is a starting point for deeper analysis, calculators, and future longform pieces.</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="panel">
+            <h2>Evidence policy</h2>
+            <div class="mini-list">
+                <div class="mini-row">
+                    <strong>Only real sources</strong>
+                    <span>Every entry has to point to a real paper, report, scorecard, or book before it appears on the shelf.</span>
+                </div>
+                <div class="mini-row">
+                    <strong>Source types stay visible</strong>
+                    <span>You can see whether you are opening a journal paper, working paper, report, scorecard, or book before you click.</span>
+                </div>
+                <div class="mini-row">
+                    <strong>Books are context, not final proof</strong>
+                    <span>Books can frame a topic well, but they should not carry the same evidentiary weight as a paper or scorecard on their own.</span>
+                </div>
+            </div>
+        </article>
+    </section>
+</main>
+<div id="footer-placeholder" data-static-component="1">
+<footer>
+    <section class="site-newsletter" aria-labelledby="newsletter-heading-footer">
+        <h2 id="newsletter-heading-footer">WealthMeter news and updates</h2>
+        <p class="site-newsletter-copy">Receive new longform analysis, wealth brief updates, and report releases.</p>
+        <form class="site-newsletter-form" data-newsletter-form data-source="footer">
+            <input type="hidden" name="newsletter" value="yes">
+            <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+            <label class="site-newsletter-field">First name
+                <input type="text" name="firstName" autocomplete="given-name" required>
+            </label>
+            <label class="site-newsletter-field">Last name
+                <input type="text" name="lastName" autocomplete="family-name" required>
+            </label>
+            <label class="site-newsletter-field site-newsletter-field-email">Email address
+                <input type="email" name="email" autocomplete="email" inputmode="email" required>
+            </label>
+            <div class="site-newsletter-actions">
+                <button type="submit">Sign up</button>
+                <p class="site-newsletter-status" data-newsletter-status aria-live="polite"></p>
+            </div>
+        </form>
+        <p class="site-newsletter-note">By signing up, you agree to receive WealthMeter news and updates. You can unsubscribe at any time. See our <a href="privacy.html">Privacy Policy</a>.</p>
+        <p class="site-newsletter-address">Mailing Address: 1968 S. Coast Hwy #5495, Laguna Beach, CA 92651</p>
+    </section>
+    <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="editorial-policy.html">Editorial Standards</a>
+        <a href="data-sources.html">Data Sources</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+    </div>
+</footer>
+</div>
+
+<script>
+const state = {
+    briefs: [],
+    featuredCount: 0,
+    activeCategoryChip: "All",
+    activeFocusChip: "All"
+};
+
+function populateSelect(select, values) {
+    select.innerHTML = values.map((value) => `<option value="${value}">${value}</option>`).join("");
+}
+
+function uniqueValues(items, key) {
+    return ["All", ...Array.from(new Set(items.map((item) => item[key]).filter(Boolean))).sort()];
+}
+
+function uniqueFocusTags(items) {
+    return ["All", ...Array.from(new Set(items.flatMap((item) => item.focusTags || []))).sort()];
+}
+
+function uniqueYears(items) {
+    return ["All", ...Array.from(new Set(items.map((item) => String(item.year)).filter(Boolean))).sort((a, b) => Number(b) - Number(a))];
+}
+
+function renderStats(payload) {
+    const categories = Object.keys(payload.categories || {}).length;
+    const books = payload.sourceTypes?.["book"] || 0;
+    const journals =
+        (payload.sourceTypes?.["finance journal"] || 0) +
+        (payload.sourceTypes?.["economics journal"] || 0) +
+        (payload.sourceTypes?.["academic journal"] || 0) +
+        (payload.sourceTypes?.["real estate journal"] || 0) +
+        (payload.sourceTypes?.["planning journal"] || 0) +
+        (payload.sourceTypes?.["business journal"] || 0);
+    const reports =
+        (payload.sourceTypes?.["research report"] || 0) +
+        (payload.sourceTypes?.["industry scorecard"] || 0) +
+        (payload.sourceTypes?.["working paper"] || 0) +
+        (payload.sourceTypes?.["NBER working paper"] || 0);
+    const stats = [
+        { label: "Sources", value: payload.count, copy: "Finance papers, reports, scorecards, and books in one place." },
+        { label: "Start here", value: payload.featuredCount || 0, copy: "A smaller list of strong starting points." },
+        { label: "Topics", value: categories, copy: "From investing and taxes to housing and retirement." },
+        { label: "Research papers", value: journals, copy: "Academic papers for readers who want the deeper evidence." },
+        { label: "Reports + books", value: reports + books, copy: "Practical reports, working papers, scorecards, and books." }
+    ];
+    document.getElementById("statsGrid").innerHTML = stats.map((stat) => `
+        <article class="stat-card">
+            <span class="stat-label">${stat.label}</span>
+            <div class="stat-value">${stat.value}</div>
+            <div class="stat-copy">${stat.copy}</div>
+        </article>
+    `).join("");
+}
+
+function renderFeatured(items) {
+    const featuredItems = items.filter((item) => item.featured);
+    document.getElementById("featuredPill").textContent = `${featuredItems.length} Featured`;
+    document.getElementById("featuredGrid").innerHTML = featuredItems.slice(0, 8).map((item) => `
+        <article class="featured-card">
+            <div class="featured-kicker">${item.categoryLabel || item.category} | ${item.year}</div>
+            <h3>${item.title}</h3>
+            <p>${item.summary}</p>
+            <a href="${item.sourceUrl}" target="_blank" rel="noopener">${item.sourceLinkLabel || "View source"}</a>
+        </article>
+    `).join("");
+}
+
+function renderCategoryChips(items, active) {
+    const categories = uniqueValues(items, "category");
+    document.getElementById("categoryRow").innerHTML = categories.map((category) => {
+        const count = category === "All" ? items.length : items.filter((item) => item.category === category).length;
+        return `<button class="chip-btn ${category === active ? "active" : ""}" data-category="${category}">${category.toUpperCase()} (${count})</button>`;
+    }).join("");
+}
+
+function renderFocusChips(items, active) {
+    const tags = uniqueFocusTags(items);
+    document.getElementById("focusRow").innerHTML = tags.map((tag) => {
+        const count = tag === "All" ? items.length : items.filter((item) => (item.focusTags || []).includes(tag)).length;
+        return `<button class="chip-btn ${tag === active ? "active" : ""}" data-focus="${tag}">${tag} (${count})</button>`;
+    }).join("");
+}
+
+function renderCountRow(total, filtered) {
+    document.getElementById("countRow").innerHTML = [
+        `<span class="count-chip">Visible: ${filtered}</span>`,
+        `<span class="count-chip">Loaded: ${total}</span>`,
+        `<span class="count-chip">Featured: ${state.briefs.filter((item) => item.featured).length}</span>`
+    ].join("");
+}
+
+function renderCards(items) {
+    const board = document.getElementById("board");
+    if (!items.length) {
+        board.innerHTML = `<div class="empty">No sources match the current filter set.</div>`;
+        return;
+    }
+    board.innerHTML = items.map((item) => `
+        <article class="card">
+            <div class="topline">
+                <span class="category">${item.categoryLabel || item.category}</span>
+                <span class="year">${item.year} | ${item.sourceType}</span>
+            </div>
+            <h2 class="card-title">${item.title}</h2>
+            ${item.featured ? `<div class="featured-badge">Featured</div>` : ``}
+            <div class="card-copy">${item.summary}</div>
+            <div class="focus-tags">${(item.focusTags || []).map((tag) => `<span class="focus-tag">${tag}</span>`).join("")}</div>
+            <div class="meta-block">
+                <div class="meta-line-small"><strong>Why it matters:</strong> ${item.whyItMatters}</div>
+                <div class="meta-line-small"><strong>Authors:</strong> ${item.authors}</div>
+                <div class="meta-line-small"><strong>Publication:</strong> ${item.publication}</div>
+                <a class="source-link" href="${item.sourceUrl}" target="_blank" rel="noopener">${item.sourceLinkLabel || "View source"}</a>
+            </div>
+        </article>
+    `).join("");
+}
+
+function filterItems() {
+    const searchValue = document.getElementById("searchInput").value.trim().toLowerCase();
+    const selectedCategory = document.getElementById("categoryFilter").value;
+    const selectedSourceType = document.getElementById("sourceTypeFilter").value;
+    const selectedYear = document.getElementById("yearFilter").value;
+    const sortMode = document.getElementById("sortFilter").value;
+
+    const filtered = state.briefs.filter((item) => {
+        const categoryPass = selectedCategory === "All" && state.activeCategoryChip === "All"
+            ? true
+            : (selectedCategory !== "All" ? item.category === selectedCategory : item.category === state.activeCategoryChip);
+        const focusPass = state.activeFocusChip === "All" || (item.focusTags || []).includes(state.activeFocusChip);
+        const sourcePass = selectedSourceType === "All" || item.sourceType === selectedSourceType;
+        const yearPass = selectedYear === "All" || String(item.year) === selectedYear;
+        const searchPass = !searchValue || [
+            item.title,
+            item.authors,
+            item.publication,
+            item.category,
+            item.categoryLabel,
+            item.summary,
+            item.whyItMatters,
+            ...(item.focusTags || [])
+        ].join(" ").toLowerCase().includes(searchValue);
+        return categoryPass && focusPass && sourcePass && yearPass && searchPass;
+    });
+
+    return filtered.sort((a, b) => {
+        if (sortMode === "title") {
+            return a.title.localeCompare(b.title);
+        }
+        if (sortMode === "oldest") {
+            return Number(a.year) - Number(b.year) || a.title.localeCompare(b.title);
+        }
+        if (sortMode === "newest") {
+            return Number(b.year) - Number(a.year) || a.title.localeCompare(b.title);
+        }
+        return Number(Boolean(b.featured)) - Number(Boolean(a.featured))
+            || Number(b.year) - Number(a.year)
+            || a.title.localeCompare(b.title);
+    });
+}
+
+function render() {
+    const filtered = filterItems();
+    renderFeatured(state.briefs);
+    renderCategoryChips(state.briefs, state.activeCategoryChip);
+    renderFocusChips(
+        state.activeCategoryChip === "All"
+            ? state.briefs
+            : state.briefs.filter((item) => item.category === state.activeCategoryChip),
+        state.activeFocusChip
+    );
+    renderCountRow(state.briefs.length, filtered.length);
+    renderCards(filtered);
+}
+
+async function loadBriefs() {
+        const response = await fetch("data/wealth-briefs.json?v=2026-09-14.01", { cache: "no-store" });
+    const payload = await response.json();
+    state.briefs = payload.briefs || [];
+    state.featuredCount = payload.featuredCount || 0;
+    renderStats(payload);
+    populateSelect(document.getElementById("categoryFilter"), uniqueValues(state.briefs, "category"));
+    populateSelect(document.getElementById("sourceTypeFilter"), uniqueValues(state.briefs, "sourceType"));
+    populateSelect(document.getElementById("yearFilter"), uniqueYears(state.briefs));
+    render();
+}
+
+document.addEventListener("click", (event) => {
+    const categoryChip = event.target.closest("[data-category]");
+    if (categoryChip) {
+        state.activeCategoryChip = categoryChip.dataset.category;
+        document.getElementById("categoryFilter").value = "All";
+        render();
+    }
+    const focusChip = event.target.closest("[data-focus]");
+    if (focusChip) {
+        state.activeFocusChip = focusChip.dataset.focus;
+        render();
+    }
+});
+
+["searchInput", "categoryFilter", "sourceTypeFilter", "yearFilter", "sortFilter"].forEach((id) => {
+    document.addEventListener("input", (event) => {
+        if (event.target.id === id) {
+            if (id === "categoryFilter") {
+                state.activeCategoryChip = "All";
+            }
+            render();
+        }
+    });
+    document.addEventListener("change", (event) => {
+        if (event.target.id === id) {
+            if (id === "categoryFilter") {
+                state.activeCategoryChip = "All";
+            }
+            render();
+        }
+    });
+});
+
+loadBriefs().catch(() => {
+    document.getElementById("board").innerHTML = `<div class="empty">Wealth Briefs failed to load.</div>`;
+});
+</script>
+<script src="components.js?v=2026-09-15.2"></script>
+</body>
+</html>

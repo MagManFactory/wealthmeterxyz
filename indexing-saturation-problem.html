@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Indexing Saturation Problem | WEALTHMETER.XYZ</title>
+    <meta name="description" content="Why the indexing boom still makes sense for households, where saturation risks actually appear, and why the real problem is benchmark concentration and thinner price-setting at the margin rather than market collapse.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://wealthmeter.xyz/indexing-saturation-problem.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Indexing Saturation Problem">
+    <meta property="og:description" content="Indexing does not need to break the market to create problems. The harder issue is what happens when benchmark-linked flows, mega-cap concentration, and common ownership start shaping prices and incentives at the margin.">
+    <meta property="og:url" content="https://wealthmeter.xyz/indexing-saturation-problem.html">
+    <meta property="og:image" content="https://wealthmeter.xyz/images/longform/indexing-saturation-pressure-map.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Indexing Saturation Problem">
+    <meta name="twitter:description" content="The household case for indexing remains strong. Saturation risk appears when benchmark-linked flows and ownership concentration reshape the market's plumbing and incentive structure.">
+    <meta name="twitter:image" content="https://wealthmeter.xyz/images/longform/indexing-saturation-pressure-map.png">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The Indexing Saturation Problem","description":"Why the indexing boom still makes sense for households, where saturation risks actually appear, and why the real problem is benchmark concentration and thinner price-setting at the margin rather than market collapse.","mainEntityOfPage":{"@type":"WebPage","@id":"https://wealthmeter.xyz/indexing-saturation-problem.html"},"author":{"@type":"Organization","name":"WEALTHMETER.XYZ","url":"https://wealthmeter.xyz/about.html"},"publisher":{"@type":"Organization","name":"WEALTHMETER.XYZ","url":"https://wealthmeter.xyz/"},"dateModified":"2026-04-11","datePublished":"2026-04-11","image":"https://wealthmeter.xyz/images/longform/indexing-saturation-pressure-map.png"}</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --ink:#0f172a; --body:#334155; --muted:#64748b; --line:#dbe4f0; --blue:#2563eb; --teal:#0891b2; --soft:#f5f9ff; }
+        *{box-sizing:border-box;} body{margin:0;font-family:'Inter',sans-serif;color:var(--ink);background:#fff;}
+        .article{max-width:940px;margin:0 auto;padding:3rem 1.25rem 5rem;}
+        .badge{font-family:'Roboto Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--blue);font-weight:700;}
+        h1{font-family:'Outfit',sans-serif;font-size:clamp(2rem,4.2vw,3.2rem);line-height:1.05;letter-spacing:-.03em;margin:.7rem 0 1rem;}
+        .lead{font-size:1.2rem;line-height:1.55;color:#1e293b;font-weight:600;margin-bottom:1rem;}
+        .meta{font-family:'Roboto Mono',monospace;font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:2rem;}
+        h2{margin:2.5rem 0 1rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.86rem;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);}
+        p{font-size:1.08rem;line-height:1.75;color:var(--body);margin:0 0 1rem;}
+        ul{margin:.2rem 0 1.2rem;padding-left:1.2rem;} li{font-size:1.03rem;line-height:1.62;color:var(--body);margin:.35rem 0;}
+        a{color:var(--blue);font-weight:700;}
+        .callout{border-left:4px solid var(--teal);background:linear-gradient(130deg,#f7fcff,#edf8ff);border-radius:10px;padding:1rem 1rem .35rem;margin:1rem 0 1.5rem;}
+        figure{margin:2rem 0;border:2px solid var(--line);border-radius:18px;overflow:hidden;background:var(--soft);}
+        figure img{display:block;width:100%;height:auto;}
+        figcaption{padding:.8rem 1rem;font-family:'Roboto Mono',monospace;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;}
+        table{width:100%;border-collapse:collapse;margin:.8rem 0 1.4rem;} th,td{border:1px solid var(--line);padding:.7rem;text-align:left;font-size:.98rem;line-height:1.55;color:var(--body);} th{background:#f8fbff;color:#1e293b;font-weight:700;}
+        .sources p{font-size:1rem;line-height:1.55;margin-bottom:.7rem;}
+    </style>
+    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml"><style id="wealthmeter-component-styles">
+    /* Monolith Pulse Animation */
+    @keyframes monolithPulse {
+        0% { transform: scaleY(1); }
+        50% { transform: scaleY(1.25); }
+        100% { transform: scaleY(1); }
+    }
+    .bar-rank { animation: monolithPulse 2s ease-in-out infinite; transform-origin: bottom; fill: #FF4B4B; }
+    .bar-analyze { animation: monolithPulse 2.4s ease-in-out infinite; animation-delay: 0.2s; transform-origin: bottom; fill: #0f172a; }
+    .bar-rate { animation: monolithPulse 1.8s ease-in-out infinite; animation-delay: 0.4s; transform-origin: bottom; fill: #0891b2; }
+
+    /* Pillar Colors */
+    .label-rank { color: #FF4B4B !important; }
+    .label-rate { color: #00bcd4 !important; }
+    .label-analyze { color: #2563eb !important; }
+    .label-longform { color: #0ea5e9 !important; }
+
+    /* Layout Standards */
+    header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e2e8f0;
+        z-index: 9999;
+    }
+    .nav-container {
+        max-width: 1580px;
+        margin: 0 auto;
+        padding: 0 1.75rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+    }
+
+    /* Brand Wrapper: Prevents collision with nav items */
+    .brand-wrapper {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        margin-right: 2rem;
+    }
+
+    /* Navigation: Forces links to the right */
+    nav {
+        display: flex;
+        gap: clamp(1.1rem, 1.7vw, 2.25rem);
+        align-items: center;
+        height: 100%;
+        margin-left: auto;
+    }
+
+    .nav-group {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        white-space: nowrap;
+    }
+    .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
+    .sister-site-link {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        font-weight: 800;
+        font-size: 0.85rem;
+        color: #FF4B4B;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+    }
+    .nav-group:hover .dropdown { display: block !important; }
+    .nav-group.open .dropdown { display: block !important; }
+
+    @media (max-width: 1360px) {
+        .nav-container { padding: 0 1.25rem; }
+        .brand-wrapper { margin-right: 1.25rem; }
+        nav { gap: 1rem; }
+        .nav-group-label,
+        .sister-site-link { font-size: 0.76rem; letter-spacing: 0.09em; }
+    }
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        padding: 1rem 0;
+        min-width: 260px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        z-index: 10000;
+        margin-top: -5px;
+    }
+    .dropdown a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        color: #475569;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: 0.2s;
+    }
+    .dropdown a:hover { background: #f8fafc; color: #020617; }
+
+    @media (max-width: 1024px) {
+        header { position: relative; }
+        .nav-container { height: auto; min-height: 72px; padding: 0.75rem 1rem; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+        .brand-wrapper { margin-right: 0; }
+        nav { width: 100%; gap: 0.75rem; overflow-x: auto; padding-bottom: 0.25rem; -ms-overflow-style: none; scrollbar-width: none; }
+        nav::-webkit-scrollbar { display: none; }
+        .nav-group { height: auto; }
+        .nav-group-label { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .sister-site-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .dropdown { position: fixed; left: 0.9rem; right: 0.9rem; top: 74px; min-width: 0; max-height: 70vh; overflow-y: auto; margin-top: 0; border-radius: 0.9rem; padding: 0.7rem 0; box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16); }
+        .dropdown a { min-height: 44px; display: flex; align-items: center; font-size: 0.95rem; padding: 0.72rem 1.15rem; }
+    }
+
+    footer { padding: 5rem 2rem; text-align: center; border-top: 1px solid #e2e8f0; background: #f8fafc; margin-top: auto; }
+    .cross-property-band {
+        max-width: 980px;
+        margin: 0 auto 1.5rem;
+        padding: 1rem 1.25rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+        color: #1e293b;
+        font-weight: 700;
+        line-height: 1.55;
+    }
+    .cross-property-band a {
+        color: #2563eb;
+        font-weight: 900;
+        text-decoration: none;
+    }
+    .cross-property-band a:hover { text-decoration: underline; }
+    .article-bridge-cta {
+        margin: 2.5rem 0 0;
+        padding: 1.25rem 1.35rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+    }
+    .article-bridge-label {
+        display: inline-block;
+        margin-bottom: 0.55rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #2563eb;
+    }
+    .article-bridge-cta h2,
+    .article-bridge-cta h3 {
+        margin: 0 0 0.55rem;
+        padding: 0;
+        border: 0;
+        color: #0f172a;
+        font-size: 1.2rem;
+        letter-spacing: -0.02em;
+        text-transform: none;
+    }
+    .article-bridge-cta p {
+        margin: 0 0 0.9rem;
+        color: #334155;
+    }
+    .article-bridge-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 0 0 0.95rem;
+    }
+    .article-bridge-chip {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #bfdbfe;
+        border-radius: 999px;
+        padding: 0.34rem 0.65rem;
+        background: #ffffff;
+        color: #1d4ed8;
+        font-size: 0.76rem;
+        font-weight: 700;
+    }
+    .article-bridge-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: center;
+    }
+    .article-bridge-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+        border-radius: 0.85rem;
+        background: #2563eb;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 800;
+    }
+    .article-bridge-secondary {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    .article-bridge-secondary:hover { text-decoration: underline; }
+    .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+    .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
+
+    .site-newsletter { max-width:720px; margin:2rem auto 0; padding:1.4rem; border:1px solid #dbe4f0; border-radius:1rem; background:#f8fbff; text-align:left; }
+    .site-newsletter h2 { margin:0 0 .35rem; font-size:1.3rem; color:#0f172a; }
+    .site-newsletter-copy { margin:0 0 1rem; color:#475569; line-height:1.55; }
+    .site-newsletter-form { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; }
+    .site-newsletter-field { display:grid; gap:.3rem; color:#334155; font-size:.76rem; font-weight:800; }
+    .site-newsletter-field-email,.site-newsletter-actions { grid-column:1 / -1; }
+    .site-newsletter-field input { width:100%; min-height:46px; padding:.75rem .8rem; border:1px solid #cbd5e1; border-radius:.7rem; background:#fff; color:#0f172a; font-family:inherit; font-size:1rem; font-weight:600; line-height:1.3; }
+    .site-newsletter-actions { display:flex; align-items:center; gap:.85rem; flex-wrap:wrap; }
+    .site-newsletter button { min-height:46px; padding:.75rem 1.15rem; border:0; border-radius:.7rem; background:#2563eb; color:#fff; font-family:inherit; font-size:.84rem; font-weight:800; line-height:1; cursor:pointer; }
+    .site-newsletter button:disabled { opacity:.65; cursor:default; }
+    .site-newsletter-status { margin:0; color:#475569; font-size:.86rem; font-weight:700; }
+    .site-newsletter-note,.site-newsletter-address { margin:.85rem 0 0; color:#64748b; font-size:.78rem; line-height:1.5; }
+    body.dark-mode .site-newsletter { background:#0f172a; border-color:#334155; }
+    body.dark-mode .site-newsletter h2 { color:#f8fafc; }
+    body.dark-mode .site-newsletter-copy,body.dark-mode .site-newsletter-status,body.dark-mode .site-newsletter-note,body.dark-mode .site-newsletter-address,body.dark-mode .site-newsletter-field { color:#cbd5e1; }
+    body.dark-mode .site-newsletter-field input { background:#0b1220; border-color:#475569; color:#f8fafc; }
+    @media (max-width:640px) { .site-newsletter-form { grid-template-columns:1fr; } .site-newsletter-field-email,.site-newsletter-actions { grid-column:1; } }
+
+    main.article figure img {
+        max-width: 100%;
+        width: 100%;
+        height: auto !important;
+        object-fit: contain;
+    }
+</style><meta property="og:image:width" content="1376">
+    <meta property="og:image:height" content="768">
+    <meta property="og:image:alt" content="Why the indexing boom still makes sense for households, where saturation risks actually appear, and why the real problem is benchmark concentration and thinner price-setting at the margin rather than market collapse.">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WEALTHMETER.XYZ","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"Longform","item":"https://wealthmeter.xyz/longform.html"},{"@type":"ListItem","position":3,"name":"The Indexing Saturation Problem","item":"https://wealthmeter.xyz/indexing-saturation-problem.html"}]}</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NF91REL39"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8NF91REL39');
+</script>
+</head>
+<body>
+<div id="header-placeholder" data-static-component="1">
+<header>
+    <div class="nav-container">
+        <div class="brand-wrapper">
+            <a href="/" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="bar-rank" x="15" y="45" width="16" height="40" rx="2"/>
+                    <rect class="bar-analyze" x="42" y="25" width="16" height="60" rx="2"/>
+                    <rect class="bar-rate" x="69" y="55" width="16" height="30" rx="2"/>
+                </svg>
+                <div style="font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 900; letter-spacing: -0.04em; display: flex; line-height: 1; white-space: nowrap;">
+                    <span style="color: #0f172a;">WEALTH</span><span style="color: #2563eb;">METER</span><span style="color: #0891b2;">.XYZ</span>
+                </div>
+            </a>
+        </div>
+        <nav>
+            <div class="nav-group"><span class="nav-group-label label-rank">Rank</span>
+                <div class="dropdown">
+                    <a href="/">Global Wealth Rank</a>
+                    <a href="us-household-wealth.html">U.S. Household Wealth</a>
+                    <a href="global_ranker.html">Country-Specific Rank</a>
+                    <a href="income_ranker.html">Income Percentile</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-rate">Rate</span>
+                <div class="dropdown">
+                    <a href="networth.html">Net Worth Calibration</a>
+                    <a href="fire_timeline.html">FIRE Timeline Planner</a>
+                    <a href="portfolio_alpha.html">Portfolio Alpha Simulator</a>
+                    <a href="runway_lab.html">Financial Runway Lab</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-analyze">Analyze</span>
+                <div class="dropdown">
+                    <a href="global_explorer.html">Wealth Explorer</a>
+                    <a href="atlas.html">Longevity Atlas</a>
+                    <a href="data-lab.html">Data Lab</a>
+                    <a href="wealth-briefs.html">Wealth Briefs</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
+                <div class="dropdown">
+                    <a href="longform.html">Longform Hub</a>
+                    <a href="job-loss-hurts-more-when-benefits-are-not-portable.html">Job Loss Hurts More When Benefits Are Not Portable</a>
+                    <a href="disability-insurance-leaves-many-paychecks-unprotected.html">Disability Insurance Leaves Many Paychecks Unprotected</a>
+                    <a href="america-is-second-by-average-wealth-fifteenth-by-median-wealth.html">America Is 2nd by Average Wealth, 15th by Median Wealth</a>
+                    <a href="how-insurance-deductibles-become-a-household-balance-sheet-shock.html">How Insurance Deductibles Become a Household Balance-Sheet Shock</a>
+                    <a href="home-equity-is-not-emergency-liquidity.html">Home Equity Is Not Emergency Liquidity</a>
+                    <a href="sequence-risk-before-retirement-fragility-priced-too-late.html">Sequence Risk Before Retirement: The Fragility Nobody Prices Early Enough</a>
+                    <a href="liquidity-illusion.html">The Liquidity Illusion</a>
+                    <a href="property-tax-drag.html">The Property Tax Drag</a>
+                    <a href="global-housing-divergence.html">The Global Housing Divergence</a>
+                    <a href="yield-trap-high-rate-world.html">The Yield Trap in a High-Rate World</a>
+                    <a href="freelance-freedom-tradeoff.html">The Freelance Freedom Tradeoff</a>
+                    <a href="promotion-paradox.html">The Promotion Paradox</a>
+
+
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <a href="https://lifemeter.xyz" target="_blank" rel="noopener" class="sister-site-link">LifeMeter ↗</a>
+        </nav>
+    </div>
+</header>
+</div>
+<main class="article">
+    <span class="badge">Longform · Investing and Capital Allocation</span>
+    <h1>The Indexing Saturation Problem</h1>
+    <p class="lead">Indexing still solves the hardest problem most households face: how to get diversified market exposure cheaply without pretending they can outpick professionals. Saturation becomes a problem elsewhere. It appears when benchmark-linked flows become large enough to reward size more than fundamentals at the margin, when ownership overlap grows across competitors, and when too few active dollars remain motivated to do expensive price-setting work.</p>
+    <div class="meta">Published April 11, 2026 · ~14 min read</div>
+
+    <p>That distinction matters because the indexing debate is often framed badly. One camp treats passive investing as an obvious, near-total solution for households. The other predicts market failure once passive share gets too high. Both are analytically weak. Established fact: low-cost indexing has accumulated enormous assets because fees matter and most active managers underperform their benchmarks over long horizons. Established fact: the market remains price-setting because passive funds do not eliminate active capital entirely. The more serious issue is structural. Benchmark concentration and ownership concentration can distort incentives and relative pricing long before the market “breaks.”</p>
+
+    <div class="callout">
+        <p><b>Core thesis:</b> indexing saturation is not a threshold where markets stop working. It is the point at which the marginal effects of benchmark-linked flows, mega-cap reinforcement, and common ownership begin to matter more than the fee savings that made indexing dominant. For households, indexing remains a strong default. For market structure, saturation risk is already a real design problem.</p>
+    </div>
+
+    <figure>
+        <img src="images/longform/indexing-saturation-pressure-map.png" alt="Systems map showing how benchmark inflows, mega-cap weights, and governance concentration reinforce one another in an indexing saturation regime." loading="lazy" width="1376" height="768">
+        <figcaption>Visual 1 · The household case stays strong even while the market-structure side effects compound</figcaption>
+    </figure>
+
+    <h2>Why Indexing Won So Decisively</h2>
+    <p>The household case is still straightforward. S&amp;P Dow Jones Indices continues to show, through SPIVA scorecards, that most active managers fail to beat their benchmarks over long horizons after fees. The Investment Company Institute's 2025 ETF data shows how much capital has followed that arithmetic into broad index exposure. This was not a fad. It was a fee and probability decision. Most households do better owning the market cheaply than paying high fees for a low-probability hope of persistent outperformance.</p>
+
+    <p>That success also changed behavior. Indexing moved capital out of manager-selection games and into portfolio policy. Households increasingly decide how much equity, how much duration, how much international exposure, and how much liquidity cushion they need. That is mostly healthy. It replaces expensive false precision with a simpler asset-allocation problem. The problem begins when a good household solution scales into a market regime with its own side effects.</p>
+
+    <h2>Where Saturation Actually Shows Up</h2>
+    <p>The first channel is benchmark reinforcement. Capitalization-weighted indices buy more of what has become larger. Craig Lazzara's defense of cap weighting is correct on its own terms: if the objective is to represent the market, market-cap weighting is the natural answer. The difficulty is not the arithmetic. It is the flow dynamic. When large index inflows hit a cap-weighted benchmark, the largest firms receive the largest marginal demand. Jiang, Vayanos, and Zheng showed this clearly in <i>Passive Investing and the Rise of Mega-Firms</i>. Passive flows disproportionately raise the prices of the largest firms and can strengthen their position even when the original investor decision was simply to switch from active to passive.</p>
+
+    <p>The second channel is thinner marginal price discovery. Passive investors accept benchmark weights rather than researching securities one by one. That does not mean prices become uninformative overnight. Koijen, Richmond, and Yogo found that the shift from active to passive had a large impact on equity prices but only a small average effect on price informativeness because capital did not mechanically flow from informed to uninformed investors on average. That is a useful corrective to collapse narratives. It does not eliminate the margin problem. If the fee pool for expensive fundamental research keeps shrinking, fewer investors are paid to correct benchmark-driven dislocations when they appear.</p>
+
+    <p>The third channel is ownership overlap. Common ownership research now extends well beyond a few speculative papers. Recent NBER work shows common ownership is rising globally and is especially high among large firms. Other studies show that overlapping owners can alter managerial incentives, soften competition, or change how other capital providers price risk. The market can function while still becoming less competitive and more benchmark-conditioned.</p>
+
+    <h2>Why This Still Does Not Mean Households Should Abandon Index Funds</h2>
+    <p>The indexing-saturation problem is mainly a system-design problem, not a retail stock-picking invitation. A household does not solve mega-cap concentration by overpaying for mediocre active management. It solves it by understanding that indexing is a tool, not a religion. Broad market exposure remains useful. So do global diversification, equal-weight or capped alternatives in selected sleeves, and conscious position limits around the same mega-caps that dominate both employment and portfolio exposure.</p>
+
+    <p>There is also an asymmetry worth stating plainly. Market-structure concerns are real, but they operate at a scale where individual households rarely have a practical edge. The average investor is still more likely to harm themselves by chasing expensive active stories than by holding a low-cost core. The household mistake is not owning index funds. It is assuming that cap-weighted indexing is automatically neutral, complete, and free of concentration risk.</p>
+
+    <figure>
+        <img src="images/longform/index-concentration-governance-grid.png" alt="Comparison grid showing the household benefits of indexing alongside the structural risks from mega-cap concentration, governance centralization, and benchmark-driven crowding." loading="lazy" width="1376" height="768">
+        <figcaption>Visual 2 · A cap-weighted index does not need to be wrong to become increasingly concentrated</figcaption>
+    </figure>
+
+    <h2>The Hidden Household Risk Is Benchmark Stacking</h2>
+    <p>The most common practical failure is overlap. A worker may own broad U.S. index funds, hold employer stock, rely on compensation from one mega-cap-dominated sector, and believe they are diversified because the brokerage statement lists hundreds of companies. In reality the household is benchmark-stacked. Human capital, equity exposure, and often home-market exposure can all lean on the same cluster of large firms.</p>
+
+    <p>This is where saturation becomes a personal finance issue. If the benchmark itself is increasingly top-heavy, then passive ownership can quietly magnify household concentration even while looking broad. That does not make indexing wrong. It means the investor has to audit concentration at the household level rather than at the fund-label level.</p>
+
+    <h2>A Better Framework Than Passive Versus Active</h2>
+    <ul>
+        <li><b>Keep low-cost indexing as the core.</b> For most households the fee advantage and broad exposure still dominate the realistic alternatives.</li>
+        <li><b>Measure concentration explicitly.</b> Look at top holdings, sector weights, and overlap with employer income rather than assuming every broad fund is equally diversified in practice.</li>
+        <li><b>Separate household policy from market critique.</b> A valid critique of passive-market structure does not automatically imply that a household should hire active managers.</li>
+        <li><b>Use alternative weighting only with a reason.</b> Equal-weight, capped, or factor sleeves may reduce some benchmark concentration, but they introduce their own turnover, tax, and tracking-error costs.</li>
+        <li><b>Watch governance and competition.</b> The most serious saturation issues may show up in corporate incentives and product-market behavior before they show up in household portfolio returns.</li>
+    </ul>
+
+    <p>This framework is stricter than the standard debate because it refuses the comforting extremes. Indexing is neither perfect neutrality nor imminent failure. It is an efficient household default that creates genuine system-level side effects once it becomes dominant enough.</p>
+
+    <h2>Known, Inferred, And Unknown</h2>
+    <table>
+        <tr><th>Category</th><th>Assessment</th></tr>
+        <tr><td><b>Known</b></td><td>Low-cost indexing attracted massive flows because most active managers underperform benchmarks after fees over long horizons.</td></tr>
+        <tr><td><b>Known</b></td><td>Passive flows can disproportionately lift the prices and weights of already-large firms, reinforcing mega-cap concentration in capitalization-weighted benchmarks.</td></tr>
+        <tr><td><b>Known</b></td><td>Common ownership is rising and is especially pronounced among large firms, which creates real governance and competition questions.</td></tr>
+        <tr><td><b>Inferred</b></td><td>The practical saturation point is less about total passive share and more about whether benchmark-linked demand is changing prices, incentives, and household exposures faster than active correction can offset.</td></tr>
+        <tr><td><b>Unknown</b></td><td>What level of passive dominance would materially impair price discovery or competition enough to require structural policy changes rather than portfolio-level adaptation.</td></tr>
+    </table>
+
+    <h2>The Practical Bottom Line</h2>
+    <p>The indexing boom solved one problem by making market access cheaper and simpler. It created another by concentrating flows, ownership, and incentives in ways that look small in any one trade but large in aggregate. The right response is not to romanticize active management. It is to stop pretending that all low-cost exposure is automatically neutral exposure.</p>
+
+    <p>For WealthMeter readers, the operative correction is clear. Use index funds as a core unless you have a defensible reason not to. Then audit what that core actually owns, how top-heavy it has become, and whether your labor income already ties you to the same benchmark winners. Saturation becomes dangerous first where investors fail to notice that their broad exposure is less broad than it looks.</p>
+
+    <h2>Further Reading Inside The Site</h2>
+    <p>This article connects directly to <a href="concentration-vs-diversification-tradeoff.html">The Concentration vs Diversification Tradeoff</a>, <a href="asset-rich-cash-poor-paradox.html">The Asset-Rich, Cash-Poor Paradox</a>, and <a href="ai-boom-portfolios-personal-wealth.html">The AI Boom and Personal Wealth</a>. Together they show how benchmark design, portfolio concentration, and household liquidity interact under a market dominated by large-cap narratives.</p>
+
+    <h2>Source List</h2>
+    <div class="sources">
+        <p>S&amp;P Dow Jones Indices. <a href="https://www.spglobal.com/spdji/en/spiva/article/spiva-mena" target="_blank" rel="noopener noreferrer">SPIVA scorecard series</a>. Accessed for long-horizon active-versus-index evidence.</p>
+        <p>Investment Company Institute. <a href="https://www.ici.org/research/stats/etf/etfs_06_25" target="_blank" rel="noopener noreferrer">Exchange-Traded Fund Data, June 2025</a>. 2025.</p>
+        <p>Jiang H, Vayanos D, Zheng L. <a href="https://www.nber.org/papers/w28253" target="_blank" rel="noopener noreferrer">Passive Investing and the Rise of Mega-Firms</a>. NBER Working Paper 28253. 2020, rev. 2024.</p>
+        <p>Koijen RSJ, Richmond RJ, Yogo M. <a href="https://www.nber.org/papers/w27402" target="_blank" rel="noopener noreferrer">Which Investors Matter for Equity Valuations and Expected Returns?</a>. NBER Working Paper 27402. 2020, rev. 2023.</p>
+        <p>Antón M, Ederer F, Giné M, Ramirez-Chiang G. <a href="https://www.nber.org/papers/w33965" target="_blank" rel="noopener noreferrer">Common Ownership Around the World</a>. NBER Working Paper 33965. 2025.</p>
+        <p>Adler K, Doerr S, Zhu S. <a href="https://www.bis.org/publ/work1330.htm" target="_blank" rel="noopener noreferrer">Passive investors and loan spreads</a>. BIS Working Paper 1330. 2026.</p>
+        <p>Lazzara C. <a href="https://www.spglobal.com/en/research-insights/market-insights/why-cap-weighting" target="_blank" rel="noopener noreferrer">Why Cap Weighting?</a>. S&amp;P Dow Jones Indices. 2020.</p>
+    </div></main>
+<div id="footer-placeholder" data-static-component="1">
+<footer>
+    <section class="site-newsletter" aria-labelledby="newsletter-heading-footer">
+        <h2 id="newsletter-heading-footer">WealthMeter news and updates</h2>
+        <p class="site-newsletter-copy">Receive new longform analysis, wealth brief updates, and report releases.</p>
+        <form class="site-newsletter-form" data-newsletter-form data-source="footer">
+            <input type="hidden" name="newsletter" value="yes">
+            <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+            <label class="site-newsletter-field">First name
+                <input type="text" name="firstName" autocomplete="given-name" required>
+            </label>
+            <label class="site-newsletter-field">Last name
+                <input type="text" name="lastName" autocomplete="family-name" required>
+            </label>
+            <label class="site-newsletter-field site-newsletter-field-email">Email address
+                <input type="email" name="email" autocomplete="email" inputmode="email" required>
+            </label>
+            <div class="site-newsletter-actions">
+                <button type="submit">Sign up</button>
+                <p class="site-newsletter-status" data-newsletter-status aria-live="polite"></p>
+            </div>
+        </form>
+        <p class="site-newsletter-note">By signing up, you agree to receive WealthMeter news and updates. You can unsubscribe at any time. See our <a href="privacy.html">Privacy Policy</a>.</p>
+        <p class="site-newsletter-address">Mailing Address: 1968 S. Coast Hwy #5495, Laguna Beach, CA 92651</p>
+    </section>
+    <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="editorial-policy.html">Editorial Standards</a>
+        <a href="data-sources.html">Data Sources</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+    </div>
+</footer>
+</div>
+<script src="components.js?v=2026-09-15.2"></script>
+</body>
+</html>

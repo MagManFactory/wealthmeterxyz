@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://wealthmeter.xyz/atlas.html">
+<title>Longevity Atlas | WEALTHMETER.XYZ</title>
+<meta name="description" content="Compare country-level baseline lifespan and LEV planning horizons with GDP and wealth-threshold context.">
+<meta name="keywords" content="longevity atlas, life expectancy by country, LEV lifespan, wealth and longevity, GDP per capita PPP, global wealth context">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Longevity Atlas | WEALTHMETER.XYZ">
+<meta property="og:description" content="Country-by-country baseline lifespan, LEV horizon, and wealth context in one view.">
+<meta property="og:url" content="https://wealthmeter.xyz/atlas.html">
+<meta property="og:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Longevity Atlas | WEALTHMETER.XYZ">
+<meta name="twitter:description" content="Explore baseline lifespan, LEV horizon, and wealth concentration context by country.">
+<meta name="twitter:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0f172a;
+  --muted: #64748b;
+  --line: #dbe4f0;
+  --blue: #2563eb;
+  --teal: #0891b2;
+  --panel: #ffffff;
+  --bg: #f8fafc;
+  --soft: #f2f7ff;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.wrap {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 2.5rem 1.2rem 4.5rem;
+}
+
+.hero {
+  background: linear-gradient(145deg, #ffffff 0%, #eef4ff 68%, #ecf9ff 100%);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 1.5rem;
+}
+
+.kicker {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+h1 {
+  margin: 0.75rem 0 0.5rem;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 940px;
+}
+
+.data-row {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.data-pill {
+  border: 1px solid #d6e3f6;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0.65rem 0.75rem;
+}
+
+.data-pill .label {
+  display: block;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.62rem;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+
+.data-pill .value {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.filters {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 0.7rem;
+}
+
+.filters input,
+.filters select {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #ccd9ee;
+  padding: 0.78rem 0.9rem;
+  font-size: 0.93rem;
+  background: #fff;
+  color: var(--ink);
+}
+
+.filters input:focus,
+.filters select:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.region-tabs {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.region-btn {
+  border: 1px solid #d2dff2;
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.4rem 0.65rem;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #38557f;
+  cursor: pointer;
+}
+
+.region-btn.active {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+}
+
+.layout {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.list-panel {
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 130px);
+  overflow: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 0.8rem;
+}
+
+.country-row {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  text-align: left;
+  padding: 0.58rem 0.62rem;
+  color: var(--ink);
+  cursor: pointer;
+  margin-bottom: 0.45rem;
+}
+
+.country-row:hover {
+  background: #f6faff;
+  border-color: #d8e5f8;
+}
+
+.country-row.active {
+  background: #edf4ff;
+  border-color: #b8cef5;
+}
+
+.country-row .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.country-row .name {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.country-row .meta {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.63rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+}
+
+.country-row .sub {
+  margin-top: 0.2rem;
+  font-size: 0.77rem;
+  color: var(--muted);
+}
+
+.detail-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 1.35rem;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.9rem;
+}
+
+.head h2 {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.head .sub {
+  margin-top: 0.3rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.flag {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.metrics {
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.metric {
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: #fbfdff;
+  padding: 0.65rem;
+}
+
+.metric .label {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.metric .value {
+  margin-top: 0.22rem;
+  font-size: clamp(0.96rem, 2vw, 1.28rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.metric .sub {
+  margin-top: 0.18rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.horizon-card {
+  margin-top: 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.85rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.horizon-title {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+  margin-bottom: 0.55rem;
+}
+
+.h-row {
+  display: grid;
+  grid-template-columns: 78px 1fr 126px;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.5rem;
+}
+
+.h-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.track {
+  position: relative;
+  border: 1px solid #d9e5f7;
+  border-radius: 999px;
+  background: #eef4ff;
+  height: 14px;
+  overflow: hidden;
+}
+
+.bar-base,
+.bar-lev {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.bar-base { background: #89a3c9; }
+.bar-lev { background: linear-gradient(90deg, #2563eb, #0891b2); opacity: 0.9; }
+
+.h-val {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.73rem;
+  color: var(--muted);
+  text-align: right;
+}
+
+.context-grid {
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fcfdff;
+  padding: 0.7rem;
+}
+
+.card strong {
+  display: block;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.card p,
+.card li {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.card ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.card a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.card a:hover { text-decoration: underline; }
+
+.wealth-grid {
+  margin-top: 0.35rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.w-node {
+  border: 1px solid #d8e4f6;
+  background: #f4f8ff;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+.w-node .k {
+  display: block;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.w-node .v {
+  margin-top: 0.16rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.cta {
+  margin-top: 0.5rem;
+  display: inline-block;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 1120px) {
+  .layout { grid-template-columns: 1fr; }
+  .list-panel { position: static; max-height: none; }
+}
+
+@media (max-width: 900px) {
+  .metrics { grid-template-columns: 1fr 1fr; }
+  .context-grid { grid-template-columns: 1fr; }
+  .wealth-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+  .filters { grid-template-columns: 1fr; }
+  .data-row { grid-template-columns: 1fr; }
+  .h-row { grid-template-columns: 1fr; }
+  .h-val { text-align: left; }
+}
+</style>
+    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml"><style id="wealthmeter-component-styles">
+    /* Monolith Pulse Animation */
+    @keyframes monolithPulse {
+        0% { transform: scaleY(1); }
+        50% { transform: scaleY(1.25); }
+        100% { transform: scaleY(1); }
+    }
+    .bar-rank { animation: monolithPulse 2s ease-in-out infinite; transform-origin: bottom; fill: #FF4B4B; }
+    .bar-analyze { animation: monolithPulse 2.4s ease-in-out infinite; animation-delay: 0.2s; transform-origin: bottom; fill: #0f172a; }
+    .bar-rate { animation: monolithPulse 1.8s ease-in-out infinite; animation-delay: 0.4s; transform-origin: bottom; fill: #0891b2; }
+
+    /* Pillar Colors */
+    .label-rank { color: #FF4B4B !important; }
+    .label-rate { color: #00bcd4 !important; }
+    .label-analyze { color: #2563eb !important; }
+    .label-longform { color: #0ea5e9 !important; }
+
+    /* Layout Standards */
+    header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e2e8f0;
+        z-index: 9999;
+    }
+    .nav-container {
+        max-width: 1580px;
+        margin: 0 auto;
+        padding: 0 1.75rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+    }
+
+    /* Brand Wrapper: Prevents collision with nav items */
+    .brand-wrapper {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        margin-right: 2rem;
+    }
+
+    /* Navigation: Forces links to the right */
+    nav {
+        display: flex;
+        gap: clamp(1.1rem, 1.7vw, 2.25rem);
+        align-items: center;
+        height: 100%;
+        margin-left: auto;
+    }
+
+    .nav-group {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        white-space: nowrap;
+    }
+    .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
+    .sister-site-link {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        font-weight: 800;
+        font-size: 0.85rem;
+        color: #FF4B4B;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+    }
+    .nav-group:hover .dropdown { display: block !important; }
+    .nav-group.open .dropdown { display: block !important; }
+
+    @media (max-width: 1360px) {
+        .nav-container { padding: 0 1.25rem; }
+        .brand-wrapper { margin-right: 1.25rem; }
+        nav { gap: 1rem; }
+        .nav-group-label,
+        .sister-site-link { font-size: 0.76rem; letter-spacing: 0.09em; }
+    }
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        padding: 1rem 0;
+        min-width: 260px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        z-index: 10000;
+        margin-top: -5px;
+    }
+    .dropdown a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        color: #475569;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: 0.2s;
+    }
+    .dropdown a:hover { background: #f8fafc; color: #020617; }
+
+    @media (max-width: 1024px) {
+        header { position: relative; }
+        .nav-container { height: auto; min-height: 72px; padding: 0.75rem 1rem; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+        .brand-wrapper { margin-right: 0; }
+        nav { width: 100%; gap: 0.75rem; overflow-x: auto; padding-bottom: 0.25rem; -ms-overflow-style: none; scrollbar-width: none; }
+        nav::-webkit-scrollbar { display: none; }
+        .nav-group { height: auto; }
+        .nav-group-label { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .sister-site-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .dropdown { position: fixed; left: 0.9rem; right: 0.9rem; top: 74px; min-width: 0; max-height: 70vh; overflow-y: auto; margin-top: 0; border-radius: 0.9rem; padding: 0.7rem 0; box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16); }
+        .dropdown a { min-height: 44px; display: flex; align-items: center; font-size: 0.95rem; padding: 0.72rem 1.15rem; }
+    }
+
+    footer { padding: 5rem 2rem; text-align: center; border-top: 1px solid #e2e8f0; background: #f8fafc; margin-top: auto; }
+    .cross-property-band {
+        max-width: 980px;
+        margin: 0 auto 1.5rem;
+        padding: 1rem 1.25rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+        color: #1e293b;
+        font-weight: 700;
+        line-height: 1.55;
+    }
+    .cross-property-band a {
+        color: #2563eb;
+        font-weight: 900;
+        text-decoration: none;
+    }
+    .cross-property-band a:hover { text-decoration: underline; }
+    .article-bridge-cta {
+        margin: 2.5rem 0 0;
+        padding: 1.25rem 1.35rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+    }
+    .article-bridge-label {
+        display: inline-block;
+        margin-bottom: 0.55rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #2563eb;
+    }
+    .article-bridge-cta h2,
+    .article-bridge-cta h3 {
+        margin: 0 0 0.55rem;
+        padding: 0;
+        border: 0;
+        color: #0f172a;
+        font-size: 1.2rem;
+        letter-spacing: -0.02em;
+        text-transform: none;
+    }
+    .article-bridge-cta p {
+        margin: 0 0 0.9rem;
+        color: #334155;
+    }
+    .article-bridge-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 0 0 0.95rem;
+    }
+    .article-bridge-chip {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #bfdbfe;
+        border-radius: 999px;
+        padding: 0.34rem 0.65rem;
+        background: #ffffff;
+        color: #1d4ed8;
+        font-size: 0.76rem;
+        font-weight: 700;
+    }
+    .article-bridge-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: center;
+    }
+    .article-bridge-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+        border-radius: 0.85rem;
+        background: #2563eb;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 800;
+    }
+    .article-bridge-secondary {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    .article-bridge-secondary:hover { text-decoration: underline; }
+    .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+    .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
+
+    .site-newsletter { max-width:720px; margin:2rem auto 0; padding:1.4rem; border:1px solid #dbe4f0; border-radius:1rem; background:#f8fbff; text-align:left; }
+    .site-newsletter h2 { margin:0 0 .35rem; font-size:1.3rem; color:#0f172a; }
+    .site-newsletter-copy { margin:0 0 1rem; color:#475569; line-height:1.55; }
+    .site-newsletter-form { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; }
+    .site-newsletter-field { display:grid; gap:.3rem; color:#334155; font-size:.76rem; font-weight:800; }
+    .site-newsletter-field-email,.site-newsletter-actions { grid-column:1 / -1; }
+    .site-newsletter-field input { width:100%; min-height:46px; padding:.75rem .8rem; border:1px solid #cbd5e1; border-radius:.7rem; background:#fff; color:#0f172a; font-family:inherit; font-size:1rem; font-weight:600; line-height:1.3; }
+    .site-newsletter-actions { display:flex; align-items:center; gap:.85rem; flex-wrap:wrap; }
+    .site-newsletter button { min-height:46px; padding:.75rem 1.15rem; border:0; border-radius:.7rem; background:#2563eb; color:#fff; font-family:inherit; font-size:.84rem; font-weight:800; line-height:1; cursor:pointer; }
+    .site-newsletter button:disabled { opacity:.65; cursor:default; }
+    .site-newsletter-status { margin:0; color:#475569; font-size:.86rem; font-weight:700; }
+    .site-newsletter-note,.site-newsletter-address { margin:.85rem 0 0; color:#64748b; font-size:.78rem; line-height:1.5; }
+    body.dark-mode .site-newsletter { background:#0f172a; border-color:#334155; }
+    body.dark-mode .site-newsletter h2 { color:#f8fafc; }
+    body.dark-mode .site-newsletter-copy,body.dark-mode .site-newsletter-status,body.dark-mode .site-newsletter-note,body.dark-mode .site-newsletter-address,body.dark-mode .site-newsletter-field { color:#cbd5e1; }
+    body.dark-mode .site-newsletter-field input { background:#0b1220; border-color:#475569; color:#f8fafc; }
+    @media (max-width:640px) { .site-newsletter-form { grid-template-columns:1fr; } .site-newsletter-field-email,.site-newsletter-actions { grid-column:1; } }
+
+    main.article figure img {
+        max-width: 100%;
+        width: 100%;
+        height: auto !important;
+        object-fit: contain;
+    }
+</style><meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Compare country-level baseline lifespan and LEV planning horizons with GDP and wealth-threshold context.">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WEALTHMETER.XYZ","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"Longevity Atlas","item":"https://wealthmeter.xyz/atlas.html"}]}</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NF91REL39"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8NF91REL39');
+</script>
+</head>
+<body data-page="atlas.html">
+<div id="header-placeholder" data-static-component="1">
+<header>
+    <div class="nav-container">
+        <div class="brand-wrapper">
+            <a href="/" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="bar-rank" x="15" y="45" width="16" height="40" rx="2"/>
+                    <rect class="bar-analyze" x="42" y="25" width="16" height="60" rx="2"/>
+                    <rect class="bar-rate" x="69" y="55" width="16" height="30" rx="2"/>
+                </svg>
+                <div style="font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 900; letter-spacing: -0.04em; display: flex; line-height: 1; white-space: nowrap;">
+                    <span style="color: #0f172a;">WEALTH</span><span style="color: #2563eb;">METER</span><span style="color: #0891b2;">.XYZ</span>
+                </div>
+            </a>
+        </div>
+        <nav>
+            <div class="nav-group"><span class="nav-group-label label-rank">Rank</span>
+                <div class="dropdown">
+                    <a href="/">Global Wealth Rank</a>
+                    <a href="us-household-wealth.html">U.S. Household Wealth</a>
+                    <a href="global_ranker.html">Country-Specific Rank</a>
+                    <a href="income_ranker.html">Income Percentile</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-rate">Rate</span>
+                <div class="dropdown">
+                    <a href="networth.html">Net Worth Calibration</a>
+                    <a href="fire_timeline.html">FIRE Timeline Planner</a>
+                    <a href="portfolio_alpha.html">Portfolio Alpha Simulator</a>
+                    <a href="runway_lab.html">Financial Runway Lab</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-analyze">Analyze</span>
+                <div class="dropdown">
+                    <a href="global_explorer.html">Wealth Explorer</a>
+                    <a href="atlas.html">Longevity Atlas</a>
+                    <a href="data-lab.html">Data Lab</a>
+                    <a href="wealth-briefs.html">Wealth Briefs</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
+                <div class="dropdown">
+                    <a href="longform.html">Longform Hub</a>
+                    <a href="job-loss-hurts-more-when-benefits-are-not-portable.html">Job Loss Hurts More When Benefits Are Not Portable</a>
+                    <a href="disability-insurance-leaves-many-paychecks-unprotected.html">Disability Insurance Leaves Many Paychecks Unprotected</a>
+                    <a href="america-is-second-by-average-wealth-fifteenth-by-median-wealth.html">America Is 2nd by Average Wealth, 15th by Median Wealth</a>
+                    <a href="how-insurance-deductibles-become-a-household-balance-sheet-shock.html">How Insurance Deductibles Become a Household Balance-Sheet Shock</a>
+                    <a href="home-equity-is-not-emergency-liquidity.html">Home Equity Is Not Emergency Liquidity</a>
+                    <a href="sequence-risk-before-retirement-fragility-priced-too-late.html">Sequence Risk Before Retirement: The Fragility Nobody Prices Early Enough</a>
+                    <a href="liquidity-illusion.html">The Liquidity Illusion</a>
+                    <a href="property-tax-drag.html">The Property Tax Drag</a>
+                    <a href="global-housing-divergence.html">The Global Housing Divergence</a>
+                    <a href="yield-trap-high-rate-world.html">The Yield Trap in a High-Rate World</a>
+                    <a href="freelance-freedom-tradeoff.html">The Freelance Freedom Tradeoff</a>
+                    <a href="promotion-paradox.html">The Promotion Paradox</a>
+
+
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <a href="https://lifemeter.xyz" target="_blank" rel="noopener" class="sister-site-link">LifeMeter ↗</a>
+        </nav>
+    </div>
+</header>
+</div>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="kicker">Atlas</span>
+    <h1>Longevity Atlas: Time Horizon Meets Wealth Context</h1>
+    <p>This view complements Global Explorer. Explorer shows distribution and concentration; Atlas adds life-horizon context with baseline lifespan vs LEV planning bands so you can evaluate wealth durability over time, not just by percentile.</p>
+
+    <div class="data-row">
+      <div class="data-pill"><span class="label">Coverage</span><span class="value" id="coverageVal">59 countries</span></div>
+      <div class="data-pill"><span class="label">Lifespan Baseline</span><span class="value">UN WPP + World Bank</span></div>
+      <div class="data-pill"><span class="label">Wealth Overlay</span><span class="value">UBS 2025 + WID</span></div>
+    </div>
+
+    <div class="filters">
+      <input id="searchInput" type="search" placeholder="Search country (e.g., Japan, Brazil, Qatar)" aria-label="Search country">
+      <select id="sortSelect" aria-label="Sort countries">
+        <option value="alpha">Sort: A-Z</option>
+        <option value="gain_desc">Sort: LEV Gain (High-Low)</option>
+        <option value="base_desc">Sort: Baseline Lifespan (High-Low)</option>
+        <option value="lev_desc">Sort: LEV Horizon (High-Low)</option>
+        <option value="gdp_desc">Sort: GDP / Cap PPP (High-Low)</option>
+      </select>
+    </div>
+
+    <div class="region-tabs" id="regionTabs"></div>
+  </section>
+
+  <section class="layout">
+    <aside class="list-panel" id="countryList"></aside>
+
+    <article class="detail-panel">
+      <div class="head">
+        <div>
+          <h2 id="dName">United States</h2>
+          <div class="sub" id="dSub">Washington D.C. · Americas</div>
+        </div>
+        <div class="flag" id="dFlag">🇺🇸</div>
+      </div>
+
+      <div class="metrics">
+        <div class="metric"><div class="label">Population</div><div class="value" id="dPop">339.7M</div><div class="sub">Resident estimate</div></div>
+        <div class="metric"><div class="label">GDP / Cap (PPP)</div><div class="value" id="dGdp">$89,400</div><div class="sub">USD equivalent</div></div>
+        <div class="metric"><div class="label">Baseline Midpoint</div><div class="value" id="dBaseMid">79.5y</div><div class="sub" id="dBaseRange">77M / 82F</div></div>
+        <div class="metric"><div class="label">LEV Midpoint</div><div class="value" id="dLevMid">97.5y</div><div class="sub" id="dLevRange">95M / 100F</div></div>
+        <div class="metric"><div class="label">Horizon Gain</div><div class="value" id="dGain">+18.0y</div><div class="sub">LEV midpoint - baseline</div></div>
+      </div>
+
+      <div class="horizon-card">
+        <div class="horizon-title">Male/Female Horizon Bridge</div>
+        <div class="h-row">
+          <div class="h-label">Male</div>
+          <div class="track"><div class="bar-base" id="barMaleBase"></div><div class="bar-lev" id="barMaleLev"></div></div>
+          <div class="h-val" id="maleVals">77y → 95y</div>
+        </div>
+        <div class="h-row">
+          <div class="h-label">Female</div>
+          <div class="track"><div class="bar-base" id="barFemBase"></div><div class="bar-lev" id="barFemLev"></div></div>
+          <div class="h-val" id="femVals">82y → 100y</div>
+        </div>
+      </div>
+
+      <div class="context-grid">
+        <div class="card">
+          <strong>Complementary Wealth View</strong>
+          <p id="wealthNote">This country has direct wealth-threshold context. Use it alongside lifespan horizon to evaluate how long assets may need to perform.</p>
+          <div class="wealth-grid" id="wealthGrid"></div>
+          <a class="cta" href="global_explorer.html">Open Global Explorer ↗</a>
+        </div>
+
+        <div class="card">
+          <strong>Sources and Method</strong>
+          <ul>
+            <li><a href="https://www.un.org/development/desa/pd/content/World-Population-Prospects-2024" target="_blank" rel="noopener noreferrer">UN World Population Prospects 2024 revision (latest available)</a></li>
+            <li><a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN" target="_blank" rel="noopener noreferrer">World Bank: Life Expectancy at Birth</a></li>
+            <li><a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD" target="_blank" rel="noopener noreferrer">World Bank: GDP per Capita, PPP</a></li>
+            <li><a href="https://www.ubs.com/global/en/media/display-page-ndp/en-20250618-gwr-2025.html" target="_blank" rel="noopener noreferrer">UBS Global Wealth Report 2025</a> + <a href="https://wid.world/" target="_blank" rel="noopener noreferrer">WID</a> for wealth overlay</li>
+          </ul>
+          <p style="margin-top:.45rem;">LEV values are planning scenarios, not clinical forecasts.</p>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+
+<div id="footer-placeholder" data-static-component="1">
+<footer>
+    <section class="site-newsletter" aria-labelledby="newsletter-heading-footer">
+        <h2 id="newsletter-heading-footer">WealthMeter news and updates</h2>
+        <p class="site-newsletter-copy">Receive new longform analysis, wealth brief updates, and report releases.</p>
+        <form class="site-newsletter-form" data-newsletter-form data-source="footer">
+            <input type="hidden" name="newsletter" value="yes">
+            <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+            <label class="site-newsletter-field">First name
+                <input type="text" name="firstName" autocomplete="given-name" required>
+            </label>
+            <label class="site-newsletter-field">Last name
+                <input type="text" name="lastName" autocomplete="family-name" required>
+            </label>
+            <label class="site-newsletter-field site-newsletter-field-email">Email address
+                <input type="email" name="email" autocomplete="email" inputmode="email" required>
+            </label>
+            <div class="site-newsletter-actions">
+                <button type="submit">Sign up</button>
+                <p class="site-newsletter-status" data-newsletter-status aria-live="polite"></p>
+            </div>
+        </form>
+        <p class="site-newsletter-note">By signing up, you agree to receive WealthMeter news and updates. You can unsubscribe at any time. See our <a href="privacy.html">Privacy Policy</a>.</p>
+        <p class="site-newsletter-address">Mailing Address: 1968 S. Coast Hwy #5495, Laguna Beach, CA 92651</p>
+    </section>
+    <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="editorial-policy.html">Editorial Standards</a>
+        <a href="data-sources.html">Data Sources</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+    </div>
+</footer>
+</div>
+<script src="components.js?v=2026-09-15.2"></script>
+<script>
+const ATLAS_DB = [
+  { code: 'USA', region: 'Americas', flag: '🇺🇸', name: 'United States', capital: 'Washington D.C.', pop: '339.7M', gdp: '$89,400', life: '77M / 82F', lev: '95M / 100F' },
+  { code: 'CAN', region: 'Americas', flag: '🇨🇦', name: 'Canada', capital: 'Ottawa', pop: '39.3M', gdp: '$60,495', life: '80M / 84F', lev: '98M / 102F' },
+  { code: 'MEX', region: 'Americas', flag: '🇲🇽', name: 'Mexico', capital: 'Mexico City', pop: '128.5M', gdp: '$23,817', life: '73M / 79F', lev: '89M / 95F' },
+  { code: 'BRA', region: 'Americas', flag: '🇧🇷', name: 'Brazil', capital: 'Brasilia', pop: '216.4M', gdp: '$18,686', life: '73M / 80F', lev: '89M / 96F' },
+  { code: 'ARG', region: 'Americas', flag: '🇦🇷', name: 'Argentina', capital: 'Buenos Aires', pop: '46.2M', gdp: '$28,587', life: '74M / 81F', lev: '90M / 97F' },
+  { code: 'CHL', region: 'Americas', flag: '🇨🇱', name: 'Chile', capital: 'Santiago', pop: '19.5M', gdp: '$30,200', life: '78M / 83F', lev: '94M / 99F' },
+  { code: 'COL', region: 'Americas', flag: '🇨🇴', name: 'Colombia', capital: 'Bogota', pop: '52.1M', gdp: '$21,449', life: '74M / 80F', lev: '90M / 96F' },
+  { code: 'PER', region: 'Americas', flag: '🇵🇪', name: 'Peru', capital: 'Lima', pop: '34.4M', gdp: '$17,876', life: '75M / 80F', lev: '91M / 96F' },
+  { code: 'URY', region: 'Americas', flag: '🇺🇾', name: 'Uruguay', capital: 'Montevideo', pop: '3.4M', gdp: '$27,431', life: '74M / 81F', lev: '90M / 97F' },
+  { code: 'GBR', region: 'Europe', flag: '🇬🇧', name: 'United Kingdom', capital: 'London', pop: '67.7M', gdp: '$54,603', life: '79M / 83F', lev: '97M / 101F' },
+  { code: 'FRA', region: 'Europe', flag: '🇫🇷', name: 'France', capital: 'Paris', pop: '68.0M', gdp: '$56,036', life: '80M / 86F', lev: '98M / 104F' },
+  { code: 'ITA', region: 'Europe', flag: '🇮🇹', name: 'Italy', capital: 'Rome', pop: '58.8M', gdp: '$52,880', life: '81M / 85F', lev: '99M / 103F' },
+  { code: 'DEU', region: 'Europe', flag: '🇩🇪', name: 'Germany', capital: 'Berlin', pop: '84.5M', gdp: '$63,722', life: '79M / 84F', lev: '97M / 102F' },
+  { code: 'ESP', region: 'Europe', flag: '🇪🇸', name: 'Spain', capital: 'Madrid', pop: '47.9M', gdp: '$49,567', life: '80M / 86F', lev: '98M / 104F' },
+  { code: 'NLD', region: 'Europe', flag: '🇳🇱', name: 'Netherlands', capital: 'Amsterdam', pop: '17.9M', gdp: '$73,158', life: '80M / 84F', lev: '98M / 102F' },
+  { code: 'BEL', region: 'Europe', flag: '🇧🇪', name: 'Belgium', capital: 'Brussels', pop: '11.7M', gdp: '$63,627', life: '79M / 84F', lev: '97M / 102F' },
+  { code: 'AUT', region: 'Europe', flag: '🇦🇹', name: 'Austria', capital: 'Vienna', pop: '9.1M', gdp: '$71,231', life: '79M / 84F', lev: '97M / 102F' },
+  { code: 'CHE', region: 'Europe', flag: '🇨🇭', name: 'Switzerland', capital: 'Bern', pop: '8.8M', gdp: '$89,537', life: '82M / 85F', lev: '100M / 103F' },
+  { code: 'PRT', region: 'Europe', flag: '🇵🇹', name: 'Portugal', capital: 'Lisbon', pop: '10.5M', gdp: '$44,629', life: '79M / 85F', lev: '97M / 103F' },
+  { code: 'IRL', region: 'Europe', flag: '🇮🇪', name: 'Ireland', capital: 'Dublin', pop: '5.2M', gdp: '$126,905', life: '80M / 84F', lev: '98M / 102F' },
+  { code: 'SWE', region: 'Europe', flag: '🇸🇪', name: 'Sweden', capital: 'Stockholm', pop: '10.6M', gdp: '$68,394', life: '81M / 85F', lev: '99M / 103F' },
+  { code: 'NOR', region: 'Europe', flag: '🇳🇴', name: 'Norway', capital: 'Oslo', pop: '5.6M', gdp: '$106,149', life: '81M / 85F', lev: '99M / 103F' },
+  { code: 'DNK', region: 'Europe', flag: '🇩🇰', name: 'Denmark', capital: 'Copenhagen', pop: '5.9M', gdp: '$77,641', life: '79M / 83F', lev: '97M / 101F' },
+  { code: 'FIN', region: 'Europe', flag: '🇫🇮', name: 'Finland', capital: 'Helsinki', pop: '5.6M', gdp: '$60,851', life: '79M / 85F', lev: '97M / 103F' },
+  { code: 'POL', region: 'Europe', flag: '🇵🇱', name: 'Poland', capital: 'Warsaw', pop: '38.0M', gdp: '$48,034', life: '74M / 82F', lev: '90M / 98F' },
+  { code: 'CZE', region: 'Europe', flag: '🇨🇿', name: 'Czech Republic', capital: 'Prague', pop: '10.8M', gdp: '$52,305', life: '76M / 82F', lev: '92M / 98F' },
+  { code: 'GRC', region: 'Europe', flag: '🇬🇷', name: 'Greece', capital: 'Athens', pop: '10.3M', gdp: '$41,124', life: '78M / 83F', lev: '94M / 99F' },
+  { code: 'RUS', region: 'Europe', flag: '🇷🇺', name: 'Russia', capital: 'Moscow', pop: '144.4M', gdp: '$35,310', life: '68M / 78F', lev: '84M / 94F' },
+  { code: 'UKR', region: 'Europe', flag: '🇺🇦', name: 'Ukraine', capital: 'Kyiv', pop: '37.0M', gdp: '$18,043', life: '67M / 77F', lev: '83M / 93F' },
+  { code: 'CHN', region: 'Asia-Pacific', flag: '🇨🇳', name: 'China', capital: 'Beijing', pop: '1,425M', gdp: '$25,015', life: '75M / 80F', lev: '91M / 96F' },
+  { code: 'IND', region: 'Asia-Pacific', flag: '🇮🇳', name: 'India', capital: 'New Delhi', pop: '1,428M', gdp: '$10,123', life: '71M / 74F', lev: '87M / 90F' },
+  { code: 'JPN', region: 'Asia-Pacific', flag: '🇯🇵', name: 'Japan', capital: 'Tokyo', pop: '123.3M', gdp: '$54,184', life: '82M / 88F', lev: '100M / 106F' },
+  { code: 'KOR', region: 'Asia-Pacific', flag: '🇰🇷', name: 'South Korea', capital: 'Seoul', pop: '51.7M', gdp: '$56,709', life: '80M / 86F', lev: '98M / 104F' },
+  { code: 'TWN', region: 'Asia-Pacific', flag: '🇹🇼', name: 'Taiwan', capital: 'Taipei', pop: '23.9M', gdp: '$76,858', life: '78M / 84F', lev: '96M / 102F' },
+  { code: 'SGP', region: 'Asia-Pacific', flag: '🇸🇬', name: 'Singapore', capital: 'Singapore', pop: '5.9M', gdp: '$132,570', life: '81M / 86F', lev: '99M / 104F' },
+  { code: 'HKG', region: 'Asia-Pacific', flag: '🇭🇰', name: 'Hong Kong', capital: 'Hong Kong', pop: '7.5M', gdp: '$73,600', life: '82M / 88F', lev: '100M / 106F' },
+  { code: 'THA', region: 'Asia-Pacific', flag: '🇹🇭', name: 'Thailand', capital: 'Bangkok', pop: '71.8M', gdp: '$22,508', life: '74M / 81F', lev: '90M / 97F' },
+  { code: 'VNM', region: 'Asia-Pacific', flag: '🇻🇳', name: 'Vietnam', capital: 'Hanoi', pop: '98.9M', gdp: '$15,520', life: '72M / 80F', lev: '88M / 96F' },
+  { code: 'PHL', region: 'Asia-Pacific', flag: '🇵🇭', name: 'Philippines', capital: 'Manila', pop: '117.3M', gdp: '$11,384', life: '68M / 75F', lev: '84M / 91F' },
+  { code: 'MYS', region: 'Asia-Pacific', flag: '🇲🇾', name: 'Malaysia', capital: 'Kuala Lumpur', pop: '34.3M', gdp: '$38,878', life: '74M / 78F', lev: '90M / 94F' },
+  { code: 'IDN', region: 'Asia-Pacific', flag: '🇮🇩', name: 'Indonesia', capital: 'Jakarta', pop: '277.5M', gdp: '$15,855', life: '70M / 74F', lev: '86M / 90F' },
+  { code: 'PAK', region: 'Asia-Pacific', flag: '🇵🇰', name: 'Pakistan', capital: 'Islamabad', pop: '240.5M', gdp: '$6,952', life: '66M / 70F', lev: '82M / 86F' },
+  { code: 'BGD', region: 'Asia-Pacific', flag: '🇧🇩', name: 'Bangladesh', capital: 'Dhaka', pop: '173.6M', gdp: '$8,829', life: '72M / 75F', lev: '88M / 91F' },
+  { code: 'AUS', region: 'Oceania', flag: '🇦🇺', name: 'Australia', capital: 'Canberra', pop: '26.6M', gdp: '$71,806', life: '82M / 86F', lev: '100M / 104F' },
+  { code: 'NZL', region: 'Oceania', flag: '🇳🇿', name: 'New Zealand', capital: 'Wellington', pop: '5.2M', gdp: '$56,287', life: '80M / 84F', lev: '98M / 102F' },
+  { code: 'FJI', region: 'Oceania', flag: '🇫🇯', name: 'Fiji', capital: 'Suva', pop: '0.9M', gdp: '$12,300', life: '65M / 69F', lev: '81M / 85F' },
+  { code: 'ARE', region: 'Middle East', flag: '🇦🇪', name: 'UAE', capital: 'Abu Dhabi', pop: '9.5M', gdp: '$88,962', life: '78M / 80F', lev: '94M / 96F' },
+  { code: 'SAU', region: 'Middle East', flag: '🇸🇦', name: 'Saudi Arabia', capital: 'Riyadh', pop: '36.4M', gdp: '$70,332', life: '74M / 77F', lev: '90M / 93F' },
+  { code: 'ISR', region: 'Middle East', flag: '🇮🇱', name: 'Israel', capital: 'Jerusalem', pop: '9.7M', gdp: '$58,270', life: '81M / 84F', lev: '99M / 102F' },
+  { code: 'TUR', region: 'Middle East', flag: '🇹🇷', name: 'Turkey', capital: 'Ankara', pop: '85.8M', gdp: '$42,765', life: '75M / 81F', lev: '91M / 97F' },
+  { code: 'QAT', region: 'Middle East', flag: '🇶🇦', name: 'Qatar', capital: 'Doha', pop: '2.7M', gdp: '$114,000', life: '79M / 82F', lev: '95M / 98F' },
+  { code: 'KWT', region: 'Middle East', flag: '🇰🇼', name: 'Kuwait', capital: 'Kuwait City', pop: '4.3M', gdp: '$51,000', life: '78M / 81F', lev: '94M / 97F' },
+  { code: 'ZAF', region: 'Africa', flag: '🇿🇦', name: 'South Africa', capital: 'Pretoria', pop: '60.6M', gdp: '$16,091', life: '62M / 68F', lev: '78M / 84F' },
+  { code: 'KEN', region: 'Africa', flag: '🇰🇪', name: 'Kenya', capital: 'Nairobi', pop: '55.1M', gdp: '$6,572', life: '64M / 69F', lev: '80M / 85F' },
+  { code: 'NGA', region: 'Africa', flag: '🇳🇬', name: 'Nigeria', capital: 'Abuja', pop: '230.8M', gdp: '$6,281', life: '53M / 55F', lev: '69M / 71F' },
+  { code: 'EGY', region: 'Africa', flag: '🇪🇬', name: 'Egypt', capital: 'Cairo', pop: '112.7M', gdp: '$19,303', life: '70M / 74F', lev: '86M / 90F' },
+  { code: 'MAR', region: 'Africa', flag: '🇲🇦', name: 'Morocco', capital: 'Rabat', pop: '37.8M', gdp: '$11,437', life: '75M / 78F', lev: '91M / 94F' },
+  { code: 'DZA', region: 'Africa', flag: '🇩🇿', name: 'Algeria', capital: 'Algiers', pop: '45.6M', gdp: '$14,227', life: '76M / 78F', lev: '92M / 94F' },
+  { code: 'ETH', region: 'Africa', flag: '🇪🇹', name: 'Ethiopia', capital: 'Addis Ababa', pop: '126.5M', gdp: '$3,700', life: '65M / 69F', lev: '81M / 85F' }
+];
+
+const WEALTH_OVERLAY = {
+  USA:{median:107700,top10:1600000,top1:5800000}, CAN:{median:137000,top10:1100000,top1:3400000}, AUS:{median:260000,top10:1300000,top1:4500000}, CHE:{median:167000,top10:1400000,top1:8500000}, GBR:{median:151000,top10:850000,top1:2800000},
+  DEU:{median:66700,top10:725000,top1:2500000}, FRA:{median:133000,top10:890000,top1:2600000}, ITA:{median:112000,top10:650000,top1:1900000}, ESP:{median:107000,top10:580000,top1:1700000}, NLD:{median:110000,top10:950000,top1:3200000},
+  BEL:{median:230000,top10:820000,top1:2400000}, SWE:{median:90000,top10:650000,top1:2100000}, NOR:{median:117000,top10:750000,top1:2500000}, DNK:{median:95000,top10:670000,top1:2200000}, FIN:{median:89000,top10:580000,top1:1900000},
+  AUT:{median:94000,top10:710000,top1:2300000}, IRL:{median:104000,top10:850000,top1:2900000}, POL:{median:30000,top10:320000,top1:1200000}, PRT:{median:71000,top10:460000,top1:1400000}, GRC:{median:54000,top10:390000,top1:1200000},
+  CZE:{median:41000,top10:380000,top1:1300000}, RUS:{median:12000,top10:180000,top1:950000}, CHN:{median:28000,top10:240000,top1:1800000}, JPN:{median:120000,top10:550000,top1:1500000}, IND:{median:3800,top10:25000,top1:175000},
+  SGP:{median:100000,top10:1100000,top1:3800000}, KOR:{median:72000,top10:480000,top1:1600000}, HKG:{median:150000,top10:1300000,top1:4200000}, NZL:{median:185000,top10:950000,top1:3100000}, THA:{median:12000,top10:95000,top1:580000},
+  MYS:{median:16000,top10:130000,top1:750000}, IDN:{median:7800,top10:56000,top1:380000}, PHL:{median:3600,top10:28000,top1:210000}, VNM:{median:5100,top10:38000,top1:270000}, BRA:{median:4200,top10:80000,top1:450000},
+  MEX:{median:15000,top10:120000,top1:900000}, ARG:{median:8500,top10:95000,top1:620000}, CHL:{median:18000,top10:140000,top1:850000}, COL:{median:6200,top10:65000,top1:420000}, PER:{median:5800,top10:58000,top1:390000},
+  ARE:{median:42000,top10:850000,top1:3500000}, QAT:{median:65000,top10:1100000,top1:4200000}, SAU:{median:28000,top10:420000,top1:1900000}, ISR:{median:89000,top10:690000,top1:2400000}, TUR:{median:8900,top10:95000,top1:580000},
+  ZAF:{median:5200,top10:55000,top1:350000}, EGY:{median:2800,top10:22000,top1:180000}, NGA:{median:1800,top10:18000,top1:150000}, KEN:{median:2100,top10:19000,top1:160000}, MAR:{median:4200,top10:35000,top1:240000}
+};
+
+const REGIONS = ['All', 'Americas', 'Europe', 'Asia-Pacific', 'Oceania', 'Middle East', 'Africa'];
+let state = { region: 'All', sort: 'gain_desc', search: '', selected: 'USA' };
+
+const regionTabsEl = document.getElementById('regionTabs');
+const listEl = document.getElementById('countryList');
+const searchEl = document.getElementById('searchInput');
+const sortEl = document.getElementById('sortSelect');
+
+function parseMoney(str) {
+  return Number(str.replace(/[^0-9.]/g, ''));
+}
+
+function parseRange(str) {
+  const nums = (str.match(/\d+/g) || []).map(Number);
+  return { male: nums[0] || 0, female: nums[1] || 0 };
+}
+
+function mid(lifeRange) {
+  return (lifeRange.male + lifeRange.female) / 2;
+}
+
+function fmtMoney(num) {
+  return '$' + num.toLocaleString();
+}
+
+function fmtShort(num) {
+  if (num >= 1000000) return '$' + (num / 1000000).toFixed(1) + 'M';
+  if (num >= 1000) return '$' + (num / 1000).toFixed(1) + 'K';
+  return '$' + num.toFixed(0);
+}
+
+function enriched(rec) {
+  const life = parseRange(rec.life);
+  const lev = parseRange(rec.lev);
+  const baseMid = mid(life);
+  const levMid = mid(lev);
+  return {
+    ...rec,
+    lifeMale: life.male,
+    lifeFemale: life.female,
+    levMale: lev.male,
+    levFemale: lev.female,
+    baseMid,
+    levMid,
+    gain: levMid - baseMid,
+    gdpValue: parseMoney(rec.gdp)
+  };
+}
+
+function filteredData() {
+  let rows = ATLAS_DB.map(enriched);
+  if (state.region !== 'All') rows = rows.filter(r => r.region === state.region);
+  if (state.search.trim()) {
+    const q = state.search.trim().toLowerCase();
+    rows = rows.filter(r => r.name.toLowerCase().includes(q) || r.capital.toLowerCase().includes(q) || r.code.toLowerCase().includes(q));
+  }
+
+  if (state.sort === 'gain_desc') rows.sort((a,b)=>b.gain-a.gain);
+  else if (state.sort === 'base_desc') rows.sort((a,b)=>b.baseMid-a.baseMid);
+  else if (state.sort === 'lev_desc') rows.sort((a,b)=>b.levMid-a.levMid);
+  else if (state.sort === 'gdp_desc') rows.sort((a,b)=>b.gdpValue-a.gdpValue);
+  else rows.sort((a,b)=>a.name.localeCompare(b.name));
+
+  return rows;
+}
+
+function renderRegions() {
+  const counts = REGIONS.reduce((acc, r) => { acc[r] = 0; return acc; }, {});
+  counts.All = ATLAS_DB.length;
+  for (const rec of ATLAS_DB) counts[rec.region] = (counts[rec.region] || 0) + 1;
+
+  regionTabsEl.innerHTML = REGIONS.map(region => {
+    const active = region === state.region ? ' active' : '';
+    const count = counts[region] || 0;
+    return `<button class="region-btn${active}" data-region="${region}">${region} (${count})</button>`;
+  }).join('');
+
+  regionTabsEl.querySelectorAll('.region-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.region = btn.dataset.region;
+      renderRegions();
+      renderList();
+    });
+  });
+}
+
+function renderList() {
+  const rows = filteredData();
+  document.getElementById('coverageVal').textContent = rows.length + (rows.length === 1 ? ' country' : ' countries');
+
+  if (!rows.length) {
+    listEl.innerHTML = '<div style="padding:.6rem;color:var(--muted);font-size:.9rem;">No countries found for this filter.</div>';
+    return;
+  }
+
+  if (!rows.some(r => r.code === state.selected)) state.selected = rows[0].code;
+
+  listEl.innerHTML = rows.map(r => {
+    const active = r.code === state.selected ? ' active' : '';
+    return `<button class="country-row${active}" data-code="${r.code}">
+      <div class="top"><span class="name">${r.flag} ${r.name}</span><span class="meta">+${r.gain.toFixed(1)}y</span></div>
+      <div class="sub">Base ${r.baseMid.toFixed(1)}y · LEV ${r.levMid.toFixed(1)}y · ${r.region}</div>
+    </button>`;
+  }).join('');
+
+  listEl.querySelectorAll('.country-row').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.selected = btn.dataset.code;
+      renderList();
+      renderDetail();
+    });
+  });
+
+  renderDetail();
+}
+
+function renderWealthOverlay(code) {
+  const target = document.getElementById('wealthGrid');
+  const note = document.getElementById('wealthNote');
+  const w = WEALTH_OVERLAY[code];
+
+  if (!w) {
+    target.innerHTML = '';
+    note.textContent = 'No direct wealth-threshold overlay for this market in the current 50-country distribution model.';
+    return;
+  }
+
+  const ratio = (w.top1 / w.median).toFixed(1);
+  note.textContent = 'Use these thresholds with lifespan horizon to stress-test whether current asset plans can sustain a longer life runway.';
+
+  target.innerHTML = `
+    <div class="w-node"><span class="k">Median</span><span class="v">${fmtShort(w.median)}</span></div>
+    <div class="w-node"><span class="k">Top 10%</span><span class="v">${fmtShort(w.top10)}</span></div>
+    <div class="w-node"><span class="k">Top 1%</span><span class="v">${fmtShort(w.top1)}</span></div>
+    <div class="w-node" style="grid-column:1/-1"><span class="k">Top1 / Median</span><span class="v">${ratio}x concentration</span></div>
+  `;
+}
+
+function renderDetail() {
+  const rec = enriched(ATLAS_DB.find(r => r.code === state.selected) || ATLAS_DB[0]);
+  const maxAge = Math.max(110, rec.levMale, rec.levFemale) + 2;
+
+  document.getElementById('dName').textContent = rec.name;
+  document.getElementById('dSub').textContent = rec.capital + ' · ' + rec.region;
+  document.getElementById('dFlag').textContent = rec.flag;
+  document.getElementById('dPop').textContent = rec.pop;
+  document.getElementById('dGdp').textContent = rec.gdp;
+  document.getElementById('dBaseMid').textContent = rec.baseMid.toFixed(1) + 'y';
+  document.getElementById('dBaseRange').textContent = rec.life;
+  document.getElementById('dLevMid').textContent = rec.levMid.toFixed(1) + 'y';
+  document.getElementById('dLevRange').textContent = rec.lev;
+  document.getElementById('dGain').textContent = '+' + rec.gain.toFixed(1) + 'y';
+
+  document.getElementById('barMaleBase').style.width = (rec.lifeMale / maxAge * 100).toFixed(2) + '%';
+  document.getElementById('barMaleLev').style.width = (rec.levMale / maxAge * 100).toFixed(2) + '%';
+  document.getElementById('barFemBase').style.width = (rec.lifeFemale / maxAge * 100).toFixed(2) + '%';
+  document.getElementById('barFemLev').style.width = (rec.levFemale / maxAge * 100).toFixed(2) + '%';
+  document.getElementById('maleVals').textContent = rec.lifeMale + 'y → ' + rec.levMale + 'y';
+  document.getElementById('femVals').textContent = rec.lifeFemale + 'y → ' + rec.levFemale + 'y';
+
+  renderWealthOverlay(rec.code);
+}
+
+searchEl.addEventListener('input', () => {
+  state.search = searchEl.value;
+  renderList();
+});
+
+sortEl.addEventListener('change', () => {
+  state.sort = sortEl.value;
+  renderList();
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  renderRegions();
+  renderList();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+(function () {
+  if (window.location.pathname === '/index.html') {
+    window.location.replace('/' + window.location.search + window.location.hash);
+  }
+})();
+</script>
+        <meta name="robots" content="index, follow">
+<meta name="description" content="Estimate your wealth rank and percentile using the UBS Global Wealth Report 2026, current upper-tail research, and dated ECB exchange rates.">
+    <link rel="canonical" href="https://wealthmeter.xyz/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Net Worth Percentile Calculator and Global Wealth Rank | WEALTHMETER.XYZ">
+    <meta property="og:description" content="Estimate your covered-market wealth rank with the latest UBS 2026 distribution and current upper-tail data.">
+    <meta property="og:url" content="https://wealthmeter.xyz/">
+    <meta property="og:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
+    <meta property="og:site_name" content="WEALTHMETER.XYZ">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Net Worth Percentile Calculator and Global Wealth Rank | WEALTHMETER.XYZ">
+    <meta name="twitter:description" content="Estimate your covered-market wealth rank with the latest UBS 2026 distribution and current upper-tail data.">
+    <meta name="twitter:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
+    <title>Net Worth Percentile Calculator and Global Wealth Rank | WEALTHMETER.XYZ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5589641656748708" crossorigin="anonymous"></script>
+    <!-- Added html2canvas for Diagnostic Card generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "WealthMeter Net Worth Percentile Calculator and Global Wealth Rank",
+      "url": "https://wealthmeter.xyz/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "description": "Estimate your covered-market wealth rank and percentile using the UBS Global Wealth Report 2026 and current upper-tail research.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "WealthMeter"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does WealthMeter estimate my global rank?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WealthMeter converts net worth to year-end 2025 US dollars and interpolates between published UBS 2026 wealth-band counts and current upper-tail anchors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What population does this calculator cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The model covers approximately 3.846 billion adults in the 56 markets analyzed by UBS, representing more than 92% of world wealth. It does not extrapolate the same distribution to uncovered markets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need an account to use the calculator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The calculator is free to use without creating an account."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-body: #f8fafc;
+            --bg-gradient: radial-gradient(circle at 10% 20%, rgba(37,99,235,0.05) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(8,145,178,0.05) 0%, transparent 40%);
+            --panel-bg: rgba(255,255,255,0.95);
+            --panel-border: rgba(255,255,255,0.8);
+            --panel-shadow: 0 25px 50px -12px rgba(15,23,42,0.1);
+            --card-bg: #ffffff;
+            --card-border: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --input-bg: #ffffff;
+            --input-border: #cbd5e1;
+            --input-focus-bg: #ffffff;
+            --flap-bg: #1e293b;
+            --flap-text: #f8fafc;
+            --primary: #2563eb;
+            --accent-gradient: linear-gradient(135deg, #2563eb, #0891b2);
+            --success: #10b981;
+            --warning: #f59e0b;
+            --toggle-icon: #0f172a;
+
+            /* Vercel App Variables for Card Consistency */
+            --brand-red: #ef4444;
+            --brand-teal: #0891b2;
+            --slate: #64748b;
+        }
+
+        body.dark-mode {
+            --bg-body: #020617;
+            --bg-gradient: radial-gradient(circle at 10% 20%, rgba(37,99,235,0.15) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(8,145,178,0.1) 0%, transparent 40%);
+            --panel-bg: rgba(15,23,42,0.85);
+            --panel-border: rgba(255,255,255,0.08);
+            --panel-shadow: 0 40px 80px -20px rgba(0,0,0,0.7);
+            --card-bg: rgba(30,41,59,0.4);
+            --card-border: rgba(255,255,255,0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --input-bg: rgba(0,0,0,0.4);
+            --input-border: rgba(255,255,255,0.1);
+            --input-focus-bg: rgba(0,0,0,0.6);
+            --flap-bg: #0f172a;
+            --flap-text: #e2e8f0;
+            --toggle-icon: #fbbf24;
+        }
+
+        * { box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            background-image: var(--bg-gradient);
+            color: var(--text-main);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background .3s ease, color .3s ease;
+        }
+
+        .app-content-area { flex-grow: 1; display: flex; align-items: flex-start; justify-content: center; padding: 70px 20px 50px; }
+        .hero-grid { width: 100%; max-width: 1200px; display: grid; grid-template-columns: minmax(260px, 0.8fr) minmax(360px, 540px); gap: 48px; align-items: start; }
+        .hero-copy { padding: 6px 0; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--primary); background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.25); padding: 8px 14px; border-radius: 999px; text-decoration: none; }
+        .hero-badge:hover { background: rgba(37,99,235,0.18); border-color: rgba(37,99,235,0.35); }
+        .hero-title { font-family: 'Outfit', sans-serif; font-size: 52px; line-height: 1.05; letter-spacing: -0.02em; margin: 18px 0 12px; }
+        .hero-sub { color: var(--text-muted); font-size: 16px; line-height: 1.75; max-width: 520px; }
+        .gwr-pointer {
+            margin: 16px 0 0;
+            padding: 12px 14px;
+            border: 1px solid rgba(37,99,235,0.28);
+            background: rgba(37,99,235,0.08);
+            border-radius: 12px;
+            color: var(--text-main);
+            font-size: 13px;
+            line-height: 1.55;
+            max-width: 520px;
+        }
+        .gwr-pointer a { color: var(--primary); font-weight: 800; text-decoration: none; }
+        .gwr-pointer a:hover { text-decoration: underline; }
+        .gwr-pointer-compact { margin: 12px 0 0; max-width: none; text-align: left; font-size: 12px; }
+        .us-calculator-callout { display:flex; align-items:center; gap:12px; max-width:520px; margin-top:16px; padding:13px 15px; border:1px solid #f2c94c; border-radius:12px; background:#fff7c7; color:#713f12; font-size:13px; line-height:1.45; box-shadow:0 6px 20px rgba(161,98,7,.09); }
+        .us-calculator-callout strong { color:#422006; }
+        .us-calculator-callout a { color:#854d0e; font-weight:900; text-decoration:underline; text-underline-offset:3px; }
+        .us-calculator-callout-badge { flex:0 0 auto; padding:5px 8px; border-radius:7px; background:#facc15; color:#422006; font-size:10px; font-weight:900; letter-spacing:.09em; text-transform:uppercase; }
+        .hero-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
+        .hero-metric { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 16px 18px; }
+        .metric-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--text-muted); font-weight: 700; }
+        .metric-value { font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 800; margin-top: 8px; color: var(--text-main); }
+        .hero-links { margin-top: 18px; display: flex; gap: 14px; flex-wrap: wrap; }
+        .hero-links a { font-size: 12px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--text-muted); text-decoration: none; font-weight: 800; }
+        .hero-links a:hover { color: var(--text-main); }
+        .hero-panel { position: relative; }
+        .app-wrapper { width: 100%; max-width: 520px; position: relative; }
+        .calc-sticky { position: sticky; top: 120px; }
+
+        .theme-toggle { position: absolute; top: -60px; right: 0; background: var(--panel-bg); border: 1px solid var(--panel-border); padding: 10px; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center; transition: all .2s ease; backdrop-filter: blur(8px); }
+        .theme-toggle svg { width: 20px; height: 20px; fill: var(--toggle-icon); transition: fill .3s; }
+
+        .glass-panel { background: var(--panel-bg); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--panel-border); border-radius: 24px; padding: 48px 40px; box-shadow: var(--panel-shadow); position: relative; overflow: hidden; transition: background .3s; }
+
+        /* Logic Styles Preserved from */
+        .input-row { display: grid; grid-template-columns: 100px 1fr; gap: 15px; margin-bottom: 30px; }
+        .input-container { display: flex; flex-direction: column; gap: 8px; }
+        label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 700; margin-left: 4px; }
+        select { width: 100%; height: 60px; background: var(--input-bg); color: var(--text-main); border: 1px solid var(--input-border); padding: 0 12px; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; appearance: none; font-family: 'Inter', sans-serif; }
+        input[type="number"] { width: 100%; height: 60px; background: var(--input-bg); border: 1px solid var(--input-border); border-radius: 12px; padding: 0 20px; font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 24px; color: var(--text-main); }
+        .cta-btn { width: 100%; padding: 20px; background: var(--accent-gradient); color: white; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.05em; text-transform: uppercase; border: none; border-radius: 14px; cursor: pointer; transition: transform .2s; }
+
+        #loading { display: none; text-align: center; margin-top: 30px; color: var(--text-muted); font-family: 'Roboto Mono', monospace; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+        #result { display: none; }
+        .headline-text { font-family: 'Outfit', sans-serif; font-size: 22px; text-align: center; font-weight: 600; margin-bottom: 25px; line-height: 1.4; color: var(--text-main); }
+        .main-rank-box { background: var(--input-bg); border: 1px solid var(--input-border); border-radius: 20px; padding: 40px 10px; text-align: center; position: relative; }
+        .rank-label { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-main); margin-bottom: 20px; font-weight: 800; }
+        .flip-counter { display: flex; justify-content: center; align-items: flex-end; gap: 3px; }
+        .digit-card { background: var(--flap-bg); color: var(--flap-text); font-family: 'Roboto Mono', monospace; font-weight: 700; font-size: 44px; width: 52px; height: 72px; display: flex; align-items: center; justify-content: center; border-radius: 6px; position: relative; }
+        .comma-card { font-family: 'Roboto Mono', monospace; font-size: 44px; font-weight: 700; color: var(--text-muted); display: flex; align-items: flex-end; padding-bottom: 6px; }
+
+        /* Social Share Section Styles (Updated from Vercel App) */
+        .share-container { margin: 2rem 0; border-top: 1px solid var(--card-border); padding-top: 2rem; opacity: 0; transform: translateY(10px); transition: all 0.5s ease; }
+        .share-container.visible { opacity: 1; transform: translateY(0); }
+        .social-grid { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 1.5rem 0; }
+        .social-btn { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; transition: 0.2s; }
+        .social-btn svg { width: 22px; height: 22px; fill: white; }
+        .btn-recalibrate { background: none; border: none; color: var(--text-muted); font-weight: 800; text-transform: uppercase; font-size: 11px; cursor: pointer; letter-spacing: 1.5px; margin-top: 1rem; }
+
+        .report-offer { margin-top: 1.5rem; padding: 1.4rem; border: 1px solid var(--card-border); border-radius: 18px; background: linear-gradient(145deg,rgba(37,99,235,.08),rgba(8,145,178,.05)); text-align: left; }
+        .report-offer-kicker { font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary); margin: 0 0 8px; }
+        .report-offer-title { margin:0 0 8px; color:var(--text-main); font-family:'Outfit',sans-serif; font-size:22px; line-height:1.08; }
+        .report-offer-copy { font-size: 14px; color: var(--text-muted); line-height: 1.55; margin: 0 0 14px; }
+        .report-offer-list { display:grid; gap:6px; margin:0 0 15px; padding:0; list-style:none; color:var(--text-main); font-size:12px; font-weight:700; }
+        .report-offer-list li::before { content:'✓ '; color:var(--primary); font-weight:900; }
+        .report-offer-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; min-height: 48px; padding: 14px 18px; border-radius: 12px; background: var(--accent-gradient); color: #fff; text-decoration: none; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; box-sizing: border-box; }
+        .report-offer-btn:hover { transform: translateY(-1px); }
+        .report-offer-secondary { margin: 12px 0 0; font-size: 13px; color: var(--text-muted); }
+        .report-offer-secondary a { color: var(--primary); font-weight: 700; text-decoration: none; }
+        .report-offer-secondary a:hover { text-decoration: underline; }
+
+        #secondary-content { display: none; margin-top: 30px; }
+        .comparison-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+        .country-card { background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 14px; border-radius: 12px; }
+        .rank-visual { height: 4px; background: rgba(0,0,0,0.05); border-radius: 2px; overflow: hidden; }
+        .rank-fill { height: 100%; width: 0; transition: width 1s ease-out; }
+
+        /* NEW STYLES FOR NET WORTH LINK AND AD CONTAINER */
+        .discreet-link { font-size: 12px; margin-top: 4px; margin-left: 4px; }
+        .discreet-link a { color: var(--primary); text-decoration: none; font-weight: 500; opacity: 0.8; transition: opacity 0.2s; }
+        .discreet-link a:hover { opacity: 1; text-decoration: underline; }
+
+        .ad-glass-container { width: 100%; max-width: 728px; margin: 40px auto; padding: 20px; background: var(--card-bg); border: 1px solid var(--panel-border); border-radius: 16px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); text-align: center; position: relative; overflow: hidden; min-height: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .ad-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 10px; opacity: 0.6; }
+        .build-stamp { text-align: center; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); padding: 10px 0 22px; background: #f8fafc; }
+        .baseline-row { margin-top: 16px; text-align: center; }
+        .baseline-options { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+        .baseline-option { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 999px; padding: 8px 14px; font-size: 12px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px; }
+        .baseline-note { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+        .baseline-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); font-weight: 700; margin-top: 12px; text-align: center; }
+        .baseline-help { display: inline-flex; align-items: center; gap: 6px; margin-left: 8px; cursor: help; }
+        .baseline-help-dot { width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--card-border); color: var(--text-muted); display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; background: var(--card-bg); }
+        .baseline-tooltip { display: none; position: absolute; z-index: 10; width: 320px; background: #0f172a; color: #f8fafc; padding: 12px 14px; border-radius: 10px; font-size: 12px; line-height: 1.5; box-shadow: 0 12px 30px rgba(0,0,0,0.25); text-align: left; }
+        .baseline-help:hover .baseline-tooltip { display: block; }
+        .crawl-content { width: 100%; max-width: 1200px; margin: 8px auto 44px; padding: 0 20px; }
+        .crawl-content h2 { font-family: 'Outfit', sans-serif; font-size: 34px; margin: 0 0 10px; letter-spacing: -0.02em; }
+        .crawl-content p { color: var(--text-muted); font-size: 15px; line-height: 1.8; margin: 0 0 14px; }
+        .crawl-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+        .crawl-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 16px; }
+        .crawl-card h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-main); }
+        .crawl-card p { margin: 0; font-size: 13px; line-height: 1.65; color: var(--text-muted); }
+        .faq-list { margin-top: 14px; display: grid; gap: 8px; }
+        .faq-list details { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 10px 12px; }
+        .faq-list summary { cursor: pointer; font-weight: 700; color: var(--text-main); }
+        .faq-list p { margin: 8px 0 0; font-size: 13px; }
+        .noscript-fallback { width: 100%; max-width: 1200px; margin: 16px auto 0; padding: 12px 16px; border: 1px dashed #94a3b8; border-radius: 12px; background: #f8fafc; color: #334155; font-size: 14px; }
+        .noscript-fallback a { color: #1d4ed8; font-weight: 700; }
+
+        @media (max-width: 980px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 42px; }
+            .hero-metrics { grid-template-columns: 1fr; }
+            .calc-sticky { position: static; }
+            .app-content-area { padding-top: 40px; }
+            .crawl-grid { grid-template-columns: 1fr; }
+        }
+
+        /* DIAGNOSTIC CARD (From Vercel App) */
+        #shareCardTemplate {
+            position: absolute; left: -9999px; top: -9999px;
+            width: 1080px; min-height: 1920px; background: #ffffff; color: #0f172a;
+            padding: 80px; border: 40px solid #2563eb;
+            display: flex; flex-direction: column;
+        }
+        .card-header { border-bottom: 15px solid #2563eb; padding-bottom: 40px; margin-bottom: 60px; display: flex; align-items: flex-end; gap: 25px; }
+        .card-logo-bars { display: flex; align-items: flex-end; gap: 10px; height: 80px; }
+        .card-logo-bar { width: 22px; border-radius: 4px; }
+        .card-rank-wrap { margin: 60px 0; text-align: center; }
+        .card-rank-val { font-size: 130px; font-weight: 900; color: #0f172a; line-height: 1; margin-top: 20px; letter-spacing: -0.05em; }
+        .card-percent-box { background: #f1f5f9; padding: 60px; border-radius: 40px; text-align: center; margin-bottom: 60px; }
+        .card-relative-perspective { background: white; border: 6px solid #2563eb; border-radius: 40px; padding: 60px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-rel-label { font-size: 28px; font-weight: 900; text-transform: uppercase; letter-spacing: 5px; color: #64748b; text-align: center; margin-bottom: 40px; border-bottom: 4px solid #f1f5f9; padding-bottom: 20px; }
+    </style>
+    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml"><style id="wealthmeter-component-styles">
+    /* Monolith Pulse Animation */
+    @keyframes monolithPulse {
+        0% { transform: scaleY(1); }
+        50% { transform: scaleY(1.25); }
+        100% { transform: scaleY(1); }
+    }
+    .bar-rank { animation: monolithPulse 2s ease-in-out infinite; transform-origin: bottom; fill: #FF4B4B; }
+    .bar-analyze { animation: monolithPulse 2.4s ease-in-out infinite; animation-delay: 0.2s; transform-origin: bottom; fill: #0f172a; }
+    .bar-rate { animation: monolithPulse 1.8s ease-in-out infinite; animation-delay: 0.4s; transform-origin: bottom; fill: #0891b2; }
+
+    /* Pillar Colors */
+    .label-rank { color: #FF4B4B !important; }
+    .label-rate { color: #00bcd4 !important; }
+    .label-analyze { color: #2563eb !important; }
+    .label-longform { color: #0ea5e9 !important; }
+
+    /* Layout Standards */
+    header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e2e8f0;
+        z-index: 9999;
+    }
+    .nav-container {
+        max-width: 1580px;
+        margin: 0 auto;
+        padding: 0 1.75rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+    }
+
+    /* Brand Wrapper: Prevents collision with nav items */
+    .brand-wrapper {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        margin-right: 2rem;
+    }
+
+    /* Navigation: Forces links to the right */
+    nav {
+        display: flex;
+        gap: clamp(1.1rem, 1.7vw, 2.25rem);
+        align-items: center;
+        height: 100%;
+        margin-left: auto;
+    }
+
+    .nav-group {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        white-space: nowrap;
+    }
+    .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
+    .sister-site-link {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        font-weight: 800;
+        font-size: 0.85rem;
+        color: #FF4B4B;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+    }
+    .nav-group:hover .dropdown { display: block !important; }
+    .nav-group.open .dropdown { display: block !important; }
+
+    @media (max-width: 1360px) {
+        .nav-container { padding: 0 1.25rem; }
+        .brand-wrapper { margin-right: 1.25rem; }
+        nav { gap: 1rem; }
+        .nav-group-label,
+        .sister-site-link { font-size: 0.76rem; letter-spacing: 0.09em; }
+    }
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        padding: 1rem 0;
+        min-width: 260px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        z-index: 10000;
+        margin-top: -5px;
+    }
+    .dropdown a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        color: #475569;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: 0.2s;
+    }
+    .dropdown a:hover { background: #f8fafc; color: #020617; }
+
+    @media (max-width: 1024px) {
+        header { position: relative; }
+        .nav-container { height: auto; min-height: 72px; padding: 0.75rem 1rem; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+        .brand-wrapper { margin-right: 0; }
+        nav { width: 100%; gap: 0.75rem; overflow-x: auto; padding-bottom: 0.25rem; -ms-overflow-style: none; scrollbar-width: none; }
+        nav::-webkit-scrollbar { display: none; }
+        .nav-group { height: auto; }
+        .nav-group-label { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .sister-site-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .dropdown { position: fixed; left: 0.9rem; right: 0.9rem; top: 74px; min-width: 0; max-height: 70vh; overflow-y: auto; margin-top: 0; border-radius: 0.9rem; padding: 0.7rem 0; box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16); }
+        .dropdown a { min-height: 44px; display: flex; align-items: center; font-size: 0.95rem; padding: 0.72rem 1.15rem; }
+    }
+
+    footer { padding: 5rem 2rem; text-align: center; border-top: 1px solid #e2e8f0; background: #f8fafc; margin-top: auto; }
+    .cross-property-band {
+        max-width: 980px;
+        margin: 0 auto 1.5rem;
+        padding: 1rem 1.25rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+        color: #1e293b;
+        font-weight: 700;
+        line-height: 1.55;
+    }
+    .cross-property-band a {
+        color: #2563eb;
+        font-weight: 900;
+        text-decoration: none;
+    }
+    .cross-property-band a:hover { text-decoration: underline; }
+    .article-bridge-cta {
+        margin: 2.5rem 0 0;
+        padding: 1.25rem 1.35rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+    }
+    .article-bridge-label {
+        display: inline-block;
+        margin-bottom: 0.55rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #2563eb;
+    }
+    .article-bridge-cta h2,
+    .article-bridge-cta h3 {
+        margin: 0 0 0.55rem;
+        padding: 0;
+        border: 0;
+        color: #0f172a;
+        font-size: 1.2rem;
+        letter-spacing: -0.02em;
+        text-transform: none;
+    }
+    .article-bridge-cta p {
+        margin: 0 0 0.9rem;
+        color: #334155;
+    }
+    .article-bridge-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 0 0 0.95rem;
+    }
+    .article-bridge-chip {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #bfdbfe;
+        border-radius: 999px;
+        padding: 0.34rem 0.65rem;
+        background: #ffffff;
+        color: #1d4ed8;
+        font-size: 0.76rem;
+        font-weight: 700;
+    }
+    .article-bridge-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: center;
+    }
+    .article-bridge-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+        border-radius: 0.85rem;
+        background: #2563eb;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 800;
+    }
+    .article-bridge-secondary {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    .article-bridge-secondary:hover { text-decoration: underline; }
+    .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+    .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
+
+    .site-newsletter { max-width:720px; margin:2rem auto 0; padding:1.4rem; border:1px solid #dbe4f0; border-radius:1rem; background:#f8fbff; text-align:left; }
+    .site-newsletter h2 { margin:0 0 .35rem; font-size:1.3rem; color:#0f172a; }
+    .site-newsletter-copy { margin:0 0 1rem; color:#475569; line-height:1.55; }
+    .site-newsletter-form { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; }
+    .site-newsletter-field { display:grid; gap:.3rem; color:#334155; font-size:.76rem; font-weight:800; }
+    .site-newsletter-field-email,.site-newsletter-actions { grid-column:1 / -1; }
+    .site-newsletter-field input { width:100%; min-height:46px; padding:.75rem .8rem; border:1px solid #cbd5e1; border-radius:.7rem; background:#fff; color:#0f172a; font-family:inherit; font-size:1rem; font-weight:600; line-height:1.3; }
+    .site-newsletter-actions { display:flex; align-items:center; gap:.85rem; flex-wrap:wrap; }
+    .site-newsletter button { min-height:46px; padding:.75rem 1.15rem; border:0; border-radius:.7rem; background:#2563eb; color:#fff; font-family:inherit; font-size:.84rem; font-weight:800; line-height:1; cursor:pointer; }
+    .site-newsletter button:disabled { opacity:.65; cursor:default; }
+    .site-newsletter-status { margin:0; color:#475569; font-size:.86rem; font-weight:700; }
+    .site-newsletter-note,.site-newsletter-address { margin:.85rem 0 0; color:#64748b; font-size:.78rem; line-height:1.5; }
+    body.dark-mode .site-newsletter { background:#0f172a; border-color:#334155; }
+    body.dark-mode .site-newsletter h2 { color:#f8fafc; }
+    body.dark-mode .site-newsletter-copy,body.dark-mode .site-newsletter-status,body.dark-mode .site-newsletter-note,body.dark-mode .site-newsletter-address,body.dark-mode .site-newsletter-field { color:#cbd5e1; }
+    body.dark-mode .site-newsletter-field input { background:#0b1220; border-color:#475569; color:#f8fafc; }
+    @media (max-width:640px) { .site-newsletter-form { grid-template-columns:1fr; } .site-newsletter-field-email,.site-newsletter-actions { grid-column:1; } }
+
+    main.article figure img {
+        max-width: 100%;
+        width: 100%;
+        height: auto !important;
+        object-fit: contain;
+    }
+</style><meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Calculate your global wealth rank and percentile. Compare UBS covered‑market adults vs a UN WPP global adult baseline. Free wealth calculator with real‑time rankings.">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wealthmeter.xyz/"}]}</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NF91REL39"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8NF91REL39');
+</script>
+</head>
+<body>
+
+<div id="header-placeholder" data-static-component="1">
+<header>
+    <div class="nav-container">
+        <div class="brand-wrapper">
+            <a href="/" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="bar-rank" x="15" y="45" width="16" height="40" rx="2"/>
+                    <rect class="bar-analyze" x="42" y="25" width="16" height="60" rx="2"/>
+                    <rect class="bar-rate" x="69" y="55" width="16" height="30" rx="2"/>
+                </svg>
+                <div style="font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 900; letter-spacing: -0.04em; display: flex; line-height: 1; white-space: nowrap;">
+                    <span style="color: #0f172a;">WEALTH</span><span style="color: #2563eb;">METER</span><span style="color: #0891b2;">.XYZ</span>
+                </div>
+            </a>
+        </div>
+        <nav>
+            <div class="nav-group"><span class="nav-group-label label-rank">Rank</span>
+                <div class="dropdown">
+                    <a href="/">Global Wealth Rank</a>
+                    <a href="us-household-wealth.html">U.S. Household Wealth</a>
+                    <a href="global_ranker.html">Country-Specific Rank</a>
+                    <a href="income_ranker.html">Income Percentile</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-rate">Rate</span>
+                <div class="dropdown">
+                    <a href="networth.html">Net Worth Calibration</a>
+                    <a href="fire_timeline.html">FIRE Timeline Planner</a>
+                    <a href="portfolio_alpha.html">Portfolio Alpha Simulator</a>
+                    <a href="runway_lab.html">Financial Runway Lab</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-analyze">Analyze</span>
+                <div class="dropdown">
+                    <a href="global_explorer.html">Wealth Explorer</a>
+                    <a href="atlas.html">Longevity Atlas</a>
+                    <a href="data-lab.html">Data Lab</a>
+                    <a href="wealth-briefs.html">Wealth Briefs</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
+                <div class="dropdown">
+                    <a href="longform.html">Longform Hub</a>
+                    <a href="job-loss-hurts-more-when-benefits-are-not-portable.html">Job Loss Hurts More When Benefits Are Not Portable</a>
+                    <a href="disability-insurance-leaves-many-paychecks-unprotected.html">Disability Insurance Leaves Many Paychecks Unprotected</a>
+                    <a href="america-is-second-by-average-wealth-fifteenth-by-median-wealth.html">America Is 2nd by Average Wealth, 15th by Median Wealth</a>
+                    <a href="how-insurance-deductibles-become-a-household-balance-sheet-shock.html">How Insurance Deductibles Become a Household Balance-Sheet Shock</a>
+                    <a href="home-equity-is-not-emergency-liquidity.html">Home Equity Is Not Emergency Liquidity</a>
+                    <a href="sequence-risk-before-retirement-fragility-priced-too-late.html">Sequence Risk Before Retirement: The Fragility Nobody Prices Early Enough</a>
+                    <a href="liquidity-illusion.html">The Liquidity Illusion</a>
+                    <a href="property-tax-drag.html">The Property Tax Drag</a>
+                    <a href="global-housing-divergence.html">The Global Housing Divergence</a>
+                    <a href="yield-trap-high-rate-world.html">The Yield Trap in a High-Rate World</a>
+                    <a href="freelance-freedom-tradeoff.html">The Freelance Freedom Tradeoff</a>
+                    <a href="promotion-paradox.html">The Promotion Paradox</a>
+
+
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <a href="https://lifemeter.xyz" target="_blank" rel="noopener" class="sister-site-link">LifeMeter ↗</a>
+        </nav>
+    </div>
+</header>
+</div>
+<noscript>
+    <div class="noscript-fallback">
+        JavaScript is currently disabled. You can still review <a href="methodology.html">methodology</a>, <a href="data-sources.html">data sources</a>, and <a href="reports.html">reports</a>. Enable JavaScript to run the interactive rank calculator.
+    </div>
+</noscript>
+
+<div class="app-content-area">
+    <div class="hero-grid">
+        <div class="hero-copy">
+            <a class="hero-badge" href="reports.html">2026 Reports Hub</a>
+            <h1 class="hero-title">Discover Your Global Wealth Rank</h1>
+            <div class="hero-sub">Benchmark your net worth against the latest covered-market wealth distribution, rebuilt from the UBS Global Wealth Report 2026 and current upper-tail counts.</div>
+            <div class="us-calculator-callout">
+                <span class="us-calculator-callout-badge">U.S. data</span>
+                <span><strong>Want a U.S. household comparison?</strong> Use the <a href="us-household-wealth.html">2026 Census wealth calculator →</a></span>
+            </div>
+            <p class="gwr-pointer">This homepage ranker is the covered-market wealth pyramid / adult-denominator tool, not the country-median table. GWR 2026 country medians (USA $68,998) live on <a href="global_explorer.html">Wealth Explorer</a>.</p>
+            <div class="hero-metrics">
+                <div class="hero-metric">
+                    <div class="metric-label">Covered Markets</div>
+                    <div class="metric-value">56 Countries</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="metric-label">Coverage</div>
+                    <div class="metric-value">~92% of Wealth</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="metric-label">Adult Sample</div>
+                    <div class="metric-value">~3.846B</div>
+                </div>
+                <div class="hero-metric">
+                    <div class="metric-label">Output</div>
+                    <div class="metric-value">Rank + Percentile</div>
+                </div>
+            </div>
+            <div class="hero-links">
+                <a href="global_explorer.html">Wealth Explorer</a>
+                <a href="methodology.html">Methodology</a>
+                <a href="data-sources.html">Data Sources</a>
+                <a href="reports.html">2026 Reports Hub</a>
+            </div>
+        </div>
+        <div class="hero-panel">
+            <div class="app-wrapper">
+                <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/></svg>
+                </button>
+
+                <div class="calc-sticky">
+                    <div class="glass-panel">
+            <div id="inputSection">
+                <div class="input-row">
+                    <div class="input-container">
+                        <label>Currency</label>
+                        <select id="currency">
+                            <option value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option>
+                            <option value="CAD">CAD</option><option value="AUD">AUD</option><option value="JPY">JPY</option>
+                            <option value="INR">INR</option><option value="CNY">CNY</option><option value="CHF">CHF</option>
+                        </select>
+                    </div>
+                    <div class="input-container">
+                        <label>YOUR NET WORTH (PER ADULT)</label>
+                        <input type="number" id="networth" placeholder="e.g. 50000" onkeydown="if(event.key=='Enter') calculate()">
+                        <div class="discreet-link"><a href="networth.html">Unsure? Click here to calculate your Net Worth</a></div>
+                    </div>
+                </div>
+                <div class="baseline-row">
+                    <label>Model Scope</label>
+                    <span class="baseline-help" style="position: relative;">
+                        <span class="baseline-help-dot">?</span>
+                        <span class="baseline-tooltip">The calculator uses the UBS Global Wealth Report 2026 year-end 2025 distribution across 56 markets. It does not inflate that curve to uncovered markets. Upper-tail anchors are cross-checked against UBS and Knight Frank 2026 counts.</span>
+                    </span>
+                    <div class="baseline-options">
+                        <span class="baseline-option">UBS 2026 Covered Markets (approximately 3.846B adults)</span>
+                    </div>
+                    <div class="baseline-note" id="baselineNote">Year-end 2025 distribution. Values below USD 10,000 return the published UBS band rather than a fabricated exact rank.</div>
+                    <p class="gwr-pointer gwr-pointer-compact">This calculator ranks against the covered-market pyramid, not GWR 2026 Table 1 medians. Country medians (USA $68,998) live on <a href="global_explorer.html">Wealth Explorer</a>.</p>
+                </div>
+                <button class="cta-btn" onclick="calculate()">Discover My Global Wealth Rank</button>
+            </div>
+
+            <div id="loading">Calculating against UBS 2026 anchors...</div>
+
+            <div id="result">
+                <div class="headline-text" id="headline"></div>
+                <div class="baseline-label" id="baselineLabel"></div>
+                <div class="main-rank-box" id="mainRankBox">
+                    <div class="rank-label">YOUR ESTIMATED COVERED-MARKET RANK</div>
+                    <div class="flip-counter" id="flipCounterMain"></div>
+
+                    <!-- UPDATED: Sharing Section from Vercel App -->
+                    <div class="share-container" id="shareSection">
+                        <span style="font-size: 11px; font-weight: 900; letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase;">Share Diagnostic Card</span>
+                        <div class="social-grid">
+                            <button class="social-btn" style="background:#000;" onclick="shareTo('X')"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+                            <button class="social-btn" style="background:#0A66C2;" onclick="shareTo('IN')"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></button>
+                            <button class="social-btn" style="background:#25D366;" onclick="shareTo('WA')"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg></button>
+                            <button class="social-btn" style="background:#0088cc;" onclick="shareTo('TG')"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.87 1.18-5.26 3.47-.5.34-.95.5-1.34.49-.44-.01-1.28-.24-1.9-.45-.77-.25-1.38-.39-1.32-.82.03-.22.33-.45.89-.69 3.48-1.51 5.8-2.51 6.96-2.99 3.31-1.37 3.99-1.61 4.44-1.61.1 0 .33.02.48.15.12.1.16.23.18.33.02.1.03.24.01.32z"/></svg></button>
+                            <button class="social-btn" style="background:#FF4500;" onclick="shareTo('RD')"><svg viewBox="0 0 24 24"><path d="M22 11.5c0-1.38-1.12-2.5-2.5-2.5-.54 0-1.04.18-1.44.48-1.63-1.12-3.83-1.85-6.26-1.93l1.1-5.17 3.6.75c.08.7.67 1.25 1.4 1.25 1.38 0 2.5-1.12 2.5-2.5S19.38 0 18 0c-1.1 0-2.02.71-2.34 1.7l-4.13-.88c-.19-.04-.38.08-.43.27l-1.3 6.1c-2.48.05-4.73.78-6.39 1.93-.4-.3-.9-.48-1.44-.48-1.38 0-2.5 1.12-2.5 2.5 0 .96.54 1.8 1.34 2.22-.06.24-.09.5-.09.76 0 3.1 3.58 5.62 8 5.62s8-2.52 8-5.62c0-.26-.03-.52-.09-.76.8-.42 1.34-1.26 1.34-2.22m-13.5 0c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5m6.81 4.73c-1.03 1.03-2.98 1.11-3.31 1.11-.33 0-2.28-.08-3.31-1.11-.1-.1-.1-.26 0-.35.1-.1.26-.1.35 0 .8.8 2.37.93 2.96.93s2.16-.13 2.96-.93c.1-.1.26-.1.35 0 .1.09.1.25 0 .35m-.31-3.23c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></button>
+                            <button class="social-btn" style="background:#34C759;" onclick="shareTo('IM')"><svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 20.2A1 1 0 0 0 3.8 21.454l3.032-.892A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 2c4.411 0 8 3.589 8 8s-3.589 8-8 8a7.96 7.96 0 0 1-4.126-1.147 1 1 0 0 0-.773-.105l-2.125.625.625-2.125a1 1 0 0 0-.105-.773A7.96 7.96 0 0 1 4 12c0-4.411 3.589-8 8-8z"/></svg></button>
+                            <button class="social-btn" style="background:#DC2626;" onclick="shareTo('EM')"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></button>
+                            <button class="social-btn" style="background:#475569;" onclick="downloadCard()"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></button>
+                        </div>
+                        <div class="report-offer">
+                            <p class="report-offer-kicker">Your percentile is the beginning, not the answer</p>
+                            <h3 class="report-offer-title">What does your number actually unlock?</h3>
+                            <p class="report-offer-copy">The Wealth Thresholds report reveals the access, structures, and constraints that change across four capital bands. See where you really sit and which barrier matters next.</p>
+                            <ul class="report-offer-list"><li>Four wealth access bands</li><li>Three realistic pathway scenarios</li><li>Compounding, fees, and legal structures</li></ul>
+                            <a class="report-offer-btn" href="report-wealth-thresholds.html">See What Is Inside - $12.99</a>
+                            <p class="report-offer-secondary">Or <a href="reports.html">compare all three WealthMeter reports</a></p>
+                        </div>
+                        <button class="btn-recalibrate" onclick="location.reload()">Recalibrate</button>
+                        <div id="result-feedback-slot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="secondary-content">
+                <div style="text-align:center; margin-bottom: 20px;">
+                    <label>PERSPECTIVE</label>
+                    <div style="font-size: 14px; color: var(--text-muted); margin-top: 5px;">Your modeled top-share expressed as an adult headcount. These are scale comparisons, not national wealth ranks.</div>
+                </div>
+                <div class="comparison-grid" id="compareBlock"></div>
+            </div>
+
+            <div class="ad-glass-container">
+                <div class="ad-label">Advertisement</div>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5589641656748708" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins> <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="crawl-content" aria-labelledby="crawl-content-title">
+    <h2 id="crawl-content-title">How WealthMeter Works</h2>
+    <p>WealthMeter converts your entered net worth to USD using dated ECB reference rates, then maps it to the latest UBS covered-market distribution and current upper-tail counts. The output is an estimate across the 56 markets in the UBS sample.</p>
+    <div class="crawl-grid">
+        <article class="crawl-card">
+            <h3>Input</h3>
+            <p>Your individual net worth and currency. Use assets less debts, include funded private retirement assets, and divide jointly owned household wealth consistently between adults.</p>
+        </article>
+        <article class="crawl-card">
+            <h3>Model</h3>
+            <p>Piecewise log interpolation between published wealth-band and upper-tail population anchors. No single tail exponent is extended across every high-wealth tier.</p>
+        </article>
+        <article class="crawl-card">
+            <h3>Outputs</h3>
+            <p>Covered-market rank, conventional percentile, top-share, and population-scale comparisons. Below USD 10,000, the output is a published range.</p>
+        </article>
+    </div>
+    <div class="faq-list">
+        <details>
+            <summary>Why is this not a PRECISE whole-world rank?</summary>
+            <p>UBS models 56 markets representing more than 92% of world wealth. WealthMeter does not assume that uncovered markets have the same distribution. For a U.S. household benchmark, use the <a href="us-household-wealth.html">U.S. Household Wealth Calculator</a>.</p>
+        </details>
+        <details>
+            <summary>Is this investment advice?</summary>
+            <p>No. Outputs are educational planning estimates and not financial, legal, or tax advice.</p>
+        </details>
+        <details>
+            <summary>Where can I review sources?</summary>
+            <p>See <a href="data-sources.html">Data Sources</a> and <a href="methodology.html">Methodology</a> for model assumptions and references.</p>
+        </details>
+    </div>
+</section>
+
+<div id="footer-placeholder" data-static-component="1">
+<footer>
+    <section class="site-newsletter" aria-labelledby="newsletter-heading-footer">
+        <h2 id="newsletter-heading-footer">WealthMeter news and updates</h2>
+        <p class="site-newsletter-copy">Receive new longform analysis, wealth brief updates, and report releases.</p>
+        <form class="site-newsletter-form" data-newsletter-form data-source="footer">
+            <input type="hidden" name="newsletter" value="yes">
+            <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+            <label class="site-newsletter-field">First name
+                <input type="text" name="firstName" autocomplete="given-name" required>
+            </label>
+            <label class="site-newsletter-field">Last name
+                <input type="text" name="lastName" autocomplete="family-name" required>
+            </label>
+            <label class="site-newsletter-field site-newsletter-field-email">Email address
+                <input type="email" name="email" autocomplete="email" inputmode="email" required>
+            </label>
+            <div class="site-newsletter-actions">
+                <button type="submit">Sign up</button>
+                <p class="site-newsletter-status" data-newsletter-status aria-live="polite"></p>
+            </div>
+        </form>
+        <p class="site-newsletter-note">By signing up, you agree to receive WealthMeter news and updates. You can unsubscribe at any time. See our <a href="privacy.html">Privacy Policy</a>.</p>
+        <p class="site-newsletter-address">Mailing Address: 1968 S. Coast Hwy #5495, Laguna Beach, CA 92651</p>
+    </section>
+    <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="editorial-policy.html">Editorial Standards</a>
+        <a href="data-sources.html">Data Sources</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+    </div>
+</footer>
+</div>
+<div class="build-stamp">Build 2026.08.28.1</div>
+
+<!-- DIAGNOSTIC CARD TEMPLATE (Hidden, used for generating images) -->
+<div id="shareCardTemplate">
+    <div class="card-header">
+        <div class="card-logo-bars">
+            <div class="card-logo-bar red" style="height: 45px; background: #ef4444;"></div>
+            <div class="card-logo-bar dark" style="height: 80px; background: #0f172a;"></div>
+            <div class="card-logo-bar teal" style="height: 35px; background: #0891b2;"></div>
+        </div>
+        <div style="font-family:'Outfit'; font-size: 80px; font-weight: 900; letter-spacing: -0.05em;">WEALTH<span>METER</span>.XYZ</div>
+    </div>
+
+    <div style="background: #2563eb; color: white; padding: 40px; border-radius: 20px; font-size: 40px; font-weight: 900; text-align: center; margin-bottom: 60px; text-transform: uppercase;">DIAGNOSTIC</div>
+
+    <div class="card-rank-wrap">
+        <div style="font-size: 30px; text-transform: uppercase; letter-spacing: 5px; color: #64748b; font-weight: 900;">Covered-Market Wealth Rank</div>
+        <div id="cardRank" class="card-rank-val">#--</div>
+    </div>
+
+    <div class="card-percent-box">
+        <div style="font-size: 30px; text-transform: uppercase; font-weight: 900; color: #2563eb; margin-bottom: 20px;">Wealth Percentile</div>
+        <div id="cardPercentile" style="font-size: 130px; font-weight: 900; color: #0f172a;">--%</div>
+    </div>
+
+    <div class="card-relative-perspective">
+        <div class="card-rel-label">Population-Scale View</div>
+        <div id="cardRandomComparison" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; margin-top: auto; margin-bottom: auto;"></div>
+    </div>
+
+    <div style="margin-top: auto; border-top: 10px solid #f1f5f9; padding-top: 50px; font-size: 30px; font-weight: 800; color: #64748b; text-align: center;">
+        UBS GLOBAL WEALTH REPORT 2026 | <span id="cardDate">--</span><br>
+        <span style="color:#2563eb; text-transform:uppercase;">EXPLORE YOUR OPTIONS AT WEALTHMETER.XYZ</span>
+    </div>
+</div>
+
+<script src="components.js?v=2026-09-15.2"></script>
+<script>
+    let currentResult = null;
+    const ADULT_POP_UBS = 3.846e9;
+
+    /* ECB euro reference rates, 15 September 2026, converted to USD per unit. */
+    const FX = {
+        USD: 1.0, EUR: 1.15390000, GBP: 1.34832905, CAD: 0.71840369,
+        JPY: 0.00645141, INR: 0.01042098, AUD: 0.71254786,
+        CNY: 0.14899799, CHF: 1.22222222
+    };
+
+    /* Adults at or above each threshold. UBS 2026 except the $30M anchor (Knight Frank 2026). */
+    const RANK_ANCHORS = [
+        [10_000, 2.226e9],
+        [100_000, 646e6],
+        [1_000_000, 58e6],
+        [5_000_000, 7.004e6],
+        [30_000_000, 713_626],
+        [1_000_000_000, 3_302],
+        [50_000_000_000, 37],
+        [100_000_000_000, 19]
+    ];
+
+    const COUNTRIES = [
+        {name:"USA", flag:"🇺🇸", adults:260e6}, {name:"China", flag:"🇨🇳", adults:1.1e9},
+        {name:"Japan", flag:"🇯🇵", adults:105e6}, {name:"Germany", flag:"🇩🇪", adults:70e6},
+        {name:"UK", flag:"🇬🇧", adults:53e6}, {name:"India", flag:"🇮🇳", adults:950e6},
+        {name:"France", flag:"🇫🇷", adults:52e6}, {name:"Italy", flag:"🇮🇹", adults:50e6},
+        {name:"Canada", flag:"🇨🇦", adults:31e6}, {name:"Australia", flag:"🇦🇺", adults:20e6},
+        {name:"Switzerland", flag:"🇨🇭", adults:7e6}, {name:"Russia", flag:"🇷🇺", adults:112e6},
+        {name:"Singapore", flag:"🇸🇬", adults:5e6}, {name:"Belgium", flag:"🇧🇪", adults:9e6},
+        {name:"Norway", flag:"🇳🇴", adults:4.3e6}, {name:"Mexico", flag:"🇲🇽", adults:90e6},
+        {name:"Indonesia", flag:"🇮🇩", adults:190e6}, {name:"Turkey", flag:"🇹🇷", adults:60e6},
+        {name:"Brazil", flag:"🇧🇷", adults:160e6}, {name:"Vietnam", flag:"🇻🇳", adults:75e6},
+        {name:"South Africa", flag:"🇿🇦", adults:40e6}, {name:"Chile", flag:"🇨🇱", adults:15e6},
+        {name:"UAE", flag:"🇦🇪", adults:8e6}, {name:"Egypt", flag:"🇪🇬", adults:65e6},
+        {name:"Qatar", flag:"🇶🇦", adults:2.5e6}, {name:"Costa Rica", flag:"🇨🇷", adults:3.5e6},
+        {name:"Nigeria", flag:"🇳🇬", adults:110e6}
+    ];
+
+    function calculate() {
+        const nw = parseFloat(document.getElementById('networth').value);
+        const cur = document.getElementById('currency').value;
+        if (isNaN(nw)) return;
+
+        document.getElementById('inputSection').style.display = 'none';
+        document.getElementById('loading').style.display = 'block';
+
+        setTimeout(() => {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+
+            const usd = nw * FX[cur];
+            currentResult = calculateWealthPosition(usd);
+            document.getElementById('headline').textContent = currentResult.kind === 'point'
+                ? `You are around the ${(currentResult.percentile).toFixed(2)}th percentile — the top ${(currentResult.topShare * 100).toFixed(currentResult.topShare < 0.001 ? 4 : 2)}% of adults in the UBS sample.`
+                : 'UBS places this value in its broad below-$10,000 band, which contains 42.1% of covered-market adults.';
+            document.getElementById('baselineLabel').textContent =
+                'Scope: UBS Global Wealth Report 2026 · year-end 2025 · 56 markets · ECB FX dated 15 September 2026';
+
+            renderRank(currentResult, () => {
+                document.getElementById('secondary-content').style.display = 'block';
+                populateComparison(currentResult);
+                updateDiagnosticCard(currentResult);
+                document.getElementById('shareSection').classList.add('visible');
+            });
+        }, 800);
+    }
+
+    function interpolateRank(w) {
+        for (let i = 0; i < RANK_ANCHORS.length - 1; i++) {
+            const [w1, n1] = RANK_ANCHORS[i];
+            const [w2, n2] = RANK_ANCHORS[i + 1];
+            if (w >= w1 && w < w2) {
+                const t = (Math.log(w) - Math.log(w1)) / (Math.log(w2) - Math.log(w1));
+                return Math.exp(Math.log(n1) + t * (Math.log(n2) - Math.log(n1)));
+            }
+        }
+        const [w1, n1] = RANK_ANCHORS[RANK_ANCHORS.length - 2];
+        const [w2, n2] = RANK_ANCHORS[RANK_ANCHORS.length - 1];
+        const slope = (Math.log(n2) - Math.log(n1)) / (Math.log(w2) - Math.log(w1));
+        return Math.max(1, n2 * Math.pow(w / w2, slope));
+    }
+
+    function calculateWealthPosition(w) {
+        if (w < 10_000) {
+            return {
+                kind: 'range', rankLow: 2_226_001, rankHigh: ADULT_POP_UBS,
+                percentileLow: 0, percentileHigh: 42.1,
+                topShareLow: 0.579, topShareHigh: 1
+            };
+        }
+        const rank = Math.max(1, Math.round(interpolateRank(w)));
+        const topShare = rank / ADULT_POP_UBS;
+        return { kind: 'point', rank, topShare, percentile: (1 - topShare) * 100 };
+    }
+
+    function renderRank(result, onComplete) {
+        if (result.kind === 'point') {
+            animateFlipBoard(result.rank, onComplete);
+            return;
+        }
+        const container = document.getElementById('flipCounterMain');
+        container.innerHTML = '<div style="font-family:\'Roboto Mono\';font-size:clamp(25px,5vw,54px);font-weight:900;letter-spacing:-2px;">#2.226B–#3.846B</div>';
+        window.setTimeout(onComplete, 250);
+    }
+
+    function animateFlipBoard(finalNumber, onComplete) {
+        const container = document.getElementById('flipCounterMain');
+        const chars = finalNumber.toLocaleString().split('');
+        container.innerHTML = chars.map(c => (c === ',' ? `<div class="comma-card">,</div>` : `<div class="digit-card">0</div>`)).join('');
+        const cards = container.querySelectorAll('.digit-card');
+        let finished = 0;
+        cards.forEach((card, i) => {
+            let cycles = 0;
+            const target = chars.filter(c => c !== ',')[i];
+            const interval = setInterval(() => {
+                card.textContent = Math.floor(Math.random() * 10);
+                if (++cycles >= (10 + i * 4)) {
+                    clearInterval(interval);
+                    card.textContent = target;
+                    if (++finished === cards.length) onComplete();
+                }
+            }, 60);
+        });
+    }
+
+    function formatScaledRange(low, high, adults) {
+        const scaledLow = Math.max(1, Math.round(low * adults / ADULT_POP_UBS));
+        const scaledHigh = Math.max(scaledLow, Math.round(high * adults / ADULT_POP_UBS));
+        return `#${scaledLow.toLocaleString()}–#${scaledHigh.toLocaleString()}`;
+    }
+
+    function populateComparison(result) {
+        const block = document.getElementById('compareBlock');
+        block.innerHTML = COUNTRIES.map(c => {
+            const display = result.kind === 'point'
+                ? `#${Math.max(1, Math.round(result.rank * c.adults / ADULT_POP_UBS)).toLocaleString()}`
+                : formatScaledRange(result.rankLow, result.rankHigh, c.adults);
+            const widthVal = result.kind === 'point' ? Math.max(5, result.percentile) : 42.1;
+            return `
+                <div class="country-card">
+                    <div class="country-name">${c.flag} ${c.name}</div>
+                    <div style="font-family: 'Roboto Mono'; font-size: 12px; margin-bottom: 8px;">${display}</div>
+                    <div class="rank-visual"><div class="rank-fill" style="width: ${widthVal}%; background: var(--primary)"></div></div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function toggleTheme() {
+        const dark = !document.body.classList.contains('dark-mode');
+        document.body.classList.toggle('dark-mode', dark);
+        localStorage.setItem('wealthmeter_theme', dark ? 'dark' : 'light');
+        const label = dark ? 'Switch to light mode' : 'Switch to dark mode';
+        const nativeToggle = document.querySelector('.theme-toggle');
+        if (nativeToggle) {
+            nativeToggle.setAttribute('title', label);
+            nativeToggle.setAttribute('aria-label', label);
+        }
+        const globalToggle = document.querySelector('.global-theme-toggle');
+        if (globalToggle) {
+            globalToggle.textContent = dark ? '☀' : '☾';
+            globalToggle.setAttribute('title', label);
+            globalToggle.setAttribute('aria-label', label);
+        }
+    }
+
+    /* -----------------------------------------------------------
+       NEW CODE FOR DIAGNOSTIC CARD & SHARING (From Vercel App)
+    ----------------------------------------------------------- */
+
+    function updateDiagnosticCard(result) {
+        const cardRank = document.getElementById('cardRank');
+        cardRank.innerText = result.kind === 'point' ? `#${result.rank.toLocaleString()}` : '#2.226B–#3.846B';
+        cardRank.style.fontSize = result.kind === 'point' ? '' : '82px';
+        document.getElementById('cardPercentile').innerText = result.kind === 'point'
+            ? `${result.percentile.toFixed(2)}th`
+            : '0–42.1';
+
+        // Update Date
+        const options = { month: 'long', day: 'numeric', year: 'numeric' };
+        document.getElementById('cardDate').innerText = new Date().toLocaleDateString('en-US', options);
+
+        // Inject Random Perspective (3 countries)
+        injectPerspective(result);
+    }
+
+    function injectPerspective(result) {
+        const selected = [...COUNTRIES].sort(() => 0.5 - Math.random()).slice(0, 3);
+        const container = document.getElementById('cardRandomComparison');
+        container.innerHTML = selected.map(c => {
+            const display = result.kind === 'point'
+                ? `#${Math.max(1, Math.round(result.rank * c.adults / ADULT_POP_UBS)).toLocaleString()}`
+                : formatScaledRange(result.rankLow, result.rankHigh, c.adults);
+            return `
+                <div style="text-align:center;">
+                    <div style="font-size:55px; margin-bottom:15px;">${c.flag}</div>
+                    <div style="font-size:24px; font-weight:900; color:#64748b; text-transform:uppercase;">${c.name}</div>
+                    <div style="font-family:'Roboto Mono'; font-size:30px; font-weight:800; color:#0f172a; margin-top:15px;">${display}</div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    async function shareTo(p) {
+        if (!currentResult) return;
+        const text = currentResult.kind === 'point'
+            ? `My estimated UBS 2026 covered-market wealth rank is #${currentResult.rank.toLocaleString()} (${currentResult.percentile.toFixed(2)}th percentile). Check yours:`
+            : 'My net worth is in the UBS 2026 below-$10,000 wealth band (0–42.1st percentile across covered markets). Check yours:';
+        const canvas = await html2canvas(document.getElementById('shareCardTemplate'), { scale: 1 });
+        const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
+        const file = new File([blob], 'WealthMeter_Diagnostic.png', { type: 'image/png' });
+
+        if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+            try { await navigator.share({ files: [file], title: 'WealthMeter Diagnostic', text: text }); return; } catch (e) {}
+        }
+
+        const url = encodeURIComponent("https://wealthmeter.xyz");
+        const shareMap = {
+            'X': `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${url}`,
+            'IN': `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+            'WA': `https://wa.me/?text=${encodeURIComponent(text)}%20${url}`,
+            'TG': `https://t.me/share/url?url=${url}&text=${encodeURIComponent(text)}`,
+            'RD': `https://reddit.com/submit?url=${url}&title=${encodeURIComponent(text)}`,
+            'IM': `sms:&body=${encodeURIComponent(text)}%20${url}`,
+            'EM': `mailto:?subject=Wealth Diagnostic&body=${encodeURIComponent(text)}%20${url}`
+        };
+        if(shareMap[p]) window.open(shareMap[p], '_blank');
+    }
+
+    function downloadCard() {
+        html2canvas(document.getElementById('shareCardTemplate')).then(canvas => {
+            const link = document.createElement('a'); link.download = 'WealthMeter_Diagnostic_2026.png';
+            link.href = canvas.toDataURL(); link.click();
+        });
+    }
+</script>
+</body>
+</html>

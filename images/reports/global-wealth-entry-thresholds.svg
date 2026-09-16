@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Minimum viable net worth for a family of four across ten destinations</title>
+  <desc id="desc">Horizontal bars compare report estimates from 280 thousand dollars in Tbilisi to 1.3 million dollars in Dubai.</desc>
+  <rect width="1200" height="900" rx="36" fill="#f8fafc"/>
+  <text x="70" y="72" fill="#2563eb" font-family="Roboto Mono, monospace" font-size="18" font-weight="700" letter-spacing="3">FAMILY OF FOUR / MINIMUM VIABLE NET WORTH</text>
+  <text x="70" y="126" fill="#07111f" font-family="Outfit, Arial, sans-serif" font-size="42" font-weight="900">Low living costs can still require high entry capital.</text>
+  <text x="70" y="164" fill="#536176" font-family="Inter, Arial, sans-serif" font-size="18">Report estimates include family establishment needs and international-school assumptions.</text>
+  <g font-family="Inter, Arial, sans-serif" font-size="17">
+    <text x="70" y="239" fill="#07111f" font-weight="700">Tbilisi</text><rect x="290" y="217" width="135" height="28" rx="14" fill="#38bdf8"/><text x="439" y="238" fill="#0f172a">$280K</text>
+    <text x="70" y="304" fill="#07111f" font-weight="700">Da Nang</text><rect x="290" y="282" width="183" height="28" rx="14" fill="#38bdf8"/><text x="487" y="303" fill="#0f172a">$380K</text>
+    <text x="70" y="369" fill="#07111f" font-weight="700">Chiang Mai</text><rect x="290" y="347" width="231" height="28" rx="14" fill="#0ea5e9"/><text x="535" y="368" fill="#0f172a">$480K</text>
+    <text x="70" y="434" fill="#07111f" font-weight="700">Buenos Aires</text><rect x="290" y="412" width="192" height="28" rx="14" fill="#0ea5e9"/><text x="496" y="433" fill="#0f172a">$400K</text>
+    <text x="70" y="499" fill="#07111f" font-weight="700">Medellín</text><rect x="290" y="477" width="250" height="28" rx="14" fill="#0284c7"/><text x="554" y="498" fill="#0f172a">$520K</text>
+    <text x="70" y="564" fill="#07111f" font-weight="700">Tulum / Playa</text><rect x="290" y="542" width="269" height="28" rx="14" fill="#0284c7"/><text x="573" y="563" fill="#0f172a">$560K</text>
+    <text x="70" y="629" fill="#07111f" font-weight="700">Kuala Lumpur</text><rect x="290" y="607" width="337" height="28" rx="14" fill="#2563eb"/><text x="641" y="628" fill="#0f172a">$700K</text>
+    <text x="70" y="694" fill="#07111f" font-weight="700">Istanbul</text><rect x="290" y="672" width="298" height="28" rx="14" fill="#2563eb"/><text x="602" y="693" fill="#0f172a">$620K</text>
+    <text x="70" y="759" fill="#07111f" font-weight="700">Lisbon</text><rect x="290" y="737" width="529" height="28" rx="14" fill="#7c3aed"/><text x="833" y="758" fill="#0f172a">$1.1M</text>
+    <text x="70" y="824" fill="#07111f" font-weight="700">Dubai</text><rect x="290" y="802" width="625" height="28" rx="14" fill="#7c3aed"/><text x="929" y="823" fill="#0f172a">$1.3M</text>
+  </g>
+  <text x="70" y="868" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="14">Estimates vary by circumstance. Source: report minimum viable net worth table; Numbeo (2026), Mercer (2025), official immigration portals, KPMG (2025).</text>
+</svg>

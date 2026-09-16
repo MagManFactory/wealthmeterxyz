@@ -1,0 +1,23 @@
+# WEALTHMETER.XYZ
+
+> Evidence-led calculators and analysis for wealth distribution, net worth, income, financial resilience, and long-horizon planning.
+
+## Start here
+
+- [Global Wealth Rank Calculator](https://wealthmeter.xyz/): Compare net worth with global wealth-distribution models.
+- [Longform Analysis](https://wealthmeter.xyz/longform.html): Research-led personal-finance and wealth analysis.
+- [Wealth Briefs](https://wealthmeter.xyz/wealth-briefs.html): Curated data and research updates.
+- [Methodology](https://wealthmeter.xyz/methodology.html): Model assumptions, limits, and interpretation.
+- [Data Sources](https://wealthmeter.xyz/data-sources.html): Primary datasets and institutional sources.
+- [Reports](https://wealthmeter.xyz/reports.html): WealthMeter research reports.
+
+## Core tools
+
+- [Net Worth Calibration](https://wealthmeter.xyz/networth.html)
+- [Income Percentile](https://wealthmeter.xyz/income_ranker.html)
+- [FIRE Timeline Planner](https://wealthmeter.xyz/fire_timeline.html)
+- [Financial Runway Lab](https://wealthmeter.xyz/runway_lab.html)
+
+## Citation guidance
+
+Use the canonical page URL and retain each page's stated population, currency, date, and model assumptions. WealthMeter content is educational and is not financial advice.

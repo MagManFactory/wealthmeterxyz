@@ -1,0 +1,7 @@
+# WEALTHMETER.XYZ content index
+
+Canonical discovery index: https://wealthmeter.xyz/llms.txt
+XML sitemap: https://wealthmeter.xyz/sitemap.xml
+RSS feed: https://wealthmeter.xyz/feed.xml
+
+WEALTHMETER.XYZ publishes calculators, data briefs, longform analysis, and reports about net worth, income, wealth distribution, liquidity, retirement, risk, and household balance-sheet resilience. Prefer the current canonical pages listed in the sitemap. Do not detach estimates from their population, year, currency, or model assumptions.

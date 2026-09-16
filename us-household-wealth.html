@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Estimate your U.S. household wealth percentile using Census 2024 tables and a Federal Reserve SCF upper-tail model for values above $500,000.">
+    <link rel="canonical" href="https://wealthmeter.xyz/us-household-wealth.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="U.S. Household Wealth Calculator | WealthMeter">
+    <meta property="og:description" content="Compare household net worth using Census 2024 tables with Federal Reserve upper-tail refinement above $500,000.">
+    <meta property="og:url" content="https://wealthmeter.xyz/us-household-wealth.html">
+    <meta property="og:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
+    <meta property="og:site_name" content="WEALTHMETER.XYZ">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="U.S. Household Wealth Calculator | WealthMeter">
+    <meta name="twitter:description" content="A Census-based household wealth calculator with Federal Reserve upper-tail refinement above $500,000.">
+    <meta name="twitter:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
+    <title>U.S. Household Wealth Calculator | WealthMeter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "U.S. Household Wealth Calculator",
+      "url": "https://wealthmeter.xyz/us-household-wealth.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "description": "A household wealth percentile-range calculator based on Census 2024 tables and a Federal Reserve SCF upper-tail model.",
+      "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
+      "isBasedOn": ["https://www.census.gov/data/tables/2024/demo/wealth/wealth-asset-ownership.html","https://www.federalreserve.gov/econres/scf-documentation.htm"]
+    }
+    </script>
+    <style>
+        :root { --ink:#0f172a; --muted:#64748b; --line:#dbe4ef; --paper:#f4f7fb; --card:#fff; --blue:#2563eb; --cyan:#0891b2; --soft:#eaf1ff; }
+        * { box-sizing:border-box; }
+        body { margin:0; font-family:Inter,sans-serif; background:var(--paper); color:var(--ink); }
+        a { color:var(--blue); }
+        .hero { padding:92px 20px 50px; text-align:center; background:radial-gradient(circle at 50% -20%,#dbeafe 0,transparent 52%); }
+        .eyebrow { color:var(--blue); font:800 .78rem/1 Inter,sans-serif; letter-spacing:.18em; text-transform:uppercase; }
+        h1 { max-width:960px; margin:18px auto; font:900 clamp(2.7rem,7vw,5.6rem)/.93 Outfit,sans-serif; letter-spacing:-.055em; }
+        .hero p { max-width:780px; margin:0 auto; color:var(--muted); font-size:1.12rem; line-height:1.75; }
+        .source-pill { display:inline-flex; margin-top:26px; padding:10px 16px; border:1px solid #bfdbfe; background:#eff6ff; border-radius:999px; color:#1d4ed8; font-size:.78rem; font-weight:800; letter-spacing:.05em; }
+        .shell { width:min(1120px,calc(100% - 32px)); margin:0 auto 80px; }
+        .calculator { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); background:var(--card); border:1px solid var(--line); border-radius:30px; overflow:hidden; box-shadow:0 28px 80px rgba(15,23,42,.08); }
+        .inputs,.result,.stat,.diag-metric { min-width:0; }
+        .inputs { padding:48px; border-right:1px solid var(--line); }
+        .inputs h2,.result h2,.method h2 { font:800 1.55rem/1.15 Outfit,sans-serif; margin:0 0 12px; }
+        .helper { color:var(--muted); line-height:1.65; font-size:.94rem; }
+        label { display:block; margin:27px 0 9px; font-size:.76rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:#475569; }
+        input,select { width:100%; min-height:58px; border:1px solid #cbd5e1; border-radius:14px; background:#f8fafc; padding:0 16px; color:var(--ink); font:700 1rem Inter,sans-serif; }
+        input:focus,select:focus { outline:3px solid #bfdbfe; border-color:var(--blue); }
+        .input-error { display:none; margin:8px 0 0; color:#b91c1c; font-size:.8rem; font-weight:700; }
+        button { border:0; cursor:pointer; font:800 .86rem Inter,sans-serif; letter-spacing:.07em; text-transform:uppercase; }
+        .primary { width:100%; min-height:58px; margin-top:28px; border-radius:14px; color:#fff; background:linear-gradient(135deg,var(--blue),var(--cyan)); box-shadow:0 12px 30px rgba(37,99,235,.22); }
+        .switch-link { display:block; margin-top:22px; text-align:center; font-size:.86rem; font-weight:700; }
+        .result { min-height:580px; padding:48px; background:linear-gradient(160deg,#fff 0%,#f8fbff 100%); }
+        .empty { height:100%; display:grid; place-content:center; text-align:center; color:var(--muted); }
+        .empty-mark { width:76px; height:76px; display:grid; place-items:center; margin:0 auto 18px; border-radius:24px; background:var(--soft); color:var(--blue); font:900 2rem Roboto Mono,monospace; }
+        .result-content { display:none; }
+        .result-kicker { color:var(--blue); font-size:.74rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
+        .band { margin:10px 0 6px; font:900 clamp(2rem,5vw,3.5rem)/1 Outfit,sans-serif; letter-spacing:-.035em; }
+        .benchmark-name { color:var(--muted); font-size:.92rem; }
+        .position-summary { margin:18px 0 0; padding:15px 17px; border-left:4px solid var(--blue); border-radius:0 12px 12px 0; background:var(--soft); color:var(--ink); font-size:1rem; font-weight:800; line-height:1.5; }
+        .stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:30px 0; }
+        .stat { padding:20px; border:1px solid var(--line); border-radius:18px; background:#fff; }
+        .stat-label { color:var(--muted); font-size:.68rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+        .stat-value { margin-top:9px; font:800 clamp(1.25rem,2.6vw,1.8rem) Roboto Mono,monospace; letter-spacing:-.05em; white-space:nowrap; }
+        .stat-value.is-compact { font-size:clamp(1rem,2.1vw,1.35rem); letter-spacing:-.06em; }
+        .stat-value.is-tight { font-size:clamp(.88rem,1.8vw,1.12rem); letter-spacing:-.07em; }
+        .distribution { margin:30px 0 8px; display:flex; gap:3px; height:18px; border-radius:999px; overflow:hidden; background:#e2e8f0; }
+        .segment { min-width:3px; background:#cbd5e1; transition:.25s ease; }
+        .segment.active { background:linear-gradient(90deg,var(--blue),var(--cyan)); transform:scaleY(1.28); }
+        .band-note { color:var(--muted); font-size:.84rem; line-height:1.55; }
+        .model-note { margin:16px 0 0; padding:13px 15px; border:1px solid #f2c94c; border-radius:12px; background:#fff8cf; color:#713f12; font-size:.78rem; line-height:1.55; }
+        .model-note strong { color:#422006; }
+        .share-section { margin-top:28px; padding-top:24px; border-top:1px solid var(--line); text-align:center; }
+        .share-label { color:var(--muted); font-size:.68rem; font-weight:900; letter-spacing:.15em; text-transform:uppercase; }
+        .social-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:16px; }
+        .social-btn { width:48px; height:48px; display:flex; align-items:center; justify-content:center; padding:0; border:0; border-radius:10px; cursor:pointer; transition:transform .2s ease,box-shadow .2s ease; }
+        .social-btn:hover { transform:translateY(-2px); box-shadow:0 8px 18px rgba(15,23,42,.18); }
+        .social-btn svg { width:22px; height:22px; fill:#fff; }
+        .method { margin-top:28px; padding:44px; border:1px solid var(--line); border-radius:28px; background:#fff; }
+        .method-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:28px; }
+        .method-card { padding:22px; border-radius:18px; background:#f8fafc; border:1px solid var(--line); }
+        .method-card h3 { margin:0 0 8px; font:800 1rem Outfit,sans-serif; }
+        .method-card p { margin:0; color:var(--muted); font-size:.88rem; line-height:1.6; }
+        .sources { margin-top:30px; padding-top:24px; border-top:1px solid var(--line); color:var(--muted); font-size:.86rem; line-height:1.65; }
+        .sources h3 { margin:0 0 14px; color:var(--ink); font:800 1rem Outfit,sans-serif; }
+        .source-list { display:grid; gap:12px; margin:0; padding:0; list-style:none; }
+        .source-list li { padding:14px 16px; border:1px solid var(--line); border-radius:14px; background:#f8fafc; }
+        .source-list strong { display:block; margin-bottom:3px; color:var(--ink); }
+        .source-list a { font-weight:700; }
+        .source-footnote { margin:14px 0 0; font-size:.8rem; }
+        #shareCard { width:100%; aspect-ratio:1; display:flex; flex-direction:column; margin-top:28px; padding:clamp(24px,5vw,42px); border-radius:24px; overflow:hidden; position:relative; background:linear-gradient(150deg,#07111f 0%,#101f36 70%,#0b2940 100%); color:#f8fafc; box-shadow:0 24px 60px rgba(15,23,42,.22); text-align:left; }
+        #shareCard::after { content:''; position:absolute; right:-18%; bottom:-28%; width:70%; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle,rgba(8,145,178,.3),transparent 66%); }
+        .diag-header,.diag-metrics,.diag-benchmark,.diag-footer,.diag-band-explainer { position:relative; z-index:1; }
+        .diag-header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+        .diag-brand { display:flex; align-items:center; gap:9px; font:900 clamp(13px,2.4vw,20px) Outfit,sans-serif; letter-spacing:-.03em; }
+        .diag-mark { display:flex; align-items:flex-end; gap:3px; height:24px; }
+        .diag-mark span { width:5px; border-radius:2px 2px 0 0; }
+        .diag-mark span:nth-child(1){height:13px;background:#ff4b4b}.diag-mark span:nth-child(2){height:22px;background:#f8fafc}.diag-mark span:nth-child(3){height:10px;background:#22d3ee}
+        .diag-pill { padding:6px 9px; border:1px solid rgba(250,204,21,.5); border-radius:999px; background:rgba(250,204,21,.12); color:#fde047; font-size:clamp(7px,1.4vw,10px); font-weight:900; letter-spacing:.09em; text-transform:uppercase; }
+        .diag-kicker { position:relative; z-index:1; margin-top:auto; color:#38bdf8; font-size:clamp(8px,1.5vw,11px); font-weight:900; letter-spacing:.17em; text-transform:uppercase; }
+        #shareCard .share-band { position:relative; z-index:1; margin-top:7px; font:900 clamp(27px,6vw,48px)/.98 Outfit,sans-serif; letter-spacing:-.045em; }
+        .diag-band-explainer { margin-top:8px; color:#cbd5e1; font-size:clamp(8px,1.55vw,11px); font-weight:700; line-height:1.4; }
+        .diag-metrics { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:20px; }
+        .diag-metric { padding:clamp(12px,2.5vw,19px); border:1px solid rgba(148,163,184,.24); border-radius:15px; background:rgba(255,255,255,.07); overflow:hidden; }
+        .diag-metric-label { color:#94a3b8; font-size:clamp(7px,1.3vw,9px); font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+        .diag-metric-value { margin-top:6px; color:#fff; font:800 clamp(13px,4vw,30px) Roboto Mono,monospace; letter-spacing:-.05em; white-space:nowrap; }
+        .diag-metric-value.is-compact { font-size:clamp(11px,3vw,20px); letter-spacing:-.06em; }
+        .diag-metric-value.is-tight { font-size:clamp(10px,2.5vw,17px); letter-spacing:-.07em; }
+        .diag-benchmark { margin-top:10px; padding:11px 13px; border-left:3px solid #facc15; background:rgba(250,204,21,.08); color:#dbeafe; font-size:clamp(9px,1.7vw,12px); font-weight:700; line-height:1.45; }
+        .diag-footer { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-top:15px; padding-top:12px; border-top:1px solid rgba(148,163,184,.22); color:#94a3b8; font-size:clamp(7px,1.35vw,9px); line-height:1.45; }
+        .diag-url { color:#fff; font-weight:900; white-space:nowrap; }
+        @media(max-width:1000px){.method-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:800px){ .hero{padding-top:64px}.calculator{grid-template-columns:minmax(0,1fr)}.inputs{padding:30px;border-right:0;border-bottom:1px solid var(--line)}.result{padding:30px;min-height:520px}.method{padding:30px}.method-grid{grid-template-columns:1fr} }
+        @media(max-width:480px){ .hero h1{font-size:2.55rem}.hero p{font-size:1rem}.inputs,.result,.method{padding:26px}.band{font-size:1.65rem}.stat-grid{grid-template-columns:1fr}.diag-brand{font-size:11px}.diag-pill{font-size:6.5px;padding:5px 7px}.diag-metric-value{font-size:12px}.diag-benchmark{font-size:8px}.diag-footer{font-size:6px}.social-grid{gap:8px}.social-btn{width:44px;height:44px} }
+        body.dark-mode { --ink:#f8fafc; --muted:#a8b4c7; --line:#334155; --paper:#08111f; --card:#101b2c; --soft:#172554; }
+        body.dark-mode .result { background:linear-gradient(160deg,#101b2c,#0b1423); }
+        body.dark-mode input,body.dark-mode select,body.dark-mode .method-card,body.dark-mode .stat { background:#0b1423; color:#f8fafc; }
+    </style>
+    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml"><style id="wealthmeter-component-styles">
+    /* Monolith Pulse Animation */
+    @keyframes monolithPulse {
+        0% { transform: scaleY(1); }
+        50% { transform: scaleY(1.25); }
+        100% { transform: scaleY(1); }
+    }
+    .bar-rank { animation: monolithPulse 2s ease-in-out infinite; transform-origin: bottom; fill: #FF4B4B; }
+    .bar-analyze { animation: monolithPulse 2.4s ease-in-out infinite; animation-delay: 0.2s; transform-origin: bottom; fill: #0f172a; }
+    .bar-rate { animation: monolithPulse 1.8s ease-in-out infinite; animation-delay: 0.4s; transform-origin: bottom; fill: #0891b2; }
+
+    /* Pillar Colors */
+    .label-rank { color: #FF4B4B !important; }
+    .label-rate { color: #00bcd4 !important; }
+    .label-analyze { color: #2563eb !important; }
+    .label-longform { color: #0ea5e9 !important; }
+
+    /* Layout Standards */
+    header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e2e8f0;
+        z-index: 9999;
+    }
+    .nav-container {
+        max-width: 1580px;
+        margin: 0 auto;
+        padding: 0 1.75rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+    }
+
+    /* Brand Wrapper: Prevents collision with nav items */
+    .brand-wrapper {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        margin-right: 2rem;
+    }
+
+    /* Navigation: Forces links to the right */
+    nav {
+        display: flex;
+        gap: clamp(1.1rem, 1.7vw, 2.25rem);
+        align-items: center;
+        height: 100%;
+        margin-left: auto;
+    }
+
+    .nav-group {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        white-space: nowrap;
+    }
+    .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
+    .sister-site-link {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        font-weight: 800;
+        font-size: 0.85rem;
+        color: #FF4B4B;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+    }
+    .nav-group:hover .dropdown { display: block !important; }
+    .nav-group.open .dropdown { display: block !important; }
+
+    @media (max-width: 1360px) {
+        .nav-container { padding: 0 1.25rem; }
+        .brand-wrapper { margin-right: 1.25rem; }
+        nav { gap: 1rem; }
+        .nav-group-label,
+        .sister-site-link { font-size: 0.76rem; letter-spacing: 0.09em; }
+    }
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        padding: 1rem 0;
+        min-width: 260px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        z-index: 10000;
+        margin-top: -5px;
+    }
+    .dropdown a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        color: #475569;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: 0.2s;
+    }
+    .dropdown a:hover { background: #f8fafc; color: #020617; }
+
+    @media (max-width: 1024px) {
+        header { position: relative; }
+        .nav-container { height: auto; min-height: 72px; padding: 0.75rem 1rem; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+        .brand-wrapper { margin-right: 0; }
+        nav { width: 100%; gap: 0.75rem; overflow-x: auto; padding-bottom: 0.25rem; -ms-overflow-style: none; scrollbar-width: none; }
+        nav::-webkit-scrollbar { display: none; }
+        .nav-group { height: auto; }
+        .nav-group-label { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .sister-site-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .dropdown { position: fixed; left: 0.9rem; right: 0.9rem; top: 74px; min-width: 0; max-height: 70vh; overflow-y: auto; margin-top: 0; border-radius: 0.9rem; padding: 0.7rem 0; box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16); }
+        .dropdown a { min-height: 44px; display: flex; align-items: center; font-size: 0.95rem; padding: 0.72rem 1.15rem; }
+    }
+
+    footer { padding: 5rem 2rem; text-align: center; border-top: 1px solid #e2e8f0; background: #f8fafc; margin-top: auto; }
+    .cross-property-band {
+        max-width: 980px;
+        margin: 0 auto 1.5rem;
+        padding: 1rem 1.25rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+        color: #1e293b;
+        font-weight: 700;
+        line-height: 1.55;
+    }
+    .cross-property-band a {
+        color: #2563eb;
+        font-weight: 900;
+        text-decoration: none;
+    }
+    .cross-property-band a:hover { text-decoration: underline; }
+    .article-bridge-cta {
+        margin: 2.5rem 0 0;
+        padding: 1.25rem 1.35rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+    }
+    .article-bridge-label {
+        display: inline-block;
+        margin-bottom: 0.55rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #2563eb;
+    }
+    .article-bridge-cta h2,
+    .article-bridge-cta h3 {
+        margin: 0 0 0.55rem;
+        padding: 0;
+        border: 0;
+        color: #0f172a;
+        font-size: 1.2rem;
+        letter-spacing: -0.02em;
+        text-transform: none;
+    }
+    .article-bridge-cta p {
+        margin: 0 0 0.9rem;
+        color: #334155;
+    }
+    .article-bridge-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 0 0 0.95rem;
+    }
+    .article-bridge-chip {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #bfdbfe;
+        border-radius: 999px;
+        padding: 0.34rem 0.65rem;
+        background: #ffffff;
+        color: #1d4ed8;
+        font-size: 0.76rem;
+        font-weight: 700;
+    }
+    .article-bridge-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: center;
+    }
+    .article-bridge-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+        border-radius: 0.85rem;
+        background: #2563eb;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 800;
+    }
+    .article-bridge-secondary {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    .article-bridge-secondary:hover { text-decoration: underline; }
+    .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+    .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
+
+    .site-newsletter { max-width:720px; margin:2rem auto 0; padding:1.4rem; border:1px solid #dbe4f0; border-radius:1rem; background:#f8fbff; text-align:left; }
+    .site-newsletter h2 { margin:0 0 .35rem; font-size:1.3rem; color:#0f172a; }
+    .site-newsletter-copy { margin:0 0 1rem; color:#475569; line-height:1.55; }
+    .site-newsletter-form { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; }
+    .site-newsletter-field { display:grid; gap:.3rem; color:#334155; font-size:.76rem; font-weight:800; }
+    .site-newsletter-field-email,.site-newsletter-actions { grid-column:1 / -1; }
+    .site-newsletter-field input { width:100%; min-height:46px; padding:.75rem .8rem; border:1px solid #cbd5e1; border-radius:.7rem; background:#fff; color:#0f172a; font-family:inherit; font-size:1rem; font-weight:600; line-height:1.3; }
+    .site-newsletter-actions { display:flex; align-items:center; gap:.85rem; flex-wrap:wrap; }
+    .site-newsletter button { min-height:46px; padding:.75rem 1.15rem; border:0; border-radius:.7rem; background:#2563eb; color:#fff; font-family:inherit; font-size:.84rem; font-weight:800; line-height:1; cursor:pointer; }
+    .site-newsletter button:disabled { opacity:.65; cursor:default; }
+    .site-newsletter-status { margin:0; color:#475569; font-size:.86rem; font-weight:700; }
+    .site-newsletter-note,.site-newsletter-address { margin:.85rem 0 0; color:#64748b; font-size:.78rem; line-height:1.5; }
+    body.dark-mode .site-newsletter { background:#0f172a; border-color:#334155; }
+    body.dark-mode .site-newsletter h2 { color:#f8fafc; }
+    body.dark-mode .site-newsletter-copy,body.dark-mode .site-newsletter-status,body.dark-mode .site-newsletter-note,body.dark-mode .site-newsletter-address,body.dark-mode .site-newsletter-field { color:#cbd5e1; }
+    body.dark-mode .site-newsletter-field input { background:#0b1220; border-color:#475569; color:#f8fafc; }
+    @media (max-width:640px) { .site-newsletter-form { grid-template-columns:1fr; } .site-newsletter-field-email,.site-newsletter-actions { grid-column:1; } }
+
+    main.article figure img {
+        max-width: 100%;
+        width: 100%;
+        height: auto !important;
+        object-fit: contain;
+    }
+</style><meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Find your U.S. household wealth band and published percentile range using the Census Bureau">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WEALTHMETER.XYZ","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"U.S. Household Wealth Calculator","item":"https://wealthmeter.xyz/us-household-wealth.html"}]}</script><!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NF91REL39"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8NF91REL39');
+    </script>
+</head>
+<body>
+    <div id="header-placeholder" data-static-component="1">
+<header>
+    <div class="nav-container">
+        <div class="brand-wrapper">
+            <a href="/" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="bar-rank" x="15" y="45" width="16" height="40" rx="2"/>
+                    <rect class="bar-analyze" x="42" y="25" width="16" height="60" rx="2"/>
+                    <rect class="bar-rate" x="69" y="55" width="16" height="30" rx="2"/>
+                </svg>
+                <div style="font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 900; letter-spacing: -0.04em; display: flex; line-height: 1; white-space: nowrap;">
+                    <span style="color: #0f172a;">WEALTH</span><span style="color: #2563eb;">METER</span><span style="color: #0891b2;">.XYZ</span>
+                </div>
+            </a>
+        </div>
+        <nav>
+            <div class="nav-group"><span class="nav-group-label label-rank">Rank</span>
+                <div class="dropdown">
+                    <a href="/">Global Wealth Rank</a>
+                    <a href="us-household-wealth.html">U.S. Household Wealth</a>
+                    <a href="global_ranker.html">Country-Specific Rank</a>
+                    <a href="income_ranker.html">Income Percentile</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-rate">Rate</span>
+                <div class="dropdown">
+                    <a href="networth.html">Net Worth Calibration</a>
+                    <a href="fire_timeline.html">FIRE Timeline Planner</a>
+                    <a href="portfolio_alpha.html">Portfolio Alpha Simulator</a>
+                    <a href="runway_lab.html">Financial Runway Lab</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-analyze">Analyze</span>
+                <div class="dropdown">
+                    <a href="global_explorer.html">Wealth Explorer</a>
+                    <a href="atlas.html">Longevity Atlas</a>
+                    <a href="data-lab.html">Data Lab</a>
+                    <a href="wealth-briefs.html">Wealth Briefs</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
+                <div class="dropdown">
+                    <a href="longform.html">Longform Hub</a>
+                    <a href="job-loss-hurts-more-when-benefits-are-not-portable.html">Job Loss Hurts More When Benefits Are Not Portable</a>
+                    <a href="disability-insurance-leaves-many-paychecks-unprotected.html">Disability Insurance Leaves Many Paychecks Unprotected</a>
+                    <a href="america-is-second-by-average-wealth-fifteenth-by-median-wealth.html">America Is 2nd by Average Wealth, 15th by Median Wealth</a>
+                    <a href="how-insurance-deductibles-become-a-household-balance-sheet-shock.html">How Insurance Deductibles Become a Household Balance-Sheet Shock</a>
+                    <a href="home-equity-is-not-emergency-liquidity.html">Home Equity Is Not Emergency Liquidity</a>
+                    <a href="sequence-risk-before-retirement-fragility-priced-too-late.html">Sequence Risk Before Retirement: The Fragility Nobody Prices Early Enough</a>
+                    <a href="liquidity-illusion.html">The Liquidity Illusion</a>
+                    <a href="property-tax-drag.html">The Property Tax Drag</a>
+                    <a href="global-housing-divergence.html">The Global Housing Divergence</a>
+                    <a href="yield-trap-high-rate-world.html">The Yield Trap in a High-Rate World</a>
+                    <a href="freelance-freedom-tradeoff.html">The Freelance Freedom Tradeoff</a>
+                    <a href="promotion-paradox.html">The Promotion Paradox</a>
+
+
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <a href="https://lifemeter.xyz" target="_blank" rel="noopener" class="sister-site-link">LifeMeter ↗</a>
+        </nav>
+    </div>
+</header>
+</div>
+    <main>
+        <section class="hero">
+            <div class="eyebrow">Latest U.S. household data</div>
+            <h1>Where Does Your Household Wealth Sit in America?</h1>
+            <p>Compare household assets minus debts with the latest Census wealth bands, refined above $500,000 with the Federal Reserve's upper-tail data. Change the benchmark to see the distribution for an age group, region, or housing-tenure group.</p>
+            <div class="source-pill">Census 2025 SIPP core · Federal Reserve 2022 SCF upper tail</div>
+        </section>
+
+        <div class="shell">
+            <section class="calculator" aria-label="U.S. household wealth calculator">
+                <div class="inputs">
+                    <h2>Enter household net worth</h2>
+                    <p class="helper">Use the combined value of household assets minus debts. Negative and zero values are valid.</p>
+                    <label for="householdWealth">Household net worth (USD)</label>
+                    <input id="householdWealth" type="number" step="1000" placeholder="e.g., 750000" inputmode="decimal" aria-describedby="wealthError">
+                    <p class="input-error" id="wealthError" role="alert">Enter a household net-worth amount to calculate your range.</p>
+                    <label for="benchmark">Comparison group</label>
+                    <select id="benchmark">
+                        <option value="all">All U.S. households</option>
+                        <optgroup label="Age of householder">
+                            <option value="age-under35">Under 35</option><option value="age-35-44">35–44</option><option value="age-45-54">45–54</option><option value="age-55-64">55–64</option><option value="age-65plus">65 and older</option>
+                        </optgroup>
+                        <optgroup label="Region">
+                            <option value="region-northeast">Northeast</option><option value="region-midwest">Midwest</option><option value="region-south">South</option><option value="region-west">West</option>
+                        </optgroup>
+                        <optgroup label="Housing tenure">
+                            <option value="tenure-owner">Owner-occupied</option><option value="tenure-renter">Renter-occupied</option>
+                        </optgroup>
+                    </select>
+                    <button class="primary" type="button" onclick="calculateHousehold()">Show My Wealth Range</button>
+                    <a class="switch-link" href="index.html">Looking for the global adult calculator?</a>
+                </div>
+                <div class="result">
+                    <div class="empty" id="emptyState"><div><div class="empty-mark">%</div><h2>Your source-backed range will appear here</h2><p class="helper">WealthMeter reports intervals: published Census bands below $500,000 and modeled ranges within the upper tier.</p></div></div>
+                    <div class="result-content" id="resultContent" aria-live="polite">
+                        <div class="result-kicker">Your household wealth range</div>
+                        <div class="band" id="bandLabel"></div>
+                        <div class="benchmark-name" id="benchmarkLabel"></div>
+                        <p class="position-summary" id="positionSummary"></p>
+                        <div class="stat-grid">
+                            <div class="stat"><div class="stat-label">Percentile interval</div><div class="stat-value" id="percentileRange"></div></div>
+                            <div class="stat"><div class="stat-label">Household rank interval</div><div class="stat-value" id="rankRange"></div></div>
+                        </div>
+                        <div class="distribution" id="distribution" aria-label="Household wealth distribution"></div>
+                        <p class="band-note" id="bandNote"></p>
+                        <p class="model-note" id="modelNote"></p>
+                        <div id="shareCard" aria-label="U.S. household wealth diagnostic card">
+                            <div class="diag-header">
+                                <div class="diag-brand"><span class="diag-mark"><span></span><span></span><span></span></span>WEALTHMETER.XYZ</div>
+                                <div class="diag-pill">U.S. household wealth</div>
+                            </div>
+                            <div class="diag-kicker">Your U.S. household net-worth position</div>
+                            <div class="share-band" id="shareBand">—</div>
+                            <div class="diag-band-explainer">Estimated wealth band containing your entered household net worth</div>
+                            <div class="diag-metrics">
+                                <div class="diag-metric"><div class="diag-metric-label">Percentile interval</div><div class="diag-metric-value" id="sharePercent">—</div></div>
+                                <div class="diag-metric"><div class="diag-metric-label">Household rank interval</div><div class="diag-metric-value" id="shareRank">—</div></div>
+                            </div>
+                            <div class="diag-benchmark" id="shareBenchmark">—</div>
+                            <div class="diag-footer"><span id="shareSource">U.S. Census Bureau · 2025 SIPP<br>Wealth year 2024 · Released July 2026</span><span class="diag-url">wealthmeter.xyz</span></div>
+                        </div>
+                        <div class="share-section">
+                            <div class="share-label">Share diagnostic card</div>
+                            <div class="social-grid">
+                                <button class="social-btn" style="background:#000" type="button" title="Share on X" aria-label="Share on X" onclick="shareResult('X')"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></button>
+                                <button class="social-btn" style="background:#0A66C2" type="button" title="Share on LinkedIn" aria-label="Share on LinkedIn" onclick="shareResult('IN')"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></button>
+                                <button class="social-btn" style="background:#25D366" type="button" title="Share on WhatsApp" aria-label="Share on WhatsApp" onclick="shareResult('WA')"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg></button>
+                                <button class="social-btn" style="background:#0088cc" type="button" title="Share on Telegram" aria-label="Share on Telegram" onclick="shareResult('TG')"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.87 1.18-5.26 3.47-.5.34-.95.5-1.34.49-.44-.01-1.28-.24-1.9-.45-.77-.25-1.38-.39-1.32-.82.03-.22.33-.45.89-.69 3.48-1.51 5.8-2.51 6.96-2.99 3.31-1.37 3.99-1.61 4.44-1.61.1 0 .33.02.48.15.12.1.16.23.18.33.02.1.03.24.01.32z"/></svg></button>
+                                <button class="social-btn" style="background:#FF4500" type="button" title="Share on Reddit" aria-label="Share on Reddit" onclick="shareResult('RD')"><svg viewBox="0 0 24 24"><path d="M22 11.5c0-1.38-1.12-2.5-2.5-2.5-.54 0-1.04.18-1.44.48-1.63-1.12-3.83-1.85-6.26-1.93l1.1-5.17 3.6.75c.08.7.67 1.25 1.4 1.25 1.38 0 2.5-1.12 2.5-2.5S19.38 0 18 0c-1.1 0-2.02.71-2.34 1.7l-4.13-.88c-.19-.04-.38.08-.43.27l-1.3 6.1c-2.48.05-4.73.78-6.39 1.93-.4-.3-.9-.48-1.44-.48-1.38 0-2.5 1.12-2.5 2.5 0 .96.54 1.8 1.34 2.22-.06.24-.09.5-.09.76 0 3.1 3.58 5.62 8 5.62s8-2.52 8-5.62c0-.26-.03-.52-.09-.76.8-.42 1.34-1.26 1.34-2.22m-13.5 0c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5m6.81 4.73c-1.03 1.03-2.98 1.11-3.31 1.11-.33 0-2.28-.08-3.31-1.11-.1-.1-.1-.26 0-.35.1-.1.26-.1.35 0 .8.8 2.37.93 2.96.93s2.16-.13 2.96-.93c.1-.1.26-.1.35 0 .1.09.1.25 0 .35m-.31-3.23c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></button>
+                                <button class="social-btn" style="background:#34C759" type="button" title="Share by message" aria-label="Share by message" onclick="shareResult('IM')"><svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 20.2A1 1 0 0 0 3.8 21.454l3.032-.892A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 2c4.411 0 8 3.589 8 8s-3.589 8-8 8a7.96 7.96 0 0 1-4.126-1.147 1 1 0 0 0-.773-.105l-2.125.625.625-2.125a1 1 0 0 0-.105-.773A7.96 7.96 0 0 1 4 12c0-4.411 3.589-8 8-8z"/></svg></button>
+                                <button class="social-btn" style="background:#DC2626" type="button" title="Share by email" aria-label="Share by email" onclick="shareResult('EM')"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></button>
+                                <button class="social-btn" style="background:#475569" type="button" title="Download diagnostic card" aria-label="Download diagnostic card" onclick="downloadResult()"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="method">
+                <div class="eyebrow">Transparent by design</div>
+                <h2>What this calculator does — and does not do</h2>
+                <div class="method-grid">
+                    <article class="method-card"><h3>Household measure</h3><p>This page uses household net worth from the Census Bureau's Survey of Income and Program Participation. It is separate from WealthMeter's per-adult global model.</p></article>
+                    <article class="method-card"><h3>Published Census core</h3><p>Below $500,000, results use the published bands in Census Table 4 without assuming a distribution inside each band.</p></article>
+                    <article class="method-card"><h3>Hybrid upper tail</h3><p>At $500,000 and above, the selected group's Census share is divided using the weighted national upper-tail shape in the Federal Reserve's 2022 SCF, converted to 2024 dollars.</p></article>
+                    <article class="method-card"><h3>Precision limit</h3><p>The upper tail is a modeled range, not a published Census rank. Census households and SCF families are not identical units, uncertainty increases above $100 million, and the $1 billion-plus result remains open-ended.</p></article>
+                </div>
+                <div class="sources">
+                    <h3>Calculator sources</h3>
+                    <ul class="source-list">
+                        <li><strong>Census core and group shares</strong><a href="https://www.census.gov/data/tables/2024/demo/wealth/wealth-asset-ownership.html">2024 Wealth and Asset Ownership tables</a> · <a href="https://www2.census.gov/programs-surveys/demo/tables/wealth/2023/wealth-asset-ownership/wealth_tables_dy2024.xlsx">official detailed workbook</a> · <a href="https://www.census.gov/programs-surveys/sipp/methodology.html">SIPP methodology</a>. Table 4 supplies the nine household wealth bands and the age, region, and housing-tenure shares.</li>
+                        <li><strong>Upper-tail shape</strong><a href="https://www.federalreserve.gov/econres/scf-documentation.htm">Federal Reserve 2022 Survey of Consumer Finances documentation</a> · <a href="https://www.federalreserve.gov/econres/files/scfp2022s.zip">public summary extract</a>. The weighted conditional distribution above $500,000 divides the Census table's open highest band.</li>
+                        <li><strong>Dollar-year adjustment</strong><a href="https://www.bls.gov/cpi/tables/supplemental-files/historical-cpi-u-202412.pdf">BLS historical CPI-U annual averages</a>. SCF values are converted from 2022 to 2024 dollars using 313.689 ÷ 292.655 = 1.071873.</li>
+                    </ul>
+                    <p class="source-footnote">Source set reviewed September 16, 2026. See the full <a href="methodology.html">methodology</a> and <a href="data-sources.html">data-source register</a>.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div id="footer-placeholder" data-static-component="1">
+<footer>
+    <section class="site-newsletter" aria-labelledby="newsletter-heading-footer">
+        <h2 id="newsletter-heading-footer">WealthMeter news and updates</h2>
+        <p class="site-newsletter-copy">Receive new longform analysis, wealth brief updates, and report releases.</p>
+        <form class="site-newsletter-form" data-newsletter-form data-source="footer">
+            <input type="hidden" name="newsletter" value="yes">
+            <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+            <label class="site-newsletter-field">First name
+                <input type="text" name="firstName" autocomplete="given-name" required>
+            </label>
+            <label class="site-newsletter-field">Last name
+                <input type="text" name="lastName" autocomplete="family-name" required>
+            </label>
+            <label class="site-newsletter-field site-newsletter-field-email">Email address
+                <input type="email" name="email" autocomplete="email" inputmode="email" required>
+            </label>
+            <div class="site-newsletter-actions">
+                <button type="submit">Sign up</button>
+                <p class="site-newsletter-status" data-newsletter-status aria-live="polite"></p>
+            </div>
+        </form>
+        <p class="site-newsletter-note">By signing up, you agree to receive WealthMeter news and updates. You can unsubscribe at any time. See our <a href="privacy.html">Privacy Policy</a>.</p>
+        <p class="site-newsletter-address">Mailing Address: 1968 S. Coast Hwy #5495, Laguna Beach, CA 92651</p>
+    </section>
+    <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="editorial-policy.html">Editorial Standards</a>
+        <a href="data-sources.html">Data Sources</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+    </div>
+</footer>
+</div>
+
+    <script src="components.js?v=2026-09-15.2"></script>
+    <script>
+    const BINS = [
+        {max:0,label:'Zero or negative'}, {max:4999,label:'$1–$4,999'}, {max:9999,label:'$5,000–$9,999'},
+        {max:24999,label:'$10,000–$24,999'}, {max:49999,label:'$25,000–$49,999'}, {max:99999,label:'$50,000–$99,999'},
+        {max:249999,label:'$100,000–$249,999'}, {max:499999,label:'$250,000–$499,999'}, {max:Infinity,label:'$500,000 or more'}
+    ];
+    /*
+      Conditional survival ratios within the $500,000+ population.
+      Derived from the Federal Reserve 2022 SCF summary extract using WGT across
+      all five implicates. NETWORTH is converted to 2024 dollars with CPI-U
+      annual averages (313.689 / 292.655), then normalized at $500,000.
+    */
+    const SCF_UPPER_TAIL = [
+        {min:500_000,max:999_999,label:'$500,000–$999,999',lower:1,upper:0.61931235},
+        {min:1_000_000,max:2_499_999,label:'$1 million–$2.49 million',lower:0.61931235,upper:0.26371988},
+        {min:2_500_000,max:4_999_999,label:'$2.5 million–$4.99 million',lower:0.26371988,upper:0.13014203},
+        {min:5_000_000,max:9_999_999,label:'$5 million–$9.99 million',lower:0.13014203,upper:0.05909572},
+        {min:10_000_000,max:24_999_999,label:'$10 million–$24.99 million',lower:0.05909572,upper:0.01347995},
+        {min:25_000_000,max:49_999_999,label:'$25 million–$49.99 million',lower:0.01347995,upper:0.00507243},
+        {min:50_000_000,max:99_999_999,label:'$50 million–$99.99 million',lower:0.00507243,upper:0.00177476},
+        {min:100_000_000,max:249_999_999,label:'$100 million–$249.99 million',lower:0.00177476,upper:0.00043691},
+        {min:250_000_000,max:499_999_999,label:'$250 million–$499.99 million',lower:0.00043691,upper:0.00014627},
+        {min:500_000_000,max:999_999_999,label:'$500 million–$999.99 million',lower:0.00014627,upper:0.00004377},
+        {min:1_000_000_000,max:Infinity,label:'$1 billion or more',lower:0.00004377,upper:0}
+    ];
+    const BENCHMARKS = {
+        all:{name:'All U.S. households',count:134.4e6,p:[11.3,6.2,3.3,5.5,5.4,7.1,14.4,15.2,31.5]},
+        'age-under35':{name:'Householder under 35',count:23.760e6,p:[21.5,7.5,5.3,9.5,10.6,11.3,15.8,9.1,9.4]},
+        'age-35-44':{name:'Householder age 35–44',count:23.040e6,p:[14,5.1,3.5,6.4,6.2,7.2,15.2,18.1,24.3]},
+        'age-45-54':{name:'Householder age 45–54',count:22.530e6,p:[10.3,5.2,3,4.7,4.2,6.5,15.7,16.3,34]},
+        'age-55-64':{name:'Householder age 55–64',count:24.860e6,p:[9.1,5.6,3.4,4,4.9,6.4,12.4,15,39.3]},
+        'age-65plus':{name:'Householder age 65 or older',count:40.220e6,p:[5.8,7.1,2.3,3.9,2.9,5.3,13.6,16.8,42.3]},
+        'region-northeast':{name:'Northeast households',count:22.640e6,p:[11.9,7.7,2.8,4.1,5.4,7,12.7,14.5,33.9]},
+        'region-midwest':{name:'Midwest households',count:28.850e6,p:[11.8,6.2,3.4,4.9,5.1,7.5,15.5,16.4,29.2]},
+        'region-south':{name:'South households',count:52.340e6,p:[12.4,6.1,3.5,6.2,5.4,7.6,16.1,15.9,26.8]},
+        'region-west':{name:'West households',count:30.580e6,p:[8.7,5.4,3.4,5.8,5.8,6,11.7,13.5,39.7]},
+        'tenure-owner':{name:'Owner-occupied households',count:83.980e6,p:[2,.4,.6,1.5,2.9,6.6,17.6,21.7,46.8]},
+        'tenure-renter':{name:'Renter-occupied households',count:47.180e6,p:[27,16,7.8,11.8,9.7,8.2,9.3,4.4,5.8]}
+    };
+    let latest = null;
+
+    function compact(value){ return value >= 1e6 ? `${(value/1e6).toFixed(value >= 1e8 ? 0 : 1)}M` : Math.round(value).toLocaleString(); }
+    function compactRank(value){
+        if(value>=1e6) return `${(value/1e6).toFixed(value>=100e6?0:1)}M`;
+        if(value>=1e3) return `${(value/1e3).toFixed(value>=100e3?0:1)}K`;
+        return Math.max(1,Math.round(value)).toLocaleString();
+    }
+    function formatPercent(value){
+        if(value>=99.9) return value.toFixed(4);
+        if(value>=99) return value.toFixed(3);
+        return value.toFixed(1);
+    }
+    function formatTopShare(value){
+        if(value<0.01) return value.toFixed(4);
+        if(value<0.1) return value.toFixed(3);
+        if(value<1) return value.toFixed(2);
+        return value.toFixed(1);
+    }
+    function comparisonDescription(group){
+        if(group.name==='All U.S. households') return 'all U.S. households';
+        if(group.name.startsWith('Householder ')) return `U.S. households with a ${group.name.toLowerCase()}`;
+        if(group.name.endsWith(' households')) return `U.S. ${group.name.toLowerCase()}`;
+        return group.name.toLowerCase();
+    }
+    function positionSummary(group,lower,upper){
+        const topLow=Math.max(0,100-upper);
+        const topHigh=Math.max(topLow,100-lower);
+        const topRange=Math.abs(topHigh-topLow)<0.00005
+            ? `${formatTopShare(topLow)}%`
+            : `${formatTopShare(topLow)}%–${formatTopShare(topHigh)}%`;
+        return `Your household is in approximately the top ${topRange} of ${comparisonDescription(group)}.`;
+    }
+    function setFittedMetric(id,value){
+        const element=document.getElementById(id);
+        element.textContent=value;
+        element.classList.toggle('is-compact',value.length>=13);
+        element.classList.toggle('is-tight',value.length>=16);
+    }
+    function calculateHousehold(){
+        const wealthInput = document.getElementById('householdWealth');
+        const rawWealth = wealthInput.value.trim();
+        const wealth = Number(rawWealth);
+        if (rawWealth==='' || !Number.isFinite(wealth)) {
+            document.getElementById('wealthError').style.display='block';
+            wealthInput.focus();
+            return false;
+        }
+        document.getElementById('wealthError').style.display='none';
+        const group = BENCHMARKS[document.getElementById('benchmark').value];
+        let binIndex,bandLabel,lower,upper,richerLow,richerHigh,bandShare,model;
+        if(wealth>=500_000){
+            const tail=SCF_UPPER_TAIL.find(bin=>wealth>=bin.min&&wealth<=bin.max);
+            const censusTopShare=group.p[8]/100;
+            const survivalAtLower=censusTopShare*tail.lower;
+            const survivalAtUpper=censusTopShare*tail.upper;
+            lower=100*(1-survivalAtLower);
+            upper=100*(1-survivalAtUpper);
+            richerLow=Math.max(1,Math.round(group.count*survivalAtUpper));
+            richerHigh=Math.max(richerLow,Math.round(group.count*survivalAtLower));
+            bandShare=(survivalAtLower-survivalAtUpper)*100;
+            binIndex=8; bandLabel=tail.label; model='hybrid';
+        }else{
+            binIndex=BINS.findIndex(bin=>wealth<=bin.max);
+            lower=group.p.slice(0,binIndex).reduce((a,b)=>a+b,0);
+            upper=Math.min(100,lower+group.p[binIndex]);
+            richerLow=Math.max(1,Math.round(group.count*(1-upper/100)));
+            richerHigh=Math.max(richerLow,Math.round(group.count*(1-lower/100)));
+            bandShare=group.p[binIndex]; bandLabel=BINS[binIndex].label; model='census';
+        }
+        latest = {wealth,group,binIndex,bandLabel,lower,upper,richerLow,richerHigh,bandShare,model};
+        document.getElementById('emptyState').style.display='none';
+        document.getElementById('resultContent').style.display='block';
+        document.getElementById('bandLabel').textContent=bandLabel;
+        document.getElementById('benchmarkLabel').textContent=`Benchmark: ${group.name} · ${compact(group.count)} households`;
+        document.getElementById('positionSummary').textContent=positionSummary(group,lower,upper);
+        setFittedMetric('percentileRange',`${formatPercent(lower)}–${formatPercent(upper)}`);
+        setFittedMetric('rankRange',`#${compactRank(richerLow)}–#${compactRank(richerHigh)}`);
+        document.getElementById('bandNote').textContent=model==='hybrid'
+            ? `An estimated ${bandShare<0.01?bandShare.toFixed(4):bandShare.toFixed(2)}% of this comparison group falls in this modeled upper-tail band. Rank 1 represents the wealthiest household.`
+            : `${bandShare.toFixed(1)}% of this comparison group is in the same published Census band. Rank 1 represents the wealthiest household. Percentages are rounded in the source table.`;
+        document.getElementById('modelNote').innerHTML=model==='hybrid'
+            ? '<strong>Hybrid estimate:</strong> Census 2024 establishes the selected group’s share at $500,000 or more. The weighted national Federal Reserve 2022 SCF determines how that upper tier is divided after conversion to 2024 dollars. Census households and SCF families are not identical units. This is a modeled interval, not a published Census rank; uncertainty rises above $100 million.'
+            : '<strong>Published Census interval:</strong> No within-band distribution is assumed below $500,000.';
+        document.getElementById('distribution').innerHTML=group.p.map((v,i)=>`<span class="segment ${i===binIndex?'active':''}" style="flex:${v}" title="${BINS[i].label}: ${v}%"></span>`).join('');
+        document.getElementById('shareBand').textContent=bandLabel;
+        setFittedMetric('sharePercent',`${formatPercent(lower)}–${formatPercent(upper)}`);
+        setFittedMetric('shareRank',`#${compactRank(richerLow)}–#${compactRank(richerHigh)}`);
+        document.getElementById('shareBenchmark').textContent=positionSummary(group,lower,upper);
+        document.getElementById('shareSource').innerHTML=model==='hybrid'
+            ? 'Census 2025 SIPP + Federal Reserve 2022 SCF<br>SCF dollars adjusted to 2024 with CPI-U'
+            : 'U.S. Census Bureau · 2025 SIPP<br>Wealth year 2024 · Released July 2026';
+        return true;
+    }
+    function resultText(){ return `${positionSummary(latest.group,latest.lower,latest.upper)} My household net worth is in the ${latest.bandLabel} ${latest.model==='hybrid'?'hybrid upper-tail':'Census'} wealth band.`; }
+    async function shareResult(platform){
+        if(!latest && !calculateHousehold()) return;
+        const text=resultText(), page='https://wealthmeter.xyz/us-household-wealth.html';
+        const canvas=await html2canvas(document.getElementById('shareCard'),{scale:2,backgroundColor:'#07111f'});
+        const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));
+        const file=new File([blob],'WealthMeter_US_Household_Wealth.png',{type:'image/png'});
+        if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){ try{await navigator.share({files:[file],title:'U.S. Household Wealth Diagnostic',text});return;}catch(_){} }
+        const url=encodeURIComponent(page), message=encodeURIComponent(text);
+        const maps={
+            X:`https://twitter.com/intent/tweet?text=${message}&url=${url}`,
+            IN:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+            WA:`https://wa.me/?text=${encodeURIComponent(text+' '+page)}`,
+            TG:`https://t.me/share/url?url=${url}&text=${message}`,
+            RD:`https://reddit.com/submit?url=${url}&title=${message}`,
+            IM:`sms:&body=${encodeURIComponent(text+' '+page)}`,
+            EM:`mailto:?subject=${encodeURIComponent('U.S. Household Wealth Diagnostic')}&body=${encodeURIComponent(text+' '+page)}`
+        };
+        if(maps[platform]) window.open(maps[platform],'_blank','noopener');
+    }
+    function downloadResult(){
+        if(!latest && !calculateHousehold()) return;
+        html2canvas(document.getElementById('shareCard'),{scale:2,backgroundColor:'#07111f'}).then(canvas=>{const a=document.createElement('a');a.download='WealthMeter_US_Household_Wealth.png';a.href=canvas.toDataURL('image/png');a.click();});
+    }
+    document.addEventListener('DOMContentLoaded',()=>{
+        const wealthInput=document.getElementById('householdWealth');
+        wealthInput.addEventListener('keydown',event=>{if(event.key==='Enter') calculateHousehold();});
+        wealthInput.addEventListener('input',()=>{
+            document.getElementById('wealthError').style.display='none';
+            latest=null;
+            document.getElementById('resultContent').style.display='none';
+            document.getElementById('emptyState').style.display='grid';
+        });
+        document.getElementById('benchmark').addEventListener('change',()=>{if(latest) calculateHousehold();});
+    });
+    </script>
+</body>
+</html>

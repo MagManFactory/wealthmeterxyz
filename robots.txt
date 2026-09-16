@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+Disallow: /adsense_block.html
+Sitemap: https://wealthmeter.xyz/sitemap.xml
+Sitemap: https://wealthmeter.xyz/sitemap-index.xml
+Sitemap: https://wealthmeter.xyz/sitemaps.xml
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
