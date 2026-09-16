@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Country Systems Atlas — Phase 1 Prototype | WEALTHMETER.XYZ</title>
-  <meta name="description" content="Internal Phase 1 prototype for comparing how national systems translate capital into practical opportunity.">
+  <title>Country Systems Atlas — Phase 2 Prototype | WEALTHMETER.XYZ</title>
+  <meta name="description" content="Internal Phase 2 prototype for comparing how national systems translate capital into practical opportunity.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
       <div class="systems-kicker">Country Systems Atlas · WealthMeter lens</div>
       <h1>Where does capital become capability?</h1>
       <p>Compare the systems that determine what wealth can actually do: productive capacity, infrastructure, logistics, essential access, and the longevity outcomes that sit downstream.</p>
-      <span class="prototype-flag">Phase 1 · internal prototype · not indexed</span>
+      <span class="prototype-flag">Phase 2 · 60 countries · internal prototype · not indexed</span>
     </section>
 
     <section class="systems-controls" aria-label="Country comparison controls">
@@ -27,9 +27,20 @@
       <div class="control-field"><label for="country-c">Country three</label><select id="country-c" data-country-select></select></div>
     </section>
 
+    <div class="systems-toolbar">
+      <span>Three-country view · eight source-backed measures</span>
+      <button class="systems-copy-button" type="button" data-copy-link>Copy comparison link</button>
+      <span class="systems-copy-status" data-copy-status role="status" aria-live="polite"></span>
+    </div>
+
+    <section class="systems-card systems-profile-section">
+      <div class="card-heading"><div><span class="systems-eyebrow">Metric spotlight</span><h2>See the selected measure in context.</h2><p>Positions are descriptive and confined to the countries with data in this 60-country set.</p></div></div>
+      <div class="systems-profile-grid" data-profile-cards aria-live="polite"></div>
+    </section>
+
     <div class="systems-grid">
       <section class="systems-card">
-        <div class="card-heading"><div><span class="systems-eyebrow">Comparison matrix</span><h2>Eight measures. Years exposed.</h2><p>Bars show position within this 30-country prototype, not a global rank. Settlement and investment shares are descriptive, not scored as inherently good or bad.</p></div></div>
+        <div class="card-heading"><div><span class="systems-eyebrow">Comparison matrix</span><h2>Eight measures. Years exposed.</h2><p>Bars show position within this 60-country prototype, not a global rank. Settlement and investment shares are descriptive, not scored as inherently good or bad.</p></div></div>
         <div class="comparison-table-wrap" data-comparison-matrix aria-live="polite"></div>
       </section>
 
@@ -52,7 +63,7 @@
         <ul class="method-list">
           <li>Every value carries its own observation year; “latest” is not treated as one common date.</li>
           <li>No overall development score is calculated.</li>
-          <li>Percentile-style bars are confined to the 30 countries in this prototype.</li>
+          <li>Percentile-style bars are confined to the 60 countries in this prototype.</li>
           <li>Source snapshots are generated from the World Bank Indicators API rather than fetched in a visitor’s browser.</li>
         </ul>
         <p class="systems-note">Snapshot generated <span data-generated>—</span>. Data may be revised by the publisher. This prototype is analytical, not investment, medical, migration, or policy advice.</p>
