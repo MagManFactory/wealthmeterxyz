@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-16",
+  "methodologyUrl": "https://wealthmeter.xyz/methodology.html#data-lab",
+  "providers": {
+    "world-bank": {
+      "name": "World Bank — World Development Indicators",
+      "url": "https://data.worldbank.org/indicator",
+      "termsUrl": "https://data.worldbank.org/summary-terms-of-use",
+      "attribution": "World Bank, World Development Indicators. Individual indicators may identify additional data providers or restrictions in their metadata.",
+      "status": "current"
+    },
+    "wid": {
+      "name": "World Inequality Database",
+      "url": "https://wid.world/data/",
+      "methodologyUrl": "https://wid.world/methodology/",
+      "attribution": "World Inequality Database. Values are estimates assembled from national accounts, surveys, tax data, wealth rankings, and other country-specific sources.",
+      "status": "current"
+    },
+    "census-idb": {
+      "name": "U.S. Census Bureau International Database",
+      "url": "https://www.census.gov/programs-surveys/international-programs/about/idb.html",
+      "termsUrl": "https://www.census.gov/data/developers/about/terms-of-service.html",
+      "attribution": "This product uses the Census Bureau Data API but is not endorsed or certified by the Census Bureau.",
+      "status": "current"
+    },
+    "oecd-eo107": {
+      "name": "OECD Economic Outlook 107 — historical pandemic snapshot",
+      "url": "https://www.oecd.org/en/publications/oecd-economic-outlook_16097408.html",
+      "termsUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+      "attribution": "OECD Economic Outlook 107. The retained observations cover 2020-Q2 and 2021-Q4 and are presented only as historical pandemic context.",
+      "status": "historical"
+    }
+  },
+  "metrics": {
+    "top1_wealth": {
+      "label": "Top 1% wealth share",
+      "shortLabel": "Top 1% wealth",
+      "unit": "percent",
+      "sourceId": "wid",
+      "indicator": "shweal_p99p100_992_j",
+      "definition": "The estimated share of personal net wealth owned by the richest 1% of individuals in the selected country.",
+      "caveat": "WID estimates reconcile multiple sources. Comparability and source quality vary by country."
+    },
+    "top10_wealth": {
+      "label": "Top 10% wealth share",
+      "shortLabel": "Top 10% wealth",
+      "unit": "percent",
+      "sourceId": "wid",
+      "indicator": "shweal_p90p100_992_j",
+      "definition": "The estimated share of personal net wealth owned by the richest 10% of individuals in the selected country.",
+      "caveat": "WID estimates reconcile multiple sources. Comparability and source quality vary by country."
+    },
+    "top1_income": {
+      "label": "Top 1% pre-tax income share",
+      "shortLabel": "Top 1% income",
+      "unit": "percent",
+      "sourceId": "wid",
+      "indicator": "sptinc_p99p100_992_j",
+      "definition": "The estimated share of pre-tax national income received by the highest-income 1% of individuals.",
+      "caveat": "This measures pre-tax national income, not disposable household income."
+    },
+    "top10_income": {
+      "label": "Top 10% pre-tax income share",
+      "shortLabel": "Top 10% income",
+      "unit": "percent",
+      "sourceId": "wid",
+      "indicator": "sptinc_p90p100_992_j",
+      "definition": "The estimated share of pre-tax national income received by the highest-income 10% of individuals.",
+      "caveat": "This measures pre-tax national income, not disposable household income."
+    },
+    "bottom50_income": {
+      "label": "Bottom 50% pre-tax income share",
+      "shortLabel": "Bottom 50% income",
+      "unit": "percent",
+      "sourceId": "wid",
+      "indicator": "sptinc_p0p50_992_j",
+      "definition": "The estimated share of pre-tax national income received by the lower-income half of individuals.",
+      "caveat": "This measures pre-tax national income, not disposable household income."
+    },
+    "gdp_per_capita_ppp": {
+      "label": "GDP per person, PPP",
+      "shortLabel": "GDP / person",
+      "unit": "currency",
+      "sourceId": "world-bank",
+      "indicator": "NY.GDP.PCAP.PP.CD",
+      "definition": "Annual economic output per resident, adjusted for national price levels and expressed in current international dollars.",
+      "caveat": "GDP per person is not household income or personal wealth."
+    },
+    "consumption_per_capita": {
+      "label": "Household consumption per person",
+      "shortLabel": "Consumption / person",
+      "unit": "currency",
+      "sourceId": "world-bank",
+      "indicator": "NE.CON.PRVT.PC.KD",
+      "definition": "Household final consumption expenditure per person, expressed in constant 2015 US dollars.",
+      "caveat": "The constant-dollar series is suitable for change over time, but not for direct division by current international-dollar GDP."
+    },
+    "population": {
+      "label": "Population",
+      "shortLabel": "Population",
+      "unit": "count",
+      "sourceId": "world-bank",
+      "indicator": "SP.POP.TOTL",
+      "definition": "The World Bank estimate of the total resident population.",
+      "caveat": "Reference dates and estimation practices can differ across countries."
+    },
+    "life_expectancy": {
+      "label": "Life expectancy at birth",
+      "shortLabel": "Life expectancy",
+      "unit": "years",
+      "sourceId": "world-bank",
+      "indicator": "SP.DYN.LE00.IN",
+      "definition": "Expected years of life at birth if the mortality rates observed in that year continued.",
+      "caveat": "This is a period life-expectancy measure, not a forecast for a person already alive."
+    },
+    "age65_share": {
+      "label": "Population age 65 and older",
+      "shortLabel": "Age 65+ share",
+      "unit": "percent",
+      "sourceId": "census-idb",
+      "indicator": "IDB one-year POP by age",
+      "definition": "The share of the modeled population age 65 or older after summing single-year age counts.",
+      "caveat": "IDB values are estimates and projections, not a single synchronized global census."
+    }
+  }
+}

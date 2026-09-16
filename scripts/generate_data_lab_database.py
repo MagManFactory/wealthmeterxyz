@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 import csv
+import html
 import io
+import json
+import os
 import re
 import unicodedata
 import zlib
@@ -10,7 +13,7 @@ from pathlib import Path
 import requests
 
 WEALTHMETER_ROOT = Path(__file__).resolve().parents[1]
-DATA_LAB_PATH = WEALTHMETER_ROOT / 'data-lab.html'
+DATA_LAB_JSON_PATH = WEALTHMETER_ROOT / 'data' / 'data-lab.json'
 
 # Keep this list aligned with Wealth Explorer/Atlas core coverage.
 TARGET_ISO3 = [
@@ -96,8 +99,8 @@ WID_VARIABLES = [
     },
 ]
 
-WID_API_KEY = ''
-WID_HEADERS = {'x-api-key': WID_API_KEY}
+WID_API_KEY = os.environ.get('WID_API_KEY', '').strip()
+WID_HEADERS = {'x-api-key': WID_API_KEY} if WID_API_KEY else None
 
 
 def clean_country_name(name: str) -> str:
@@ -117,10 +120,6 @@ def clean_country_name(name: str) -> str:
 
 def normalize_key(name: str) -> str:
     return re.sub(r'[^a-z0-9]', '', (name or '').lower())
-
-
-def escape_js_str(s: str) -> str:
-    return s.replace('\\', '\\\\').replace("'", "\\'")
 
 
 def make_ref_slug(country_name: str) -> str:
@@ -157,13 +156,6 @@ def latest_point(points):
 
 def earliest_point(points):
     return points[0] if points else None
-
-
-def value_for_year(points, year_i):
-    for y, v in points:
-        if y == year_i:
-            return v
-    return None
 
 
 def get_wb_country_meta():
@@ -257,6 +249,8 @@ def pick_latest_value(values, min_year=2018):
 
 
 def get_wid_latest(iso2_to_iso3):
+    if not WID_API_KEY:
+        raise RuntimeError('WID_API_KEY is required to refresh World Inequality Database records')
     country_names = get_wid_country_map()
     latest_by_query = {}
 
@@ -512,24 +506,6 @@ def get_derived_insight_entries(wb_countries, wb_series_by_indicator, wid_latest
                 'source': 'Derived from World Bank Open Data (NY.GDP.PCAP.PP.CD)',
             })
 
-        if gdp_points and cons_points:
-            gdp_map = {y: v for y, v in gdp_points}
-            cons_map = {y: v for y, v in cons_points}
-            common_years = sorted(set(gdp_map.keys()) & set(cons_map.keys()))
-            if common_years:
-                y = common_years[-1]
-                if gdp_map[y] > 0:
-                    ratio = (cons_map[y] / gdp_map[y]) * 100
-                    insights.append({
-                        'dim': 'Insight',
-                        'text': (
-                            f"In <span class='fact-val'>{country}</span>, household consumption per capita equaled "
-                            f"<span class='fact-val'>{ratio:.1f}%</span> of GDP per capita PPP in {y}."
-                        ),
-                        'ref': f"INS-WB-CONSRATIO-{iso3}-{y}",
-                        'source': 'Derived from World Bank Open Data (NE.CON.PRVT.PC.KD + NY.GDP.PCAP.PP.CD)',
-                    })
-
         if life_points and gdp_points:
             life_map = {y: v for y, v in life_points}
             gdp_map = {y: v for y, v in gdp_points}
@@ -707,52 +683,112 @@ def dedupe_entries(entries):
     return out
 
 
-def render_js_array(var_name, entries):
-    lines = [f'    const {var_name} = [']
-    for e in entries:
-        dim = escape_js_str(e['dim'])
-        text = escape_js_str(e['text'])
-        ref = escape_js_str(e['ref'])
-        source = escape_js_str(e['source'])
-        lines.append(
-            f"        {{ dim: '{dim}', text: '{text}', ref: '{ref}', source: '{source}' }},"
-        )
-    lines.append('    ];')
-    return '\n'.join(lines)
+METRIC_PREFIXES = [
+    ('WID-TOP1WEALTH-', 'top1_wealth'),
+    ('WID-TOP10WEALTH-', 'top10_wealth'),
+    ('WID-TOP1INC-', 'top1_income'),
+    ('WID-TOP10INC-', 'top10_income'),
+    ('WID-BOT50INC-', 'bottom50_income'),
+    ('WB-GDPPCP-', 'gdp_per_capita_ppp'),
+    ('WB-CONS-', 'consumption_per_capita'),
+    ('WB-POPT-', 'population'),
+    ('WB-LIFE-', 'life_expectancy'),
+    ('USC-IDBPOP-', 'idb_population'),
+    ('USC-IDB65SH-', 'age65_share'),
+    ('OECD-UNR-', 'historical_unemployment'),
+    ('OECD-GDPG-', 'historical_gdp_growth'),
+    ('INS-WID-TOP1OF10INC-', 'top1_within_top10_income'),
+    ('INS-WID-TOP1OF10WEALTH-', 'top1_within_top10_wealth'),
+    ('INS-WID-WEALTHVINC-', 'wealth_income_concentration_gap'),
+    ('INS-WID-T10VSB50-', 'top10_bottom50_income_multiple'),
+    ('INS-WB-GDPTREND-', 'gdp_per_capita_trend'),
+    ('INS-WB-LIFEGDP-', 'life_expectancy_gdp_change'),
+    ('INS-CROSS-AGINGGDP-', 'aging_life_gdp_context'),
+    ('INS-OECD-', 'historical_pandemic_change'),
+]
 
 
-def update_data_lab(raw_entries, insight_entries):
-    html = DATA_LAB_PATH.read_text(encoding='utf-8')
-    replacement = (
-        render_js_array('database', raw_entries)
-        + '\n\n'
-        + render_js_array('insightDatabase', insight_entries)
-    )
+def plain_text(value):
+    return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', '', value))).strip()
 
-    html_new, n = re.subn(
-        r"\s*const database = \[.*?\n\s*\];(?:\n\n\s*const insightDatabase = \[.*?\n\s*\];)?(?:\n\n\s*const dataPool = database.concat\(insightDatabase\);)?",
-        '\n' + replacement,
-        html,
-        count=1,
-        flags=re.S,
-    )
-    if n != 1:
-        raise RuntimeError('Failed to locate const database block in data-lab.html')
 
-    html_new = html_new.replace(
-        'DATABASE: 1000+ VERIFIED GLOBAL WEALTH FACTOIDS // REAL-DATA NODES (WORLD BANK API)',
-        'DATABASE: 1000+ VERIFIED GLOBAL WEALTH FACTOIDS // MULTI-SOURCE REAL-DATA NODES (WB + WID + OECD + CENSUS)',
-    )
-    html_new = html_new.replace(
-        'Categories: Healthcare, Longevity, Spending, Mobility, Indicators',
-        'Categories: GDP, Spending, Demographics, Longevity, Inequality, Wealth, Labor Market, Growth, Insight',
-    )
-    html_new = html_new.replace(
-        'Categories: GDP, Spending, Demographics, Longevity, Inequality, Wealth, Labor Market, Growth',
-        'Categories: GDP, Spending, Demographics, Longevity, Inequality, Wealth, Labor Market, Growth, Insight',
-    )
+def fact_values(value):
+    return [plain_text(match) for match in re.findall(r"<span class=['\"]fact-val['\"]>(.*?)</span>", value)]
 
-    DATA_LAB_PATH.write_text(html_new, encoding='utf-8')
+
+def metric_key(ref):
+    for prefix, key in METRIC_PREFIXES:
+        if ref.startswith(prefix):
+            return key
+    return 'other'
+
+
+def source_id(source):
+    if 'World Inequality' in source:
+        return 'wid'
+    if 'Census' in source:
+        return 'census-idb'
+    if 'OECD' in source:
+        return 'oecd-eo107'
+    return 'world-bank'
+
+
+def iso_from_ref(ref):
+    match = re.search(r'-([A-Z]{3})-(?:20\d{2}|20\d{2}Q\d)(?:-|$)', ref)
+    return match.group(1) if match else None
+
+
+def numeric_value(display):
+    if not display:
+        return None
+    match = re.search(r'[+-]?\d+(?:\.\d+)?', display.replace(',', ''))
+    return float(match.group(0)) if match else None
+
+
+def write_data_lab_json(raw_entries, insight_entries):
+    country_to_iso = {}
+    for entry in raw_entries:
+        values = fact_values(entry['text'])
+        iso3 = iso_from_ref(entry['ref'])
+        if values and iso3 and not entry['ref'].startswith('USC-'):
+            country_to_iso[values[0]] = iso3
+
+    records = []
+    for entry in raw_entries + insight_entries:
+        source = entry['source']
+        values = fact_values(entry['text'])
+        country = values[0] if values else None
+        year_candidates = re.findall(r'20\d{2}', f"{entry['ref']} {plain_text(entry['text'])}")
+        derived = entry['ref'].startswith('INS-')
+        records.append({
+            'id': entry['ref'],
+            'kind': 'derived' if derived else 'observation',
+            'status': 'historical' if 'OECD' in source else 'current',
+            'dimension': entry['dim'],
+            'metric': metric_key(entry['ref']),
+            'country': country,
+            'countryCode': iso_from_ref(entry['ref']) or country_to_iso.get(country),
+            'year': int(year_candidates[-1]) if year_candidates else None,
+            'value': None if derived else numeric_value(values[1] if len(values) > 1 else None),
+            'displayValue': values[1] if len(values) > 1 else None,
+            'statement': plain_text(entry['text']),
+            'sourceId': source_id(source),
+            'sourceLabel': source,
+        })
+
+    payload = {
+        'schemaVersion': 2,
+        'generatedAt': date.today().isoformat(),
+        'coverage': {
+            'coreCountries': len(TARGET_ISO3),
+            'currentRecords': sum(row['status'] == 'current' for row in records),
+            'historicalRecords': sum(row['status'] == 'historical' for row in records),
+            'derivedInsights': sum(row['kind'] == 'derived' for row in records),
+        },
+        'records': records,
+    }
+    DATA_LAB_JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
+    DATA_LAB_JSON_PATH.write_text(json.dumps(payload, indent=2) + '\n', encoding='utf-8')
 
 
 def main():
@@ -788,10 +824,10 @@ def main():
     raw_entries.sort(key=lambda e: (e['dim'], e['ref']))
     insight_entries.sort(key=lambda e: (e['dim'], e['ref']))
 
-    update_data_lab(raw_entries, insight_entries)
+    write_data_lab_json(raw_entries, insight_entries)
 
     total_entries = len(raw_entries) + len(insight_entries)
-    print(f'Generated {total_entries} entries in {DATA_LAB_PATH}')
+    print(f'Generated {total_entries} entries in {DATA_LAB_JSON_PATH}')
     print(f'  base rows:    {len(raw_entries)}')
     print(f'  insight rows: {len(insight_entries)}')
 
