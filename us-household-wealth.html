@@ -64,6 +64,7 @@
         .result-kicker { color:var(--blue); font-size:.74rem; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
         .band { margin:10px 0 6px; font:900 clamp(2rem,5vw,3.5rem)/1 Outfit,sans-serif; letter-spacing:-.035em; }
         .benchmark-name { color:var(--muted); font-size:.92rem; }
+        .position-summary { margin:18px 0 0; padding:15px 17px; border-left:4px solid var(--blue); border-radius:0 12px 12px 0; background:var(--soft); color:var(--ink); font-size:1rem; font-weight:800; line-height:1.5; }
         .stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:30px 0; }
         .stat { padding:20px; border:1px solid var(--line); border-radius:18px; background:#fff; }
         .stat-label { color:var(--muted); font-size:.68rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
@@ -476,6 +477,7 @@
                         <div class="result-kicker">Your household wealth range</div>
                         <div class="band" id="bandLabel"></div>
                         <div class="benchmark-name" id="benchmarkLabel"></div>
+                        <p class="position-summary" id="positionSummary"></p>
                         <div class="stat-grid">
                             <div class="stat"><div class="stat-label">Percentile interval</div><div class="stat-value" id="percentileRange"></div></div>
                             <div class="stat"><div class="stat-label">Household rank interval</div><div class="stat-value" id="rankRange"></div></div>
@@ -624,6 +626,26 @@
         if(value>=99) return value.toFixed(3);
         return value.toFixed(1);
     }
+    function formatTopShare(value){
+        if(value<0.01) return value.toFixed(4);
+        if(value<0.1) return value.toFixed(3);
+        if(value<1) return value.toFixed(2);
+        return value.toFixed(1);
+    }
+    function comparisonDescription(group){
+        if(group.name==='All U.S. households') return 'all U.S. households';
+        if(group.name.startsWith('Householder ')) return `U.S. households with a ${group.name.toLowerCase()}`;
+        if(group.name.endsWith(' households')) return `U.S. ${group.name.toLowerCase()}`;
+        return group.name.toLowerCase();
+    }
+    function positionSummary(group,lower,upper){
+        const topLow=Math.max(0,100-upper);
+        const topHigh=Math.max(topLow,100-lower);
+        const topRange=Math.abs(topHigh-topLow)<0.00005
+            ? `${formatTopShare(topLow)}%`
+            : `${formatTopShare(topLow)}%–${formatTopShare(topHigh)}%`;
+        return `Your household is in approximately the top ${topRange} of ${comparisonDescription(group)}.`;
+    }
     function calculateHousehold(){
         const wealthInput = document.getElementById('householdWealth');
         const rawWealth = wealthInput.value.trim();
@@ -660,6 +682,7 @@
         document.getElementById('resultContent').style.display='block';
         document.getElementById('bandLabel').textContent=bandLabel;
         document.getElementById('benchmarkLabel').textContent=`Benchmark: ${group.name} · ${compact(group.count)} households`;
+        document.getElementById('positionSummary').textContent=positionSummary(group,lower,upper);
         document.getElementById('percentileRange').textContent=`${formatPercent(lower)}–${formatPercent(upper)}`;
         document.getElementById('rankRange').textContent=`#${compactRank(richerLow)}–#${compactRank(richerHigh)}`;
         document.getElementById('bandNote').textContent=model==='hybrid'
@@ -672,14 +695,14 @@
         document.getElementById('shareBand').textContent=bandLabel;
         document.getElementById('sharePercent').textContent=`${formatPercent(lower)}–${formatPercent(upper)}`;
         document.getElementById('shareRank').textContent=`#${compactRank(richerLow)}–#${compactRank(richerHigh)}`;
-        document.getElementById('shareBenchmark').textContent=`Benchmark: ${group.name} · ${compact(group.count)} households`;
+        document.getElementById('shareBenchmark').textContent=positionSummary(group,lower,upper);
         document.getElementById('shareModel').textContent=model==='hybrid'?'Census + Federal Reserve hybrid diagnostic':'2024 Census wealth diagnostic';
         document.getElementById('shareSource').innerHTML=model==='hybrid'
             ? 'Census 2025 SIPP + Federal Reserve 2022 SCF<br>SCF dollars adjusted to 2024 with CPI-U'
             : 'U.S. Census Bureau · 2025 SIPP<br>Wealth year 2024 · Released July 2026';
         return true;
     }
-    function resultText(){ return `My household net worth is in the ${latest.bandLabel} ${latest.model==='hybrid'?'hybrid upper-tail':'Census'} wealth band — the ${formatPercent(latest.lower)}–${formatPercent(latest.upper)} percentile for ${latest.group.name.toLowerCase()}.`; }
+    function resultText(){ return `${positionSummary(latest.group,latest.lower,latest.upper)} My household net worth is in the ${latest.bandLabel} ${latest.model==='hybrid'?'hybrid upper-tail':'Census'} wealth band.`; }
     async function shareResult(platform){
         if(!latest && !calculateHousehold()) return;
         const text=resultText(), page='https://wealthmeter.xyz/us-household-wealth.html';
