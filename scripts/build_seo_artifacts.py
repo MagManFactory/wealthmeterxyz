@@ -614,9 +614,7 @@ CROSS_PROPERTY_BAND_RE = re.compile(
 
 
 def article_firewall_markup(header_html: str, footer_html: str) -> tuple[str, str]:
-    """Remove sister-brand calls from article chrome while preserving site navigation."""
-    header_html = SISTER_NAV_GROUP_RE.sub("", header_html)
-    header_html = SISTER_LINK_RE.sub("", header_html)
+    """Keep reciprocal site navigation in article headers while limiting footer promotions."""
     footer_html = CROSS_PROPERTY_BAND_RE.sub("", footer_html)
     footer_html = SISTER_LINK_RE.sub("", footer_html)
     return header_html, footer_html
