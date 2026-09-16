@@ -330,7 +330,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-analyze">Analyze</span>
                 <div class="dropdown">
                     <a href="global_explorer.html">Wealth Explorer</a>
-                    <a href="country-systems-phase1.html">Country Systems Atlas</a>
+                    <a href="country-systems-atlas.html">Country Systems Atlas</a>
                     <a href="atlas.html">Longevity Atlas</a>
                     <a href="data-lab.html">Data Lab</a>
                     <a href="wealth-briefs.html">Wealth Briefs</a>
@@ -420,7 +420,7 @@ const siteFooter = `
         <a href="about.html">About</a>
         <a href="editorial-policy.html">Editorial Standards</a>
         <a href="data-sources.html">Data Sources</a>
-        <a href="country-systems-phase1.html">Country Systems Atlas</a>
+        <a href="country-systems-atlas.html">Country Systems Atlas</a>
         <a href="methodology.html">Methodology</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="disclaimer.html">Disclaimer</a>
