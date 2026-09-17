@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!-- DEV PROTOTYPE: thin hub for PPW tools — candidate to replace old 5-mode page content -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Purchasing Power of Wealth (DEV Hub) | WEALTHMETER.XYZ</title>
+  <meta name="description" content="WealthMeter purchasing-power tools: where you’re richest, and what lifestyle costs abroad.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg-body: #f8fafc;
+  --bg-gradient: radial-gradient(circle at 10% 20%, rgba(37,99,235,0.05) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(8,145,178,0.05) 0%, transparent 40%);
+  --panel-bg: rgba(255,255,255,0.95);
+  --panel-border: rgba(255,255,255,0.8);
+  --panel-shadow: 0 25px 50px -12px rgba(15,23,42,0.1);
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --line: #dbe4f0;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --primary: #2563eb;
+  --accent: #0891b2;
+  --accent-gradient: linear-gradient(135deg, #2563eb, #0891b2);
+  --green: #059669;
+  --green-bg: #dcfce7;
+  --red: #dc2626;
+  --toggle-icon: #0f172a;
+  --track-bg: #f4f8ff;
+  --track-border: #d8e3f5;
+}
+body.dark-mode {
+  --bg-body: #020617;
+  --bg-gradient: radial-gradient(circle at 10% 20%, rgba(37,99,235,0.15) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(8,145,178,0.1) 0%, transparent 40%);
+  --panel-bg: rgba(15,23,42,0.88);
+  --panel-border: rgba(255,255,255,0.08);
+  --panel-shadow: 0 40px 80px -20px rgba(0,0,0,0.7);
+  --card-bg: rgba(30,41,59,0.5);
+  --card-border: rgba(255,255,255,0.08);
+  --line: rgba(255,255,255,0.1);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --input-bg: rgba(0,0,0,0.4);
+  --input-border: rgba(255,255,255,0.1);
+  --track-bg: rgba(37,99,235,0.08);
+  --track-border: rgba(255,255,255,0.1);
+  --toggle-icon: #fbbf24;
+}
+* { box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-body);
+  background-image: var(--bg-gradient);
+  color: var(--text-main);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s, color 0.3s;
+}
+.wrap { width: 100%; max-width: 920px; margin: 0 auto; padding: 1.5rem 1.15rem 3.5rem; position: relative; }
+.theme-toggle {
+  position: absolute; top: 1.25rem; right: 1.15rem;
+  background: var(--panel-bg); border: 1px solid var(--panel-border);
+  padding: 10px; border-radius: 50%; cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  display: flex; align-items: center; justify-content: center; z-index: 10;
+}
+.theme-toggle svg { width: 20px; height: 20px; fill: var(--toggle-icon); }
+.hero {
+  background: linear-gradient(145deg, #ffffff 0%, #eef4ff 62%, #edfaff 100%);
+  border: 1px solid var(--line); border-radius: 24px;
+  padding: 1.35rem 1.5rem; margin-bottom: 1.15rem; margin-top: 0.5rem;
+}
+body.dark-mode .hero {
+  background: linear-gradient(145deg, rgba(30,41,59,0.6) 0%, rgba(37,99,235,0.12) 62%, rgba(8,145,178,0.08) 100%);
+}
+.kicker {
+  font-family: 'Roboto Mono', monospace; text-transform: uppercase;
+  letter-spacing: 0.13em; font-size: 0.72rem; color: var(--primary); font-weight: 700;
+}
+.hero h1 {
+  margin: 0.65rem 0 0.45rem; font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.7rem, 4.5vw, 2.55rem); line-height: 1.08; letter-spacing: -0.03em;
+}
+.hero-desc { margin: 0; color: var(--text-muted); line-height: 1.65; font-size: 0.95rem; max-width: 640px; }
+.panel {
+  background: var(--panel-bg); backdrop-filter: blur(24px);
+  border: 1px solid var(--panel-border); border-radius: 20px;
+  padding: 1.35rem 1.35rem 1.5rem; box-shadow: var(--panel-shadow); margin-bottom: 1.15rem;
+}
+.dock-label {
+  font-family: 'Roboto Mono', monospace; font-size: 0.64rem; text-transform: uppercase;
+  letter-spacing: 0.14em; color: var(--primary); font-weight: 700; margin-bottom: 1rem;
+}
+label {
+  font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--text-muted); font-weight: 700; margin-bottom: 0.35rem; display: block;
+}
+.field { margin-bottom: 0.9rem; }
+.field:last-child { margin-bottom: 0; }
+input[type="number"], input[type="text"], .ss-trigger {
+  width: 100%; height: 52px; background: var(--input-bg); border: 1px solid var(--input-border);
+  border-radius: 12px; padding: 0 14px; font-family: 'Inter', sans-serif;
+  font-weight: 600; font-size: 15px; color: var(--text-main);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input[type="number"]:focus, input[type="text"]:focus, .ss-trigger:focus {
+  border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+.money-input {
+  font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em;
+}
+.cta {
+  width: 100%; margin-top: 1.1rem; height: 54px; border: none; border-radius: 14px;
+  background: var(--accent-gradient); color: #fff; font-family: 'Outfit', sans-serif;
+  font-weight: 800; font-size: 1.05rem; letter-spacing: -0.01em; cursor: pointer;
+  box-shadow: 0 10px 24px rgba(37,99,235,0.28); transition: transform 0.15s, box-shadow 0.15s;
+}
+.cta:hover { transform: translateY(-1px); box-shadow: 0 14px 28px rgba(37,99,235,0.34); }
+.cta:active { transform: translateY(0); }
+.cta.secondary {
+  background: var(--card-bg); color: var(--text-main); border: 1px solid var(--card-border);
+  box-shadow: none; margin-top: 0.55rem;
+}
+body.dark-mode .cta.secondary { background: rgba(255,255,255,0.04); }
+
+/* Searchable select */
+.ss { position: relative; }
+.ss-trigger {
+  display: flex; align-items: center; justify-content: space-between; cursor: pointer; text-align: left;
+}
+.ss-trigger .ss-val { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ss-trigger .chev { color: var(--text-muted); font-size: 0.75rem; margin-left: 8px; flex-shrink: 0; }
+.ss-panel {
+  display: none; position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 40;
+  background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(15,23,42,0.18); overflow: hidden;
+}
+.ss.open .ss-panel { display: block; }
+.ss-search { width: 100%; border: none; border-bottom: 1px solid var(--line); border-radius: 0;
+  height: 46px; padding: 0 14px; background: transparent; font-weight: 500; }
+.ss-list { max-height: 260px; overflow-y: auto; padding: 0.35rem; }
+.ss-group {
+  font-family: 'Roboto Mono', monospace; font-size: 0.62rem; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--text-muted); padding: 0.55rem 0.65rem 0.25rem; font-weight: 700;
+}
+.ss-opt {
+  padding: 0.65rem 0.75rem; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 0.9rem;
+  display: flex; justify-content: space-between; gap: 0.5rem;
+}
+.ss-opt:hover, .ss-opt.active { background: #eff6ff; color: var(--primary); }
+body.dark-mode .ss-opt:hover, body.dark-mode .ss-opt.active { background: rgba(37,99,235,0.2); }
+.ss-opt .meta { font-family: 'Roboto Mono', monospace; font-size: 0.7rem; color: var(--text-muted); font-weight: 500; }
+.ss-empty { padding: 1rem; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+
+.results { opacity: 0; transform: translateY(14px); transition: opacity 0.45s ease, transform 0.45s ease; }
+.results.visible { opacity: 1; transform: translateY(0); }
+.viral {
+  text-align: center; padding: 1.6rem 1.2rem 1.4rem; margin-bottom: 1.1rem; border-radius: 18px;
+  background: linear-gradient(145deg, #0f172a 0%, #1e3a5f 55%, #0c4a6e 100%); color: #f8fafc;
+  position: relative; overflow: hidden;
+}
+.viral::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(37,99,235,0.35) 0%, transparent 50%);
+  pointer-events: none;
+}
+.viral-kicker {
+  font-family: 'Roboto Mono', monospace; font-size: 0.68rem; text-transform: uppercase;
+  letter-spacing: 0.16em; color: #93c5fd; font-weight: 700; position: relative;
+}
+.viral-giant {
+  font-family: 'Outfit', sans-serif; font-size: clamp(1.85rem, 5.5vw, 3.1rem); font-weight: 800;
+  line-height: 1.12; margin: 0.55rem 0 0.35rem; letter-spacing: -0.03em; position: relative;
+}
+.viral-giant .hi { color: #38bdf8; }
+.viral-sub { font-size: 0.9rem; color: #94a3b8; position: relative; line-height: 1.5; }
+.lifestyle-line {
+  margin-top: 0.85rem; padding: 0.85rem 1rem; border-radius: 12px;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+  font-size: 0.92rem; line-height: 1.5; position: relative; color: #e2e8f0;
+}
+.metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem; margin-bottom: 1.1rem; }
+@media (max-width: 560px) { .metric-grid { grid-template-columns: 1fr; } }
+.metric {
+  background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 0.85rem 0.95rem;
+}
+.metric .ml {
+  font-family: 'Roboto Mono', monospace; font-size: 0.62rem; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.25rem;
+}
+.metric .mv { font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 800; }
+.metric .ms { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.15rem; }
+.rank-block { margin-top: 0.35rem; }
+.rank-block h3 {
+  font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 800; margin: 0 0 0.65rem;
+}
+.rank-row {
+  display: grid; grid-template-columns: 36px 1fr auto; gap: 0.55rem; align-items: center;
+  padding: 0.7rem 0.75rem; border: 1px solid var(--card-border); border-radius: 12px;
+  background: var(--card-bg); margin-bottom: 0.4rem;
+}
+.rank-row.top { border-color: #93c5fd; background: linear-gradient(135deg, var(--card-bg), #eff6ff); }
+body.dark-mode .rank-row.top { background: linear-gradient(135deg, var(--card-bg), rgba(37,99,235,0.15)); }
+.rank-n {
+  font-family: 'Roboto Mono', monospace; font-weight: 700; color: var(--primary); font-size: 0.85rem;
+}
+.rank-name { font-weight: 700; font-size: 0.9rem; }
+.rank-sub { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.1rem; }
+.rank-mult {
+  font-family: 'Roboto Mono', monospace; font-weight: 700; font-size: 0.88rem; color: var(--green); white-space: nowrap;
+}
+.rank-list-full { max-height: 420px; overflow-y: auto; margin-top: 0.5rem; padding-right: 2px; }
+.seg {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; margin-bottom: 0.9rem;
+}
+.seg-btn {
+  padding: 0.7rem 0.5rem; border: 2px solid var(--card-border); border-radius: 10px;
+  background: var(--card-bg); font-family: inherit; font-weight: 700; font-size: 0.78rem;
+  color: var(--text-muted); cursor: pointer; transition: all 0.2s; text-align: center;
+}
+.seg-btn.active { border-color: var(--primary); background: #eff6ff; color: var(--primary); }
+body.dark-mode .seg-btn.active { background: rgba(37,99,235,0.2); }
+.expander {
+  margin-top: 1rem; border: 1px solid var(--line); border-radius: 16px; background: var(--track-bg); overflow: hidden;
+}
+.expander summary {
+  padding: 1rem 1.15rem; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 0.92rem;
+  cursor: pointer; list-style: none;
+}
+.expander summary::-webkit-details-marker { display: none; }
+.expander summary::after { content: '+'; float: right; color: var(--text-muted); }
+.expander[open] summary::after { content: '−'; }
+.expander-body { padding: 0 1.15rem 1.15rem; }
+.note {
+  font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; margin-top: 0.65rem;
+}
+.assumption {
+  font-family: 'Roboto Mono', monospace; font-size: 0.68rem; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--accent); font-weight: 700; margin: 0.75rem 0 0.5rem;
+}
+.retire-row {
+  display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+  padding: 0.65rem 0.75rem; border: 1px solid var(--card-border); border-radius: 10px;
+  background: var(--card-bg); margin-bottom: 0.4rem; font-size: 0.86rem;
+}
+.retire-row.ok { border-color: #86efac; background: linear-gradient(135deg, var(--card-bg), #f0fdf4); }
+body.dark-mode .retire-row.ok { background: linear-gradient(135deg, var(--card-bg), rgba(5,150,105,0.12)); }
+.badge {
+  font-family: 'Roboto Mono', monospace; font-size: 0.62rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; padding: 0.28rem 0.5rem; border-radius: 6px; white-space: nowrap;
+}
+.badge.yes { background: var(--green-bg); color: #166534; }
+.badge.no { background: #fee2e2; color: #991b1b; }
+body.dark-mode .badge.yes { background: rgba(5,150,105,0.25); color: #6ee7b7; }
+body.dark-mode .badge.no { background: rgba(220,38,38,0.25); color: #fca5a5; }
+.share-box {
+  margin-top: 1.25rem; border-top: 1px solid var(--card-border); padding-top: 1.15rem;
+}
+.share-kicker {
+  font-size: 0.68rem; font-weight: 900; letter-spacing: 0.14em; color: var(--text-muted);
+  text-transform: uppercase; margin-bottom: 0.65rem;
+}
+.share-preview {
+  background: var(--track-bg); border: 1px solid var(--line); border-radius: 12px;
+  padding: 0.9rem 1.1rem; font-size: 0.92rem; line-height: 1.5; margin-bottom: 0.85rem; font-weight: 600;
+}
+.share-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.share-btn {
+  padding: 0.6rem 0.95rem; border: 1px solid var(--card-border); border-radius: 10px;
+  background: var(--card-bg); font-family: inherit; font-weight: 700; font-size: 0.8rem;
+  color: var(--text-main); cursor: pointer;
+}
+.share-btn:hover { background: var(--track-bg); }
+.share-status { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.45rem; min-height: 1.1em; }
+.footer-note {
+  margin-top: 1.5rem; padding: 1rem 1.15rem; border-radius: 14px; border: 1px solid var(--line);
+  background: var(--track-bg); font-size: 0.8rem; color: var(--text-muted); line-height: 1.55;
+}
+.footer-note strong { color: var(--text-main); }
+.brand-bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap;
+  margin-bottom: 0.35rem;
+}
+.brand {
+  font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 0.95rem; letter-spacing: -0.02em;
+}
+.brand span { color: var(--primary); }
+.stamp {
+  font-family: 'Roboto Mono', monospace; text-transform: uppercase; letter-spacing: 0.08em;
+  font-size: 0.65rem; color: var(--text-muted); border: 1px solid #c8d8ee; background: #fff;
+  padding: 0.4rem 0.6rem; border-radius: 999px;
+}
+body.dark-mode .stamp { background: rgba(0,0,0,0.3); border-color: var(--line); }
+.hub-grid { display: grid; gap: 1rem; }
+.hub-card {
+  display: block; text-decoration: none; color: inherit;
+  background: var(--panel-bg); border: 1px solid var(--panel-border); border-radius: 20px;
+  padding: 1.35rem 1.4rem; box-shadow: var(--panel-shadow); transition: transform 0.15s, border-color 0.15s;
+}
+.hub-card:hover { transform: translateY(-2px); border-color: var(--primary); }
+.hub-card h2 { font-family: 'Outfit', sans-serif; font-size: 1.35rem; margin: 0.35rem 0 0.45rem; letter-spacing: -0.02em; }
+.hub-card p { margin: 0; color: var(--text-muted); line-height: 1.55; font-size: 0.92rem; }
+.hub-card .arrow { margin-top: 0.85rem; font-weight: 800; color: var(--primary); font-size: 0.88rem; }
+#shareCard {
+  position: absolute; left: -9999px; top: -9999px; width: 1080px; min-height: 1080px;
+  background: #fff; color: #0f172a; padding: 60px; border: 30px solid #2563eb;
+  display: flex; flex-direction: column; font-family: 'Inter', sans-serif;
+}
+.sc-head { border-bottom: 8px solid #2563eb; padding-bottom: 24px; margin-bottom: 32px; }
+.sc-kicker { font-family: 'Roboto Mono', monospace; font-size: 14px; text-transform: uppercase; letter-spacing: 0.15em; color: #2563eb; font-weight: 700; }
+.sc-title { font-family: 'Outfit', sans-serif; font-size: 42px; font-weight: 900; margin-top: 8px; }
+.sc-headline { font-size: 34px; font-weight: 700; line-height: 1.35; margin: 24px 0; }
+.sc-metrics { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: auto; }
+.sc-metric { background: #f1f5f9; border-radius: 16px; padding: 24px; text-align: center; }
+.sc-metric .lbl { font-family: 'Roboto Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; }
+.sc-metric .val { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; margin-top: 8px; }
+.sc-foot { margin-top: 28px; font-family: 'Roboto Mono', monospace; font-size: 14px; color: #64748b; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
+      <svg viewBox="0 0 24 24"><path d="M12 3a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1zm0 15a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zm9-6a1 1 0 0 1-1 1h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1zM5 12a1 1 0 0 1-1 1H3a1 1 0 1 1 0-2h1a1 1 0 0 1 1 1zm12.95 5.536a1 1 0 0 1 0 1.414l-.707.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0zM7.05 5.05a1 1 0 0 1 0 1.414L6.343 7.17A1 1 0 0 1 4.93 5.757l.707-.707A1 1 0 0 1 7.05 5.05zM18.364 5.05a1 1 0 0 1 1.414 0l.707.707A1 1 0 1 1 19.07 7.17l-.707-.707a1 1 0 0 1 0-1.414zM5.636 16.95a1 1 0 0 1 1.414 0l.707.707A1 1 0 0 1 6.343 19.07l-.707-.707a1 1 0 0 1 0-1.414zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg>
+    </button>
+
+    <div class="brand-bar">
+      <div class="brand">WEALTH<span>METER</span></div>
+      <div class="stamp">DEV hub</div>
+    </div>
+
+    <header class="hero">
+      <div class="kicker">Purchasing power · DEV</div>
+      <h1>How far does your wealth go?</h1>
+      <p class="hero-desc">Two focused tools powered by World Bank price levels (USA = 100). Built to replace the old five-mode prototype with clearer jobs-to-be-done.</p>
+    </header>
+
+    <div class="hub-grid">
+      <a class="hub-card" href="./where-richest-dev.html">
+        <div class="kicker">Viral</div>
+        <h2>Where am I richest?</h2>
+        <p>Enter net worth and home. Get a headline destination, buying-power multiple, top 5, and a full ranked list — share-ready.</p>
+        <div class="arrow">Open tool →</div>
+      </a>
+      <a class="hub-card" href="./lifestyle-abroad-dev.html">
+        <div class="kicker">Practical</div>
+        <h2>Lifestyle abroad</h2>
+        <p>Compare monthly spend at home vs a destination, or scan the top 10 cheaper places. Optional retirement runway expander.</p>
+        <div class="arrow">Open tool →</div>
+      </a>
+    </div>
+
+    <footer class="footer-note">
+      <strong>Ship note:</strong> This hub is a thin landing page for <code>where-richest-dev.html</code> and <code>lifestyle-abroad-dev.html</code>.
+      Both load <code>./ppw-real-data.js</code>. Intended live paths (after merge):
+      <code>/purchasing-power-wealth-hub-dev.html</code>,
+      <code>/where-richest-dev.html</code>,
+      <code>/lifestyle-abroad-dev.html</code>.
+      Legacy five-mode page: <a href="https://wealthmeter.xyz/purchasing-power-wealth-dev.html">purchasing-power-wealth-dev.html</a>.
+    </footer>
+  </div>
+  <script>
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('ppw-dark', document.body.classList.contains('dark-mode') ? '1' : '0');
+    });
+    if (localStorage.getItem('ppw-dark') === '1') document.body.classList.add('dark-mode');
+  </script>
+</body>
+</html>
