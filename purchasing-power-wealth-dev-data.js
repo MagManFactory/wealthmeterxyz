@@ -44,6 +44,13 @@ const PPW_DATA = {
     general: "General consumption",
   },
 
+  // Default home monthly spend by lifestyle (USD, illustrative household budgets)
+  homeMonthlySpend: {
+    retiree: 4200,
+    family: 6800,
+    single: 5200,
+  },
+
   lifestyleProfiles: {
     retiree: {
       label: "Retiree",
@@ -421,24 +428,46 @@ const PPW_ENGINE = (function createEngine(data) {
     };
   }
 
-  function lifestyleSpendAbroad(annualSpend, homeId, destId, options) {
+  function lifestyleSpendAbroad(homeSpend, homeId, destId, options, period) {
     const home = getComposite(homeId, options);
     const dest = getComposite(destId, options);
     if (!home || !dest) return null;
     const multiplier = home.composite / dest.composite;
-    const requiredSpend = annualSpend * multiplier;
-    const savingsPct = ((annualSpend - requiredSpend) / annualSpend) * 100;
+    const requiredSpend = homeSpend * multiplier;
+    const delta = requiredSpend - homeSpend;
+    const savingsPct = homeSpend > 0 ? ((homeSpend - requiredSpend) / homeSpend) * 100 : 0;
+    const per = period === "month" ? "mo" : "yr";
     return {
-      homeSpend: annualSpend,
+      homeSpend,
       destSpend: requiredSpend,
+      delta,
       multiplier,
       savingsPct,
+      period: per,
       homeLabel: home.loc.label,
       destLabel: dest.loc.label,
-      interpretation: requiredSpend < annualSpend
-        ? `You could maintain your lifestyle for ${formatMoney(requiredSpend)}/yr — ${Math.abs(savingsPct).toFixed(0)}% less than at home.`
-        : `You would need ${formatMoney(requiredSpend)}/yr — ${Math.abs(savingsPct).toFixed(0)}% more than at home.`,
+      interpretation: delta < 0
+        ? `Maintain your lifestyle for ${formatMoney(Math.abs(requiredSpend))}/${per} — ${formatMoney(Math.abs(delta))}/${per} less than home.`
+        : `You would need ${formatMoney(requiredSpend)}/${per} — ${formatMoney(delta)}/${per} more than home.`,
     };
+  }
+
+  function equivalentWealthAtDest(netWorth, homeId, destId, options) {
+    const mult = wealthPowerMultiplier(homeId, destId, options);
+    if (mult == null) return null;
+    const home = getComposite(homeId, options);
+    const dest = getComposite(destId, options);
+    return {
+      nominal: netWorth,
+      equivalent: netWorth * mult,
+      multiplier: mult,
+      homeLabel: home.loc.label,
+      destLabel: dest.loc.label,
+    };
+  }
+
+  function defaultMonthlySpend(lifestyle) {
+    return data.homeMonthlySpend[lifestyle] || data.homeMonthlySpend.retiree;
   }
 
   function retirementAffordability(assets, annualIncome, targetSpend, homeId, options) {
@@ -519,7 +548,7 @@ const PPW_ENGINE = (function createEngine(data) {
     const p = wealthPercentiles(netWorth, homeId, options);
     const home = getLocation(homeId);
     const homeShort = home?.label.split(",")[0] || "home";
-    return `${formatMoney(netWorth)} in ${homeShort}: ${p.contrast} — WealthMeter Purchasing Power (prototype)`;
+    return `${formatMoney(netWorth)} in ${homeShort}: ${p.contrast} — WealthMeter Purchasing Power`;
   }
 
   function categoryBreakdown(homeId, destId, options) {
@@ -547,6 +576,8 @@ const PPW_ENGINE = (function createEngine(data) {
     rankDestinations,
     localPurchasingPower,
     lifestyleSpendAbroad,
+    equivalentWealthAtDest,
+    defaultMonthlySpend,
     retirementAffordability,
     wealthPercentiles,
     shareLineMode1,
