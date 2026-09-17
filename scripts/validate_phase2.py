@@ -5,6 +5,7 @@ required=['embed/wealth-rank.html','embed/wealth-rank.js','assets/wealth-rank-wi
 errors=[f'missing {path}' for path in required if not (ROOT/path).exists()]
 widget=(ROOT/'assets/wealth-rank-widget.js').read_text()
 if 'widget_impression' not in widget or 'intersectionRatio>=.5' not in widget: errors.append('qualified impression rule missing')
+if 'keepalive:true' not in widget or 'navigator.sendBeacon' in widget: errors.append('reliable widget event transport missing')
 if 'canonical' not in (ROOT/'embed/wealth-rank.html').read_text(): errors.append('canonical link missing')
 for sensitive in ('net_worth','input_value','rank_value'):
     if sensitive in widget: errors.append(f'sensitive event key present: {sensitive}')
