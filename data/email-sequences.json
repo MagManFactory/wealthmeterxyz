@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "site": "wealthmeter",
-  "status": "prepared_not_sending",
-  "activationRequires": ["approved sending system", "unsubscribe and suppression handling", "delivery monitoring"],
+  "status": "storage_live_sending_disabled",
+  "activationRequires": ["dispatcher secrets", "owner-controlled seed test", "webhook delivery verification"],
   "sequence": [
     {"day": 0, "purpose": "orientation", "destination": "methodology.html"},
     {"day": 4, "purpose": "analysis", "destination": "longform.html"},
