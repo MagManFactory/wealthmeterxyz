@@ -75,7 +75,7 @@ for hub in "$@"; do
   echo "$hub_url" >> "$TMP_URLS"
   if [ -s "$TMP_PAGE" ]; then
     cat "$TMP_PAGE" \
-      | rg -o 'href="[^"]+\.html"' \
+      | grep -Eo 'href="[^"]+\.html"' \
       | sed -E 's/^href="([^"]+)"$/\1/' \
       | while IFS= read -r rel; do
           sanitized="$(sanitize_candidate "$rel" || true)"
@@ -96,11 +96,12 @@ fi
 
 while IFS= read -r url; do
   [ -z "$url" ] && continue
+  : > "$TMP_HIT"
   ok=0
   for i in $(seq 1 "$RETRIES"); do
     code="$(fetch_status "$url")"
     if [ "$code" = "200" ]; then
-      if ! rg -n -i --pcre2 "$BANNED_REGEX" "$TMP_PAGE" >/tmp/live_content_hit.txt; then
+      if ! grep -Ein "$BANNED_REGEX" "$TMP_PAGE" > "$TMP_HIT"; then
         ok=1
         break
       fi
