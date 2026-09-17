@@ -1,0 +1,101 @@
+.partner-inquiry-form {
+  max-width: 880px;
+  margin: 1.5rem auto 0;
+  text-align: left;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.partner-inquiry-form label {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.partner-inquiry-form input,
+.partner-inquiry-form select,
+.partner-inquiry-form textarea {
+  width: 100%;
+  border: 1px solid #b8c7d9;
+  border-radius: 11px;
+  background: #fff;
+  color: var(--ink);
+  font: 500 1rem/1.4 Inter, system-ui, sans-serif;
+}
+
+.partner-inquiry-form input,
+.partner-inquiry-form select {
+  min-height: 48px;
+  padding: 0.72rem 0.8rem;
+}
+
+.partner-inquiry-form textarea {
+  resize: vertical;
+  min-height: 150px;
+  padding: 0.8rem;
+}
+
+.partner-inquiry-form input:focus,
+.partner-inquiry-form select:focus,
+.partner-inquiry-form textarea:focus {
+  outline: 3px solid rgba(8, 145, 178, 0.2);
+  border-color: #0891b2;
+}
+
+.message-field {
+  margin: 1rem 0;
+}
+
+.fax-field {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.form-status {
+  min-height: 1.5rem;
+  margin: 0.8rem 0 0 !important;
+  color: #0f4c81 !important;
+  font-weight: 750;
+}
+
+.form-status.error {
+  color: #b42318 !important;
+}
+
+.partner-inquiry-form button[disabled] {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+body.dark-mode .partner-inquiry-form label {
+  color: #f8fafc;
+}
+
+body.dark-mode .partner-inquiry-form input,
+body.dark-mode .partner-inquiry-form select,
+body.dark-mode .partner-inquiry-form textarea {
+  border-color: #475569;
+  background: #071426;
+  color: #f8fafc;
+}
+
+body.dark-mode .form-status {
+  color: #7dd3fc !important;
+}
+
+@media (max-width: 700px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

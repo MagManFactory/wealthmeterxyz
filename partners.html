@@ -20,6 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/partner-public.css?v=2026-09-17.1">
 <link rel="stylesheet" href="assets/affiliate-partners.css?v=2026-09-17.1">
+<link rel="stylesheet" href="assets/partner-inquiry.css?v=2026-09-17.1">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"WealthMeter Partners and Publishers","url":"https://wealthmeter.xyz/partners","description":"Approved calculator distribution and governed partnership opportunities from WealthMeter."}</script>
 </head>
 <body>
@@ -32,7 +33,7 @@
 <p class="lede">WealthMeter works with selected publishers, institutions, and commercial partners to distribute transparent wealth tools and support decision-grade financial education. Every relationship remains subject to domain review, claims review, and owner approval.</p>
 <div class="action-row">
 <a class="button" href="embed-tools.html">Explore embeddable tools</a>
-<a class="button secondary" href="mailto:michelle.martin@wealthmeter.xyz?subject=%5BSponsorship%20inquiry%5D%20WealthMeter%20partnership">Contact Michelle Martin</a>
+<a class="button secondary" href="#inquiry-form" data-inquiry-type="underwriting">Start an inquiry</a>
 </div>
 </section>
 <section class="section">
@@ -49,7 +50,7 @@
 <span class="status">Pilot</span>
 <h3>30-day underwriting</h3>
 <p>A restrained “Supported by” placement around a relevant calculator or result surface, with controlled copy, disclosure, aggregate reporting, and no influence over rankings.</p>
-<a href="mailto:michelle.martin@wealthmeter.xyz?subject=%5BUnderwriting%20inquiry%5D%20WealthMeter%20rate%20card">Contact Michelle for the rate card →</a>
+<a href="#inquiry-form" data-inquiry-type="underwriting">Contact Michelle for the rate card →</a>
 </article>
 <article class="card">
 <span class="status">Portfolio</span>
@@ -68,7 +69,7 @@
 <div><strong>What to include</strong><span>Program terms, commission model, attribution window, tracking method, privacy policy, eligible geographies, and every proposed financial or performance claim.</span></div>
 <div><strong>What remains independent</strong><span>Calculator outputs, rankings, editorial conclusions, report recommendations, methodology, and correction decisions.</span></div>
 </div>
-<a class="button" href="mailto:michelle.martin@wealthmeter.xyz?subject=%5BAffiliate%20inquiry%5D%20WealthMeter%20partnership">Submit an affiliate inquiry</a>
+<a class="button" href="#inquiry-form" data-inquiry-type="affiliate">Submit an affiliate inquiry</a>
 </section>
 <section class="section">
 <h2>How approval works</h2>
@@ -127,20 +128,30 @@
 <li>No placement goes live without final owner approval.</li>
 </ul>
 </section>
-<section class="section contact-panel">
+<section class="section contact-panel" id="inquiry-form">
 <p class="eyebrow">Start a review</p>
-<h2>Tell us what you want to build and where it would appear.</h2>
-<p>Include the publisher or company name, website, intended audience, proposed placement, and whether the request concerns widget distribution, underwriting, an affiliate relationship, or a portfolio program.</p>
-<div class="action-row centered-actions">
-<a class="button" href="mailto:michelle.martin@wealthmeter.xyz?subject=%5BUnderwriting%20inquiry%5D%20WealthMeter%20rate%20card">Request the underwriting rate card</a>
-<a class="button secondary light-secondary" href="mailto:michelle.martin@wealthmeter.xyz?subject=%5BAffiliate%20inquiry%5D%20WealthMeter%20partnership">Discuss an affiliate partnership</a>
+<h2>Send the proposal directly into owner review.</h2>
+<p>The form records the inquiry in the controlled commercial registry. Michelle Martin coordinates follow-up. No automatic acceptance or rejection occurs.</p>
+<form class="partner-inquiry-form" data-site="wealthmeter" data-endpoint="https://lifemeter.xyz/api/commercial-inquiry" novalidate>
+<div class="form-grid">
+<label>Inquiry type<select name="requestKind" required><option value="underwriting">Underwriting and rate card</option><option value="affiliate">Affiliate partnership</option><option value="distribution">Widget or publisher distribution</option><option value="portfolio">Health × Wealth portfolio program</option></select></label>
+<label>Organization<input name="company" autocomplete="organization" maxlength="140" required></label>
+<label>Contact name<input name="contactName" autocomplete="name" maxlength="140" required></label>
+<label>Email<input name="contactEmail" type="email" autocomplete="email" maxlength="240" required></label>
+<label>Website<input name="website" type="url" inputmode="url" placeholder="https://" maxlength="300" required></label>
+<label>Category<input name="category" placeholder="Planning, savings, insurance…" maxlength="140" required></label>
 </div>
-<p class="small">The subject line allows the inquiry to enter the tracked owner-review workflow. No automatic acceptance or rejection occurs.</p>
+<label class="message-field">Proposal<textarea name="proposalNote" rows="6" minlength="30" maxlength="2000" required placeholder="Describe the product or organization, audience, proposed placement, commercial model, tracking method, privacy policy, and relevant claims."></textarea></label>
+<label class="fax-field" aria-hidden="true">Company fax<input name="companyFax" tabindex="-1" autocomplete="off"></label>
+<button class="button" type="submit">Send for owner review</button>
+<p class="form-status" role="status" aria-live="polite"></p>
+</form>
 </section>
 </main>
 <div id="footer-placeholder">
 </div>
 <script src="components.js?v=2026-09-17.1">
 </script>
+<script src="assets/partner-inquiry.js?v=2026-09-17.1"></script>
 </body>
 </html>
