@@ -25,5 +25,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Allow GitHub Pages to publish
+        run: sleep 60
       - name: Verify live content policy
         run: bash scripts/verify_live_content_policy.sh https://wealthmeter.xyz https://wealthmeter.xyz/longform.html
