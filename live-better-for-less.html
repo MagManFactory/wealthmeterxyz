@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>Live Better for Less: Quality-Adjusted Purchasing Power | WealthMeter</title>
+  <meta name="description" content="Find countries where your household spending may go further without dropping below your selected health, infrastructure, connectivity, essential-services, and safety thresholds.">
+  <link rel="canonical" href="https://wealthmeter.xyz/live-better-for-less.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Live Better for Less | WealthMeter">
+  <meta property="og:description" content="Compare lower-cost countries only after they pass your quality-of-life floor.">
+  <meta property="og:url" content="https://wealthmeter.xyz/live-better-for-less.html">
+  <meta property="og:image" content="https://wealthmeter.xyz/images/live-better-for-less-social.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Live Better for Less | WealthMeter">
+  <meta name="twitter:description" content="Find lower-cost countries that preserve the systems you value.">
+  <meta name="twitter:image" content="https://wealthmeter.xyz/images/live-better-for-less-social.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/live-better-for-less.css?v=2026-09-17.1">
+  <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Live Better for Less","url":"https://wealthmeter.xyz/live-better-for-less.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","isAccessibleForFree":true,"description":"A quality-constrained purchasing-power comparison using World Bank private-consumption price levels and public systems indicators.","provider":{"@type":"Organization","name":"WEALTHMETER.XYZ","url":"https://wealthmeter.xyz/"}}</script>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <main class="lbl-shell">
+    <section class="lbl-hero">
+      <div class="lbl-kicker">Quality-adjusted purchasing power</div>
+      <h1>Where can you live better for less?</h1>
+      <p>Find lower-cost countries only after they pass the quality floor you set. Price advantage is tested against health, essential services, connectivity, infrastructure, sanitation, and reported homicide rates.</p>
+      <div class="lbl-proof-row" aria-label="Data coverage">
+        <span><strong data-country-count>—</strong> comparable countries</span>
+        <span><strong>6</strong> quality measures</span>
+        <span><strong>No</strong> hidden master ranking</span>
+      </div>
+    </section>
+
+    <section class="lbl-panel lbl-controls" aria-labelledby="setup-title">
+      <div class="lbl-section-heading">
+        <div><span class="lbl-eyebrow">Your comparison</span><h2 id="setup-title">Set the life you want to preserve.</h2></div>
+        <p>We compare a national consumption basket. This is a screening tool, not a relocation recommendation.</p>
+      </div>
+      <div class="lbl-control-grid">
+        <div class="lbl-field"><label for="home-country">Home country</label><select id="home-country"></select></div>
+        <div class="lbl-field"><label for="monthly-spend">Monthly household spending</label><div class="lbl-money"><span>$</span><input id="monthly-spend" type="number" min="100" step="100" value="5000" inputmode="decimal"></div></div>
+        <div class="lbl-field"><label for="quality-floor">Quality floor</label><select id="quality-floor"><option value="close" selected>Close match</option><option value="balanced">Balanced</option><option value="open">Open to tradeoffs</option></select></div>
+      </div>
+
+      <fieldset class="lbl-priorities">
+        <legend>Choose up to three priorities</legend>
+        <p>Priorities receive more weight. Every available measure still has a minimum floor.</p>
+        <div class="lbl-chip-row">
+          <label><input type="checkbox" value="health" checked><span>Health</span></label>
+          <label><input type="checkbox" value="essentials"><span>Essential services</span></label>
+          <label><input type="checkbox" value="connectivity" checked><span>Connectivity</span></label>
+          <label><input type="checkbox" value="infrastructure"><span>Infrastructure</span></label>
+          <label><input type="checkbox" value="safety" checked><span>Homicide risk</span></label>
+        </div>
+        <div class="lbl-priority-status" data-priority-status role="status" aria-live="polite"></div>
+      </fieldset>
+      <button class="lbl-run" type="button" data-run>Find my best-value peers</button>
+    </section>
+
+    <section class="lbl-results" data-results hidden aria-live="polite">
+      <div class="lbl-empty" data-empty hidden>
+        <h2>No lower-cost peer clears this floor.</h2>
+        <p>Try the Balanced setting, broaden your priorities, or use Lifestyle Abroad to inspect a specific destination. The tool will not fill the list with countries that fail your selected minimums.</p>
+      </div>
+      <div data-result-content>
+      <article class="lbl-result-hero" data-result-hero></article>
+
+      <div class="lbl-summary-strip" data-summary-strip></div>
+
+      <section class="lbl-panel lbl-map-panel" aria-labelledby="map-title">
+        <div class="lbl-section-heading compact">
+          <div><span class="lbl-eyebrow">The value frontier</span><h2 id="map-title">Lower cost without an unpriced quality drop.</h2></div>
+          <p>Farther right means greater estimated savings. Higher means more of your home-country quality floor is preserved.</p>
+        </div>
+        <div class="lbl-frontier" data-frontier></div>
+      </section>
+
+      <section class="lbl-shortlist" aria-labelledby="shortlist-title">
+        <div class="lbl-section-heading">
+          <div><span class="lbl-eyebrow">Shortlist</span><h2 id="shortlist-title">The strongest tradeoffs, made explicit.</h2></div>
+          <p>Open any card to compare the underlying measures and their observation years.</p>
+        </div>
+        <div class="lbl-card-grid" data-shortlist></div>
+      </section>
+
+      <section class="lbl-panel lbl-share-panel" aria-labelledby="share-title">
+        <div class="lbl-section-heading compact"><div><span class="lbl-eyebrow">Share the finding</span><h2 id="share-title">A result that explains itself.</h2></div></div>
+        <div class="lbl-share-layout">
+          <div class="lbl-share-preview" data-share-preview></div>
+          <div class="lbl-share-actions" aria-label="Share result actions">
+            <button class="share-x" type="button" data-share="x" aria-label="Share on X">X</button>
+            <button class="share-linkedin" type="button" data-share="linkedin" aria-label="Share on LinkedIn">in</button>
+            <button class="share-whatsapp" type="button" data-share="whatsapp" aria-label="Share on WhatsApp">WA</button>
+            <button class="share-telegram" type="button" data-share="telegram" aria-label="Share on Telegram">TG</button>
+            <button class="share-reddit" type="button" data-share="reddit" aria-label="Share on Reddit">r/</button>
+            <button class="share-email" type="button" data-share="email" aria-label="Share by email">✉</button>
+            <button class="share-copy" type="button" data-share="copy" aria-label="Copy result link">↗</button>
+            <button class="share-download" type="button" data-download aria-label="Download result card">↓</button>
+            <p data-share-status role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+      </div>
+    </section>
+
+    <section class="lbl-method-grid">
+      <article class="lbl-panel">
+        <span class="lbl-eyebrow">How it works</span>
+        <h2>Price is ranked only after quality gates pass.</h2>
+        <ol>
+          <li>Convert the home spending budget using private-consumption price levels.</li>
+          <li>Apply the selected quality floor to every available system measure.</li>
+          <li>Require at least five of six measures, including life expectancy and essential services.</li>
+          <li>Rank qualifying countries by a balance of quality preservation and estimated savings.</li>
+        </ol>
+        <a class="lbl-text-link" href="methodology.html#live-better-for-less">Read the full methodology →</a>
+      </article>
+      <article class="lbl-panel">
+        <span class="lbl-eyebrow">Continue exploring</span>
+        <h2>Inspect the systems behind the shortlist.</h2>
+        <p>Use Country Systems Atlas for source-year comparisons, or price a specific move with Lifestyle Abroad.</p>
+        <div class="lbl-link-stack">
+          <a href="country-systems-atlas.html">Open Country Systems Atlas</a>
+          <a href="lifestyle-abroad.html">Price a specific destination</a>
+          <a href="data-lab.html">Explore the Data Lab</a>
+        </div>
+      </article>
+    </section>
+
+    <details class="lbl-disclosure">
+      <summary>Data, limitations and interpretation</summary>
+      <div>
+        <p><strong>Price basis:</strong> World Bank private-consumption purchasing-power parity divided by the official exchange rate, indexed to the United States. This represents a national consumption basket, not a personal quotation.</p>
+        <p><strong>Quality basis:</strong> World Development Indicators for life expectancy, electricity access, internet use, safely managed sanitation, trade and transport infrastructure, and intentional homicide. Years vary by country and measure and are shown in the result cards.</p>
+        <p><strong>Not included:</strong> visas, taxes, housing tenure, healthcare eligibility, political conditions, language, climate, neighborhood variation, imported-goods exposure, or the user’s legal ability to relocate. Verify these separately before making a decision.</p>
+      </div>
+    </details>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="components.js?v=2026-09-17.1"></script>
+  <script src="ppw-real-data.js?v=2026-09-17.1"></script>
+  <script src="assets/live-better-for-less.js?v=2026-09-17.1"></script>
+</body>
+</html>

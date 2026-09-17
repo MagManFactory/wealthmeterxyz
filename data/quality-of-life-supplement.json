@@ -1,0 +1,3414 @@
+{
+  "schemaVersion": 1,
+  "generated": "2026-09-17",
+  "coverage": {
+    "countryCount": 230,
+    "seriesStart": 2018,
+    "seriesEnd": 2026,
+    "selectionRule": "Latest non-null World Development Indicators observation from 2018 onward; no imputation."
+  },
+  "licence": {
+    "publisher": "World Bank",
+    "dataset": "World Development Indicators",
+    "licence": "CC BY 4.0, subject to indicator-level metadata and third-party terms",
+    "terms": "https://data.worldbank.org/summary-terms-of-use",
+    "attribution": "World Bank, World Development Indicators; underlying source organizations are identified per measure."
+  },
+  "indicators": {
+    "internet_use": {
+      "code": "IT.NET.USER.ZS",
+      "label": "Individuals using the internet",
+      "shortLabel": "Internet use",
+      "unit": "percent of population",
+      "format": "percent",
+      "higherIsBetter": true,
+      "sourceClass": "International Telecommunication Union estimates distributed by World Bank WDI"
+    },
+    "sanitation": {
+      "code": "SH.STA.SMSS.ZS",
+      "label": "People using safely managed sanitation services",
+      "shortLabel": "Safe sanitation",
+      "unit": "percent of population",
+      "format": "percent",
+      "higherIsBetter": true,
+      "sourceClass": "WHO/UNICEF Joint Monitoring Programme distributed by World Bank WDI"
+    },
+    "homicide_rate": {
+      "code": "VC.IHR.PSRC.P5",
+      "label": "Intentional homicides",
+      "shortLabel": "Homicide rate",
+      "unit": "per 100,000 people",
+      "format": "rate",
+      "higherIsBetter": false,
+      "sourceClass": "UNODC and national sources distributed by World Bank WDI"
+    }
+  },
+  "countries": [
+    {
+      "code": "AFE",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 30.4
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 26.00782704483
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 12.4
+        }
+      }
+    },
+    {
+      "code": "AFG",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 16.09499931
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 24.7773774153722
+        },
+        "homicide_rate": {
+          "year": 2021,
+          "value": 4.0324584656778
+        }
+      }
+    },
+    {
+      "code": "AFW",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 42.4
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 25.7595302280122
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 11.9
+        }
+      }
+    },
+    {
+      "code": "AGO",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 40.70479965
+        }
+      }
+    },
+    {
+      "code": "ALB",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 85.86389923
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 69.2783375346592
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 1.38708340817063
+        }
+      }
+    },
+    {
+      "code": "AND",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 94.39759827
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 100
+        },
+        "homicide_rate": {
+          "year": 2020,
+          "value": 2.58464719565779
+        }
+      }
+    },
+    {
+      "code": "ARE",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 100
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 98.4496998209727
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 0.693218125037315
+        }
+      }
+    },
+    {
+      "code": "ARG",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 89.66715228
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 4.49291137824536
+        }
+      }
+    },
+    {
+      "code": "ARM",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 81.33930206
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 10.7392367176734
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 2.20833575400906
+        }
+      }
+    },
+    {
+      "code": "ASM",
+      "metrics": {
+        "sanitation": {
+          "year": 2024,
+          "value": 42.93338385795
+        },
+        "homicide_rate": {
+          "year": 2018,
+          "value": 25.5360106858383
+        }
+      }
+    },
+    {
+      "code": "ATG",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 72.73040009
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 10.7163332993983
+        }
+      }
+    },
+    {
+      "code": "AUS",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 96.13140106
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 95.7728957610068
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.854406035826682
+        }
+      }
+    },
+    {
+      "code": "AUT",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 91.92573373
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 98.5023184979939
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.876191031111463
+        }
+      }
+    },
+    {
+      "code": "AZE",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 90.80000181
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 68.0033446575086
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 2.16122820563689
+        }
+      }
+    },
+    {
+      "code": "BDI",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 8.595999718
+        }
+      }
+    },
+    {
+      "code": "BEL",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 95.77579144
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 94.8970100467783
+        },
+        "homicide_rate": {
+          "year": 2021,
+          "value": 1.08030153549307
+        }
+      }
+    },
+    {
+      "code": "BEN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 33.98379898
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 16.3576250471354
+        }
+      }
+    },
+    {
+      "code": "BFA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 28.25270081
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 24.7234672904326
+        }
+      }
+    },
+    {
+      "code": "BGD",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 53.42171316
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 37.3204979088046
+        },
+        "homicide_rate": {
+          "year": 2018,
+          "value": 2.34217668208578
+        }
+      }
+    },
+    {
+      "code": "BGR",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 82.438955
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 75.7193859528703
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 1.08890737415431
+        }
+      }
+    },
+    {
+      "code": "BHR",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 100
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 93.3525990269566
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 0.195636140255462
+        }
+      }
+    },
+    {
+      "code": "BHS",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 92.47270203
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 32.1981392997156
+        }
+      }
+    },
+    {
+      "code": "BIH",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 86.10091103
+        },
+        "sanitation": {
+          "year": 2018,
+          "value": 56.626659052479
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 1.22446173133237
+        }
+      }
+    },
+    {
+      "code": "BLR",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 94.26182128
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 74.4371095135556
+        },
+        "homicide_rate": {
+          "year": 2019,
+          "value": 2.38463165310244
+        }
+      }
+    },
+    {
+      "code": "BLZ",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 80.00582262
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 28.0582917218107
+        }
+      }
+    },
+    {
+      "code": "BMU",
+      "metrics": {
+        "homicide_rate": {
+          "year": 2023,
+          "value": 6.18257133141674
+        }
+      }
+    },
+    {
+      "code": "BOL",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 79.70469666
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 4.41843313132273
+        }
+      }
+    },
+    {
+      "code": "BRA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 84.46347227
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 54.9560379092862
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 19.2752957673079
+        }
+      }
+    },
+    {
+      "code": "BRB",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 70.36470032
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 7.43794627677661
+        }
+      }
+    },
+    {
+      "code": "BRN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 96.29828801
+        }
+      }
+    },
+    {
+      "code": "BTN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 91.27739716
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 49.481085264625
+        },
+        "homicide_rate": {
+          "year": 2020,
+          "value": 2.46751324015657
+        }
+      }
+    },
+    {
+      "code": "BWA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 57.45950036
+        },
+        "homicide_rate": {
+          "year": 2021,
+          "value": 11.3681767255945
+        }
+      }
+    },
+    {
+      "code": "CAF",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 13.78250027
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 13.5258815488793
+        }
+      }
+    },
+    {
+      "code": "CAN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 94.353302
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 81.2988965702501
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 1.97968887560784
+        }
+      }
+    },
+    {
+      "code": "CHE",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 97.32103855
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 99.686471113166
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.597481940544685
+        }
+      }
+    },
+    {
+      "code": "CHL",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 95.590243
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 95.1313578977443
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 6.34829073035101
+        }
+      }
+    },
+    {
+      "code": "CHN",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 91.6
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 68.869967958972
+        },
+        "homicide_rate": {
+          "year": 2020,
+          "value": 0.5018560705357
+        }
+      }
+    },
+    {
+      "code": "CIV",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 41.43219902
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 27.1027540829127
+        }
+      }
+    },
+    {
+      "code": "CMR",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 46.25880051
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 6.76008919336955
+        }
+      }
+    },
+    {
+      "code": "COD",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 19.67350006
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 13.0842738903164
+        }
+      }
+    },
+    {
+      "code": "COG",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 47.25159836
+        }
+      }
+    },
+    {
+      "code": "COL",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 79.34543299
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 18.6911716966687
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 24.9134420347488
+        }
+      }
+    },
+    {
+      "code": "COM",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 32.51750183
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 49.3554795591876
+        }
+      }
+    },
+    {
+      "code": "CPV",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 74.73519897
+        },
+        "homicide_rate": {
+          "year": 2020,
+          "value": 6.99464423976475
+        }
+      }
+    },
+    {
+      "code": "CRI",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 87.17019653
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 26.2861896707273
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 17.7454798727379
+        }
+      }
+    },
+    {
+      "code": "CUB",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 70.47699738
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 45.8768880917379
+        },
+        "homicide_rate": {
+          "year": 2019,
+          "value": 4.46315139638841
+        }
+      }
+    },
+    {
+      "code": "CYM",
+      "metrics": {
+        "homicide_rate": {
+          "year": 2020,
+          "value": 4.3677976836113
+        }
+      }
+    },
+    {
+      "code": "CYP",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 89.60099246
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 76.9720455894549
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.81785876397005
+        }
+      }
+    },
+    {
+      "code": "CZE",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 87.68776014
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 91.3792839631227
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.767827757917044
+        }
+      }
+    },
+    {
+      "code": "DEU",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 93.49999579
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 96.76522146362
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.910722780231795
+        }
+      }
+    },
+    {
+      "code": "DJI",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 65.29889679
+        },
+        "sanitation": {
+          "year": 2023,
+          "value": 39.6553838822901
+        }
+      }
+    },
+    {
+      "code": "DMA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 82.04689789
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 27.063396005142
+        }
+      }
+    },
+    {
+      "code": "DNK",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 99.76915157
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 98.9010988092373
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.840599404536194
+        }
+      }
+    },
+    {
+      "code": "DOM",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 91.0022446
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 42.9685910441268
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 10.9166976980638
+        }
+      }
+    },
+    {
+      "code": "DZA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 77.4178009
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 62.4937976717106
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 1.16107238811947
+        }
+      }
+    },
+    {
+      "code": "EAP",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 88.1
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 62.3495088335773
+        }
+      }
+    },
+    {
+      "code": "EAS",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 88.4
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 63.6400138579317
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.8
+        }
+      }
+    },
+    {
+      "code": "ECA",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 87.5
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 74.7956322098479
+        }
+      }
+    },
+    {
+      "code": "ECS",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 92.4
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 80.202083220941
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 2.1
+        }
+      }
+    },
+    {
+      "code": "ECU",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 77.17273115
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 49.2872368974807
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 45.7228145164847
+        }
+      }
+    },
+    {
+      "code": "EGY",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 74.64839935
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 57.3358101507241
+        }
+      }
+    },
+    {
+      "code": "ERI",
+      "metrics": {
+        "internet_use": {
+          "year": 2020,
+          "value": 14.34939957
+        }
+      }
+    },
+    {
+      "code": "ESP",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 95.7574516
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 88.2812302795534
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.690855954769765
+        }
+      }
+    },
+    {
+      "code": "EST",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 92.23796204
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 90.5570137559248
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 1.53599045052794
+        }
+      }
+    },
+    {
+      "code": "ETH",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 21.94129944
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 8.05103335263916
+        }
+      }
+    },
+    {
+      "code": "FIN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 93.72405196
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 90.1173134358904
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.98193498501344
+        }
+      }
+    },
+    {
+      "code": "FJI",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 74.7052002
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 48.502881186914
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 2.0559533103824
+        }
+      }
+    },
+    {
+      "code": "FRA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 88.65381638
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 89.9921457215606
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 1.33506280409367
+        }
+      }
+    },
+    {
+      "code": "FSM",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 39.52360153
+        },
+        "homicide_rate": {
+          "year": 2019,
+          "value": 0.906766290056401
+        }
+      }
+    },
+    {
+      "code": "GAB",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 68.72090149
+        }
+      }
+    },
+    {
+      "code": "GBR",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 95.4720993
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 97.8424774304309
+        },
+        "homicide_rate": {
+          "year": 2021,
+          "value": 1.11868407522333
+        }
+      }
+    },
+    {
+      "code": "GEO",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 83.79855689
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 62.9712131128227
+        },
+        "homicide_rate": {
+          "year": 2019,
+          "value": 2.02806499553233
+        }
+      }
+    },
+    {
+      "code": "GHA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 72.17569733
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 18.763531148516
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 1.83111773115644
+        }
+      }
+    },
+    {
+      "code": "GIN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 33.30469894
+        }
+      }
+    },
+    {
+      "code": "GMB",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 49.49430084
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 28.089385403017
+        }
+      }
+    },
+    {
+      "code": "GNB",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 29.77739906
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 22.6043420037121
+        }
+      }
+    },
+    {
+      "code": "GNQ",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 63.29930115
+        }
+      }
+    },
+    {
+      "code": "GRC",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 86.26968886
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 92.8864934862192
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.839605274224601
+        }
+      }
+    },
+    {
+      "code": "GRD",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 70.16159821
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 13.6657527694502
+        }
+      }
+    },
+    {
+      "code": "GRL",
+      "metrics": {
+        "sanitation": {
+          "year": 2022,
+          "value": 0
+        }
+      }
+    },
+    {
+      "code": "GTM",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 60.22140121
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 23.3657267272051
+        }
+      }
+    },
+    {
+      "code": "GUM",
+      "metrics": {
+        "homicide_rate": {
+          "year": 2019,
+          "value": 4.32611490161179
+        }
+      }
+    },
+    {
+      "code": "GUY",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 83.00080109
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 43.4351843746555
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 19.1201580922439
+        }
+      }
+    },
+    {
+      "code": "HKG",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 95.75536971
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 94.834373461349
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.376205815214825
+        }
+      }
+    },
+    {
+      "code": "HND",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 58.62269974
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 31.4424316507577
+        }
+      }
+    },
+    {
+      "code": "HRV",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 83.63240029
+        },
+        "sanitation": {
+          "year": 2021,
+          "value": 74.7324296019516
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.667347104040825
+        }
+      }
+    },
+    {
+      "code": "HTI",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 47.8614006
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 41.1518089717388
+        }
+      }
+    },
+    {
+      "code": "HUN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 93.77898628
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 91.7088480248698
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.722657964901225
+        }
+      }
+    },
+    {
+      "code": "IBD",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 82.7
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 61.5342128377788
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 4.7
+        }
+      }
+    },
+    {
+      "code": "IBT",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 70.3
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 53.4409789783594
+        }
+      }
+    },
+    {
+      "code": "IDA",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 38.9
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 32.5673782633288
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 8.3
+        }
+      }
+    },
+    {
+      "code": "IDB",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 44.2
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 36.8532421429282
+        }
+      }
+    },
+    {
+      "code": "IDN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 72.78075544
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 0.303768746039586
+        }
+      }
+    },
+    {
+      "code": "IDX",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 36.1
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 30.2817726387072
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 7.7
+        }
+      }
+    },
+    {
+      "code": "IMN",
+      "metrics": {
+        "sanitation": {
+          "year": 2024,
+          "value": 84.8214285714286
+        }
+      }
+    },
+    {
+      "code": "IND",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 70
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 62.7850105515952
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 2.81530423021647
+        }
+      }
+    },
+    {
+      "code": "IRL",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 97.18769836
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 81.2615959599938
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.654270171245596
+        }
+      }
+    },
+    {
+      "code": "IRN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 85.3404007
+        }
+      }
+    },
+    {
+      "code": "IRQ",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 81.47450256
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 50.8975045193032
+        }
+      }
+    },
+    {
+      "code": "ISL",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 98.209198
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 1.29013114183057
+        }
+      }
+    },
+    {
+      "code": "ISR",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 88.18242225
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 97.1694999721232
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 1.62581066709758
+        }
+      }
+    },
+    {
+      "code": "ITA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 89.2207202
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 78.2076546758922
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.568072449338316
+        }
+      }
+    },
+    {
+      "code": "JAM",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 90.10870361
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 73.6139506323097
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 49.4403451527686
+        }
+      }
+    },
+    {
+      "code": "JOR",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 95.62244985
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 80.0755731216364
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.987830151085125
+        }
+      }
+    },
+    {
+      "code": "JPN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 85.54153081
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 99.1857131221674
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.229153196964695
+        }
+      }
+    },
+    {
+      "code": "KAZ",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 93.39167254
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 2.55058633787163
+        }
+      }
+    },
+    {
+      "code": "KEN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 34.97622513
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 35.8269657963595
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 4.87166844718499
+        }
+      }
+    },
+    {
+      "code": "KGZ",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 92.0286026
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 93.0270797378203
+        },
+        "homicide_rate": {
+          "year": 2020,
+          "value": 1.74734308054439
+        }
+      }
+    },
+    {
+      "code": "KHM",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 68.47530365
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 51.6016205224991
+        }
+      }
+    },
+    {
+      "code": "KIR",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 89.44029999
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 24.648360534188
+        }
+      }
+    },
+    {
+      "code": "KNA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 76.88400269
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 64.1601437187219
+        }
+      }
+    },
+    {
+      "code": "KOR",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 97.89563777
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 99.3284416041044
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.477306316584835
+        }
+      }
+    },
+    {
+      "code": "KWT",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 100
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 100
+        },
+        "homicide_rate": {
+          "year": 2020,
+          "value": 0.249991818449578
+        }
+      }
+    },
+    {
+      "code": "LAC",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 83.6
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 51.4288590578189
+        }
+      }
+    },
+    {
+      "code": "LAO",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 65.59269714
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 71.3822366403769
+        }
+      }
+    },
+    {
+      "code": "LBN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 80.63400269
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 25.6726802158649
+        },
+        "homicide_rate": {
+          "year": 2020,
+          "value": 2.24466989542556
+        }
+      }
+    },
+    {
+      "code": "LBR",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 32.23360062
+        }
+      }
+    },
+    {
+      "code": "LBY",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 81.95449829
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 21.7469168678011
+        }
+      }
+    },
+    {
+      "code": "LCA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 68.20500183
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 39.0440891432332
+        }
+      }
+    },
+    {
+      "code": "LCN",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 83.7
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 51.2209972924919
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 19.7
+        }
+      }
+    },
+    {
+      "code": "LDC",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 33.7
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 7.8
+        }
+      }
+    },
+    {
+      "code": "LIE",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 98.2641983
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 96.3008562453003
+        },
+        "homicide_rate": {
+          "year": 2021,
+          "value": 5.12242598094458
+        }
+      }
+    },
+    {
+      "code": "LKA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 54.59
+        },
+        "homicide_rate": {
+          "year": 2019,
+          "value": 3.31094038448808
+        }
+      }
+    },
+    {
+      "code": "LSO",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 51.79660034
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 43.7549537714056
+        }
+      }
+    },
+    {
+      "code": "LTU",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 89.16116293
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 96.3965645962382
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 2.62779952622526
+        }
+      }
+    },
+    {
+      "code": "LUX",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 99.12902211
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 96.3220039091808
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 1.5306610542428
+        }
+      }
+    },
+    {
+      "code": "LVA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 92.70757011
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 92.5346142806387
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 2.49681788529087
+        }
+      }
+    },
+    {
+      "code": "MAC",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 89.82640076
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 79.9557401770362
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.560293537784445
+        }
+      }
+    },
+    {
+      "code": "MAR",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 91.2
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 8.4240714170847
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 1.70500474577332
+        }
+      }
+    },
+    {
+      "code": "MCO",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 99.04489899
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 100
+        }
+      }
+    },
+    {
+      "code": "MDA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 77.3687973
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 2.54314378217647
+        }
+      }
+    },
+    {
+      "code": "MDG",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 18.67790031
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 12.8016931314505
+        }
+      }
+    },
+    {
+      "code": "MDV",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 85.23999786
+        },
+        "homicide_rate": {
+          "year": 2019,
+          "value": 0.615093155858455
+        }
+      }
+    },
+    {
+      "code": "MEA",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 63.7
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 54.4427793216174
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 3.9
+        }
+      }
+    },
+    {
+      "code": "MEX",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 83.12233799
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 62.7483600306072
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 24.8589948436701
+        }
+      }
+    },
+    {
+      "code": "MHL",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 65.915802
+        }
+      }
+    },
+    {
+      "code": "MKD",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 93.1
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 12.1085676786862
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 1.52854990019388
+        }
+      }
+    },
+    {
+      "code": "MLI",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 36.80149841
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 20.0090526597646
+        }
+      }
+    },
+    {
+      "code": "MLT",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 93.86029816
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 100
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.562898250512237
+        }
+      }
+    },
+    {
+      "code": "MMR",
+      "metrics": {
+        "internet_use": {
+          "year": 2020,
+          "value": 45.4477005
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 60.5335397782737
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 2.57510107248619
+        }
+      }
+    },
+    {
+      "code": "MNA",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 0
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 51.3827622109871
+        }
+      }
+    },
+    {
+      "code": "MNE",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 88.88258428
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 50.8653935806351
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.789201202111271
+        }
+      }
+    },
+    {
+      "code": "MNG",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 85.12349701
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 69.9469928494417
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 5.91503475082916
+        }
+      }
+    },
+    {
+      "code": "MOZ",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 20.52729988
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 33.9433045861423
+        }
+      }
+    },
+    {
+      "code": "MRT",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 45.77939987
+        },
+        "homicide_rate": {
+          "year": 2020,
+          "value": 0.999971522550119
+        }
+      }
+    },
+    {
+      "code": "MUS",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 73.30793533
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 2.27249663925174
+        }
+      }
+    },
+    {
+      "code": "MWI",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 18.96159935
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 46.1529166344501
+        }
+      }
+    },
+    {
+      "code": "MYS",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 98.0206059
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 85.7863441595325
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.734492430713877
+        }
+      }
+    },
+    {
+      "code": "NAC",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 95.6
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 95.3904661396555
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 5.4
+        }
+      }
+    },
+    {
+      "code": "NAM",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 64.87460327
+        },
+        "homicide_rate": {
+          "year": 2021,
+          "value": 11.2077806904171
+        }
+      }
+    },
+    {
+      "code": "NER",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 15.55760002
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 9.14683342354384
+        }
+      }
+    },
+    {
+      "code": "NGA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 41.21139908
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 32.2082592818415
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 15.7466808233499
+        }
+      }
+    },
+    {
+      "code": "NIC",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 61.39550018
+        },
+        "homicide_rate": {
+          "year": 2021,
+          "value": 11.3473196321723
+        }
+      }
+    },
+    {
+      "code": "NLD",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 97.00679779
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 97.4979048764686
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.690893081283378
+        }
+      }
+    },
+    {
+      "code": "NOR",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 99
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 77.930319871296
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.724747049690651
+        }
+      }
+    },
+    {
+      "code": "NPL",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 46.32189941
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 53.4119460561394
+        },
+        "homicide_rate": {
+          "year": 2020,
+          "value": 2.13004129984372
+        }
+      }
+    },
+    {
+      "code": "NRU",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 83.01170349
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 33.1556929416166
+        }
+      }
+    },
+    {
+      "code": "NZL",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 93.51930237
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 88.7996547487802
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 1.46149415952832
+        }
+      }
+    },
+    {
+      "code": "OMN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 95.25174678
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.138633928990513
+        }
+      }
+    },
+    {
+      "code": "PAK",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 57.253
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 4.33487075793336
+        }
+      }
+    },
+    {
+      "code": "PAN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 72.77149963
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 11.7072934419645
+        }
+      }
+    },
+    {
+      "code": "PER",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 81.95705992
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 56.4924094824286
+        },
+        "homicide_rate": {
+          "year": 2021,
+          "value": 8.60480803979216
+        }
+      }
+    },
+    {
+      "code": "PHL",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 67.26300914
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 62.1743615399215
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 4.34759149828352
+        }
+      }
+    },
+    {
+      "code": "PLW",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 83.92549896
+        },
+        "homicide_rate": {
+          "year": 2018,
+          "value": 11.2268096213758
+        }
+      }
+    },
+    {
+      "code": "PNG",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 18.81159973
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 16.6644443256609
+        }
+      }
+    },
+    {
+      "code": "POL",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 88.58496367
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 97.8277048403773
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.802314721828908
+        }
+      }
+    },
+    {
+      "code": "PRI",
+      "metrics": {
+        "internet_use": {
+          "year": 2022,
+          "value": 87.29178106
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 32.5091608798098
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 14.5896581532053
+        }
+      }
+    },
+    {
+      "code": "PRT",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 88.48704454
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 93.9246010109268
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 0.719971949892832
+        }
+      }
+    },
+    {
+      "code": "PRY",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 81.57806793
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 58.5283334580355
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 6.7795163925492
+        }
+      }
+    },
+    {
+      "code": "PSE",
+      "metrics": {
+        "internet_use": {
+          "year": 2023,
+          "value": 86.63765334
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 73.5119845057758
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 0.622023007311598
+        }
+      }
+    },
+    {
+      "code": "QAT",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 98.08540344
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 99.936545083788
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 0.0691454145354033
+        }
+      }
+    },
+    {
+      "code": "ROU",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 91.29048551
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 89.7986287516482
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 1.10887485110282
+        }
+      }
+    },
+    {
+      "code": "RUS",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 94.36495368
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 58.1856567616193
+        },
+        "homicide_rate": {
+          "year": 2021,
+          "value": 6.76512531955806
+        }
+      }
+    },
+    {
+      "code": "RWA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 31.70330048
+        },
+        "homicide_rate": {
+          "year": 2020,
+          "value": 3.61247427164444
+        }
+      }
+    },
+    {
+      "code": "SAS",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 67.8
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 60.0591907163454
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 2.8
+        }
+      }
+    },
+    {
+      "code": "SAU",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 100
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 83.8898965219249
+        },
+        "homicide_rate": {
+          "year": 2019,
+          "value": 0.935259944754359
+        }
+      }
+    },
+    {
+      "code": "SEN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 60.11780167
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 30.0761504408284
+        }
+      }
+    },
+    {
+      "code": "SGP",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 94.37757178
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 100
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.0690954942050905
+        }
+      }
+    },
+    {
+      "code": "SLB",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 29.04070091
+        }
+      }
+    },
+    {
+      "code": "SLE",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 25.10499954
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 16.8455242283203
+        },
+        "homicide_rate": {
+          "year": 2020,
+          "value": 2.22431228940123
+        }
+      }
+    },
+    {
+      "code": "SLV",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 66.47769928
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 35.9732370193077
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 7.89768799960639
+        }
+      }
+    },
+    {
+      "code": "SMR",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 97.35220337
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 90.1925
+        }
+      }
+    },
+    {
+      "code": "SOM",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 27.94020081
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 16.3823397337184
+        }
+      }
+    },
+    {
+      "code": "SRB",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 87.69071294
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 24.0657869371989
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 1.31400205013848
+        }
+      }
+    },
+    {
+      "code": "SSA",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 36.5
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 27.9423361817952
+        }
+      }
+    },
+    {
+      "code": "SSD",
+      "metrics": {
+        "internet_use": {
+          "year": 2019,
+          "value": 6.671000004
+        }
+      }
+    },
+    {
+      "code": "SSF",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 35.7
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 25.9074828232473
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 12.2
+        }
+      }
+    },
+    {
+      "code": "SST",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 0
+        }
+      }
+    },
+    {
+      "code": "STP",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 59.11759949
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 34.692024025377
+        }
+      }
+    },
+    {
+      "code": "SUR",
+      "metrics": {
+        "internet_use": {
+          "year": 2023,
+          "value": 87.4
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 25.1297026286031
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 6.51946457704576
+        }
+      }
+    },
+    {
+      "code": "SVK",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 89.82507032
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 83.4254267213409
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 1.12358440823663
+        }
+      }
+    },
+    {
+      "code": "SVN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 90.76355487
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 84.5426326049707
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 0.566466326409227
+        }
+      }
+    },
+    {
+      "code": "SWE",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 95.76629783
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 95.3516469463789
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 1.14675703743944
+        }
+      }
+    },
+    {
+      "code": "SWZ",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 63.40309906
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 60.8358301515398
+        },
+        "homicide_rate": {
+          "year": 2021,
+          "value": 12.5145709802017
+        }
+      }
+    },
+    {
+      "code": "SYC",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 87.81800079
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 7.96669919735506
+        }
+      }
+    },
+    {
+      "code": "SYR",
+      "metrics": {
+        "internet_use": {
+          "year": 2018,
+          "value": 33.77000046
+        }
+      }
+    },
+    {
+      "code": "TCA",
+      "metrics": {
+        "sanitation": {
+          "year": 2024,
+          "value": 33.9116398034325
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 76.3400403511642
+        }
+      }
+    },
+    {
+      "code": "TCD",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 12.62689972
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 11.0867671123645
+        }
+      }
+    },
+    {
+      "code": "TEA",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 88.9
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 62.2799597028577
+        }
+      }
+    },
+    {
+      "code": "TEC",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 90.8
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 68.6487554274505
+        }
+      }
+    },
+    {
+      "code": "TGO",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 39.48320007
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 13.0248800875831
+        }
+      }
+    },
+    {
+      "code": "THA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 90.86718789
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 26.7187994375737
+        }
+      }
+    },
+    {
+      "code": "TJK",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 55.79339981
+        },
+        "homicide_rate": {
+          "year": 2020,
+          "value": 0.892370798940089
+        }
+      }
+    },
+    {
+      "code": "TLA",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 83.9
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 51.4420183900487
+        }
+      }
+    },
+    {
+      "code": "TLS",
+      "metrics": {
+        "internet_use": {
+          "year": 2021,
+          "value": 35.04199982
+        }
+      }
+    },
+    {
+      "code": "TMN",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 60.2
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 51.2176215681784
+        }
+      }
+    },
+    {
+      "code": "TON",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 67.4417038
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 31.2462228659936
+        },
+        "homicide_rate": {
+          "year": 2019,
+          "value": 0.946346864516251
+        }
+      }
+    },
+    {
+      "code": "TSA",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 67.8
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 60.0591907163454
+        }
+      }
+    },
+    {
+      "code": "TSS",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 35.2
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 25.9074828232473
+        }
+      }
+    },
+    {
+      "code": "TTO",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 82.15989685
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 38.0201589918231
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 40.4432986623964
+        }
+      }
+    },
+    {
+      "code": "TUN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 76.5
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 79.7855170219304
+        },
+        "homicide_rate": {
+          "year": 2020,
+          "value": 4.69348024650292
+        }
+      }
+    },
+    {
+      "code": "TUR",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 89.77024003
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 78.8643590744389
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 3.22789482308636
+        }
+      }
+    },
+    {
+      "code": "TUV",
+      "metrics": {
+        "sanitation": {
+          "year": 2024,
+          "value": 39.7052193077986
+        }
+      }
+    },
+    {
+      "code": "TZA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 31.16209984
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 28.4607925768988
+        },
+        "homicide_rate": {
+          "year": 2020,
+          "value": 3.74921291744897
+        }
+      }
+    },
+    {
+      "code": "UGA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 8.949831061
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 20.3622611691786
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 8.97308867739149
+        }
+      }
+    },
+    {
+      "code": "UKR",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 82.47489929
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 92.3938896027806
+        },
+        "homicide_rate": {
+          "year": 2021,
+          "value": 3.77663964401616
+        }
+      }
+    },
+    {
+      "code": "URY",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 91.99109007
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 11.2453054170348
+        }
+      }
+    },
+    {
+      "code": "USA",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 94.69380188
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 97.0094700141013
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 5.76340794073065
+        }
+      }
+    },
+    {
+      "code": "UZB",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 89.50550079
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 74.5975903651394
+        },
+        "homicide_rate": {
+          "year": 2021,
+          "value": 1.39879762685076
+        }
+      }
+    },
+    {
+      "code": "VCT",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 76.19010162
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 51.3212761232698
+        }
+      }
+    },
+    {
+      "code": "VEN",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 76.67890167
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 26.0166822447189
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 12.6466448562847
+        }
+      }
+    },
+    {
+      "code": "VNM",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 84.15
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 45.3744041929296
+        }
+      }
+    },
+    {
+      "code": "VUT",
+      "metrics": {
+        "homicide_rate": {
+          "year": 2020,
+          "value": 0.3346065111081
+        }
+      }
+    },
+    {
+      "code": "WLD",
+      "metrics": {
+        "internet_use": {
+          "year": 2025,
+          "value": 73.6
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 58.4951883486035
+        },
+        "homicide_rate": {
+          "year": 2023,
+          "value": 5.2
+        }
+      }
+    },
+    {
+      "code": "WSM",
+      "metrics": {
+        "sanitation": {
+          "year": 2024,
+          "value": 44.1167316650394
+        },
+        "homicide_rate": {
+          "year": 2018,
+          "value": 6.26258538794308
+        }
+      }
+    },
+    {
+      "code": "XKX",
+      "metrics": {
+        "internet_use": {
+          "year": 2018,
+          "value": 89.4430319734879
+        },
+        "homicide_rate": {
+          "year": 2021,
+          "value": 1.89497747704421
+        }
+      }
+    },
+    {
+      "code": "YEM",
+      "metrics": {
+        "internet_use": {
+          "year": 2019,
+          "value": 17.49099922
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 43.1211742417875
+        }
+      }
+    },
+    {
+      "code": "ZAF",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 78.35759735
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 73.7806370822536
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 43.7202551331462
+        }
+      }
+    },
+    {
+      "code": "ZMB",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 17.10099983
+        }
+      }
+    },
+    {
+      "code": "ZWE",
+      "metrics": {
+        "internet_use": {
+          "year": 2024,
+          "value": 41.64279938
+        },
+        "sanitation": {
+          "year": 2024,
+          "value": 23.5592013201954
+        },
+        "homicide_rate": {
+          "year": 2022,
+          "value": 6.75833125350771
+        }
+      }
+    }
+  ]
+}

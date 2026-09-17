@@ -330,6 +330,8 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-analyze">Analyze</span>
                 <div class="dropdown">
                     <a href="global_explorer.html">Wealth Explorer</a>
+                    <a href="purchasing-power.html">Purchasing Power</a>
+                    <a href="live-better-for-less.html">Live Better for Less</a>
                     <a href="country-systems-atlas.html">Country Systems Atlas</a>
                     <a href="atlas.html">Longevity Atlas</a>
                     <a href="data-lab.html">Data Lab</a>

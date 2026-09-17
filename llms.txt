@@ -15,6 +15,9 @@
 
 ## Core tools
 
+- [Live Better for Less](https://wealthmeter.xyz/live-better-for-less.html): Find lower-cost countries only after they pass a user-selected quality floor across health, essential services, connectivity, infrastructure, sanitation, and safety.
+- [Lifestyle Abroad](https://wealthmeter.xyz/lifestyle-abroad.html): Translate a household spending budget between national private-consumption price levels.
+- [Purchasing Power Tools](https://wealthmeter.xyz/purchasing-power.html): Choose between quality-adjusted discovery and a specific country comparison.
 - [Country Systems Atlas](https://wealthmeter.xyz/country-systems-atlas.html): Compare two or three countries across productive capacity, infrastructure, logistics, essential access, settlement, and longevity measures.
 - [Net Worth Calibration](https://wealthmeter.xyz/networth.html)
 - [Income Percentile](https://wealthmeter.xyz/income_ranker.html)
