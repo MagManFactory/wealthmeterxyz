@@ -68,7 +68,7 @@ const sharedStyles = `
     .label-longform { color: #0ea5e9 !important; }
 
     /* Layout Standards */
-    header {
+    #header-placeholder > header {
         width: 100%;
         position: sticky;
         top: 0;
@@ -162,7 +162,7 @@ const sharedStyles = `
     .dropdown a:hover { background: #f8fafc; color: #020617; }
 
     @media (max-width: 1024px) {
-        header { position: relative; }
+        #header-placeholder > header { position: relative; }
         .nav-container { height: auto; min-height: 72px; padding: 0.75rem 1rem; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
         .brand-wrapper { margin-right: 0; }
         nav { width: 100%; gap: 0.75rem; overflow-x: auto; padding-bottom: 0.25rem; -ms-overflow-style: none; scrollbar-width: none; }
