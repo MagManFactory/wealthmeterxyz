@@ -1,0 +1,3 @@
+import{authorizedDistribution,json}from"../_lib/widget-attribution.js";
+export async function onRequestOptions(){return json({},204);}
+export async function onRequestGet(context){const url=new URL(context.request.url);const widget=url.searchParams.get("widget")||"";if(widget!=="wealth-rank")return json({error:"unknown_widget"},400);const distribution=await authorizedDistribution(context.env,url.searchParams.get("token")||"",widget);if(!distribution)return json({error:"unauthorized_distribution"},403);return json({widget,partner:distribution.claims.partner,campaign:distribution.claims.campaign,allowedOrigins:distribution.allowedOrigins,canonical:"https://wealthmeter.xyz/"});}

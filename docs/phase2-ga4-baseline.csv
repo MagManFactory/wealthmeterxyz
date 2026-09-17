@@ -1,0 +1,11 @@
+# property_id=552748741 measurement_id=G-8NF91REL39 domain=wealthmeter.xyz
+# range=2026-09-09/2026-09-16 pulled=2026-09-16T23:20:56Z rowCount=8
+date,channel,sessions,totalUsers,newUsers,screenPageViews,bounceRate
+20260915,Direct,5,5,5,6,1
+20260916,Direct,4,3,0,3,1
+20260916,Unassigned,4,3,0,21,1
+20260915,Unassigned,3,3,0,19,1
+20260909,Direct,1,1,1,1,1
+20260910,Direct,1,1,1,1,1
+20260912,Direct,1,1,1,1,0
+20260916,Cross-network,1,1,0,2,1
