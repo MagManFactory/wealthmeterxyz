@@ -1,0 +1,7 @@
+.policy-shell { box-sizing: border-box; overflow-wrap: anywhere; }
+.policy-shell *, .policy-shell *::before, .policy-shell *::after { box-sizing: border-box; }
+.policy-hero { overflow: hidden; }
+@media (max-width: 760px) {
+    .policy-shell { width: calc(100% - 1.2rem); max-width: 1040px; }
+    .policy-shell h1 { font-size: clamp(2.15rem, 11vw, 3.25rem); letter-spacing: -0.045em; }
+}

@@ -7,7 +7,15 @@ widget=(ROOT/'assets/wealth-rank-widget.js').read_text()
 if 'widget_impression' not in widget or 'intersectionRatio>=.5' not in widget: errors.append('qualified impression rule missing')
 if 'keepalive:true' not in widget or 'navigator.sendBeacon' in widget: errors.append('reliable widget event transport missing')
 if 'headers:{"content-type":"application/json"}' in widget: errors.append('widget event transport would trigger a sandboxed-iframe preflight')
+if 'const API_ORIGIN="https://lifemeter.xyz"' not in widget: errors.append('shared production widget API origin missing')
 if 'canonical' not in (ROOT/'embed/wealth-rank.html').read_text(): errors.append('canonical link missing')
+if 'Covered-market wealth rank' in (ROOT/'embed/wealth-rank.html').read_text(): errors.append('legacy widget label present')
+if 'YOUR ESTIMATED COVERED-MARKET RANK' in (ROOT/'index.html').read_text(): errors.append('legacy homepage rank label present')
+for policy_page in ('about.html','editorial-policy.html','disclaimer.html','privacy.html'):
+    policy=(ROOT/policy_page).read_text()
+    if 'assets/policy-pages.css' not in policy: errors.append(f'policy stylesheet missing: {policy_page}')
+    if 'assets/policy-responsive.css' not in policy: errors.append(f'policy responsive stylesheet missing: {policy_page}')
+    if 'class="policy-shell"' not in policy: errors.append(f'policy shell missing: {policy_page}')
 for sensitive in ('net_worth','input_value','rank_value'):
     if sensitive in widget: errors.append(f'sensitive event key present: {sensitive}')
 if errors:
