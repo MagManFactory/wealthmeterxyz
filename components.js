@@ -422,6 +422,7 @@ const siteFooter = `
         <a href="data-sources.html">Data Sources</a>
         <a href="methodology.html">Methodology</a>
         <a href="privacy.html">Privacy Policy</a>
+        <a href="partners.html">Partners</a>
         <a href="commercial-policy.html">Commercial Policy</a>
         <a href="disclaimer.html">Disclaimer</a>
     </div>
@@ -484,6 +485,12 @@ document.addEventListener("DOMContentLoaded", () => {
         footerEl.innerHTML = siteFooter;
     }
     document.querySelectorAll("footer .footer-links").forEach((links) => {
+        if (!links.querySelector('a[href*="partners"]')) {
+            const link = document.createElement("a");
+            link.href = "partners.html";
+            link.textContent = "Partners";
+            links.appendChild(link);
+        }
         if (!links.querySelector('a[href*="commercial-policy"]')) {
             const link = document.createElement("a");
             link.href = "commercial-policy.html";

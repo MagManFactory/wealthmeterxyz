@@ -6,8 +6,9 @@
   const API_ORIGIN="https://lifemeter.xyz";
   const query=new URLSearchParams(location.search);
   const state={widget:"wealth-rank",token:query.get("token")||"",partner:"preview",campaign:"internal-review",authorized:false,interactionSent:false};
-  const localPreview=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)&&query.get("preview")==="phase2";
   const hostOrigin=(()=>{try{return document.referrer?new URL(document.referrer).origin:"";}catch(_error){return"";}})();
+  const localPreview=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)&&query.get("preview")==="phase2";
+  const publicPreview=query.get("preview")==="public"&&hostOrigin===location.origin;
   const form=document.getElementById("wealth-widget-form");
   const status=document.getElementById("wealth-widget-status");
 
@@ -21,10 +22,10 @@
   function event(name){
     const payload={event:name,widget:state.widget,partner:state.partner,campaign:state.campaign,token:state.token,hostOrigin};
     if(typeof window.gtag==="function")window.gtag("event",name,{widget_id:state.widget,distribution_partner:state.partner,distribution_campaign:state.campaign});
-    fetch(`${API_ORIGIN}/api/widget-event`,{method:"POST",body:JSON.stringify(payload),credentials:"omit",keepalive:true}).catch(()=>{});
+    if(state.token)fetch(`${API_ORIGIN}/api/widget-event`,{method:"POST",body:JSON.stringify(payload),credentials:"omit",keepalive:true}).catch(()=>{});
   }
   async function authorize(){
-    if(localPreview){state.authorized=true;return;}
+    if(localPreview||publicPreview){state.authorized=true;state.partner="first-party";state.campaign=publicPreview?"public-demo":"internal-review";return;}
     if(!state.token)throw new Error("This distribution link is missing its signed attribution token.");
     const response=await fetch(`${API_ORIGIN}/api/widget-config?widget=${encodeURIComponent(state.widget)}&token=${encodeURIComponent(state.token)}`,{credentials:"omit"});
     if(!response.ok)throw new Error("This widget distribution is not authorized.");

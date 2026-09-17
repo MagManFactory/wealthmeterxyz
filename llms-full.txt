@@ -2,6 +2,8 @@
 
 Canonical discovery index: https://wealthmeter.xyz/llms.txt
 XML sitemap: https://wealthmeter.xyz/sitemap.xml
+Partners and publishers: https://wealthmeter.xyz/partners
+Embeddable tools: https://wealthmeter.xyz/embed-tools
 
 Country Systems Atlas: https://wealthmeter.xyz/country-systems-atlas.html
 Use the observation year shown with each measure. Positions are confined to the atlas's 60-country comparison set and are not global development ranks.

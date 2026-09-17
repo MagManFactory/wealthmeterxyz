@@ -10,6 +10,8 @@
 - [Methodology](https://wealthmeter.xyz/methodology.html): Model assumptions, limits, and interpretation.
 - [Data Sources](https://wealthmeter.xyz/data-sources.html): Primary datasets and institutional sources.
 - [Reports](https://wealthmeter.xyz/reports.html): WealthMeter research reports.
+- [Partners and Publishers](https://wealthmeter.xyz/partners): Approved calculator distribution, underwriting, and portfolio opportunities.
+- [Embed Our Tools](https://wealthmeter.xyz/embed-tools): Preview the Global Wealth Rank widget and request a domain-scoped installation.
 
 ## Core tools
 
