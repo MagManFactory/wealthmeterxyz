@@ -20,7 +20,7 @@
   function event(name){
     const payload={event:name,widget:state.widget,partner:state.partner,campaign:state.campaign,token:state.token,hostOrigin};
     if(typeof window.gtag==="function")window.gtag("event",name,{widget_id:state.widget,distribution_partner:state.partner,distribution_campaign:state.campaign});
-    fetch("/api/widget-event",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(payload),credentials:"omit",keepalive:true}).catch(()=>{});
+    fetch("/api/widget-event",{method:"POST",body:JSON.stringify(payload),credentials:"omit",keepalive:true}).catch(()=>{});
   }
   async function authorize(){
     if(localPreview){state.authorized=true;return;}
