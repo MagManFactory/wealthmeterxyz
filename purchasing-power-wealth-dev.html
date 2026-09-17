@@ -5,423 +5,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Purchasing Power of Wealth Index (DEV) | WEALTHMETER.XYZ</title>
-    <meta name="description" content="DEV prototype: compare how far your net worth stretches across cities using lifestyle-weighted price-level indices. Illustrative data only.">
+    <title>Purchasing Power of Wealth (DEV) | WEALTHMETER.XYZ</title>
+    <meta name="description" content="DEV prototype: compare how far your net worth stretches across cities using lifestyle-weighted price-level indices. Five consumer experiences. Illustrative data only.">
     <link rel="canonical" href="https://wealthmeter.xyz/purchasing-power-wealth-dev.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --bg-body: #f8fafc;
-            --bg-gradient: radial-gradient(circle at 10% 20%, rgba(37,99,235,0.05) 0%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(8,145,178,0.05) 0%, transparent 40%);
-            --panel-bg: rgba(255,255,255,0.95);
-            --panel-border: rgba(255,255,255,0.8);
-            --panel-shadow: 0 25px 50px -12px rgba(15,23,42,0.1);
-            --card-bg: #ffffff;
-            --card-border: #e2e8f0;
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --input-bg: #ffffff;
-            --input-border: #cbd5e1;
-            --primary: #2563eb;
-            --accent: #0891b2;
-            --accent-gradient: linear-gradient(135deg, #2563eb, #0891b2);
-            --proto-amber: #f59e0b;
-            --proto-bg: #fffbeb;
-        }
-
-        * { box-sizing: border-box; outline: none; -webkit-font-smoothing: antialiased; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-body);
-            background-image: var(--bg-gradient);
-            color: var(--text-main);
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .app-content-area { flex-grow: 1; padding: 40px 20px 60px; }
-        .app-wrapper { width: 100%; max-width: 1100px; margin: 0 auto; }
-
-        .proto-banner {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            background: var(--proto-bg);
-            border: 1px solid #fcd34d;
-            border-radius: 14px;
-            padding: 14px 18px;
-            margin-bottom: 24px;
-            font-size: 0.88rem;
-            line-height: 1.5;
-            color: #92400e;
-        }
-        .proto-banner strong { color: #78350f; }
-        .proto-badge {
-            flex-shrink: 0;
-            font-family: 'Roboto Mono', monospace;
-            font-size: 0.68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            background: var(--proto-amber);
-            color: #fff;
-            padding: 4px 8px;
-            border-radius: 6px;
-        }
-
-        .glass-panel {
-            background: var(--panel-bg);
-            backdrop-filter: blur(24px);
-            border: 1px solid var(--panel-border);
-            border-radius: 24px;
-            padding: 40px 36px;
-            box-shadow: var(--panel-shadow);
-        }
-
-        .headline {
-            font-family: 'Outfit', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 2.4rem);
-            text-align: center;
-            font-weight: 800;
-            margin-bottom: 10px;
-            letter-spacing: -0.03em;
-        }
-        .subhead {
-            text-align: center;
-            color: var(--text-muted);
-            margin-bottom: 32px;
-            font-size: 15px;
-            max-width: 720px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.55;
-        }
-
-        .section-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary);
-            font-weight: 800;
-            margin: 28px 0 14px;
-        }
-        .section-label:first-of-type { margin-top: 0; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
-
-        label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            font-weight: 700;
-            margin-left: 4px;
-            display: block;
-            margin-bottom: 6px;
-        }
-
-        input[type="number"], select {
-            width: 100%;
-            height: 52px;
-            background: var(--input-bg);
-            border: 1px solid var(--input-border);
-            border-radius: 12px;
-            padding: 0 14px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 16px;
-            color: var(--text-main);
-        }
-
-        .lifestyle-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .lifestyle-btn {
-            flex: 1;
-            min-width: 120px;
-            padding: 12px 16px;
-            border: 2px solid var(--card-border);
-            border-radius: 12px;
-            background: #fff;
-            font-family: inherit;
-            font-weight: 700;
-            font-size: 14px;
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .lifestyle-btn.active {
-            border-color: var(--primary);
-            background: #eff6ff;
-            color: var(--primary);
-        }
-
-        .toggle-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-        .toggle-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--text-main);
-            cursor: pointer;
-        }
-        .toggle-item input { width: 18px; height: 18px; accent-color: var(--primary); }
-
-        .cta-btn {
-            width: 100%;
-            padding: 18px;
-            background: var(--accent-gradient);
-            color: white;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 700;
-            font-size: 15px;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border: none;
-            border-radius: 14px;
-            cursor: pointer;
-            transition: transform .2s;
-            margin-top: 24px;
-        }
-        .cta-btn:hover { transform: translateY(-2px); }
-
-        .results-section { margin-top: 40px; }
-        .results-heading {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-            color: var(--text-main);
-        }
-
-        .results { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
-        .result-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 18px 20px;
-        }
-        .result-card.highlight {
-            border-color: #bfdbfe;
-            background: linear-gradient(135deg, #ffffff, #eff6ff);
-        }
-        .result-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            font-weight: 700;
-        }
-        .result-value {
-            font-family: 'Outfit', sans-serif;
-            font-size: 26px;
-            font-weight: 800;
-            margin-top: 8px;
-            letter-spacing: -0.02em;
-        }
-        .result-sub { color: var(--text-muted); font-size: 13px; margin-top: 4px; line-height: 1.45; }
-
-        .equiv-list { display: grid; gap: 10px; margin-top: 8px; }
-        .equiv-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            padding: 10px 14px;
-            background: #f8fafc;
-            border-radius: 10px;
-            font-size: 14px;
-        }
-        .equiv-row strong { font-weight: 700; }
-        .equiv-row .equiv-val {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 13px;
-            color: var(--primary);
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
-        .wpi-table-wrap { overflow-x: auto; margin-top: 8px; }
-        .wpi-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 14px;
-        }
-        .wpi-table th, .wpi-table td {
-            padding: 10px 12px;
-            text-align: left;
-            border-bottom: 1px solid var(--card-border);
-        }
-        .wpi-table th {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-            font-weight: 700;
-        }
-        .wpi-table tr.home-row { background: #eff6ff; font-weight: 700; }
-        .wpi-mult {
-            font-family: 'Roboto Mono', monospace;
-            font-weight: 700;
-        }
-        .wpi-mult.high { color: #059669; }
-        .wpi-mult.low { color: #dc2626; }
-        .wpi-bar-cell { width: 40%; }
-        .wpi-bar {
-            height: 8px;
-            border-radius: 4px;
-            background: #e2e8f0;
-            overflow: hidden;
-        }
-        .wpi-bar-fill {
-            height: 100%;
-            border-radius: 4px;
-            background: var(--accent-gradient);
-            transition: width 0.3s;
-        }
-
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 12px;
-            margin-top: 8px;
-        }
-        .cat-card {
-            background: #f8fafc;
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 12px 14px;
-            text-align: center;
-        }
-        .cat-name {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-            font-weight: 700;
-        }
-        .cat-pli {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 18px;
-            font-weight: 700;
-            margin-top: 6px;
-            color: var(--text-main);
-        }
-        .cat-vs {
-            font-size: 11px;
-            color: var(--text-muted);
-            margin-top: 2px;
-        }
-
-        .methodology {
-            margin-top: 36px;
-            padding: 20px 22px;
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            background: #f8fafc;
-        }
-        .methodology h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1rem;
-            margin: 0 0 10px;
-        }
-        .methodology p, .methodology li {
-            font-size: 13px;
-            line-height: 1.6;
-            color: var(--text-muted);
-            margin: 0 0 8px;
-        }
-        .methodology ul { margin: 8px 0 0; padding-left: 1.2rem; }
-        .methodology code {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 12px;
-            background: #e2e8f0;
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-
-        .share-container {
-            margin: 2rem 0 0;
-            border-top: 1px solid var(--card-border);
-            padding-top: 1.5rem;
-        }
-        .share-container .result-label { margin-bottom: 10px; }
-        .share-actions { display: flex; flex-wrap: wrap; gap: 10px; }
-        .share-btn {
-            padding: 10px 16px;
-            border: 1px solid var(--card-border);
-            border-radius: 10px;
-            background: #fff;
-            font-family: inherit;
-            font-weight: 700;
-            font-size: 13px;
-            color: var(--text-main);
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .share-btn:hover { background: #f1f5f9; }
-
-        figure img { max-width: 100%; width: 100%; height: auto !important; object-fit: contain; }
-
-        @media (max-width: 640px) {
-            .glass-panel { padding: 28px 20px; }
-            .equiv-row { flex-direction: column; align-items: flex-start; }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/purchasing-power-wealth-dev.css?v=2026-09-17.2">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
     <div id="header-placeholder"></div>
 
-    <div class="app-content-area">
-        <div class="app-wrapper">
-            <div class="proto-banner" role="note">
-                <span class="proto-badge">Dev</span>
-                <div>
-                    <strong>Purchasing Power of Wealth Index — isolated prototype.</strong>
-                    Illustrative PLI numbers only; not linked from main navigation.
-                    Replace embedded data with World Bank ICP / OECD SDMX feeds before production launch.
+    <main class="ppw-wrap">
+        <div class="proto-banner" role="note">
+            <span class="proto-badge">Dev</span>
+            <div>
+                <strong>Purchasing Power of Wealth — isolated prototype.</strong>
+                Illustrative PLI numbers only; not linked from main navigation.
+                Replace embedded data with World Bank ICP / OECD SDMX / IMF WEO feeds before production launch.
+            </div>
+        </div>
+
+        <section class="ppw-hero">
+            <div class="ppw-hero-top">
+                <span class="ppw-kicker">Purchasing Power of Wealth</span>
+                <span class="ppw-data-stamp" id="dataStamp">Prototype · ICP-calibrated estimates</span>
+            </div>
+            <h1>Where does your wealth actually stretch?</h1>
+            <p class="ppw-hero-desc">
+                Nominal net worth tells you what you own. Lifestyle-weighted purchasing power tells you what it buys.
+                Compare cities, benchmark your local position, model relocation spend, scan retirement destinations,
+                and see whether you are richer than you think — on three scales.
+            </p>
+            <div class="stat-strip">
+                <div class="stat-pill">
+                    <span class="label">Countries</span>
+                    <span class="value" id="statCountries">44</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="label">Cities</span>
+                    <span class="value" id="statCities">41</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="label">PLI categories</span>
+                    <span class="value">7 COICOP-style</span>
+                </div>
+                <div class="stat-pill">
+                    <span class="label">Experiences</span>
+                    <span class="value">5 modes</span>
                 </div>
             </div>
+        </section>
 
-            <div class="glass-panel">
-                <h1 class="headline">Purchasing Power of Wealth</h1>
-                <p class="subhead">
-                    How far does your net worth actually stretch? Compare lifestyle-weighted purchasing power
-                    across cities — not a dry PPP calculator, but a wealth-power lens on where you are richest.
-                </p>
+        <nav class="mode-switcher" id="modeSwitcher" aria-label="Experience modes">
+            <button type="button" class="mode-tab active" data-mode="richest">
+                <div class="mode-tab-num">01</div>
+                <div class="mode-tab-title">Where are you richest?</div>
+            </button>
+            <button type="button" class="mode-tab" data-mode="local">
+                <div class="mode-tab-num">02</div>
+                <div class="mode-tab-title">What is it worth where you live?</div>
+            </button>
+            <button type="button" class="mode-tab" data-mode="relocate">
+                <div class="mode-tab-num">03</div>
+                <div class="mode-tab-title">Maintain lifestyle elsewhere</div>
+            </button>
+            <button type="button" class="mode-tab" data-mode="retire">
+                <div class="mode-tab-num">04</div>
+                <div class="mode-tab-title">Where could you retire?</div>
+            </button>
+            <button type="button" class="mode-tab" data-mode="richer">
+                <div class="mode-tab-num">05</div>
+                <div class="mode-tab-title">Richer than you think?</div>
+            </button>
+        </nav>
 
+        <div class="ppw-layout">
+            <aside class="ppw-inputs">
                 <div class="section-label">Your position</div>
-                <div class="grid">
+                <div class="input-grid">
                     <div>
                         <label for="netWorth">Net worth (USD)</label>
-                        <input type="number" id="netWorth" value="500000" min="0" step="1000">
+                        <input type="number" id="netWorth" class="money-input" value="1200000" min="0" step="1000">
                     </div>
                     <div>
-                        <label for="homeLocation">Home city / country</label>
+                        <label for="homeLocation">Home city</label>
                         <select id="homeLocation"></select>
                     </div>
-                </div>
-
-                <div class="section-label">Lifestyle mode</div>
-                <div class="lifestyle-group" id="lifestyleGroup" role="group" aria-label="Lifestyle mode">
-                    <button type="button" class="lifestyle-btn active" data-lifestyle="retiree">Retiree</button>
-                    <button type="button" class="lifestyle-btn" data-lifestyle="family">Family</button>
-                    <button type="button" class="lifestyle-btn" data-lifestyle="single">Single</button>
+                    <div class="input-grid-2">
+                        <div>
+                            <label for="householdSize">Household size</label>
+                            <select id="householdSize">
+                                <option value="1">1 person</option>
+                                <option value="2" selected>2 people</option>
+                                <option value="3">3 people</option>
+                                <option value="4">4 people</option>
+                                <option value="5">5+ people</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="lifestyleSelect">Lifestyle mode</label>
+                            <select id="lifestyleSelect">
+                                <option value="retiree">Retiree</option>
+                                <option value="family">Family</option>
+                                <option value="single">Single professional</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="section-label">Category emphasis</div>
@@ -431,261 +123,535 @@
                     <label class="toggle-item"><input type="checkbox" id="toggleEducation" checked> Include education</label>
                 </div>
 
-                <button class="cta-btn" type="button" id="calculateBtn">Calculate purchasing power</button>
-
-                <div class="results-section" id="resultsSection" style="display:none;">
-                    <div class="results-heading">Nominal wealth context</div>
-                    <div class="results" id="nominalCards"></div>
-
-                    <div class="results-heading" style="margin-top:32px;">Lifestyle purchasing power</div>
-                    <p class="result-sub" style="margin-bottom:12px;">Equivalent nominal wealth needed to match your home lifestyle elsewhere.</p>
-                    <div class="result-card highlight" id="equivCard"></div>
-
-                    <div class="results-heading" style="margin-top:32px;">Wealth Power Index — where are you richest?</div>
-                    <p class="result-sub" style="margin-bottom:12px;">Home = 1.0×. Higher multiplier = your wealth stretches further there.</p>
-                    <div class="result-card">
-                        <div class="wpi-table-wrap">
-                            <table class="wpi-table" id="wpiTable">
-                                <thead>
-                                    <tr>
-                                        <th>Location</th>
-                                        <th>WPI</th>
-                                        <th class="wpi-bar-cell">Relative power</th>
-                                        <th>Equiv. wealth</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="wpiBody"></tbody>
-                            </table>
+                <div class="mode-extra" id="extraRelocate">
+                    <div class="section-label">Relocation target</div>
+                    <div class="input-grid">
+                        <div>
+                            <label for="destLocation">Destination city</label>
+                            <select id="destLocation"></select>
                         </div>
-                    </div>
-
-                    <div class="results-heading" style="margin-top:32px;" id="categoryHeading">Category breakdown (home vs selected)</div>
-                    <div class="category-grid" id="categoryGrid"></div>
-
-                    <div class="share-container" id="shareSection">
-                        <div class="result-label">Share this result</div>
-                        <div class="share-actions">
-                            <button type="button" class="share-btn" id="copyLinkBtn">Copy link</button>
-                            <button type="button" class="share-btn" id="copySummaryBtn">Copy summary</button>
+                        <div>
+                            <label for="annualSpend">Current annual spending (USD)</label>
+                            <input type="number" id="annualSpend" class="money-input" value="85000" min="0" step="1000">
                         </div>
-                        <p class="result-sub" id="shareStatus" style="margin-top:10px;"></p>
-                    </div>
-
-                    <div class="methodology">
-                        <h3>Methodology (prototype)</h3>
-                        <p>
-                            Composite price-level index = weighted sum of category PLIs (housing, food, transport, health,
-                            recreation, education, general consumption). Weights shift by lifestyle mode; toggles zero out
-                            excluded categories and redistribute weight to general consumption.
-                        </p>
-                        <ul>
-                            <li><strong>Country layer:</strong> World Bank ICP household-consumption PPP patterns (illustrative, USA = 100).</li>
-                            <li><strong>City layer:</strong> Local rent/cost deltas on top of national PLI — prototype only.</li>
-                            <li><strong>Wealth Power Index:</strong> home composite PLI ÷ destination composite PLI.</li>
-                            <li><strong>Equivalent wealth:</strong> net worth × WPI multiplier.</li>
-                            <li><strong>Production path:</strong> swap <code>purchasing-power-wealth-dev-data.js</code> for live World Bank ICP API + OECD/Eurostat SDMX + IMF WEO inflation carry-forward.</li>
-                        </ul>
                     </div>
                 </div>
+
+                <div class="mode-extra" id="extraRetire">
+                    <div class="section-label">Retirement resources</div>
+                    <div class="input-grid">
+                        <div>
+                            <label for="retireAssets">Investable assets (USD)</label>
+                            <input type="number" id="retireAssets" class="money-input" value="1200000" min="0" step="1000">
+                        </div>
+                        <div>
+                            <label for="retireIncome">Expected annual income (USD)</label>
+                            <input type="number" id="retireIncome" value="0" min="0" step="1000">
+                        </div>
+                        <div>
+                            <label for="targetSpend">Target annual lifestyle spend (USD)</label>
+                            <input type="number" id="targetSpend" class="money-input" value="72000" min="0" step="1000">
+                        </div>
+                    </div>
+                    <p style="font-size:0.78rem;color:var(--text-muted);margin:0.5rem 0 0;line-height:1.45;">
+                        Prototype model uses 3.5% safe withdrawal + income. Runway years are illustrative.
+                    </p>
+                </div>
+            </aside>
+
+            <div class="ppw-results">
+                <div class="results-empty" id="resultsEmpty">
+                    <div class="results-empty-icon">🌐</div>
+                    <h3>Adjust inputs to see results</h3>
+                    <p>All fields update instantly. Pick a mode above to explore purchasing power from five angles.</p>
+                </div>
+
+                <div class="results-panel" id="resultsPanel">
+                    <div id="modeContent"></div>
+
+                    <div class="share-container" id="shareSection">
+                        <div class="section-label" style="margin-top:0;">Share this result</div>
+                        <div class="share-preview" id="sharePreview"></div>
+                        <div class="share-actions">
+                            <button type="button" class="share-btn primary" id="copySummaryBtn">Copy one-liner</button>
+                            <button type="button" class="share-btn" id="copyLinkBtn">Copy link</button>
+                            <button type="button" class="share-btn" id="downloadCardBtn">Download share card</button>
+                        </div>
+                        <p class="share-status" id="shareStatus"></p>
+                    </div>
+                </div>
+
+                <details class="methodology">
+                    <summary>Methodology &amp; data sources (prototype)</summary>
+                    <div class="methodology-body">
+                        <p>
+                            <strong>Composite price-level index</strong> = weighted sum of category PLIs
+                            (housing, food, transport, healthcare, recreation, education, general consumption).
+                            Weights shift by lifestyle mode and household size; category toggles zero out excluded
+                            categories and redistribute weight to general consumption.
+                        </p>
+                        <ul>
+                            <li><strong>Country layer:</strong> World Bank ICP household-consumption PPP patterns (illustrative, USA = 100). 44 countries in this prototype.</li>
+                            <li><strong>City layer:</strong> Local rent/cost deltas on top of national PLI — 41 cities, prototype only.</li>
+                            <li><strong>Wealth Power Index (WPI):</strong> home composite PLI ÷ destination composite PLI. Home = 1.0×.</li>
+                            <li><strong>Equivalent wealth:</strong> nominal net worth × WPI multiplier.</li>
+                            <li><strong>Percentile stubs:</strong> illustrative bands — not live GWR data. Production will wire UBS GWR 2026 tables.</li>
+                            <li><strong>Retirement model:</strong> 3.5% safe withdrawal rate + annual income; runway = (assets + 10× income) ÷ required spend. Prototype only.</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">
+                            <strong>Production path:</strong> swap <code>purchasing-power-wealth-dev-data.js</code> for
+                            live World Bank ICP API (<code>PA.NUS.PRVT.PP.KD</code>) + OECD/Eurostat SDMX PLI series +
+                            IMF WEO inflation carry-forward + GWR percentile tables.
+                        </p>
+                    </div>
+                </details>
             </div>
         </div>
-    </div>
+    </main>
 
     <div id="footer-placeholder"></div>
 
-    <script src="purchasing-power-wealth-dev-data.js?v=2026-09-17.1"></script>
+    <!-- Share card template (off-screen) -->
+    <div id="ppwShareCard">
+        <div class="ppw-card-header">
+            <div class="ppw-card-kicker">WealthMeter · Purchasing Power</div>
+            <div class="ppw-card-title">Wealth Power Index</div>
+        </div>
+        <div class="ppw-card-headline" id="cardHeadline"></div>
+        <div class="ppw-card-metrics" id="cardMetrics"></div>
+    </div>
+
+    <script src="purchasing-power-wealth-dev-data.js?v=2026-09-17.2"></script>
     <script src="components.js?v=2026-09-16.2"></script>
     <script>
     (function () {
+        const ENGINE = window.PPW_ENGINE;
         const DATA = window.PPW_DATA;
-        let lifestyle = "retiree";
+        let currentMode = "richest";
+        let debounceTimer = null;
 
-        function formatMoney(x) {
-            if (!isFinite(x)) return "—";
-            return x.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 0 });
-        }
-
-        function getLocationPli(locationId) {
-            const loc = DATA.locations.find((l) => l.id === locationId);
-            if (!loc) return null;
-            const country = DATA.countries[loc.country];
-            const delta = DATA.cityDeltas[loc.cityDelta] || {};
-            const pli = {};
-            DATA.categories.forEach((cat) => {
-                pli[cat] = country.pli[cat] * (delta[cat] || 1);
-            });
-            return { loc, country, pli };
-        }
-
-        function buildWeights() {
-            const base = { ...DATA.lifestyleProfiles[lifestyle].weights };
-            const toggles = {
-                housing: document.getElementById("toggleHousing").checked,
-                health: document.getElementById("toggleHealthcare").checked,
-                education: document.getElementById("toggleEducation").checked,
+        function getOptions() {
+            return {
+                lifestyle: document.getElementById("lifestyleSelect").value,
+                householdSize: Number(document.getElementById("householdSize").value),
+                toggles: {
+                    housing: document.getElementById("toggleHousing").checked,
+                    health: document.getElementById("toggleHealthcare").checked,
+                    education: document.getElementById("toggleEducation").checked,
+                },
             };
-            let excluded = 0;
-            if (!toggles.housing) { excluded += base.housing; base.housing = 0; }
-            if (!toggles.health) { excluded += base.health; base.health = 0; }
-            if (!toggles.education) { excluded += base.education; base.education = 0; }
-            base.general += excluded;
-            const total = Object.values(base).reduce((a, b) => a + b, 0);
-            Object.keys(base).forEach((k) => { base[k] /= total; });
-            return base;
         }
 
-        function compositePli(pli, weights) {
-            return DATA.categories.reduce((sum, cat) => sum + pli[cat] * weights[cat], 0);
+        function getInputs() {
+            return {
+                netWorth: Math.max(0, Number(document.getElementById("netWorth").value || 0)),
+                homeId: document.getElementById("homeLocation").value,
+                destId: document.getElementById("destLocation").value,
+                annualSpend: Math.max(0, Number(document.getElementById("annualSpend").value || 0)),
+                retireAssets: Math.max(0, Number(document.getElementById("retireAssets").value || 0)),
+                retireIncome: Math.max(0, Number(document.getElementById("retireIncome").value || 0)),
+                targetSpend: Math.max(0, Number(document.getElementById("targetSpend").value || 0)),
+            };
         }
 
-        function wealthPercentileStub(nw) {
-            const band = DATA.wealthPercentileStubs.find((b) => nw >= b.min && nw < b.max);
-            return band || DATA.wealthPercentileStubs[DATA.wealthPercentileStubs.length - 1];
+        function fmt(x, compact) {
+            return ENGINE.formatMoney(x, { compact: compact });
         }
 
-        function populateLocations() {
-            const sel = document.getElementById("homeLocation");
+        function populateSelects() {
+            const homeSel = document.getElementById("homeLocation");
+            const destSel = document.getElementById("destLocation");
             DATA.locations.forEach((loc) => {
-                const opt = document.createElement("option");
-                opt.value = loc.id;
-                opt.textContent = loc.label;
-                sel.appendChild(opt);
+                const flag = DATA.countries[loc.country]?.flag || "";
+                const opt1 = document.createElement("option");
+                opt1.value = loc.id;
+                opt1.textContent = `${flag} ${loc.label}`;
+                homeSel.appendChild(opt1);
+                const opt2 = document.createElement("option");
+                opt2.value = loc.id;
+                opt2.textContent = `${flag} ${loc.label}`;
+                destSel.appendChild(opt2);
             });
-            sel.value = "sf-usa";
+            homeSel.value = "sf-usa";
+            destSel.value = "chiangmai-tha";
         }
 
-        function setupLifestyleButtons() {
-            document.querySelectorAll(".lifestyle-btn").forEach((btn) => {
-                btn.addEventListener("click", () => {
-                    document.querySelectorAll(".lifestyle-btn").forEach((b) => b.classList.remove("active"));
-                    btn.classList.add("active");
-                    lifestyle = btn.dataset.lifestyle;
-                    calculate();
-                });
+        function setMode(mode) {
+            currentMode = mode;
+            document.querySelectorAll(".mode-tab").forEach((tab) => {
+                tab.classList.toggle("active", tab.dataset.mode === mode);
             });
+            document.getElementById("extraRelocate").classList.toggle("visible", mode === "relocate");
+            document.getElementById("extraRetire").classList.toggle("visible", mode === "retire");
+            const showShare = mode === "richest" || mode === "richer";
+            document.getElementById("shareSection").style.display = showShare ? "" : "none";
+            recalculate();
         }
 
-        function calculate() {
-            const netWorth = Math.max(0, Number(document.getElementById("netWorth").value || 0));
-            const homeId = document.getElementById("homeLocation").value;
-            const weights = buildWeights();
-            const home = getLocationPli(homeId);
-            if (!home) return;
-
-            const homeComposite = compositePli(home.pli, weights);
-            const percentile = wealthPercentileStub(netWorth);
-
-            const rankings = DATA.locations.map((loc) => {
-                const dest = getLocationPli(loc.id);
-                const destComposite = compositePli(dest.pli, weights);
-                const wpi = homeComposite / destComposite;
-                const equiv = netWorth * wpi;
-                return {
-                    id: loc.id,
-                    label: loc.label,
-                    wpi,
-                    equiv,
-                    destComposite,
-                    pli: dest.pli,
-                    isHome: loc.id === homeId,
-                };
-            }).sort((a, b) => b.wpi - a.wpi);
-
-            document.getElementById("resultsSection").style.display = "block";
-
-            document.getElementById("nominalCards").innerHTML = `
-                <div class="result-card highlight">
-                    <div class="result-label">Your net worth</div>
-                    <div class="result-value">${formatMoney(netWorth)}</div>
-                    <div class="result-sub">Nominal USD position</div>
-                </div>
-                <div class="result-card">
-                    <div class="result-label">Global wealth rank (prototype)</div>
-                    <div class="result-value">~${percentile.percentile}th</div>
-                    <div class="result-sub">${percentile.label} — illustrative stub, not live GWR data</div>
-                </div>
-                <div class="result-card">
-                    <div class="result-label">Home composite PLI</div>
-                    <div class="result-value">${homeComposite.toFixed(1)}</div>
-                    <div class="result-sub">${home.loc.label} · ${DATA.lifestyleProfiles[lifestyle].label} weights</div>
-                </div>
-            `;
-
-            const topDests = rankings.filter((r) => !r.isHome).slice(0, 6);
-            const homeLabel = home.loc.label;
-            document.getElementById("equivCard").innerHTML = `
-                <div class="result-label">Your ${formatMoney(netWorth)} in ${homeLabel} ≈</div>
-                <div class="equiv-list">
-                    ${topDests.map((r) => `
-                        <div class="equiv-row">
-                            <strong>${r.label}</strong>
-                            <span class="equiv-val">${formatMoney(r.equiv)}</span>
-                        </div>
-                    `).join("")}
-                </div>
-                <div class="result-sub" style="margin-top:12px;">Top destinations by lifestyle purchasing power (prototype estimates).</div>
-            `;
-
+        function renderModeRichest(inputs, opts) {
+            const rankings = ENGINE.rankDestinations(inputs.netWorth, inputs.homeId, opts);
+            const home = ENGINE.getLocation(inputs.homeId);
+            const top = rankings.find((r) => !r.isHome) || rankings[0];
+            const homeShort = home?.label.split(",")[0] || "home";
+            const topShort = top?.label.split(",")[0] || "abroad";
+            const shareLine = ENGINE.shareLineMode1(inputs.netWorth, inputs.homeId, rankings);
             const maxWpi = Math.max(...rankings.map((r) => r.wpi));
-            document.getElementById("wpiBody").innerHTML = rankings.map((r) => {
+
+            let html = `
+                <div class="headline-result">
+                    Your <strong>${fmt(inputs.netWorth)}</strong> in ${homeShort} stretches furthest in
+                    <strong>${top.flag} ${topShort}</strong> — <strong>${top.wpi.toFixed(1)}×</strong> Wealth Power.
+                </div>
+                <div class="metric-grid">
+                    <div class="metric-card highlight">
+                        <div class="label">Nominal net worth</div>
+                        <div class="value">${fmt(inputs.netWorth)}</div>
+                        <div class="sub">${home?.label || ""}</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="label">Top destination WPI</div>
+                        <div class="value">${top.wpi.toFixed(2)}×</div>
+                        <div class="sub">${top.label}</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="label">Equivalent wealth there</div>
+                        <div class="value">${fmt(top.equiv)}</div>
+                        <div class="sub">Same lifestyle purchasing power</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="label">Destinations ranked</div>
+                        <div class="value">${rankings.length}</div>
+                        <div class="sub">${DATA.meta.countryCount} countries · ${DATA.meta.cityCount} cities</div>
+                    </div>
+                </div>
+                <div class="rank-ladder">
+                    <h3>Wealth Power ranking — home = 1.0×</h3>
+            `;
+
+            rankings.slice(0, 15).forEach((r, i) => {
                 const multClass = r.wpi >= 1.05 ? "high" : (r.wpi < 0.95 ? "low" : "");
                 const barPct = Math.min(100, (r.wpi / maxWpi) * 100);
-                return `
-                    <tr class="${r.isHome ? "home-row" : ""}">
-                        <td>${r.label}${r.isHome ? " ★" : ""}</td>
-                        <td><span class="wpi-mult ${multClass}">${r.wpi.toFixed(2)}×</span></td>
-                        <td class="wpi-bar-cell">
-                            <div class="wpi-bar"><div class="wpi-bar-fill" style="width:${barPct}%"></div></div>
-                        </td>
-                        <td>${formatMoney(r.equiv)}</td>
-                    </tr>
-                `;
-            }).join("");
-
-            const showCats = document.getElementById("toggleHousing").checked
-                || document.getElementById("toggleHealthcare").checked
-                || document.getElementById("toggleEducation").checked;
-            document.getElementById("categoryHeading").style.display = showCats ? "" : "none";
-            document.getElementById("categoryGrid").style.display = showCats ? "" : "none";
-
-            if (showCats) {
-                const catLabels = {
-                    housing: "Housing",
-                    food: "Food",
-                    transport: "Transport",
-                    health: "Health",
-                    recreation: "Recreation",
-                    education: "Education",
-                    general: "General",
-                };
-                const activeCats = DATA.categories.filter((cat) => {
-                    if (cat === "housing") return document.getElementById("toggleHousing").checked;
-                    if (cat === "health") return document.getElementById("toggleHealthcare").checked;
-                    if (cat === "education") return document.getElementById("toggleEducation").checked;
-                    return true;
-                });
-                const best = rankings[0];
-                document.getElementById("categoryGrid").innerHTML = activeCats.map((cat) => {
-                    const homeVal = home.pli[cat];
-                    const destVal = best.pli[cat];
-                    const ratio = homeVal / destVal;
-                    return `
-                        <div class="cat-card">
-                            <div class="cat-name">${catLabels[cat]}</div>
-                            <div class="cat-pli">${homeVal.toFixed(0)}</div>
-                            <div class="cat-vs">vs ${best.label.split(",")[0]}: ${destVal.toFixed(0)} (${ratio.toFixed(2)}×)</div>
+                html += `
+                    <div class="rank-row ${r.isHome ? "home-row" : ""}">
+                        <div>
+                            <div class="rank-pos">#${i + 1}${r.isHome ? " · home" : ""}</div>
+                            <div class="rank-name"><span class="rank-flag">${r.flag}</span> ${r.label}</div>
                         </div>
-                    `;
-                }).join("");
+                        <div class="rank-track"><div class="rank-bar" style="width:${barPct}%"></div></div>
+                        <div>
+                            <div class="rank-mult ${multClass}">${r.wpi.toFixed(2)}×</div>
+                            <div class="rank-equiv">${fmt(r.equiv, true)}</div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `</div>`;
+            updateShare(shareLine, mode1Card(inputs, opts, rankings, top));
+            return html;
+        }
+
+        function renderModeLocal(inputs, opts) {
+            const ppp = ENGINE.localPurchasingPower(inputs.netWorth, inputs.homeId, opts);
+            if (!ppp) return "<p>Unable to compute.</p>";
+            const homeShort = ppp.homeLabel.split(",")[0];
+
+            return `
+                <div class="headline-result">
+                    <strong>${fmt(inputs.netWorth)}</strong> nominal in ${homeShort} buys like
+                    <strong>${fmt(ppp.localLifestylePower)}</strong> of US-average lifestyle power locally.
+                </div>
+                <div class="metric-grid">
+                    <div class="metric-card highlight">
+                        <div class="label">Nominal net worth</div>
+                        <div class="value">${fmt(ppp.nominal)}</div>
+                        <div class="sub">What you report on paper</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="label">Local lifestyle power</div>
+                        <div class="value">${fmt(ppp.localLifestylePower)}</div>
+                        <div class="sub">PPP-adjusted vs US average basket</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="label">National baseline power</div>
+                        <div class="value">${fmt(ppp.nationalBaselinePower)}</div>
+                        <div class="sub">${ppp.countryName} average city cost</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="label">US average lifestyle</div>
+                        <div class="value">${fmt(ppp.usAveragePower)}</div>
+                        <div class="sub">Reference basket (USA = 100 PLI)</div>
+                    </div>
+                </div>
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="label">Home composite PLI</div>
+                        <div class="value">${ppp.homeComposite.toFixed(1)}</div>
+                        <div class="sub">${ppp.homeLabel}</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="label">Country composite PLI</div>
+                        <div class="value">${ppp.countryComposite.toFixed(1)}</div>
+                        <div class="sub">${ppp.countryName} national average</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="label">Real discount vs nominal</div>
+                        <div class="value">${ppp.discountVsNominal >= 0 ? "+" : ""}${ppp.discountVsNominal.toFixed(0)}%</div>
+                        <div class="sub">Local purchasing power vs sticker wealth</div>
+                    </div>
+                </div>
+                ${renderCategoryBreakdown(inputs.homeId, "austin-usa", opts, "Home PLI vs US baseline (Austin)")}
+            `;
+        }
+
+        function renderModeRelocate(inputs, opts) {
+            const result = ENGINE.lifestyleSpendAbroad(inputs.annualSpend, inputs.homeId, inputs.destId, opts);
+            if (!result) return "<p>Unable to compute.</p>";
+            const savings = result.destSpend < result.homeSpend;
+
+            return `
+                <div class="headline-result">
+                    To maintain your <strong>${fmt(inputs.annualSpend)}/yr</strong> lifestyle from
+                    <strong>${result.homeLabel.split(",")[0]}</strong> in
+                    <strong>${result.destLabel.split(",")[0]}</strong>, you need
+                    <strong>${fmt(result.destSpend)}/yr</strong>
+                    ${savings ? `— <strong>${Math.abs(result.savingsPct).toFixed(0)}% less</strong>.` : `— <strong>${Math.abs(result.savingsPct).toFixed(0)}% more</strong>.`}
+                </div>
+                <div class="metric-grid">
+                    <div class="metric-card highlight">
+                        <div class="label">Required spend abroad</div>
+                        <div class="value">${fmt(result.destSpend)}</div>
+                        <div class="sub">${result.destLabel}</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="label">Current home spend</div>
+                        <div class="value">${fmt(result.homeSpend)}</div>
+                        <div class="sub">${result.homeLabel}</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="label">Cost multiplier</div>
+                        <div class="value">${result.multiplier.toFixed(2)}×</div>
+                        <div class="sub">Home PLI ÷ destination PLI</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="label">Annual ${savings ? "savings" : "premium"}</div>
+                        <div class="value" style="color:${savings ? "var(--green)" : "var(--red)"}">${fmt(Math.abs(result.homeSpend - result.destSpend))}</div>
+                        <div class="sub">${result.interpretation}</div>
+                    </div>
+                </div>
+                ${renderCategoryBreakdown(inputs.homeId, inputs.destId, opts, "Category cost comparison")}
+            `;
+        }
+
+        function renderModeRetire(inputs, opts) {
+            const results = ENGINE.retirementAffordability(
+                inputs.retireAssets, inputs.retireIncome, inputs.targetSpend, inputs.homeId, opts
+            );
+            const affordable = results.filter((r) => r.affordable);
+            const home = ENGINE.getLocation(inputs.homeId);
+
+            let html = `
+                <div class="headline-result">
+                    <strong>${affordable.length}</strong> of ${results.length} destinations support
+                    <strong>${fmt(inputs.targetSpend)}/yr</strong> lifestyle from
+                    <strong>${fmt(inputs.retireAssets)}</strong> + <strong>${fmt(inputs.retireIncome)}/yr</strong> income.
+                </div>
+                <div class="metric-grid">
+                    <div class="metric-card highlight">
+                        <div class="label">Affordable destinations</div>
+                        <div class="value">${affordable.length}</div>
+                        <div class="sub">At target lifestyle spend (prototype model)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="label">Annual budget</div>
+                        <div class="value">${fmt(inputs.retireAssets * 0.035 + inputs.retireIncome)}</div>
+                        <div class="sub">3.5% SWR + income</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="label">Home required spend</div>
+                        <div class="value">${fmt(inputs.targetSpend)}</div>
+                        <div class="sub">${home?.label || ""}</div>
+                    </div>
+                </div>
+                <div class="rank-ladder"><h3>Destination affordability scan</h3>
+            `;
+
+            results.slice(0, 20).forEach((r) => {
+                html += `
+                    <div class="retire-row ${r.affordable ? "affordable" : ""}">
+                        <div class="dest-name"><span>${r.flag}</span> ${r.label}</div>
+                        <div style="font-family:'Roboto Mono',monospace;font-size:0.82rem;">
+                            ${fmt(r.requiredSpend)}/yr · ~${r.runwayYears.toFixed(0)}yr runway
+                        </div>
+                        <span class="retire-badge ${r.affordable ? "yes" : "no"}">${r.affordable ? "Affordable" : "Stretch"}</span>
+                    </div>
+                `;
+            });
+
+            html += `</div>`;
+            return html;
+        }
+
+        function renderModeRicher(inputs, opts) {
+            const p = ENGINE.wealthPercentiles(inputs.netWorth, inputs.homeId, opts);
+            const home = ENGINE.getLocation(inputs.homeId);
+            const shareLine = ENGINE.shareLineMode5(inputs.netWorth, inputs.homeId, opts);
+
+            let html = `
+                <div class="headline-result">
+                    <strong>${fmt(inputs.netWorth)}</strong> in ${home?.label.split(",")[0] || "home"}:
+                    <strong>${p.contrast}</strong>
+                </div>
+                <div class="percentile-scales">
+                    <div class="scale-card local">
+                        <div class="scale-label">Local wealth position</div>
+                        <div class="scale-value">Top ${p.local.topPct}%</div>
+                        <div class="scale-sub">${home?.label || "Local market"} · prototype stub</div>
+                        <div class="scale-bar-wrap"><div class="scale-bar-fill" style="width:${100 - p.local.percentile}%"></div></div>
+                    </div>
+                    <div class="scale-card national">
+                        <div class="scale-label">National wealth position</div>
+                        <div class="scale-value">Top ${p.national.topPct}%</div>
+                        <div class="scale-sub">${DATA.countries[home?.country]?.name || "Country"} · prototype stub</div>
+                        <div class="scale-bar-wrap"><div class="scale-bar-fill" style="width:${100 - p.national.percentile}%"></div></div>
+                    </div>
+                    <div class="scale-card global">
+                        <div class="scale-label">Global PPP-adjusted</div>
+                        <div class="scale-value">Top ${p.pppGlobal.topPct}%</div>
+                        <div class="scale-sub">≈ ${fmt(p.pppAdjustedWealth)} lifestyle-equivalent · prototype stub</div>
+                        <div class="scale-bar-wrap"><div class="scale-bar-fill" style="width:${100 - p.pppGlobal.percentile}%"></div></div>
+                    </div>
+                </div>
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="label">Nominal global rank</div>
+                        <div class="value">Top ${p.global.topPct}%</div>
+                        <div class="sub">Without PPP adjustment</div>
+                    </div>
+                    <div class="metric-card highlight">
+                        <div class="label">PPP-adjusted wealth</div>
+                        <div class="value">${fmt(p.pppAdjustedWealth)}</div>
+                        <div class="sub">Lifestyle-equivalent global position</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="label">Local vs global gap</div>
+                        <div class="value">${(p.local.topPct - p.pppGlobal.topPct).toFixed(1)}pp</div>
+                        <div class="sub">How much PPP shifts your global rank</div>
+                    </div>
+                </div>
+            `;
+
+            updateShare(shareLine, mode5Card(inputs, p, home));
+            return html;
+        }
+
+        function renderCategoryBreakdown(homeId, destId, opts, title) {
+            const cats = ENGINE.categoryBreakdown(homeId, destId, opts);
+            if (!cats.length) return "";
+            let html = `<div class="rank-ladder"><h3>${title}</h3><div class="category-grid">`;
+            cats.forEach((c) => {
+                html += `
+                    <div class="cat-chip">
+                        <div class="cat-name">${c.label}</div>
+                        <div class="cat-val">${c.homeVal.toFixed(0)}</div>
+                        <div style="font-size:0.68rem;color:var(--text-muted);margin-top:0.2rem;">${c.ratio.toFixed(2)}× vs dest</div>
+                    </div>
+                `;
+            });
+            html += `</div></div>`;
+            return html;
+        }
+
+        function mode1Card(inputs, opts, rankings, top) {
+            const home = ENGINE.getLocation(inputs.homeId);
+            return {
+                headline: ENGINE.shareLineMode1(inputs.netWorth, inputs.homeId, rankings),
+                metrics: [
+                    { label: "Net worth", value: fmt(inputs.netWorth, true) },
+                    { label: "Top WPI", value: top.wpi.toFixed(1) + "×" },
+                    { label: "Equivalent", value: fmt(top.equiv, true) },
+                ],
+            };
+        }
+
+        function mode5Card(inputs, p, home) {
+            return {
+                headline: ENGINE.shareLineMode5(inputs.netWorth, inputs.homeId, getOptions()),
+                metrics: [
+                    { label: "Local", value: "Top " + p.local.topPct + "%" },
+                    { label: "National", value: "Top " + p.national.topPct + "%" },
+                    { label: "Global PPP", value: "Top " + p.pppGlobal.topPct + "%" },
+                ],
+            };
+        }
+
+        function updateShare(line, cardData) {
+            document.getElementById("sharePreview").textContent = line;
+            if (cardData) {
+                document.getElementById("cardHeadline").textContent = cardData.headline;
+                document.getElementById("cardMetrics").innerHTML = cardData.metrics.map((m) => `
+                    <div class="ppw-card-metric">
+                        <div class="lbl">${m.label}</div>
+                        <div class="val">${m.value}</div>
+                    </div>
+                `).join("");
+            }
+        }
+
+        function recalculate() {
+            const inputs = getInputs();
+            const opts = getOptions();
+            const panel = document.getElementById("resultsPanel");
+            const empty = document.getElementById("resultsEmpty");
+            const content = document.getElementById("modeContent");
+
+            if (inputs.netWorth <= 0 && currentMode !== "relocate") {
+                panel.classList.remove("visible");
+                empty.style.display = "flex";
+                return;
             }
 
+            empty.style.display = "none";
+            panel.classList.remove("visible");
+
+            let html = "";
+            switch (currentMode) {
+                case "richest": html = renderModeRichest(inputs, opts); break;
+                case "local": html = renderModeLocal(inputs, opts); break;
+                case "relocate": html = renderModeRelocate(inputs, opts); break;
+                case "retire": html = renderModeRetire(inputs, opts); break;
+                case "richer": html = renderModeRicher(inputs, opts); break;
+            }
+
+            content.innerHTML = html;
+            requestAnimationFrame(() => {
+                panel.classList.add("visible");
+                const share = document.getElementById("shareSection");
+                if (currentMode === "richest" || currentMode === "richer") {
+                    share.classList.add("visible");
+                } else {
+                    share.classList.remove("visible");
+                }
+            });
+
+            syncUrl(inputs, opts);
+        }
+
+        function syncUrl(inputs, opts) {
             const params = new URLSearchParams({
-                nw: netWorth,
-                home: homeId,
-                lifestyle,
-                h: document.getElementById("toggleHousing").checked ? "1" : "0",
-                hc: document.getElementById("toggleHealthcare").checked ? "1" : "0",
-                ed: document.getElementById("toggleEducation").checked ? "1" : "0",
+                mode: currentMode,
+                nw: inputs.netWorth,
+                home: inputs.homeId,
+                dest: inputs.destId,
+                spend: inputs.annualSpend,
+                assets: inputs.retireAssets,
+                income: inputs.retireIncome,
+                target: inputs.targetSpend,
+                lifestyle: opts.lifestyle,
+                hh: opts.householdSize,
+                h: opts.toggles.housing ? "1" : "0",
+                hc: opts.toggles.health ? "1" : "0",
+                ed: opts.toggles.education ? "1" : "0",
             });
             history.replaceState(null, "", `?${params.toString()}`);
         }
@@ -694,21 +660,47 @@
             const p = new URLSearchParams(location.search);
             if (p.has("nw")) document.getElementById("netWorth").value = p.get("nw");
             if (p.has("home")) document.getElementById("homeLocation").value = p.get("home");
-            if (p.has("lifestyle") && DATA.lifestyleProfiles[p.get("lifestyle")]) {
-                lifestyle = p.get("lifestyle");
-                document.querySelectorAll(".lifestyle-btn").forEach((b) => {
-                    b.classList.toggle("active", b.dataset.lifestyle === lifestyle);
-                });
-            }
+            if (p.has("dest")) document.getElementById("destLocation").value = p.get("dest");
+            if (p.has("spend")) document.getElementById("annualSpend").value = p.get("spend");
+            if (p.has("assets")) document.getElementById("retireAssets").value = p.get("assets");
+            if (p.has("income")) document.getElementById("retireIncome").value = p.get("income");
+            if (p.has("target")) document.getElementById("targetSpend").value = p.get("target");
+            if (p.has("lifestyle")) document.getElementById("lifestyleSelect").value = p.get("lifestyle");
+            if (p.has("hh")) document.getElementById("householdSize").value = p.get("hh");
             if (p.has("h")) document.getElementById("toggleHousing").checked = p.get("h") === "1";
             if (p.has("hc")) document.getElementById("toggleHealthcare").checked = p.get("hc") === "1";
             if (p.has("ed")) document.getElementById("toggleEducation").checked = p.get("ed") === "1";
+            if (p.has("mode")) setMode(p.get("mode"));
         }
 
-        document.getElementById("calculateBtn").addEventListener("click", calculate);
-        ["netWorth", "homeLocation", "toggleHousing", "toggleHealthcare", "toggleEducation"].forEach((id) => {
-            document.getElementById(id).addEventListener("change", calculate);
-            document.getElementById(id).addEventListener("input", calculate);
+        function debouncedRecalc() {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(recalculate, 80);
+        }
+
+        document.querySelectorAll(".mode-tab").forEach((tab) => {
+            tab.addEventListener("click", () => setMode(tab.dataset.mode));
+        });
+
+        const inputIds = [
+            "netWorth", "homeLocation", "destLocation", "householdSize", "lifestyleSelect",
+            "toggleHousing", "toggleHealthcare", "toggleEducation",
+            "annualSpend", "retireAssets", "retireIncome", "targetSpend",
+        ];
+        inputIds.forEach((id) => {
+            const el = document.getElementById(id);
+            el.addEventListener("change", debouncedRecalc);
+            el.addEventListener("input", debouncedRecalc);
+        });
+
+        document.getElementById("copySummaryBtn").addEventListener("click", async () => {
+            const text = document.getElementById("sharePreview").textContent + " " + location.href;
+            try {
+                await navigator.clipboard.writeText(text);
+                document.getElementById("shareStatus").textContent = "One-liner copied.";
+            } catch (_) {
+                document.getElementById("shareStatus").textContent = "Could not copy — select text manually.";
+            }
         });
 
         document.getElementById("copyLinkBtn").addEventListener("click", async () => {
@@ -716,26 +708,29 @@
                 await navigator.clipboard.writeText(location.href);
                 document.getElementById("shareStatus").textContent = "Link copied.";
             } catch (_) {
-                document.getElementById("shareStatus").textContent = "Could not copy — copy the URL manually.";
+                document.getElementById("shareStatus").textContent = "Could not copy link.";
             }
         });
 
-        document.getElementById("copySummaryBtn").addEventListener("click", async () => {
-            const nw = formatMoney(Number(document.getElementById("netWorth").value || 0));
-            const home = document.getElementById("homeLocation").selectedOptions[0].textContent;
-            const text = `Purchasing Power of Wealth (prototype): ${nw} based in ${home}. ${location.href}`;
+        document.getElementById("downloadCardBtn").addEventListener("click", async () => {
             try {
-                await navigator.clipboard.writeText(text);
-                document.getElementById("shareStatus").textContent = "Summary copied.";
+                const canvas = await html2canvas(document.getElementById("ppwShareCard"), { scale: 2 });
+                const link = document.createElement("a");
+                link.download = "wealthmeter-purchasing-power.png";
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+                document.getElementById("shareStatus").textContent = "Share card downloaded.";
             } catch (_) {
-                document.getElementById("shareStatus").textContent = "Could not copy summary.";
+                document.getElementById("shareStatus").textContent = "Could not generate share card.";
             }
         });
 
-        populateLocations();
-        setupLifestyleButtons();
+        document.getElementById("statCountries").textContent = Object.keys(DATA.countries).length;
+        document.getElementById("statCities").textContent = DATA.locations.length;
+
+        populateSelects();
         loadFromUrl();
-        calculate();
+        recalculate();
     })();
     </script>
 </body>
