@@ -322,6 +322,7 @@ const siteHeader = `
                 <div class="dropdown">
                     <a href="networth.html">Net Worth Calibration</a>
                     <a href="fire_timeline.html">FIRE Timeline Planner</a>
+                    <a href="purchasing-power.html">FIRE &amp; Cost of Living</a>
                     <a href="portfolio_alpha.html">Portfolio Alpha Simulator</a>
                     <a href="runway_lab.html">Financial Runway Lab</a>
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
@@ -330,8 +331,9 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-analyze">Analyze</span>
                 <div class="dropdown">
                     <a href="global_explorer.html">Wealth Explorer</a>
-                    <a href="purchasing-power.html">Purchasing Power</a>
+                    <a href="purchasing-power.html">Purchasing Power Hub</a>
                     <a href="live-better-for-less.html">Live Better for Less</a>
+                    <a href="lifestyle-abroad.html">Lifestyle Abroad</a>
                     <a href="country-systems-atlas.html">Country Systems Atlas</a>
                     <a href="atlas.html">Longevity Atlas</a>
                     <a href="data-lab.html">Data Lab</a>
@@ -486,6 +488,28 @@ document.addEventListener("DOMContentLoaded", () => {
     if (footerEl && footerEl.dataset.staticComponent !== "1") {
         footerEl.innerHTML = siteFooter;
     }
+
+    function ensureNavLink(groupName, href, text, afterHref) {
+        const group = Array.from(document.querySelectorAll(".nav-group")).find((candidate) => {
+            const label = candidate.querySelector(".nav-group-label");
+            return label && label.textContent.trim().toLowerCase() === groupName.toLowerCase();
+        });
+        const dropdown = group && group.querySelector(".dropdown");
+        if (!dropdown || dropdown.querySelector(`a[href="${href}"]`)) return;
+        const link = document.createElement("a");
+        link.href = href;
+        link.textContent = text;
+        const predecessor = afterHref && dropdown.querySelector(`a[href="${afterHref}"]`);
+        if (predecessor) predecessor.insertAdjacentElement("afterend", link);
+        else dropdown.appendChild(link);
+    }
+
+    // Older pages carry static header snapshots. Repair their discovery paths
+    // at runtime as well as keeping the canonical header template current.
+    ensureNavLink("Rate", "purchasing-power.html", "FIRE & Cost of Living", "fire_timeline.html");
+    ensureNavLink("Analyze", "purchasing-power.html", "Purchasing Power Hub", "global_explorer.html");
+    ensureNavLink("Analyze", "live-better-for-less.html", "Live Better for Less", "purchasing-power.html");
+    ensureNavLink("Analyze", "lifestyle-abroad.html", "Lifestyle Abroad", "live-better-for-less.html");
     document.querySelectorAll("footer .footer-links").forEach((links) => {
         if (!links.querySelector('a[href*="partners"]')) {
             const link = document.createElement("a");
