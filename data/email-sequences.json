@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "site": "wealthmeter",
+  "status": "prepared_not_sending",
+  "activationRequires": ["approved sending system", "unsubscribe and suppression handling", "delivery monitoring"],
+  "sequence": [
+    {"day": 0, "purpose": "orientation", "destination": "methodology.html"},
+    {"day": 4, "purpose": "analysis", "destination": "longform.html"},
+    {"day": 9, "purpose": "owned report", "destination": "report-wealth-thresholds.html"},
+    {"day": 15, "purpose": "owned reports", "destination": "reports.html"}
+  ]
+}

@@ -386,7 +386,7 @@ function newsletterHTML(source) {
             <p class="site-newsletter-status" data-newsletter-status aria-live="polite"></p>
         </div>
     </form>
-    <p class="site-newsletter-note">By signing up, you agree to receive WealthMeter news and updates. You can unsubscribe at any time. See our <a href="privacy.html">Privacy Policy</a>.</p>
+    <p class="site-newsletter-note">Occasional WealthMeter news, report releases, and relevant commercial recommendations. Unsubscribe at any time. We do not sell subscriber information. See our <a href="privacy.html">Privacy Policy</a>.</p>
     <p class="site-newsletter-address">Mailing Address: 1968 S. Coast Hwy #5495, Laguna Beach, CA 92651</p>
 </section>`;
 }
@@ -413,7 +413,7 @@ const siteFooter = `
                 <p class="site-newsletter-status" data-newsletter-status aria-live="polite"></p>
             </div>
         </form>
-        <p class="site-newsletter-note">By signing up, you agree to receive WealthMeter news and updates. You can unsubscribe at any time. See our <a href="privacy.html">Privacy Policy</a>.</p>
+        <p class="site-newsletter-note">Occasional WealthMeter news, report releases, and relevant commercial recommendations. Unsubscribe at any time. We do not sell subscriber information. See our <a href="privacy.html">Privacy Policy</a>.</p>
         <p class="site-newsletter-address">Mailing Address: 1968 S. Coast Hwy #5495, Laguna Beach, CA 92651</p>
     </section>
     <div class="footer-links">
@@ -422,6 +422,7 @@ const siteFooter = `
         <a href="data-sources.html">Data Sources</a>
         <a href="methodology.html">Methodology</a>
         <a href="privacy.html">Privacy Policy</a>
+        <a href="commercial-policy.html">Commercial Policy</a>
         <a href="disclaimer.html">Disclaimer</a>
     </div>
 </footer>`;
@@ -447,6 +448,7 @@ document.addEventListener("submit", async (event) => {
                 source: form.dataset.source || "footer",
                 page: window.location.pathname || "/",
                 newsletter: formData.get("newsletter"),
+                commercialUpdates: "yes",
                 company: formData.get("company"),
                 firstName: formData.get("firstName"),
                 lastName: formData.get("lastName"),
@@ -456,6 +458,7 @@ document.addEventListener("submit", async (event) => {
         if (!response.ok) throw new Error("Newsletter request failed");
         form.reset();
         if (status) status.textContent = "You are signed up.";
+        window.dispatchEvent(new CustomEvent("newsletter:subscribed", { detail: { source: form.dataset.source || "footer" } }));
     } catch (error) {
         if (status) status.textContent = "We could not complete the signup. Please try again.";
     } finally {
@@ -480,9 +483,27 @@ document.addEventListener("DOMContentLoaded", () => {
     if (footerEl && footerEl.dataset.staticComponent !== "1") {
         footerEl.innerHTML = siteFooter;
     }
+    document.querySelectorAll("footer .footer-links").forEach((links) => {
+        if (!links.querySelector('a[href*="commercial-policy"]')) {
+            const link = document.createElement("a");
+            link.href = "commercial-policy.html";
+            link.textContent = "Commercial Policy";
+            links.appendChild(link);
+        }
+    });
+    document.querySelectorAll(".site-newsletter-note").forEach((note) => {
+        note.innerHTML = 'Occasional WealthMeter news, report releases, and relevant commercial recommendations. Unsubscribe at any time. We do not sell subscriber information. See our <a href="privacy.html">Privacy Policy</a>.';
+    });
     const resultSlot = document.getElementById("result-feedback-slot");
     if (resultSlot && !resultSlot.querySelector("[data-newsletter-form]")) {
         resultSlot.innerHTML = newsletterHTML("result");
+    }
+
+    if (!document.querySelector('script[data-monetization-layer]')) {
+        const monetizationScript = document.createElement("script");
+        monetizationScript.src = "/assets/monetization.js?v=2026-09-16.1";
+        monetizationScript.dataset.monetizationLayer = "1";
+        document.body.appendChild(monetizationScript);
     }
 
     const isMobile = window.matchMedia("(max-width: 1024px)").matches;

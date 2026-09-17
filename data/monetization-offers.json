@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "site": "wealthmeter",
+  "offers": [
+    {
+      "id": "wealth-thresholds",
+      "status": "active",
+      "relationship": "owned",
+      "title": "Wealth Thresholds",
+      "eyebrow": "WealthMeter report",
+      "description": "A percentile tells you where you stand. This report shows what changes at each capital threshold, which constraints remain, and what the next tier actually requires.",
+      "bullets": ["Four wealth access bands", "Three realistic pathway scenarios", "Compounding, fees, and legal structures"],
+      "cta": "See what is inside — $12.99",
+      "url": "report-wealth-thresholds.html"
+    },
+    {
+      "id": "velocity-of-capital",
+      "status": "active",
+      "relationship": "owned",
+      "title": "The Velocity of Capital",
+      "eyebrow": "WealthMeter report",
+      "description": "See how wages, assets, and ownership diverged, why the same percentile can conceal different trajectories, and where the next shift may come from.",
+      "bullets": ["The wage–asset divergence", "Ownership and mobility patterns", "Signals that change a household trajectory"],
+      "cta": "Explore the report — $12.99",
+      "url": "report-velocity-of-capital.html"
+    },
+    {
+      "id": "geography-of-global-wealth",
+      "status": "active",
+      "relationship": "owned",
+      "title": "The Geography of Global Wealth",
+      "eyebrow": "WealthMeter report",
+      "description": "The same net worth buys a different life in every jurisdiction. Compare the tax, cost, healthcare, visa, and lifestyle systems that determine where capital travels furthest.",
+      "bullets": ["Ten-jurisdiction scorecard", "Cost, tax, healthcare, and visas", "Lifestyle return on capital"],
+      "cta": "See the country analysis — $19.99",
+      "url": "report-geography-global-wealth.html"
+    }
+  ],
+  "placements": [
+    {"paths": ["/", "/index.html", "/us-household-wealth", "/us-household-wealth.html"], "offerId": "wealth-thresholds", "resultSelector": "#result, #resultContent"},
+    {"paths": ["/fire_timeline", "/fire_timeline.html", "/portfolio_alpha", "/portfolio_alpha.html", "/runway_lab", "/runway_lab.html"], "offerId": "velocity-of-capital", "resultSelector": "#results, .results-pane"},
+    {"paths": ["/global_explorer", "/global_explorer.html", "/data-lab", "/data-lab.html", "/country-systems-atlas", "/country-systems-atlas.html"], "offerId": "geography-of-global-wealth", "resultSelector": "[data-result], .comparison-matrix, main"}
+  ]
+}
