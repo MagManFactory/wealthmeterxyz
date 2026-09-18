@@ -215,7 +215,19 @@
     const y = (value) => top + (100 - value) / (100 - minQuality || 1) * (height - top - bottom);
     const xTicks = [0, .25, .5, .75, 1].map((ratio) => `<line class="lbl-gridline" x1="${x(maxSavings * ratio)}" x2="${x(maxSavings * ratio)}" y1="${top}" y2="${height - bottom}"/><text class="lbl-axis" x="${x(maxSavings * ratio)}" y="${height - 17}" text-anchor="middle">${Math.round(maxSavings * ratio)}%</text>`).join("");
     const yTicks = [minQuality, (minQuality + 100) / 2, 100].map((value) => `<line class="lbl-gridline" x1="${left}" x2="${width - right}" y1="${y(value)}" y2="${y(value)}"/><text class="lbl-axis" x="${left - 10}" y="${y(value) + 4}" text-anchor="end">${Math.round(value)}</text>`).join("");
-    const points = rows.map((row, index) => `<a href="#destination-${row.candidate.code}" aria-label="${escapeHtml(row.candidate.name)}: ${Math.round(row.savingsPct)} percent lower cost, ${Math.round(row.quality.score)} quality floor"><circle class="lbl-point" cx="${x(row.savingsPct)}" cy="${y(row.quality.score)}" r="${index < 6 ? 7 : 4}" fill="${index === 0 ? "#f97316" : index < 6 ? "#2563eb" : "#94a3b8"}"/>${index < 6 ? `<text class="lbl-point-label" x="${x(row.savingsPct) + 10}" y="${y(row.quality.score) - 8}">${escapeHtml(row.candidate.name)}</text>` : ""}</a>`).join("");
+    const points = rows.map((row, index) => {
+      const pointX = x(row.savingsPct);
+      const pointY = y(row.quality.score);
+      let label = "";
+      if (index < 6) {
+        const estimatedLabelWidth = Math.min(150, Math.max(42, row.candidate.name.length * 6.5));
+        const placeLeft = pointX + 10 + estimatedLabelWidth > width - 6;
+        const labelX = placeLeft ? pointX - 10 : pointX + 10;
+        const labelY = pointY - 8 < 14 ? pointY + 18 : pointY - 8;
+        label = `<text class="lbl-point-label" x="${labelX}" y="${labelY}" text-anchor="${placeLeft ? "end" : "start"}">${escapeHtml(row.candidate.name)}</text>`;
+      }
+      return `<a href="#destination-${row.candidate.code}" aria-label="${escapeHtml(row.candidate.name)}: ${Math.round(row.savingsPct)} percent lower cost, ${Math.round(row.quality.score)} quality floor"><circle class="lbl-point" cx="${pointX}" cy="${pointY}" r="${index < 6 ? 7 : 4}" fill="${index === 0 ? "#f97316" : index < 6 ? "#2563eb" : "#94a3b8"}"/>${label}</a>`;
+    }).join("");
     $("[data-frontier]").innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Scatter plot of estimated savings against quality-floor preservation"><title>Value frontier</title>${xTicks}${yTicks}${points}<text class="lbl-axis" x="${(left + width - right) / 2}" y="${height - 2}" text-anchor="middle">Estimated spending reduction</text><text class="lbl-axis" transform="translate(14 ${(top + height - bottom) / 2}) rotate(-90)" text-anchor="middle">Quality-floor preservation</text></svg><div class="lbl-frontier-note">Only countries passing the selected hard floors appear. Position does not include visas, taxes, housing tenure, or relocation eligibility.</div>`;
   }
 
