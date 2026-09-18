@@ -220,6 +220,13 @@ body.dark-mode .rank-row.top { background: linear-gradient(135deg, var(--card-bg
 .rank-mult {
   font-family: 'Roboto Mono', monospace; font-weight: 700; font-size: 0.88rem; color: var(--green); white-space: nowrap;
 }
+.rank-quality {
+  display: inline-block; margin-left: 0.35rem; color: var(--primary); font-weight: 700;
+}
+.screen-note {
+  margin: 0.75rem 0 0; padding: 0.8rem 0.9rem; border-radius: 12px;
+  background: var(--track-bg); color: var(--text-muted); font-size: 0.76rem; line-height: 1.55;
+}
 .rank-list-full { max-height: 420px; overflow-y: auto; margin-top: 0.5rem; padding-right: 2px; }
 .seg {
   display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; margin-bottom: 0.9rem;
@@ -677,14 +684,14 @@ body.dark-mode .stamp { background: rgba(0,0,0,0.3); border-color: var(--line); 
     <header class="hero">
       <div class="kicker">National spending comparison</div>
       <h1>Lifestyle abroad</h1>
-      <p class="hero-desc">Pick a home country and destination, or scan lower-cost countries. See how the same broad national consumption basket translates, then inspect quality-adjusted options before treating price as a decision.</p>
+      <p class="hero-desc">Compare a chosen destination, or screen for lower-cost countries that remain close to your home-country benchmark across health, essential services, connectivity, infrastructure, sanitation, and safety.</p>
     </header>
 
     <section class="panel">
       <div class="dock-label">Plan a move</div>
       <div class="seg" id="modeSeg">
         <button type="button" class="seg-btn active" data-mode="pair">Home → destination</button>
-        <button type="button" class="seg-btn" data-mode="top10">10 lower-cost countries</button>
+        <button type="button" class="seg-btn" data-mode="top10">Quality-screened options</button>
       </div>
       <div class="field">
         <label>Home</label>
@@ -703,7 +710,7 @@ body.dark-mode .stamp { background: rgba(0,0,0,0.3); border-color: var(--line); 
 
     <section class="results panel" id="results" hidden>
       <div id="resultsInner"></div>
-      <p class="note" style="margin-top:1rem">Price is only one constraint. <a href="live-better-for-less.html" style="color:var(--primary);font-weight:800">Find lower-cost countries that also pass your quality floor →</a></p>
+      <p class="note" style="margin-top:1rem">Want to set your own quality floor and priorities? <a href="live-better-for-less.html" style="color:var(--primary);font-weight:800">Open the full quality-adjusted comparison →</a></p>
     </section>
 
     <section class="panel planning-bridge" aria-labelledby="lifestyle-fire-title">
@@ -879,6 +886,20 @@ function createSearchSelect(root, locations, { value, onChange, placeholder }) {
       return;
     }
     const locations = buildLocations(data).filter(location => location.kind === 'country');
+    const qualityRows = new Map();
+    const qualityReady = Promise.all([
+      fetch('data/country-systems-atlas.json').then(response => response.ok ? response.json() : Promise.reject(new Error('Country systems data unavailable'))),
+      fetch('data/quality-of-life-supplement.json').then(response => response.ok ? response.json() : Promise.reject(new Error('Quality supplement unavailable')))
+    ]).then(([atlas, supplement]) => {
+      const atlasByCode = new Map(atlas.countries.map(country => [country.code, country]));
+      const supplementByCode = new Map(supplement.countries.map(country => [country.code, country]));
+      locations.forEach(location => {
+        const code = location.id.replace('country:', '');
+        if (atlasByCode.has(code) && supplementByCode.has(code)) {
+          qualityRows.set(code, { atlas: atlasByCode.get(code), supplement: supplementByCode.get(code) });
+        }
+      });
+    });
     document.getElementById('dataStamp').textContent = vintageText(data).replace('World Bank price levels (USA = 100), ', '');
     document.getElementById('footerNote').innerHTML = '<strong>Data:</strong> ' + esc(vintageText(data)) +
       '. Required monthly at destination = home monthly × (destination national price level ÷ home national price level). These are national consumption-basket estimates, not personal quotations.';
@@ -925,38 +946,90 @@ function createSearchSelect(root, locations, { value, onChange, placeholder }) {
       return html;
     }
 
+    const qualityMetrics = {
+      health: { source: 'atlas', key: 'life_expectancy', higher: true, span: 15 },
+      essentials: { source: 'atlas', key: 'electricity_access', higher: true, span: 30 },
+      connectivity: { source: 'supplement', key: 'internet_use', higher: true, span: 45 },
+      sanitation: { source: 'supplement', key: 'sanitation', higher: true, span: 40 },
+      infrastructure: { source: 'atlas', key: 'lpi_infrastructure', higher: true, span: 2 },
+      safety: { source: 'supplement', key: 'homicide_rate', higher: false, span: 20 }
+    };
+
+    function qualityPoint(row, spec) {
+      const metric = row?.[spec.source]?.metrics?.[spec.key];
+      const point = metric?.latest || metric;
+      return Number.isFinite(point?.value) ? point.value : null;
+    }
+
+    function qualityScreen(home, candidate) {
+      const homeRow = qualityRows.get(home.id.replace('country:', ''));
+      const candidateRow = qualityRows.get(candidate.id.replace('country:', ''));
+      if (!homeRow || !candidateRow) return { passes: false, score: 0, available: 0 };
+      const allowances = { health: 2.5, essentials: 3, connectivity: 10, sanitation: 8, infrastructure: 0.45 };
+      let scoreTotal = 0;
+      let available = 0;
+      let safetyHome = null;
+      let safetyCandidate = null;
+      for (const [id, spec] of Object.entries(qualityMetrics)) {
+        const homeValue = qualityPoint(homeRow, spec);
+        const candidateValue = qualityPoint(candidateRow, spec);
+        if (!Number.isFinite(homeValue) || !Number.isFinite(candidateValue)) continue;
+        available += 1;
+        const shortfall = spec.higher ? Math.max(0, homeValue - candidateValue) : Math.max(0, candidateValue - homeValue);
+        scoreTotal += Math.max(0, 100 * (1 - shortfall / spec.span));
+        if (id === 'safety') { safetyHome = homeValue; safetyCandidate = candidateValue; }
+        if (id !== 'safety' && shortfall > allowances[id]) return { passes: false, score: 0, available };
+      }
+      if (available < 5) return { passes: false, score: 0, available };
+      for (const required of ['health', 'essentials', 'connectivity', 'sanitation']) {
+        if (!Number.isFinite(qualityPoint(homeRow, qualityMetrics[required])) || !Number.isFinite(qualityPoint(candidateRow, qualityMetrics[required]))) {
+          return { passes: false, score: 0, available };
+        }
+      }
+      if (Number.isFinite(safetyHome) && Number.isFinite(safetyCandidate)) {
+        const safetyCeiling = Math.max(safetyHome + 2, safetyHome * 1.5);
+        if (safetyCandidate > safetyCeiling) return { passes: false, score: 0, available };
+      }
+      return { passes: true, score: scoreTotal / available, available };
+    }
+
     function renderTop10(home, monthly) {
       const rows = locations
         .filter(d => d.id !== home.id)
-        .map(d => { const r = costAt(home, d, monthly); return { dest: d, ...r }; })
-        .filter(r => r.required < monthly)
-        .sort((a, b) => a.required - b.required)
+        .map(d => {
+          const r = costAt(home, d, monthly);
+          const quality = qualityScreen(home, d);
+          const valueScore = quality.score * 0.72 + Math.min(70, Math.max(0, r.savingsPct)) / 70 * 100 * 0.28;
+          return { dest: d, quality, valueScore, ...r };
+        })
+        .filter(r => r.required < monthly && r.quality.passes)
+        .sort((a, b) => b.valueScore - a.valueScore || b.savingsPct - a.savingsPct)
         .slice(0, 10);
 
       let html = '<div class="viral">';
-      html += '<div class="viral-kicker">Cheaper than ' + esc(home.name) + '</div>';
+      html += '<div class="viral-kicker">Quality-screened alternatives to ' + esc(home.name) + '</div>';
       if (!rows.length) {
-        html += '<div class="viral-giant">No cheaper spots in this set</div>';
-        html += '<div class="viral-sub">Try a higher-cost home location.</div></div>';
+        html += '<div class="viral-giant">No lower-cost close matches found</div>';
+        html += '<div class="viral-sub">No country with sufficient data passed the six-measure quality screen.</div></div>';
         return html;
       }
       const best = rows[0];
-      html += '<div class="viral-giant">Save up to <span class="hi">' + esc(Math.abs(best.savingsPct).toFixed(0)) + '%</span><br>in ' + esc(best.dest.label) + '</div>';
-      html += '<div class="viral-sub">' + esc(fmtMoney(monthly)) + '/mo at home → ' + esc(fmtMoney(best.required)) + '/mo there</div>';
+      html += '<div class="viral-giant"><span class="hi">' + esc(best.dest.label) + '</span><br>offers the strongest balance</div>';
+      html += '<div class="viral-sub">' + esc(fmtMoney(monthly)) + '/mo at home → ' + esc(fmtMoney(best.required)) + '/mo there · ' + esc(Math.round(best.quality.score)) + '% quality benchmark preserved</div>';
       html += '</div>';
-      html += '<div class="rank-block"><h3>10 lower-cost countries</h3>';
+      html += '<div class="rank-block"><h3>Lower-cost countries that pass the close-match quality screen</h3>';
       rows.forEach((r, i) => {
         html += '<div class="rank-row' + (i === 0 ? ' top' : '') + '">';
         html += '<div class="rank-n">#' + (i + 1) + '</div>';
-        html += '<div><div class="rank-name">' + esc(r.dest.label) + '</div><div class="rank-sub">' + esc(fmtMoney(r.required)) + '/mo · save ' + esc(fmtMoney(Math.abs(r.delta))) + '</div></div>';
+        html += '<div><div class="rank-name">' + esc(r.dest.label) + '<span class="rank-quality">' + esc(Math.round(r.quality.score)) + '% quality</span></div><div class="rank-sub">' + esc(fmtMoney(r.required)) + '/mo · save ' + esc(fmtMoney(Math.abs(r.delta))) + ' · ' + esc(r.quality.available) + ' measures available</div></div>';
         html += '<div class="rank-mult">−' + esc(Math.abs(r.savingsPct).toFixed(0)) + '%</div>';
         html += '</div>';
       });
-      html += '</div>';
+      html += '<p class="screen-note">Screened before ranking: life expectancy, electricity access, internet use, safely managed sanitation, transport infrastructure, and reported homicide rates. Countries must have at least five measures, including the first four, and remain within the close-match limits used by Live Better for Less. Rankings balance quality preservation (72%) and estimated savings (28%); they are not relocation recommendations.</p></div>';
       return html;
     }
 
-    function render() {
+    async function render() {
       const monthly = Math.max(0, Number(document.getElementById('monthlySpend').value) || 0);
       const home = homeSel.get();
       if (!home || !monthly) return;
@@ -966,6 +1039,15 @@ function createSearchSelect(root, locations, { value, onChange, placeholder }) {
         if (!dest) return;
         html = renderPair(home, dest, monthly);
       } else {
+        try {
+          await qualityReady;
+        } catch (error) {
+          document.getElementById('resultsInner').innerHTML = '<div class="viral"><div class="viral-kicker">Quality screen unavailable</div><div class="viral-giant">The comparison data could not be loaded</div><div class="viral-sub">The site will not substitute a price-only ranking. Please try again.</div></div>';
+          const unavailablePanel = document.getElementById('results');
+          unavailablePanel.hidden = false;
+          unavailablePanel.classList.add('visible');
+          return;
+        }
         html = renderTop10(home, monthly);
       }
       document.getElementById('resultsInner').innerHTML = html;
