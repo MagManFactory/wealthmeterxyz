@@ -27,3 +27,7 @@
 ## Citation guidance
 
 Use the canonical page URL and retain each page's stated population, currency, date, and model assumptions. WealthMeter content is educational and is not financial advice.
+
+## Full index
+
+- [Complete sitemap-backed content index](https://wealthmeter.xyz/llms-full.txt)
