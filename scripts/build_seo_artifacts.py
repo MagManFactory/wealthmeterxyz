@@ -607,6 +607,10 @@ SISTER_LINK_RE = re.compile(
     r'\s*<a\b[^>]*class="[^"]*sister-site-link[^"]*"[^>]*>.*?</a>',
     re.DOTALL,
 )
+CROSS_PROPERTY_ANCHOR_RE = re.compile(
+    r'\s*<a\b(?=[^>]*\bhref="https?://(?:wealthmeter|lifemeter)\.xyz[^\"]*")[^>]*>.*?</a>',
+    re.DOTALL | re.IGNORECASE,
+)
 CROSS_PROPERTY_BAND_RE = re.compile(
     r'\s*<div class="cross-property-band">.*?</div>',
     re.DOTALL,
@@ -614,9 +618,13 @@ CROSS_PROPERTY_BAND_RE = re.compile(
 
 
 def article_firewall_markup(header_html: str, footer_html: str) -> tuple[str, str]:
-    """Keep reciprocal site navigation in article headers while limiting footer promotions."""
+    """Remove cross-property chrome from static article shells."""
+    header_html = SISTER_NAV_GROUP_RE.sub("", header_html)
+    header_html = SISTER_LINK_RE.sub("", header_html)
+    header_html = CROSS_PROPERTY_ANCHOR_RE.sub("", header_html)
     footer_html = CROSS_PROPERTY_BAND_RE.sub("", footer_html)
     footer_html = SISTER_LINK_RE.sub("", footer_html)
+    footer_html = CROSS_PROPERTY_ANCHOR_RE.sub("", footer_html)
     return header_html, footer_html
 
 
