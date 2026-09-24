@@ -5,7 +5,15 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Sep 2026 13:12:21 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 07:40:23 +0000</lastBuildDate>
+    <item>
+      <title>The 2026 Retirement Catch-Up Window at Ages 60 to 63</title>
+      <link>https://wealthmeter.xyz/2026-retirement-catch-up-ages-60-to-63.html</link>
+      <guid>https://wealthmeter.xyz/2026-retirement-catch-up-ages-60-to-63.html</guid>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate>
+      <description>For 2026, eligible workplace-plan participants who turn 60 through 63 can use a higher catch-up limit. Check plan participation, compensation, and the Roth rule before changing payroll elections.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/retirement-catchup-window-2026-sep24.png" type="image/png"/>
+    </item>
     <item>
       <title>Emergency Funds Need a Cash-Flow Test, Not a Rule of Thumb</title>
       <link>https://wealthmeter.xyz/emergency-funds-need-a-cash-flow-test-not-a-rule-of-thumb.html</link>
@@ -397,14 +405,6 @@
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
       <description>how potential lifespan extension changes long-horizon wealth architecture.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/longevity-capital-horizon-reset.png" type="image/png"/>
-    </item>
-    <item>
-      <title>Inside Wealth: Germany, Japan, and Canada</title>
-      <link>https://wealthmeter.xyz/inside-wealth-germany-japan-canada.html</link>
-      <guid>https://wealthmeter.xyz/inside-wealth-germany-japan-canada.html</guid>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
-      <description>structural comparison of top wealth outcomes in Germany, Japan, and Canada.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/inside-wealth-de-jp-ca-structural-lens.png" type="image/png"/>
     </item>
   </channel>
 </rss>
