@@ -5,7 +5,15 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Sep 2026 07:40:23 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 07:40:06 +0000</lastBuildDate>
+    <item>
+      <title>Is Your Joint Bank Account Fully Insured?</title>
+      <link>https://wealthmeter.xyz/joint-bank-account-fdic-coverage.html</link>
+      <guid>https://wealthmeter.xyz/joint-bank-account-fdic-coverage.html</guid>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0000</pubDate>
+      <description>FDIC joint-account coverage is generally up to $250,000 per co-owner across all qualifying joint accounts at one insured bank. Check ownership, bank, and account category before relying on the limit.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/joint-account-fdic-coverage-2026-sep25.png" type="image/png"/>
+    </item>
     <item>
       <title>The 2026 Retirement Catch-Up Window at Ages 60 to 63</title>
       <link>https://wealthmeter.xyz/2026-retirement-catch-up-ages-60-to-63.html</link>
@@ -397,14 +405,6 @@
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
       <description>stress-testing retirement target numbers under current inflation, rate, and longevity conditions.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/retirement-age-lie-rate-inflation-stress.png" type="image/png"/>
-    </item>
-    <item>
-      <title>Longevity Capital: Living to 120</title>
-      <link>https://wealthmeter.xyz/longevity-capital-living-to-120.html</link>
-      <guid>https://wealthmeter.xyz/longevity-capital-living-to-120.html</guid>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
-      <description>how potential lifespan extension changes long-horizon wealth architecture.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/longevity-capital-horizon-reset.png" type="image/png"/>
     </item>
   </channel>
 </rss>
