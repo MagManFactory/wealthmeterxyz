@@ -1,56 +1,21 @@
-
-// GA4 — Measurement ID G-8NF91REL39 (do not reuse Lexicon G-5MC05WB07R)
-(function() {
-  if (window.__wmGa4) return;
-  window.__wmGa4 = true;
-  var id = "G-8NF91REL39";
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  window.gtag = window.gtag || gtag;
-  var s = document.createElement("script");
-  s.async = true;
-  s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
-  document.head.appendChild(s);
-  gtag("js", new Date());
-  gtag("config", id);
-  try {
-    var referrerHost = document.referrer ? new URL(document.referrer).hostname.toLowerCase() : "";
-    if (/(^|\.)(chatgpt\.com|perplexity\.ai|claude\.ai|copilot\.microsoft\.com|gemini\.google\.com)$/.test(referrerHost)) {
-      gtag("event", "ai_referral", { source_host: referrerHost, page_path: location.pathname });
-    }
-  } catch (_) {}
-})();
-
-// components.js - WealthMeter™ V25.1 Studio Standard
-
-// Refresh marker for 2026-04-29 WealthMeter longform publish retry.
-const GA_MEASUREMENT_ID = "G-8NF91REL39";
-
-const ga4Snippet = `
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NF91REL39"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-8NF91REL39');
-    </script>`;
-
-(function ensureGa4() {
-    if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
-    const loader = document.createElement("script");
-    loader.async = true;
-    loader.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-    document.head.appendChild(loader);
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag("js", new Date());
-    gtag("config", GA_MEASUREMENT_ID);
-})();
-
-const sharedStyles = `
-<style id="wealthmeter-component-styles">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>A Credit Freeze Is Free: When to Use One and How to Lift It | WEALTHMETER.XYZ</title>
+  <meta name="description" content="A credit freeze is free, does not affect credit scores, and can block new-credit applications. Learn when to freeze, when to lift, and why all three bureaus matter.">
+  <link rel="canonical" href="https://wealthmeter.xyz/credit-freeze-when-to-use-and-lift.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="A Credit Freeze Is Free: When to Use One and How to Lift It">
+  <meta property="og:description" content="A practical guide to freezing credit reports, timing a temporary lift, and distinguishing freezes from fraud alerts.">
+  <meta property="og:image" content="https://wealthmeter.xyz/images/longform/credit-freeze-decision-2026-sep26.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"A Credit Freeze Is Free: When to Use One and How to Lift It","description":"A credit freeze is free, does not affect credit scores, and can block new-credit applications. Learn when to freeze, when to lift, and why all three bureaus matter.","mainEntityOfPage":{"@type":"WebPage","@id":"https://wealthmeter.xyz/credit-freeze-when-to-use-and-lift.html"},"author":{"@type":"Organization","name":"WEALTHMETER.XYZ","url":"https://wealthmeter.xyz/about.html"},"publisher":{"@type":"Organization","name":"WEALTHMETER.XYZ","url":"https://wealthmeter.xyz/"},"dateModified":"2026-09-26","image":"https://wealthmeter.xyz/images/longform/credit-freeze-decision-2026-sep26.png"}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;color:#0f172a;font-family:Inter,Arial,sans-serif}.article{max-width:900px;margin:auto;padding:3rem 1.25rem 5rem}.badge,.meta,figcaption{font:700 .75rem/1.5 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.1em;color:#64748b}h1{font:900 clamp(2.25rem,5vw,4.15rem)/1.02 Outfit,Inter,sans-serif;letter-spacing:-.045em;margin:.7rem 0 1rem}.lead{font-size:1.3rem;line-height:1.55;font-weight:600;color:#1e293b}p,li,td,th{font-size:1.06rem;line-height:1.75;color:#334155}h2{margin:2.65rem 0 1rem;padding-top:1rem;border-top:1px solid #dbe4f0;font-size:.92rem;text-transform:uppercase;letter-spacing:.12em}.callout{border-left:4px solid #0b829b;background:#f0f8fb;padding:1rem 1.25rem;margin:1.6rem 0;font-weight:700}figure{margin:2.2rem 0;border:1px solid #dbe4f0;border-radius:14px;overflow:hidden;background:#fff}figure img{display:block;width:100%;height:auto}figcaption{padding:.8rem 1rem}a{color:#194d7a;font-weight:700}table{border-collapse:collapse;width:100%;margin:1.5rem 0}td,th{border:1px solid #dbe4f0;padding:.7rem;text-align:left;vertical-align:top}th{color:#0f172a;background:#f8fafc}.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem;margin:1.25rem 0}.related a{display:block;padding:1rem;border:1px solid #bfdbfe;border-radius:12px;background:#f8fbff;text-decoration:none}.sources{font-size:.98rem}.note{font-size:.92rem;color:#64748b}
+  </style>
+    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml"><style id="wealthmeter-component-styles">
     /* Monolith Pulse Animation */
     @keyframes monolithPulse {
         0% { transform: scaleY(1); }
@@ -290,10 +255,25 @@ const sharedStyles = `
         height: auto !important;
         object-fit: contain;
     }
-</style>
-`;
-
-const siteHeader = `
+</style><meta property="og:url" content="https://wealthmeter.xyz/credit-freeze-when-to-use-and-lift.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A Credit Freeze Is Free: When to Use One and How to Lift It | WEALTHMETER.XYZ">
+    <meta name="twitter:description" content="A practical guide to freezing credit reports, timing a temporary lift, and distinguishing freezes from fraud alerts.">
+    <meta name="twitter:image" content="https://wealthmeter.xyz/images/longform/credit-freeze-decision-2026-sep26.png">
+    <meta property="og:image:width" content="1376">
+    <meta property="og:image:height" content="768">
+    <meta property="og:image:alt" content="Decision map explaining when a credit freeze helps and when to use a temporary lift.">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WEALTHMETER.XYZ","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"Longform","item":"https://wealthmeter.xyz/longform.html"},{"@type":"ListItem","position":3,"name":"A Credit Freeze Is Free: When to Use One and How to Lift It","item":"https://wealthmeter.xyz/credit-freeze-when-to-use-and-lift.html"}]}</script><!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NF91REL39"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8NF91REL39');
+    </script>
+</head>
+<body>
+<div id="header-placeholder" data-static-component="1">
 <header>
     <div class="nav-container">
         <div class="brand-wrapper">
@@ -361,41 +341,41 @@ const siteHeader = `
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
                 </div>
             </div>
-            <a href="https://lifemeter.xyz" target="_blank" rel="noopener" class="sister-site-link">LifeMeter ↗</a>
         </nav>
     </div>
-</header>`;
-
-const NEWSLETTER_ENDPOINT = "https://lifemeter.xyz/api/newsletter";
-
-function newsletterHTML(source) {
-    return `
-<section class="site-newsletter" aria-labelledby="newsletter-heading-${source}">
-    <h2 id="newsletter-heading-${source}">WealthMeter news and updates</h2>
-    <p class="site-newsletter-copy">Receive new longform analysis, wealth brief updates, and report releases.</p>
-    <form class="site-newsletter-form" data-newsletter-form data-source="${source}">
-        <input type="hidden" name="newsletter" value="yes">
-        <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
-        <label class="site-newsletter-field">First name
-            <input type="text" name="firstName" autocomplete="given-name" required>
-        </label>
-        <label class="site-newsletter-field">Last name
-            <input type="text" name="lastName" autocomplete="family-name" required>
-        </label>
-        <label class="site-newsletter-field site-newsletter-field-email">Email address
-            <input type="email" name="email" autocomplete="email" inputmode="email" required>
-        </label>
-        <div class="site-newsletter-actions">
-            <button type="submit">Sign up</button>
-            <p class="site-newsletter-status" data-newsletter-status aria-live="polite"></p>
-        </div>
-    </form>
-    <p class="site-newsletter-note">Occasional WealthMeter news, report releases, and relevant commercial recommendations. Unsubscribe at any time. We do not sell subscriber information. See our <a href="privacy.html">Privacy Policy</a>.</p>
-    <p class="site-newsletter-address">Mailing Address: 1968 S. Coast Hwy #5495, Laguna Beach, CA 92651</p>
-</section>`;
-}
-
-const siteFooter = `
+</header>
+</div>
+<main class="article">
+  <div class="badge">Identity protection · September 26, 2026</div>
+  <h1>A Credit Freeze Is Free: When to Use One and How to Lift It</h1>
+  <p class="lead">A security freeze limits access to a credit report for new-credit decisions. It is free, does not change a credit score, and can be lifted when a lender needs to check a file.</p>
+  <p class="meta">credit reports · identity theft · security freezes · fraud alerts</p>
+  <p>A freeze is a preventive control, not an identity-recovery service. It can make it harder for someone to open a new credit account in another person’s name, but it does not erase fraudulent accounts, prevent every form of identity theft, or block all access to a file.</p>
+  <div class="callout">To freeze nationwide credit files, contact Equifax, Experian, and TransUnion separately. A freeze is free by law. CFPB states that a request made by secure electronic means or phone must be placed within one business day, while a requested lift must be completed within one hour.</div>
+  <h2>Decide when a freeze fits</h2>
+  <p>A freeze is sensible for people who are not actively applying for credit and want a standing barrier against new-account fraud. It can also be placed after suspected exposure of sensitive information, but there is no requirement to wait for a breach. A parent or guardian can request a freeze for an eligible protected consumer.</p>
+  <figure><img src="/images/longform/credit-freeze-decision-2026-sep26.png" alt="Decision map showing when a credit freeze protects new-credit applications and when a temporary lift may be needed" width="1376" height="768"><figcaption>A freeze blocks access for prospective creditors; it does not prevent every form of fraud.</figcaption></figure>
+  <h2>Plan before a credit application</h2>
+  <p>A lender, landlord, insurer, or employer may need access to a report. The federal freeze requirement does not apply to employment, tenant-screening, or insurance requests. Before an application, ask which bureau will be used and whether the organization needs a temporary lift or a permanent removal. Lift only the necessary file where possible, then confirm that the freeze is restored when the check is complete.</p>
+  <p>Existing creditors, certain government agencies, and credit-monitoring firms a consumer has hired may still access a frozen file. You can also obtain and review your own reports while a freeze is in place.</p>
+  <figure><img src="/images/longform/credit-freeze-checklist-2026-sep26.png" alt="Checklist for placing and lifting a credit freeze at Equifax, Experian, and TransUnion" width="1376" height="768" loading="lazy"><figcaption>Keep account credentials and confirmation records for each bureau in a secure place.</figcaption></figure>
+  <h2>Do not confuse freezes, locks, and alerts</h2>
+  <p>Credit locks are commercial products and may carry a fee; the CFPB says they are no more effective than free security freezes. A fraud alert asks creditors to verify identity before granting new credit but does not prevent them from seeing the report. An initial fraud alert can be placed by contacting one bureau, which must notify the other two. A freeze must be requested at all three bureaus separately.</p>
+  <table><thead><tr><th>Tool</th><th>Primary effect</th><th>Operational detail</th></tr></thead><tbody><tr><td>Security freeze</td><td>Limits prospective creditors’ access to the file.</td><td>Place and lift separately at all three nationwide bureaus.</td></tr><tr><td>Fraud alert</td><td>Requests identity verification before new credit.</td><td>One contacted bureau notifies the other two.</td></tr><tr><td>Credit lock</td><td>Commercial bureau feature.</td><td>It may be paid; it is not more effective than a free freeze.</td></tr></tbody></table>
+  <h2>Make it part of routine financial control</h2>
+  <p>Check credit reports for unfamiliar accounts even with a freeze in place. The <a href="/emergency-funds-need-a-cash-flow-test-not-a-rule-of-thumb.html">emergency-fund framework</a> addresses cash resilience after a disruption, while the <a href="/how-insurance-deductibles-become-a-household-balance-sheet-shock.html">deductible analysis</a> shows why a household needs a plan before a claim or credit event forces fast decisions.</p>
+  <div class="related"><a href="/emergency-funds-need-a-cash-flow-test-not-a-rule-of-thumb.html">Read the emergency-fund framework</a><a href="/how-insurance-deductibles-become-a-household-balance-sheet-shock.html">Read about deductible shocks</a><a href="/reports.html">Browse WealthMeter reports</a></div>
+  <h2>Sources</h2><div class="sources"><p><a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-credit-freeze-or-security-freeze-on-my-credit-report-en-1341/">Consumer Financial Protection Bureau, What is a credit freeze or security freeze on my credit report?, reviewed September 5, 2025.</a></p><p><a href="https://consumer.ftc.gov/articles/credit-freezes-and-fraud-alerts">Federal Trade Commission, Credit Freezes and Fraud Alerts, August 2025.</a></p></div>
+  <p class="note">This article is educational and does not provide legal, credit, or individualized identity-theft advice.</p>
+<!-- generated-related-reading:start -->
+<section class="related-reading" aria-labelledby="related-reading-heading">
+  <h2 id="related-reading-heading">Related reading</h2>
+  <ul><li><a href="emergency-funds-need-a-cash-flow-test-not-a-rule-of-thumb.html">Emergency Funds Need a Cash-Flow Test</a></li><li><a href="how-insurance-deductibles-become-a-household-balance-sheet-shock.html">Insurance Deductible Shocks</a></li></ul>
+  <p><a href="reports.html">Explore WealthMeter reports</a></p>
+</section>
+<!-- generated-related-reading:end -->
+</main>
+<div id="footer-placeholder" data-static-component="1">
 <footer>
     <section class="site-newsletter" aria-labelledby="newsletter-heading-footer">
         <h2 id="newsletter-heading-footer">WealthMeter news and updates</h2>
@@ -430,168 +410,7 @@ const siteFooter = `
         <a href="commercial-policy.html">Commercial Policy</a>
         <a href="disclaimer.html">Disclaimer</a>
     </div>
-</footer>`;
-
-document.addEventListener("submit", async (event) => {
-    const form = event.target.closest("[data-newsletter-form]");
-    if (!form) return;
-    event.preventDefault();
-    if (!form.reportValidity()) return;
-
-    const status = form.querySelector("[data-newsletter-status]");
-    const button = form.querySelector('button[type="submit"]');
-    const formData = new FormData(form);
-    if (status) status.textContent = "Signing you up...";
-    if (button) button.disabled = true;
-
-    try {
-        const response = await fetch(NEWSLETTER_ENDPOINT, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                site: "wealthmeter",
-                source: form.dataset.source || "footer",
-                page: window.location.pathname || "/",
-                newsletter: formData.get("newsletter"),
-                commercialUpdates: "yes",
-                company: formData.get("company"),
-                firstName: formData.get("firstName"),
-                lastName: formData.get("lastName"),
-                email: formData.get("email")
-            })
-        });
-        if (!response.ok) throw new Error("Newsletter request failed");
-        form.reset();
-        if (status) status.textContent = "You are signed up.";
-        window.dispatchEvent(new CustomEvent("newsletter:subscribed", { detail: { source: form.dataset.source || "footer" } }));
-    } catch (error) {
-        if (status) status.textContent = "We could not complete the signup. Please try again.";
-    } finally {
-        if (button) button.disabled = false;
-    }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const sharedStyleEl = document.getElementById("wealthmeter-component-styles");
-    if (!sharedStyleEl || !sharedStyleEl.textContent.trim()) {
-        if (sharedStyleEl) {
-            sharedStyleEl.outerHTML = sharedStyles;
-        } else {
-            document.head.insertAdjacentHTML("beforeend", sharedStyles);
-        }
-    }
-    const headerEl = document.getElementById("header-placeholder");
-    const footerEl = document.getElementById("footer-placeholder");
-    if (headerEl && headerEl.dataset.staticComponent !== "1") {
-        headerEl.innerHTML = siteHeader;
-    }
-    if (footerEl && footerEl.dataset.staticComponent !== "1") {
-        footerEl.innerHTML = siteFooter;
-    }
-
-    function ensureNavLink(groupName, href, text, afterHref) {
-        const group = Array.from(document.querySelectorAll(".nav-group")).find((candidate) => {
-            const label = candidate.querySelector(".nav-group-label");
-            return label && label.textContent.trim().toLowerCase() === groupName.toLowerCase();
-        });
-        const dropdown = group && group.querySelector(".dropdown");
-        if (!dropdown || dropdown.querySelector(`a[href="${href}"]`)) return;
-        const link = document.createElement("a");
-        link.href = href;
-        link.textContent = text;
-        const predecessor = afterHref && dropdown.querySelector(`a[href="${afterHref}"]`);
-        if (predecessor) predecessor.insertAdjacentElement("afterend", link);
-        else dropdown.appendChild(link);
-    }
-
-    // Older pages carry static header snapshots. Repair their discovery paths
-    // at runtime as well as keeping the canonical header template current.
-    ensureNavLink("Rate", "purchasing-power.html", "FIRE & Cost of Living", "fire_timeline.html");
-    ensureNavLink("Analyze", "purchasing-power.html", "Purchasing Power Hub", "global_explorer.html");
-    ensureNavLink("Analyze", "live-better-for-less.html", "Live Better for Less", "purchasing-power.html");
-    ensureNavLink("Analyze", "lifestyle-abroad.html", "Lifestyle Abroad", "live-better-for-less.html");
-    document.querySelectorAll("footer .footer-links").forEach((links) => {
-        if (!links.querySelector('a[href*="partners"]')) {
-            const link = document.createElement("a");
-            link.href = "partners.html";
-            link.textContent = "Partners";
-            links.appendChild(link);
-        }
-        if (!links.querySelector('a[href*="commercial-policy"]')) {
-            const link = document.createElement("a");
-            link.href = "commercial-policy.html";
-            link.textContent = "Commercial Policy";
-            links.appendChild(link);
-        }
-    });
-    document.querySelectorAll(".site-newsletter-note").forEach((note) => {
-        note.innerHTML = 'Occasional WealthMeter news, report releases, and relevant commercial recommendations. Unsubscribe at any time. We do not sell subscriber information. See our <a href="privacy.html">Privacy Policy</a>.';
-    });
-    const resultSlot = document.getElementById("result-feedback-slot");
-    if (resultSlot && !resultSlot.querySelector("[data-newsletter-form]")) {
-        resultSlot.innerHTML = newsletterHTML("result");
-    }
-
-    if (!document.querySelector('script[data-monetization-layer]')) {
-        const monetizationScript = document.createElement("script");
-        monetizationScript.src = "/assets/monetization.js?v=2026-09-16.1";
-        monetizationScript.dataset.monetizationLayer = "1";
-        document.body.appendChild(monetizationScript);
-    }
-
-    const isMobile = window.matchMedia("(max-width: 1024px)").matches;
-    const navGroups = Array.from(document.querySelectorAll(".nav-group"));
-    const labels = navGroups.map((group, index) => {
-        const label = group.querySelector(".nav-group-label");
-        const dropdown = group.querySelector(".dropdown");
-        if (!label || !dropdown) return null;
-        if (!dropdown.id) dropdown.id = `wm-nav-dropdown-${index + 1}`;
-        label.setAttribute("role", "button");
-        label.setAttribute("tabindex", "0");
-        label.setAttribute("aria-haspopup", "true");
-        label.setAttribute("aria-controls", dropdown.id);
-        label.setAttribute("aria-expanded", "false");
-        return label;
-    }).filter(Boolean);
-
-    const closeAllMenus = () => {
-        navGroups.forEach((group) => group.classList.remove("open"));
-        labels.forEach((label) => label.setAttribute("aria-expanded", "false"));
-    };
-
-    if (isMobile) {
-        navGroups.forEach((group) => {
-            const label = group.querySelector(".nav-group-label");
-            if (!label) return;
-            label.addEventListener("click", (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                const willOpen = !group.classList.contains("open");
-                closeAllMenus();
-                if (willOpen) {
-                    group.classList.add("open");
-                    label.setAttribute("aria-expanded", "true");
-                }
-            });
-            label.addEventListener("keydown", (event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    label.click();
-                }
-            });
-        });
-
-        document.addEventListener("click", (event) => {
-            if (!event.target.closest(".nav-group")) closeAllMenus();
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape") closeAllMenus();
-        });
-
-        document.querySelectorAll(".dropdown a").forEach((link) => {
-            link.addEventListener("click", () => closeAllMenus());
-        });
-    }
-
-});
+</footer>
+</div>
+</body>
+</html>

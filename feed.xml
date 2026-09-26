@@ -5,7 +5,15 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Sep 2026 07:40:06 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 07:40:16 +0000</lastBuildDate>
+    <item>
+      <title>A Credit Freeze Is Free: When to Use One and How to Lift It</title>
+      <link>https://wealthmeter.xyz/credit-freeze-when-to-use-and-lift.html</link>
+      <guid>https://wealthmeter.xyz/credit-freeze-when-to-use-and-lift.html</guid>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 +0000</pubDate>
+      <description>A credit freeze is free, does not affect credit scores, and can block new-credit applications. Learn when to freeze, when to lift, and why all three bureaus matter.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/credit-freeze-decision-2026-sep26.png" type="image/png"/>
+    </item>
     <item>
       <title>Is Your Joint Bank Account Fully Insured?</title>
       <link>https://wealthmeter.xyz/joint-bank-account-fdic-coverage.html</link>
@@ -397,14 +405,6 @@
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
       <description>How AI is compressing white-collar compensation, fragmenting roles, and destabilizing career and household financial planning.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/ai-labor-deflation-transmission-map.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Retirement Age Lie</title>
-      <link>https://wealthmeter.xyz/retirement-age-lie.html</link>
-      <guid>https://wealthmeter.xyz/retirement-age-lie.html</guid>
-      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
-      <description>stress-testing retirement target numbers under current inflation, rate, and longevity conditions.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/retirement-age-lie-rate-inflation-stress.png" type="image/png"/>
     </item>
   </channel>
 </rss>
