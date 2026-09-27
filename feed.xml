@@ -5,7 +5,15 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Sep 2026 07:40:16 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 13:04:06 +0000</lastBuildDate>
+    <item>
+      <title>The 2026 HSA Limit and the Deductible Test</title>
+      <link>https://wealthmeter.xyz/2026-hsa-limit-and-deductible-test.html</link>
+      <guid>https://wealthmeter.xyz/2026-hsa-limit-and-deductible-test.html</guid>
+      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
+      <description>The 2026 HSA contribution limits are $4,400 self-only and $8,750 family. Check whether your plan meets the deductible and out-of-pocket rules before planning contributions.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/2026-hsa-limit-deductible-2026-sep27.png" type="image/png"/>
+    </item>
     <item>
       <title>A Credit Freeze Is Free: When to Use One and How to Lift It</title>
       <link>https://wealthmeter.xyz/credit-freeze-when-to-use-and-lift.html</link>
@@ -397,14 +405,6 @@
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
       <description>Data-enriched analysis of how Iran conflict risk is repricing oil, inflation, credit spreads, and equity valuations.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/war-premium-transmission-map.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The End of the Safe Job Illusion: AI Labor Deflation in White-Collar Income</title>
-      <link>https://wealthmeter.xyz/end-of-safe-job-illusion-ai-labor-deflation-white-collar-income.html</link>
-      <guid>https://wealthmeter.xyz/end-of-safe-job-illusion-ai-labor-deflation-white-collar-income.html</guid>
-      <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-      <description>How AI is compressing white-collar compensation, fragmenting roles, and destabilizing career and household financial planning.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/ai-labor-deflation-transmission-map.png" type="image/png"/>
     </item>
   </channel>
 </rss>
