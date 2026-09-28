@@ -639,6 +639,9 @@ def ensure_static_components(
     if article_firewall:
         header_html, footer_html = article_firewall_markup(header_html, footer_html)
     text = collapse_component_styles(text)
+    nav_stylesheet = '<link rel="stylesheet" href="/assets/nav-dropdown.css?v=2026-09-27.1">'
+    if "nav-dropdown.css" not in text:
+        text = text.replace("</head>", f"    {nav_stylesheet}\n</head>", 1)
     if WEALTH_STYLE_RE.search(text):
         text = WEALTH_STYLE_RE.sub(shared_styles, text, count=1)
     elif "wealthmeter-component-styles" not in text:
@@ -1195,6 +1198,13 @@ def sync_longform_surfaces(apply: bool, pages: list[PageInfo]) -> int:
     components_text = read_text(components_path)
     updated_components = update_components_longform_dropdown(components_text, display_order_pages)
     changes += int(write_text(components_path, updated_components, apply))
+
+    for page_path in ROOT.glob("*.html"):
+        if page_path == longform_path:
+            continue
+        page_text = read_text(page_path)
+        updated_page = update_components_longform_dropdown(page_text, display_order_pages)
+        changes += int(write_text(page_path, updated_page, apply))
     return changes
 
 

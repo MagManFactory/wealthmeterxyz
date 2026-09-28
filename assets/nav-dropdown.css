@@ -1,0 +1,32 @@
+/* Keep navigation menus usable when article titles are long. */
+header nav .dropdown a {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.4;
+}
+
+@media (min-width: 1025px) {
+    header nav .nav-group .dropdown {
+        box-sizing: border-box;
+        width: min(360px, calc(100vw - 2rem));
+        min-width: 0;
+        max-height: calc(100vh - 6rem);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    header nav .nav-group .label-reports + .dropdown,
+    header nav .nav-group .label-longform + .dropdown {
+        left: auto;
+        right: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    header nav .nav-group .dropdown {
+        box-sizing: border-box;
+        max-height: calc(100vh - 6rem);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+}
