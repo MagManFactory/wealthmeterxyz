@@ -5,7 +5,15 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Sep 2026 13:04:06 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 13:03:33 +0000</lastBuildDate>
+    <item>
+      <title>Medicare Drug Bills: What the Monthly Payment Plan Changes</title>
+      <link>https://wealthmeter.xyz/medicare-drug-monthly-payment-plan.html</link>
+      <guid>https://wealthmeter.xyz/medicare-drug-monthly-payment-plan.html</guid>
+      <pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
+      <description>The Medicare Prescription Payment Plan can spread Part D out-of-pocket drug costs into capped monthly payments. It does not lower the total cost of covered prescriptions.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/medicare-payment-plan-cash-flow-2026-sep28.png" type="image/png"/>
+    </item>
     <item>
       <title>The 2026 HSA Limit and the Deductible Test</title>
       <link>https://wealthmeter.xyz/2026-hsa-limit-and-deductible-test.html</link>
@@ -397,14 +405,6 @@
       <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
       <description>A practical WealthMeter analysis of mortgage lock-in in 2026: why a low fixed rate can preserve monthly cash flow while still reducing mobility, optionality, and real household wealth.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/mortgage-lock-in-mobility-trap.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The War Premium: How the Iran Conflict Is Repricing Energy, Credit, and Equities</title>
-      <link>https://wealthmeter.xyz/war-premium-iran-conflict-repricing-energy-credit-equities.html</link>
-      <guid>https://wealthmeter.xyz/war-premium-iran-conflict-repricing-energy-credit-equities.html</guid>
-      <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-      <description>Data-enriched analysis of how Iran conflict risk is repricing oil, inflation, credit spreads, and equity valuations.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/war-premium-transmission-map.png" type="image/png"/>
     </item>
   </channel>
 </rss>
