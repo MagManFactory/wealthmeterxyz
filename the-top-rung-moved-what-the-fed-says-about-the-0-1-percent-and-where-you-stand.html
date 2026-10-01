@@ -1,56 +1,20 @@
-
-// GA4 — Measurement ID G-8NF91REL39 (do not reuse Lexicon G-5MC05WB07R)
-(function() {
-  if (window.__wmGa4) return;
-  window.__wmGa4 = true;
-  var id = "G-8NF91REL39";
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  window.gtag = window.gtag || gtag;
-  var s = document.createElement("script");
-  s.async = true;
-  s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
-  document.head.appendChild(s);
-  gtag("js", new Date());
-  gtag("config", id);
-  try {
-    var referrerHost = document.referrer ? new URL(document.referrer).hostname.toLowerCase() : "";
-    if (/(^|\.)(chatgpt\.com|perplexity\.ai|claude\.ai|copilot\.microsoft\.com|gemini\.google\.com)$/.test(referrerHost)) {
-      gtag("event", "ai_referral", { source_host: referrerHost, page_path: location.pathname });
-    }
-  } catch (_) {}
-})();
-
-// components.js - WealthMeter™ V25.1 Studio Standard
-
-// Refresh marker for 2026-04-29 WealthMeter longform publish retry.
-const GA_MEASUREMENT_ID = "G-8NF91REL39";
-
-const ga4Snippet = `
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NF91REL39"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-8NF91REL39');
-    </script>`;
-
-(function ensureGa4() {
-    if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
-    const loader = document.createElement("script");
-    loader.async = true;
-    loader.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-    document.head.appendChild(loader);
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag("js", new Date());
-    gtag("config", GA_MEASUREMENT_ID);
-})();
-
-const sharedStyles = `
-<style id="wealthmeter-component-styles">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The Top Rung Moved: What the Fed Says About the 0.1% and Where You Stand | WEALTHMETER.XYZ</title>
+  <meta name="description" content="Federal Reserve DFA data show how the top 0.1 percent pulled away from other affluent households through 2026 Q2, and what a percentile can tell you.">
+  <link rel="canonical" href="https://wealthmeter.xyz/the-top-rung-moved-what-the-fed-says-about-the-0-1-percent-and-where-you-stand.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Top Rung Moved: What the Fed Says About the 0.1% and Where You Stand">
+  <meta property="og:description" content="Federal Reserve DFA data show how the top 0.1 percent pulled away from other affluent households through 2026 Q2, and what a percentile can tell you.">
+  <meta property="og:image" content="https://wealthmeter.xyz/images/longform/top-rung-wealth-share-2026-oct01.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;color:#0f172a;font-family:Inter,Arial,sans-serif}.article{max-width:900px;margin:auto;padding:3rem 1.25rem 5rem}.badge,.meta,figcaption{font:700 .75rem/1.5 ui-monospace,monospace;text-transform:uppercase;letter-spacing:.1em;color:#64748b}h1{font:900 clamp(2.25rem,5vw,4.15rem)/1.02 Outfit,Inter,sans-serif;letter-spacing:-.045em;margin:.7rem 0 1rem}.lead{font-size:1.3rem;line-height:1.55;font-weight:600;color:#1e293b}p,li,td,th{font-size:1.06rem;line-height:1.75;color:#334155}h2{margin:2.65rem 0 1rem;padding-top:1rem;border-top:1px solid #dbe4f0;font-size:.92rem;text-transform:uppercase;letter-spacing:.12em}.callout{border-left:4px solid #0b829b;background:#f0f8fb;padding:1rem 1.25rem;margin:1.6rem 0;font-weight:700}figure{margin:2.2rem 0;border:1px solid #dbe4f0;border-radius:14px;overflow:hidden;background:#fff}figure img{display:block;width:100%;height:auto}figcaption{padding:.8rem 1rem}a{color:#194d7a;font-weight:700}table{border-collapse:collapse;width:100%;margin:1.5rem 0}td,th{border:1px solid #dbe4f0;padding:.7rem;text-align:left;vertical-align:top}th{color:#0f172a;background:#f8fafc}.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem;margin:1.25rem 0}.related a{display:block;padding:1rem;border:1px solid #bfdbfe;border-radius:12px;background:#f8fbff;text-decoration:none}.sources{font-size:.98rem}.note{font-size:.92rem;color:#64748b}
+  </style>
+    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml"><style id="wealthmeter-component-styles">
     /* Monolith Pulse Animation */
     @keyframes monolithPulse {
         0% { transform: scaleY(1); }
@@ -290,10 +254,26 @@ const sharedStyles = `
         height: auto !important;
         object-fit: contain;
     }
-</style>
-`;
+</style><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Top Rung Moved: What the Fed Says About the 0.1% and Where You Stand | WEALTHMETER.XYZ">
+    <meta name="twitter:description" content="Use the IRS Tax Withholding Estimator after an income or household change instead of treating a refund as a year-round savings plan.">
 
-const siteHeader = `
+    <meta property="og:image:width" content="1376">
+    <meta property="og:image:height" content="768">
+    <meta property="og:image:alt" content="Federal Reserve DFA comparison of the top 0.1 percent household wealth share in 2019 Q4 and 2026 Q2."><link rel="stylesheet" href="/assets/nav-dropdown.css?v=2026-09-27.1"><meta property="og:url" content="https://wealthmeter.xyz/the-top-rung-moved-what-the-fed-says-about-the-0-1-percent-and-where-you-stand.html">
+    <meta name="twitter:image" content="https://wealthmeter.xyz/images/longform/top-rung-wealth-share-2026-oct01.png">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The Top Rung Moved: What the Fed Says About the 0.1% and Where You Stand","description":"Federal Reserve DFA data show how the top 0.1 percent pulled away from other affluent households through 2026 Q2, and what a percentile can tell you.","mainEntityOfPage":{"@type":"WebPage","@id":"https://wealthmeter.xyz/the-top-rung-moved-what-the-fed-says-about-the-0-1-percent-and-where-you-stand.html"},"author":{"@type":"Organization","name":"WEALTHMETER.XYZ","url":"https://wealthmeter.xyz/about.html"},"publisher":{"@type":"Organization","name":"WEALTHMETER.XYZ","url":"https://wealthmeter.xyz/"},"dateModified":"2026-10-01","image":"https://wealthmeter.xyz/images/longform/top-rung-wealth-share-2026-oct01.png"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WEALTHMETER.XYZ","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"Longform","item":"https://wealthmeter.xyz/longform.html"},{"@type":"ListItem","position":3,"name":"The Top Rung Moved: What the Fed Says About the 0.1% and Where You Stand","item":"https://wealthmeter.xyz/the-top-rung-moved-what-the-fed-says-about-the-0-1-percent-and-where-you-stand.html"}]}</script><!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NF91REL39"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8NF91REL39');
+    </script>
+</head>
+<body>
+<div id="header-placeholder" data-static-component="1">
 <header>
     <div class="nav-container">
         <div class="brand-wrapper">
@@ -362,60 +342,45 @@ const siteHeader = `
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
                 </div>
             </div>
-            <a href="https://lifemeter.xyz" target="_blank" rel="noopener" class="sister-site-link">LifeMeter ↗</a>
         </nav>
     </div>
-</header>`;
-
-const NEWSLETTER_ENDPOINT = "https://lifemeter.xyz/api/newsletter";
-const SUBSCRIBER_ACCESS_ENDPOINT = "https://lifemeter.xyz/api/subscriber-access";
-
-async function rememberSubscriberAccess(email) {
-    try {
-        const response = await fetch(SUBSCRIBER_ACCESS_ENDPOINT, {
-            method: "POST",
-            mode: "cors",
-            credentials: "omit",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ action: "claim", site: "wealthmeter", resource: "newsletter", email, company: "" })
-        });
-        if (!response.ok) return;
-        const data = await response.json();
-        if (!data.token) return;
-        document.cookie = `wm_subscriber_access=${encodeURIComponent(data.token)}; Max-Age=15552000; Path=/; SameSite=Lax; Secure`;
-    } catch (_error) {
-        // Newsletter signup remains successful if the convenience cookie cannot be set.
-    }
-}
-
-function newsletterHTML(source) {
-    return `
-<section class="site-newsletter" aria-labelledby="newsletter-heading-${source}">
-    <h2 id="newsletter-heading-${source}">WealthMeter news and updates</h2>
-    <p class="site-newsletter-copy">Receive new longform analysis, wealth brief updates, and report releases.</p>
-    <form class="site-newsletter-form" data-newsletter-form data-source="${source}">
-        <input type="hidden" name="newsletter" value="yes">
-        <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
-        <label class="site-newsletter-field">First name
-            <input type="text" name="firstName" autocomplete="given-name" required>
-        </label>
-        <label class="site-newsletter-field">Last name
-            <input type="text" name="lastName" autocomplete="family-name" required>
-        </label>
-        <label class="site-newsletter-field site-newsletter-field-email">Email address
-            <input type="email" name="email" autocomplete="email" inputmode="email" required>
-        </label>
-        <div class="site-newsletter-actions">
-            <button type="submit">Sign up</button>
-            <p class="site-newsletter-status" data-newsletter-status aria-live="polite"></p>
-        </div>
-    </form>
-    <p class="site-newsletter-note">Occasional WealthMeter news, report releases, and relevant commercial recommendations. Unsubscribe at any time. We do not sell subscriber information. See our <a href="privacy.html">Privacy Policy</a>.</p>
-    <p class="site-newsletter-address">Mailing Address: 1968 S. Coast Hwy #5495, Laguna Beach, CA 92651</p>
-</section>`;
-}
-
-const siteFooter = `
+</header>
+</div>
+<main class="article">
+  <div class="badge">Wealth distribution · October 1, 2026</div>
+  <h1>The Top Rung Moved: What the Fed Says About the 0.1% and Where You Stand</h1>
+  <p class="lead">The latest Federal Reserve distributional accounts describe a wealth ladder that stretched at the very top. Between the end of 2019 and the second quarter of 2026, aggregate net worth held by the top 0.1% of U.S. households rose from $13.36 trillion to $27.87 trillion. The households immediately below that group also gained wealth, but the top rung grew faster. The useful question for a reader is how to place a personal balance sheet on this ladder without confusing group totals, averages, and entry thresholds.</p>
+  <p class="meta">Federal Reserve DFA · net worth percentile · top 0.1% · household wealth</p>
+  <p>The Federal Reserve’s Distributional Financial Accounts, or DFA, allocate quarterly U.S. household wealth across five net-worth groups. The latest file available for this article ends at 2026 Q2. It is a modeled distribution anchored in the triennial Survey of Consumer Finances and reconciled to the Financial Accounts. It is not a census of every household, and the quarter-to-quarter values after a survey are estimates. That is the correct frame for the apparent precision of a number such as $27.87 trillion.</p>
+  <div class="callout">The top 0.1% held an estimated 15.0% of DFA household wealth in 2026 Q2, up from 12.4% in 2019 Q4. The latest published DFA file does not provide a current dollar cutoff for entering that group.</div>
+  <h2>The top rung gained faster than the next two</h2>
+  <p>In the DFA file, top-0.1% net worth rose 2.09 times its 2019 Q4 level. The remaining 0.9% of the top 1% rose 1.68 times; the 90th to 99th percentile rose 1.59 times. The distinction matters. An affluent household can have made substantial gains and still be further from the top tail in relative terms. These are changing group totals, not a panel following the same families. Households can move between percentile groups as their net worth changes.</p>
+  <table><thead><tr><th>Wealth group</th><th>2019 Q4 net worth</th><th>2026 Q2 net worth</th><th>Multiple</th><th>2026 Q2 share</th></tr></thead><tbody><tr><td>Top 0.1%</td><td>$13.36T</td><td>$27.87T</td><td>2.09×</td><td>15.0%</td></tr><tr><td>99th to 99.9th</td><td>$19.33T</td><td>$32.45T</td><td>1.68×</td><td>17.5%</td></tr><tr><td>90th to 99th</td><td>$42.56T</td><td>$67.63T</td><td>1.59×</td><td>36.4%</td></tr><tr><td>50th to 90th</td><td>$30.54T</td><td>$53.43T</td><td>1.75×</td><td>28.8%</td></tr><tr><td>Bottom half</td><td>$1.86T</td><td>$4.28T</td><td>2.30×</td><td>2.3%</td></tr></tbody></table>
+  <p class="note">Source: Federal Reserve DFA net-worth levels and shares, 2019 Q4 and 2026 Q2. Dollar values are rounded from millions. Group membership changes between dates.</p>
+  <figure><img src="/images/longform/top-rung-wealth-share-2026-oct01.png" alt="Federal Reserve DFA estimate of top 0.1 percent household wealth share rising from 12.4 percent in 2019 Q4 to 15.0 percent in 2026 Q2" width="1376" height="768"><figcaption>The top 0.1% gained 2.6 percentage points of the measured household-wealth total.</figcaption></figure>
+  <p>The top group’s dollar gain was $14.51 trillion. That is more than the $13.12 trillion gain of the much larger 99th-to-99.9th-percentile group. The gap within the wealthy therefore widened in a way a simple top-1% headline hides. At the same time, the bottom half posted the highest percentage growth from a much smaller base and still held only 2.3% of total DFA wealth. A percentage multiple without a starting amount answers only half the question.</p>
+  <h2>What the Fed is measuring</h2>
+  <p>Net worth is assets minus liabilities. The DFA allocates components such as real estate, corporate equities and mutual funds, pensions, business equity, mortgages, and consumer debt to groups ranked by household net worth. It reports an aggregate for each group. A share of total wealth is not the share of households in that group: by definition, the top 0.1% contains about one household in a thousand, yet it holds about fifteen cents of each dollar of measured household net worth.</p>
+  <p>The DFA household total in 2026 Q2 is about $185.65 trillion when the five groups are summed. The broader Z.1 Financial Accounts headline of approximately $195.9 trillion is for households and nonprofit organizations together. The two denominators should not be combined when computing a household percentile share. The top group’s $27.87 trillion divided by the DFA household total is the relevant calculation for its 15.0% share.</p>
+  <p>The Fed builds the DFA by reconciling the Survey of Consumer Finances with Financial Accounts totals, then interpolating or forecasting between survey waves. This method provides a timely quarterly view, but it inherits survey limitations, especially at the sparse upper tail. A change in the estimate is a change in a modeled population total. It is not a direct record of who made a trade, received a wage, or moved into the 0.1%.</p>
+  <h2>Where the entry line really is</h2>
+  <p>The DFA detail file estimates about 136,779 households in the top 0.1% in 2026 Q2 and average net worth of about $203.7 million for that group. The average is not the minimum. A small number of very large fortunes can lift the mean far above the threshold. Treating the average as the admission price would misstate where the group begins.</p>
+  <p>The last populated top-0.1% minimum in the current detail file is about $45.8 million in 2022 Q3. Later quarters leave the cutoff field blank. That dated estimate is useful history, but it cannot be presented as the 2026 threshold. Nor can an observed 2026 group average be converted mechanically into a new threshold. The shape of the distribution, asset prices, and changing membership matter. A current entry figure would require a separately documented estimate; this article does not invent one.</p>
+  <p>The mean for the 99th-to-99.9th group is about $26.7 million, while the 90th-to-99th group averages about $5.56 million in the 2026 Q2 DFA detail. Those averages show scale, not a ranking rule for an individual reader. The <a href="/us-household-wealth.html">WealthMeter U.S. Household Wealth Calculator</a> offers a personal benchmark using its own stated source model. It is not a live DFA threshold calculator. Check its methodology and date before interpreting a percentile output, especially near the upper tail.</p>
+  <figure><img src="/images/longform/top-rung-percentile-comparison-2026-oct01.png" alt="Five wealth groups showing net-worth growth multiples from 2019 Q4 to 2026 Q2, with different starting bases" width="1376" height="768" loading="lazy"><figcaption>The bottom half grew fastest in percentage terms. The top 0.1% added far more dollars.</figcaption></figure>
+  <h2>Why asset ownership affects the result</h2>
+  <p>The same DFA release shows how wealth composition differs across groups. In 2026 Q2, corporate equities and mutual fund shares held directly outside defined-contribution pensions represented about 57% of top-0.1% assets, versus about 33% for the 90th-to-99th percentile and 12% for the 50th-to-90th. The top group’s measured holdings in this category increased by about $9.85 trillion between the two dates. The next article in this series will examine that asset-mix gap in detail.</p>
+  <p>Those figures should not be read as a causal decomposition of every dollar of net-worth gain. Markets moved, household portfolios changed, and the group’s membership changed. The equity category also excludes stocks held inside defined-contribution pensions, so it understates total market exposure for some middle and upper-middle groups. The point here is narrower: a wealth distribution strongly exposed to asset prices can move differently from the distribution of wages or saving rates.</p>
+  <p>The top 0.1% also has meaningful private-business wealth, while housing and pensions carry greater weight for many households below it. A homeowner with a valuable property and retirement plan can have a large net-worth number but limited liquid capital for near-term needs. Ranking is useful context; it does not measure cash flow, risk capacity, retirement readiness, or the ability to absorb a job loss. Those questions require a household balance-sheet and spending analysis.</p>
+  <h2>Use the percentile without letting it define the plan</h2>
+  <p>Begin with a consistent net-worth calculation: current assets at defensible values, minus all liabilities. Separate liquid assets, retirement accounts, home equity, business value, and debts. Then use a percentile tool as a dated benchmark, recording its source year and whether it measures households or individuals. The next step is to examine concentration, liquidity, and obligations. A rank can rise while the practical safety margin falls if the gain is tied to one illiquid asset or a highly concentrated position.</p>
+  <p>For households between roughly $500,000 and $10 million of net worth, the top-0.1% average can be a poor planning anchor. Compare against relevant life stage, household structure, and the risks the assets must cover. The <a href="/wealth-distribution-pillar.html">wealth-distribution guide</a> explains the broader ranking framework, while the <a href="/asset-rich-cash-poor-paradox.html">asset-rich, cash-poor analysis</a> addresses the gap between net worth and usable reserves. These are decisions a household can evaluate without pretending that it belongs to, or should pursue, the top tail.</p>
+  <p>News coverage of the top 0.1% often mixes a striking aggregate with an implied personal benchmark. The Fed data do support the statement that the top rung moved relative to the next affluent groups from 2019 Q4 through 2026 Q2. They do not yield a current top-0.1% entry price, show the life histories of the same households, or prescribe an investment strategy. Those boundaries make the data more useful, not less.</p>
+  <div class="related"><a href="/us-household-wealth.html">Check your household wealth benchmark</a><a href="/wealth-distribution-pillar.html">Read the wealth-distribution guide</a><a href="/concentration-vs-diversification-tradeoff.html">Review concentration risk</a></div>
+  <h2>Sources and method</h2><div class="sources"><p><a href="https://www.federalreserve.gov/releases/z1/dataviz/dfa/">Federal Reserve, Distributional Financial Accounts overview, updated September 18, 2026.</a></p><p><a href="https://www.federalreserve.gov/releases/z1/dataviz/download/zips/dfa.zip">Federal Reserve, DFA full CSV download, data through 2026 Q2.</a></p><p><a href="https://www.federalreserve.gov/releases/z1/default.htm">Federal Reserve, Financial Accounts of the United States, 2026 Q2 release.</a></p></div>
+  <p class="note">We calculated group totals, multiples, and shares from the Federal Reserve DFA net-worth levels and shares files. Values are rounded. The DFA is modeled and survey anchored. This article is educational and does not provide individualized investment advice.</p>
+</main>
+<div id="footer-placeholder" data-static-component="1">
 <footer>
     <section class="site-newsletter" aria-labelledby="newsletter-heading-footer">
         <h2 id="newsletter-heading-footer">WealthMeter news and updates</h2>
@@ -450,173 +415,7 @@ const siteFooter = `
         <a href="commercial-policy.html">Commercial Policy</a>
         <a href="disclaimer.html">Disclaimer</a>
     </div>
-</footer>`;
-
-document.addEventListener("submit", async (event) => {
-    const form = event.target.closest("[data-newsletter-form]");
-    if (!form) return;
-    event.preventDefault();
-    if (!form.reportValidity()) return;
-
-    const status = form.querySelector("[data-newsletter-status]");
-    const button = form.querySelector('button[type="submit"]');
-    const formData = new FormData(form);
-    if (status) status.textContent = "Signing you up...";
-    if (button) button.disabled = true;
-
-    try {
-        const subscriberEmail = String(formData.get("email") || "").trim();
-        const response = await fetch(NEWSLETTER_ENDPOINT, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                site: "wealthmeter",
-                source: form.dataset.source || "footer",
-                page: window.location.pathname || "/",
-                newsletter: formData.get("newsletter"),
-                commercialUpdates: "yes",
-                company: formData.get("company"),
-                firstName: formData.get("firstName"),
-                lastName: formData.get("lastName"),
-                email: formData.get("email")
-            })
-        });
-        if (!response.ok) throw new Error("Newsletter request failed");
-        await rememberSubscriberAccess(subscriberEmail);
-        form.reset();
-        if (status) status.textContent = "You are signed up.";
-        window.dispatchEvent(new CustomEvent("newsletter:subscribed", { detail: { source: form.dataset.source || "footer" } }));
-    } catch (error) {
-        if (status) status.textContent = "We could not complete the signup. Please try again.";
-    } finally {
-        if (button) button.disabled = false;
-    }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const sharedStyleEl = document.getElementById("wealthmeter-component-styles");
-    if (!sharedStyleEl || !sharedStyleEl.textContent.trim()) {
-        if (sharedStyleEl) {
-            sharedStyleEl.outerHTML = sharedStyles;
-        } else {
-            document.head.insertAdjacentHTML("beforeend", sharedStyles);
-        }
-    }
-    const headerEl = document.getElementById("header-placeholder");
-    const footerEl = document.getElementById("footer-placeholder");
-    if (headerEl && headerEl.dataset.staticComponent !== "1") {
-        headerEl.innerHTML = siteHeader;
-    }
-    if (footerEl && footerEl.dataset.staticComponent !== "1") {
-        footerEl.innerHTML = siteFooter;
-    }
-
-    function ensureNavLink(groupName, href, text, afterHref) {
-        const group = Array.from(document.querySelectorAll(".nav-group")).find((candidate) => {
-            const label = candidate.querySelector(".nav-group-label");
-            return label && label.textContent.trim().toLowerCase() === groupName.toLowerCase();
-        });
-        const dropdown = group && group.querySelector(".dropdown");
-        if (!dropdown || dropdown.querySelector(`a[href="${href}"]`)) return;
-        const link = document.createElement("a");
-        link.href = href;
-        link.textContent = text;
-        const predecessor = afterHref && dropdown.querySelector(`a[href="${afterHref}"]`);
-        if (predecessor) predecessor.insertAdjacentElement("afterend", link);
-        else dropdown.appendChild(link);
-    }
-
-    // Older pages carry static header snapshots. Repair their discovery paths
-    // at runtime as well as keeping the canonical header template current.
-    ensureNavLink("Rate", "purchasing-power.html", "FIRE & Cost of Living", "fire_timeline.html");
-    ensureNavLink("Analyze", "purchasing-power.html", "Purchasing Power Hub", "global_explorer.html");
-    ensureNavLink("Analyze", "live-better-for-less.html", "Live Better for Less", "purchasing-power.html");
-    ensureNavLink("Analyze", "lifestyle-abroad.html", "Lifestyle Abroad", "live-better-for-less.html");
-    ensureNavLink("Analyze", "long-ladder.html", "The Long Ladder ↗", "data-lab.html");
-    const ladderLink = document.querySelector('.nav-group .dropdown a[href="long-ladder.html"]');
-    if (ladderLink) { ladderLink.target = "_blank"; ladderLink.rel = "noopener"; }
-    document.querySelectorAll("footer .footer-links").forEach((links) => {
-        if (!links.querySelector('a[href*="partners"]')) {
-            const link = document.createElement("a");
-            link.href = "partners.html";
-            link.textContent = "Partners";
-            links.appendChild(link);
-        }
-        if (!links.querySelector('a[href*="commercial-policy"]')) {
-            const link = document.createElement("a");
-            link.href = "commercial-policy.html";
-            link.textContent = "Commercial Policy";
-            links.appendChild(link);
-        }
-    });
-    document.querySelectorAll(".site-newsletter-note").forEach((note) => {
-        note.innerHTML = 'Occasional WealthMeter news, report releases, and relevant commercial recommendations. Unsubscribe at any time. We do not sell subscriber information. See our <a href="privacy.html">Privacy Policy</a>.';
-    });
-    const resultSlot = document.getElementById("result-feedback-slot");
-    if (resultSlot && !resultSlot.querySelector("[data-newsletter-form]")) {
-        resultSlot.innerHTML = newsletterHTML("result");
-    }
-
-    if (!document.querySelector('script[data-monetization-layer]')) {
-        const monetizationScript = document.createElement("script");
-        monetizationScript.src = "/assets/monetization.js?v=2026-09-16.1";
-        monetizationScript.dataset.monetizationLayer = "1";
-        document.body.appendChild(monetizationScript);
-    }
-
-    const isMobile = window.matchMedia("(max-width: 1024px)").matches;
-    const navGroups = Array.from(document.querySelectorAll(".nav-group"));
-    const labels = navGroups.map((group, index) => {
-        const label = group.querySelector(".nav-group-label");
-        const dropdown = group.querySelector(".dropdown");
-        if (!label || !dropdown) return null;
-        if (!dropdown.id) dropdown.id = `wm-nav-dropdown-${index + 1}`;
-        label.setAttribute("role", "button");
-        label.setAttribute("tabindex", "0");
-        label.setAttribute("aria-haspopup", "true");
-        label.setAttribute("aria-controls", dropdown.id);
-        label.setAttribute("aria-expanded", "false");
-        return label;
-    }).filter(Boolean);
-
-    const closeAllMenus = () => {
-        navGroups.forEach((group) => group.classList.remove("open"));
-        labels.forEach((label) => label.setAttribute("aria-expanded", "false"));
-    };
-
-    if (isMobile) {
-        navGroups.forEach((group) => {
-            const label = group.querySelector(".nav-group-label");
-            if (!label) return;
-            label.addEventListener("click", (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                const willOpen = !group.classList.contains("open");
-                closeAllMenus();
-                if (willOpen) {
-                    group.classList.add("open");
-                    label.setAttribute("aria-expanded", "true");
-                }
-            });
-            label.addEventListener("keydown", (event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    label.click();
-                }
-            });
-        });
-
-        document.addEventListener("click", (event) => {
-            if (!event.target.closest(".nav-group")) closeAllMenus();
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape") closeAllMenus();
-        });
-
-        document.querySelectorAll(".dropdown a").forEach((link) => {
-            link.addEventListener("click", () => closeAllMenus());
-        });
-    }
-
-});
+</footer>
+</div>
+</body>
+</html>

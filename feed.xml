@@ -5,7 +5,15 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Sep 2026 07:39:23 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 13:26:26 +0000</lastBuildDate>
+    <item>
+      <title>The Top Rung Moved: What the Fed Says About the 0.1% and Where You Stand</title>
+      <link>https://wealthmeter.xyz/the-top-rung-moved-what-the-fed-says-about-the-0-1-percent-and-where-you-stand.html</link>
+      <guid>https://wealthmeter.xyz/the-top-rung-moved-what-the-fed-says-about-the-0-1-percent-and-where-you-stand.html</guid>
+      <pubDate>Thu, 01 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Federal Reserve DFA data show how the top 0.1 percent pulled away from other affluent households through 2026 Q2, and what a percentile can tell you.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/top-rung-wealth-share-2026-oct01.png" type="image/png"/>
+    </item>
     <item>
       <title>When to Adjust Tax Withholding Instead of Waiting for a Refund</title>
       <link>https://wealthmeter.xyz/when-to-adjust-tax-withholding.html</link>
@@ -397,22 +405,6 @@
       <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
       <description>Why high compensation can still reduce strategic freedom when equity vesting, deferred pay, insurance dependence, and concentration risk make leaving expensive.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/golden-handcuffs-retention-equation.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The 2026 Housing Stall: Rates, Inventory, and the New Delinquency Split</title>
-      <link>https://wealthmeter.xyz/housing-stall-2026-rates-inventory-delinquency.html</link>
-      <guid>https://wealthmeter.xyz/housing-stall-2026-rates-inventory-delinquency.html</guid>
-      <pubDate>Sun, 29 Mar 2026 00:00:00 +0000</pubDate>
-      <description>Why 2026 housing data looks better at the margin yet still supports a weak-turnover, uneven-stress housing regime.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/housing-stall-2026-signal-map.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Mortgage Lock-In Trap: Why a 3% Loan Can Still Make You Poorer in 2026</title>
-      <link>https://wealthmeter.xyz/mortgage-lock-in-trap.html</link>
-      <guid>https://wealthmeter.xyz/mortgage-lock-in-trap.html</guid>
-      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
-      <description>A practical WealthMeter analysis of mortgage lock-in in 2026: why a low fixed rate can preserve monthly cash flow while still reducing mobility, optionality, and real household wealth.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/mortgage-lock-in-mobility-trap.png" type="image/png"/>
     </item>
   </channel>
 </rss>
