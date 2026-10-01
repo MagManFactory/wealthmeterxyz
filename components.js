@@ -479,6 +479,7 @@ document.addEventListener("submit", async (event) => {
                 page: window.location.pathname || "/",
                 newsletter: formData.get("newsletter"),
                 commercialUpdates: form.elements.commercialUpdates?.checked === true ? "yes" : "no",
+                commercialConsentVersion: form.elements.commercialUpdates?.checked === true ? "2026-10-01.1" : "",
                 company: formData.get("company"),
                 firstName: formData.get("firstName"),
                 lastName: formData.get("lastName"),

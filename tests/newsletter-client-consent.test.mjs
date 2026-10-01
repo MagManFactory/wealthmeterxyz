@@ -25,7 +25,7 @@ for (const filename of ['components.js','components22.js']) {
     await c.handlers.submit({target:new c.Form(checked),preventDefault(){}});
     const payload=c.requests.find(x=>x.url.includes('/api/newsletter')).body;
     assert.equal(payload.newsletter,'yes');
-    assert.equal(payload.commercialUpdates,checked===true?'yes':'no');
+    assert.equal(payload.commercialUpdates,checked===true?'yes':'no');assert.equal(payload.commercialConsentVersion,checked===true?'2026-10-01.1':'');
   });
 }
 const gatePath=new URL('../subscriber-gate.js',import.meta.url);
@@ -38,7 +38,7 @@ if(existsSync(gatePath)) for(const host of ['lifemeter.xyz','wealthmeter.xyz']) 
   assert.ok(checkbox);assert.doesNotMatch(checkbox,/\bchecked\b|\brequired\b/);
   await c.vm.gateTest.submitGate(new c.Form(checked));
   const payload=c.requests.find(x=>x.url.includes('/api/newsletter')).body;
-  assert.equal(payload.newsletter,'yes');assert.equal(payload.commercialUpdates,checked===true?'yes':'no');
+  assert.equal(payload.newsletter,'yes');assert.equal(payload.commercialUpdates,checked===true?'yes':'no');assert.equal(payload.commercialConsentVersion,checked===true?'2026-10-01.1':'');
 });
 
 
