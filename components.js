@@ -273,6 +273,8 @@ const sharedStyles = `
     .site-newsletter-field { display:grid; gap:.3rem; color:#334155; font-size:.76rem; font-weight:800; }
     .site-newsletter-field-email,.site-newsletter-actions { grid-column:1 / -1; }
     .site-newsletter-field input { width:100%; min-height:46px; padding:.75rem .8rem; border:1px solid #cbd5e1; border-radius:.7rem; background:#fff; color:#0f172a; font-family:inherit; font-size:1rem; font-weight:600; line-height:1.3; }
+    .site-newsletter-consent { grid-column:1 / -1; display:flex; align-items:flex-start; gap:.55rem; font-size:.82rem; line-height:1.5; color:#475569; }
+    .site-newsletter-consent input { margin:.25rem 0 0; flex:none; }
     .site-newsletter-actions { display:flex; align-items:center; gap:.85rem; flex-wrap:wrap; }
     .site-newsletter button { min-height:46px; padding:.75rem 1.15rem; border:0; border-radius:.7rem; background:#2563eb; color:#fff; font-family:inherit; font-size:.84rem; font-weight:800; line-height:1; cursor:pointer; }
     .site-newsletter button:disabled { opacity:.65; cursor:default; }
@@ -280,7 +282,7 @@ const sharedStyles = `
     .site-newsletter-note,.site-newsletter-address { margin:.85rem 0 0; color:#64748b; font-size:.78rem; line-height:1.5; }
     body.dark-mode .site-newsletter { background:#0f172a; border-color:#334155; }
     body.dark-mode .site-newsletter h2 { color:#f8fafc; }
-    body.dark-mode .site-newsletter-copy,body.dark-mode .site-newsletter-status,body.dark-mode .site-newsletter-note,body.dark-mode .site-newsletter-address,body.dark-mode .site-newsletter-field { color:#cbd5e1; }
+    body.dark-mode .site-newsletter-consent,body.dark-mode .site-newsletter-copy,body.dark-mode .site-newsletter-status,body.dark-mode .site-newsletter-note,body.dark-mode .site-newsletter-address,body.dark-mode .site-newsletter-field { color:#cbd5e1; }
     body.dark-mode .site-newsletter-field input { background:#0b1220; border-color:#475569; color:#f8fafc; }
     @media (max-width:640px) { .site-newsletter-form { grid-template-columns:1fr; } .site-newsletter-field-email,.site-newsletter-actions { grid-column:1; } }
 
@@ -405,12 +407,13 @@ function newsletterHTML(source) {
         <label class="site-newsletter-field site-newsletter-field-email">Email address
             <input type="email" name="email" autocomplete="email" inputmode="email" required>
         </label>
-        <div class="site-newsletter-actions">
+        <label class="site-newsletter-consent"><input type="checkbox" name="commercialUpdates" value="yes">Optional: send me WealthMeter report offers and relevant commercial recommendations.</label>
+            <div class="site-newsletter-actions">
             <button type="submit">Sign up</button>
             <p class="site-newsletter-status" data-newsletter-status aria-live="polite"></p>
         </div>
     </form>
-    <p class="site-newsletter-note">Occasional WealthMeter news, report releases, and relevant commercial recommendations. Unsubscribe at any time. We do not sell subscriber information. See our <a href="privacy.html">Privacy Policy</a>.</p>
+    <p class="site-newsletter-note">WealthMeter news and updates. Report offers and commercial recommendations are sent only if you select the optional checkbox. Unsubscribe at any time. We do not sell subscriber information. See our <a href="privacy.html">Privacy Policy</a>.</p>
     <p class="site-newsletter-address">Mailing Address: 1968 S. Coast Hwy #5495, Laguna Beach, CA 92651</p>
 </section>`;
 }
@@ -432,12 +435,13 @@ const siteFooter = `
             <label class="site-newsletter-field site-newsletter-field-email">Email address
                 <input type="email" name="email" autocomplete="email" inputmode="email" required>
             </label>
+            <label class="site-newsletter-consent"><input type="checkbox" name="commercialUpdates" value="yes">Optional: send me WealthMeter report offers and relevant commercial recommendations.</label>
             <div class="site-newsletter-actions">
                 <button type="submit">Sign up</button>
                 <p class="site-newsletter-status" data-newsletter-status aria-live="polite"></p>
             </div>
         </form>
-        <p class="site-newsletter-note">Occasional WealthMeter news, report releases, and relevant commercial recommendations. Unsubscribe at any time. We do not sell subscriber information. See our <a href="privacy.html">Privacy Policy</a>.</p>
+        <p class="site-newsletter-note">WealthMeter news and updates. Report offers and commercial recommendations are sent only if you select the optional checkbox. Unsubscribe at any time. We do not sell subscriber information. See our <a href="privacy.html">Privacy Policy</a>.</p>
         <p class="site-newsletter-address">Mailing Address: 1968 S. Coast Hwy #5495, Laguna Beach, CA 92651</p>
     </section>
     <div class="footer-links">
@@ -474,7 +478,7 @@ document.addEventListener("submit", async (event) => {
                 source: form.dataset.source || "footer",
                 page: window.location.pathname || "/",
                 newsletter: formData.get("newsletter"),
-                commercialUpdates: "yes",
+                commercialUpdates: form.elements.commercialUpdates?.checked === true ? "yes" : "no",
                 company: formData.get("company"),
                 firstName: formData.get("firstName"),
                 lastName: formData.get("lastName"),
@@ -550,7 +554,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
     document.querySelectorAll(".site-newsletter-note").forEach((note) => {
-        note.innerHTML = 'Occasional WealthMeter news, report releases, and relevant commercial recommendations. Unsubscribe at any time. We do not sell subscriber information. See our <a href="privacy.html">Privacy Policy</a>.';
+        note.innerHTML = 'WealthMeter news and updates. Report offers and commercial recommendations are sent only if you select the optional checkbox. Unsubscribe at any time. We do not sell subscriber information. See our <a href="privacy.html">Privacy Policy</a>.';
     });
     const resultSlot = document.getElementById("result-feedback-slot");
     if (resultSlot && !resultSlot.querySelector("[data-newsletter-form]")) {
