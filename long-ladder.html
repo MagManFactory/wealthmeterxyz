@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="en" class="nojs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Long Ladder | US household wealth, rung by rung | WealthMeter</title>
+<meta name="description" content="Scroll up the wealth ladder from the bottom 50% of US households to the top 0.1%, using Federal Reserve Distributional Financial Accounts data through 2026 Q2.">
+<meta name="robots" content="index, follow">
+<style>:root{--bg:#0b0d12;--bg2:#10131a;--ink:#eceae4;--mute:#a7acb8;--dim:#7e8594;--line:#262b36;--accent:#f0a24a;--accent2:#ffcf8f;--serif:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;--sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--bg)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--accent2)}a:focus-visible,input:focus-visible,.tablewrap:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:#111;padding:8px 12px;z-index:100}.skip:focus{left:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px 0 112px}.wrap.narrow{max-width:900px}.center{text-align:center}
+h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;margin:0}
+.kicker{font:600 12.5px/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.lede{font-size:clamp(17px,1.5vw,20px);color:var(--mute);max-width:62ch;margin:18px 0 0}
+.fine{font-size:14px;color:var(--dim);max-width:70ch}
+.center .lede,.center .fine{margin-left:auto;margin-right:auto}
+/* rail */
+.rail{position:fixed;left:22px;top:50%;transform:translateY(-50%);height:min(62vh,460px);z-index:20;display:flex}
+.rail ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;justify-content:space-between;height:100%;position:relative;z-index:1}
+.rail a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--dim);font:600 11.5px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;flex-direction:row-reverse;justify-content:flex-end}
+.rail .dot{width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid #4a5163;transition:all .3s;flex:none}
+.rail .lab{transition:color .3s;white-space:nowrap}
+.rail a.done .dot{border-color:var(--accent);background:#5a3d1c}
+.rail a.on .dot{border-color:var(--accent);background:var(--accent);box-shadow:0 0 0 5px rgba(240,162,74,.22)}
+.rail a.on,.rail a.done{color:var(--ink)}
+.rail-line{position:absolute;left:5.5px;top:6px;bottom:6px;width:2px;background:var(--line);z-index:0}
+.rail-fill{position:absolute;left:0;bottom:0;width:100%;height:0;background:var(--accent);transition:height .25s linear}
+.rail{opacity:0;pointer-events:none;transition:opacity .4s}.rail.show{opacity:1;pointer-events:auto}
+.rail ol{margin-left:0}.rail .rail-line{left:5.5px}
+/* hero */
+.hero{min-height:100vh;min-height:100svh;position:relative;display:flex;align-items:center;overflow:hidden;background:radial-gradient(900px 600px at 78% 85%,rgba(240,162,74,.14),transparent 70%),var(--bg)}
+.hero .wrap{position:relative;z-index:2;padding-top:60px;padding-bottom:60px}
+.brand{font:600 12.5px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin:0 0 28px}
+h1{font-size:clamp(64px,13vw,168px);line-height:.9;letter-spacing:-.03em;font-style:italic}
+.hero .sub{max-width:44ch;font-size:clamp(18px,1.8vw,22px);color:var(--mute);margin:32px 0 0}
+.cue{margin:48px 0 0;display:flex;align-items:center;gap:14px;color:var(--accent);font:600 12px var(--sans);letter-spacing:.2em;text-transform:uppercase}
+.cue i{display:block;width:1px;height:46px;background:linear-gradient(var(--accent),transparent);animation:cue 2s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(.2);transform-origin:top}60%{transform:scaleY(1);transform-origin:top}100%{transform:scaleY(1);opacity:0}}
+.hero-ladder{position:absolute;right:6vw;bottom:0;height:96%;width:auto;max-width:44vw;opacity:.9}
+.hero-ladder line{stroke:#2e3442;stroke-width:3}.hero-ladder .rg{stroke:#394052;stroke-width:2.5}.hero-ladder .hot{stroke:var(--accent);stroke-width:4}
+/* beats */
+.beat{padding:120px 0;border-top:1px solid var(--line)}
+.beat h2{font-size:clamp(30px,4.2vw,54px);line-height:1.12;max-width:20ch}
+.pull h2,.stocks h2,.perhh h2{max-width:24ch}
+h2 .cu{color:var(--accent2)}
+.legend{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:var(--mute)}
+.legend .sw,.sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:8px;vertical-align:-1px}
+.legend-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px}.legend-grid li{display:flex;flex-direction:column}.legend-grid .lv{margin-left:20px;color:var(--dim);font-size:13.5px}.legend-grid li{position:relative}.legend-grid .sw{position:absolute;left:0;top:5px}.legend-grid .ln{margin-left:20px;color:var(--ink)}
+figure{margin:0}figcaption{font-size:14px;color:var(--dim);margin-bottom:14px;max-width:70ch}
+.strips{margin-top:44px}.strip-row{margin:0 0 14px}.rl{display:block;font-size:13.5px;color:var(--mute);margin-bottom:6px}
+.strip{display:flex;height:34px;border-radius:6px;overflow:hidden;background:var(--bg2);gap:2px}.strip .seg{display:block;height:100%;min-width:1px}
+/* rungs */
+.rung{position:relative;padding:130px 0 120px;border-top:1px solid var(--line);background:linear-gradient(180deg,transparent,rgba(240,162,74,calc(var(--n,0)*.012)) 100%)}
+.rung::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--accent) 0,var(--accent) calc(var(--rp,0)*100%),transparent calc(var(--rp,0)*100%))}
+.rung[data-rung="2"]{--n:1}.rung[data-rung="3"]{--n:2}.rung[data-rung="4"]{--n:3}.rung[data-rung="5"]{--n:5}
+.rung-head{position:relative}
+.num{position:absolute;right:0;top:-70px;font:italic 400 clamp(120px,22vw,300px)/1 var(--serif);color:rgba(255,255,255,.04);pointer-events:none;user-select:none}
+.is-top .num{color:rgba(240,162,74,.1)}
+.rung h2{font-size:clamp(32px,5vw,64px);max-width:20ch;line-height:1.08}.rung h2 .cu{color:var(--accent)}
+.rung-body{margin-top:56px}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stat{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:22px 24px;display:flex;flex-direction:column;gap:4px}
+.stat.big{grid-column:1/-1;background:linear-gradient(120deg,#1a1510,var(--bg2) 60%);border-color:#3a2d1c}
+.label{font:600 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.value{font:400 clamp(30px,3.4vw,46px)/1.15 var(--serif);color:var(--ink);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.stat.big .value{font-size:clamp(44px,7vw,96px);color:var(--accent2);line-height:1.05}
+.sub{font-size:14px;color:var(--dim)}
+.viz{display:grid;grid-template-columns:1.6fr 1fr;gap:40px;margin-top:44px;align-items:center}
+.row{margin:0 0 12px}.track{height:30px;background:var(--bg2);border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.bar{height:100%;border-radius:0 4px 4px 0;min-width:3px;transform-origin:left;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.bar.ghost{background:repeating-linear-gradient(45deg,#4d5568 0 6px,#3e4455 6px 12px)}.bar.ghost.alt{background:repeating-linear-gradient(45deg,#3f4859 0 6px,#323a49 6px 12px)}
+.bar.now{background:linear-gradient(90deg,#c97a1f,var(--accent))}.bar.now.alt{background:linear-gradient(90deg,#8d8f9c,#c3c6d1)}
+.js-anim .bar{transform:scaleX(0)}.js-anim .in .bar,.js-anim .bar.in{transform:scaleX(1)}
+.waffle{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;max-width:230px;margin-left:auto}
+.waffle i{display:block;aspect-ratio:1;border-radius:2px;background:#1c212b;background-image:linear-gradient(90deg,var(--accent) var(--f),transparent var(--f))}
+.waffle-fig figcaption{text-align:right;margin:10px 0 0 auto;max-width:230px}
+.grow{margin:36px 0 0;font-size:19px;color:var(--ink);max-width:60ch}.entry{margin:12px 0 0;font-size:14.5px;color:var(--dim);max-width:70ch}.entry strong{color:var(--mute)}
+.is-top{background:radial-gradient(900px 500px at 70% 10%,rgba(240,162,74,.12),transparent 70%),linear-gradient(180deg,transparent,rgba(240,162,74,.05))}
+/* charts */
+.chart{width:100%;height:auto;display:block;background:var(--bg2);border:1px solid var(--line);border-radius:12px}
+.chart .gl{stroke:#232834;stroke-width:1}.chart .gl.one{stroke:#4a5163;stroke-dasharray:4 4}.chart .at{fill:var(--mute);font:12px var(--sans)}
+.ln-ratio{fill:none;stroke:var(--accent);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.mk{stroke:#6b7385;stroke-width:1.5;stroke-dasharray:3 3}.mkdot{fill:var(--accent2);stroke:var(--bg);stroke-width:3}
+.pull .scale{margin:44px 0}.pull .row .rl{margin-bottom:5px}
+.scrub{margin-top:18px}.scrub label{font:600 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+input[type=range]{width:100%;accent-color:var(--accent);margin:10px 0;height:28px}
+.readout{margin:4px 0 0;font-size:16px;color:var(--ink);font-variant-numeric:tabular-nums}
+.dchart{position:relative;padding:8px 0 36px}.drow{margin:0 0 14px}
+.dtrack{position:relative;height:22px;border-radius:11px;background:var(--bg2);border:1px solid var(--line)}
+.dline{position:absolute;left:0;top:50%;height:2px;background:#5a6174;transform:translateY(-50%)}
+.dot{position:absolute;top:50%;width:18px;height:18px;border-radius:50%;background:#aab3c4;transform:translate(-50%,-50%);border:3px solid var(--bg)}.dot.top{background:var(--accent);box-shadow:0 0 0 5px rgba(240,162,74,.25)}
+.dticks{position:absolute;left:0;right:0;bottom:0;height:24px;border-top:1px solid var(--line)}.tk{position:absolute;top:0;width:1px;height:8px;background:#5a6174}.tk em{position:absolute;top:10px;left:0;transform:translateX(-50%);font:12px var(--sans);color:var(--mute);font-style:normal;white-space:nowrap}
+.dchart .dtrack{margin-right:0}
+.mrow{display:grid;grid-template-columns:130px 1fr;gap:14px;align-items:center;margin:0 0 12px}.mrow .rl{margin:0;color:var(--ink);font-size:15px}
+.mbar{display:flex;height:42px;border-radius:8px;overflow:hidden;gap:2px;background:var(--bg2)}.mbar .seg{display:flex;align-items:center;justify-content:center;color:#0b0d12;font:700 13px var(--sans);min-width:0;overflow:hidden;transform-origin:left;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.mbar .seg b{font-weight:700}.mbar .s-re b,.mbar .s-pen b,.mbar .s-oth b{color:#e8eaf0}.mbar .s-biz b{color:#10131a}
+.js-anim .mbar .seg{transform:scaleX(0)}.js-anim .in .mbar .seg,.js-anim .mix.in .mbar .seg{transform:scaleX(1)}
+.mrow.hl .rl{color:var(--accent2);font-weight:700}
+/* table */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin-top:30px}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:15px;font-variant-numeric:tabular-nums}
+caption{text-align:left;padding:14px 16px;color:var(--dim);font-size:14px}
+th,td{padding:12px 16px;text-align:right;border-top:1px solid var(--line)}th:first-child,td:first-child{text-align:left}
+thead th{color:var(--mute);font:600 12px var(--sans);letter-spacing:.06em;text-transform:uppercase;vertical-align:bottom}tbody th,tfoot th{font-weight:600}tbody tr:first-child{color:var(--accent2)}tfoot{color:var(--mute)}
+/* cta */
+.cta{padding:150px 0;text-align:center;background:radial-gradient(700px 420px at 50% 30%,rgba(240,162,74,.18),transparent 70%);border-top:1px solid var(--line)}
+.cta h2{font-size:clamp(48px,9vw,120px);font-style:italic;max-width:none;margin:0 auto}
+.btn{display:inline-block;margin-top:28px;background:var(--accent);color:#17120b;font:700 17px var(--sans);padding:16px 30px;border-radius:999px;text-decoration:none;transition:transform .2s,background .2s}.btn:hover{background:var(--accent2);transform:translateY(-2px)}
+.foot{padding:70px 0 90px;border-top:1px solid var(--line);background:#080a0e;color:var(--mute);font-size:15px}.foot h2.small{font:600 13px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;max-width:none}.foot p{max-width:75ch}
+/* reveal */
+.js-anim .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js-anim .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js-anim .rv,.js-anim .bar,.js-anim .mbar .seg{opacity:1!important;transform:none!important;transition:none!important}.cue i{animation:none}.rail-fill{transition:none}.btn{transition:none}}
+/* mobile */
+@media (max-width:860px){
+ body{font-size:16.5px}
+ .wrap{padding:0 22px 0 52px}
+ .rail{left:10px;height:min(56vh,380px)}.rail .lab{display:none}.rail .dot{width:14px;height:14px}
+ .stat-grid{grid-template-columns:1fr 1fr}.stat.big{grid-column:1/-1}.stat{padding:16px 16px}
+ .viz{grid-template-columns:1fr;gap:28px}.waffle,.waffle-fig figcaption{margin-left:0;text-align:left}
+ .beat{padding:84px 0}.rung{padding:96px 0 84px}.rung-body{margin-top:36px}
+ .num{top:-50px}.hero-ladder{opacity:.45;max-width:60vw;right:-6vw}
+ .legend-grid{grid-template-columns:1fr}.mrow{grid-template-columns:1fr;gap:6px}.mbar{height:38px}
+}
+@media (max-width:420px){.stat-grid{grid-template-columns:1fr}.mbar .seg{font-size:12px}}
+</style>
+<link rel="canonical" href="https://wealthmeter.xyz/long-ladder.html">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem("wealthmeter_theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}catch(_){document.documentElement.dataset.theme="light"}</script>
+    <link rel="alternate" type="application/rss+xml" title="WEALTHMETER.XYZ Feed" href="https://wealthmeter.xyz/feed.xml">
+    <link rel="stylesheet" href="/assets/nav-dropdown.css?v=2026-09-27.1"><style id="wealthmeter-component-styles">
+    /* Monolith Pulse Animation */
+    @keyframes monolithPulse {
+        0% { transform: scaleY(1); }
+        50% { transform: scaleY(1.25); }
+        100% { transform: scaleY(1); }
+    }
+    .bar-rank { animation: monolithPulse 2s ease-in-out infinite; transform-origin: bottom; fill: #FF4B4B; }
+    .bar-analyze { animation: monolithPulse 2.4s ease-in-out infinite; animation-delay: 0.2s; transform-origin: bottom; fill: #0f172a; }
+    .bar-rate { animation: monolithPulse 1.8s ease-in-out infinite; animation-delay: 0.4s; transform-origin: bottom; fill: #0891b2; }
+
+    /* Pillar Colors */
+    .label-rank { color: #FF4B4B !important; }
+    .label-rate { color: #00bcd4 !important; }
+    .label-analyze { color: #2563eb !important; }
+    .label-longform { color: #0ea5e9 !important; }
+
+    /* Layout Standards */
+    #header-placeholder > header {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e2e8f0;
+        z-index: 9999;
+    }
+    .nav-container {
+        max-width: 1580px;
+        margin: 0 auto;
+        padding: 0 1.75rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+    }
+
+    /* Brand Wrapper: Prevents collision with nav items */
+    .brand-wrapper {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        margin-right: 2rem;
+    }
+
+    /* Navigation: Forces links to the right */
+    nav {
+        display: flex;
+        gap: clamp(1.1rem, 1.7vw, 2.25rem);
+        align-items: center;
+        height: 100%;
+        margin-left: auto;
+    }
+
+    .nav-group {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        white-space: nowrap;
+    }
+    .nav-group-label { font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; }
+    .sister-site-link {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        font-weight: 800;
+        font-size: 0.85rem;
+        color: #FF4B4B;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+    }
+    .nav-group:hover .dropdown { display: block !important; }
+    .nav-group.open .dropdown { display: block !important; }
+
+    @media (max-width: 1360px) {
+        .nav-container { padding: 0 1.25rem; }
+        .brand-wrapper { margin-right: 1.25rem; }
+        nav { gap: 1rem; }
+        .nav-group-label,
+        .sister-site-link { font-size: 0.76rem; letter-spacing: 0.09em; }
+    }
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        padding: 1rem 0;
+        min-width: 260px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        z-index: 10000;
+        margin-top: -5px;
+    }
+    .dropdown a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        text-decoration: none;
+        color: #475569;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: 0.2s;
+    }
+    .dropdown a:hover { background: #f8fafc; color: #020617; }
+
+    @media (max-width: 1024px) {
+        #header-placeholder > header { position: relative; }
+        .nav-container { height: auto; min-height: 72px; padding: 0.75rem 1rem; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+        .brand-wrapper { margin-right: 0; }
+        nav { width: 100%; gap: 0.75rem; overflow-x: auto; padding-bottom: 0.25rem; -ms-overflow-style: none; scrollbar-width: none; }
+        nav::-webkit-scrollbar { display: none; }
+        .nav-group { height: auto; }
+        .nav-group-label { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .sister-site-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0.25rem 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+        .dropdown { position: fixed; left: 0.9rem; right: 0.9rem; top: 74px; min-width: 0; max-height: 70vh; overflow-y: auto; margin-top: 0; border-radius: 0.9rem; padding: 0.7rem 0; box-shadow: 0 24px 48px rgba(0, 0, 0, 0.16); }
+        .dropdown a { min-height: 44px; display: flex; align-items: center; font-size: 0.95rem; padding: 0.72rem 1.15rem; }
+    }
+
+    footer { padding: 5rem 2rem; text-align: center; border-top: 1px solid #e2e8f0; background: #f8fafc; margin-top: auto; }
+    .cross-property-band {
+        max-width: 980px;
+        margin: 0 auto 1.5rem;
+        padding: 1rem 1.25rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+        color: #1e293b;
+        font-weight: 700;
+        line-height: 1.55;
+    }
+    .cross-property-band a {
+        color: #2563eb;
+        font-weight: 900;
+        text-decoration: none;
+    }
+    .cross-property-band a:hover { text-decoration: underline; }
+    .article-bridge-cta {
+        margin: 2.5rem 0 0;
+        padding: 1.25rem 1.35rem;
+        border: 1px solid #dbe4f0;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #ffffff, #eef4ff 70%);
+    }
+    .article-bridge-label {
+        display: inline-block;
+        margin-bottom: 0.55rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #2563eb;
+    }
+    .article-bridge-cta h2,
+    .article-bridge-cta h3 {
+        margin: 0 0 0.55rem;
+        padding: 0;
+        border: 0;
+        color: #0f172a;
+        font-size: 1.2rem;
+        letter-spacing: -0.02em;
+        text-transform: none;
+    }
+    .article-bridge-cta p {
+        margin: 0 0 0.9rem;
+        color: #334155;
+    }
+    .article-bridge-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 0 0 0.95rem;
+    }
+    .article-bridge-chip {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #bfdbfe;
+        border-radius: 999px;
+        padding: 0.34rem 0.65rem;
+        background: #ffffff;
+        color: #1d4ed8;
+        font-size: 0.76rem;
+        font-weight: 700;
+    }
+    .article-bridge-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        align-items: center;
+    }
+    .article-bridge-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+        border-radius: 0.85rem;
+        background: #2563eb;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 800;
+    }
+    .article-bridge-secondary {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    .article-bridge-secondary:hover { text-decoration: underline; }
+    .footer-links { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; }
+    .footer-links a { color: #64748b; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: color 0.2s; }
+
+    .site-newsletter { max-width:720px; margin:2rem auto 0; padding:1.4rem; border:1px solid #dbe4f0; border-radius:1rem; background:#f8fbff; text-align:left; }
+    .site-newsletter h2 { margin:0 0 .35rem; font-size:1.3rem; color:#0f172a; }
+    .site-newsletter-copy { margin:0 0 1rem; color:#475569; line-height:1.55; }
+    .site-newsletter-form { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; }
+    .site-newsletter-field { display:grid; gap:.3rem; color:#334155; font-size:.76rem; font-weight:800; }
+    .site-newsletter-field-email,.site-newsletter-actions { grid-column:1 / -1; }
+    .site-newsletter-field input { width:100%; min-height:46px; padding:.75rem .8rem; border:1px solid #cbd5e1; border-radius:.7rem; background:#fff; color:#0f172a; font-family:inherit; font-size:1rem; font-weight:600; line-height:1.3; }
+    .site-newsletter-actions { display:flex; align-items:center; gap:.85rem; flex-wrap:wrap; }
+    .site-newsletter button { min-height:46px; padding:.75rem 1.15rem; border:0; border-radius:.7rem; background:#2563eb; color:#fff; font-family:inherit; font-size:.84rem; font-weight:800; line-height:1; cursor:pointer; }
+    .site-newsletter button:disabled { opacity:.65; cursor:default; }
+    .site-newsletter-status { margin:0; color:#475569; font-size:.86rem; font-weight:700; }
+    .site-newsletter-note,.site-newsletter-address { margin:.85rem 0 0; color:#64748b; font-size:.78rem; line-height:1.5; }
+    body.dark-mode .site-newsletter { background:#0f172a; border-color:#334155; }
+    body.dark-mode .site-newsletter h2 { color:#f8fafc; }
+    body.dark-mode .site-newsletter-copy,body.dark-mode .site-newsletter-status,body.dark-mode .site-newsletter-note,body.dark-mode .site-newsletter-address,body.dark-mode .site-newsletter-field { color:#cbd5e1; }
+    body.dark-mode .site-newsletter-field input { background:#0b1220; border-color:#475569; color:#f8fafc; }
+    @media (max-width:640px) { .site-newsletter-form { grid-template-columns:1fr; } .site-newsletter-field-email,.site-newsletter-actions { grid-column:1; } }
+
+    main.article figure img {
+        max-width: 100%;
+        width: 100%;
+        height: auto !important;
+        object-fit: contain;
+    }
+</style><meta property="og:title" content="The Long Ladder | US household wealth, rung by rung | WealthMeter">
+    <meta property="og:description" content="Scroll up the wealth ladder from the bottom 50% of US households to the top 0.1%, using Federal Reserve Distributional Financial Accounts data through 2026 Q2.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wealthmeter.xyz/long-ladder.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The Long Ladder | US household wealth, rung by rung | WealthMeter">
+    <meta name="twitter:description" content="Scroll up the wealth ladder from the bottom 50% of US households to the top 0.1%, using Federal Reserve Distributional Financial Accounts data through 2026 Q2.">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WEALTHMETER.XYZ","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"The Long Ladder","item":"https://wealthmeter.xyz/long-ladder.html"}]}</script>
+<!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NF91REL39"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8NF91REL39');
+    </script>
+<link rel="stylesheet" href="assets/long-ladder.css">
+</head>
+<body>
+<div id="header-placeholder" data-static-component="1">
+<header>
+    <div class="nav-container">
+        <div class="brand-wrapper">
+            <a href="/" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="bar-rank" x="15" y="45" width="16" height="40" rx="2"/>
+                    <rect class="bar-analyze" x="42" y="25" width="16" height="60" rx="2"/>
+                    <rect class="bar-rate" x="69" y="55" width="16" height="30" rx="2"/>
+                </svg>
+                <div style="font-family: 'Outfit', sans-serif; font-size: 26px; font-weight: 900; letter-spacing: -0.04em; display: flex; line-height: 1; white-space: nowrap;">
+                    <span style="color: #0f172a;">WEALTH</span><span style="color: #2563eb;">METER</span><span style="color: #0891b2;">.XYZ</span>
+                </div>
+            </a>
+        </div>
+        <nav>
+            <div class="nav-group"><span class="nav-group-label label-rank">Rank</span>
+                <div class="dropdown">
+                    <a href="/">Global Wealth Rank</a>
+                    <a href="us-household-wealth.html">U.S. Household Wealth</a>
+                    <a href="global_ranker.html">Country-Specific Rank</a>
+                    <a href="income_ranker.html">Income Percentile</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-rate">Rate</span>
+                <div class="dropdown">
+                    <a href="networth.html">Net Worth Calibration</a>
+                    <a href="fire_timeline.html">FIRE Timeline Planner</a>
+                    <a href="purchasing-power.html">FIRE &amp; Cost of Living</a>
+                    <a href="portfolio_alpha.html">Portfolio Alpha Simulator</a>
+                    <a href="runway_lab.html">Financial Runway Lab</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-analyze">Analyze</span>
+                <div class="dropdown">
+                    <a href="global_explorer.html">Wealth Explorer</a>
+                    <a href="purchasing-power.html">Purchasing Power Hub</a>
+                    <a href="live-better-for-less.html">Live Better for Less</a>
+                    <a href="lifestyle-abroad.html">Lifestyle Abroad</a>
+                    <a href="country-systems-atlas.html">Country Systems Atlas</a>
+                    <a href="atlas.html">Longevity Atlas</a>
+                    <a href="data-lab.html">Data Lab</a>
+                    <a href="long-ladder.html" target="_blank" rel="noopener">The Long Ladder ↗</a>
+                    <a href="wealth-briefs.html">Wealth Briefs</a>
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
+                <div class="dropdown">
+                    <a href="longform.html">Longform Hub</a>
+                    <a href="when-to-adjust-tax-withholding.html">When to Adjust Tax Withholding Instead of Waiting for a Refund</a>
+                    <a href="medicare-drug-monthly-payment-plan.html">Medicare Drug Bills: What the Monthly Payment Plan Changes</a>
+                    <a href="2026-hsa-limit-and-deductible-test.html">The 2026 HSA Limit and the Deductible Test</a>
+                    <a href="credit-freeze-when-to-use-and-lift.html">A Credit Freeze Is Free: When to Use One and How to Lift It</a>
+                    <a href="joint-bank-account-fdic-coverage.html">Is Your Joint Bank Account Fully Insured?</a>
+                    <a href="2026-retirement-catch-up-ages-60-to-63.html">The 2026 Retirement Catch-Up Window at Ages 60 to 63</a>
+                    <a href="emergency-funds-need-a-cash-flow-test-not-a-rule-of-thumb.html">Emergency Funds Need a Cash-Flow Test, Not a Rule of Thumb</a>
+                    <a href="job-loss-hurts-more-when-benefits-are-not-portable.html">Job Loss Hurts More When Benefits Are Not Portable</a>
+                    <a href="disability-insurance-leaves-many-paychecks-unprotected.html">Disability Insurance Leaves Many Paychecks Unprotected</a>
+                    <a href="how-insurance-deductibles-become-a-household-balance-sheet-shock.html">How Insurance Deductibles Become a Household Balance-Sheet Shock</a>
+                    <a href="america-is-second-by-average-wealth-fifteenth-by-median-wealth.html">America Is 2nd by Average Wealth, 15th by Median Wealth</a>
+                    <a href="home-equity-is-not-emergency-liquidity.html">Home Equity Is Not Emergency Liquidity</a>
+
+
+                    <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
+                </div>
+            </div>
+            <a href="https://lifemeter.xyz" target="_blank" rel="noopener" class="sister-site-link">LifeMeter ↗</a>
+        </nav>
+    </div>
+</header>
+</div>
+<div class="feature-toolbar"><span>Special feature · U.S. household wealth</span><button type="button" id="ladder-theme" aria-label="Switch color theme">Light / dark</button></div>
+<a class="skip" href="#rung-1">Skip to the ladder</a>
+<nav class="rail" aria-label="Ladder progress" id="rail">
+  <div class="rail-line" aria-hidden="true"><div class="rail-fill" id="rail-fill"></div></div>
+  <ol><li><a href="#rung-5" data-rail="5" aria-label="Rung 5: Top 0.1%"><span class="lab">Top 0.1%</span><span class="dot"></span></a></li><li><a href="#rung-4" data-rail="4" aria-label="Rung 4: 99th to 99.9th"><span class="lab">99th to 99.9th</span><span class="dot"></span></a></li><li><a href="#rung-3" data-rail="3" aria-label="Rung 3: 90th to 99th"><span class="lab">90th to 99th</span><span class="dot"></span></a></li><li><a href="#rung-2" data-rail="2" aria-label="Rung 2: 50th to 90th"><span class="lab">50th to 90th</span><span class="dot"></span></a></li><li><a href="#rung-1" data-rail="1" aria-label="Rung 1: Bottom 50%"><span class="lab">Bottom 50%</span><span class="dot"></span></a></li></ol>
+</nav>
+
+<main id="feature-content"><header class="hero" id="top">
+  <div class="wrap">
+    <p class="brand">WealthMeter &middot; Special feature</p>
+    <h1>The Long<br>Ladder</h1>
+    <p class="sub">Five rungs of US household wealth, from the bottom 50% to the top 0.1%. Scroll to climb. Based on Federal Reserve estimates through 2026 Q2.</p>
+    <p class="cue" aria-hidden="true"><span>Scroll to climb</span><i></i></p>
+  </div>
+  <svg class="hero-ladder" viewBox="0 0 200 600" aria-hidden="true" preserveAspectRatio="xMidYMax meet">
+    <line x1="40" y1="0" x2="40" y2="600"/><line x1="160" y1="0" x2="160" y2="600"/>
+    <line class="rg" x1="40" x2="160" y1="30" y2="30"/><line class="rg" x1="40" x2="160" y1="90" y2="90"/><line class="rg" x1="40" x2="160" y1="150" y2="150"/><line class="rg" x1="40" x2="160" y1="210" y2="210"/><line class="rg" x1="40" x2="160" y1="270" y2="270"/><line class="rg" x1="40" x2="160" y1="330" y2="330"/><line class="rg" x1="40" x2="160" y1="390" y2="390"/><line class="rg" x1="40" x2="160" y1="450" y2="450"/><line class="rg" x1="40" x2="160" y1="510" y2="510"/><line class="rg" x1="40" x2="160" y1="570" y2="570"/>
+    <line class="rg hot" x1="40" x2="160" y1="30" y2="30"/>
+  </svg>
+</header>
+
+<section class="beat intro" id="intro" aria-labelledby="h-intro">
+  <div class="wrap narrow">
+    <p class="kicker rv">How to read the ladder</p>
+    <h2 id="h-intro" class="rv">US households own <span class="cu" data-k="t" data-v="185.65" >$185.65 trillion</span> in total net worth.</h2>
+    <p class="lede rv">Net worth means everything a household owns minus everything it owes. The Fed sorts all 135,198,394 households into five groups by net worth. You start at the bottom rung and climb. On each rung you will see the group total, its share, the average per household, and how it changed since the end of 2019.</p>
+    <p class="fine">These are group averages, not medians or entry thresholds. All amounts are nominal U.S. dollars. Changes since 2019 include inflation and changes in household counts.</p>
+    <figure class="strips rv">
+      <figcaption>The same five groups, counted two ways. Top bar: share of households. Bottom bar: share of wealth. A segment of the bar is drawn to exact proportion, so the smallest ones are very thin.</figcaption>
+      <div class="strip-row"><span class="rl">Share of households</span><div class="strip" role="img" aria-label="Share of households: Bottom 50% 50.01 percent; 50th to 90th 39.99 percent; 90th to 99th 9.00 percent; 99th to 99.9th 0.90 percent; Top 0.1% 0.10 percent"><span class="seg" style="width:50.0128%;background:#39404f" title="Bottom 50%: 50.01%"></span><span class="seg" style="width:39.9893%;background:#566075" title="50th to 90th: 39.99%"></span><span class="seg" style="width:8.9986%;background:#7b869c" title="90th to 99th: 9.00%"></span><span class="seg" style="width:0.8981%;background:#aab3c4" title="99th to 99.9th: 0.90%"></span><span class="seg" style="width:0.1012%;background:var(--accent)" title="Top 0.1%: 0.10%"></span></div></div>
+      <div class="strip-row"><span class="rl">Share of wealth</span><div class="strip" role="img" aria-label="Share of wealth: Bottom 50% 2.30 percent; 50th to 90th 28.78 percent; 90th to 99th 36.43 percent; 99th to 99.9th 17.48 percent; Top 0.1% 15.01 percent"><span class="seg" style="width:2.3043%;background:#39404f" title="Bottom 50%: 2.30%"></span><span class="seg" style="width:28.7776%;background:#566075" title="50th to 90th: 28.78%"></span><span class="seg" style="width:36.4308%;background:#7b869c" title="90th to 99th: 36.43%"></span><span class="seg" style="width:17.4768%;background:#aab3c4" title="99th to 99.9th: 17.48%"></span><span class="seg" style="width:15.0105%;background:var(--accent)" title="Top 0.1%: 15.01%"></span></div></div>
+      <ul class="legend legend-grid"><li><span class="sw" style="background:var(--accent)"></span><span class="ln">Top 0.1%</span><span class="lv">0.10% of households, 15.01% of wealth</span></li><li><span class="sw" style="background:#aab3c4"></span><span class="ln">99th to 99.9th</span><span class="lv">0.90% of households, 17.48% of wealth</span></li><li><span class="sw" style="background:#7b869c"></span><span class="ln">90th to 99th</span><span class="lv">9.00% of households, 36.43% of wealth</span></li><li><span class="sw" style="background:#566075"></span><span class="ln">50th to 90th</span><span class="lv">39.99% of households, 28.78% of wealth</span></li><li><span class="sw" style="background:#39404f"></span><span class="ln">Bottom 50%</span><span class="lv">50.01% of households, 2.30% of wealth</span></li></ul>
+    </figure>
+  </div>
+</section>
+
+<div id="ladder" class="ladder">
+
+<section class="rung" id="rung-1" data-rung="1" aria-labelledby="h-rung-1">
+  <div class="wrap">
+    <div class="rung-head rv">
+      <div class="num" aria-hidden="true">01</div>
+      <p class="kicker">Rung 1 of 5 &middot; Bottom 50% of households</p>
+      <h2 id="h-rung-1">The bottom half of households holds <span class="cu" data-k="pct" data-v="2.30" >2.30%</span> of the wealth.</h2>
+      <p class="lede">Start at the bottom. 67.6 million households share $4.28 trillion. Debts here equal 58.4% of what these households own, and 46.9% of their assets is real estate.</p>
+    </div>
+    <div class="rung-body">
+      <div class="stat-grid">
+        <div class="stat big rv"><span class="label">Total net worth, 2026 Q2</span>
+          <span class="value"><span class="cu" data-k="t" data-v="4.28" >$4.28 trillion</span></span></div>
+        <div class="stat rv"><span class="label">Share of all household wealth</span>
+          <span class="value"><span class="cu" data-k="pct" data-v="2.30" >2.30%</span></span>
+          <span class="sub">was 1.73% at the end of 2019</span></div>
+        <div class="stat rv"><span class="label">Average per household</span>
+          <span class="value"><span class="cu" data-k="usd" data-v="63269" >$63,269</span></span>
+          <span class="sub">was $28,933 at the end of 2019</span></div>
+        <div class="stat rv"><span class="label">Growth since end of 2019</span>
+          <span class="value"><span class="cu" data-k="x" data-v="2.29" >2.29x</span></span>
+          <span class="sub">1.86 to 4.28 trillion dollars</span></div>
+      </div>
+      <div class="viz">
+        <figure class="scale rv" aria-label="Total net worth of the Bottom 50% rung compared with end of 2019, drawn to a true linear scale">
+          <figcaption>Total net worth on a true scale. The full track equals 67.63 trillion dollars, the largest rung.</figcaption>
+          <div class="row"><span class="rl">End of 2019 &middot; 1.86 trillion dollars</span>
+            <div class="track"><div class="bar ghost" style="width:2.756%"></div></div></div>
+          <div class="row"><span class="rl">2026 Q2 &middot; 4.28 trillion dollars</span>
+            <div class="track"><div class="bar now" style="width:6.325%"></div></div></div>
+        </figure>
+        <figure class="waffle-fig rv">
+          <div class="waffle" role="img" aria-label="A grid of 100 squares. Each square is 1 percent of all household wealth. 2.30% are filled for this rung."><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:30.4%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i></div>
+          <figcaption>100 squares, each one percent of all household wealth. Filled: 2.30%.</figcaption>
+        </figure>
+      </div>
+      <p class="grow rv">Since the end of 2019 this rung grew by the largest multiple on the ladder, but from a very small base. It added 2.41 trillion dollars. The top 0.1% added 14.51 trillion dollars.</p>
+      <p class="entry">There is no entry point for this rung. It is the bottom of the ladder.</p>
+    </div>
+  </div>
+</section>
+<section class="rung" id="rung-2" data-rung="2" aria-labelledby="h-rung-2">
+  <div class="wrap">
+    <div class="rung-head rv">
+      <div class="num" aria-hidden="true">02</div>
+      <p class="kicker">Rung 2 of 5 &middot; 50th to 90th percentile</p>
+      <h2 id="h-rung-2">The 50th to 90th percentile holds <span class="cu" data-k="pct" data-v="28.78" >28.78%</span>.</h2>
+      <p class="lede">Now the middle of the ladder: 54.1 million households. Their biggest asset is real estate at 37.3% of assets, while stocks and mutual funds are only 11.8%.</p>
+    </div>
+    <div class="rung-body">
+      <div class="stat-grid">
+        <div class="stat big rv"><span class="label">Total net worth, 2026 Q2</span>
+          <span class="value"><span class="cu" data-k="t" data-v="53.43" >$53.43 trillion</span></span></div>
+        <div class="stat rv"><span class="label">Share of all household wealth</span>
+          <span class="value"><span class="cu" data-k="pct" data-v="28.78" >28.78%</span></span>
+          <span class="sub">was 28.37% at the end of 2019</span></div>
+        <div class="stat rv"><span class="label">Average per household</span>
+          <span class="value"><span class="cu" data-k="usd" data-v="988181" >$988,181</span></span>
+          <span class="sub">was $592,464 at the end of 2019</span></div>
+        <div class="stat rv"><span class="label">Growth since end of 2019</span>
+          <span class="value"><span class="cu" data-k="x" data-v="1.75" >1.75x</span></span>
+          <span class="sub">30.54 to 53.43 trillion dollars</span></div>
+      </div>
+      <div class="viz">
+        <figure class="scale rv" aria-label="Total net worth of the 50th to 90th rung compared with end of 2019, drawn to a true linear scale">
+          <figcaption>Total net worth on a true scale. The full track equals 67.63 trillion dollars, the largest rung.</figcaption>
+          <div class="row"><span class="rl">End of 2019 &middot; 30.54 trillion dollars</span>
+            <div class="track"><div class="bar ghost" style="width:45.153%"></div></div></div>
+          <div class="row"><span class="rl">2026 Q2 &middot; 53.43 trillion dollars</span>
+            <div class="track"><div class="bar now" style="width:78.993%"></div></div></div>
+        </figure>
+        <figure class="waffle-fig rv">
+          <div class="waffle" role="img" aria-label="A grid of 100 squares. Each square is 1 percent of all household wealth. 28.78% are filled for this rung."><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:77.8%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i></div>
+          <figcaption>100 squares, each one percent of all household wealth. Filled: 28.78%.</figcaption>
+        </figure>
+      </div>
+      <p class="grow rv">Since the end of 2019 this rung added 22.89 trillion dollars. All households together went from 107.65 to 185.65 trillion dollars, a multiple of 1.72x.</p>
+      <p class="entry">Lowest net worth in this group in 2022 Q3, the last quarter the Fed file lists one: <strong>$240,508</strong>. Current entry points are not published in this file.</p>
+    </div>
+  </div>
+</section>
+<section class="rung" id="rung-3" data-rung="3" aria-labelledby="h-rung-3">
+  <div class="wrap">
+    <div class="rung-head rv">
+      <div class="num" aria-hidden="true">03</div>
+      <p class="kicker">Rung 3 of 5 &middot; 90th to 99th percentile</p>
+      <h2 id="h-rung-3">The 90th to 99th percentile holds <span class="cu" data-k="pct" data-v="36.43" >36.43%</span>, the biggest slice of any rung.</h2>
+      <p class="lede">12.2 million households. This rung holds more total wealth than any other, because it pairs a large group of households with solid average wealth.</p>
+    </div>
+    <div class="rung-body">
+      <div class="stat-grid">
+        <div class="stat big rv"><span class="label">Total net worth, 2026 Q2</span>
+          <span class="value"><span class="cu" data-k="t" data-v="67.63" >$67.63 trillion</span></span></div>
+        <div class="stat rv"><span class="label">Share of all household wealth</span>
+          <span class="value"><span class="cu" data-k="pct" data-v="36.43" >36.43%</span></span>
+          <span class="sub">was 39.54% at the end of 2019</span></div>
+        <div class="stat rv"><span class="label">Average per household</span>
+          <span class="value"><span class="cu" data-k="usd" data-v="5559284" >$5,559,284</span></span>
+          <span class="sub">was $3,670,114 at the end of 2019</span></div>
+        <div class="stat rv"><span class="label">Growth since end of 2019</span>
+          <span class="value"><span class="cu" data-k="x" data-v="1.59" >1.59x</span></span>
+          <span class="sub">42.56 to 67.63 trillion dollars</span></div>
+      </div>
+      <div class="viz">
+        <figure class="scale rv" aria-label="Total net worth of the 90th to 99th rung compared with end of 2019, drawn to a true linear scale">
+          <figcaption>Total net worth on a true scale. The full track equals 67.63 trillion dollars, the largest rung.</figcaption>
+          <div class="row"><span class="rl">End of 2019 &middot; 42.56 trillion dollars</span>
+            <div class="track"><div class="bar ghost" style="width:62.926%"></div></div></div>
+          <div class="row"><span class="rl">2026 Q2 &middot; 67.63 trillion dollars</span>
+            <div class="track"><div class="bar now" style="width:100.000%"></div></div></div>
+        </figure>
+        <figure class="waffle-fig rv">
+          <div class="waffle" role="img" aria-label="A grid of 100 squares. Each square is 1 percent of all household wealth. 36.43% are filled for this rung."><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:43.1%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i></div>
+          <figcaption>100 squares, each one percent of all household wealth. Filled: 36.43%.</figcaption>
+        </figure>
+      </div>
+      <p class="grow rv">Since the end of 2019 this rung added 25.07 trillion dollars. All households together went from 107.65 to 185.65 trillion dollars, a multiple of 1.72x.</p>
+      <p class="entry">Lowest net worth in this group in 2022 Q3, the last quarter the Fed file lists one: <strong>$2,135,868</strong>. Current entry points are not published in this file.</p>
+    </div>
+  </div>
+</section>
+<section class="rung" id="rung-4" data-rung="4" aria-labelledby="h-rung-4">
+  <div class="wrap">
+    <div class="rung-head rv">
+      <div class="num" aria-hidden="true">04</div>
+      <p class="kicker">Rung 4 of 5 &middot; 99th to 99.9th percentile</p>
+      <h2 id="h-rung-4">The 99th to 99.9th percentile holds <span class="cu" data-k="pct" data-v="17.48" >17.48%</span>.</h2>
+      <p class="lede">Only 1.2 million households sit here, yet they hold 17.48% of everything. Stocks and mutual funds are 50.2% of their assets.</p>
+    </div>
+    <div class="rung-body">
+      <div class="stat-grid">
+        <div class="stat big rv"><span class="label">Total net worth, 2026 Q2</span>
+          <span class="value"><span class="cu" data-k="t" data-v="32.45" >$32.45 trillion</span></span></div>
+        <div class="stat rv"><span class="label">Share of all household wealth</span>
+          <span class="value"><span class="cu" data-k="pct" data-v="17.48" >17.48%</span></span>
+          <span class="sub">was 17.95% at the end of 2019</span></div>
+        <div class="stat rv"><span class="label">Average per household</span>
+          <span class="value"><span class="cu" data-k="usd" data-v="26721515" >$26,721,515</span></span>
+          <span class="sub">was $16,737,924 at the end of 2019</span></div>
+        <div class="stat rv"><span class="label">Growth since end of 2019</span>
+          <span class="value"><span class="cu" data-k="x" data-v="1.68" >1.68x</span></span>
+          <span class="sub">19.33 to 32.45 trillion dollars</span></div>
+      </div>
+      <div class="viz">
+        <figure class="scale rv" aria-label="Total net worth of the 99th to 99.9th rung compared with end of 2019, drawn to a true linear scale">
+          <figcaption>Total net worth on a true scale. The full track equals 67.63 trillion dollars, the largest rung.</figcaption>
+          <div class="row"><span class="rl">End of 2019 &middot; 19.33 trillion dollars</span>
+            <div class="track"><div class="bar ghost" style="width:28.576%"></div></div></div>
+          <div class="row"><span class="rl">2026 Q2 &middot; 32.45 trillion dollars</span>
+            <div class="track"><div class="bar now" style="width:47.973%"></div></div></div>
+        </figure>
+        <figure class="waffle-fig rv">
+          <div class="waffle" role="img" aria-label="A grid of 100 squares. Each square is 1 percent of all household wealth. 17.48% are filled for this rung."><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:47.7%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i></div>
+          <figcaption>100 squares, each one percent of all household wealth. Filled: 17.48%.</figcaption>
+        </figure>
+      </div>
+      <p class="grow rv">Since the end of 2019 this rung added 13.12 trillion dollars. All households together went from 107.65 to 185.65 trillion dollars, a multiple of 1.72x.</p>
+      <p class="entry">Lowest net worth in this group in 2022 Q3, the last quarter the Fed file lists one: <strong>$11,007,198</strong>. Current entry points are not published in this file.</p>
+    </div>
+  </div>
+</section>
+<section class="rung is-top" id="rung-5" data-rung="5" aria-labelledby="h-rung-5">
+  <div class="wrap">
+    <div class="rung-head rv">
+      <div class="num" aria-hidden="true">05</div>
+      <p class="kicker">Rung 5 of 5 &middot; Top 0.1% of households</p>
+      <h2 id="h-rung-5">The top 0.1% holds <span class="cu" data-k="pct" data-v="15.01" >15.01%</span>. That is about one household in a thousand.</h2>
+      <p class="lede">The summit: 136,779 households. Stocks and mutual funds make up 57.3% of what they own, and debts are just 1.1% of assets.</p>
+    </div>
+    <div class="rung-body">
+      <div class="stat-grid">
+        <div class="stat big rv"><span class="label">Total net worth, 2026 Q2</span>
+          <span class="value"><span class="cu" data-k="t" data-v="27.87" >$27.87 trillion</span></span></div>
+        <div class="stat rv"><span class="label">Share of all household wealth</span>
+          <span class="value"><span class="cu" data-k="pct" data-v="15.01" >15.01%</span></span>
+          <span class="sub">was 12.41% at the end of 2019</span></div>
+        <div class="stat rv"><span class="label">Average per household</span>
+          <span class="value"><span class="cu" data-k="usd" data-v="203738081" >$203,738,081</span></span>
+          <span class="sub">was $101,882,544 at the end of 2019</span></div>
+        <div class="stat rv"><span class="label">Growth since end of 2019</span>
+          <span class="value"><span class="cu" data-k="x" data-v="2.09" >2.09x</span></span>
+          <span class="sub">13.36 to 27.87 trillion dollars</span></div>
+      </div>
+      <div class="viz">
+        <figure class="scale rv" aria-label="Total net worth of the Top 0.1% rung compared with end of 2019, drawn to a true linear scale">
+          <figcaption>Total net worth on a true scale. The full track equals 67.63 trillion dollars, the largest rung.</figcaption>
+          <div class="row"><span class="rl">End of 2019 &middot; 13.36 trillion dollars</span>
+            <div class="track"><div class="bar ghost" style="width:19.748%"></div></div></div>
+          <div class="row"><span class="rl">2026 Q2 &middot; 27.87 trillion dollars</span>
+            <div class="track"><div class="bar now" style="width:41.203%"></div></div></div>
+        </figure>
+        <figure class="waffle-fig rv">
+          <div class="waffle" role="img" aria-label="A grid of 100 squares. Each square is 1 percent of all household wealth. 15.01% are filled for this rung."><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:100.0%"></i><i style="--f:1.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i><i style="--f:0.0%"></i></div>
+          <figcaption>100 squares, each one percent of all household wealth. Filled: 15.01%.</figcaption>
+        </figure>
+      </div>
+      <p class="grow rv">Since the end of 2019 this rung added 14.51 trillion dollars. All households together went from 107.65 to 185.65 trillion dollars, a multiple of 1.72x.</p>
+      <p class="entry">Lowest net worth in this group in 2022 Q3, the last quarter the Fed file lists one: <strong>$45,796,944</strong>. Current entry points are not published in this file.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<section class="beat pull" id="pull" aria-labelledby="h-pull">
+  <div class="wrap narrow">
+    <p class="kicker rv">The summit pulls away</p>
+    <h2 id="h-pull" class="rv">The top 0.1% went from <span class="cu" data-k="t" data-v="13.36" >$13.36 trillion</span> to <span class="cu" data-k="t" data-v="27.87" >$27.87 trillion</span>.</h2>
+    <p class="lede rv">That is <span class="cu" data-k="x" data-v="2.09" >2.09x</span> the 2019 level. Its share of all household wealth rose from 12.41% to 15.01%.</p>
+    <p class="lede rv">It also pulled away from the rest of the rich. In 2019 the top 0.1% held <span class="cu" data-k="r" data-v="0.69" >0.69</span> dollars for every dollar held by the 99th to 99.9th percentile. Now it holds <span class="cu" data-k="r" data-v="0.86" >0.86</span>.</p>
+    <figure class="scale rv" aria-label="Top 0.1 percent and 99th to 99.9th percentile net worth in 2019 and 2026, to a true linear scale">
+      <figcaption>True scale. The full track equals 35 trillion dollars.</figcaption>
+      <div class="row"><span class="rl">Top 0.1% &middot; end of 2019 &middot; 13.36 trillion dollars</span><div class="track"><div class="bar ghost" style="width:38.161%"></div></div></div>
+      <div class="row"><span class="rl">99th to 99.9th &middot; end of 2019 &middot; 19.33 trillion dollars</span><div class="track"><div class="bar ghost alt" style="width:55.220%"></div></div></div>
+      <div class="row"><span class="rl">Top 0.1% &middot; 2026 Q2 &middot; 27.87 trillion dollars</span><div class="track"><div class="bar now" style="width:79.620%"></div></div></div>
+      <div class="row"><span class="rl">99th to 99.9th &middot; 2026 Q2 &middot; 32.45 trillion dollars</span><div class="track"><div class="bar now alt" style="width:92.703%"></div></div></div>
+    </figure>
+    <figure class="chart-fig rv">
+      <figcaption>Top 0.1% net worth divided by 99th to 99.9th net worth, each quarter from the end of 2019. The axis starts at zero. A value of 1.00 would mean the two groups hold the same total.</figcaption>
+      <svg viewBox="0 0 640 300" class="chart" role="img" aria-label="Line chart of the ratio of top 0.1 percent net worth to 99th to 99.9th percentile net worth, from 0.69 at the end of 2019 to 0.86 in 2026 Q2. The vertical axis runs from 0 to 1.">
+  <line x1="44" x2="624" y1="266.0" y2="266.0" class="gl"/><text x="36" y="270.0" class="at" text-anchor="end">0.00</text><line x1="44" x2="624" y1="203.5" y2="203.5" class="gl"/><text x="36" y="207.5" class="at" text-anchor="end">0.25</text><line x1="44" x2="624" y1="141.0" y2="141.0" class="gl"/><text x="36" y="145.0" class="at" text-anchor="end">0.50</text><line x1="44" x2="624" y1="78.5" y2="78.5" class="gl"/><text x="36" y="82.5" class="at" text-anchor="end">0.75</text><line x1="44" x2="624" y1="16.0" y2="16.0" class="gl"/><text x="36" y="20.0" class="at" text-anchor="end">1.00</text><line x1="44" x2="624" y1="16.0" y2="16.0" class="gl one"/>
+  <polyline points="44.0,93.2 66.3,97.5 88.6,90.0 110.9,85.3 133.2,78.9 155.5,74.8 177.8,70.6 200.2,67.7 222.5,64.4 244.8,63.6 267.1,65.0 289.4,63.7 311.7,62.7 334.0,62.1 356.3,61.7 378.6,62.4 400.9,61.1 423.2,60.6 445.5,60.7 467.8,59.1 490.2,58.2 512.5,58.6 534.8,57.6 557.1,55.4 579.4,54.6 601.7,54.3 624.0,51.3" class="ln-ratio"/>
+  <line id="mk-line" x1="624.0" x2="624.0" y1="16" y2="266" class="mk"/>
+  <circle id="mk-dot" cx="624.0" cy="51.3" r="6" class="mkdot"/>
+  <text x="44.0" y="290" class="at" text-anchor="middle">2019 Q4</text><text x="133.2" y="290" class="at" text-anchor="middle">2020 Q4</text><text x="222.5" y="290" class="at" text-anchor="middle">2021 Q4</text><text x="311.7" y="290" class="at" text-anchor="middle">2022 Q4</text><text x="400.9" y="290" class="at" text-anchor="middle">2023 Q4</text><text x="490.2" y="290" class="at" text-anchor="middle">2024 Q4</text><text x="624.0" y="290" class="at" text-anchor="end">2026 Q2</text></svg>
+      <div class="scrub">
+        <label for="q">Pick a quarter</label>
+        <input id="q" type="range" min="0" max="26" value="26" step="1" aria-describedby="q-out">
+        <p id="q-out" class="readout" aria-live="polite"><strong>2026 Q2</strong>: top 0.1% 27.87 trillion dollars, 99th to 99.9th 32.45 trillion dollars, ratio 0.86</p>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="beat perhh" id="perhh" aria-labelledby="h-perhh">
+  <div class="wrap narrow">
+    <p class="kicker rv">The same ladder, one household at a time</p>
+    <h2 id="h-perhh" class="rv">The average top 0.1% household holds <span class="cu" data-k="n" data-v="3220" >3,220</span> times the average bottom 50% household.</h2>
+    <p class="lede rv">If the average bottom 50% household were one foot tall, the average top 0.1% household would be 3,220 feet tall, more than half a mile.</p>
+    <figure class="logchart rv" aria-label="Average net worth per household for each rung, 2026 Q2, on a logarithmic scale">
+      <figcaption><strong>Scale note:</strong> this chart is compressed. It uses a log scale, so each gridline is 10 times the one before. Distances between dots are NOT proportional to dollars.</figcaption>
+      <div class="dchart"><div class="drow"><span class="rl">Top 0.1% &middot; $203,738,081</span><div class="dtrack"><span class="dline" style="width:95.76%"></span><span class="dot top" style="left:95.76%"></span></div></div><div class="drow"><span class="rl">99th to 99.9th &middot; $26,721,515</span><div class="dtrack"><span class="dline" style="width:76.15%"></span><span class="dot" style="left:76.15%"></span></div></div><div class="drow"><span class="rl">90th to 99th &middot; $5,559,284</span><div class="dtrack"><span class="dline" style="width:61.00%"></span><span class="dot" style="left:61.00%"></span></div></div><div class="drow"><span class="rl">50th to 90th &middot; $988,181</span><div class="dtrack"><span class="dline" style="width:44.33%"></span><span class="dot" style="left:44.33%"></span></div></div><div class="drow"><span class="rl">Bottom 50% &middot; $63,269</span><div class="dtrack"><span class="dline" style="width:17.80%"></span><span class="dot" style="left:17.80%"></span></div></div><div class="dticks" aria-hidden="true"><span class="tk" style="left:0.00%"><em>$10K</em></span><span class="tk" style="left:22.22%"><em>$100K</em></span><span class="tk" style="left:44.44%"><em>$1M</em></span><span class="tk" style="left:66.67%"><em>$10M</em></span><span class="tk" style="left:88.89%"><em>$100M</em></span></div></div>
+    </figure>
+  </div>
+</section>
+
+<section class="beat stocks" id="stocks" aria-labelledby="h-stocks">
+  <div class="wrap narrow">
+    <p class="kicker rv">What the rungs are made of</p>
+    <h2 id="h-stocks" class="rv">Stocks and mutual funds are <span class="cu" data-k="pct1" data-v="57.3" >57.3%</span> of top 0.1% assets. For the 90th to 99th it is <span class="cu" data-k="pct1" data-v="33.4" >33.4%</span>. For the 50th to 90th it is <span class="cu" data-k="pct1" data-v="11.8" >11.8%</span>.</h2>
+    <p class="lede rv">So when stock prices climb, the top rung feels it most. Stocks and mutual funds owned directly by the top 0.1% rose by 9.85 trillion dollars since the end of 2019, which is 67% of that group's total asset gain of 14.68 trillion dollars. The group holds 25.0% of all household stocks and mutual funds.</p>
+    <figure class="mix rv">
+      <figcaption>Share of each rung's total assets, 2026 Q2. Each bar adds up to 100%. In the top 0.1% the share was 46.7% at the end of 2019.</figcaption>
+      <div class="mrow hl"><span class="rl">Top 0.1%</span><div class="mbar" role="img" aria-label="Top 0.1%: Stocks and mutual funds 57.3 percent, Private businesses 17.0 percent, Real estate 7.0 percent, Pensions 1.9 percent, Everything else 16.8 percent"><span class="seg s-eq" style="width:57.348%;background:var(--accent)" title="Stocks and mutual funds: 57.3%"><b>57.3%</b></span><span class="seg s-biz" style="width:16.973%;background:#7b869c" title="Private businesses: 17.0%"><b>17.0%</b></span><span class="seg s-re" style="width:6.981%;background:#566075" title="Real estate: 7.0%"><b>7.0%</b></span><span class="seg s-pen" style="width:1.880%;background:#3f4756" title="Pensions: 1.9%"></span><span class="seg s-oth" style="width:16.817%;background:#2a303c" title="Everything else: 16.8%"><b>16.8%</b></span></div></div><div class="mrow"><span class="rl">99th to 99.9th</span><div class="mbar" role="img" aria-label="99th to 99.9th: Stocks and mutual funds 50.2 percent, Private businesses 12.3 percent, Real estate 14.1 percent, Pensions 8.1 percent, Everything else 15.2 percent"><span class="seg s-eq" style="width:50.204%;background:var(--accent)" title="Stocks and mutual funds: 50.2%"><b>50.2%</b></span><span class="seg s-biz" style="width:12.315%;background:#7b869c" title="Private businesses: 12.3%"><b>12.3%</b></span><span class="seg s-re" style="width:14.117%;background:#566075" title="Real estate: 14.1%"><b>14.1%</b></span><span class="seg s-pen" style="width:8.139%;background:#3f4756" title="Pensions: 8.1%"><b>8.1%</b></span><span class="seg s-oth" style="width:15.225%;background:#2a303c" title="Everything else: 15.2%"><b>15.2%</b></span></div></div><div class="mrow hl"><span class="rl">90th to 99th</span><div class="mbar" role="img" aria-label="90th to 99th: Stocks and mutual funds 33.4 percent, Private businesses 7.4 percent, Real estate 21.0 percent, Pensions 20.5 percent, Everything else 17.7 percent"><span class="seg s-eq" style="width:33.423%;background:var(--accent)" title="Stocks and mutual funds: 33.4%"><b>33.4%</b></span><span class="seg s-biz" style="width:7.416%;background:#7b869c" title="Private businesses: 7.4%"><b>7.4%</b></span><span class="seg s-re" style="width:20.993%;background:#566075" title="Real estate: 21.0%"><b>21.0%</b></span><span class="seg s-pen" style="width:20.486%;background:#3f4756" title="Pensions: 20.5%"><b>20.5%</b></span><span class="seg s-oth" style="width:17.681%;background:#2a303c" title="Everything else: 17.7%"><b>17.7%</b></span></div></div><div class="mrow hl"><span class="rl">50th to 90th</span><div class="mbar" role="img" aria-label="50th to 90th: Stocks and mutual funds 11.8 percent, Private businesses 3.8 percent, Real estate 37.3 percent, Pensions 26.4 percent, Everything else 20.7 percent"><span class="seg s-eq" style="width:11.814%;background:var(--accent)" title="Stocks and mutual funds: 11.8%"><b>11.8%</b></span><span class="seg s-biz" style="width:3.806%;background:#7b869c" title="Private businesses: 3.8%"></span><span class="seg s-re" style="width:37.252%;background:#566075" title="Real estate: 37.3%"><b>37.3%</b></span><span class="seg s-pen" style="width:26.413%;background:#3f4756" title="Pensions: 26.4%"><b>26.4%</b></span><span class="seg s-oth" style="width:20.715%;background:#2a303c" title="Everything else: 20.7%"><b>20.7%</b></span></div></div><div class="mrow"><span class="rl">Bottom 50%</span><div class="mbar" role="img" aria-label="Bottom 50%: Stocks and mutual funds 3.6 percent, Private businesses 1.6 percent, Real estate 46.9 percent, Pensions 12.7 percent, Everything else 35.1 percent"><span class="seg s-eq" style="width:3.643%;background:var(--accent)" title="Stocks and mutual funds: 3.6%"></span><span class="seg s-biz" style="width:1.637%;background:#7b869c" title="Private businesses: 1.6%"></span><span class="seg s-re" style="width:46.931%;background:#566075" title="Real estate: 46.9%"><b>46.9%</b></span><span class="seg s-pen" style="width:12.714%;background:#3f4756" title="Pensions: 12.7%"><b>12.7%</b></span><span class="seg s-oth" style="width:35.076%;background:#2a303c" title="Everything else: 35.1%"><b>35.1%</b></span></div></div>
+      <ul class="legend"><li><span class="sw" style="background:var(--accent)"></span>Stocks and mutual funds</li><li><span class="sw" style="background:#7b869c"></span>Private businesses</li><li><span class="sw" style="background:#566075"></span>Real estate</li><li><span class="sw" style="background:#3f4756"></span>Pensions</li><li><span class="sw" style="background:#2a303c"></span>Everything else</li></ul>
+      <p class="fine">Stocks and mutual funds here exclude shares held inside defined contribution pension plans, which are counted under pensions. Private businesses correspond to the Fed’s unincorporated business holdings category.</p>
+    </figure>
+  </div>
+</section>
+
+<section class="beat glance" id="glance" aria-labelledby="h-glance">
+  <div class="wrap narrow">
+    <h2 id="h-glance" class="rv">All five rungs side by side</h2>
+    <div class="tablewrap rv" tabindex="0" role="region" aria-label="Table of all five rungs, scrollable">
+    <table>
+      <caption>Net worth of US households by wealth percentile group. Trillions of dollars, end of 2019 Q4 to 2026 Q2.</caption>
+      <thead><tr><th scope="col">Rung</th><th scope="col">Households, 2026 Q2</th><th scope="col">Net worth, trillions of dollars</th><th scope="col">Share of all wealth</th><th scope="col">Average per household</th><th scope="col">Multiple since 2019 Q4</th></tr></thead>
+      <tbody><tr><th scope="row">Top 0.1%</th><td>136,779</td><td>13.36 to 27.87</td><td>12.41% to 15.01%</td><td>$203,738,081</td><td>2.09x</td></tr><tr><th scope="row">99th to 99.9th</th><td>1,214,225</td><td>19.33 to 32.45</td><td>17.95% to 17.48%</td><td>$26,721,515</td><td>1.68x</td></tr><tr><th scope="row">90th to 99th</th><td>12,165,969</td><td>42.56 to 67.63</td><td>39.54% to 36.43%</td><td>$5,559,284</td><td>1.59x</td></tr><tr><th scope="row">50th to 90th</th><td>54,064,877</td><td>30.54 to 53.43</td><td>28.37% to 28.78%</td><td>$988,181</td><td>1.75x</td></tr><tr><th scope="row">Bottom 50%</th><td>67,616,544</td><td>1.86 to 4.28</td><td>1.73% to 2.30%</td><td>$63,269</td><td>2.29x</td></tr></tbody>
+      <tfoot><tr><th scope="row">All households</th><td>135,198,394</td><td>107.65 to 185.65</td><td>100%</td><td>$1,373,175</td><td>1.72x</td></tr></tfoot>
+    </table></div>
+  </div>
+</section>
+
+<section class="cta" id="where" aria-labelledby="h-cta">
+  <div class="wrap narrow center">
+    <p class="kicker rv">You made it to the top</p>
+    <h2 id="h-cta" class="rv">Where do you stand?</h2>
+    <p class="lede rv">Averages hide a lot. If you are curious how your own household compares, you can try WealthMeter's U.S. household wealth calculator. It uses a separate Census benchmark, so its percentile results should not be interpreted as current Fed DFA cutoffs.</p>
+    <p class="rv"><a class="btn" href="https://wealthmeter.xyz/us-household-wealth.html" rel="noopener">Try the household wealth calculator</a></p>
+    <p class="fine rv">This story does not place you on a rung. The Fed file used here has no current dollar cutoffs for the percentile groups, so any cutoff shown would be a guess.</p>
+  </div>
+</section>
+
+<section class="foot" aria-label="Source and methodology">
+  <div class="wrap narrow">
+    <h2 class="small">Source and notes</h2>
+    <p>Source: <a href="https://www.federalreserve.gov/releases/z1/dataviz/dfa/" rel="noopener">Federal Reserve Distributional Financial Accounts</a>, through 2026 Q2. Net worth by wealth percentile group, level series, compared with the end of 2019 Q4. Totals, shares, averages, multiples and asset mixes were recomputed from the published files.</p>
+    <p><strong>Methodology caveat.</strong> These are survey-based estimates. The Fed combines the Financial Accounts totals with the Survey of Consumer Finances and fills in the quarters between and after surveys, so recent figures are estimates and may be revised. Estimates for the very top are the least certain. Groups are defined by net worth in each quarter, so they are not the same households followed over time. Lowest net worth values for each group are from 2022 Q3, the last quarter the file reports them.</p>
+    <p><strong>Not financial advice.</strong> This story is for general education only. It is not financial, tax, legal or investment advice. Estimates may change. WealthMeter and its creators are not responsible for losses or decisions made in reliance on this content. See the <a href="disclaimer.html">full disclaimer</a>.</p>
+    <p class="fine">Data verified against the Federal Reserve download on September 30, 2026. All dollar amounts are nominal U.S. dollars; growth comparisons are not adjusted for inflation.</p>
+  </div>
+</section>
+
+</main>
+<div id="footer-placeholder" data-static-component="1">
+<footer>
+    <section class="site-newsletter" aria-labelledby="newsletter-heading-footer">
+        <h2 id="newsletter-heading-footer">WealthMeter news and updates</h2>
+        <p class="site-newsletter-copy">Receive new longform analysis, wealth brief updates, and report releases.</p>
+        <form class="site-newsletter-form" data-newsletter-form data-source="footer">
+            <input type="hidden" name="newsletter" value="yes">
+            <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+            <label class="site-newsletter-field">First name
+                <input type="text" name="firstName" autocomplete="given-name" required>
+            </label>
+            <label class="site-newsletter-field">Last name
+                <input type="text" name="lastName" autocomplete="family-name" required>
+            </label>
+            <label class="site-newsletter-field site-newsletter-field-email">Email address
+                <input type="email" name="email" autocomplete="email" inputmode="email" required>
+            </label>
+            <div class="site-newsletter-actions">
+                <button type="submit">Sign up</button>
+                <p class="site-newsletter-status" data-newsletter-status aria-live="polite"></p>
+            </div>
+        </form>
+        <p class="site-newsletter-note">Occasional WealthMeter news, report releases, and relevant commercial recommendations. Unsubscribe at any time. We do not sell subscriber information. See our <a href="privacy.html">Privacy Policy</a>.</p>
+        <p class="site-newsletter-address">Mailing Address: 1968 S. Coast Hwy #5495, Laguna Beach, CA 92651</p>
+    </section>
+    <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="editorial-policy.html">Editorial Standards</a>
+        <a href="data-sources.html">Data Sources</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="partners.html">Partners</a>
+        <a href="commercial-policy.html">Commercial Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+    </div>
+</footer>
+</div>
+<script src="components.js?v=2026-09-17.3"></script>
+<script src="assets/long-ladder.js"></script>
+<script type="application/json" id="dfa-data">{"source":"Federal Reserve Distributional Financial Accounts","asOf":"2026:Q2","base":"2019:Q4","units":"net worth and assets in millions of dollars; household counts in households","groups":[{"k":"Bottom50","name":"Bottom 50%","hh0":64430480.0,"hh1":67616544.0,"nw0":1864152.0,"nw1":4278038.0,"as0":6868390.0,"as1":10272832.0,"mix0":{"eq":2.427,"biz":2.891,"re":49.26,"db":4.13,"dc":7.669,"dur":19.288,"oth":14.334},"mix1":{"eq":3.643,"biz":1.637,"re":46.931,"db":4.755,"dc":7.959,"dur":21.121,"oth":13.955},"cut2022Q3":null},{"k":"Next40","name":"50th to 90th","hh0":51545815.0,"hh1":54064877.0,"nw0":30539037.0,"nw1":53425884.0,"as0":37208238.0,"as1":62317685.0,"mix0":{"eq":8.486,"biz":4.245,"re":33.201,"db":20.209,"dc":10.903,"dur":6.38,"oth":16.578},"mix1":{"eq":11.814,"biz":3.806,"re":37.252,"db":15.465,"dc":10.949,"dur":6.201,"oth":14.513},"cut2022Q3":240508.0},{"k":"Next9","name":"90th to 99th","hh0":11596191.0,"hh1":12165969.0,"nw0":42559346.0,"nw1":67634079.0,"as0":45368504.0,"as1":71849146.0,"mix0":{"eq":22.756,"biz":8.723,"re":19.093,"db":18.589,"dc":11.578,"dur":2.748,"oth":16.513},"mix1":{"eq":33.423,"biz":7.416,"re":20.993,"db":9.923,"dc":10.564,"dur":2.67,"oth":15.011},"cut2022Q3":2135868.0},{"k":"RemainingTop1","name":"99th to 99.9th","hh0":1154678.0,"hh1":1214225.0,"nw0":19326913.0,"nw1":32445932.0,"as0":19988468.0,"as1":33334932.0,"mix0":{"eq":42.507,"biz":14.379,"re":15.291,"db":4.358,"dc":4.717,"dur":1.622,"oth":17.127},"mix1":{"eq":50.204,"biz":12.315,"re":14.117,"db":2.904,"dc":5.234,"dur":1.265,"oth":13.96},"cut2022Q3":11007198.0},{"k":"TopPt1","name":"Top 0.1%","hh0":131096.0,"hh1":136779.0,"nw0":13356394.0,"nw1":27867091.0,"as0":13485506.0,"as1":28168034.0,"mix0":{"eq":46.71,"biz":25.716,"re":7.955,"db":0.479,"dc":0.924,"dur":2.979,"oth":15.237},"mix1":{"eq":57.348,"biz":16.973,"re":6.981,"db":1.058,"dc":0.823,"dur":2.629,"oth":14.188},"cut2022Q3":45796944.0}],"series":{"dates":["2019:Q4","2020:Q1","2020:Q2","2020:Q3","2020:Q4","2021:Q1","2021:Q2","2021:Q3","2021:Q4","2022:Q1","2022:Q2","2022:Q3","2022:Q4","2023:Q1","2023:Q2","2023:Q3","2023:Q4","2024:Q1","2024:Q2","2024:Q3","2024:Q4","2025:Q1","2025:Q2","2025:Q3","2025:Q4","2026:Q1","2026:Q2"],"top01":[13356394.0,11884284.0,13338029.0,14229583.0,15831935.0,16848470.0,18128702.0,18681725.0,19516747.0,19360489.0,17879269.0,17457145.0,17875606.0,18523918.0,19315997.0,19013434.0,19962493.0,20858575.0,21199643.0,22126342.0,22368371.0,22268871.0,23445713.0,24662319.0,25101063.0,25137470.0,27867091.0],"p99to999":[19326913.0,17632871.0,18948169.0,19684958.0,21152978.0,22030516.0,23196300.0,23556594.0,24205609.0,23914635.0,22242455.0,21578105.0,21985617.0,22711788.0,23641399.0,23341766.0,24360730.0,25387889.0,25820893.0,26737545.0,26913917.0,26847978.0,28121674.0,29279568.0,29688051.0,29692045.0,32445932.0]}}</script>
+<script>(function(){
+'use strict';
+var d=document,root=d.documentElement;
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var hasIO='IntersectionObserver' in window;
+var animate=!reduce;
+if(animate&&hasIO){root.classList.add('js-anim');}
+root.classList.remove('nojs');
+/* Final text is already in the HTML. Count-up only enhances it, and every path ends by restoring that text. */
+var cus=[].slice.call(d.querySelectorAll('.cu'));
+cus.forEach(function(el){el.setAttribute('data-final',el.textContent);});
+function fmt(kind,v,final){
+  switch(kind){
+    case 't':return '$'+v.toFixed(2)+' trillion';
+    case 'pct':return v.toFixed(2)+'%';
+    case 'pct1':return v.toFixed(1)+'%';
+    case 'usd':return '$'+Math.round(v).toLocaleString('en-US');
+    case 'x':return v.toFixed(2)+'x';
+    case 'r':return v.toFixed(2);
+    case 'n':return Math.round(v).toLocaleString('en-US');
+  }return final;}
+function finish(el){el.textContent=el.getAttribute('data-final');el.__done=true;}
+function countUp(el){
+  if(el.__started||el.__done)return;el.__started=true;
+  if(!animate||d.hidden){finish(el);return;}
+  var target=parseFloat(el.getAttribute('data-v')),kind=el.getAttribute('data-k'),dur=1100,t0=null;
+  function step(ts){
+    if(el.__done)return;
+    if(t0===null)t0=ts;var p=Math.min(1,(ts-t0)/dur),e=1-Math.pow(1-p,3);
+    el.textContent=fmt(kind,target*e,el.getAttribute('data-final'));
+    if(p<1)requestAnimationFrame(step);else finish(el);}
+  requestAnimationFrame(step);
+  setTimeout(function(){finish(el);},dur+400); /* safety: lands on the true value even if rAF is paused */
+}
+function finishAll(){cus.forEach(finish);}
+d.addEventListener('visibilitychange',function(){if(d.hidden){finishAll();revealAll();}});
+window.addEventListener('pagehide',finishAll);
+/* reveal */
+var rvs=[].slice.call(d.querySelectorAll('.rv, .scale, .mix'));
+function show(el){
+  if(el.classList.contains('in'))return;el.classList.add('in');
+  [].forEach.call(el.querySelectorAll('.cu'),countUp);
+  if(el.classList.contains('cu'))countUp(el);
+}
+function revealAll(){rvs.forEach(show);cus.forEach(countUp);}
+function checkVisible(){
+  var h=window.innerHeight||600;
+  rvs.forEach(function(el){if(el.classList.contains('in'))return;var r=el.getBoundingClientRect();if(r.top<h*0.92&&r.bottom>0)show(el);});
+}
+if(!animate||!hasIO){revealAll();}
+else{
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+  rvs.forEach(function(el){io.observe(el);});
+  checkVisible();
+  /* if the page is opened already scrolled or in a throttled tab, make sure nothing stays hidden */
+  setTimeout(checkVisible,300);
+}
+/* rail + progress */
+var rail=d.getElementById('rail'),fill=d.getElementById('rail-fill');
+var links=[].slice.call(d.querySelectorAll('[data-rail]'));
+var rungs=[].slice.call(d.querySelectorAll('.rung'));
+var ticking=false;
+function update(){
+  ticking=false;
+  var vh=window.innerHeight||600,mid=vh*0.5,cur=0,y=window.scrollY||0;
+  var first=rungs[0],last=rungs[rungs.length-1];
+  var fr=first.getBoundingClientRect(),lr=last.getBoundingClientRect();
+  var after=d.getElementById('pull').getBoundingClientRect();
+  rail.classList.toggle('show',fr.top<vh*0.8);
+  rungs.forEach(function(r,i){
+    var b=r.getBoundingClientRect();
+    if(b.top<mid)cur=i+1;
+    var p=(mid-b.top)/Math.max(1,b.height);p=Math.max(0,Math.min(1,p));
+    r.style.setProperty('--rp',p.toFixed(3));
+  });
+  links.forEach(function(a){var n=+a.getAttribute('data-rail');a.classList.toggle('on',n===cur);a.classList.toggle('done',n<cur);
+    if(n===cur)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});
+  var total=(last.getBoundingClientRect().bottom-first.getBoundingClientRect().top);
+  var prog=(mid-fr.top)/Math.max(1,total);prog=Math.max(0,Math.min(1,prog));
+  fill.style.height=(prog*100).toFixed(1)+'%';
+}
+function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update);}}
+window.addEventListener('scroll',function(){onScroll();if(animate&&hasIO)checkVisible();},{passive:true});
+window.addEventListener('resize',onScroll);
+update();
+/* quarter scrubber */
+var data=JSON.parse(d.getElementById('dfa-data').textContent);
+var q=d.getElementById('q');
+if(q){
+  var s=data.series,dot=d.getElementById('mk-dot'),line=d.getElementById('mk-line'),out=d.getElementById('q-out');
+  var n=s.dates.length,W=640,H=300,PL=44,PR=16,PT=16,PB=34;
+  q.addEventListener('input',function(){
+    var i=+q.value,a=s.top01[i],b=s.p99to999[i],r=a/b;
+    var x=PL+(W-PL-PR)*i/(n-1),yv=PT+(H-PT-PB)*(1-r);
+    dot.setAttribute('cx',x.toFixed(1));dot.setAttribute('cy',yv.toFixed(1));line.setAttribute('x1',x.toFixed(1));line.setAttribute('x2',x.toFixed(1));
+    out.innerHTML='<strong>'+s.dates[i].replace(':',' ')+'</strong>: top 0.1% '+(a/1e6).toFixed(2)+' trillion dollars, 99th to 99.9th '+(b/1e6).toFixed(2)+' trillion dollars, ratio '+r.toFixed(2);
+  });
+}
+})();
+</script>
+</body>
+</html>

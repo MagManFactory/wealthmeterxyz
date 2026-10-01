@@ -337,6 +337,7 @@ const siteHeader = `
                     <a href="country-systems-atlas.html">Country Systems Atlas</a>
                     <a href="atlas.html">Longevity Atlas</a>
                     <a href="data-lab.html">Data Lab</a>
+                    <a href="long-ladder.html" target="_blank" rel="noopener">The Long Ladder ↗</a>
                     <a href="wealth-briefs.html">Wealth Briefs</a>
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
                 </div>
@@ -532,6 +533,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ensureNavLink("Analyze", "purchasing-power.html", "Purchasing Power Hub", "global_explorer.html");
     ensureNavLink("Analyze", "live-better-for-less.html", "Live Better for Less", "purchasing-power.html");
     ensureNavLink("Analyze", "lifestyle-abroad.html", "Lifestyle Abroad", "live-better-for-less.html");
+    ensureNavLink("Analyze", "long-ladder.html", "The Long Ladder ↗", "data-lab.html");
+    const ladderLink = document.querySelector('.nav-group .dropdown a[href="long-ladder.html"]');
+    if (ladderLink) { ladderLink.target = "_blank"; ladderLink.rel = "noopener"; }
     document.querySelectorAll("footer .footer-links").forEach((links) => {
         if (!links.querySelector('a[href*="partners"]')) {
             const link = document.createElement("a");
