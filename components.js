@@ -368,6 +368,25 @@ const siteHeader = `
 </header>`;
 
 const NEWSLETTER_ENDPOINT = "https://lifemeter.xyz/api/newsletter";
+const SUBSCRIBER_ACCESS_ENDPOINT = "https://lifemeter.xyz/api/subscriber-access";
+
+async function rememberSubscriberAccess(email) {
+    try {
+        const response = await fetch(SUBSCRIBER_ACCESS_ENDPOINT, {
+            method: "POST",
+            mode: "cors",
+            credentials: "omit",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ action: "claim", site: "wealthmeter", resource: "newsletter", email, company: "" })
+        });
+        if (!response.ok) return;
+        const data = await response.json();
+        if (!data.token) return;
+        document.cookie = `wm_subscriber_access=${encodeURIComponent(data.token)}; Max-Age=15552000; Path=/; SameSite=Lax; Secure`;
+    } catch (_error) {
+        // Newsletter signup remains successful if the convenience cookie cannot be set.
+    }
+}
 
 function newsletterHTML(source) {
     return `
@@ -446,6 +465,7 @@ document.addEventListener("submit", async (event) => {
     if (button) button.disabled = true;
 
     try {
+        const subscriberEmail = String(formData.get("email") || "").trim();
         const response = await fetch(NEWSLETTER_ENDPOINT, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -462,6 +482,7 @@ document.addEventListener("submit", async (event) => {
             })
         });
         if (!response.ok) throw new Error("Newsletter request failed");
+        await rememberSubscriberAccess(subscriberEmail);
         form.reset();
         if (status) status.textContent = "You are signed up.";
         window.dispatchEvent(new CustomEvent("newsletter:subscribed", { detail: { source: form.dataset.source || "footer" } }));
