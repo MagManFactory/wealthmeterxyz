@@ -870,7 +870,10 @@ function countUp(el){
   setTimeout(function(){finish(el);},dur+400); /* safety: lands on the true value even if rAF is paused */
 }
 function finishAll(){cus.forEach(finish);}
-d.addEventListener('visibilitychange',function(){if(d.hidden){finishAll();revealAll();}});
+d.addEventListener('visibilitychange',function(){
+  if(d.hidden){cus.forEach(function(el){if(el.__started){finish(el);}});}
+  else if(animate&&hasIO){checkVisible();}
+});
 window.addEventListener('pagehide',finishAll);
 /* reveal */
 var rvs=[].slice.call(d.querySelectorAll('.rv, .scale, .mix'));
