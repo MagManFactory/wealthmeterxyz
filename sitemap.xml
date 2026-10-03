@@ -1,6 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://wealthmeter.xyz/the-90th-to-99th-percentile-retirement-reality-check.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://wealthmeter.xyz/same-market-different-result-stock-ownership-wealth-gap.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://wealthmeter.xyz/the-top-rung-moved-what-the-fed-says-about-the-0-1-percent-and-where-you-stand.html</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -14,7 +26,7 @@
   </url>
   <url>
     <loc>https://wealthmeter.xyz/longform.html</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
