@@ -1,0 +1,27 @@
+.subscriber-gate-open { overflow: hidden; }
+.subscriber-gate-open [data-subscriber-protected] { filter: blur(7px); pointer-events: none; user-select: none; }
+.subscriber-gate-backdrop { position:fixed; inset:0; z-index:100000; display:grid; place-items:center; padding:1rem; background:rgba(6,15,30,.76); backdrop-filter:blur(8px); }
+.subscriber-gate-dialog { width:min(620px,100%); max-height:calc(100vh - 2rem); overflow:auto; padding:clamp(1.35rem,4vw,2.35rem); border:1px solid rgba(148,163,184,.35); border-radius:24px; background:#fff; color:#0f172a; box-shadow:0 28px 80px rgba(2,8,23,.38); font-family:inherit; }
+.subscriber-gate-eyebrow { margin:0 0 .55rem; color:#2563eb; font-size:.76rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+.subscriber-gate-dialog h2 { margin:0; color:#0f172a; font-size:clamp(1.75rem,5vw,2.7rem); line-height:1.03; letter-spacing:-.045em; }
+.subscriber-gate-copy { margin:.85rem 0 1.25rem; color:#475569; line-height:1.6; }
+.subscriber-gate-mode { display:flex; gap:.45rem; margin:0 0 1rem; padding:.3rem; border-radius:12px; background:#eef2f7; }
+.subscriber-gate-mode button { flex:1; min-height:42px; border:0; border-radius:9px; background:transparent; color:#475569; font:800 .82rem/1 inherit; cursor:pointer; }
+.subscriber-gate-mode button[aria-pressed="true"] { background:#fff; color:#0f172a; box-shadow:0 1px 6px rgba(15,23,42,.12); }
+.subscriber-gate-form { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; }
+.subscriber-gate-field { display:grid; gap:.35rem; color:#334155; font-size:.77rem; font-weight:850; }
+.subscriber-gate-field[hidden] { display:none !important; }
+.subscriber-gate-field-email { grid-column:1 / -1; }
+.subscriber-gate-field input { width:100%; min-height:48px; box-sizing:border-box; padding:.75rem .85rem; border:1px solid #cbd5e1; border-radius:10px; background:#fff; color:#0f172a; font:650 1rem/1.25 inherit; }
+.subscriber-gate-submit { grid-column:1 / -1; min-height:50px; border:0; border-radius:11px; background:linear-gradient(100deg,#2563eb,#0891b2); color:#fff; font:900 .9rem/1 inherit; letter-spacing:.035em; cursor:pointer; }
+.subscriber-gate-submit:disabled { opacity:.62; cursor:default; }
+.subscriber-gate-status { grid-column:1 / -1; min-height:1.25rem; margin:0; color:#b42318; font-size:.83rem; font-weight:750; }
+.subscriber-gate-note { margin:1rem 0 0; color:#64748b; font-size:.76rem; line-height:1.5; }
+.subscriber-gate-note a { color:inherit; }
+.subscriber-gate-close { float:right; margin:-.45rem -.45rem .25rem .75rem; width:38px; height:38px; border:1px solid #dbe4ef; border-radius:50%; background:#fff; color:#475569; font-size:1.35rem; cursor:pointer; }
+@media (max-width:600px) { .subscriber-gate-form { grid-template-columns:1fr; } .subscriber-gate-field-email,.subscriber-gate-submit,.subscriber-gate-status { grid-column:1; } .subscriber-gate-dialog { border-radius:18px; } }
+@media (prefers-reduced-motion:reduce) { .subscriber-gate-backdrop { backdrop-filter:none; } }
+
+.subscriber-gate-consent { grid-column:1 / -1; display:flex; gap:.55rem; align-items:flex-start; font-size:.82rem; line-height:1.5; color:#475569; }
+.subscriber-gate-consent[hidden] { display:none !important; }
+.subscriber-gate-consent input { margin:.25rem 0 0; flex:none; }

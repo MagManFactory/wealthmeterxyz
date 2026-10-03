@@ -39,7 +39,7 @@
       form.reset();
       startedAt = Date.now();
       submissionId = crypto.randomUUID();
-      status.textContent = `Received for owner review. Reference: ${result.reference}`;
+      status.textContent = `Received for review. Reference: ${result.reference}`;
     } catch (_error) {
       status.classList.add('error');
       status.textContent = 'The inquiry could not be recorded. Please check the fields and try again.';

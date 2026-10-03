@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071629"/><stop offset="1" stop-color="#0d4053"/></linearGradient>
+    <linearGradient id="fan" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0a24a" stop-opacity=".58"/><stop offset="1" stop-color="#27b3d3" stop-opacity=".12"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="0" fill="url(#bg)"/>
+  <rect x="64" y="60" width="12" height="76" fill="#f0a24a"/>
+  <text x="100" y="116" fill="#f8fafc" font-family="Arial, sans-serif" font-size="42" font-weight="800">WEALTHMETER.XYZ</text>
+  <text x="66" y="210" fill="#8fdcf0" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="3">HISTORICAL RETURN WINDOWS · 1928–2025</text>
+  <text x="66" y="310" fill="#f8fafc" font-family="Georgia, serif" font-size="84">When time</text>
+  <text x="66" y="402" fill="#f0a24a" font-family="Georgia, serif" font-size="84" font-style="italic">beat risk.</text>
+  <text x="68" y="475" fill="#b7c4d5" font-family="Arial, sans-serif" font-size="25">Every U.S. market window. One interactive record.</text>
+  <path d="M690 212 C780 270 860 288 1135 338 L1135 404 C900 390 790 445 690 532 Z" fill="url(#fan)"/>
+  <path d="M690 212 C780 270 860 288 1135 338" fill="none" stroke="#e5605a" stroke-width="4"/>
+  <path d="M690 532 C790 445 900 390 1135 404" fill="none" stroke="#27b3d3" stroke-width="4"/>
+  <path d="M690 365 C835 350 955 375 1135 373" fill="none" stroke="#ffcf8f" stroke-width="5"/>
+  <text x="68" y="568" fill="#f8fafc" font-family="Arial, sans-serif" font-size="20" font-weight="700">wealthmeter.xyz/historical-return-windows.html</text>
+</svg>
