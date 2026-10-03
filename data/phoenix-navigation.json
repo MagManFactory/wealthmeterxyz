@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "site": "wealthmeter",
+  "longform": [
+    {
+      "href": "/the-90th-to-99th-percentile-retirement-reality-check",
+      "title": "The 90th to 99th Percentile Retirement Reality Check"
+    },
+    {
+      "href": "/same-market-different-result-stock-ownership-wealth-gap",
+      "title": "Same Market, Different Result: Why Owning More Stocks Drove the Wealth Gap"
+    },
+    {
+      "href": "/the-top-rung-moved-what-the-fed-says-about-the-0-1-percent-and-where-you-stand",
+      "title": "The Top Rung Moved: What the Fed Says About the 0.1% and Where You Stand"
+    },
+    {
+      "href": "/when-to-adjust-tax-withholding",
+      "title": "When to Adjust Tax Withholding Instead of Waiting for a Refund"
+    },
+    {
+      "href": "/medicare-drug-monthly-payment-plan",
+      "title": "Medicare Drug Bills: What the Monthly Payment Plan Changes"
+    },
+    {
+      "href": "/2026-hsa-limit-and-deductible-test",
+      "title": "The 2026 HSA Limit and the Deductible Test"
+    },
+    {
+      "href": "/credit-freeze-when-to-use-and-lift",
+      "title": "A Credit Freeze Is Free: When to Use One and How to Lift It"
+    },
+    {
+      "href": "/joint-bank-account-fdic-coverage",
+      "title": "Is Your Joint Bank Account Fully Insured?"
+    },
+    {
+      "href": "/2026-retirement-catch-up-ages-60-to-63",
+      "title": "The 2026 Retirement Catch-Up Window at Ages 60 to 63"
+    },
+    {
+      "href": "/emergency-funds-need-a-cash-flow-test-not-a-rule-of-thumb",
+      "title": "Emergency Funds Need a Cash-Flow Test, Not a Rule of Thumb"
+    },
+    {
+      "href": "/job-loss-hurts-more-when-benefits-are-not-portable",
+      "title": "Job Loss Hurts More When Benefits Are Not Portable"
+    },
+    {
+      "href": "/disability-insurance-leaves-many-paychecks-unprotected",
+      "title": "Disability Insurance Leaves Many Paychecks Unprotected"
+    },
+    {
+      "href": "/how-insurance-deductibles-become-a-household-balance-sheet-shock",
+      "title": "How Insurance Deductibles Become a Household Balance-Sheet Shock"
+    },
+    {
+      "href": "/america-is-second-by-average-wealth-fifteenth-by-median-wealth",
+      "title": "America Is 2nd by Average Wealth, 15th by Median Wealth"
+    }
+  ],
+  "stories": [
+    {
+      "href": "/stories/care-at-home-is-not-automatically-the-cheaper-option",
+      "title": "Care at home is not automatically the cheaper option",
+      "image": "/editorial-assets/care-1440.webp",
+      "meta": "Later life · 1 min"
+    },
+    {
+      "href": "/stories/could-one-day-at-home-cut-your-commuting-bill",
+      "title": "Could one day at home cut your commuting bill?",
+      "image": "/editorial-assets/commute-1440.webp",
+      "meta": "Spending · 2 min"
+    },
+    {
+      "href": "/stories/is-working-still-worth-it-after-childcare",
+      "title": "Is working still worth it after childcare?",
+      "image": "/editorial-assets/childcare-1440.webp",
+      "meta": "Work & family · 2 min"
+    },
+    {
+      "href": "/stories/new-cars-average-50-000-you-do-not-have-to-spend-that-much",
+      "title": "New cars average $50,000. You do not have to spend that much",
+      "image": "/editorial-assets/car-1440.webp",
+      "meta": "Spending · 2 min"
+    },
+    {
+      "href": "/stories/should-you-pay-off-that-cheap-mortgage",
+      "title": "Should you pay off that cheap mortgage?",
+      "image": "/editorial-assets/money-1440.webp",
+      "meta": "Home & money · 2 min"
+    },
+    {
+      "href": "/stories/that-average-401-k-balance-may-be-misleading-you",
+      "title": "That “average” 401(k) balance may be misleading you",
+      "image": "/editorial-assets/freelance-1440.webp",
+      "meta": "Retirement · 2 min"
+    },
+    {
+      "href": "/stories/should-your-adult-child-pay-rent-at-home",
+      "title": "Should your adult child pay rent at home?",
+      "image": "/editorial-assets/family-1440.webp",
+      "meta": "Work & family · 2 min"
+    },
+    {
+      "href": "/stories/her-first-job-does-not-need-a-degree-should-she-take-it",
+      "title": "Her first job does not need a degree. Should she take it?",
+      "image": "/editorial-assets/graduate-1440.webp",
+      "meta": "Work & family · 2 min"
+    }
+  ],
+  "toolGroups": [
+    {
+      "name": "Rank",
+      "description": "See where you stand",
+      "tools": [
+        {
+          "href": "/calculator",
+          "title": "Global Wealth Rank"
+        },
+        {
+          "href": "/us-household-wealth",
+          "title": "U.S. Household Wealth"
+        },
+        {
+          "href": "/global_ranker",
+          "title": "Country-Specific Rank"
+        },
+        {
+          "href": "/income_ranker",
+          "title": "Income Percentile"
+        }
+      ]
+    },
+    {
+      "name": "Rate",
+      "description": "Plan your money",
+      "tools": [
+        {
+          "href": "/networth",
+          "title": "Net Worth Calibration"
+        },
+        {
+          "href": "/fire_timeline",
+          "title": "FIRE Timeline Planner"
+        },
+        {
+          "href": "/purchasing-power",
+          "title": "FIRE & Cost of Living"
+        },
+        {
+          "href": "/portfolio_alpha",
+          "title": "Portfolio Alpha Simulator"
+        },
+        {
+          "href": "/runway_lab",
+          "title": "Financial Runway Lab"
+        }
+      ]
+    },
+    {
+      "name": "Analyze",
+      "description": "Explore comparisons and scenarios",
+      "tools": [
+        {
+          "href": "/global_explorer",
+          "title": "Wealth Explorer"
+        },
+        {
+          "href": "/live-better-for-less",
+          "title": "Live Better for Less"
+        },
+        {
+          "href": "/lifestyle-abroad",
+          "title": "Lifestyle Abroad"
+        },
+        {
+          "href": "/country-systems-atlas",
+          "title": "Country Systems Atlas"
+        },
+        {
+          "href": "/atlas",
+          "title": "Longevity Atlas"
+        },
+        {
+          "href": "/data-lab",
+          "title": "Data Lab"
+        },
+        {
+          "href": "/long-ladder",
+          "title": "The Long Ladder"
+        },
+        {
+          "href": "/wealth-briefs",
+          "title": "Wealth Briefs"
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "href": "/report-wealth-thresholds",
+      "title": "Wealth Thresholds Report"
+    },
+    {
+      "href": "/report-velocity-of-capital",
+      "title": "The Velocity of Capital"
+    },
+    {
+      "href": "/report-geography-global-wealth",
+      "title": "The Geography of Global Wealth"
+    }
+  ],
+  "specials": [
+    {
+      "href": "/wealth-horizon",
+      "title": "Wealth Horizon",
+      "description": "Test how contributions, returns, inflation, fees, taxes and volatility could change a portfolio over 5 to 50 years."
+    },
+    {
+      "href": "/long-ladder",
+      "title": "The Long Ladder",
+      "description": "An interactive visual journey through the global wealth ladder and the opportunities associated with different wealth levels."
+    },
+    {
+      "href": "/historical-return-windows",
+      "title": "Historical Return Windows",
+      "description": "Compare stocks, bonds, bills and other assets across different holding periods using Damodaran’s 1928–2025 U.S. data."
+    },
+    {
+      "href": "/live-better-for-less",
+      "title": "Live Better for Less",
+      "description": "Find lower-cost countries that meet your chosen standards for health, essential services, connectivity and safety."
+    }
+  ]
+}

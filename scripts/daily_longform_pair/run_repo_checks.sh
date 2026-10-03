@@ -20,5 +20,6 @@ fi
   cd "${repo_dir}"
   bash scripts/check_content_policy.sh
   python3 scripts/check_longform_order.py
+  python3 scripts/sync_phoenix_navigation.py --check
   git diff --check
 )

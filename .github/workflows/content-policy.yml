@@ -14,6 +14,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Check banned internal prompt text
         run: bash scripts/check_content_policy.sh
+      - name: Check Phoenix navigation inventory
+        run: python3 scripts/sync_phoenix_navigation.py --check
       - name: Validate governed commercial placements
         run: python3 scripts/validate_monetization.py
 

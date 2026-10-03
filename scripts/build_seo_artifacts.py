@@ -6,6 +6,8 @@ import html
 import json
 import re
 import struct
+import subprocess
+import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from email.utils import format_datetime
@@ -1492,6 +1494,12 @@ def main() -> int:
     file_changes = html_changes + sync_changes + html_changes_second + pillar_changes + related_changes
     for path, content in generated_files.items():
         file_changes += int(write_text(path, content, args.write))
+
+    navigation_mode = "--write" if args.write else "--check"
+    subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "sync_phoenix_navigation.py"), navigation_mode],
+        check=True,
+    )
 
     print(f"HTML pages scanned: {len(pages)}")
     print(f"Indexable WealthMeter pages: {len(indexable_pages)}")
