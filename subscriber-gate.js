@@ -86,7 +86,6 @@
           <label class="subscriber-gate-field" data-gate-name>First name<input name="firstName" autocomplete="given-name" required></label>
           <label class="subscriber-gate-field" data-gate-name>Last name<input name="lastName" autocomplete="family-name" required></label>
           <label class="subscriber-gate-field subscriber-gate-field-email">Email address<input name="email" type="email" autocomplete="email" inputmode="email" required></label>
-          <label class="subscriber-gate-consent" data-gate-consent><input type="checkbox" name="commercialUpdates" value="yes">Optional: send me ${label} report offers and relevant commercial recommendations.</label>
           <button class="subscriber-gate-submit" type="submit">Continue to ${resource === "biomarker-essentials" ? "the guide" : ["life-expectancy-hides", "live-better-for-less"].includes(resource) ? "the feature" : "the tool"}</button>
           <p class="subscriber-gate-status" role="status" aria-live="polite"></p>
         </form>
