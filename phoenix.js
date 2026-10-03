@@ -136,3 +136,51 @@ if (phoenixFooterLinks && !phoenixFooterLinks.querySelector('[data-youtube-chann
  link.target = '_blank'; link.rel = 'noopener';
  phoenixFooterLinks.append(link);
 }
+
+// Keep the homepage video collection below the editorial content.
+if (['/', '/index', '/index.html'].includes(location.pathname) && document.querySelector('.site-footer') && !document.getElementById('videos')) {
+ const channels = {
+  lifemeter: [
+   ['hdc9wBRzeGA', 'Functional Age: Is Your Body Older Than You Are?'],
+   ['kS5MW1OxRAk', 'VO2 Max After 40'],
+   ['Uq19orY9fM8', 'GLP-1 Weight Loss and Muscle']
+  ],
+  wealthmeter: [
+   ['frdPB852rpE', 'Find Your Global Wealth Rank'],
+   ['CpSQXkN9yZ4', 'High Income, Low Net Worth'],
+   ['hjIlARdKl7g', 'Rent vs. Buy: The Full Cost']
+  ]
+ };
+ const style = document.createElement('style');
+ style.textContent = '.meter-videos{max-width:1280px;margin:3rem auto;padding:1.8rem 28px;border-top:1px solid var(--line,#d8ded6)}.meter-video-heading{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:1.25rem;flex-wrap:wrap}.meter-video-heading h2{font-size:1.6rem;margin:0}.meter-video-heading>a{font-size:.85rem}.meter-video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.meter-video-grid iframe{width:100%;aspect-ratio:16/9;height:auto;border:0;border-radius:8px;background:#151515;display:block}.meter-video-grid h3{font:600 1rem/1.4 system-ui;margin:.7rem 0 .35rem}.meter-video-share{display:flex;align-items:center;gap:4px;color:var(--muted,#58635e)}.meter-video-share>a,.meter-video-share>button{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:0;background:transparent;color:inherit;padding:0;cursor:pointer;border-radius:5px;text-decoration:none}.meter-video-share>a:hover,.meter-video-share>button:hover{background:var(--soft,#edf2e9)}.meter-video-share svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.meter-share-status{font-size:.75rem;min-height:1em}.meter-video-share :focus-visible{outline:2px solid currentColor;outline-offset:2px}@media(max-width:720px){.meter-video-grid{grid-template-columns:1fr}.meter-videos{padding:1.5rem 20px}.meter-video-share>a,.meter-video-share>button{width:44px;height:44px}}';
+ document.head.append(style);
+ const section = document.createElement('section'); section.id = 'videos'; section.className = 'meter-videos'; section.setAttribute('aria-labelledby','meter-videos-heading');
+ const heading = document.createElement('div'); heading.className = 'meter-video-heading';
+ const title = document.createElement('h2'); title.id = 'meter-videos-heading'; title.textContent = 'Watch on ' + (phoenixSite === 'lifemeter' ? 'LifeMeter' : 'WealthMeter');
+ const channelLink = document.createElement('a'); channelLink.href = 'https://www.youtube.com/channel/' + phoenixChannelIds[phoenixSite]; channelLink.textContent = 'YouTube channel ↗'; channelLink.target = '_blank'; channelLink.rel = 'noopener';
+ heading.append(title,channelLink); section.append(heading);
+ const grid = document.createElement('div'); grid.className = 'meter-video-grid';
+ const icons = {
+  link: '<path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l2-2"/>',
+  email: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>',
+  message: '<path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 8.7 3.9a8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/>'
+ };
+ function shareIcon(element,label,icon){
+  element.setAttribute('aria-label',label); element.title = label;
+  element.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true">' + icons[icon] + '</svg>';
+ }
+ channels[phoenixSite].forEach(([id,label])=>{
+  const url = 'https://www.youtube.com/watch?v=' + id;
+  const article = document.createElement('article');
+  const frame = document.createElement('iframe'); frame.src = 'https://www.youtube-nocookie.com/embed/' + id; frame.title = label; frame.loading = 'lazy'; frame.referrerPolicy = 'strict-origin-when-cross-origin'; frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'; frame.allowFullscreen = true;
+  const h3 = document.createElement('h3'); const watchLink = document.createElement('a'); watchLink.href = url; watchLink.textContent = label; watchLink.target = '_blank'; watchLink.rel = 'noopener'; h3.append(watchLink);
+  const sharing = document.createElement('div'); sharing.className = 'meter-video-share'; sharing.setAttribute('aria-label','Share ' + label);
+  const status = document.createElement('span'); status.className = 'meter-share-status'; status.setAttribute('aria-live','polite');
+  const copy = document.createElement('button'); copy.type = 'button'; shareIcon(copy,'Copy video link','link');
+  copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(url);status.textContent='Link copied';}catch{status.textContent='Use the video title to open and copy its link';}});
+  const mail = document.createElement('a'); mail.href = 'mailto:?subject=' + encodeURIComponent(label) + '&body=' + encodeURIComponent(url); shareIcon(mail,'Share by email','email');
+  const whatsapp = document.createElement('a'); whatsapp.href = 'https://wa.me/?text=' + encodeURIComponent(label + ' ' + url); whatsapp.target = '_blank'; whatsapp.rel = 'noopener'; shareIcon(whatsapp,'Share on WhatsApp','message');
+  sharing.append(copy,mail,whatsapp,status); article.append(frame,h3,sharing); grid.append(article);
+ });
+ section.append(grid); document.querySelector('.site-footer').before(section);
+}
