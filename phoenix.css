@@ -286,3 +286,22 @@ body.phoenix-page .legacy-content figure > img {
   height: auto;
   object-fit: contain;
 }
+
+/* Phone chrome repair: prevent global nav flex styles from laying out the drawer horizontally. */
+.mobile-menu nav{display:block;width:100%;min-width:0}
+.mobile-menu details{min-width:0;width:100%}
+.mobile-menu summary,.mobile-menu a{overflow-wrap:anywhere}
+@media(max-width:750px){
+ .site-header .mast{padding:12px 14px;gap:8px}
+ .site-header .brand{min-width:0;flex:1;max-width:190px;margin-right:auto}
+ .site-header .life-brand-mark{max-width:100%;gap:6px}
+ .site-header .life-brand-mark>div{font-size:clamp(15px,4.7vw,22px)!important}
+ .site-header .life-brand-mark .logo-heart{width:24px;flex:0 0 24px}
+ .site-header .brand.wealth img{width:155px!important;max-width:100%;height:auto}
+ .site-header #theme{flex:none}
+ .site-header .menu-trigger{flex:none;padding:10px;min-height:44px}
+}
+@media(max-width:350px){
+ .site-header .mast{gap:6px;padding-left:10px;padding-right:10px}
+ .site-header .menu-trigger{font-size:13px;padding:10px 8px}
+}

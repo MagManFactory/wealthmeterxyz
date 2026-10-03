@@ -1,0 +1,89 @@
+/* Purpose-built feature graphics use live text; no raster labels or cropped charts. */
+.visual-lead{display:flex;flex-direction:column;min-height:0;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:4px;overflow:visible}
+.visual-lead:after{display:none}
+.visual-lead .lead-copy{position:static;max-width:none;padding:30px 32px 20px}
+.visual-lead .lead-copy .eyebrow{color:var(--accent)}
+.visual-lead .lead-copy h1{font-size:clamp(34px,3.2vw,48px);max-width:19ch;line-height:1.09;margin:12px 0 16px}
+.visual-lead .lead-copy>p:not(.eyebrow){max-width:58ch;line-height:1.55}
+.visual-lead .read{border:0;text-decoration:underline;display:inline-flex;align-items:center;gap:12px;min-height:44px;font-weight:700;color:var(--accent)}
+.exposure-map{margin:26px 0;background:var(--tint);border:1px solid var(--line);border-top:3px solid var(--accent);padding:28px;color:var(--ink)}
+.exposure-map figcaption{font:700 24px/1.25 Georgia,serif;max-width:36ch;margin-bottom:24px}
+.exposure-map ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.exposure-map li{min-width:0;background:var(--paper);border:1px solid var(--line);padding:22px 18px;position:relative}
+.exposure-map .map-label{display:block;color:var(--accent);font-size:13px;font-weight:750;line-height:1.4;margin-bottom:20px}
+.exposure-map strong{display:block;font:700 24px/1.2 Georgia,serif;min-height:3.6em;max-width:16ch}
+.exposure-map small{display:block;font-size:13px;line-height:1.5;color:var(--muted);padding-top:18px;margin-top:18px;border-top:1px solid var(--line)}
+.map-note{font-size:13px!important;line-height:1.55!important;color:var(--muted);margin:20px 0 0}
+.compact-map{margin:0 18px 18px;padding:22px}
+.compact-map figcaption{font-size:21px;margin-bottom:18px}
+.compact-map ol{gap:12px}
+.compact-map li{padding:16px 14px}
+.compact-map strong{font-size:21px;min-height:3.6em}
+.compact-map .map-label{margin-bottom:12px}
+.compact-map small{padding-top:12px;margin-top:14px}
+.feature-main{max-width:1060px;margin:auto;padding:32px 30px 70px}
+.feature-back{display:inline-flex;align-items:center;min-height:44px;color:var(--accent);font-size:14px}
+.feature-heading{padding:24px 0 12px;max-width:850px}
+.feature-heading h1{font:700 clamp(36px,4.5vw,62px)/1.06 Georgia,serif;letter-spacing:-.03em;margin:14px 0 24px;max-width:20ch}
+.feature-deck{font-size:22px;line-height:1.5;max-width:60ch}
+.feature-meta{font-size:13px;color:var(--muted);margin-top:24px}
+.feature-intro{max-width:68ch;font-size:20px;line-height:1.65;margin:38px 0 24px}
+.feature-jumps{display:flex;flex-wrap:wrap;gap:12px;padding:0 0 30px;border-bottom:1px solid var(--line)}
+.feature-jumps a{min-height:44px;display:inline-flex;align-items:center;padding:10px 16px;border:1px solid var(--line);color:var(--accent);font-size:14px;font-weight:650}
+.evidence-step{display:grid;grid-template-columns:85px minmax(0,1fr);gap:24px;padding:42px 0;border-bottom:1px solid var(--line);scroll-margin-top:24px}
+.step-number{font:400 52px/1 Georgia,serif;color:var(--accent)}
+.evidence-step>div:last-child{max-width:68ch}
+.evidence-step h2{font:700 32px/1.15 Georgia,serif;margin:0 0 20px}
+.evidence-step p{font-size:18px;line-height:1.7;margin:0 0 22px}
+.evidence-step .check-line{font-size:16px;padding:16px 20px;border-left:3px solid var(--accent);background:var(--tint)}
+.source-link{font-size:14px;line-height:1.6;display:inline-flex;align-items:center;min-height:44px;overflow-wrap:anywhere}
+.feature-takeaway{background:var(--tint);padding:30px;margin-top:38px;max-width:80ch}
+.feature-takeaway h2{font:700 36px/1.12 Georgia,serif;margin:10px 0 18px}
+.feature-takeaway p:not(.eyebrow){font-size:18px;line-height:1.65}
+.feature-takeaway .read{display:inline-flex;align-items:center;min-height:44px}
+.feature-further{display:grid;gap:12px;margin-top:32px}
+.feature-further h2{font:700 25px/1.2 Georgia,serif;margin:0 0 8px}
+.feature-further a{min-height:44px;display:flex;align-items:center;color:var(--accent)}
+/* Phone layout keeps the masthead, figure labels and tap targets within the viewport. */
+@media(max-width:750px){
+ .candidate-main{padding:0 18px}
+ .candidate-intro .topics{flex-wrap:wrap;overflow:visible;gap:4px 18px;margin-top:10px}
+ .candidate-intro .topics a{display:inline-flex;align-items:center;min-height:44px;font-size:13px;padding:6px 0}
+ .visual-lead .lead-copy{padding:24px 20px 14px}
+ .visual-lead .lead-copy h1{font-size:34px;line-height:1.1;max-width:21ch}
+ .visual-lead .lead-copy>p:not(.eyebrow){font-size:17px}
+ .visual-lead .exposure-map{margin:0 12px 12px;padding:18px}
+ .exposure-map{padding:22px 18px}
+ .exposure-map ol{grid-template-columns:1fr;gap:10px}
+ .exposure-map li{display:grid;grid-template-columns:90px minmax(0,1fr);gap:6px 12px;padding:16px}
+ .exposure-map .map-label{margin:0;grid-row:1/3;font-size:13px}
+ .exposure-map strong{font-size:22px;line-height:1.2;min-height:0;max-width:none}
+ .exposure-map small{border:0;padding:0;margin:2px 0 0;font-size:13px}
+ .compact-map strong{font-size:20px}
+ .map-note{font-size:12px!important}
+ .opening-side{margin-top:24px}
+ .feature-main{padding:16px 18px 42px}
+ .feature-heading{padding-top:18px}
+ .feature-heading h1{font-size:38px;margin-bottom:20px}
+ .feature-deck{font-size:20px;line-height:1.5}
+ .feature-intro{font-size:18px;margin-top:28px}
+ .feature-jumps{gap:8px}
+ .feature-jumps a{font-size:13px;padding:10px 12px}
+ .evidence-step{grid-template-columns:1fr;gap:16px;padding:30px 0}
+ .step-number{font-size:36px}
+ .evidence-step h2{font-size:29px}
+ .evidence-step p{font-size:17px;line-height:1.65}
+ .feature-takeaway{padding:24px 20px}
+ .feature-takeaway h2{font-size:31px}
+ .story-row{gap:24px}
+}
+@media(max-width:350px){
+ .visual-lead .lead-copy{padding:22px 16px 12px}
+ .visual-lead .lead-copy h1{font-size:30px}
+ .exposure-map li{grid-template-columns:1fr}
+ .exposure-map .map-label{grid-row:auto}
+ .feature-heading h1{font-size:34px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+@media(max-width:750px){.candidate-home .story-row .story-card{display:block}.candidate-home .story-row .card-photo img{height:auto;aspect-ratio:3/2}.candidate-home .story-row .card-copy{padding-top:16px}.candidate-home .story-row h3{overflow-wrap:anywhere}}
