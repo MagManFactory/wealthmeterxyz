@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import re
 import sys
 from pathlib import Path
@@ -40,7 +41,9 @@ def load_remote(url: str) -> str:
 def extract_components_url(hub_html: str, hub_url: str) -> str:
     match = COMPONENTS_SRC_RE.search(hub_html)
     if not match:
-        return urljoin(hub_url, "components.js")
+        # Static hubs have no component script; use a hub-specific URL to avoid stale CDN bytes.
+        hub_key = hashlib.sha256(hub_html.encode("utf-8")).hexdigest()[:12]
+        return urljoin(hub_url, f"components.js?v={hub_key}")
     return urljoin(hub_url, match.group(1))
 
 
