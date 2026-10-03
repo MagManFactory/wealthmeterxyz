@@ -4,7 +4,7 @@ import {readFileSync, existsSync, readdirSync} from 'node:fs';
 import vm from 'node:vm';
 function context(host='lifemeter.xyz') {
   const handlers={},requests=[];let markup='';
-  const cls={add(){},remove(){}};
+  const cls={add(){},remove(){},contains(name){return name==='wealthmeter'&&host.includes('wealth');}};
   class Form {
     constructor(checked) {this.dataset={site:host.includes('wealth')?'wealthmeter':'lifemeter',source:'footer'};this.elements={email:{value:'test@example.com'},first_name:{value:'Test'},last_name:{value:'Owner'},firstName:{value:'Test'},lastName:{value:'Owner'},newsletter:{value:'yes'},company:{value:''},...(checked===undefined?{}:{commercialUpdates:{checked,value:'yes'}})};this.button={};this.status={};}
     matches(){return true;}closest(){return this;}reportValidity(){return true;}reset(){}querySelector(s){return s.includes('button')?this.button:this.status;}
