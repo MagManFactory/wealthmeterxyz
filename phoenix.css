@@ -280,3 +280,9 @@ body.dark.lifemeter.phoenix-page .legacy-content :where(
   border-color:var(--line)!important;
 }
 .site-header .sister-site{color:var(--accent)!important;font-weight:700!important;white-space:nowrap}.mobile-menu .sister-site{border-top:1px solid var(--line);margin-top:8px;padding-top:16px}
+/* Preserve complete longform charts and infographics inside legacy article figures. */
+body.phoenix-page .legacy-content figure > img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
