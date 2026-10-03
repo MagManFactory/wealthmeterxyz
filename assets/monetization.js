@@ -127,7 +127,10 @@
       if (event.target.closest("button, [role='button'], .btn, select")) start();
     }, true);
     document.addEventListener("change", start, true);
-    new MutationObserver(tryMount).observe(document.body, { attributes: true, childList: true, subtree: true });
+    const mutationRoot = document.body || document.documentElement;
+    if (mutationRoot) {
+      new MutationObserver(tryMount).observe(mutationRoot, { attributes: true, childList: true, subtree: true });
+    }
   }
 
   document.addEventListener("click", (event) => {
