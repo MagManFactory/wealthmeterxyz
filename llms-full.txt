@@ -2,6 +2,8 @@
 
 > WealthMeter publishes evidence-led calculators, data tools, reports, and longform analysis about net worth, income, wealth distribution, retirement, and household resilience.
 
+- [Wealth Horizon](https://wealthmeter.xyz/wealth-horizon): An assumption-driven portfolio scenario calculator with inflation-adjusted outcomes, fees, estimated tax drag, volatility, and reproducible simulation ranges.
+
 This file is generated from the XML sitemap. The sitemap and each page's canonical URL remain authoritative.
 
 ## Citation and interpretation guidance

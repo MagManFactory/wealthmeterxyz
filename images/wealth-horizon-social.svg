@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#09162a"/><stop offset="1" stop-color="#12465d"/></linearGradient><linearGradient id="l" x1="0" x2="1"><stop stop-color="#2764eb"/><stop offset="1" stop-color="#18c5d4"/></linearGradient></defs>
+  <rect width="1200" height="630" rx="32" fill="url(#g)"/>
+  <g transform="translate(70 65)"><rect x="0" y="26" width="13" height="35" rx="2" fill="#ff4b4b"/><rect x="22" y="8" width="13" height="53" rx="2" fill="#fff"/><rect x="44" y="35" width="13" height="26" rx="2" fill="#18c5d4"/><text x="78" y="54" fill="#fff" font-family="Arial,sans-serif" font-size="40" font-weight="800">WEALTHMETER.XYZ</text></g>
+  <text x="70" y="205" fill="#53d4e4" font-family="monospace" font-size="25" font-weight="700" letter-spacing="4">WEALTH HORIZON</text>
+  <text x="70" y="290" fill="#fff" font-family="Arial,sans-serif" font-size="68" font-weight="800">How far could</text><text x="70" y="370" fill="#fff" font-family="Arial,sans-serif" font-size="68" font-weight="800">your wealth go?</text>
+  <path d="M680 475 C790 420 835 455 900 345 S1040 240 1120 165" fill="none" stroke="url(#l)" stroke-width="14" stroke-linecap="round"/>
+  <path d="M680 505 C790 485 850 500 930 430 S1050 385 1120 310" fill="none" stroke="#ff4b4b" stroke-width="7" stroke-linecap="round" opacity=".85"/>
+  <text x="70" y="530" fill="#c8d6e8" font-family="Arial,sans-serif" font-size="28">Returns · inflation · fees · taxes · uncertainty</text>
+</svg>

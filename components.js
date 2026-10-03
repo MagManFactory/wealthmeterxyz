@@ -327,6 +327,7 @@ const siteHeader = `
                     <a href="purchasing-power.html">FIRE &amp; Cost of Living</a>
                     <a href="portfolio_alpha.html">Portfolio Alpha Simulator</a>
                     <a href="runway_lab.html">Financial Runway Lab</a>
+                    <a href="wealth-horizon.html">Wealth Horizon</a>
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
                 </div>
             </div>
@@ -532,6 +533,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Older pages carry static header snapshots. Repair their discovery paths
     // at runtime as well as keeping the canonical header template current.
     ensureNavLink("Rate", "purchasing-power.html", "FIRE & Cost of Living", "fire_timeline.html");
+    ensureNavLink("Rate", "wealth-horizon.html", "Wealth Horizon", "runway_lab.html");
     ensureNavLink("Analyze", "purchasing-power.html", "Purchasing Power Hub", "global_explorer.html");
     ensureNavLink("Analyze", "live-better-for-less.html", "Live Better for Less", "purchasing-power.html");
     ensureNavLink("Analyze", "lifestyle-abroad.html", "Lifestyle Abroad", "live-better-for-less.html");

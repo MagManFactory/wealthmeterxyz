@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Wealth Horizon: Long-Term Portfolio Scenario Calculator | WealthMeter</title>
+  <meta name="description" content="Test how contributions, returns, inflation, fees, taxes and volatility could change a portfolio over 5 to 50 years.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://wealthmeter.xyz/wealth-horizon">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="How far could your wealth go?">
+  <meta property="og:description" content="Build a long-term portfolio scenario and see the possible range after inflation, fees and tax drag.">
+  <meta property="og:url" content="https://wealthmeter.xyz/wealth-horizon">
+  <meta property="og:image" content="https://wealthmeter.xyz/images/wealth-horizon-social.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How far could your wealth go?">
+  <meta name="twitter:description" content="Test a 5-to-50-year wealth scenario with visible assumptions.">
+  <meta name="twitter:image" content="https://wealthmeter.xyz/images/wealth-horizon-social.png">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/wealth-horizon.css?v=20261003-1">
+  <script>
+    (function(){var saved=null;try{saved=localStorage.getItem('wealthmeter-theme');}catch(e){}var dark=saved?saved==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.dataset.theme=dark?'dark':'light';}());
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"WealthMeter Wealth Horizon","url":"https://wealthmeter.xyz/wealth-horizon","applicationCategory":"FinanceApplication","operatingSystem":"Any","description":"An assumption-driven long-term portfolio scenario calculator.","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"WealthMeter","url":"https://wealthmeter.xyz/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WealthMeter","item":"https://wealthmeter.xyz/"},{"@type":"ListItem","position":2,"name":"Special features","item":"https://wealthmeter.xyz/special-features"},{"@type":"ListItem","position":3,"name":"Wealth Horizon","item":"https://wealthmeter.xyz/wealth-horizon"}]}]}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to calculator</a>
+  <div id="header-placeholder"></div>
+  <main id="main" class="horizon-shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">WealthMeter special</p>
+        <h1>How far could your wealth go?</h1>
+        <p class="dek">Set your starting portfolio and assumptions. See a range of possible values after inflation, fees and estimated tax drag.</p>
+      </div>
+      <button class="theme-button" id="themeToggle" type="button" aria-label="Switch color theme">◐ <span>Theme</span></button>
+    </section>
+
+    <section class="calculator-grid" aria-label="Wealth horizon calculator">
+      <form class="control-panel" id="horizonForm">
+        <div class="panel-heading">
+          <p class="eyebrow">Your scenario</p>
+          <h2>Choose the assumptions</h2>
+          <p>These inputs are hypothetical. They do not predict market returns.</p>
+        </div>
+        <div class="quick-scenarios" aria-label="Scenario presets">
+          <button type="button" data-preset="lower">Lower return</button>
+          <button type="button" data-preset="middle" class="active">Middle</button>
+          <button type="button" data-preset="higher">Higher return</button>
+        </div>
+        <div class="fields">
+          <label>Starting portfolio <span>$</span><input id="starting" name="starting" type="number" min="0" max="1000000000" step="1000" value="150000"></label>
+          <label>Annual contribution <span>$</span><input id="contribution" name="contribution" type="number" min="0" max="10000000" step="1000" value="24000"></label>
+          <label>Years <span>5–50</span><input id="years" name="years" type="number" min="5" max="50" step="1" value="30"></label>
+          <label>Annual return <span>%</span><input id="returnRate" name="returnRate" type="number" min="-10" max="20" step="0.1" value="7"></label>
+          <label>Annual volatility <span>%</span><input id="volatility" name="volatility" type="number" min="0" max="40" step="0.5" value="14"></label>
+          <label>Inflation <span>%</span><input id="inflation" name="inflation" type="number" min="0" max="15" step="0.1" value="2.5"></label>
+          <label>Annual fees <span>%</span><input id="fees" name="fees" type="number" min="0" max="5" step="0.05" value="0.25"></label>
+          <label>Estimated tax drag <span>percentage points</span><input id="taxDrag" name="taxDrag" type="number" min="0" max="10" step="0.1" value="0.5"></label>
+          <label>Contribution growth <span>% each year</span><input id="contributionGrowth" name="contributionGrowth" type="number" min="-10" max="15" step="0.1" value="2"></label>
+        </div>
+        <p class="field-note">Tax drag is entered as an annual reduction in return. Actual tax effects depend on account type, turnover, income, gains and jurisdiction.</p>
+        <div class="control-actions">
+          <button class="primary-button" type="submit">Update my horizon</button>
+          <button class="secondary-button" id="resetButton" type="button">Reset</button>
+        </div>
+      </form>
+
+      <section class="results-panel" aria-live="polite">
+        <div class="result-lead">
+          <p class="eyebrow">Estimated purchasing power</p>
+          <h2 id="realResult">$0</h2>
+          <p id="resultSentence">Enter assumptions to calculate your horizon.</p>
+        </div>
+        <div class="metric-grid">
+          <article><span>Future dollars</span><strong id="nominalResult">$0</strong><small>Value before inflation adjustment</small></article>
+          <article><span>Total contributed</span><strong id="contributedResult">$0</strong><small>Starting portfolio plus additions</small></article>
+          <article><span>Lower simulation result</span><strong id="lowerResult">$0</strong><small>10th percentile, today’s dollars</small></article>
+          <article><span>Higher simulation result</span><strong id="higherResult">$0</strong><small>90th percentile, today’s dollars</small></article>
+        </div>
+        <div class="chart-heading">
+          <div><p class="eyebrow">Possible paths</p><h3>How the range changes over time</h3></div>
+          <div class="legend"><span class="low">Lower</span><span class="mid">Middle</span><span class="high">Higher</span></div>
+        </div>
+        <div class="chart-wrap"><svg id="horizonChart" role="img" aria-labelledby="chartTitle chartDesc"><title id="chartTitle">Simulated inflation-adjusted portfolio range</title><desc id="chartDesc">Lines show lower, middle and higher simulated portfolio outcomes over the selected horizon.</desc></svg></div>
+        <p class="chart-note">The range comes from 2,000 reproducible simulations using your return and volatility assumptions. It omits withdrawals, changing asset allocations, market regimes and irregular cash flows.</p>
+        <div class="result-actions">
+          <button id="copyLink" type="button">Copy this scenario</button>
+          <button id="downloadCsv" type="button">Download yearly results</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="explain-grid">
+      <article>
+        <p class="eyebrow">Read the result</p>
+        <h2>What the numbers mean</h2>
+        <p><strong>Future dollars</strong> are the balance shown in the money of the final year. <strong>Purchasing power</strong> converts that balance into today’s dollars using your inflation assumption. The lower and higher figures show the 10th and 90th percentiles of the simulation, not guaranteed boundaries.</p>
+      </article>
+      <details>
+        <summary>How is the scenario calculated?</summary>
+        <p>Contributions are added monthly and increase once a year by the contribution-growth input. The deterministic balance compounds at the stated annual return after subtracting fees and estimated tax drag. The simulation uses independent monthly lognormal returns derived from the same annual return and volatility inputs. A fixed random seed makes identical inputs reproduce identical outputs.</p>
+      </details>
+      <details>
+        <summary>What does volatility mean?</summary>
+        <p>Volatility describes how widely returns vary around the assumed average. A higher value widens the range of possible outcomes. It does not specify when losses occur and does not fully represent severe crashes, persistent inflation or shifts between market regimes.</p>
+      </details>
+      <details>
+        <summary>Why is tax shown as drag?</summary>
+        <p>Tax treatment varies too much for one calculator to estimate precisely. This tool lets you reduce the assumed annual return by a chosen number of percentage points. Set it to zero for a tax-sheltered approximation. Use a qualified professional for account-specific analysis.</p>
+      </details>
+    </section>
+
+    <section class="methodology">
+      <div>
+        <p class="eyebrow">Methodology and sources</p>
+        <h2>An assumption model, not a market forecast</h2>
+        <p>The calculator does not import historical returns or claim that its presets are expected outcomes. The presets are editable illustrations. Inflation adjustment follows the standard compound-price relationship. The simulation is a simplified educational model and should not be used as a sole basis for a financial decision.</p>
+      </div>
+      <ul>
+        <li><a href="https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator" target="_blank" rel="noopener">U.S. SEC Investor.gov: Compound Interest Calculator</a></li>
+        <li><a href="https://www.bls.gov/cpi/questions-and-answers.htm" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics: Consumer Price Index questions and answers</a></li>
+        <li><a href="https://www.investor.gov/introduction-investing/investing-basics/glossary/fees-and-expenses" target="_blank" rel="noopener">U.S. SEC Investor.gov: Fees and expenses</a></li>
+      </ul>
+    </section>
+
+    <section class="next-tools">
+      <p class="eyebrow">Continue the analysis</p>
+      <h2>Put the scenario in context</h2>
+      <div>
+        <a href="/historical-return-windows"><strong>Historical Return Windows</strong><span>Compare assumptions with actual U.S. asset returns since 1928.</span></a>
+        <a href="/fire_timeline"><strong>FIRE Timeline Planner</strong><span>Connect a portfolio path to a spending target.</span></a>
+        <a href="/portfolio_alpha"><strong>Portfolio Alpha Simulator</strong><span>Test a simpler return-and-friction calculation.</span></a>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="/components.js?v=20261003-1"></script>
+  <script src="/assets/wealth-horizon.js?v=20261003-1"></script>
+</body>
+</html>
