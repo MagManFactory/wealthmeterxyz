@@ -123,3 +123,16 @@ document.querySelectorAll('[data-newsletter-form]').forEach(form => {
   finally { form.dataset.sending = '0'; button.disabled = false; }
  });
 });
+
+// A quiet channel link shares the existing footer styling.
+const phoenixChannelIds = {lifemeter: 'UC3_3wPvBO8t6M7m-ACes2QA', wealthmeter: 'UCkdVTp3Fqd7Mz1VJ7yu7i1w'};
+const phoenixFooterLinks = document.querySelector('.site-footer .footer-links');
+if (phoenixFooterLinks && !phoenixFooterLinks.querySelector('[data-youtube-channel]')) {
+ const link = document.createElement('a');
+ link.href = 'https://www.youtube.com/channel/' + phoenixChannelIds[phoenixSite];
+ link.textContent = 'YouTube ↗';
+ link.setAttribute('aria-label', (phoenixSite === 'lifemeter' ? 'LifeMeter' : 'WealthMeter') + ' on YouTube');
+ link.dataset.youtubeChannel = phoenixSite;
+ link.target = '_blank'; link.rel = 'noopener';
+ phoenixFooterLinks.append(link);
+}
