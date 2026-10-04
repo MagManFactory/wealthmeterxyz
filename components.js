@@ -348,6 +348,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="the-bottom-half-grew-fastest-and-still-holds-2-3-percent.html">The Bottom Half Grew Fastest, and Still Holds 2.3%</a>
                     <a href="the-90th-to-99th-percentile-retirement-reality-check.html">The 90th to 99th Percentile Retirement Reality Check</a>
                     <a href="same-market-different-result-stock-ownership-wealth-gap.html">Same Market, Different Result: Why Owning More Stocks Drove the Wealth Gap</a>
                     <a href="the-top-rung-moved-what-the-fed-says-about-the-0-1-percent-and-where-you-stand.html">The Top Rung Moved: What the Fed Says About the 0.1% and Where You Stand</a>
