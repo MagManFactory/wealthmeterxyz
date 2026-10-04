@@ -690,4 +690,36 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://wealthmeter.xyz/calculator.html</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://wealthmeter.xyz/historical-return-windows.html</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://wealthmeter.xyz/newsletter.html</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://wealthmeter.xyz/partners/capability-sheet.html</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://wealthmeter.xyz/partners/health-wealth-package.html</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://wealthmeter.xyz/partners/underwriting-pilot.html</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://wealthmeter.xyz/special-features.html</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://wealthmeter.xyz/tools.html</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
 </urlset>
