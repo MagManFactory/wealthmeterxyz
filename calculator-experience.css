@@ -6,6 +6,45 @@
   background: var(--card, #fff);
 }
 
+.ux-share-rail {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(4, 54px);
+  justify-content: center;
+  gap: 12px;
+  width: min(100% - 32px, 1300px);
+  margin: 34px auto 0;
+  padding: 28px 18px;
+  border-top: 1px solid var(--line, #d9e2ef);
+}
+
+.ux-share-rail button {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  min-height: 54px;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  color: #fff;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.ux-share-rail button:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(15, 23, 42, .18); }
+.ux-share-rail button:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent, #2563eb) 42%, transparent); outline-offset: 3px; }
+.ux-share-rail svg { width: 23px; height: 23px; fill: currentColor; }
+.ux-share-x { background: #050505; }
+.ux-share-linkedin { background: #0a66c2; }
+.ux-share-whatsapp { background: #25d366; }
+.ux-share-telegram { background: #168dcc; }
+.ux-share-reddit { background: #f04400; }
+.ux-share-message { background: #2fbd61; }
+.ux-share-email { background: #dc2626; }
+.ux-share-copy { background: #475569; }
+.ux-share-status { grid-column: 1 / -1; min-height: 1.25em; text-align: center; color: var(--muted, #64748b); font: 700 .78rem/1.4 system-ui; }
+
 .calculator-experience details > summary {
   min-height: 48px;
   padding: 14px 18px;
@@ -38,4 +77,5 @@
 @media (prefers-reduced-motion: reduce) {
   .calculator-experience .ux-result-reveal { animation: none; }
   .calculator-experience * { scroll-behavior: auto !important; }
+  .ux-share-rail button { transition: none; }
 }
