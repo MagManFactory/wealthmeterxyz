@@ -638,6 +638,8 @@ def ensure_static_components(
     *,
     article_firewall: bool = False,
 ) -> str:
+    if "phoenix-page" in text:
+        return text
     if article_firewall:
         header_html, footer_html = article_firewall_markup(header_html, footer_html)
     text = collapse_component_styles(text)
@@ -1498,6 +1500,10 @@ def main() -> int:
     navigation_mode = "--write" if args.write else "--check"
     subprocess.run(
         [sys.executable, str(ROOT / "scripts" / "sync_phoenix_navigation.py"), navigation_mode],
+        check=True,
+    )
+    subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "migrate_longform_to_phoenix.py"), navigation_mode],
         check=True,
     )
 
