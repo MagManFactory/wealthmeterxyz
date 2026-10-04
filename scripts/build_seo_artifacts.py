@@ -1382,6 +1382,21 @@ def sitemap_changefreq(page: PageInfo) -> str:
 
 
 def generate_sitemap(pages: list[PageInfo]) -> str:
+    # Phoenix reader pages extend beyond the legacy root-only HTML inventory.
+    from check_search_discovery import canonical_reader_pages
+    pages = list(pages)
+    reader_pages = list(canonical_reader_pages(ROOT, "wealthmeter.xyz"))
+    canonical_by_path = dict(reader_pages)
+    for page in pages:
+        if page.path in canonical_by_path:
+            page.canonical_url = canonical_by_path[page.path]
+    known_urls = {page.canonical_url for page in pages}
+    for path, canonical in reader_pages:
+        if canonical not in known_urls:
+            reader_page = classify_page(path, path.read_text(encoding="utf-8"), set())
+            reader_page.canonical_url = canonical
+            pages.append(reader_page)
+            known_urls.add(canonical)
     deduped: dict[str, PageInfo] = {}
     for page in sorted(pages, key=sort_key, reverse=True):
         deduped.setdefault(page.canonical_url, page)

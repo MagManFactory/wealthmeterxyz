@@ -1,22 +1,56 @@
 #!/usr/bin/env python3
-"""Prevent omission of indexable reader pages from the canonical sitemap."""
+"""Check sitemap coverage of canonical, indexable reader pages."""
 from pathlib import Path
-import re,sys,xml.etree.ElementTree as ET
+from html.parser import HTMLParser
+import sys
+import xml.etree.ElementTree as ET
 from urllib.parse import urlparse
-ROOT=Path(__file__).resolve().parent.parent
-urls={e.text for e in ET.parse(ROOT/'sitemap.xml').getroot().iter() if e.tag.endswith('loc')}
-domains={urlparse(url).netloc for url in urls}
-assert len(domains)==1, 'Sitemap contains mixed domains'
-DOMAIN=next(iter(domains))
-missing=[]
-for page in ROOT.rglob('*.html'):
- relative=page.relative_to(ROOT)
- if len(relative.parts)>1 and relative.parts[0] not in ('stories','features','partners'):continue
- if page.name=='wealth-brief.html':continue # Query-based individual brief template.
- body=page.read_text(errors='replace')
- c=re.search(r'<link[^>]*rel=[\"\']canonical[\"\'][^>]*href=[\"\']([^\"\']+)',body,re.I)
- r=re.search(r'<meta[^>]*name=[\"\']robots[\"\'][^>]*content=[\"\']([^\"\']+)',body,re.I)
- if c and urlparse(c[1]).netloc==DOMAIN and (not r or 'noindex' not in r[1].lower()) and c[1] not in urls:missing.append(str(relative)+': '+c[1])
-if missing:
- print('Indexable pages missing from sitemap:\n'+'\n'.join(missing));sys.exit(1)
-print(f'Search discovery coverage passed: {len(urls)} canonical URLs.')
+
+ROOT = Path(__file__).resolve().parent.parent
+
+
+class HeadMetadata(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.canonical = None
+        self.robots = ""
+
+    def handle_starttag(self, tag, attributes):
+        attrs = dict(attributes)
+        if tag == "link" and "canonical" in (attrs.get("rel") or "").lower().split():
+            self.canonical = attrs.get("href")
+        if tag == "meta" and (attrs.get("name") or "").lower() == "robots":
+            self.robots = attrs.get("content") or ""
+
+
+def canonical_reader_pages(root: Path, domain: str):
+    """Exclude staging, cross-brand legacy pages and query-only templates."""
+    for page in sorted(root.rglob("*.html")):
+        relative = page.relative_to(root)
+        if len(relative.parts) > 1 and relative.parts[0] not in ("stories", "features", "partners"):
+            continue
+        if page.name == "wealth-brief.html":
+            continue
+        body = page.read_text(errors="replace")
+        metadata = HeadMetadata()
+        metadata.feed(body)
+        if metadata.canonical and urlparse(metadata.canonical).netloc == domain and "noindex" not in metadata.robots.lower():
+            yield page, metadata.canonical
+
+
+
+def main():
+    urls = {element.text for element in ET.parse(ROOT / "sitemap.xml").getroot().iter() if element.tag.endswith("loc")}
+    domains = {urlparse(url).netloc for url in urls}
+    if len(domains) != 1:
+        raise SystemExit("Sitemap contains mixed domains")
+    missing = [f"{page.relative_to(ROOT)}: {canonical}" for page, canonical in canonical_reader_pages(ROOT, domains.pop()) if canonical not in urls]
+    if missing:
+        print("Indexable pages missing from sitemap:\n" + "\n".join(missing))
+        return 1
+    print(f"Search discovery coverage passed: {len(urls)} canonical URLs.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
