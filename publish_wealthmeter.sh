@@ -37,6 +37,7 @@ python3 scripts/sync_phoenix_navigation.py --check
 python3 scripts/check_longform_phoenix.py
 python3 scripts/check_specials_phoenix.py
 python3 scripts/check_search_discovery.py
+python3 scripts/sync_story_search_metadata.py
 git diff --check
 
 if ! git diff --quiet || ! git diff --cached --quiet; then
