@@ -663,7 +663,7 @@ function createSearchSelect(root, locations, { value, onChange, placeholder }) {
       }
       const best = rows[0];
       html += '<div class="viral-giant"><span class="hi">' + esc(best.dest.label) + '</span><br>offers the strongest balance</div>';
-      html += '<div class="viral-sub">' + esc(fmtMoney(monthly)) + '/mo at home → ' + esc(fmtMoney(best.required)) + '/mo there · ' + esc(Math.round(best.quality.score)) + '% quality benchmark preserved</div>';
+      html += '<div class="viral-sub">' + esc(fmtMoney(monthly)) + '/mo at home → ' + esc(fmtMoney(best.required)) + '/mo there · ' + esc(Math.round(best.quality.score)) + '/100 indicator-preservation score</div>';
       html += '</div>';
       html += '<div class="rank-block"><h3>Lower-cost countries that pass the close-match quality screen</h3>';
       rows.forEach((r, i) => {
@@ -678,7 +678,9 @@ function createSearchSelect(root, locations, { value, onChange, placeholder }) {
     }
 
     async function render() {
-      const monthly = Math.max(0, Number(document.getElementById('monthlySpend').value) || 0);
+      const budgetInput=document.getElementById('monthlySpend');
+      const monthly=Number(budgetInput.value);
+      if(budgetInput.value.trim()===''||!Number.isFinite(monthly)||monthly<=0||!budgetInput.reportValidity()){document.getElementById('results').hidden=true;document.getElementById('resultsInner').textContent='';return;}
       const home = homeSel.get();
       if (!home || !monthly) return;
       let html = '';

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 
@@ -34,7 +35,7 @@ def main() -> None:
     data = json.loads(DATA.read_text(encoding="utf-8"))
     rights = json.loads(RIGHTS.read_text(encoding="utf-8"))
 
-    require('content="index, follow"' in html, "production page must be indexable")
+    require(bool(re.search(r'<meta\s+name="robots"\s+content="index,\s*follow(?:,[^"]*)?"', html)), "production page must be indexable")
     require('href="https://wealthmeter.xyz/country-systems-atlas.html"' in html, "missing production canonical")
     require('"@type":"WebApplication"' in html and '"@type":"Dataset"' in html, "missing structured data")
     require("images/country-systems-atlas-social.png" in html, "missing social image metadata")

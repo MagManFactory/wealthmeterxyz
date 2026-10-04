@@ -6,16 +6,16 @@
 
 
 <title>Longevity Atlas | WEALTHMETER.XYZ</title>
-<meta name="description" content="Compare country-level baseline lifespan and LEV planning horizons with GDP and wealth-threshold context.">
+<meta name="description" content="Compare dated World Bank population, GDP at purchasing power parity, and male and female life expectancy at birth across 200 economies.">
 <meta name="keywords" content="longevity atlas, life expectancy by country, LEV lifespan, wealth and longevity, GDP per capita PPP, global wealth context">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Longevity Atlas | WEALTHMETER.XYZ">
-<meta property="og:description" content="Country-by-country baseline lifespan, LEV horizon, and wealth context in one view.">
+<meta property="og:description" content="Compare dated World Bank population, GDP at purchasing power parity, and male and female life expectancy at birth across 200 economies.">
 <meta property="og:url" content="https://wealthmeter.xyz/atlas.html">
 <meta property="og:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Longevity Atlas | WEALTHMETER.XYZ">
-<meta name="twitter:description" content="Explore baseline lifespan, LEV horizon, and wealth concentration context by country.">
+<meta name="twitter:description" content="Compare dated World Bank population, GDP at purchasing power parity, and male and female life expectancy at birth across 200 economies.">
 <meta name="twitter:image" content="https://wealthmeter.xyz/images/og-networth-calculator.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -468,22 +468,22 @@ h1 {
 <main class="wrap">
   <section class="hero">
     <span class="kicker">Atlas</span>
-    <h1>Longevity Atlas: Time Horizon Meets Wealth Context</h1>
-    <p>This view complements Global Explorer. Explorer shows distribution and concentration; Atlas adds life-horizon context with baseline lifespan vs LEV planning bands so you can evaluate wealth durability over time, not just by percentile.</p>
+    <h1>Longevity Atlas: Country Health and Wealth Context</h1>
+    <p>Compare dated national observations. Life expectancy at birth describes a population, not your personal lifespan or a future treatment outcome. Snapshot compiled 16 September 2026; observation years appear beside each measure.</p>
 
     <div class="data-row">
       <div class="data-pill"><span class="label">Coverage</span><span class="value" id="coverageVal">59 countries</span></div>
-      <div class="data-pill"><span class="label">Lifespan Baseline</span><span class="value">UN WPP + World Bank</span></div>
-      <div class="data-pill"><span class="label">Wealth Overlay</span><span class="value">UBS 2025 + WID</span></div>
+      <div class="data-pill"><span class="label">Health observations</span><span class="value">UN WPP + World Bank</span></div>
+      <div class="data-pill"><span class="label">Price and income context</span><span class="value">World Bank WDI</span></div>
     </div>
 
     <div class="filters">
       <input id="searchInput" type="search" placeholder="Search country (e.g., Japan, Brazil, Qatar)" aria-label="Search country">
       <select id="sortSelect" aria-label="Sort countries">
         <option value="alpha">Sort: A-Z</option>
-        <option value="gain_desc">Sort: LEV Gain (High-Low)</option>
-        <option value="base_desc">Sort: Baseline Lifespan (High-Low)</option>
-        <option value="lev_desc">Sort: LEV Horizon (High-Low)</option>
+
+        <option value="base_desc">Sort: Male life expectancy (High-Low)</option>
+        <option value="female_desc">Sort: Female life expectancy (High-Low)</option>
         <option value="gdp_desc">Sort: GDP / Cap PPP (High-Low)</option>
       </select>
     </div>
@@ -504,24 +504,24 @@ h1 {
       </div>
 
       <div class="metrics">
-        <div class="metric"><div class="label">Population</div><div class="value" id="dPop">339.7M</div><div class="sub">Resident estimate</div></div>
-        <div class="metric"><div class="label">GDP / Cap (PPP)</div><div class="value" id="dGdp">$89,400</div><div class="sub">USD equivalent</div></div>
-        <div class="metric"><div class="label">Baseline Midpoint</div><div class="value" id="dBaseMid">79.5y</div><div class="sub" id="dBaseRange">77M / 82F</div></div>
-        <div class="metric"><div class="label">LEV Midpoint</div><div class="value" id="dLevMid">97.5y</div><div class="sub" id="dLevRange">95M / 100F</div></div>
-        <div class="metric"><div class="label">Horizon Gain</div><div class="value" id="dGain">+18.0y</div><div class="sub">LEV midpoint - baseline</div></div>
+        <div class="metric"><div class="label">Population</div><div class="value" id="dPop">Loading…</div><div class="sub">Resident estimate</div></div>
+        <div class="metric"><div class="label">GDP / Cap (PPP)</div><div class="value" id="dGdp">Loading…</div><div class="sub">Current international dollars; PPP</div></div>
+        <div class="metric"><div class="label">Male life expectancy</div><div class="value" id="dBaseMid">Loading…</div><div class="sub" id="dBaseRange">Loading…</div></div>
+        <div class="metric"><div class="label">Female life expectancy</div><div class="value" id="dLevMid">Loading…</div><div class="sub" id="dLevRange">Loading…</div></div>
+        <div class="metric"><div class="label">Female − male difference</div><div class="value" id="dGain">Loading…</div><div class="sub">Descriptive difference, not a treatment gain</div></div>
       </div>
 
       <div class="horizon-card">
-        <div class="horizon-title">Male/Female Horizon Bridge</div>
+        <div class="horizon-title">Life expectancy at birth (0–100 year scale)</div>
         <div class="h-row">
           <div class="h-label">Male</div>
-          <div class="track"><div class="bar-base" id="barMaleBase"></div><div class="bar-lev" id="barMaleLev"></div></div>
-          <div class="h-val" id="maleVals">77y → 95y</div>
+          <div class="track"><div class="bar-base" id="barMaleBase"></div></div>
+          <div class="h-val" id="maleVals">Loading…</div>
         </div>
         <div class="h-row">
           <div class="h-label">Female</div>
-          <div class="track"><div class="bar-base" id="barFemBase"></div><div class="bar-lev" id="barFemLev"></div></div>
-          <div class="h-val" id="femVals">82y → 100y</div>
+          <div class="track"><div class="bar-base" id="barFemBase"></div></div>
+          <div class="h-val" id="femVals">Loading…</div>
         </div>
       </div>
 
@@ -537,11 +537,11 @@ h1 {
           <strong>Sources and Method</strong>
           <ul>
             <li><a href="https://www.un.org/development/desa/pd/content/World-Population-Prospects-2024" target="_blank" rel="noopener noreferrer">UN World Population Prospects 2024 revision (latest available)</a></li>
-            <li><a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN" target="_blank" rel="noopener noreferrer">World Bank: Life Expectancy at Birth</a></li>
+            <li><a href="https://data.worldbank.org/indicator/SP.DYN.LE00.MA.IN" target="_blank" rel="noopener noreferrer">World Bank: Male life expectancy at birth</a></li>
             <li><a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD" target="_blank" rel="noopener noreferrer">World Bank: GDP per Capita, PPP</a></li>
-            <li><a href="https://www.ubs.com/global/en/media/display-page-ndp/en-20250618-gwr-2025.html" target="_blank" rel="noopener noreferrer">UBS Global Wealth Report 2025</a> + <a href="https://wid.world/" target="_blank" rel="noopener noreferrer">WID</a> for wealth overlay</li>
+            <li><a href="/methodology.html#legacy-review">WealthMeter methodology and observation dates</a></li>
           </ul>
-          <p style="margin-top:.45rem;">LEV values are planning scenarios, not clinical forecasts.</p>
+          <p style="margin-top:.45rem;">No LEV extension is estimated. Existing country observations do not predict future therapies or an individual lifespan.</p>
         </div>
       </div>
     </article>
@@ -550,259 +550,24 @@ h1 {
 
 
 
-<script>
-const ATLAS_DB = [
-  { code: 'USA', region: 'Americas', flag: '🇺🇸', name: 'United States', capital: 'Washington D.C.', pop: '339.7M', gdp: '$89,400', life: '77M / 82F', lev: '95M / 100F' },
-  { code: 'CAN', region: 'Americas', flag: '🇨🇦', name: 'Canada', capital: 'Ottawa', pop: '39.3M', gdp: '$60,495', life: '80M / 84F', lev: '98M / 102F' },
-  { code: 'MEX', region: 'Americas', flag: '🇲🇽', name: 'Mexico', capital: 'Mexico City', pop: '128.5M', gdp: '$23,817', life: '73M / 79F', lev: '89M / 95F' },
-  { code: 'BRA', region: 'Americas', flag: '🇧🇷', name: 'Brazil', capital: 'Brasilia', pop: '216.4M', gdp: '$18,686', life: '73M / 80F', lev: '89M / 96F' },
-  { code: 'ARG', region: 'Americas', flag: '🇦🇷', name: 'Argentina', capital: 'Buenos Aires', pop: '46.2M', gdp: '$28,587', life: '74M / 81F', lev: '90M / 97F' },
-  { code: 'CHL', region: 'Americas', flag: '🇨🇱', name: 'Chile', capital: 'Santiago', pop: '19.5M', gdp: '$30,200', life: '78M / 83F', lev: '94M / 99F' },
-  { code: 'COL', region: 'Americas', flag: '🇨🇴', name: 'Colombia', capital: 'Bogota', pop: '52.1M', gdp: '$21,449', life: '74M / 80F', lev: '90M / 96F' },
-  { code: 'PER', region: 'Americas', flag: '🇵🇪', name: 'Peru', capital: 'Lima', pop: '34.4M', gdp: '$17,876', life: '75M / 80F', lev: '91M / 96F' },
-  { code: 'URY', region: 'Americas', flag: '🇺🇾', name: 'Uruguay', capital: 'Montevideo', pop: '3.4M', gdp: '$27,431', life: '74M / 81F', lev: '90M / 97F' },
-  { code: 'GBR', region: 'Europe', flag: '🇬🇧', name: 'United Kingdom', capital: 'London', pop: '67.7M', gdp: '$54,603', life: '79M / 83F', lev: '97M / 101F' },
-  { code: 'FRA', region: 'Europe', flag: '🇫🇷', name: 'France', capital: 'Paris', pop: '68.0M', gdp: '$56,036', life: '80M / 86F', lev: '98M / 104F' },
-  { code: 'ITA', region: 'Europe', flag: '🇮🇹', name: 'Italy', capital: 'Rome', pop: '58.8M', gdp: '$52,880', life: '81M / 85F', lev: '99M / 103F' },
-  { code: 'DEU', region: 'Europe', flag: '🇩🇪', name: 'Germany', capital: 'Berlin', pop: '84.5M', gdp: '$63,722', life: '79M / 84F', lev: '97M / 102F' },
-  { code: 'ESP', region: 'Europe', flag: '🇪🇸', name: 'Spain', capital: 'Madrid', pop: '47.9M', gdp: '$49,567', life: '80M / 86F', lev: '98M / 104F' },
-  { code: 'NLD', region: 'Europe', flag: '🇳🇱', name: 'Netherlands', capital: 'Amsterdam', pop: '17.9M', gdp: '$73,158', life: '80M / 84F', lev: '98M / 102F' },
-  { code: 'BEL', region: 'Europe', flag: '🇧🇪', name: 'Belgium', capital: 'Brussels', pop: '11.7M', gdp: '$63,627', life: '79M / 84F', lev: '97M / 102F' },
-  { code: 'AUT', region: 'Europe', flag: '🇦🇹', name: 'Austria', capital: 'Vienna', pop: '9.1M', gdp: '$71,231', life: '79M / 84F', lev: '97M / 102F' },
-  { code: 'CHE', region: 'Europe', flag: '🇨🇭', name: 'Switzerland', capital: 'Bern', pop: '8.8M', gdp: '$89,537', life: '82M / 85F', lev: '100M / 103F' },
-  { code: 'PRT', region: 'Europe', flag: '🇵🇹', name: 'Portugal', capital: 'Lisbon', pop: '10.5M', gdp: '$44,629', life: '79M / 85F', lev: '97M / 103F' },
-  { code: 'IRL', region: 'Europe', flag: '🇮🇪', name: 'Ireland', capital: 'Dublin', pop: '5.2M', gdp: '$126,905', life: '80M / 84F', lev: '98M / 102F' },
-  { code: 'SWE', region: 'Europe', flag: '🇸🇪', name: 'Sweden', capital: 'Stockholm', pop: '10.6M', gdp: '$68,394', life: '81M / 85F', lev: '99M / 103F' },
-  { code: 'NOR', region: 'Europe', flag: '🇳🇴', name: 'Norway', capital: 'Oslo', pop: '5.6M', gdp: '$106,149', life: '81M / 85F', lev: '99M / 103F' },
-  { code: 'DNK', region: 'Europe', flag: '🇩🇰', name: 'Denmark', capital: 'Copenhagen', pop: '5.9M', gdp: '$77,641', life: '79M / 83F', lev: '97M / 101F' },
-  { code: 'FIN', region: 'Europe', flag: '🇫🇮', name: 'Finland', capital: 'Helsinki', pop: '5.6M', gdp: '$60,851', life: '79M / 85F', lev: '97M / 103F' },
-  { code: 'POL', region: 'Europe', flag: '🇵🇱', name: 'Poland', capital: 'Warsaw', pop: '38.0M', gdp: '$48,034', life: '74M / 82F', lev: '90M / 98F' },
-  { code: 'CZE', region: 'Europe', flag: '🇨🇿', name: 'Czech Republic', capital: 'Prague', pop: '10.8M', gdp: '$52,305', life: '76M / 82F', lev: '92M / 98F' },
-  { code: 'GRC', region: 'Europe', flag: '🇬🇷', name: 'Greece', capital: 'Athens', pop: '10.3M', gdp: '$41,124', life: '78M / 83F', lev: '94M / 99F' },
-  { code: 'RUS', region: 'Europe', flag: '🇷🇺', name: 'Russia', capital: 'Moscow', pop: '144.4M', gdp: '$35,310', life: '68M / 78F', lev: '84M / 94F' },
-  { code: 'UKR', region: 'Europe', flag: '🇺🇦', name: 'Ukraine', capital: 'Kyiv', pop: '37.0M', gdp: '$18,043', life: '67M / 77F', lev: '83M / 93F' },
-  { code: 'CHN', region: 'Asia-Pacific', flag: '🇨🇳', name: 'China', capital: 'Beijing', pop: '1,425M', gdp: '$25,015', life: '75M / 80F', lev: '91M / 96F' },
-  { code: 'IND', region: 'Asia-Pacific', flag: '🇮🇳', name: 'India', capital: 'New Delhi', pop: '1,428M', gdp: '$10,123', life: '71M / 74F', lev: '87M / 90F' },
-  { code: 'JPN', region: 'Asia-Pacific', flag: '🇯🇵', name: 'Japan', capital: 'Tokyo', pop: '123.3M', gdp: '$54,184', life: '82M / 88F', lev: '100M / 106F' },
-  { code: 'KOR', region: 'Asia-Pacific', flag: '🇰🇷', name: 'South Korea', capital: 'Seoul', pop: '51.7M', gdp: '$56,709', life: '80M / 86F', lev: '98M / 104F' },
-  { code: 'TWN', region: 'Asia-Pacific', flag: '🇹🇼', name: 'Taiwan', capital: 'Taipei', pop: '23.9M', gdp: '$76,858', life: '78M / 84F', lev: '96M / 102F' },
-  { code: 'SGP', region: 'Asia-Pacific', flag: '🇸🇬', name: 'Singapore', capital: 'Singapore', pop: '5.9M', gdp: '$132,570', life: '81M / 86F', lev: '99M / 104F' },
-  { code: 'HKG', region: 'Asia-Pacific', flag: '🇭🇰', name: 'Hong Kong', capital: 'Hong Kong', pop: '7.5M', gdp: '$73,600', life: '82M / 88F', lev: '100M / 106F' },
-  { code: 'THA', region: 'Asia-Pacific', flag: '🇹🇭', name: 'Thailand', capital: 'Bangkok', pop: '71.8M', gdp: '$22,508', life: '74M / 81F', lev: '90M / 97F' },
-  { code: 'VNM', region: 'Asia-Pacific', flag: '🇻🇳', name: 'Vietnam', capital: 'Hanoi', pop: '98.9M', gdp: '$15,520', life: '72M / 80F', lev: '88M / 96F' },
-  { code: 'PHL', region: 'Asia-Pacific', flag: '🇵🇭', name: 'Philippines', capital: 'Manila', pop: '117.3M', gdp: '$11,384', life: '68M / 75F', lev: '84M / 91F' },
-  { code: 'MYS', region: 'Asia-Pacific', flag: '🇲🇾', name: 'Malaysia', capital: 'Kuala Lumpur', pop: '34.3M', gdp: '$38,878', life: '74M / 78F', lev: '90M / 94F' },
-  { code: 'IDN', region: 'Asia-Pacific', flag: '🇮🇩', name: 'Indonesia', capital: 'Jakarta', pop: '277.5M', gdp: '$15,855', life: '70M / 74F', lev: '86M / 90F' },
-  { code: 'PAK', region: 'Asia-Pacific', flag: '🇵🇰', name: 'Pakistan', capital: 'Islamabad', pop: '240.5M', gdp: '$6,952', life: '66M / 70F', lev: '82M / 86F' },
-  { code: 'BGD', region: 'Asia-Pacific', flag: '🇧🇩', name: 'Bangladesh', capital: 'Dhaka', pop: '173.6M', gdp: '$8,829', life: '72M / 75F', lev: '88M / 91F' },
-  { code: 'AUS', region: 'Oceania', flag: '🇦🇺', name: 'Australia', capital: 'Canberra', pop: '26.6M', gdp: '$71,806', life: '82M / 86F', lev: '100M / 104F' },
-  { code: 'NZL', region: 'Oceania', flag: '🇳🇿', name: 'New Zealand', capital: 'Wellington', pop: '5.2M', gdp: '$56,287', life: '80M / 84F', lev: '98M / 102F' },
-  { code: 'FJI', region: 'Oceania', flag: '🇫🇯', name: 'Fiji', capital: 'Suva', pop: '0.9M', gdp: '$12,300', life: '65M / 69F', lev: '81M / 85F' },
-  { code: 'ARE', region: 'Middle East', flag: '🇦🇪', name: 'UAE', capital: 'Abu Dhabi', pop: '9.5M', gdp: '$88,962', life: '78M / 80F', lev: '94M / 96F' },
-  { code: 'SAU', region: 'Middle East', flag: '🇸🇦', name: 'Saudi Arabia', capital: 'Riyadh', pop: '36.4M', gdp: '$70,332', life: '74M / 77F', lev: '90M / 93F' },
-  { code: 'ISR', region: 'Middle East', flag: '🇮🇱', name: 'Israel', capital: 'Jerusalem', pop: '9.7M', gdp: '$58,270', life: '81M / 84F', lev: '99M / 102F' },
-  { code: 'TUR', region: 'Middle East', flag: '🇹🇷', name: 'Turkey', capital: 'Ankara', pop: '85.8M', gdp: '$42,765', life: '75M / 81F', lev: '91M / 97F' },
-  { code: 'QAT', region: 'Middle East', flag: '🇶🇦', name: 'Qatar', capital: 'Doha', pop: '2.7M', gdp: '$114,000', life: '79M / 82F', lev: '95M / 98F' },
-  { code: 'KWT', region: 'Middle East', flag: '🇰🇼', name: 'Kuwait', capital: 'Kuwait City', pop: '4.3M', gdp: '$51,000', life: '78M / 81F', lev: '94M / 97F' },
-  { code: 'ZAF', region: 'Africa', flag: '🇿🇦', name: 'South Africa', capital: 'Pretoria', pop: '60.6M', gdp: '$16,091', life: '62M / 68F', lev: '78M / 84F' },
-  { code: 'KEN', region: 'Africa', flag: '🇰🇪', name: 'Kenya', capital: 'Nairobi', pop: '55.1M', gdp: '$6,572', life: '64M / 69F', lev: '80M / 85F' },
-  { code: 'NGA', region: 'Africa', flag: '🇳🇬', name: 'Nigeria', capital: 'Abuja', pop: '230.8M', gdp: '$6,281', life: '53M / 55F', lev: '69M / 71F' },
-  { code: 'EGY', region: 'Africa', flag: '🇪🇬', name: 'Egypt', capital: 'Cairo', pop: '112.7M', gdp: '$19,303', life: '70M / 74F', lev: '86M / 90F' },
-  { code: 'MAR', region: 'Africa', flag: '🇲🇦', name: 'Morocco', capital: 'Rabat', pop: '37.8M', gdp: '$11,437', life: '75M / 78F', lev: '91M / 94F' },
-  { code: 'DZA', region: 'Africa', flag: '🇩🇿', name: 'Algeria', capital: 'Algiers', pop: '45.6M', gdp: '$14,227', life: '76M / 78F', lev: '92M / 94F' },
-  { code: 'ETH', region: 'Africa', flag: '🇪🇹', name: 'Ethiopia', capital: 'Addis Ababa', pop: '126.5M', gdp: '$3,700', life: '65M / 69F', lev: '81M / 85F' }
-];
-
-const WEALTH_OVERLAY = {
-  USA:{median:107700,top10:1600000,top1:5800000}, CAN:{median:137000,top10:1100000,top1:3400000}, AUS:{median:260000,top10:1300000,top1:4500000}, CHE:{median:167000,top10:1400000,top1:8500000}, GBR:{median:151000,top10:850000,top1:2800000},
-  DEU:{median:66700,top10:725000,top1:2500000}, FRA:{median:133000,top10:890000,top1:2600000}, ITA:{median:112000,top10:650000,top1:1900000}, ESP:{median:107000,top10:580000,top1:1700000}, NLD:{median:110000,top10:950000,top1:3200000},
-  BEL:{median:230000,top10:820000,top1:2400000}, SWE:{median:90000,top10:650000,top1:2100000}, NOR:{median:117000,top10:750000,top1:2500000}, DNK:{median:95000,top10:670000,top1:2200000}, FIN:{median:89000,top10:580000,top1:1900000},
-  AUT:{median:94000,top10:710000,top1:2300000}, IRL:{median:104000,top10:850000,top1:2900000}, POL:{median:30000,top10:320000,top1:1200000}, PRT:{median:71000,top10:460000,top1:1400000}, GRC:{median:54000,top10:390000,top1:1200000},
-  CZE:{median:41000,top10:380000,top1:1300000}, RUS:{median:12000,top10:180000,top1:950000}, CHN:{median:28000,top10:240000,top1:1800000}, JPN:{median:120000,top10:550000,top1:1500000}, IND:{median:3800,top10:25000,top1:175000},
-  SGP:{median:100000,top10:1100000,top1:3800000}, KOR:{median:72000,top10:480000,top1:1600000}, HKG:{median:150000,top10:1300000,top1:4200000}, NZL:{median:185000,top10:950000,top1:3100000}, THA:{median:12000,top10:95000,top1:580000},
-  MYS:{median:16000,top10:130000,top1:750000}, IDN:{median:7800,top10:56000,top1:380000}, PHL:{median:3600,top10:28000,top1:210000}, VNM:{median:5100,top10:38000,top1:270000}, BRA:{median:4200,top10:80000,top1:450000},
-  MEX:{median:15000,top10:120000,top1:900000}, ARG:{median:8500,top10:95000,top1:620000}, CHL:{median:18000,top10:140000,top1:850000}, COL:{median:6200,top10:65000,top1:420000}, PER:{median:5800,top10:58000,top1:390000},
-  ARE:{median:42000,top10:850000,top1:3500000}, QAT:{median:65000,top10:1100000,top1:4200000}, SAU:{median:28000,top10:420000,top1:1900000}, ISR:{median:89000,top10:690000,top1:2400000}, TUR:{median:8900,top10:95000,top1:580000},
-  ZAF:{median:5200,top10:55000,top1:350000}, EGY:{median:2800,top10:22000,top1:180000}, NGA:{median:1800,top10:18000,top1:150000}, KEN:{median:2100,top10:19000,top1:160000}, MAR:{median:4200,top10:35000,top1:240000}
-};
-
-const REGIONS = ['All', 'Americas', 'Europe', 'Asia-Pacific', 'Oceania', 'Middle East', 'Africa'];
-let state = { region: 'All', sort: 'gain_desc', search: '', selected: 'USA' };
-
-const regionTabsEl = document.getElementById('regionTabs');
-const listEl = document.getElementById('countryList');
-const searchEl = document.getElementById('searchInput');
-const sortEl = document.getElementById('sortSelect');
-
-function parseMoney(str) {
-  return Number(str.replace(/[^0-9.]/g, ''));
+<script>let rows=[],selected='USA',region='All';
+const $=id=>document.getElementById(id);
+const measure=(r,k)=>{const m=r.metrics[k];return Number.isFinite(m?.value)?m.value:null;};
+const formatted=(r,k,unit)=>{const m=r.metrics[k];return Number.isFinite(m?.value)?m.value.toLocaleString('en-US',{maximumFractionDigits:unit==='years'?1:0})+' '+unit+' · '+m.year:'Unavailable';};
+function detail(){const r=rows.find(r=>r.code===selected);if(!r)return;const m=measure(r,'lifeMale'),f=measure(r,'lifeFemale');
+$('dName').textContent=r.name;$('dSub').textContent=r.capital+' · '+r.region;$('dFlag').textContent=r.flag;$('dPop').textContent=formatted(r,'population','people');$('dGdp').textContent=formatted(r,'gdpPpp','international dollars');
+$('dBaseMid').textContent=formatted(r,'lifeMale','years');$('dBaseRange').textContent='Male life expectancy at birth';$('dLevMid').textContent=formatted(r,'lifeFemale','years');$('dLevRange').textContent='Female life expectancy at birth';$('dGain').textContent=m!==null&&f!==null?(f-m).toFixed(1)+' years':'Unavailable';
+$('barMaleBase').style.width=m===null?'0%':Math.max(0,Math.min(100,m))+'%';$('barFemBase').style.width=f===null?'0%':Math.max(0,Math.min(100,f))+'%';$('maleVals').textContent=formatted(r,'lifeMale','years');$('femVals').textContent=formatted(r,'lifeFemale','years');
+$('wealthGrid').textContent='';$('wealthNote').textContent='National life expectancy at birth is not your remaining lifespan. Use a chosen planning horizon with the FIRE or Runway tools. Wealth medians and illustrative tail assumptions are available separately in Wealth Explorer.';
 }
-
-function parseRange(str) {
-  const nums = (str.match(/\d+/g) || []).map(Number);
-  return { male: nums[0] || 0, female: nums[1] || 0 };
-}
-
-function mid(lifeRange) {
-  return (lifeRange.male + lifeRange.female) / 2;
-}
-
-function fmtMoney(num) {
-  return '$' + num.toLocaleString();
-}
-
-function fmtShort(num) {
-  if (num >= 1000000) return '$' + (num / 1000000).toFixed(1) + 'M';
-  if (num >= 1000) return '$' + (num / 1000).toFixed(1) + 'K';
-  return '$' + num.toFixed(0);
-}
-
-function enriched(rec) {
-  const life = parseRange(rec.life);
-  const lev = parseRange(rec.lev);
-  const baseMid = mid(life);
-  const levMid = mid(lev);
-  return {
-    ...rec,
-    lifeMale: life.male,
-    lifeFemale: life.female,
-    levMale: lev.male,
-    levFemale: lev.female,
-    baseMid,
-    levMid,
-    gain: levMid - baseMid,
-    gdpValue: parseMoney(rec.gdp)
-  };
-}
-
-function filteredData() {
-  let rows = ATLAS_DB.map(enriched);
-  if (state.region !== 'All') rows = rows.filter(r => r.region === state.region);
-  if (state.search.trim()) {
-    const q = state.search.trim().toLowerCase();
-    rows = rows.filter(r => r.name.toLowerCase().includes(q) || r.capital.toLowerCase().includes(q) || r.code.toLowerCase().includes(q));
-  }
-
-  if (state.sort === 'gain_desc') rows.sort((a,b)=>b.gain-a.gain);
-  else if (state.sort === 'base_desc') rows.sort((a,b)=>b.baseMid-a.baseMid);
-  else if (state.sort === 'lev_desc') rows.sort((a,b)=>b.levMid-a.levMid);
-  else if (state.sort === 'gdp_desc') rows.sort((a,b)=>b.gdpValue-a.gdpValue);
-  else rows.sort((a,b)=>a.name.localeCompare(b.name));
-
-  return rows;
-}
-
-function renderRegions() {
-  const counts = REGIONS.reduce((acc, r) => { acc[r] = 0; return acc; }, {});
-  counts.All = ATLAS_DB.length;
-  for (const rec of ATLAS_DB) counts[rec.region] = (counts[rec.region] || 0) + 1;
-
-  regionTabsEl.innerHTML = REGIONS.map(region => {
-    const active = region === state.region ? ' active' : '';
-    const count = counts[region] || 0;
-    return `<button class="region-btn${active}" data-region="${region}">${region} (${count})</button>`;
-  }).join('');
-
-  regionTabsEl.querySelectorAll('.region-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      state.region = btn.dataset.region;
-      renderRegions();
-      renderList();
-    });
-  });
-}
-
-function renderList() {
-  const rows = filteredData();
-  document.getElementById('coverageVal').textContent = rows.length + (rows.length === 1 ? ' country' : ' countries');
-
-  if (!rows.length) {
-    listEl.innerHTML = '<div style="padding:.6rem;color:var(--muted);font-size:.9rem;">No countries found for this filter.</div>';
-    return;
-  }
-
-  if (!rows.some(r => r.code === state.selected)) state.selected = rows[0].code;
-
-  listEl.innerHTML = rows.map(r => {
-    const active = r.code === state.selected ? ' active' : '';
-    return `<button class="country-row${active}" data-code="${r.code}">
-      <div class="top"><span class="name">${r.flag} ${r.name}</span><span class="meta">+${r.gain.toFixed(1)}y</span></div>
-      <div class="sub">Base ${r.baseMid.toFixed(1)}y · LEV ${r.levMid.toFixed(1)}y · ${r.region}</div>
-    </button>`;
-  }).join('');
-
-  listEl.querySelectorAll('.country-row').forEach(btn => {
-    btn.addEventListener('click', () => {
-      state.selected = btn.dataset.code;
-      renderList();
-      renderDetail();
-    });
-  });
-
-  renderDetail();
-}
-
-function renderWealthOverlay(code) {
-  const target = document.getElementById('wealthGrid');
-  const note = document.getElementById('wealthNote');
-  const w = WEALTH_OVERLAY[code];
-
-  if (!w) {
-    target.innerHTML = '';
-    note.textContent = 'No direct wealth-threshold overlay for this market in the current 50-country distribution model.';
-    return;
-  }
-
-  const ratio = (w.top1 / w.median).toFixed(1);
-  note.textContent = 'Use these thresholds with lifespan horizon to stress-test whether current asset plans can sustain a longer life runway.';
-
-  target.innerHTML = `
-    <div class="w-node"><span class="k">Median</span><span class="v">${fmtShort(w.median)}</span></div>
-    <div class="w-node"><span class="k">Top 10%</span><span class="v">${fmtShort(w.top10)}</span></div>
-    <div class="w-node"><span class="k">Top 1%</span><span class="v">${fmtShort(w.top1)}</span></div>
-    <div class="w-node" style="grid-column:1/-1"><span class="k">Top1 / Median</span><span class="v">${ratio}x concentration</span></div>
-  `;
-}
-
-function renderDetail() {
-  const rec = enriched(ATLAS_DB.find(r => r.code === state.selected) || ATLAS_DB[0]);
-  const maxAge = Math.max(110, rec.levMale, rec.levFemale) + 2;
-
-  document.getElementById('dName').textContent = rec.name;
-  document.getElementById('dSub').textContent = rec.capital + ' · ' + rec.region;
-  document.getElementById('dFlag').textContent = rec.flag;
-  document.getElementById('dPop').textContent = rec.pop;
-  document.getElementById('dGdp').textContent = rec.gdp;
-  document.getElementById('dBaseMid').textContent = rec.baseMid.toFixed(1) + 'y';
-  document.getElementById('dBaseRange').textContent = rec.life;
-  document.getElementById('dLevMid').textContent = rec.levMid.toFixed(1) + 'y';
-  document.getElementById('dLevRange').textContent = rec.lev;
-  document.getElementById('dGain').textContent = '+' + rec.gain.toFixed(1) + 'y';
-
-  document.getElementById('barMaleBase').style.width = (rec.lifeMale / maxAge * 100).toFixed(2) + '%';
-  document.getElementById('barMaleLev').style.width = (rec.levMale / maxAge * 100).toFixed(2) + '%';
-  document.getElementById('barFemBase').style.width = (rec.lifeFemale / maxAge * 100).toFixed(2) + '%';
-  document.getElementById('barFemLev').style.width = (rec.levFemale / maxAge * 100).toFixed(2) + '%';
-  document.getElementById('maleVals').textContent = rec.lifeMale + 'y → ' + rec.levMale + 'y';
-  document.getElementById('femVals').textContent = rec.lifeFemale + 'y → ' + rec.levFemale + 'y';
-
-  renderWealthOverlay(rec.code);
-}
-
-searchEl.addEventListener('input', () => {
-  state.search = searchEl.value;
-  renderList();
-});
-
-sortEl.addEventListener('change', () => {
-  state.sort = sortEl.value;
-  renderList();
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-  renderRegions();
-  renderList();
-});
-</script>
+function render(){const query=$('searchInput').value.trim().toLowerCase(),sort=$('sortSelect').value;
+const filtered=rows.filter(r=>(region==='All'||r.region===region)&&(!query||[r.name,r.capital,r.code].some(v=>v.toLowerCase().includes(query))));
+const key=sort==='gdp_desc'?'gdpPpp':sort==='base_desc'?'lifeMale':sort==='female_desc'?'lifeFemale':null;
+filtered.sort((a,b)=>key?((measure(b,key)??-Infinity)-(measure(a,key)??-Infinity)):a.name.localeCompare(b.name));
+$('coverageVal').textContent=filtered.length+' countries';if(!filtered.length){$('countryList').textContent='No countries match.';return;}
+if(!filtered.some(r=>r.code===selected))selected=filtered[0].code;
+$('countryList').replaceChildren(...filtered.map(r=>{const btn=document.createElement('button');btn.className='country-row'+(r.code===selected?' active':'');btn.textContent=r.flag+' '+r.name;btn.onclick=()=>{selected=r.code;render();};return btn;}));detail();}
+$('searchInput').addEventListener('input',render);$('sortSelect').addEventListener('change',render);
+fetch('/data/global-data-atlas.json').then(response=>{if(!response.ok)throw new Error('Data unavailable');return response.json();}).then(data=>{rows=data.countries;const regions=['All',...new Set(rows.map(r=>r.region))];$('regionTabs').replaceChildren(...regions.map(name=>{const button=document.createElement('button');button.className='region-btn';button.textContent=name;button.onclick=()=>{region=name;render();};return button;}));render();}).catch(()=>{$('countryList').textContent='The dated country observations could not be loaded. Please retry.';});</script>
 </div><footer class="site-footer"><div><b>WealthMeter</b><p>Money, work and the everyday choices that shape a life.</p><p class="disclaimer">General education, not personalized financial, investment, tax or legal advice. WealthMeter and its creators do not guarantee outcomes. Decisions remain the reader’s responsibility; consult an appropriately qualified professional.</p></div><div class="footer-links"><a href="/tools.html">All tools</a><a href="/reports.html">Reports</a><a href="/stories.html">Stories</a><a href="/special-features.html">Special features</a><a href="/newsletter.html">Newsletter</a><a href="/about.html" target="_blank" rel="noopener">About ↗</a><a href="/editorial-policy.html" target="_blank" rel="noopener">Editorial Standards ↗</a><a href="/data-sources.html" target="_blank" rel="noopener">Data Sources ↗</a><a href="/methodology.html" target="_blank" rel="noopener">Methodology ↗</a><a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy ↗</a><a href="/partners.html" target="_blank" rel="noopener">Partners ↗</a><a href="/commercial-policy.html" target="_blank" rel="noopener">Commercial Policy ↗</a><a href="/disclaimer.html" target="_blank" rel="noopener">Disclaimer ↗</a></div></footer><dialog id="mobile-menu" class="mobile-menu" aria-label="Site menu"><div class="dialog-heading"><b>WealthMeter</b><button type="button" data-close>Close ✕</button></div><nav aria-label="Mobile navigation"><details><summary>Stories</summary><article class="quick-story"><a href="/stories/is-working-still-worth-it-after-childcare.html"><img src="/editorial-assets/childcare-1440.webp" srcset="/editorial-assets/childcare-640.webp 640w, /editorial-assets/childcare-1440.webp 1440w" sizes="(max-width:700px) 100vw, 50vw" alt="A mother fastening her young daughter’s backpack outside preschool." width="1440" height="960" loading="lazy"><div><p class="eyebrow">Work &amp; family</p><h3>Is working still worth it after childcare?</h3></div></a></article><article class="quick-story"><a href="/stories/new-cars-average-50-000-you-do-not-have-to-spend-that-much.html"><img src="/editorial-assets/car-1440.webp" srcset="/editorial-assets/car-640.webp 640w, /editorial-assets/car-1440.webp 1440w" sizes="(max-width:700px) 100vw, 50vw" alt="A woman comparing a compact car with a salesperson in a dealership lot." width="1440" height="960" loading="lazy"><div><p class="eyebrow">Spending</p><h3>New cars average $50,000. You do not have to spend that much</h3></div></a></article><article class="quick-story"><a href="/stories/should-you-pay-off-that-cheap-mortgage.html"><img src="/editorial-assets/money-1440.webp" srcset="/editorial-assets/money-640.webp 640w, /editorial-assets/money-1440.webp 1440w" sizes="(max-width:700px) 100vw, 50vw" alt="Two adults discussing household finances at a kitchen table." width="1440" height="960" loading="lazy"><div><p class="eyebrow">Home &amp; money</p><h3>Should you pay off that cheap mortgage?</h3></div></a></article><article class="quick-story"><a href="/stories/that-average-401-k-balance-may-be-misleading-you.html"><img src="/editorial-assets/freelance-1440.webp" srcset="/editorial-assets/freelance-640.webp 640w, /editorial-assets/freelance-1440.webp 1440w" sizes="(max-width:700px) 100vw, 50vw" alt="A man working at a laptop and notebook in a small studio." width="1440" height="960" loading="lazy"><div><p class="eyebrow">Retirement</p><h3>That “average” 401(k) balance may be misleading you</h3></div></a></article><article class="quick-story"><a href="/stories/should-your-adult-child-pay-rent-at-home.html"><img src="/editorial-assets/family-1440.webp" srcset="/editorial-assets/family-640.webp 640w, /editorial-assets/family-1440.webp 1440w" sizes="(max-width:700px) 100vw, 50vw" alt="Parents welcoming an adult son carrying a moving box." width="1440" height="960" loading="lazy"><div><p class="eyebrow">Work &amp; family</p><h3>Should your adult child pay rent at home?</h3></div></a></article><article class="quick-story"><a href="/stories/her-first-job-does-not-need-a-degree-should-she-take-it.html"><img src="/editorial-assets/graduate-1440.webp" srcset="/editorial-assets/graduate-640.webp 640w, /editorial-assets/graduate-1440.webp 1440w" sizes="(max-width:700px) 100vw, 50vw" alt="A young woman preparing a job application at her apartment table." width="1440" height="960" loading="lazy"><div><p class="eyebrow">Work &amp; family</p><h3>Her first job does not need a degree. Should she take it?</h3></div></a></article><a href="/stories.html">All stories →</a></details><details><summary>Tools & calculators</summary><details class="mobile-group"><summary>Rank</summary><a href="/calculator.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v17h17M8 16v-4m5 4V8m5 8V5"/></svg><span class="menu-title">Global Wealth Rank</span></a><a href="/us-household-wealth.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h1m3 0h1m3 0h1M8 15h1m3 0h1m3 0h1M8 18h1m3 0h1m3 0h1"/></svg><span class="menu-title">U.S. Household Wealth</span></a><a href="/global_ranker.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v17h17M8 16v-4m5 4V8m5 8V5"/></svg><span class="menu-title">Country-Specific Rank</span></a><a href="/income_ranker.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v17h17M8 16v-4m5 4V8m5 8V5"/></svg><span class="menu-title">Income Percentile</span></a></details><details class="mobile-group"><summary>Rate</summary><a href="/networth.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h1m3 0h1m3 0h1M8 15h1m3 0h1m3 0h1M8 18h1m3 0h1m3 0h1"/></svg><span class="menu-title">Net Worth Calibration</span></a><a href="/fire_timeline.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h1m3 0h1m3 0h1M8 15h1m3 0h1m3 0h1M8 18h1m3 0h1m3 0h1"/></svg><span class="menu-title">FIRE Timeline Planner</span></a><a href="/purchasing-power.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h1m3 0h1m3 0h1M8 15h1m3 0h1m3 0h1M8 18h1m3 0h1m3 0h1"/></svg><span class="menu-title">FIRE &amp; Cost of Living</span></a><a href="/portfolio_alpha.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v17h17M8 16v-4m5 4V8m5 8V5"/></svg><span class="menu-title">Portfolio Alpha Simulator</span></a><a href="/runway_lab.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6m-5 0v6L4 19a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L14 9V3M7 15h10"/></svg><span class="menu-title">Financial Runway Lab</span></a></details><details class="mobile-group"><summary>Analyze</summary><a href="/global_explorer.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v17h17M8 16v-4m5 4V8m5 8V5"/></svg><span class="menu-title">Wealth Explorer</span></a><a href="/live-better-for-less.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h1m3 0h1m3 0h1M8 15h1m3 0h1m3 0h1M8 18h1m3 0h1m3 0h1"/></svg><span class="menu-title">Live Better for Less</span></a><a href="/lifestyle-abroad.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-6 6-6 12 0 18 6-6 6-12 0-18Z"/></svg><span class="menu-title">Lifestyle Abroad</span></a><a href="/country-systems-atlas.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-6 6-6 12 0 18 6-6 6-12 0-18Z"/></svg><span class="menu-title">Country Systems Atlas</span></a><a href="/atlas.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-6 6-6 12 0 18 6-6 6-12 0-18Z"/></svg><span class="menu-title">Longevity Atlas</span></a><a href="/data-lab.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6m-5 0v6L4 19a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L14 9V3M7 15h10"/></svg><span class="menu-title">Data Lab</span></a><a href="/long-ladder.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-6 6-6 12 0 18 6-6 6-12 0-18Z"/></svg><span class="menu-title">The Long Ladder</span></a><a href="/wealth-briefs.html"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6m-5 0v6L4 19a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L14 9V3M7 15h10"/></svg><span class="menu-title">Wealth Briefs</span></a></details><a href="/tools.html">All tools →</a></details><details><summary>Reports</summary><a href="/report-wealth-thresholds.html" target="_blank" rel="noopener"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5Z"/><path d="M14 3v5h5M8 12h8m-8 4h6"/></svg><span class="menu-title">Wealth Thresholds Report ↗</span></a><a href="/report-velocity-of-capital.html" target="_blank" rel="noopener"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5Z"/><path d="M14 3v5h5M8 12h8m-8 4h6"/></svg><span class="menu-title">The Velocity of Capital ↗</span></a><a href="/report-geography-global-wealth.html" target="_blank" rel="noopener"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5Z"/><path d="M14 3v5h5M8 12h8m-8 4h6"/></svg><span class="menu-title">The Geography of Global Wealth ↗</span></a></details><details><summary>Longform</summary><a href="/the-top-rung-moved-what-the-fed-says-about-the-0-1-percent-and-where-you-stand.html" target="_blank" rel="noopener">The Top Rung Moved: What the Fed Says About the 0.1% and Where You Stand<span>↗</span></a><a href="/when-to-adjust-tax-withholding.html" target="_blank" rel="noopener">When to Adjust Tax Withholding Instead of Waiting for a Refund<span>↗</span></a><a href="/medicare-drug-monthly-payment-plan.html" target="_blank" rel="noopener">Medicare Drug Bills: What the Monthly Payment Plan Changes<span>↗</span></a><a href="/2026-hsa-limit-and-deductible-test.html" target="_blank" rel="noopener">The 2026 HSA Limit and the Deductible Test<span>↗</span></a><a href="/credit-freeze-when-to-use-and-lift.html" target="_blank" rel="noopener">A Credit Freeze Is Free: When to Use One and How to Lift It<span>↗</span></a><a href="/joint-bank-account-fdic-coverage.html" target="_blank" rel="noopener">Is Your Joint Bank Account Fully Insured?<span>↗</span></a><a href="/2026-retirement-catch-up-ages-60-to-63.html" target="_blank" rel="noopener">The 2026 Retirement Catch-Up Window at Ages 60 to 63<span>↗</span></a><a href="/emergency-funds-need-a-cash-flow-test-not-a-rule-of-thumb.html" target="_blank" rel="noopener">Emergency Funds Need a Cash-Flow Test, Not a Rule of Thumb<span>↗</span></a><a href="/job-loss-hurts-more-when-benefits-are-not-portable.html" target="_blank" rel="noopener">Job Loss Hurts More When Benefits Are Not Portable<span>↗</span></a><a href="/disability-insurance-leaves-many-paychecks-unprotected.html" target="_blank" rel="noopener">Disability Insurance Leaves Many Paychecks Unprotected<span>↗</span></a><a href="/how-insurance-deductibles-become-a-household-balance-sheet-shock.html" target="_blank" rel="noopener">How Insurance Deductibles Become a Household Balance-Sheet Shock<span>↗</span></a><a href="/america-is-second-by-average-wealth-fifteenth-by-median-wealth.html" target="_blank" rel="noopener">America Is 2nd by Average Wealth, 15th by Median Wealth<span>↗</span></a></details><details><summary>Special features</summary><a href="/long-ladder.html" target="_blank" rel="noopener"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-6 6-6 12 0 18 6-6 6-12 0-18Z"/></svg><span class="feature-menu-copy"><strong>The Long Ladder</strong><small>An interactive visual journey through the global wealth ladder and the opportunities associated with different wealth levels.</small></span><span>↗</span></a><a href="/historical-return-windows.html" target="_blank" rel="noopener"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h1m3 0h1m3 0h1M8 15h1m3 0h1m3 0h1M8 18h1m3 0h1m3 0h1"/></svg><span class="feature-menu-copy"><strong>Historical Return Windows</strong><small>Compare stocks, bonds, bills and other assets across different holding periods using Damodaran’s 1928–2025 U.S. data.</small></span><span>↗</span></a><a href="/live-better-for-less.html" target="_blank" rel="noopener"><svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h1m3 0h1m3 0h1M8 15h1m3 0h1m3 0h1M8 18h1m3 0h1m3 0h1"/></svg><span class="feature-menu-copy"><strong>Live Better for Less</strong><small>Find lower-cost countries that meet your chosen standards for health, essential services, connectivity and safety.</small></span><span>↗</span></a><a href="/special-features.html">All special features →</a></details><a href="/newsletter.html">Newsletter</a><a class="sister-site" href="https://lifemeter.xyz/">LifeMeter ↗</a></nav></dialog></body>
 </html>

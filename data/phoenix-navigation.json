@@ -124,11 +124,11 @@
         },
         {
           "href": "/global_ranker",
-          "title": "Country-Specific Rank"
+          "title": "Country Rank Scenarios"
         },
         {
           "href": "/income_ranker",
-          "title": "Income Percentile"
+          "title": "Income Percentile Scenarios"
         }
       ]
     },

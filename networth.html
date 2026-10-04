@@ -441,7 +441,7 @@
 
 <div class="container">
     <div class="page-header">
-        <h1 class="page-title">Net Worth Calculator</h1>
+        <h1 class="page-title">Net Worth Calculator</h1><aside class="model-review-note" style="padding:18px;margin:16px 0;border:1px solid var(--line,#888);border-radius:12px;line-height:1.65"><strong>Assets minus liabilities</strong><p>Enter nonnegative component amounts; blank fields count as zero. A negative total net worth is valid when liabilities exceed assets. Property and other illiquid assets are included in net worth but are not automatically available spending capital.</p><a href="/methodology.html#legacy-review">Calculation methods and limitations →</a></aside>
         <p class="page-subtitle">Calculate your total net worth by adding up your assets and subtracting your liabilities</p>
     </div>
 
@@ -455,7 +455,7 @@
             <label for="cash">Cash & Savings</label>
             <div class="input-wrapper">
                 <span class="currency-symbol">$</span>
-                <input type="number" id="cash" placeholder="0" min="0" step="100">
+                <input type="number" id="cash" placeholder="0" min="0" step="any">
             </div>
         </div>
 
@@ -463,7 +463,7 @@
             <label for="investments">Investments (Stocks, Bonds, Retirement Accounts)</label>
             <div class="input-wrapper">
                 <span class="currency-symbol">$</span>
-                <input type="number" id="investments" placeholder="0" min="0" step="100">
+                <input type="number" id="investments" placeholder="0" min="0" step="any">
             </div>
         </div>
 
@@ -471,7 +471,7 @@
             <label for="property">Real Estate (Home, Land, Rental Properties)</label>
             <div class="input-wrapper">
                 <span class="currency-symbol">$</span>
-                <input type="number" id="property" placeholder="0" min="0" step="1000">
+                <input type="number" id="property" placeholder="0" min="0" step="any">
             </div>
         </div>
 
@@ -479,7 +479,7 @@
             <label for="vehicles">Vehicles (Cars, Boats, etc.)</label>
             <div class="input-wrapper">
                 <span class="currency-symbol">$</span>
-                <input type="number" id="vehicles" placeholder="0" min="0" step="500">
+                <input type="number" id="vehicles" placeholder="0" min="0" step="any">
             </div>
         </div>
 
@@ -487,7 +487,7 @@
             <label for="other-assets">Other Assets (Jewelry, Art, Business Value, etc.)</label>
             <div class="input-wrapper">
                 <span class="currency-symbol">$</span>
-                <input type="number" id="other-assets" placeholder="0" min="0" step="100">
+                <input type="number" id="other-assets" placeholder="0" min="0" step="any">
             </div>
         </div>
 
@@ -502,7 +502,7 @@
             <label for="mortgage">Mortgage Balance</label>
             <div class="input-wrapper">
                 <span class="currency-symbol">$</span>
-                <input type="number" id="mortgage" placeholder="0" min="0" step="1000">
+                <input type="number" id="mortgage" placeholder="0" min="0" step="any">
             </div>
         </div>
 
@@ -510,7 +510,7 @@
             <label for="loans">Personal Loans, Student Loans</label>
             <div class="input-wrapper">
                 <span class="currency-symbol">$</span>
-                <input type="number" id="loans" placeholder="0" min="0" step="100">
+                <input type="number" id="loans" placeholder="0" min="0" step="any">
             </div>
         </div>
 
@@ -518,7 +518,7 @@
             <label for="credit-cards">Credit Card Debt</label>
             <div class="input-wrapper">
                 <span class="currency-symbol">$</span>
-                <input type="number" id="credit-cards" placeholder="0" min="0" step="10">
+                <input type="number" id="credit-cards" placeholder="0" min="0" step="any">
             </div>
         </div>
 
@@ -526,7 +526,7 @@
             <label for="other-liabilities">Other Debts</label>
             <div class="input-wrapper">
                 <span class="currency-symbol">$</span>
-                <input type="number" id="other-liabilities" placeholder="0" min="0" step="100">
+                <input type="number" id="other-liabilities" placeholder="0" min="0" step="any">
             </div>
         </div>
     </div>
@@ -587,6 +587,8 @@
     }
 
     function calculateNetWorth() {
+        for(const el of inputs){if(el.validity.badInput || (el.value.trim()!=='' && (!Number.isFinite(Number(el.value)) || Number(el.value)<0))){el.reportValidity();netWorthDisplay.textContent='Correct input';totalAssetsDisplay.textContent='—';totalLiabilitiesDisplay.textContent='—';return;}}
+
         // Calculate total assets
         const totalAssets =
             (parseFloat(cashInput.value) || 0) +

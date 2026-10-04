@@ -18,7 +18,7 @@
     const [v1,n1]=ANCHORS[ANCHORS.length-2],[v2,n2]=ANCHORS[ANCHORS.length-1];
     return Math.max(1,n2*Math.pow(value/v2,(Math.log(n2)-Math.log(n1))/(Math.log(v2)-Math.log(v1))));
   }
-  function position(value){if(value<1e4)return{range:true,low:2226001,high:ADULTS};const rank=Math.max(1,Math.round(interpolateRank(value)));return{range:false,rank,percentile:(1-rank/ADULTS)*100,top:rank/ADULTS*100};}
+  function position(value){if(value<1e4)return{range:true,low:2226000001,high:ADULTS};const rank=Math.max(1,Math.round(interpolateRank(value)));return{range:false,rank,percentile:(1-rank/ADULTS)*100,top:rank/ADULTS*100};}
   function event(name){
     const payload={event:name,widget:state.widget,partner:state.partner,campaign:state.campaign,token:state.token,hostOrigin};
     if(typeof window.gtag==="function")window.gtag("event",name,{widget_id:state.widget,distribution_partner:state.partner,distribution_campaign:state.campaign});

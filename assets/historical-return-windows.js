@@ -276,6 +276,7 @@
     if (!Number.isFinite(input.balance) || input.balance < 0 || input.balance > 100000000) return 'Enter a starting balance between 0 and 100,000,000.';
     if (!Number.isFinite(input.monthly) || input.monthly < 0 || input.monthly > 1000000) return 'Enter a monthly contribution between 0 and 1,000,000.';
     if (input.balance + input.monthly <= 0) return 'Enter a starting balance or contribution above zero.';
+    if ([input.stocks,input.bonds].some(value=>!Number.isFinite(value)||value<0||value>100)) return 'Each asset weight must be a finite percentage between 0 and 100.';
     if (input.stocks + input.bonds > 100) return 'Stocks and bonds cannot exceed 100% together.';
     return '';
   }

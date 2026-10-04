@@ -317,7 +317,7 @@
     function calculateHousehold(){
         const wealthInput = document.getElementById('householdWealth');
         const rawWealth = wealthInput.value.trim();
-        const wealth = Number(rawWealth);
+        const wealth = Math.round(Number(rawWealth));
         if (rawWealth==='' || !Number.isFinite(wealth)) {
             document.getElementById('wealthError').style.display='block';
             wealthInput.focus();
@@ -327,7 +327,7 @@
         const group = BENCHMARKS[document.getElementById('benchmark').value];
         let binIndex,bandLabel,lower,upper,richerLow,richerHigh,bandShare,model;
         if(wealth>=500_000){
-            const tail=SCF_UPPER_TAIL.find(bin=>wealth>=bin.min&&wealth<=bin.max);
+            const tail=SCF_UPPER_TAIL.find((bin,i)=>wealth>=bin.min&&(i===SCF_UPPER_TAIL.length-1||wealth<SCF_UPPER_TAIL[i+1].min));
             const censusTopShare=group.p[8]/100;
             const survivalAtLower=censusTopShare*tail.lower;
             const survivalAtUpper=censusTopShare*tail.upper;
@@ -358,7 +358,7 @@
             : `${bandShare.toFixed(1)}% of this comparison group is in the same published Census band. Rank 1 represents the wealthiest household. Percentages are rounded in the source table.`;
         document.getElementById('modelNote').innerHTML=model==='hybrid'
             ? '<strong>Hybrid estimate:</strong> Census 2024 establishes the selected group’s share at $500,000 or more. The weighted national Federal Reserve 2022 SCF determines how that upper tier is divided after conversion to 2024 dollars. Census households and SCF families are not identical units. This is a modeled interval, not a published Census rank; uncertainty rises above $100 million.'
-            : '<strong>Published Census interval:</strong> No within-band distribution is assumed below $500,000.';
+            : '<strong>Published Census interval:</strong> Amounts are rounded to the nearest whole dollar for published bands. No within-band distribution is assumed below $500,000.';
         document.getElementById('distribution').innerHTML=group.p.map((v,i)=>`<span class="segment ${i===binIndex?'active':''}" style="flex:${v}" title="${BINS[i].label}: ${v}%"></span>`).join('');
         document.getElementById('shareBand').textContent=bandLabel;
         setFittedMetric('sharePercent',`${formatPercent(lower)}–${formatPercent(upper)}`);

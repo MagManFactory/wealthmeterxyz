@@ -127,7 +127,8 @@
       $("[data-priority-status]").textContent = "Choose at least two priorities before comparing.";
       return;
     }
-    const monthly = Math.max(100, Number($("#monthly-spend").value) || 0);
+    const input=$("#monthly-spend"),monthly=Number(input.value);
+    if(input.value.trim()===''||!Number.isFinite(monthly)||monthly<100||!input.reportValidity()){$("[data-results]").hidden=true;$("[data-priority-status]").textContent="Enter a monthly budget of at least $100.";return;}
     const home = state.rows.find((row) => row.code === $("#home-country").value);
     const floorKey = $("#quality-floor").value;
     if (!home) return;
@@ -185,7 +186,7 @@
       return;
     }
     const top = state.results[0];
-    $("[data-result-hero]").innerHTML = `<div class="lbl-result-kicker">Best balance from ${escapeHtml(state.home.name)}</div><h2><em>${escapeHtml(top.candidate.name)}</em> may cost ${Math.round(top.savingsPct)}% less without breaking your quality floor.</h2><p>${money(state.monthly)} per month at home maps to about <strong>${money(top.required)} per month</strong> using national private-consumption price levels. The destination preserves ${Math.round(top.quality.score)}% of the selected quality benchmark across ${top.quality.available} available measures.</p>`;
+    $("[data-result-hero]").innerHTML = `<div class="lbl-result-kicker">Best balance from ${escapeHtml(state.home.name)}</div><h2><em>${escapeHtml(top.candidate.name)}</em> may cost ${Math.round(top.savingsPct)}% less without breaking your quality floor.</h2><p>${money(state.monthly)} per month at home maps to about <strong>${money(top.required)} per month</strong> using national private-consumption price levels. The destination has an indicator-preservation score of ${Math.round(top.quality.score)}/100 under the selected weights across ${top.quality.available} available measures.</p>`;
     $("[data-summary-strip]").innerHTML = `<div class="lbl-stat"><span>Countries clearing the floor</span><strong>${state.results.length}</strong><small>of ${state.rows.length - 1} alternatives</small></div><div class="lbl-stat"><span>Quality setting</span><strong>${floors[state.floor].label}</strong><small>${state.selectedPriorities.map((id) => metricSpecs[id].label).join(" · ")}</small></div><div class="lbl-stat"><span>Top estimated monthly difference</span><strong>${money(state.monthly - top.required)}</strong><small>national-basket estimate</small></div>`;
     renderFrontier();
     $("[data-shortlist]").innerHTML = state.results.slice(0, 6).map(renderCard).join("");
@@ -240,12 +241,12 @@
 
   function shareText() {
     const top = state.results[0];
-    return `${top.candidate.name} may cost ${Math.round(top.savingsPct)}% less than ${state.home.name} while preserving ${Math.round(top.quality.score)}% of my selected quality floor. Compare the tradeoffs on WealthMeter.`;
+    return `${top.candidate.name} may cost ${Math.round(top.savingsPct)}% less than ${state.home.name} with a ${Math.round(top.quality.score)}/100 indicator-preservation score under my chosen weights. Compare the tradeoffs on WealthMeter.`;
   }
 
   function renderShare() {
     const top = state.results[0];
-    $("[data-share-preview]").innerHTML = `<div class="lbl-share-brand"><strong>WEALTHMETER.XYZ</strong><span>LIVE BETTER FOR LESS</span></div><h3><span>${escapeHtml(top.candidate.name)}</span> may cost ${Math.round(top.savingsPct)}% less.</h3><p>${Math.round(top.quality.score)}% of the selected quality benchmark preserved · ${money(state.monthly)} at home → ${money(top.required)} there</p><div class="lbl-share-foot">National consumption-price and public systems comparison · Price-only screening, not relocation advice · wealthmeter.xyz</div>`;
+    $("[data-share-preview]").innerHTML = `<div class="lbl-share-brand"><strong>WEALTHMETER.XYZ</strong><span>LIVE BETTER FOR LESS</span></div><h3><span>${escapeHtml(top.candidate.name)}</span> may cost ${Math.round(top.savingsPct)}% less.</h3><p>${Math.round(top.quality.score)}/100 indicator-preservation score · ${money(state.monthly)} at home → ${money(top.required)} there</p><div class="lbl-share-foot">National consumption-price and public systems comparison · Price-only screening, not relocation advice · wealthmeter.xyz</div>`;
   }
 
   function openShare(platform) {
@@ -279,7 +280,7 @@
     ctx.fillStyle = "#7dd3fc"; ctx.font = "700 20px Arial"; ctx.fillText("LIVE BETTER FOR LESS", 72, 178);
     ctx.fillStyle = "#facc15"; ctx.font = "800 62px Arial"; ctx.fillText(top.candidate.name, 72, 260, 1020);
     ctx.fillStyle = "#f8fafc"; ctx.font = "800 54px Arial"; ctx.fillText(`may cost ${Math.round(top.savingsPct)}% less`, 72, 330, 1020);
-    ctx.fillStyle = "#cbd5e1"; ctx.font = "600 28px Arial"; ctx.fillText(`${Math.round(top.quality.score)}% of my selected quality benchmark preserved`, 72, 391, 1020);
+    ctx.fillStyle = "#cbd5e1"; ctx.font = "600 28px Arial"; ctx.fillText(`${Math.round(top.quality.score)}/100 indicator-preservation score`, 72, 391, 1020);
     ctx.fillStyle = "rgba(255,255,255,.08)"; ctx.fillRect(72, 430, 1056, 92);
     ctx.fillStyle = "#f8fafc"; ctx.font = "700 25px Arial"; ctx.fillText(`${money(state.monthly)} / month in ${state.home.name}`, 98, 470, 470);
     ctx.fillText(`≈ ${money(top.required)} / month there`, 630, 470, 470);

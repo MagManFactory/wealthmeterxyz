@@ -178,7 +178,7 @@
     const max = Math.max(...numeric, 1);
     const source = provider(metric.sourceId);
     const bars = rows.map(({ code, record }) => {
-      const width = record && Number.isFinite(record.value) ? Math.max(2, (record.value / max) * 100) : 0;
+      const width = record && Number.isFinite(record.value) ? Math.max(0, Math.min(100,(record.value / max) * 100)) : 0;
       return `<div class="comparison-row"><div class="comparison-country">${escapeHtml(countryName(code))}</div><div class="comparison-bar-track" aria-hidden="true"><div class="comparison-bar" style="width:${width.toFixed(1)}%"></div></div><div class="comparison-value">${record ? escapeHtml(formatValue(record)) : 'Unavailable'}<small>${record?.year ? `${record.year} data` : 'No comparable observation'}</small></div></div>`;
     }).join('');
     els.result.innerHTML = `<div class="comparison-heading"><div><div class="result-eyebrow">Country comparison</div><h2>${escapeHtml(metric.label)}</h2></div><p>Bar lengths compare values only within this measure. They are not a composite rank.</p></div><div class="comparison-chart">${bars}</div><div class="comparison-note"><div><h3>What this measures</h3><p>${escapeHtml(metric.definition)}</p></div><div><h3>Source and limit</h3><p>${escapeHtml(metric.caveat || 'Observation years are shown beside each value.')}</p><a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(source.name)} ↗</a></div></div>`;

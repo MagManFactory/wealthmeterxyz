@@ -677,7 +677,7 @@
                     </div>
                     <div class="input-container">
                         <label for="networth">Your net worth<br>(per adult)</label>
-                        <input type="number" id="networth" placeholder="e.g. 50000" onkeydown="if(event.key=='Enter') calculate()">
+                        <input type="number" id="networth" required step="any" placeholder="e.g. 50000" onkeydown="if(event.key=='Enter') calculate()">
                         <div class="discreet-link"><a href="networth.html">Unsure? Click here to calculate your Net Worth</a></div>
                     </div>
                 </div>
@@ -907,7 +907,7 @@
     function calculate() {
         const nw = parseFloat(document.getElementById('networth').value);
         const cur = document.getElementById('currency').value;
-        if (isNaN(nw)) return;
+        if (!Number.isFinite(nw)) { document.getElementById("networth").reportValidity(); return; }
 
         document.getElementById('inputSection').style.display = 'none';
         document.getElementById('loading').style.display = 'block';
@@ -951,7 +951,7 @@
     function calculateWealthPosition(w) {
         if (w < 10_000) {
             return {
-                kind: 'range', rankLow: 2_226_001, rankHigh: ADULT_POP_UBS,
+                kind: 'range', rankLow: 2_226_000_001, rankHigh: ADULT_POP_UBS,
                 percentileLow: 0, percentileHigh: 42.1,
                 topShareLow: 0.579, topShareHigh: 1
             };
@@ -971,25 +971,7 @@
         window.setTimeout(onComplete, 250);
     }
 
-    function animateFlipBoard(finalNumber, onComplete) {
-        const container = document.getElementById('flipCounterMain');
-        const chars = finalNumber.toLocaleString().split('');
-        container.innerHTML = chars.map(c => (c === ',' ? `<div class="comma-card">,</div>` : `<div class="digit-card">0</div>`)).join('');
-        const cards = container.querySelectorAll('.digit-card');
-        let finished = 0;
-        cards.forEach((card, i) => {
-            let cycles = 0;
-            const target = chars.filter(c => c !== ',')[i];
-            const interval = setInterval(() => {
-                card.textContent = Math.floor(Math.random() * 10);
-                if (++cycles >= (10 + i * 4)) {
-                    clearInterval(interval);
-                    card.textContent = target;
-                    if (++finished === cards.length) onComplete();
-                }
-            }, 60);
-        });
-    }
+    function animateFlipBoard(finalNumber,onComplete){const el=document.getElementById('flipCounterMain');el.textContent='#'+finalNumber.toLocaleString();onComplete();}
 
     function formatScaledRange(low, high, adults) {
         const scaledLow = Math.max(1, Math.round(low * adults / ADULT_POP_UBS));
@@ -999,11 +981,11 @@
 
     function populateComparison(result) {
         const block = document.getElementById('compareBlock');
-        block.innerHTML = COUNTRIES.map(c => {
+        block.innerHTML = '<p style="grid-column:1/-1">Population-size illustration only: the same global percentile scaled to approximate country adult populations. These are not national wealth rankings.</p>' + COUNTRIES.map(c => {
             const display = result.kind === 'point'
                 ? `#${Math.max(1, Math.round(result.rank * c.adults / ADULT_POP_UBS)).toLocaleString()}`
                 : formatScaledRange(result.rankLow, result.rankHigh, c.adults);
-            const widthVal = result.kind === 'point' ? Math.max(5, result.percentile) : 42.1;
+            const widthVal = result.kind === 'point' ? Math.max(0, Math.min(100, result.percentile)) : 42.1;
             return `
                 <div class="country-card">
                     <div class="country-name">${c.flag} ${c.name}</div>
@@ -1055,7 +1037,7 @@
     function injectPerspective(result) {
         const selected = [...COUNTRIES].sort(() => 0.5 - Math.random()).slice(0, 3);
         const container = document.getElementById('cardRandomComparison');
-        container.innerHTML = selected.map(c => {
+        container.innerHTML = '<p style="grid-column:1/-1;font-size:24px;color:#475569">Population-size illustrations, not national rankings</p>' + selected.map(c => {
             const display = result.kind === 'point'
                 ? `#${Math.max(1, Math.round(result.rank * c.adults / ADULT_POP_UBS)).toLocaleString()}`
                 : formatScaledRange(result.rankLow, result.rankHigh, c.adults);

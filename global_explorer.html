@@ -546,7 +546,7 @@ h1 {
       <span class="kicker">Global Explorer</span>
       <span class="data-stamp" id="dataStamp">Data refresh cycle: Jun 2026</span>
     </div>
-    <h1>Country-Level Wealth Distribution Atlas</h1>
+    <h1>Country-Level Wealth Distribution Atlas</h1><aside style="padding:18px;margin:16px 0;border:1px solid var(--line,#888);border-radius:12px;line-height:1.65"><strong>Illustrative scenario</strong><p>Official UBS medians are identified individually. Other medians, tail thresholds and population presets lack record-level verification in this legacy dataset. Tail ratios and bars compare stored assumptions, not measured wealth concentration.</p><a href="/methodology.html#legacy-review">Methods and limitations →</a></aside>
     <p>Compare median, top 10%, and top 1% wealth thresholds across major economies. Use this view to separate typical household position from top-tier asset concentration. The latest official 2026 source-table medians are paired with clearly labeled 2025-harmonized estimates where newer figures are unavailable.</p>
 
     <div class="stat-strip">
@@ -569,8 +569,8 @@ h1 {
       <select id="sortMode" aria-label="Sort countries">
         <option value="alpha">Sort: A-Z</option>
         <option value="median_desc">Sort: Median Wealth (High-Low)</option>
-        <option value="top1_desc">Sort: Top 1% Threshold (High-Low)</option>
-        <option value="concentration_desc">Sort: Concentration (Top1/Median)</option>
+        <option value="top1_desc">Sort: Assumed Top 1% Threshold (High-Low)</option>
+        <option value="concentration_desc">Sort: Assumed tail ratio (Top1/Median)</option>
       </select>
     </div>
   </section>
@@ -652,7 +652,7 @@ h1 {
 
         <div class="context-card">
           <strong>Methodology</strong>
-          <p>Medians for UBS GWR 2026 Table 1 markets are official UBS 2026 USD wealth-per-adult figures (report published 30 Jun 2026). Remaining Explorer markets, and all top-10% / top-1% thresholds, remain 2025-harmonized (UBS 2025 + WID) until a full 2026 appendix is available. Adult population uses the UN WPP 2024 revision. This atlas is mixed-vintage: it is not a complete GWR 2026 54-country restatement.</p>
+          <p>Medians for UBS GWR 2026 Table 1 markets are official UBS 2026 USD wealth-per-adult figures (report published 30 Jun 2026). Remaining Explorer markets, and all top-10% / top-1% thresholds, are unverified legacy presets. Some tails were copied from peer profiles. Population presets have not been reconciled to a dated UN table. This atlas is mixed-vintage: it is not a complete GWR 2026 54-country restatement.</p>
         </div>
 
         <div class="context-card">
@@ -786,21 +786,7 @@ function medianVintageLabel(d) {
   return medianVintage(d) === 'gwr2026' ? 'GWR 2026' : 'GWR 2025';
 }
 
-function getInsight(d) {
-  const c1 = d.top1 / d.median;
-  const c10 = d.top10 / d.median;
-
-  if (c1 >= 100) {
-    return 'This market shows very high concentration: top-tier thresholds are far above the median wealth floor, so headline averages can overstate typical balance-sheet strength.';
-  }
-  if (c1 >= 55) {
-    return 'Concentration is elevated: the top percentile sits materially above median households, indicating a wide dispersion between typical and upper-tier wealth positions.';
-  }
-  if (c10 <= 7) {
-    return 'Distribution appears comparatively flatter in this sample: top-decile thresholds are closer to median levels than in highly concentrated markets.';
-  }
-  return 'The wealth ladder is meaningful but not extreme: movement from median to top tiers requires substantial asset accumulation, yet concentration remains moderate versus global outliers.';
-}
+function getInsight(d){return `Stored top-1% assumption is ${(d.top1/d.median).toFixed(1)} times the median; stored top-10% assumption is ${(d.top10/d.median).toFixed(1)} times the median. These ratios do not establish national wealth concentration.`;}
 
 function sortCodes(codes, mode) {
   const arr = [...codes];
@@ -916,13 +902,13 @@ function loadCountry(code) {
   const c10 = d.top10 / d.median;
 
   document.getElementById('countryName').textContent = d.name;
-  document.getElementById('countrySub').textContent = 'Wealth distribution profile, USD equivalent thresholds';
+  document.getElementById('countrySub').textContent = 'Median benchmark and illustrative tail assumptions, USD';
   document.getElementById('countryFlag').textContent = d.flag;
   document.getElementById('countryRegion').textContent = 'Region: ' + d.region;
-  document.getElementById('countryPop').textContent = 'Adult pop: ' + fmtPop(d.pop);
+  document.getElementById('countryPop').textContent = 'Unverified population preset: ' + fmtPop(d.pop);
 
   const gradeEl = document.getElementById('countryGrade');
-  gradeEl.textContent = 'Grade ' + d.grade;
+  gradeEl.textContent = 'Tail assumptions unverified';
   gradeEl.className = 'badge ' + gradeClass(d.grade);
 
   const vintageEl = document.getElementById('countryVintage');
@@ -932,7 +918,7 @@ function loadCountry(code) {
   document.getElementById('medianVal').textContent = fmtCurrency(d.median);
   document.getElementById('medianSub').textContent = medianVintage(d) === 'gwr2026'
     ? 'Official 2026 source-table median'
-    : '2025-harmonized median (not in GWR 2026 Table 1)';
+    : 'Legacy median preset; source record unverified';
   document.getElementById('top10Val').textContent = fmtCurrency(d.top10);
   document.getElementById('top1Val').textContent = fmtCurrency(d.top1);
   document.getElementById('concVal').textContent = c1.toFixed(1) + 'x';
@@ -943,8 +929,8 @@ function loadCountry(code) {
   document.getElementById('rowMedian').textContent = fmtShortMoney(d.median);
 
   document.getElementById('barTop1').style.width = '100%';
-  document.getElementById('barTop10').style.width = Math.max(2, (d.top10 / d.top1) * 100).toFixed(2) + '%';
-  document.getElementById('barMedian').style.width = Math.max(1, (d.median / d.top1) * 100).toFixed(2) + '%';
+  document.getElementById('barTop10').style.width = Math.max(0, Math.min(100,(d.top10 / d.top1) * 100)).toFixed(2) + '%';
+  document.getElementById('barMedian').style.width = Math.max(0, Math.min(100,(d.median / d.top1) * 100)).toFixed(2) + '%';
 
   document.getElementById('insightText').textContent = getInsight(d);
 }
@@ -954,11 +940,11 @@ function updateCoverage() {
 }
 
 function persistCollapsedRegions() {
-  localStorage.setItem('wm_explorer_collapsed_regions', JSON.stringify(Array.from(collapsedRegions)));
+  try{localStorage.setItem('wm_explorer_collapsed_regions', JSON.stringify(Array.from(collapsedRegions)));}catch(_){}
 }
 
 function restoreCollapsedRegions() {
-  const raw = localStorage.getItem('wm_explorer_collapsed_regions');
+  let raw;try{raw=localStorage.getItem('wm_explorer_collapsed_regions');}catch(_){return;}
   if (!raw) return;
   try {
     const arr = JSON.parse(raw);

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 
@@ -30,7 +31,7 @@ def main() -> None:
     llms = text("llms.txt")
     supplement = json.loads(text("data/quality-of-life-supplement.json"))
 
-    require('meta name="robots" content="index, follow"' in page, "main tool must be indexable")
+    require(bool(re.search(r'<meta\s+name="robots"\s+content="index,\s*follow(?:,[^"]*)?"', page)), "main tool must be indexable")
     require('href="https://wealthmeter.xyz/live-better-for-less.html"' in page, "missing canonical")
     require("data/quality-of-life-supplement.json" in script, "quality data is not loaded")
     require("passesFloor" in script and "details.available < 5" in script, "hard quality gate is missing")
