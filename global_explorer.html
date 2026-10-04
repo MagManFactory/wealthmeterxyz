@@ -546,7 +546,7 @@ h1 {
       <span class="kicker">Global Explorer</span>
       <span class="data-stamp" id="dataStamp">Data refresh cycle: Jun 2026</span>
     </div>
-    <h1>Country-Level Wealth Distribution Atlas</h1><aside style="padding:18px;margin:16px 0;border:1px solid var(--line,#888);border-radius:12px;line-height:1.65"><strong>Illustrative scenario</strong><p>Official UBS medians are identified individually. Other medians, tail thresholds and population presets lack record-level verification in this legacy dataset. Tail ratios and bars compare stored assumptions, not measured wealth concentration.</p><a href="/methodology.html#legacy-review">Methods and limitations →</a></aside>
+    <h1>Country Wealth Benchmarks and Scenarios</h1><aside style="padding:18px;margin:16px 0;border:1px solid var(--line,#888);border-radius:12px;line-height:1.65"><strong>Illustrative scenario</strong><p>Official UBS medians are identified individually. Other medians, tail thresholds and population presets lack record-level verification in this legacy dataset. Tail ratios and bars compare stored assumptions, not measured wealth concentration.</p><a href="/methodology.html#legacy-review">Methods and limitations →</a></aside>
     <p>Compare median, top 10%, and top 1% wealth thresholds across major economies. Use this view to separate typical household position from top-tier asset concentration. The latest official 2026 source-table medians are paired with clearly labeled 2025-harmonized estimates where newer figures are unavailable.</p>
 
     <div class="stat-strip">
@@ -600,12 +600,12 @@ h1 {
           <div class="sub" id="medianSub">Official 2026 source-table median</div>
         </div>
         <div class="metric">
-          <span class="label">Top 10% Threshold</span>
+          <span class="label">Assumed top-10% threshold</span>
           <div class="value" id="top10Val">$1,600,000</div>
           <div class="sub">2025-harmonized top-decile threshold</div>
         </div>
         <div class="metric">
-          <span class="label">Top 1% Threshold</span>
+          <span class="label">Assumed top-1% threshold</span>
           <div class="value" id="top1Val">$5,800,000</div>
           <div class="sub">2025-harmonized top-percentile threshold</div>
         </div>
@@ -848,7 +848,7 @@ function buildSidebar() {
       const active = code === activeCode ? ' active' : '';
       html += '<button class="country-btn' + active + '" data-code="' + code + '">';
       html += '<span class="left"><span>' + d.flag + '</span><span>' + d.name + '</span></span>';
-      html += '<span class="meta"><span>' + d.grade + '</span><span class="vintage-chip ' + (medianVintage(d) === 'gwr2026' ? 'vintage-2026' : '') + '">' + medianVintageLabel(d) + '</span></span>';
+      html += '<span class="meta"><span>Preset</span><span class="vintage-chip ' + (medianVintage(d) === 'gwr2026' ? 'vintage-2026' : '') + '">' + medianVintageLabel(d) + '</span></span>';
       html += '</button>';
     }
     html += '</div>';
@@ -909,7 +909,7 @@ function loadCountry(code) {
 
   const gradeEl = document.getElementById('countryGrade');
   gradeEl.textContent = 'Tail assumptions unverified';
-  gradeEl.className = 'badge ' + gradeClass(d.grade);
+  gradeEl.className = 'badge';
 
   const vintageEl = document.getElementById('countryVintage');
   vintageEl.textContent = medianVintageLabel(d);
