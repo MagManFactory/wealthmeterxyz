@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-"""Fail when a current Longform destination falls outside Project Phoenix."""
+"""Fail when any indexed Longform destination falls outside Project Phoenix."""
 
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
+from urllib.parse import urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
 NAVIGATION = ROOT / "data" / "phoenix-navigation.json"
+LONGFORM_HUB = ROOT / "longform.html"
 REQUIRED = {
     "Phoenix page class": "phoenix-page",
     "Phoenix stylesheet": "/phoenix.css",
@@ -27,10 +30,47 @@ def target_path(href: str) -> Path:
     return ROOT / relative
 
 
+def entry_key(href: str) -> str:
+    return target_path(href).relative_to(ROOT).as_posix()
+
+
+def indexed_longform_entries() -> list[dict[str, str]]:
+    html = LONGFORM_HUB.read_text(encoding="utf-8")
+    scripts = re.findall(
+        r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+        html,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    for payload in scripts:
+        data = json.loads(payload)
+        if data.get("@type") != "ItemList":
+            continue
+        entries: list[dict[str, str]] = []
+        for item in data.get("itemListElement", []):
+            url = item.get("url") or item.get("item")
+            if not url:
+                continue
+            entries.append(
+                {
+                    "href": urlsplit(url).path,
+                    "title": item.get("name", url),
+                }
+            )
+        if entries:
+            return entries
+    raise RuntimeError("Longform hub does not contain an ItemList corpus")
+
+
 def main() -> int:
     navigation = json.loads(NAVIGATION.read_text(encoding="utf-8"))
     failures: list[str] = []
-    entries = navigation.get("longform", [])
+    phoenix_styles = (ROOT / "phoenix.css").read_text(encoding="utf-8")
+    if "body.phoenix-page .legacy-content :is(.callout,.highlight-box)" not in phoenix_styles:
+        failures.append("Phoenix stylesheet does not provide theme-aware Longform text boxes")
+    entries_by_href = {entry_key(entry["href"]): entry for entry in indexed_longform_entries()}
+    for entry in navigation.get("longform", []):
+        entries_by_href.setdefault(entry_key(entry["href"]), entry)
+    entries = list(entries_by_href.values())
     for entry in entries:
         path = target_path(entry["href"])
         label = entry.get("title", entry["href"])
@@ -54,7 +94,7 @@ def main() -> int:
         for failure in failures:
             print(f"- {failure}")
         return 1
-    print(f"Phoenix Longform check passed: {len(entries)} destinations")
+    print(f"Phoenix Longform corpus check passed: {len(entries)} destinations")
     return 0
 
 

@@ -287,6 +287,14 @@ body.phoenix-page .legacy-content figure > img {
   object-fit: contain;
 }
 
+/* Theme-safe editorial surfaces for the complete Longform corpus. */
+body.phoenix-page .legacy-content :is(.callout,.highlight-box){background:var(--tint)!important;color:var(--ink)!important;border-color:var(--accent)!important}
+body.phoenix-page .legacy-content :is(.callout,.highlight-box) :is(p,li,strong,span,h2,h3,h4){color:var(--ink)!important}
+body.phoenix-page .legacy-content .related a{background:var(--paper)!important;color:var(--accent)!important;border-color:var(--line)!important}
+body.phoenix-page .legacy-content figure{background:var(--paper)!important;border-color:var(--line)!important}
+body.phoenix-page .legacy-content :is(th,td){border-color:var(--line)!important}
+body.phoenix-page .legacy-content th{background:var(--tint)!important;color:var(--ink)!important}
+
 /* Phone chrome repair: prevent global nav flex styles from laying out the drawer horizontally. */
 .mobile-menu nav{display:block;width:100%;min-width:0}
 .mobile-menu details{min-width:0;width:100%}
