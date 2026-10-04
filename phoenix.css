@@ -306,4 +306,5 @@ body.phoenix-page .legacy-content figure > img {
  .site-header .menu-trigger{font-size:13px;padding:10px 8px}
 }
 
+.site-header .mast{box-sizing:border-box}
 .welcome-video{margin-top:24px;padding-top:20px;border-top:1px solid var(--line,#d8ded6)}.welcome-video h3{font:600 1rem/1.4 system-ui,sans-serif;margin:0 0 12px}.welcome-video iframe{display:block;width:100%;aspect-ratio:16/9;height:auto;border:0;border-radius:6px;background:#151515}.welcome-video>.read{display:inline-block;margin-top:12px;font-size:.85rem}
