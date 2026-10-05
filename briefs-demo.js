@@ -1,7 +1,7 @@
 (async function () {
   const count = document.getElementById('brief-count');
   try {
-    const response = await fetch('/data/wealth-briefs.json');
+    const response = await fetch('/data/wealth-briefs.json?v=2026-10-05.01', { cache: 'no-store' });
     if (!response.ok) throw new Error('Library unavailable');
     const {briefs} = await response.json();
     const title = document.getElementById('brief-title');
