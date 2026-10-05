@@ -3,6 +3,10 @@
   "site": "wealthmeter",
   "longform": [
     {
+      "href": "/long-term-care-balance-sheet-risk",
+      "title": "Long-Term Care as a Balance-Sheet Risk"
+    },
+    {
       "href": "/the-bottom-half-grew-fastest-and-still-holds-2-3-percent",
       "title": "The Bottom Half Grew Fastest, and Still Holds 2.3%"
     },
@@ -53,10 +57,6 @@
     {
       "href": "/disability-insurance-leaves-many-paychecks-unprotected",
       "title": "Disability Insurance Leaves Many Paychecks Unprotected"
-    },
-    {
-      "href": "/how-insurance-deductibles-become-a-household-balance-sheet-shock",
-      "title": "How Insurance Deductibles Become a Household Balance-Sheet Shock"
     }
   ],
   "stories": [
