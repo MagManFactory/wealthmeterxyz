@@ -3,6 +3,10 @@
   "site": "wealthmeter",
   "longform": [
     {
+      "href": "/health-insurance-job-lock-premium",
+      "title": "The Health Insurance Job Lock Premium"
+    },
+    {
       "href": "/long-term-care-balance-sheet-risk",
       "title": "Long-Term Care as a Balance-Sheet Risk"
     },
@@ -53,10 +57,6 @@
     {
       "href": "/job-loss-hurts-more-when-benefits-are-not-portable",
       "title": "Job Loss Hurts More When Benefits Are Not Portable"
-    },
-    {
-      "href": "/disability-insurance-leaves-many-paychecks-unprotected",
-      "title": "Disability Insurance Leaves Many Paychecks Unprotected"
     }
   ],
   "stories": [

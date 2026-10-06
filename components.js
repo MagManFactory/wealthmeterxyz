@@ -348,6 +348,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="health-insurance-job-lock-premium.html">The Health Insurance Job Lock Premium</a>
                     <a href="long-term-care-balance-sheet-risk.html">Long-Term Care as a Balance-Sheet Risk</a>
                     <a href="the-bottom-half-grew-fastest-and-still-holds-2-3-percent.html">The Bottom Half Grew Fastest, and Still Holds 2.3%</a>
                     <a href="the-90th-to-99th-percentile-retirement-reality-check.html">The 90th to 99th Percentile Retirement Reality Check</a>
