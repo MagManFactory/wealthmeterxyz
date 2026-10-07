@@ -348,6 +348,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="divorce-as-a-wealth-event-hidden-destruction-curve.html">Divorce as a Wealth Event: The Hidden Destruction Curve</a>
                     <a href="health-insurance-job-lock-premium.html">The Health Insurance Job Lock Premium</a>
                     <a href="long-term-care-balance-sheet-risk.html">Long-Term Care as a Balance-Sheet Risk</a>
                     <a href="the-bottom-half-grew-fastest-and-still-holds-2-3-percent.html">The Bottom Half Grew Fastest, and Still Holds 2.3%</a>
@@ -359,12 +360,6 @@ const siteHeader = `
                     <a href="2026-hsa-limit-and-deductible-test.html">The 2026 HSA Limit and the Deductible Test</a>
                     <a href="credit-freeze-when-to-use-and-lift.html">A Credit Freeze Is Free: When to Use One and How to Lift It</a>
                     <a href="joint-bank-account-fdic-coverage.html">Is Your Joint Bank Account Fully Insured?</a>
-                    <a href="2026-retirement-catch-up-ages-60-to-63.html">The 2026 Retirement Catch-Up Window at Ages 60 to 63</a>
-                    <a href="emergency-funds-need-a-cash-flow-test-not-a-rule-of-thumb.html">Emergency Funds Need a Cash-Flow Test, Not a Rule of Thumb</a>
-                    <a href="job-loss-hurts-more-when-benefits-are-not-portable.html">Job Loss Hurts More When Benefits Are Not Portable</a>
-                    <a href="disability-insurance-leaves-many-paychecks-unprotected.html">Disability Insurance Leaves Many Paychecks Unprotected</a>
-                    <a href="how-insurance-deductibles-become-a-household-balance-sheet-shock.html">How Insurance Deductibles Become a Household Balance-Sheet Shock</a>
-                    <a href="america-is-second-by-average-wealth-fifteenth-by-median-wealth.html">America Is 2nd by Average Wealth, 15th by Median Wealth</a>
 
 
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>

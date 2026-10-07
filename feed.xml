@@ -5,7 +5,15 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Oct 2026 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 13:05:00 +0000</lastBuildDate>
+    <item>
+      <title>Divorce as a Wealth Event: The Hidden Destruction Curve</title>
+      <link>https://wealthmeter.xyz/divorce-as-a-wealth-event-hidden-destruction-curve.html</link>
+      <guid>https://wealthmeter.xyz/divorce-as-a-wealth-event-hidden-destruction-curve.html</guid>
+      <pubDate>Wed, 07 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Divorce can divide assets while creating two sets of fixed costs. Trace housing, joint debt, retirement orders, taxes, and cash flow through the transition.</description>
+      <enclosure url="https://wealthmeter.xyz/images/longform/divorce-balance-sheet-split-2026-oct07.png" type="image/png"/>
+    </item>
     <item>
       <title>The Health Insurance Job Lock Premium</title>
       <link>https://wealthmeter.xyz/health-insurance-job-lock-premium.html</link>
@@ -437,14 +445,6 @@
       <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
       <description>Why the indexing boom still makes sense for households, where saturation risks actually appear, and why the real problem is benchmark concentration and thinner price-setting at the margin rather than market collapse.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/indexing-saturation-pressure-map.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Golden Handcuffs Equation</title>
-      <link>https://wealthmeter.xyz/golden-handcuffs-equation.html</link>
-      <guid>https://wealthmeter.xyz/golden-handcuffs-equation.html</guid>
-      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Why high compensation can still reduce strategic freedom when equity vesting, deferred pay, insurance dependence, and concentration risk make leaving expensive.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/golden-handcuffs-retention-equation.png" type="image/png"/>
     </item>
   </channel>
 </rss>
