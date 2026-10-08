@@ -348,6 +348,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="elder-care-cash-drain.html">The Elder-Care Cash Drain</a>
                     <a href="divorce-as-a-wealth-event-hidden-destruction-curve.html">Divorce as a Wealth Event: The Hidden Destruction Curve</a>
                     <a href="health-insurance-job-lock-premium.html">The Health Insurance Job Lock Premium</a>
                     <a href="long-term-care-balance-sheet-risk.html">Long-Term Care as a Balance-Sheet Risk</a>
