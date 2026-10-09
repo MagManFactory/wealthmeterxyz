@@ -111,16 +111,6 @@
   ],
   "toolGroups": [
     {
-      "name": "New",
-      "description": "Recently added",
-      "tools": [
-        {
-          "href": "/rent-squeeze",
-          "title": "The Rent Squeeze"
-        }
-      ]
-    },
-    {
       "name": "Rank",
       "description": "See where you stand",
       "tools": [
@@ -203,6 +193,10 @@
         {
           "href": "/wealth-briefs",
           "title": "Wealth Briefs"
+        },
+        {
+          "href": "/rent-squeeze",
+          "title": "The Rent Squeeze"
         }
       ]
     }
