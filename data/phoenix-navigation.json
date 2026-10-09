@@ -3,6 +3,10 @@
   "site": "wealthmeter",
   "longform": [
     {
+      "href": "/tax-location-blind-spot",
+      "title": "The Tax-Location Blind Spot: Why Asset Placement Still Gets Ignored"
+    },
+    {
       "href": "/elder-care-cash-drain",
       "title": "The Elder-Care Cash Drain"
     },
@@ -53,10 +57,6 @@
     {
       "href": "/joint-bank-account-fdic-coverage",
       "title": "Is Your Joint Bank Account Fully Insured?"
-    },
-    {
-      "href": "/2026-retirement-catch-up-ages-60-to-63",
-      "title": "The 2026 Retirement Catch-Up Window at Ages 60 to 63"
     }
   ],
   "stories": [
