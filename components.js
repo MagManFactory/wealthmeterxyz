@@ -340,6 +340,7 @@ const siteHeader = `
                     <a href="country-systems-atlas.html">Country Systems Atlas</a>
                     <a href="atlas.html">Longevity Atlas</a>
                     <a href="data-lab.html">Data Lab</a>
+                    <a href="rent-squeeze.html">The Rent Squeeze</a>
                     <a href="long-ladder.html" target="_blank" rel="noopener">The Long Ladder ↗</a>
                     <a href="wealth-briefs.html">Wealth Briefs</a>
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>

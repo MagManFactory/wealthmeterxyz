@@ -1,0 +1,11 @@
+RENT SQUEEZE READER BUILD
+Run npm install followed by npm run build in this directory. Dependencies are pinned.
+Production serves assets/rent-squeeze/rent-squeeze.js, assets/rent-squeeze/rent-squeeze.css
+and data/rent-squeeze-2024.json. It requires no runtime API, keys or backend.
+DashboardContent.jsx preserves the authored visualization. native-controls.jsx supplies
+accessible reader-only controls and scoped JSON/CSV exports. reader.jsx loads reviewed
+static data and validates URL filter state. All 312 rows, sources and method code match
+the approved source; its private dashboard identity and shell are excluded.
+No source ZIP, build tooling, private handoff or prototype should enter live assets.
+The current website uses Phoenix chrome. The earlier placeholder/components theme
+linter predates Phoenix and reports existing failures across the current site.
