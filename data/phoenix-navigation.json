@@ -3,6 +3,10 @@
   "site": "wealthmeter",
   "longform": [
     {
+      "href": "/municipal-bonds-after-free-money-era",
+      "title": "Municipal Bonds After the Free-Money Era"
+    },
+    {
       "href": "/tax-location-blind-spot",
       "title": "The Tax-Location Blind Spot: Why Asset Placement Still Gets Ignored"
     },
@@ -53,10 +57,6 @@
     {
       "href": "/credit-freeze-when-to-use-and-lift",
       "title": "A Credit Freeze Is Free: When to Use One and How to Lift It"
-    },
-    {
-      "href": "/joint-bank-account-fdic-coverage",
-      "title": "Is Your Joint Bank Account Fully Insured?"
     }
   ],
   "stories": [

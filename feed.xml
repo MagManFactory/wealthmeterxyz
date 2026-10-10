@@ -5,7 +5,8 @@
     <link>https://wealthmeter.xyz/longform.html</link>
     <description>Recent WealthMeter longform analysis on balance-sheet structure, resilience, and capital planning.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 09 Oct 2026 13:11:19 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 13:00:00 +0000</lastBuildDate>
+    <item><title>Municipal Bonds After the Free-Money Era</title><link>https://wealthmeter.xyz/municipal-bonds-after-free-money-era.html</link><guid>https://wealthmeter.xyz/municipal-bonds-after-free-money-era.html</guid><pubDate>Sat, 10 Oct 2026 00:00:00 +0000</pubDate><description>Municipal bond income can carry a tax advantage, but price, call, credit, and liquidity risks determine the household result. Compare bonds on an after-tax basis.</description><enclosure url="https://wealthmeter.xyz/images/longform/municipal-bond-yield-risk-map-2026-oct10.png" type="image/png"/></item>
     <item><title>The Tax-Location Blind Spot: Why Asset Placement Still Gets Ignored</title><link>https://wealthmeter.xyz/tax-location-blind-spot.html</link><guid>https://wealthmeter.xyz/tax-location-blind-spot.html</guid><pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate><description>A household can hold the right investment mix in the wrong accounts. Test taxable, traditional, and Roth placement against tax rules, access needs, and moving costs.</description><enclosure url="https://wealthmeter.xyz/images/longform/asset-location-three-accounts-2026-oct09.png" type="image/png"/></item>
     <item><title>The Elder-Care Cash Drain</title><link>https://wealthmeter.xyz/elder-care-cash-drain.html</link><guid>https://wealthmeter.xyz/elder-care-cash-drain.html</guid><pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate><description>Unpaid eldercare consumes cash, work hours, and financial reserves. Map the household exposure before a care crisis fixes the choices.</description><enclosure url="https://wealthmeter.xyz/images/longform/elder-care-cash-flow-map-2026-oct08.png" type="image/png"/></item>
     <item>
@@ -439,14 +440,6 @@
       <pubDate>Sun, 12 Apr 2026 00:00:00 +0000</pubDate>
       <description>A WealthMeter analysis of why market timing fails for most households, how behavioral flow patterns destroy realized returns, and what disciplined public-market participation looks like instead.</description>
       <enclosure url="https://wealthmeter.xyz/images/longform/timing-fallacy-behavior-loop.png" type="image/png"/>
-    </item>
-    <item>
-      <title>The Indexing Saturation Problem</title>
-      <link>https://wealthmeter.xyz/indexing-saturation-problem.html</link>
-      <guid>https://wealthmeter.xyz/indexing-saturation-problem.html</guid>
-      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
-      <description>Why the indexing boom still makes sense for households, where saturation risks actually appear, and why the real problem is benchmark concentration and thinner price-setting at the margin rather than market collapse.</description>
-      <enclosure url="https://wealthmeter.xyz/images/longform/indexing-saturation-pressure-map.png" type="image/png"/>
     </item>
   </channel>
 </rss>

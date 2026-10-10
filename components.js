@@ -349,6 +349,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="municipal-bonds-after-free-money-era.html">Municipal Bonds After the Free-Money Era</a>
                     <a href="tax-location-blind-spot.html">The Tax-Location Blind Spot: Why Asset Placement Still Gets Ignored</a>
                     <a href="elder-care-cash-drain.html">The Elder-Care Cash Drain</a>
                     <a href="divorce-as-a-wealth-event-hidden-destruction-curve.html">Divorce as a Wealth Event: The Hidden Destruction Curve</a>
