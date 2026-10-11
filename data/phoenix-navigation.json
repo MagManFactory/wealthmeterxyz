@@ -3,6 +3,10 @@
   "site": "wealthmeter",
   "longform": [
     {
+      "href": "/hsa-as-a-stealth-retirement-account",
+      "title": "The HSA as a Stealth Retirement Account"
+    },
+    {
       "href": "/municipal-bonds-after-free-money-era",
       "title": "Municipal Bonds After the Free-Money Era"
     },
@@ -53,10 +57,6 @@
     {
       "href": "/2026-hsa-limit-and-deductible-test",
       "title": "The 2026 HSA Limit and the Deductible Test"
-    },
-    {
-      "href": "/credit-freeze-when-to-use-and-lift",
-      "title": "A Credit Freeze Is Free: When to Use One and How to Lift It"
     }
   ],
   "stories": [
