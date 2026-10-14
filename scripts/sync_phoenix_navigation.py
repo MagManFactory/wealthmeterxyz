@@ -146,6 +146,15 @@ def story_items(previous: list[dict[str, str]]) -> list[dict[str, str]]:
 def special_items() -> list[dict[str, str]]:
     root = parse(ROOT / "special-features.html")
     items = []
+    if (ROOT / "us-wealth-atlas.html").exists():
+        items.append({
+            "href": "/us-wealth-atlas",
+            "title": "Who Owns America?",
+            "description": (
+                "Move through 36 years of Federal Reserve data and see who owns U.S. household wealth, "
+                "what each group holds, and how wealth differs by age."
+            ),
+        })
     for article in descendants(root, tag="article"):
         heading = first(article, tag="h2") or first(article, tag="h3")
         link = first(heading, tag="a") if heading else None
@@ -232,9 +241,12 @@ def build_manifest() -> dict[str, object]:
     seeded_stories, seeded_groups = seed_from_index()
     old_stories = previous.get("stories", seeded_stories)
     old_groups = previous.get("toolGroups", seeded_groups)
+    cname_path = ROOT / "CNAME"
+    cname = cname_path.read_text(encoding="utf-8").strip().lower() if cname_path.exists() else ""
+    site = "wealthmeter" if "wealthmeter.xyz" in cname or "wealth" in ROOT.name.lower() else "lifemeter"
     return {
         "version": 1,
-        "site": "wealthmeter" if "wealth" in ROOT.name.lower() else "lifemeter",
+        "site": site,
         "longform": longform_items(),
         "stories": story_items(old_stories if isinstance(old_stories, list) else seeded_stories),
         "toolGroups": tool_items(old_groups if isinstance(old_groups, list) else seeded_groups),
