@@ -80,7 +80,7 @@
       <div class="story-shell story-hero-grid">
         <div>
           <p class="eyebrow">WealthMeter historical data story</p>
-          <h1>When time<br><em>beat risk.</em></h1>
+          <h1>When time<br><em>beat risk.</em></h1><p class="evidence-companion-link"><small><a href="/historical-return-method.html">How this works: evidence and method ↗</a></small></p>
           <p class="hero-copy">Stocks lost money in many single years. Across the full U.S. record from 1928 through 2025, longer holding periods changed the range of outcomes. Explore every available window, then replay your own horizon.</p>
           <p class="scope-note"><strong>Historical U.S. evidence, not a forecast.</strong> The record reflects one unusually successful market and overlapping periods that are not independent observations.</p>
           <a class="scroll-cue" href="#odds">See every window <span aria-hidden="true">↓</span></a>
@@ -130,7 +130,7 @@
           <label>Start year <output data-start-output>1928</output><input type="range" min="1928" max="2006" value="1928" data-start></label>
         </div>
         <p class="map-readout" data-map-readout role="status"></p>
-        <div class="chart-frame chart-scroll" tabindex="0" aria-label="Scrollable historical return-window heatmap">
+        <div class="chart-frame chart-scroll" role="region" tabindex="0" aria-label="Scrollable historical return-window heatmap">
           <canvas width="1200" height="520" data-window-map aria-describedby="map-description"></canvas>
         </div>
         <p class="chart-note" id="map-description">Rows show holding periods from 1 to 30 years. Columns show start years. Red indicates an annualized loss; blue indicates a gain. Color intensity is capped at 12% per year so extreme single-year results do not dominate the scale.</p>

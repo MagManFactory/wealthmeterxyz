@@ -224,3 +224,8 @@ html[data-theme="dark"] #footer-placeholder .site-newsletter-address { color: #a
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Evidence review: readable labels in both themes. */
+button[data-map-view][aria-pressed="true"],.allocation-summary span:first-child{color:#07111f;background:#ffbd73}
+.result-badge{color:#076078}html[data-theme="dark"] .result-badge{color:#7ad9ed}
+.next-section .eyebrow{color:#ffbd73}
