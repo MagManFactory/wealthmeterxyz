@@ -715,6 +715,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://wealthmeter.xyz/us-wealth-atlas</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://wealthmeter.xyz/calculator.html</loc>
     <lastmod>2026-10-03</lastmod>
   </url>

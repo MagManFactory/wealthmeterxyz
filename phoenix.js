@@ -69,6 +69,19 @@ function applyPhoenixNavigation(data){
   });
   const all=document.createElement('a'); all.href='/tools'; all.textContent='All tools →'; mobileTools.append(all);
  }
+ const specialHub=document.querySelector('.phoenix-hub .longform-collection');
+ if(specialHub&&location.pathname.includes('special-features')){
+  const existing=new Set([...specialHub.querySelectorAll('a[href]')].map(link=>link.getAttribute('href').replace(/\.html$/,'')));
+  [...data.specials].reverse().forEach(item=>{
+   if(existing.has(item.href.replace(/\.html$/,'')))return;
+   const article=document.createElement('article');
+   const mark=document.createElement('div');mark.className='feature-mark';mark.textContent=item.href==='/us-wealth-atlas'?'$100':'NEW';
+   const h2=document.createElement('h2');const title=document.createElement('a');title.href=item.href;title.textContent=item.title;h2.append(title);
+   const description=document.createElement('p');description.textContent=item.description;
+   const read=document.createElement('a');read.className='read';read.href=item.href;read.textContent='Explore the feature ↗';
+   article.append(mark,h2,description,read);specialHub.prepend(article);
+  });
+ }
 }
 fetch('/data/phoenix-navigation.json',{cache:'no-store'})
  .then(response=>{if(!response.ok)throw new Error('navigation inventory unavailable');return response.json();})

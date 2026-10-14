@@ -2,6 +2,7 @@
 
 > WealthMeter publishes evidence-led calculators, data tools, reports, and longform analysis about net worth, income, wealth distribution, retirement, and household resilience.
 
+- [Who Owns America? U.S. Wealth Atlas 2026](https://wealthmeter.xyz/us-wealth-atlas): An interactive view of 36 years of Federal Reserve data on the distribution, composition, and age profile of U.S. household wealth.
 - [Wealth Horizon](https://wealthmeter.xyz/wealth-horizon): An assumption-driven portfolio scenario calculator with inflation-adjusted outcomes, fees, estimated tax drag, volatility, and reproducible simulation ranges.
 
 This file is generated from the XML sitemap. The sitemap and each page's canonical URL remain authoritative.

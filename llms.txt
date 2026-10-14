@@ -15,6 +15,7 @@
 
 ## Core tools
 
+- [Who Owns America? U.S. Wealth Atlas 2026](https://wealthmeter.xyz/us-wealth-atlas): Explore 36 years of Federal Reserve data on who owns U.S. household wealth, what each wealth group holds, and how aggregate wealth differs by age.
 - [Wealth Horizon](https://wealthmeter.xyz/wealth-horizon): Test long-term portfolio scenarios with explicit assumptions for contributions, returns, volatility, inflation, fees, and estimated tax drag.
 - [Live Better for Less](https://wealthmeter.xyz/live-better-for-less.html): Find lower-cost countries only after they pass a user-selected quality floor across health, essential services, connectivity, infrastructure, sanitation, and safety.
 - [Lifestyle Abroad](https://wealthmeter.xyz/lifestyle-abroad.html): Translate a household spending budget between national private-consumption price levels.

@@ -217,6 +217,11 @@
   ],
   "specials": [
     {
+      "href": "/us-wealth-atlas",
+      "title": "Who Owns America?",
+      "description": "Move through 36 years of Federal Reserve data and see who owns U.S. household wealth, what each group holds, and how wealth differs by age."
+    },
+    {
       "href": "/wealth-horizon",
       "title": "Wealth Horizon",
       "description": "Test how contributions, returns, inflation, fees, taxes and volatility could change a portfolio over 5 to 50 years."
