@@ -1,0 +1,30 @@
+✔ direct URL and reload without token remain locked; preview sends nothing (1.461583ms)
+✔ valid existing token revalidates newsletter access, not financial data (1.042417ms)
+✔ rejected/expired token fails closed and requests gate (0.429583ms)
+✔ returning-member toggle tolerates removed consent node; no new signup (0.441458ms)
+✔ new subscriber payload is newsletter-only and includes no calculator inputs (0.361541ms)
+✔ static HTML is hidden/inert before JavaScript; no collection or persistence in calculator (0.98ms)
+✔ beginner cards distinguish monthly check, contributions, growth and final balance (3.163ms)
+✔ 0/3/5/7 sensitivity is an equal comparison with independent closed-form values (0.900083ms)
+✔ chosen horizon controls catch-up labels, not entire model horizon (2.710833ms)
+✔ negative/custom returns, partial investment, same and reversed ages (3.621875ms)
+✔ main path explains fields; advanced details remain collapsed; default visible investment story (1.001041ms)
+108 extreme model combinations passed
+✔ SSA monthly statutory fixtures and cohort FRA (0.713417ms)
+✔ cash at age80, month-later payment, closed-form investment annuity (3.541625ms)
+✔ break-even means strictly ahead after a deficit, never initial ties (2.152083ms)
+✔ common COLA clock, claim-time estimates not inflated twice, purchasing power (0.908875ms)
+✔ spending is not wealth and no-retention balance stays zero (0.826625ms)
+✔ invalid inputs fail; edge range remains finite (26.231ms)
+✔ components.js: signup is newsletter-only (25.901334ms)
+✔ lifemeter.xyz subscriber gate is newsletter-only (0.901ms)
+✔ wealthmeter.xyz subscriber gate is newsletter-only (0.767584ms)
+✔ no statically rendered signup contains a separate promotional checkbox (18.280083ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 111.343875

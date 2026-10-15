@@ -14,3 +14,9 @@
 ## Deployment
 
 Pending final production commit and live readback. Publish reviewed isolated HEAD to existing origin main without force; observe Pages and Content Policy workflows, then verify live bytes, title/canonical, navigation/sitemap, direct gate/reload, and prior-page smoke checks. Rollback is a revert of the scoped release commit; do not reset shared worktrees.
+
+## Beginner-first revision verification (2026-10-15)
+
+Presentation revised after user feedback. Both main starting ages remain selectable62–70. Extra months, exact/negative rates, inflation and separate SSA estimates remain in collapsed options.5%return and100%investment defaults are explicit hypothetical examples;0/3/5/7 sensitivity and75/85/95 horizons are visible. Contribution, growth/loss and balance are separate. No monthly-model changes.
+
+21 tests pass (17calculator/gate/view +4existing consent), including108edge combinations and independent annuity checks for all sensitivity rows. Existing Wealth calculator regressions and540Age & Automation scenarios pass. Browser tested return slider/presets, different first and second ages65/68, all-spent0balance,95horizon catch-up89y10m, negative return losses, month precision, equal ages, age70+1m rejection and blank benefit input. Desktop and mobile layout inspected; mobile cards stack to keep full dollar balances readable. Existing gate preserved; no real signup data submitted. All repository policy/navigation/shell/monetization checks pass. Completion evidence recorded outside source in the revision deployment receipt and Dropbox archive.
