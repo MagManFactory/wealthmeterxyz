@@ -1,0 +1,4472 @@
+{
+  "release": "UN WPP 2024",
+  "variant": "Medium",
+  "source": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/EXCEL_FILES/2_Population/WPP2024_POP_F07_1_DEPENDENCY_RATIOS_BOTH_SEXES.xlsx",
+  "retrieved": "2026-10-15",
+  "sha256": "19e785ebc6bfbd9266fb32f5cca5af598cb102a63f5afe079a7fa4a36ca2b17c",
+  "license": "CC BY 3.0 IGO",
+  "citation": "United Nations, Department of Economic and Social Affairs, Population Division (2024). World Population Prospects 2024, Online Edition.",
+  "transformation": "Working-age share (%) = 10000/(100 + total dependency ratio). Ratio inputs rounded by publisher to 0.001; derived values are approximate.",
+  "countries": [
+    {
+      "iso": "KOR",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 38.767,
+          "oldDependency": 21.956,
+          "workingAgeShare": 72.0632427017951
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 39.781,
+          "oldDependency": 23.287,
+          "workingAgeShare": 71.54048118127642
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 40.645,
+          "oldDependency": 24.591,
+          "workingAgeShare": 71.10099896903552
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 41.454,
+          "oldDependency": 25.936,
+          "workingAgeShare": 70.69436000395888
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 42.535,
+          "oldDependency": 27.471,
+          "workingAgeShare": 70.15820675623532
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 43.957,
+          "oldDependency": 29.267,
+          "workingAgeShare": 69.46518752127372
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 45.456,
+          "oldDependency": 31.176,
+          "workingAgeShare": 68.74931250687493
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 46.783,
+          "oldDependency": 32.953,
+          "workingAgeShare": 68.12778046504022
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 48.005,
+          "oldDependency": 34.59,
+          "workingAgeShare": 67.56528495658931
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 49.177,
+          "oldDependency": 36.13,
+          "workingAgeShare": 67.03446241712865
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 50.366,
+          "oldDependency": 37.682,
+          "workingAgeShare": 66.50439594057168
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 51.657,
+          "oldDependency": 39.295,
+          "workingAgeShare": 65.93826859294329
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 53.113,
+          "oldDependency": 40.96,
+          "workingAgeShare": 65.31124071763992
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 54.939,
+          "oldDependency": 42.865,
+          "workingAgeShare": 64.54152924699397
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 57.054,
+          "oldDependency": 44.964,
+          "workingAgeShare": 63.67236746596712
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 59.319,
+          "oldDependency": 47.121,
+          "workingAgeShare": 62.76715269365235
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 61.754,
+          "oldDependency": 49.376,
+          "workingAgeShare": 61.82227332863484
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 64.185,
+          "oldDependency": 51.612,
+          "workingAgeShare": 60.90690379754545
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 66.577,
+          "oldDependency": 53.782,
+          "workingAgeShare": 60.032297375988286
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 68.972,
+          "oldDependency": 55.939,
+          "workingAgeShare": 59.18140283597283
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 71.12,
+          "oldDependency": 57.886,
+          "workingAgeShare": 58.438522674146796
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 72.986,
+          "oldDependency": 59.581,
+          "workingAgeShare": 57.808146323979976
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 74.779,
+          "oldDependency": 61.214,
+          "workingAgeShare": 57.2151116552904
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 76.558,
+          "oldDependency": 62.838,
+          "workingAgeShare": 56.63861167435064
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 78.507,
+          "oldDependency": 64.621,
+          "workingAgeShare": 56.02021209252298
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 80.781,
+          "oldDependency": 66.705,
+          "workingAgeShare": 55.315547540947335
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 83.142,
+          "oldDependency": 68.865,
+          "workingAgeShare": 54.60243963700298
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 85.466,
+          "oldDependency": 70.989,
+          "workingAgeShare": 53.91823838331554
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 87.566,
+          "oldDependency": 72.907,
+          "workingAgeShare": 53.31456660588806
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 89.212,
+          "oldDependency": 74.41,
+          "workingAgeShare": 52.85077056423483
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 90.526,
+          "oldDependency": 75.61,
+          "workingAgeShare": 52.486274839129564
+        }
+      ],
+      "name": "South Korea"
+    },
+    {
+      "iso": "JPN",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 69.892,
+          "oldDependency": 49.13,
+          "workingAgeShare": 58.86092341016646
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 70.257,
+          "oldDependency": 49.744,
+          "workingAgeShare": 58.73473631040133
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 70.246,
+          "oldDependency": 50.057,
+          "workingAgeShare": 58.73853130176334
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 70.1,
+          "oldDependency": 50.285,
+          "workingAgeShare": 58.78894767783657
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 70.117,
+          "oldDependency": 50.662,
+          "workingAgeShare": 58.78307282634892
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 70.162,
+          "oldDependency": 51.039,
+          "workingAgeShare": 58.76752741505154
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 70.194,
+          "oldDependency": 51.393,
+          "workingAgeShare": 58.756477901688655
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 70.241,
+          "oldDependency": 51.743,
+          "workingAgeShare": 58.74025645995971
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 70.345,
+          "oldDependency": 52.13,
+          "workingAgeShare": 58.70439402389269
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 70.592,
+          "oldDependency": 52.617,
+          "workingAgeShare": 58.619395985743765
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 71.027,
+          "oldDependency": 53.251,
+          "workingAgeShare": 58.47030001110936
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 71.176,
+          "oldDependency": 53.605,
+          "workingAgeShare": 58.41940458942843
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 71.513,
+          "oldDependency": 54.076,
+          "workingAgeShare": 58.30461830881624
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 72.426,
+          "oldDependency": 55.015,
+          "workingAgeShare": 57.995893890712544
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 73.467,
+          "oldDependency": 56.008,
+          "workingAgeShare": 57.647852329261475
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 74.764,
+          "oldDependency": 57.173,
+          "workingAgeShare": 57.22002243024879
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 76.339,
+          "oldDependency": 58.543,
+          "workingAgeShare": 56.70895264235365
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 78.158,
+          "oldDependency": 60.087,
+          "workingAgeShare": 56.12995206502093
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 80.234,
+          "oldDependency": 61.809,
+          "workingAgeShare": 55.48342710032514
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 82.421,
+          "oldDependency": 63.591,
+          "workingAgeShare": 54.81825009182057
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 84.411,
+          "oldDependency": 65.189,
+          "workingAgeShare": 54.226700142616224
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 86.151,
+          "oldDependency": 66.552,
+          "workingAgeShare": 53.71982960070051
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 87.69,
+          "oldDependency": 67.732,
+          "workingAgeShare": 53.27934359848687
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 89.076,
+          "oldDependency": 68.773,
+          "workingAgeShare": 52.88878546193065
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 90.323,
+          "oldDependency": 69.694,
+          "workingAgeShare": 52.54225711028095
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 91.399,
+          "oldDependency": 70.473,
+          "workingAgeShare": 52.24687694293073
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 92.296,
+          "oldDependency": 71.105,
+          "workingAgeShare": 52.00316179223697
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 93.064,
+          "oldDependency": 71.642,
+          "workingAgeShare": 51.79629552894377
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 93.794,
+          "oldDependency": 72.166,
+          "workingAgeShare": 51.60118476320217
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 94.483,
+          "oldDependency": 72.68,
+          "workingAgeShare": 51.41837589917885
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 95.039,
+          "oldDependency": 73.103,
+          "workingAgeShare": 51.27179692266675
+        }
+      ],
+      "name": "Japan"
+    },
+    {
+      "iso": "DEU",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 55.295,
+          "oldDependency": 33.924,
+          "workingAgeShare": 64.39357352136255
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 56.231,
+          "oldDependency": 34.581,
+          "workingAgeShare": 64.00778334645493
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 57.162,
+          "oldDependency": 35.297,
+          "workingAgeShare": 63.628612514475506
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 57.992,
+          "oldDependency": 36.006,
+          "workingAgeShare": 63.29434401741861
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 58.997,
+          "oldDependency": 36.88,
+          "workingAgeShare": 62.89426844531657
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 60.228,
+          "oldDependency": 37.979,
+          "workingAgeShare": 62.41106423346731
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 61.553,
+          "oldDependency": 39.164,
+          "workingAgeShare": 61.89919097757392
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 62.863,
+          "oldDependency": 40.318,
+          "workingAgeShare": 61.401300479544155
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 64.239,
+          "oldDependency": 41.565,
+          "workingAgeShare": 60.88687826886427
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 65.654,
+          "oldDependency": 42.893,
+          "workingAgeShare": 60.36678860757966
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 66.98,
+          "oldDependency": 44.203,
+          "workingAgeShare": 59.887411666067784
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 68.197,
+          "oldDependency": 45.475,
+          "workingAgeShare": 59.45409252245878
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 69.314,
+          "oldDependency": 46.701,
+          "workingAgeShare": 59.06186139362369
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 70.335,
+          "oldDependency": 47.846,
+          "workingAgeShare": 58.70784043208971
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 71.235,
+          "oldDependency": 48.874,
+          "workingAgeShare": 58.39927584897947
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 71.944,
+          "oldDependency": 49.714,
+          "workingAgeShare": 58.15847019959986
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 72.429,
+          "oldDependency": 50.374,
+          "workingAgeShare": 57.99488485115613
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 72.748,
+          "oldDependency": 50.843,
+          "workingAgeShare": 57.887790307268396
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 72.908,
+          "oldDependency": 51.082,
+          "workingAgeShare": 57.834223980382625
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 72.955,
+          "oldDependency": 51.193,
+          "workingAgeShare": 57.818507704316154
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 72.985,
+          "oldDependency": 51.267,
+          "workingAgeShare": 57.80848050408994
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 73.05,
+          "oldDependency": 51.348,
+          "workingAgeShare": 57.786766830395834
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 73.206,
+          "oldDependency": 51.479,
+          "workingAgeShare": 57.734720506218025
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 73.436,
+          "oldDependency": 51.644,
+          "workingAgeShare": 57.65815632279342
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 73.727,
+          "oldDependency": 51.836,
+          "workingAgeShare": 57.561576496457086
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 74.153,
+          "oldDependency": 52.114,
+          "workingAgeShare": 57.420773687504656
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 74.679,
+          "oldDependency": 52.448,
+          "workingAgeShare": 57.24786608579165
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 75.217,
+          "oldDependency": 52.767,
+          "workingAgeShare": 57.07208775404214
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 75.744,
+          "oldDependency": 53.055,
+          "workingAgeShare": 56.90094683175528
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 76.23,
+          "oldDependency": 53.292,
+          "workingAgeShare": 56.744027691085506
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 76.71,
+          "oldDependency": 53.514,
+          "workingAgeShare": 56.58989304510215
+        }
+      ],
+      "name": "Germany"
+    },
+    {
+      "iso": "ITA",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 56.753,
+          "oldDependency": 36.648,
+          "workingAgeShare": 63.794632319636634
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 56.928,
+          "oldDependency": 37.132,
+          "workingAgeShare": 63.723491027732464
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 57.033,
+          "oldDependency": 37.577,
+          "workingAgeShare": 63.68088236230601
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 57.142,
+          "oldDependency": 38.058,
+          "workingAgeShare": 63.63671074569498
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 57.523,
+          "oldDependency": 38.79,
+          "workingAgeShare": 63.48279298896034
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 58.116,
+          "oldDependency": 39.684,
+          "workingAgeShare": 63.244706418072816
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 58.816,
+          "oldDependency": 40.656,
+          "workingAgeShare": 62.965948015313316
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 59.643,
+          "oldDependency": 41.72,
+          "workingAgeShare": 62.639764975601814
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 60.685,
+          "oldDependency": 42.945,
+          "workingAgeShare": 62.23356256028876
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 61.904,
+          "oldDependency": 44.296,
+          "workingAgeShare": 61.764996541160194
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 63.277,
+          "oldDependency": 45.766,
+          "workingAgeShare": 61.24561328294861
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 64.723,
+          "oldDependency": 47.28,
+          "workingAgeShare": 60.707976421021954
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 66.195,
+          "oldDependency": 48.789,
+          "workingAgeShare": 60.17028189777069
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 67.792,
+          "oldDependency": 50.361,
+          "workingAgeShare": 59.59759702488795
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 69.483,
+          "oldDependency": 51.958,
+          "workingAgeShare": 59.00296784928282
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 71.222,
+          "oldDependency": 53.553,
+          "workingAgeShare": 58.403709803646734
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 73.034,
+          "oldDependency": 55.194,
+          "workingAgeShare": 57.792110221112615
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 74.886,
+          "oldDependency": 56.853,
+          "workingAgeShare": 57.180105897556125
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 76.793,
+          "oldDependency": 58.518,
+          "workingAgeShare": 56.56332547103109
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 78.757,
+          "oldDependency": 60.201,
+          "workingAgeShare": 55.94186521366995
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 80.688,
+          "oldDependency": 61.846,
+          "workingAgeShare": 55.344018418489334
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 82.486,
+          "oldDependency": 63.356,
+          "workingAgeShare": 54.79872428569863
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 84.113,
+          "oldDependency": 64.705,
+          "workingAgeShare": 54.314469917930836
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 85.564,
+          "oldDependency": 65.895,
+          "workingAgeShare": 53.889763100601414
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 86.825,
+          "oldDependency": 66.913,
+          "workingAgeShare": 53.526027030643654
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 87.917,
+          "oldDependency": 67.781,
+          "workingAgeShare": 53.2149832106728
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 88.905,
+          "oldDependency": 68.564,
+          "workingAgeShare": 52.93666128477277
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 89.778,
+          "oldDependency": 69.258,
+          "workingAgeShare": 52.69314672933638
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 90.458,
+          "oldDependency": 69.792,
+          "workingAgeShare": 52.505014228858855
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 90.957,
+          "oldDependency": 70.183,
+          "workingAgeShare": 52.36781055420854
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 91.291,
+          "oldDependency": 70.449,
+          "workingAgeShare": 52.27637473796467
+        }
+      ],
+      "name": "Italy"
+    },
+    {
+      "iso": "CHN",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 44.092,
+          "oldDependency": 18.221,
+          "workingAgeShare": 69.40010548816035
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 44.483,
+          "oldDependency": 19.08,
+          "workingAgeShare": 69.21229487206107
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 44.726,
+          "oldDependency": 19.946,
+          "workingAgeShare": 69.09608501582301
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 44.73,
+          "oldDependency": 20.72,
+          "workingAgeShare": 69.09417536101707
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 44.244,
+          "oldDependency": 21.154,
+          "workingAgeShare": 69.32697373894234
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 43.511,
+          "oldDependency": 21.399,
+          "workingAgeShare": 69.68106974378271
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 42.723,
+          "oldDependency": 21.594,
+          "workingAgeShare": 70.06579177847999
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 42.323,
+          "oldDependency": 22.192,
+          "workingAgeShare": 70.26271228121948
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 42.745,
+          "oldDependency": 23.528,
+          "workingAgeShare": 70.05499316963817
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 43.357,
+          "oldDependency": 25.022,
+          "workingAgeShare": 69.75592402184756
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 43.846,
+          "oldDependency": 26.383,
+          "workingAgeShare": 69.51879092918816
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 44.319,
+          "oldDependency": 27.72,
+          "workingAgeShare": 69.29094575211856
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 44.593,
+          "oldDependency": 28.929,
+          "workingAgeShare": 69.15964119978145
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 45.226,
+          "oldDependency": 30.313,
+          "workingAgeShare": 68.858193436437
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 46.339,
+          "oldDependency": 31.949,
+          "workingAgeShare": 68.33448363047445
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 47.742,
+          "oldDependency": 33.669,
+          "workingAgeShare": 67.68555996263757
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 49.442,
+          "oldDependency": 35.438,
+          "workingAgeShare": 66.91559267140428
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 51.21,
+          "oldDependency": 37.136,
+          "workingAgeShare": 66.13319224918986
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 53.033,
+          "oldDependency": 38.791,
+          "workingAgeShare": 65.34538302196258
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 54.764,
+          "oldDependency": 40.316,
+          "workingAgeShare": 64.61450983432839
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 56.237,
+          "oldDependency": 41.588,
+          "workingAgeShare": 64.00532524306023
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 57.498,
+          "oldDependency": 42.65,
+          "workingAgeShare": 63.492869750726996
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 58.589,
+          "oldDependency": 43.542,
+          "workingAgeShare": 63.05607576818064
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 59.573,
+          "oldDependency": 44.321,
+          "workingAgeShare": 62.66724320530415
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 60.643,
+          "oldDependency": 45.168,
+          "workingAgeShare": 62.24983348169544
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 61.843,
+          "oldDependency": 46.127,
+          "workingAgeShare": 61.78827629245626
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 63.164,
+          "oldDependency": 47.201,
+          "workingAgeShare": 61.28802922213234
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 64.721,
+          "oldDependency": 48.5,
+          "workingAgeShare": 60.70871352165176
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 66.205,
+          "oldDependency": 49.754,
+          "workingAgeShare": 60.1666616527782
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 67.548,
+          "oldDependency": 50.907,
+          "workingAgeShare": 59.68438895122592
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 69.1,
+          "oldDependency": 52.285,
+          "workingAgeShare": 59.13660555884093
+        }
+      ],
+      "name": "China"
+    },
+    {
+      "iso": "ESP",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 50.964,
+          "oldDependency": 29.528,
+          "workingAgeShare": 66.2409581092181
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 50.879,
+          "oldDependency": 29.894,
+          "workingAgeShare": 66.27827596948549
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 51.021,
+          "oldDependency": 30.488,
+          "workingAgeShare": 66.21595672125068
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 51.314,
+          "oldDependency": 31.252,
+          "workingAgeShare": 66.08773808107644
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 51.67,
+          "oldDependency": 32.071,
+          "workingAgeShare": 65.93261686556339
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 52.117,
+          "oldDependency": 32.921,
+          "workingAgeShare": 65.73887205243332
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 52.651,
+          "oldDependency": 33.831,
+          "workingAgeShare": 65.50890593576196
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 53.284,
+          "oldDependency": 34.805,
+          "workingAgeShare": 65.23838104433601
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 54.094,
+          "oldDependency": 35.886,
+          "workingAgeShare": 64.89545342453307
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 55.092,
+          "oldDependency": 37.11,
+          "workingAgeShare": 64.4778583034586
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 56.147,
+          "oldDependency": 38.394,
+          "workingAgeShare": 64.04221662920197
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 57.256,
+          "oldDependency": 39.708,
+          "workingAgeShare": 63.590578419901306
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 58.489,
+          "oldDependency": 41.081,
+          "workingAgeShare": 63.095861542441426
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 59.837,
+          "oldDependency": 42.475,
+          "workingAgeShare": 62.56373680687201
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 61.297,
+          "oldDependency": 43.904,
+          "workingAgeShare": 61.99743330626112
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 62.902,
+          "oldDependency": 45.399,
+          "workingAgeShare": 61.3866005328357
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 64.641,
+          "oldDependency": 46.961,
+          "workingAgeShare": 60.73821223146117
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 66.472,
+          "oldDependency": 48.59,
+          "workingAgeShare": 60.07016194915662
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 68.388,
+          "oldDependency": 50.272,
+          "workingAgeShare": 59.38665463097133
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 70.424,
+          "oldDependency": 52.039,
+          "workingAgeShare": 58.67718161761254
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 72.598,
+          "oldDependency": 53.905,
+          "workingAgeShare": 57.938098935097734
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 74.865,
+          "oldDependency": 55.83,
+          "workingAgeShare": 57.18697280759443
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 77.178,
+          "oldDependency": 57.774,
+          "workingAgeShare": 56.440415852984
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 79.473,
+          "oldDependency": 59.683,
+          "workingAgeShare": 55.71868749059747
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 81.663,
+          "oldDependency": 61.487,
+          "workingAgeShare": 55.0469825996488
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 83.782,
+          "oldDependency": 63.223,
+          "workingAgeShare": 54.412292825195074
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 85.694,
+          "oldDependency": 64.776,
+          "workingAgeShare": 53.85203614548666
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 87.293,
+          "oldDependency": 66.058,
+          "workingAgeShare": 53.392278408696534
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 88.654,
+          "oldDependency": 67.142,
+          "workingAgeShare": 53.00709234895629
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 89.767,
+          "oldDependency": 68.028,
+          "workingAgeShare": 52.69620113086048
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 90.679,
+          "oldDependency": 68.758,
+          "workingAgeShare": 52.44416008055423
+        }
+      ],
+      "name": "Spain"
+    },
+    {
+      "iso": "POL",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 50.523,
+          "oldDependency": 27.209,
+          "workingAgeShare": 66.43502986254593
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 51.509,
+          "oldDependency": 28.083,
+          "workingAgeShare": 66.00267970879617
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 52.307,
+          "oldDependency": 28.968,
+          "workingAgeShare": 65.65686409685699
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 53.04,
+          "oldDependency": 29.936,
+          "workingAgeShare": 65.34239414532149
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 53.726,
+          "oldDependency": 30.966,
+          "workingAgeShare": 65.05080467845387
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 54.355,
+          "oldDependency": 32.035,
+          "workingAgeShare": 64.78572122704156
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 54.776,
+          "oldDependency": 32.911,
+          "workingAgeShare": 64.6095001809066
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 54.971,
+          "oldDependency": 33.544,
+          "workingAgeShare": 64.52820205070626
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 55.068,
+          "oldDependency": 34.081,
+          "workingAgeShare": 64.48783759382981
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 55.081,
+          "oldDependency": 34.54,
+          "workingAgeShare": 64.48243176146659
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 55.024,
+          "oldDependency": 34.936,
+          "workingAgeShare": 64.50614098462174
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 54.91,
+          "oldDependency": 35.285,
+          "workingAgeShare": 64.55361177457878
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 54.76,
+          "oldDependency": 35.607,
+          "workingAgeShare": 64.61617989144482
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 54.604,
+          "oldDependency": 35.925,
+          "workingAgeShare": 64.6813795244625
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 54.473,
+          "oldDependency": 36.265,
+          "workingAgeShare": 64.73623222181222
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 54.472,
+          "oldDependency": 36.671,
+          "workingAgeShare": 64.73665130250141
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 54.723,
+          "oldDependency": 37.192,
+          "workingAgeShare": 64.63163201333997
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 55.256,
+          "oldDependency": 37.848,
+          "workingAgeShare": 64.40974905961767
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 55.997,
+          "oldDependency": 38.625,
+          "workingAgeShare": 64.10379686788848
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 56.892,
+          "oldDependency": 39.509,
+          "workingAgeShare": 63.73811284195498
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 57.959,
+          "oldDependency": 40.503,
+          "workingAgeShare": 63.30756715350186
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 59.179,
+          "oldDependency": 41.601,
+          "workingAgeShare": 62.822357220487625
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 60.547,
+          "oldDependency": 42.797,
+          "workingAgeShare": 62.287056126866275
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 62.066,
+          "oldDependency": 44.095,
+          "workingAgeShare": 61.70325669788851
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 63.742,
+          "oldDependency": 45.501,
+          "workingAgeShare": 61.0716859449622
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 65.574,
+          "oldDependency": 47.023,
+          "workingAgeShare": 60.395955886793814
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 67.553,
+          "oldDependency": 48.661,
+          "workingAgeShare": 59.68260789123442
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 69.67,
+          "oldDependency": 50.417,
+          "workingAgeShare": 58.93793835091648
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 71.897,
+          "oldDependency": 52.276,
+          "workingAgeShare": 58.17437186221982
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 74.17,
+          "oldDependency": 54.191,
+          "workingAgeShare": 57.41516908767296
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 76.409,
+          "oldDependency": 56.099,
+          "workingAgeShare": 56.68645023779966
+        }
+      ],
+      "name": "Poland"
+    },
+    {
+      "iso": "THA",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 40.974,
+          "oldDependency": 18.183,
+          "workingAgeShare": 70.93506604054649
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 41.408,
+          "oldDependency": 19.079,
+          "workingAgeShare": 70.71735686806969
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 41.904,
+          "oldDependency": 20.004,
+          "workingAgeShare": 70.47017702108468
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 42.466,
+          "oldDependency": 20.969,
+          "workingAgeShare": 70.19218620583156
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 43.087,
+          "oldDependency": 21.982,
+          "workingAgeShare": 69.88755093055275
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 43.743,
+          "oldDependency": 23.024,
+          "workingAgeShare": 69.56860507989954
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 44.426,
+          "oldDependency": 24.094,
+          "workingAgeShare": 69.23961059643001
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 45.14,
+          "oldDependency": 25.196,
+          "workingAgeShare": 68.89899407468651
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 45.922,
+          "oldDependency": 26.336,
+          "workingAgeShare": 68.52976247584326
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 46.774,
+          "oldDependency": 27.497,
+          "workingAgeShare": 68.13195797620833
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 47.691,
+          "oldDependency": 28.674,
+          "workingAgeShare": 67.70893283950952
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 48.686,
+          "oldDependency": 29.872,
+          "workingAgeShare": 67.25582771747172
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 49.773,
+          "oldDependency": 31.103,
+          "workingAgeShare": 66.76770846547775
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 50.949,
+          "oldDependency": 32.37,
+          "workingAgeShare": 66.2475405600567
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 52.193,
+          "oldDependency": 33.654,
+          "workingAgeShare": 65.70604429901508
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 53.479,
+          "oldDependency": 34.939,
+          "workingAgeShare": 65.15549358544166
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 54.776,
+          "oldDependency": 36.204,
+          "workingAgeShare": 64.6095001809066
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 56.065,
+          "oldDependency": 37.438,
+          "workingAgeShare": 64.07586582513696
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 57.329,
+          "oldDependency": 38.634,
+          "workingAgeShare": 63.56107265666215
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 58.538,
+          "oldDependency": 39.767,
+          "workingAgeShare": 63.076360241708606
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 59.696,
+          "oldDependency": 40.838,
+          "workingAgeShare": 62.618976054503555
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 60.82,
+          "oldDependency": 41.871,
+          "workingAgeShare": 62.181320731252335
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 61.935,
+          "oldDependency": 42.894,
+          "workingAgeShare": 61.753172569240746
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 63.051,
+          "oldDependency": 43.915,
+          "workingAgeShare": 61.33050395275099
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 64.148,
+          "oldDependency": 44.922,
+          "workingAgeShare": 60.920632599848915
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 65.226,
+          "oldDependency": 45.915,
+          "workingAgeShare": 60.523162214179365
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 66.276,
+          "oldDependency": 46.889,
+          "workingAgeShare": 60.14097043469893
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 67.284,
+          "oldDependency": 47.834,
+          "workingAgeShare": 59.77858013916454
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 68.22,
+          "oldDependency": 48.721,
+          "workingAgeShare": 59.44596361907026
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 69.034,
+          "oldDependency": 49.506,
+          "workingAgeShare": 59.15969568252541
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 69.734,
+          "oldDependency": 50.197,
+          "workingAgeShare": 58.91571517786655
+        }
+      ],
+      "name": "Thailand"
+    },
+    {
+      "iso": "BRA",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 43.586,
+          "oldDependency": 13.782,
+          "workingAgeShare": 69.64467287897148
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 43.64,
+          "oldDependency": 14.236,
+          "workingAgeShare": 69.61849067112226
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 43.79,
+          "oldDependency": 14.741,
+          "workingAgeShare": 69.54586549829612
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 44.029,
+          "oldDependency": 15.316,
+          "workingAgeShare": 69.43046192086317
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 44.33,
+          "oldDependency": 15.947,
+          "workingAgeShare": 69.28566479595372
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 44.649,
+          "oldDependency": 16.606,
+          "workingAgeShare": 69.13286645604187
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 44.978,
+          "oldDependency": 17.28,
+          "workingAgeShare": 68.97598256287161
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 45.319,
+          "oldDependency": 17.966,
+          "workingAgeShare": 68.8141261638189
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 45.668,
+          "oldDependency": 18.662,
+          "workingAgeShare": 68.64925721503693
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 45.996,
+          "oldDependency": 19.355,
+          "workingAgeShare": 68.49502726102085
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 46.288,
+          "oldDependency": 20.033,
+          "workingAgeShare": 68.35830690145465
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 46.588,
+          "oldDependency": 20.697,
+          "workingAgeShare": 68.21840805522963
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 46.884,
+          "oldDependency": 21.34,
+          "workingAgeShare": 68.08093461507039
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 47.136,
+          "oldDependency": 21.957,
+          "workingAgeShare": 67.9643323183993
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 47.406,
+          "oldDependency": 22.567,
+          "workingAgeShare": 67.83984369700012
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 47.76,
+          "oldDependency": 23.192,
+          "workingAgeShare": 67.6773145641581
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 48.188,
+          "oldDependency": 23.839,
+          "workingAgeShare": 67.48184738305396
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 48.662,
+          "oldDependency": 24.506,
+          "workingAgeShare": 67.2666855013386
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 49.182,
+          "oldDependency": 25.194,
+          "workingAgeShare": 67.03221568285717
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 49.739,
+          "oldDependency": 25.897,
+          "workingAgeShare": 66.78286885848043
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 50.34,
+          "oldDependency": 26.621,
+          "workingAgeShare": 66.51589729945456
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 51.004,
+          "oldDependency": 27.383,
+          "workingAgeShare": 66.22341130036291
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 51.73,
+          "oldDependency": 28.186,
+          "workingAgeShare": 65.90654451987083
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 52.516,
+          "oldDependency": 29.032,
+          "workingAgeShare": 65.56689134254768
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 53.358,
+          "oldDependency": 29.919,
+          "workingAgeShare": 65.2069014984546
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 54.25,
+          "oldDependency": 30.847,
+          "workingAgeShare": 64.82982171799027
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 55.187,
+          "oldDependency": 31.811,
+          "workingAgeShare": 64.43838723604425
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 56.16,
+          "oldDependency": 32.802,
+          "workingAgeShare": 64.03688524590164
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 57.152,
+          "oldDependency": 33.808,
+          "workingAgeShare": 63.63266137242925
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 58.142,
+          "oldDependency": 34.813,
+          "workingAgeShare": 63.23430840636896
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 59.119,
+          "oldDependency": 35.808,
+          "workingAgeShare": 62.84604604101333
+        }
+      ],
+      "name": "Brazil"
+    },
+    {
+      "iso": "USA",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 52.59,
+          "oldDependency": 24.524,
+          "workingAgeShare": 65.53509404285995
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 52.952,
+          "oldDependency": 25.197,
+          "workingAgeShare": 65.37998849312203
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 53.378,
+          "oldDependency": 25.951,
+          "workingAgeShare": 65.19839872732726
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 53.909,
+          "oldDependency": 26.829,
+          "workingAgeShare": 64.9734583422672
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 54.448,
+          "oldDependency": 27.691,
+          "workingAgeShare": 64.74671086708796
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 55.006,
+          "oldDependency": 28.501,
+          "workingAgeShare": 64.51363173038463
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 55.629,
+          "oldDependency": 29.32,
+          "workingAgeShare": 64.25537656863439
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 56.251,
+          "oldDependency": 30.112,
+          "workingAgeShare": 63.99959040262142
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 56.831,
+          "oldDependency": 30.85,
+          "workingAgeShare": 63.76290401770058
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 57.367,
+          "oldDependency": 31.541,
+          "workingAgeShare": 63.545724325938735
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 57.812,
+          "oldDependency": 32.149,
+          "workingAgeShare": 63.36653739893037
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 58.165,
+          "oldDependency": 32.652,
+          "workingAgeShare": 63.225113014889516
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 58.484,
+          "oldDependency": 33.083,
+          "workingAgeShare": 63.09785214911284
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 58.816,
+          "oldDependency": 33.473,
+          "workingAgeShare": 62.965948015313316
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 59.202,
+          "oldDependency": 33.869,
+          "workingAgeShare": 62.813281240185425
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 59.714,
+          "oldDependency": 34.319,
+          "workingAgeShare": 62.61191880486369
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 60.246,
+          "oldDependency": 34.756,
+          "workingAgeShare": 62.40405376733272
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 60.59,
+          "oldDependency": 35.054,
+          "workingAgeShare": 62.27037798119434
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 60.808,
+          "oldDependency": 35.236,
+          "workingAgeShare": 62.185960897467794
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 61.02,
+          "oldDependency": 35.388,
+          "workingAgeShare": 62.10408644888833
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 61.224,
+          "oldDependency": 35.53,
+          "workingAgeShare": 62.02550488760979
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 61.418,
+          "oldDependency": 35.663,
+          "workingAgeShare": 61.950959620364515
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 61.649,
+          "oldDependency": 35.827,
+          "workingAgeShare": 61.86243032743784
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 61.915,
+          "oldDependency": 36.023,
+          "workingAgeShare": 61.76080041997344
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 62.205,
+          "oldDependency": 36.247,
+          "workingAgeShare": 61.65038069110077
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 62.538,
+          "oldDependency": 36.517,
+          "workingAgeShare": 61.52407437030109
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 62.876,
+          "oldDependency": 36.803,
+          "workingAgeShare": 61.3963997151207
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 63.199,
+          "oldDependency": 37.091,
+          "workingAgeShare": 61.27488526277734
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 63.491,
+          "oldDependency": 37.369,
+          "workingAgeShare": 61.165446416010674
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 63.742,
+          "oldDependency": 37.63,
+          "workingAgeShare": 61.0716859449622
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 63.983,
+          "oldDependency": 37.898,
+          "workingAgeShare": 60.98193105382875
+        }
+      ],
+      "name": "United States"
+    },
+    {
+      "iso": "GBR",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 57.659,
+          "oldDependency": 29.334,
+          "workingAgeShare": 63.428031384189936
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 57.613,
+          "oldDependency": 29.503,
+          "workingAgeShare": 63.44654311509837
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 57.628,
+          "oldDependency": 29.84,
+          "workingAgeShare": 63.44050549394778
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 57.846,
+          "oldDependency": 30.367,
+          "workingAgeShare": 63.35288825817569
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 57.94,
+          "oldDependency": 30.798,
+          "workingAgeShare": 63.31518298087882
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 57.897,
+          "oldDependency": 31.11,
+          "workingAgeShare": 63.332425568566855
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 57.875,
+          "oldDependency": 31.477,
+          "workingAgeShare": 63.34125098970705
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 57.855,
+          "oldDependency": 31.879,
+          "workingAgeShare": 63.349276234519024
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 57.854,
+          "oldDependency": 32.287,
+          "workingAgeShare": 63.34967755014127
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 57.938,
+          "oldDependency": 32.724,
+          "workingAgeShare": 63.315984753510875
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 58.115,
+          "oldDependency": 33.215,
+          "workingAgeShare": 63.245106409891534
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 58.306,
+          "oldDependency": 33.711,
+          "workingAgeShare": 63.16879966646874
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 58.542,
+          "oldDependency": 34.221,
+          "workingAgeShare": 63.07476883097223
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 58.875,
+          "oldDependency": 34.761,
+          "workingAgeShare": 62.942564909520065
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 59.307,
+          "oldDependency": 35.326,
+          "workingAgeShare": 62.771880708317894
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 59.762,
+          "oldDependency": 35.847,
+          "workingAgeShare": 62.593107247029955
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 60.244,
+          "oldDependency": 36.348,
+          "workingAgeShare": 62.404832630238886
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 60.813,
+          "oldDependency": 36.899,
+          "workingAgeShare": 62.18402741071929
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 61.294,
+          "oldDependency": 37.358,
+          "workingAgeShare": 61.99858643222935
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 61.638,
+          "oldDependency": 37.686,
+          "workingAgeShare": 61.86664027023348
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 61.921,
+          "oldDependency": 37.942,
+          "workingAgeShare": 61.75851186689806
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 62.164,
+          "oldDependency": 38.139,
+          "workingAgeShare": 61.665967785698435
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 62.382,
+          "oldDependency": 38.294,
+          "workingAgeShare": 61.583180401768665
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 62.611,
+          "oldDependency": 38.443,
+          "workingAgeShare": 61.49645472938486
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 62.936,
+          "oldDependency": 38.666,
+          "workingAgeShare": 61.37379093631855
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 63.425,
+          "oldDependency": 39.025,
+          "workingAgeShare": 61.19014838610983
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 63.968,
+          "oldDependency": 39.429,
+          "workingAgeShare": 60.98750975800156
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 64.494,
+          "oldDependency": 39.821,
+          "workingAgeShare": 60.792490911522606
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 64.99,
+          "oldDependency": 40.196,
+          "workingAgeShare": 60.609733923268074
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 65.436,
+          "oldDependency": 40.54,
+          "workingAgeShare": 60.44633574312725
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 65.939,
+          "oldDependency": 40.949,
+          "workingAgeShare": 60.26310873272709
+        }
+      ],
+      "name": "United Kingdom"
+    },
+    {
+      "iso": "FRA",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 61.777,
+          "oldDependency": 33.565,
+          "workingAgeShare": 61.81348399339832
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 62.064,
+          "oldDependency": 34.116,
+          "workingAgeShare": 61.70401816566295
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 62.361,
+          "oldDependency": 34.708,
+          "workingAgeShare": 61.591145656900366
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 62.691,
+          "oldDependency": 35.384,
+          "workingAgeShare": 61.4662150948731
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 63.004,
+          "oldDependency": 36.1,
+          "workingAgeShare": 61.348187774533145
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 63.31,
+          "oldDependency": 36.813,
+          "workingAgeShare": 61.233237401261405
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 63.625,
+          "oldDependency": 37.517,
+          "workingAgeShare": 61.11535523300229
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 63.959,
+          "oldDependency": 38.194,
+          "workingAgeShare": 60.99085747046517
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 64.357,
+          "oldDependency": 38.895,
+          "workingAgeShare": 60.84316457467586
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 64.848,
+          "oldDependency": 39.643,
+          "workingAgeShare": 60.66194312336212
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 65.425,
+          "oldDependency": 40.396,
+          "workingAgeShare": 60.450355145836475
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 65.894,
+          "oldDependency": 41.086,
+          "workingAgeShare": 60.27945555595742
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 66.351,
+          "oldDependency": 41.707,
+          "workingAgeShare": 60.11385564258706
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 66.976,
+          "oldDependency": 42.322,
+          "workingAgeShare": 59.888846301264856
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 67.643,
+          "oldDependency": 42.942,
+          "workingAgeShare": 59.650566978639134
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 68.406,
+          "oldDependency": 43.595,
+          "workingAgeShare": 59.380307114948394
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 69.16,
+          "oldDependency": 44.254,
+          "workingAgeShare": 59.11563017261764
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 69.888,
+          "oldDependency": 44.907,
+          "workingAgeShare": 58.86230928611791
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 70.732,
+          "oldDependency": 45.563,
+          "workingAgeShare": 58.571328163437435
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 71.558,
+          "oldDependency": 46.13,
+          "workingAgeShare": 58.289324893039094
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 72.202,
+          "oldDependency": 46.525,
+          "workingAgeShare": 58.07133482770235
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 72.711,
+          "oldDependency": 46.795,
+          "workingAgeShare": 57.90019164963436
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 73.215,
+          "oldDependency": 47.052,
+          "workingAgeShare": 57.73172069393528
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 73.729,
+          "oldDependency": 47.318,
+          "workingAgeShare": 57.560913837068085
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 74.208,
+          "oldDependency": 47.563,
+          "workingAgeShare": 57.40264511388685
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 74.735,
+          "oldDependency": 47.861,
+          "workingAgeShare": 57.229518985892916
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 75.237,
+          "oldDependency": 48.159,
+          "workingAgeShare": 57.06557405114217
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 75.606,
+          "oldDependency": 48.372,
+          "workingAgeShare": 56.94566244889127
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 75.782,
+          "oldDependency": 48.452,
+          "workingAgeShare": 56.888646163998594
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 75.813,
+          "oldDependency": 48.443,
+          "workingAgeShare": 56.878615346988
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 75.833,
+          "oldDependency": 48.461,
+          "workingAgeShare": 56.872145729186215
+        }
+      ],
+      "name": "France"
+    },
+    {
+      "iso": "SWE",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 60.761,
+          "oldDependency": 32.249,
+          "workingAgeShare": 62.20414155174452
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 60.893,
+          "oldDependency": 32.495,
+          "workingAgeShare": 62.153107966163844
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 60.851,
+          "oldDependency": 32.72,
+          "workingAgeShare": 62.16933683968393
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 60.736,
+          "oldDependency": 33.009,
+          "workingAgeShare": 62.21381644435596
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 60.598,
+          "oldDependency": 33.319,
+          "workingAgeShare": 62.26727605574166
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 60.306,
+          "oldDependency": 33.524,
+          "workingAgeShare": 62.38069691714597
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 60.029,
+          "oldDependency": 33.739,
+          "workingAgeShare": 62.48867392785058
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 59.838,
+          "oldDependency": 34.005,
+          "workingAgeShare": 62.56334538720455
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 59.737,
+          "oldDependency": 34.354,
+          "workingAgeShare": 62.602903522665386
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 59.782,
+          "oldDependency": 34.834,
+          "workingAgeShare": 62.58527243369091
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 59.922,
+          "oldDependency": 35.395,
+          "workingAgeShare": 62.53048361076025
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 60.038,
+          "oldDependency": 35.942,
+          "workingAgeShare": 62.48515977455354
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 60.141,
+          "oldDependency": 36.461,
+          "workingAgeShare": 62.444970369861565
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 60.201,
+          "oldDependency": 36.903,
+          "workingAgeShare": 62.42158288649884
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 60.158,
+          "oldDependency": 37.228,
+          "workingAgeShare": 62.43834213713957
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 60.125,
+          "oldDependency": 37.521,
+          "workingAgeShare": 62.4512099921936
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 60.168,
+          "oldDependency": 37.854,
+          "workingAgeShare": 62.43444383397433
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 60.373,
+          "oldDependency": 38.239,
+          "workingAgeShare": 62.354635755395236
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 60.771,
+          "oldDependency": 38.651,
+          "workingAgeShare": 62.20027243719327
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 61.267,
+          "oldDependency": 39.08,
+          "workingAgeShare": 62.0089664965554
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 61.756,
+          "oldDependency": 39.477,
+          "workingAgeShare": 61.82150893939019
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 62.174,
+          "oldDependency": 39.785,
+          "workingAgeShare": 61.66216532859767
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 62.569,
+          "oldDependency": 40.047,
+          "workingAgeShare": 61.51234245151289
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 62.969,
+          "oldDependency": 40.29,
+          "workingAgeShare": 61.36136320404494
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 63.428,
+          "oldDependency": 40.566,
+          "workingAgeShare": 61.18902513645153
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 64.001,
+          "oldDependency": 40.929,
+          "workingAgeShare": 60.97523795586612
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 64.585,
+          "oldDependency": 41.298,
+          "workingAgeShare": 60.75887839110491
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 65.145,
+          "oldDependency": 41.651,
+          "workingAgeShare": 60.55284749765358
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 65.715,
+          "oldDependency": 42.023,
+          "workingAgeShare": 60.344567480312584
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 66.293,
+          "oldDependency": 42.42,
+          "workingAgeShare": 60.13482227153278
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 66.927,
+          "oldDependency": 42.887,
+          "workingAgeShare": 59.90642616233443
+        }
+      ],
+      "name": "Sweden"
+    },
+    {
+      "iso": "CAN",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 51.198,
+          "oldDependency": 27.194,
+          "workingAgeShare": 66.1384409846691
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 52.034,
+          "oldDependency": 28.099,
+          "workingAgeShare": 65.7747609087441
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 52.645,
+          "oldDependency": 28.912,
+          "workingAgeShare": 65.51148088702544
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 53.052,
+          "oldDependency": 29.628,
+          "workingAgeShare": 65.33727099286517
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 53.636,
+          "oldDependency": 30.419,
+          "workingAgeShare": 65.08891145304486
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 54.418,
+          "oldDependency": 31.286,
+          "workingAgeShare": 64.75928972011035
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 55.251,
+          "oldDependency": 32.19,
+          "workingAgeShare": 64.4118234343096
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 56.099,
+          "oldDependency": 33.108,
+          "workingAgeShare": 64.06190942927245
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 56.95,
+          "oldDependency": 34.029,
+          "workingAgeShare": 63.71455877668048
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 57.769,
+          "oldDependency": 34.917,
+          "workingAgeShare": 63.38380797241536
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 58.47,
+          "oldDependency": 35.7,
+          "workingAgeShare": 63.10342651605982
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 58.998,
+          "oldDependency": 36.323,
+          "workingAgeShare": 62.89387287890414
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 59.391,
+          "oldDependency": 36.815,
+          "workingAgeShare": 62.7387995558093
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 59.739,
+          "oldDependency": 37.25,
+          "workingAgeShare": 62.602119707773305
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 60.086,
+          "oldDependency": 37.671,
+          "workingAgeShare": 62.46642429694039
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 60.443,
+          "oldDependency": 38.088,
+          "workingAgeShare": 62.32743092562468
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 60.744,
+          "oldDependency": 38.461,
+          "workingAgeShare": 62.21072015129647
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 60.966,
+          "oldDependency": 38.752,
+          "workingAgeShare": 62.12492079072599
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 61.151,
+          "oldDependency": 38.986,
+          "workingAgeShare": 62.05360190132236
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 61.308,
+          "oldDependency": 39.201,
+          "workingAgeShare": 61.99320554467231
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 61.477,
+          "oldDependency": 39.422,
+          "workingAgeShare": 61.92832415761997
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 61.662,
+          "oldDependency": 39.643,
+          "workingAgeShare": 61.857455679133004
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 61.847,
+          "oldDependency": 39.85,
+          "workingAgeShare": 61.78674921376361
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 62.041,
+          "oldDependency": 40.058,
+          "workingAgeShare": 61.71277639609728
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 62.27,
+          "oldDependency": 40.29,
+          "workingAgeShare": 61.62568558575214
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 62.546,
+          "oldDependency": 40.557,
+          "workingAgeShare": 61.52104634995632
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 62.856,
+          "oldDependency": 40.85,
+          "workingAgeShare": 61.40393967676966
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 63.187,
+          "oldDependency": 41.159,
+          "workingAgeShare": 61.279391127969745
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 63.536,
+          "oldDependency": 41.481,
+          "workingAgeShare": 61.14861559534292
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 63.907,
+          "oldDependency": 41.822,
+          "workingAgeShare": 61.01020700763238
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 64.288,
+          "oldDependency": 42.172,
+          "workingAgeShare": 60.868718348266455
+        }
+      ],
+      "name": "Canada"
+    },
+    {
+      "iso": "IND",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 48.726,
+          "oldDependency": 9.544,
+          "workingAgeShare": 67.2377391982572
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 48.041,
+          "oldDependency": 9.69,
+          "workingAgeShare": 67.54885470916841
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 47.464,
+          "oldDependency": 9.879,
+          "workingAgeShare": 67.8131611783215
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 47.013,
+          "oldDependency": 10.176,
+          "workingAgeShare": 68.02119540448804
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 46.564,
+          "oldDependency": 10.474,
+          "workingAgeShare": 68.22957888703911
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 46.139,
+          "oldDependency": 10.78,
+          "workingAgeShare": 68.42800347614258
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 45.76,
+          "oldDependency": 11.091,
+          "workingAgeShare": 68.60592755214051
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 45.422,
+          "oldDependency": 11.407,
+          "workingAgeShare": 68.76538625517459
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 45.136,
+          "oldDependency": 11.727,
+          "workingAgeShare": 68.9008929555727
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 44.945,
+          "oldDependency": 12.057,
+          "workingAgeShare": 68.99168650177654
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 44.811,
+          "oldDependency": 12.39,
+          "workingAgeShare": 69.05552754970272
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 44.666,
+          "oldDependency": 12.723,
+          "workingAgeShare": 69.12474251033414
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 44.569,
+          "oldDependency": 13.066,
+          "workingAgeShare": 69.17112243980382
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 44.518,
+          "oldDependency": 13.421,
+          "workingAgeShare": 69.19553273640653
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 44.491,
+          "oldDependency": 13.784,
+          "workingAgeShare": 69.20846281083251
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 44.536,
+          "oldDependency": 14.159,
+          "workingAgeShare": 69.18691537056512
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 44.639,
+          "oldDependency": 14.551,
+          "workingAgeShare": 69.13764613969953
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 44.761,
+          "oldDependency": 14.957,
+          "workingAgeShare": 69.07937911454052
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 44.894,
+          "oldDependency": 15.376,
+          "workingAgeShare": 69.01597029552639
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 45.04,
+          "oldDependency": 15.811,
+          "workingAgeShare": 68.94649751792609
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 45.195,
+          "oldDependency": 16.254,
+          "workingAgeShare": 68.87289507214436
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 45.364,
+          "oldDependency": 16.71,
+          "workingAgeShare": 68.79282353264907
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 45.548,
+          "oldDependency": 17.179,
+          "workingAgeShare": 68.70585648720697
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 45.741,
+          "oldDependency": 17.655,
+          "workingAgeShare": 68.61487158726783
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 45.962,
+          "oldDependency": 18.153,
+          "workingAgeShare": 68.51098231046437
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 46.222,
+          "oldDependency": 18.683,
+          "workingAgeShare": 68.38916168565605
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 46.522,
+          "oldDependency": 19.245,
+          "workingAgeShare": 68.2491366484214
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 46.855,
+          "oldDependency": 19.83,
+          "workingAgeShare": 68.09437880902932
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 47.226,
+          "oldDependency": 20.44,
+          "workingAgeShare": 67.92278537758277
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 47.64,
+          "oldDependency": 21.08,
+          "workingAgeShare": 67.7323218639935
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 48.093,
+          "oldDependency": 21.746,
+          "workingAgeShare": 67.52513623196234
+        }
+      ],
+      "name": "India"
+    },
+    {
+      "iso": "IDN",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 48.022,
+          "oldDependency": 9.781,
+          "workingAgeShare": 67.55752523273568
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 47.628,
+          "oldDependency": 9.872,
+          "workingAgeShare": 67.73782751239602
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 47.273,
+          "oldDependency": 10.051,
+          "workingAgeShare": 67.90110882510712
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 47.022,
+          "oldDependency": 10.363,
+          "workingAgeShare": 68.01703146467877
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 46.814,
+          "oldDependency": 10.701,
+          "workingAgeShare": 68.11339518029617
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 46.606,
+          "oldDependency": 11.058,
+          "workingAgeShare": 68.21003233155533
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 46.361,
+          "oldDependency": 11.43,
+          "workingAgeShare": 68.32421205102453
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 46.094,
+          "oldDependency": 11.813,
+          "workingAgeShare": 68.44908072884581
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 45.89,
+          "oldDependency": 12.212,
+          "workingAgeShare": 68.54479402289397
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 45.785,
+          "oldDependency": 12.63,
+          "workingAgeShare": 68.59416263675962
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 45.761,
+          "oldDependency": 13.068,
+          "workingAgeShare": 68.60545687804009
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 45.816,
+          "oldDependency": 13.526,
+          "workingAgeShare": 68.57957974433532
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 45.953,
+          "oldDependency": 14.001,
+          "workingAgeShare": 68.51520695018259
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 46.164,
+          "oldDependency": 14.486,
+          "workingAgeShare": 68.41629949919269
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 46.418,
+          "oldDependency": 14.981,
+          "workingAgeShare": 68.29761368137797
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 46.697,
+          "oldDependency": 15.482,
+          "workingAgeShare": 68.16771985793847
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 46.997,
+          "oldDependency": 15.984,
+          "workingAgeShare": 68.02859922311339
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 47.321,
+          "oldDependency": 16.484,
+          "workingAgeShare": 67.87898534492706
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 47.672,
+          "oldDependency": 16.991,
+          "workingAgeShare": 67.71764450945338
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 48.033,
+          "oldDependency": 17.492,
+          "workingAgeShare": 67.55250518465476
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 48.397,
+          "oldDependency": 17.989,
+          "workingAgeShare": 67.3868070109234
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 48.778,
+          "oldDependency": 18.49,
+          "workingAgeShare": 67.21423866431866
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 49.164,
+          "oldDependency": 18.991,
+          "workingAgeShare": 67.04030463114425
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 49.567,
+          "oldDependency": 19.501,
+          "workingAgeShare": 66.85966824232618
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 49.987,
+          "oldDependency": 20.023,
+          "workingAgeShare": 66.67244494522859
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 50.407,
+          "oldDependency": 20.545,
+          "workingAgeShare": 66.48626726149715
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 50.814,
+          "oldDependency": 21.064,
+          "workingAgeShare": 66.3068415399101
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 51.212,
+          "oldDependency": 21.581,
+          "workingAgeShare": 66.13231754093592
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 51.597,
+          "oldDependency": 22.095,
+          "workingAgeShare": 65.96436604946008
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 51.956,
+          "oldDependency": 22.594,
+          "workingAgeShare": 65.8085235199663
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 52.256,
+          "oldDependency": 23.052,
+          "workingAgeShare": 65.67885666246322
+        }
+      ],
+      "name": "Indonesia"
+    },
+    {
+      "iso": "MEX",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 50.309,
+          "oldDependency": 11.252,
+          "workingAgeShare": 66.52961565841034
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 49.806,
+          "oldDependency": 11.364,
+          "workingAgeShare": 66.75300054737461
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 49.38,
+          "oldDependency": 11.57,
+          "workingAgeShare": 66.94336591243808
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 49.042,
+          "oldDependency": 11.903,
+          "workingAgeShare": 67.09518122408448
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 48.717,
+          "oldDependency": 12.267,
+          "workingAgeShare": 67.24180826670792
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 48.395,
+          "oldDependency": 12.645,
+          "workingAgeShare": 67.38771521951547
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 48.091,
+          "oldDependency": 13.04,
+          "workingAgeShare": 67.52604817308276
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 47.807,
+          "oldDependency": 13.451,
+          "workingAgeShare": 67.65579438050972
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 47.548,
+          "oldDependency": 13.875,
+          "workingAgeShare": 67.77455472117548
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 47.351,
+          "oldDependency": 14.316,
+          "workingAgeShare": 67.86516548920605
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 47.26,
+          "oldDependency": 14.779,
+          "workingAgeShare": 67.90710308298249
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 47.267,
+          "oldDependency": 15.26,
+          "workingAgeShare": 67.9038752741619
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 47.348,
+          "oldDependency": 15.757,
+          "workingAgeShare": 67.86654722154356
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 47.476,
+          "oldDependency": 16.271,
+          "workingAgeShare": 67.80764327755024
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 47.615,
+          "oldDependency": 16.794,
+          "workingAgeShare": 67.74379297496867
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 47.779,
+          "oldDependency": 17.329,
+          "workingAgeShare": 67.66861326710831
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 47.983,
+          "oldDependency": 17.879,
+          "workingAgeShare": 67.57532959867011
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 48.224,
+          "oldDependency": 18.442,
+          "workingAgeShare": 67.46545768566494
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 48.504,
+          "oldDependency": 19.016,
+          "workingAgeShare": 67.33825351505683
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 48.805,
+          "oldDependency": 19.589,
+          "workingAgeShare": 67.20204294210544
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 49.104,
+          "oldDependency": 20.152,
+          "workingAgeShare": 67.06728189719928
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 49.401,
+          "oldDependency": 20.704,
+          "workingAgeShare": 66.93395626535298
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 49.706,
+          "oldDependency": 21.257,
+          "workingAgeShare": 66.79758994295484
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 50.024,
+          "oldDependency": 21.815,
+          "workingAgeShare": 66.65600170639364
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 50.347,
+          "oldDependency": 22.373,
+          "workingAgeShare": 66.51280038843475
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 50.67,
+          "oldDependency": 22.926,
+          "workingAgeShare": 66.37021304838387
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 51.003,
+          "oldDependency": 23.487,
+          "workingAgeShare": 66.2238498572876
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 51.363,
+          "oldDependency": 24.068,
+          "workingAgeShare": 66.06634382246652
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 51.732,
+          "oldDependency": 24.655,
+          "workingAgeShare": 65.90567579679963
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 52.112,
+          "oldDependency": 25.248,
+          "workingAgeShare": 65.74103292310929
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 52.519,
+          "oldDependency": 25.861,
+          "workingAgeShare": 65.56560166274366
+        }
+      ],
+      "name": "Mexico"
+    },
+    {
+      "iso": "VNM",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 46.964,
+          "oldDependency": 11.121,
+          "workingAgeShare": 68.04387469040037
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 47.239,
+          "oldDependency": 11.611,
+          "workingAgeShare": 67.91678835091246
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 47.416,
+          "oldDependency": 12.132,
+          "workingAgeShare": 67.83524176480165
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 47.551,
+          "oldDependency": 12.721,
+          "workingAgeShare": 67.77317673211297
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 47.648,
+          "oldDependency": 13.358,
+          "workingAgeShare": 67.72865192891202
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 47.821,
+          "oldDependency": 14.035,
+          "workingAgeShare": 67.64938675830903
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 47.808,
+          "oldDependency": 14.644,
+          "workingAgeShare": 67.65533665295519
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 47.312,
+          "oldDependency": 15.225,
+          "workingAgeShare": 67.88313239926143
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 46.829,
+          "oldDependency": 15.886,
+          "workingAgeShare": 68.10643673933623
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 46.638,
+          "oldDependency": 16.592,
+          "workingAgeShare": 68.19514723332287
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 46.493,
+          "oldDependency": 17.275,
+          "workingAgeShare": 68.26264736198999
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 46.392,
+          "oldDependency": 17.886,
+          "workingAgeShare": 68.30974370184163
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 46.389,
+          "oldDependency": 18.452,
+          "workingAgeShare": 68.31114359685495
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 46.584,
+          "oldDependency": 19.062,
+          "workingAgeShare": 68.22026960650548
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 46.958,
+          "oldDependency": 19.737,
+          "workingAgeShare": 68.0466527851495
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 47.332,
+          "oldDependency": 20.409,
+          "workingAgeShare": 67.8739174110173
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 47.755,
+          "oldDependency": 21.072,
+          "workingAgeShare": 67.67960475110826
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 48.269,
+          "oldDependency": 21.748,
+          "workingAgeShare": 67.44498175613244
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 48.805,
+          "oldDependency": 22.386,
+          "workingAgeShare": 67.20204294210544
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 49.353,
+          "oldDependency": 22.985,
+          "workingAgeShare": 66.95546791828754
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 50.0,
+          "oldDependency": 23.625,
+          "workingAgeShare": 66.66666666666667
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 50.738,
+          "oldDependency": 24.308,
+          "workingAgeShare": 66.34027252583954
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 51.475,
+          "oldDependency": 24.971,
+          "workingAgeShare": 66.01749463607857
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 52.206,
+          "oldDependency": 25.622,
+          "workingAgeShare": 65.70043230884458
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 52.991,
+          "oldDependency": 26.321,
+          "workingAgeShare": 65.36332202547862
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 53.777,
+          "oldDependency": 27.033,
+          "workingAgeShare": 65.02923063917231
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 54.547,
+          "oldDependency": 27.751,
+          "workingAgeShare": 64.70523530058817
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 55.447,
+          "oldDependency": 28.599,
+          "workingAgeShare": 64.33060785991367
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 56.484,
+          "oldDependency": 29.591,
+          "workingAgeShare": 63.90429692492523
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 57.578,
+          "oldDependency": 30.663,
+          "workingAgeShare": 63.4606353678813
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 58.64,
+          "oldDependency": 31.742,
+          "workingAgeShare": 63.03580433686334
+        }
+      ],
+      "name": "Vietnam"
+    },
+    {
+      "iso": "NGA",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 84.526,
+          "oldDependency": 5.501,
+          "workingAgeShare": 54.1929050648689
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 83.1,
+          "oldDependency": 5.475,
+          "workingAgeShare": 54.614964500273075
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 81.687,
+          "oldDependency": 5.465,
+          "workingAgeShare": 55.039711151595874
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 80.246,
+          "oldDependency": 5.458,
+          "workingAgeShare": 55.479733253442525
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 78.771,
+          "oldDependency": 5.45,
+          "workingAgeShare": 55.93748426758255
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 77.271,
+          "oldDependency": 5.441,
+          "workingAgeShare": 56.4108060540077
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 75.77,
+          "oldDependency": 5.435,
+          "workingAgeShare": 56.89253001080959
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 74.292,
+          "oldDependency": 5.432,
+          "workingAgeShare": 57.37497991875703
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 72.864,
+          "oldDependency": 5.433,
+          "workingAgeShare": 57.8489448352462
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 71.486,
+          "oldDependency": 5.437,
+          "workingAgeShare": 58.313798210932674
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 70.178,
+          "oldDependency": 5.447,
+          "workingAgeShare": 58.76200213893688
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 68.989,
+          "oldDependency": 5.462,
+          "workingAgeShare": 59.17544928959873
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 67.935,
+          "oldDependency": 5.486,
+          "workingAgeShare": 59.54684848304404
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 66.994,
+          "oldDependency": 5.517,
+          "workingAgeShare": 59.88239098410721
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 66.158,
+          "oldDependency": 5.557,
+          "workingAgeShare": 60.18368059317035
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 65.428,
+          "oldDependency": 5.605,
+          "workingAgeShare": 60.449258892085986
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 64.734,
+          "oldDependency": 5.661,
+          "workingAgeShare": 60.703922687484074
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 64.025,
+          "oldDependency": 5.725,
+          "workingAgeShare": 60.96631611034903
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 63.305,
+          "oldDependency": 5.797,
+          "workingAgeShare": 61.23511221334313
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 62.592,
+          "oldDependency": 5.878,
+          "workingAgeShare": 61.503641015548126
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 61.894,
+          "oldDependency": 5.972,
+          "workingAgeShare": 61.768811691600675
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 61.194,
+          "oldDependency": 6.074,
+          "workingAgeShare": 62.03704852537935
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 60.497,
+          "oldDependency": 6.182,
+          "workingAgeShare": 62.30646055689514
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 59.809,
+          "oldDependency": 6.297,
+          "workingAgeShare": 62.574698546389754
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 59.115,
+          "oldDependency": 6.414,
+          "workingAgeShare": 62.847625930930455
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 58.413,
+          "oldDependency": 6.527,
+          "workingAgeShare": 63.12613232499857
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 57.708,
+          "oldDependency": 6.636,
+          "workingAgeShare": 63.408324244806856
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 56.997,
+          "oldDependency": 6.742,
+          "workingAgeShare": 63.69548462709478
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 56.288,
+          "oldDependency": 6.846,
+          "workingAgeShare": 63.98443898443898
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 55.583,
+          "oldDependency": 6.943,
+          "workingAgeShare": 64.27437444965067
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 54.875,
+          "oldDependency": 7.031,
+          "workingAgeShare": 64.5682001614205
+        }
+      ],
+      "name": "Nigeria"
+    },
+    {
+      "iso": "SGP",
+      "rows": [
+        {
+          "year": 2020,
+          "status": "estimate",
+          "totalDependency": 31.164,
+          "oldDependency": 15.195,
+          "workingAgeShare": 76.24043182580587
+        },
+        {
+          "year": 2021,
+          "status": "estimate",
+          "totalDependency": 32.322,
+          "oldDependency": 16.22,
+          "workingAgeShare": 75.5732228956636
+        },
+        {
+          "year": 2022,
+          "status": "estimate",
+          "totalDependency": 32.795,
+          "oldDependency": 16.853,
+          "workingAgeShare": 75.3040400617493
+        },
+        {
+          "year": 2023,
+          "status": "estimate",
+          "totalDependency": 33.125,
+          "oldDependency": 17.433,
+          "workingAgeShare": 75.11737089201878
+        },
+        {
+          "year": 2024,
+          "status": "projection",
+          "totalDependency": 33.945,
+          "oldDependency": 18.292,
+          "workingAgeShare": 74.65750867893539
+        },
+        {
+          "year": 2025,
+          "status": "projection",
+          "totalDependency": 34.953,
+          "oldDependency": 19.178,
+          "workingAgeShare": 74.09987180722177
+        },
+        {
+          "year": 2026,
+          "status": "projection",
+          "totalDependency": 36.068,
+          "oldDependency": 20.081,
+          "workingAgeShare": 73.49266543198989
+        },
+        {
+          "year": 2027,
+          "status": "projection",
+          "totalDependency": 37.196,
+          "oldDependency": 20.984,
+          "workingAgeShare": 72.88842240298551
+        },
+        {
+          "year": 2028,
+          "status": "projection",
+          "totalDependency": 38.333,
+          "oldDependency": 21.894,
+          "workingAgeShare": 72.28933081766462
+        },
+        {
+          "year": 2029,
+          "status": "projection",
+          "totalDependency": 39.488,
+          "oldDependency": 22.816,
+          "workingAgeShare": 71.69075476026612
+        },
+        {
+          "year": 2030,
+          "status": "projection",
+          "totalDependency": 40.607,
+          "oldDependency": 23.724,
+          "workingAgeShare": 71.12021449856692
+        },
+        {
+          "year": 2031,
+          "status": "projection",
+          "totalDependency": 41.666,
+          "oldDependency": 24.596,
+          "workingAgeShare": 70.58856747561165
+        },
+        {
+          "year": 2032,
+          "status": "projection",
+          "totalDependency": 42.671,
+          "oldDependency": 25.42,
+          "workingAgeShare": 70.0913290016892
+        },
+        {
+          "year": 2033,
+          "status": "projection",
+          "totalDependency": 43.616,
+          "oldDependency": 26.2,
+          "workingAgeShare": 69.63012477718361
+        },
+        {
+          "year": 2034,
+          "status": "projection",
+          "totalDependency": 44.484,
+          "oldDependency": 26.945,
+          "workingAgeShare": 69.2118158412004
+        },
+        {
+          "year": 2035,
+          "status": "projection",
+          "totalDependency": 45.339,
+          "oldDependency": 27.711,
+          "workingAgeShare": 68.8046566991654
+        },
+        {
+          "year": 2036,
+          "status": "projection",
+          "totalDependency": 46.258,
+          "oldDependency": 28.549,
+          "workingAgeShare": 68.37232835126967
+        },
+        {
+          "year": 2037,
+          "status": "projection",
+          "totalDependency": 47.213,
+          "oldDependency": 29.448,
+          "workingAgeShare": 67.92878346341696
+        },
+        {
+          "year": 2038,
+          "status": "projection",
+          "totalDependency": 48.106,
+          "oldDependency": 30.359,
+          "workingAgeShare": 67.51920921502168
+        },
+        {
+          "year": 2039,
+          "status": "projection",
+          "totalDependency": 48.867,
+          "oldDependency": 31.228,
+          "workingAgeShare": 67.17405469311534
+        },
+        {
+          "year": 2040,
+          "status": "projection",
+          "totalDependency": 49.507,
+          "oldDependency": 32.049,
+          "workingAgeShare": 66.88650029764493
+        },
+        {
+          "year": 2041,
+          "status": "projection",
+          "totalDependency": 50.089,
+          "oldDependency": 32.872,
+          "workingAgeShare": 66.62713456682368
+        },
+        {
+          "year": 2042,
+          "status": "projection",
+          "totalDependency": 50.635,
+          "oldDependency": 33.708,
+          "workingAgeShare": 66.38563414877021
+        },
+        {
+          "year": 2043,
+          "status": "projection",
+          "totalDependency": 51.127,
+          "oldDependency": 34.534,
+          "workingAgeShare": 66.16951305855339
+        },
+        {
+          "year": 2044,
+          "status": "projection",
+          "totalDependency": 51.631,
+          "oldDependency": 35.396,
+          "workingAgeShare": 65.94957495498942
+        },
+        {
+          "year": 2045,
+          "status": "projection",
+          "totalDependency": 52.184,
+          "oldDependency": 36.317,
+          "workingAgeShare": 65.7099300846344
+        },
+        {
+          "year": 2046,
+          "status": "projection",
+          "totalDependency": 52.796,
+          "oldDependency": 37.296,
+          "workingAgeShare": 65.44673944344093
+        },
+        {
+          "year": 2047,
+          "status": "projection",
+          "totalDependency": 53.505,
+          "oldDependency": 38.356,
+          "workingAgeShare": 65.14445783524967
+        },
+        {
+          "year": 2048,
+          "status": "projection",
+          "totalDependency": 54.252,
+          "oldDependency": 39.44,
+          "workingAgeShare": 64.82898114773228
+        },
+        {
+          "year": 2049,
+          "status": "projection",
+          "totalDependency": 55.037,
+          "oldDependency": 40.538,
+          "workingAgeShare": 64.50073208330915
+        },
+        {
+          "year": 2050,
+          "status": "projection",
+          "totalDependency": 55.943,
+          "oldDependency": 41.716,
+          "workingAgeShare": 64.12599475449363
+        }
+      ],
+      "name": "Singapore"
+    }
+  ]
+}

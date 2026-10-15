@@ -222,6 +222,11 @@
       "description": "Move through 36 years of Federal Reserve data and see who owns U.S. household wealth, what each group holds, and how wealth differs by age."
     },
     {
+      "href": "/age-automation",
+      "title": "Age & Automation",
+      "description": "Compare aging across 20 economies and test the productivity needed to meet your own output-per-person goal through 2050."
+    },
+    {
       "href": "/wealth-horizon",
       "title": "Wealth Horizon",
       "description": "Test how contributions, returns, inflation, fees, taxes and volatility could change a portfolio over 5 to 50 years."
