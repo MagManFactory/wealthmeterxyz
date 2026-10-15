@@ -1,0 +1,42 @@
+{
+  "status": "generated",
+  "site": "wealthmeter",
+  "requested_model": "gemini-3.1-flash-lite-image",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent",
+  "image_config": {
+    "aspectRatio": "16:9",
+    "imageSize": "1K"
+  },
+  "prompt_sha256": "e9f50e4403fc27f9e83648bf3e6b38056a2b41b37dcdf10f0d27f59a728153dd",
+  "generator_version": "longform-nanobanana2lite-v1",
+  "request_sha256": "df14e072ddec824aa7fc9b276055f4d6ff1bca600c9301c3587bbe98a8932349",
+  "requested_at": "2026-10-12T21:00:47.967490+00:00",
+  "returned_model_version": "gemini-3.1-flash-lite-image",
+  "response_id": "gErNasrKG72tjrEP3LPZOA",
+  "usage": {
+    "promptTokenCount": 360,
+    "candidatesTokenCount": 1609,
+    "totalTokenCount": 1969,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 360
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1120
+      }
+    ]
+  },
+  "output_sha256": "0627bfd9858e5695c0c90cb6cda76f21501f0692e7d1250f0c7c4f0bcfb588d8",
+  "generator_sha256": "da9baed9c894c600a56f19fb7c11dffea53cf89e907dd96b1c469838967281fd",
+  "responded_at": "2026-10-12T21:00:53.169915+00:00",
+  "provider_output_sha256": "d4966128bbecf1ca14b046d5506b760a5f243c3d1dc0348c6aec487ca7441214",
+  "provider_mime_type": "image/jpeg",
+  "output_name": "529-contribution-stop-test-2026-oct12.png",
+  "width": 1376,
+  "height": 768,
+  "completed_at": "2026-10-12T21:00:53.309280+00:00"
+}

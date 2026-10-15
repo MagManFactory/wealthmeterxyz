@@ -1,0 +1,42 @@
+{
+  "status": "generated",
+  "site": "wealthmeter",
+  "requested_model": "gemini-3.1-flash-lite-image",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent",
+  "image_config": {
+    "aspectRatio": "16:9",
+    "imageSize": "1K"
+  },
+  "prompt_sha256": "75c1cff34b5e38eca9819f488b51d53979f39aa292e83a78b2b5d6b3d9bde779",
+  "generator_version": "longform-nanobanana2lite-v1",
+  "request_sha256": "0c43dd338f417172876a0a2d99fa85fa02efe327663c4f6e7d88aeead205b3b2",
+  "requested_at": "2026-10-12T21:00:42.021090+00:00",
+  "returned_model_version": "gemini-3.1-flash-lite-image",
+  "response_id": "ekrNavDMEaCojMcPt-PXwQ0",
+  "usage": {
+    "promptTokenCount": 418,
+    "candidatesTokenCount": 1532,
+    "totalTokenCount": 1950,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 418
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1120
+      }
+    ]
+  },
+  "output_sha256": "0e8c06a0c0990c3bb134ce38e03e0c671089af08fd1cb3e08da4c5588bd53178",
+  "generator_sha256": "da9baed9c894c600a56f19fb7c11dffea53cf89e907dd96b1c469838967281fd",
+  "responded_at": "2026-10-12T21:00:47.827281+00:00",
+  "provider_output_sha256": "8095c4176a56452072966bbf1c3007f8a4dec3f434fb0bc2c4b07c1f4174cf61",
+  "provider_mime_type": "image/jpeg",
+  "output_name": "529-overfunding-three-paths-2026-oct12.png",
+  "width": 1376,
+  "height": 768,
+  "completed_at": "2026-10-12T21:00:47.967044+00:00"
+}

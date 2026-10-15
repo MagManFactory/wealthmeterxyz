@@ -746,4 +746,10 @@
   <url><loc>https://wealthmeter.xyz/hsa-as-a-stealth-retirement-account</loc><lastmod>2026-10-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 <url><loc>https://wealthmeter.xyz/historical-return-method.html</loc><lastmod>2026-10-14</lastmod></url><url><loc>https://wealthmeter.xyz/real-and-nominal-returns.html</loc><lastmod>2026-10-14</lastmod></url><url><loc>https://wealthmeter.xyz/overlapping-return-windows.html</loc><lastmod>2026-10-14</lastmod></url>  <url><loc>https://wealthmeter.xyz/age-automation.html</loc><lastmod>2026-10-15</lastmod></url>
   <url><loc>https://wealthmeter.xyz/claim-smart.html</loc><lastmod>2026-10-15</lastmod></url>
+  <url>
+    <loc>https://wealthmeter.xyz/the-529-overfunding-problem.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

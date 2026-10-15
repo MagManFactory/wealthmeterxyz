@@ -3,6 +3,10 @@
   "site": "wealthmeter",
   "longform": [
     {
+      "href": "/the-529-overfunding-problem",
+      "title": "The 529 Overfunding Problem"
+    },
+    {
       "href": "/hsa-as-a-stealth-retirement-account",
       "title": "The HSA as a Stealth Retirement Account"
     },
@@ -53,10 +57,6 @@
     {
       "href": "/medicare-drug-monthly-payment-plan",
       "title": "Medicare Drug Bills: What the Monthly Payment Plan Changes"
-    },
-    {
-      "href": "/2026-hsa-limit-and-deductible-test",
-      "title": "The 2026 HSA Limit and the Deductible Test"
     }
   ],
   "stories": [
