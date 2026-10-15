@@ -3,7 +3,7 @@ const $=id=>document.getElementById(id),view=window.ClaimSmartView;
 const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
 const age=m=>m%12?`${Math.floor(m/12)} years, ${m%12} ${m%12===1?'month':'months'}`:`${m/12}`;
 let result=null;
-function read(){const n=id=>$(id).value.trim()===''?NaN:Number($(id).value);return {cohort:n('cs-cohort'),referenceAge:n('cs-reference'),a:n('cs-ay')*12+n('cs-am'),b:n('cs-by')*12+n('cs-bm'),pia:n('cs-pia'),benefitA:n('cs-ben-a'),benefitB:n('cs-ben-b'),manual:$('cs-manual').checked,basis:$('cs-manual').checked?$('cs-basis').value:'common',display:$('cs-display').value,cola:n('cs-cola'),returns:n('cs-return-exact'),retain:n('cs-retain'),checkpoint:n('cs-checkpoint')};}
+function read(){const n=id=>$(id).value.trim()===''?NaN:Number($(id).value);return {cohort:view.birthCohort(n('cs-cohort'),$('cs-january-first').checked),referenceAge:n('cs-reference'),a:n('cs-ay')*12+n('cs-am'),b:n('cs-by')*12+n('cs-bm'),pia:n('cs-pia'),benefitA:n('cs-ben-a'),benefitB:n('cs-ben-b'),manual:$('cs-manual').checked,basis:$('cs-manual').checked?$('cs-basis').value:'common',display:$('cs-display').value,cola:n('cs-cola'),returns:n('cs-return-exact'),retain:n('cs-retain'),checkpoint:n('cs-checkpoint')};}
 function row(label,a,b){return `<tr><th scope="row">${label}</th><td>${money(a)}</td><td>${money(b)}</td></tr>`;}
 function draw(r,p){
  const start=744,end=Math.max(1140,p.checkpoint*12),visible=s=>s.filter(v=>v.month>=start&&v.month<=end),sa=visible(r.a),sb=visible(r.b),max=Math.max(1,...sa.map(x=>x.shownBalance),...sb.map(x=>x.shownBalance));
@@ -17,7 +17,14 @@ function draw(r,p){
 }
 function breakdown(v){return `<div><span>Money you put in</span><b>${money(v.contributed)}</b></div><div><span>${v.growth<0?'Investment loss':'Investment growth'}</span><b>${v.growth<0?'−':'+'}${money(Math.abs(v.growth))}</b></div><p>Balance = money put in ${v.growth<0?'minus losses':'plus growth'}. It does not include money spent.</p>`;}
 function render(){
- const p=read();$('cs-custom').hidden=!p.manual;$('cs-pia').disabled=p.manual;
+ let p;
+ try{p=read();}catch(e){result=null;$('cs-error').textContent=e.message;$('cs-results').hidden=true;$('cs-fra').textContent='Enter your birth year to see your full retirement age.';$('cs-pia-label').textContent='Your estimated monthly benefit at full retirement age ($)';$('cs-ssa-age').textContent='—';$('cs-monthly-a').textContent='—';$('cs-monthly-b').textContent='—';return;}
+ const full=window.ClaimSmart.fra(p.cohort),fullLabel=view.fullAgeLabel(full);
+ $('cs-fra').textContent=`Your full retirement age: ${fullLabel}`;
+ $('cs-pia-label').textContent=`Your estimated monthly benefit at age ${fullLabel} ($)`;
+ $('cs-ssa-age').textContent=fullLabel;
+ $('cs-birth-note').textContent=$('cs-january-first').checked?`SSA uses ${p.cohort} birth-year rules for your January 1 birthday.`:'Your birth year sets this age. For birthdays other than January 1, 1960 and all later years give the same full retirement age: 67.';
+ $('cs-custom').hidden=!p.manual;$('cs-pia').disabled=p.manual;
  $('cs-retain').setAttribute('aria-valuetext',`${p.retain}% of each monthly check`);$('cs-return').setAttribute('aria-valuetext',`${p.returns}% per year`);
  $('cs-retain-value').textContent=`${p.retain}%`;$('cs-return-value').textContent=Number.isFinite(p.returns)?`${p.returns}%`:'—';
  document.querySelectorAll('[data-return]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.return)===p.returns)));
@@ -25,7 +32,7 @@ function render(){
  try{
  result=view.summarize(p);$('cs-error').textContent='';$('cs-results').hidden=false;
  const s=result,r=s.r,la=`Start at ${age(p.a)}`,lb=`Start at ${age(p.b)}`;
- $('cs-fra').textContent=`For this example: ${age(r.full)}.`;
+
  $('cs-check-a-label').textContent=`Option A · at ${age(p.a)}`;$('cs-check-b-label').textContent=`Option B · at ${age(p.b)}`;
  $('cs-monthly-a').textContent=`${money(s.a.payment)}/mo`;$('cs-monthly-b').textContent=`${money(s.b.payment)}/mo`;
  $('cs-invest-dollars').textContent=`That starts at ${money(s.a.payment*p.retain/100)}/month for A and ${money(s.b.payment*p.retain/100)}/month for B.`;
@@ -56,5 +63,6 @@ document.querySelectorAll('[data-return]').forEach(b=>b.addEventListener('click'
 document.querySelectorAll('[data-horizon]').forEach(b=>b.addEventListener('click',()=>{$('cs-checkpoint').value=b.dataset.horizon;render();}));
 $('cs-reset').addEventListener('click',()=>{$('cs-form').reset();render();});
 function initialize(){const tool=$('cs-tool');if(tool.hasAttribute('data-subscriber-protected'))return;tool.hidden=false;$('cs-landing-action').hidden=true;render();}
+$('cs-cohort').max=String(new Date().getUTCFullYear());
 document.addEventListener('subscriber-access-unlocked',initialize);initialize();
 })();

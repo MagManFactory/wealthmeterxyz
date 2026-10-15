@@ -1,0 +1,33 @@
+✔ SSA boundary years show precise full retirement ages (1.9515ms)
+✔ January 1 uses the prior year without collecting a full date (0.217583ms)
+✔ birth-year / Jan1 changes propagate to benefit amounts and investment trajectory (7.314542ms)
+✔ direct URL and reload without token remain locked; preview sends nothing (1.481834ms)
+✔ valid existing token revalidates newsletter access, not financial data (1.093125ms)
+✔ rejected/expired token fails closed and requests gate (0.745333ms)
+✔ returning-member toggle tolerates removed consent node; no new signup (0.484792ms)
+✔ new subscriber payload is newsletter-only and includes no calculator inputs (1.048083ms)
+✔ static HTML is hidden/inert before JavaScript; no collection or persistence in calculator (1.075959ms)
+✔ beginner cards distinguish monthly check, contributions, growth and final balance (4.900292ms)
+✔ 0/3/5/7 sensitivity is an equal comparison with independent closed-form values (0.947666ms)
+✔ chosen horizon controls catch-up labels, not entire model horizon (2.755625ms)
+✔ negative/custom returns, partial investment, same and reversed ages (3.273958ms)
+✔ main path explains fields; advanced details remain collapsed; default visible investment story (0.90675ms)
+108 extreme model combinations passed
+✔ SSA monthly statutory fixtures and cohort FRA (0.684375ms)
+✔ cash at age80, month-later payment, closed-form investment annuity (3.80475ms)
+✔ break-even means strictly ahead after a deficit, never initial ties (2.973292ms)
+✔ common COLA clock, claim-time estimates not inflated twice, purchasing power (1.002791ms)
+✔ spending is not wealth and no-retention balance stays zero (1.524417ms)
+✔ invalid inputs fail; edge range remains finite (23.580625ms)
+✔ components.js: signup is newsletter-only (27.786ms)
+✔ lifemeter.xyz subscriber gate is newsletter-only (0.901125ms)
+✔ wealthmeter.xyz subscriber gate is newsletter-only (0.501792ms)
+✔ no statically rendered signup contains a separate promotional checkbox (34.411292ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 135.934
