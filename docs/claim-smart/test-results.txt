@@ -1,0 +1,21 @@
+✔ direct URL and reload without token remain locked; preview sends nothing (1.401292ms)
+✔ valid existing token revalidates newsletter access, not financial data (0.958042ms)
+✔ rejected/expired token fails closed and requests gate (0.339833ms)
+✔ returning-member toggle tolerates removed consent node; no new signup (0.423375ms)
+✔ new subscriber payload is newsletter-only and includes no calculator inputs (0.32ms)
+✔ static HTML is hidden/inert before JavaScript; no collection or persistence in calculator (1.480166ms)
+108 extreme model combinations passed
+✔ SSA monthly statutory fixtures and cohort FRA (0.673708ms)
+✔ cash at age80, month-later payment, closed-form investment annuity (2.5515ms)
+✔ break-even means strictly ahead after a deficit, never initial ties (1.721542ms)
+✔ common COLA clock, claim-time estimates not inflated twice, purchasing power (0.82575ms)
+✔ spending is not wealth and no-retention balance stays zero (0.93975ms)
+✔ invalid inputs fail; edge range remains finite (21.356667ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 90.015417

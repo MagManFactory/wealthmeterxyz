@@ -32,7 +32,7 @@
       mode: "cors",
       credentials: "omit",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ action, site, resource: ["fire-timeline", "lev-preparedness", "medical-black-swan", "life-expectancy-hides", "live-better-for-less"].includes(resource) ? "newsletter" : resource, company: "", ...extra }),
+      body: JSON.stringify({ action, site, resource: ["fire-timeline", "lev-preparedness", "medical-black-swan", "life-expectancy-hides", "live-better-for-less", "claim-smart"].includes(resource) ? "newsletter" : resource, company: "", ...extra }),
     });
     const data = await response.json().catch(() => ({}));
     if (!response.ok || !data.ok) throw new Error(data.error || "not_verified");
@@ -44,10 +44,12 @@
     document.querySelectorAll("[data-subscriber-protected]").forEach((node) => { node.removeAttribute("data-subscriber-protected"); node.inert = false; });
     document.querySelector(".phoenix-access-wrap")?.classList.add("access-unlocked");
     document.querySelector(".subscriber-gate-backdrop")?.remove();
+    document.dispatchEvent(new CustomEvent("subscriber-access-unlocked"));
   }
 
   function dialogCopy(resource) {
     const copies = {
+      "claim-smart": ["Unlock Claim Smart", "Join WealthMeter to compare Social Security claiming ages, benefit totals and hypothetical retained balances. Your financial inputs stay in your browser."],
       "life-expectancy-hides": ["Unlock the full life-expectancy feature", "Join LifeMeter to explore the interactive age explorer, survival patterns and population comparisons."],
       "live-better-for-less": ["Unlock Live Better for Less", "Join WealthMeter to compare lower-cost countries against the quality standards you choose."],
       "fire-timeline": ["Unlock the FIRE Timeline Planner", "Estimate your retirement timeline, compare savings scenarios and explore the cost of the life you want."],
@@ -160,7 +162,8 @@
         field.hidden = mode === "returning";
         field.querySelector("input").required = mode !== "returning";
       });
-      dialog.querySelector("[data-gate-consent]").hidden = mode === "returning";
+      const consent = dialog.querySelector("[data-gate-consent]");
+      if (consent) consent.hidden = mode === "returning";
       form.querySelector("input[name='email']")?.focus();
       return;
     }
