@@ -30,3 +30,7 @@ The existing `build_seo_artifacts.py --write` rewrote unrelated pages and broke 
 Deploy only after a fresh origin/main comparison confirms base f82786ee, all above checks pass and the scoped diff is committed. Push isolated reviewed HEAD to origin main without force. This follows existing repository production-main workflow while retaining the user-requested isolated branch. Then verify200 responses, SHA256 content readback, navigation/sitemap discovery, published model output, prior-page smoke checks and content-policy live script. Record exact deployed commit and live results in final deployment receipt.
 
 Rollback with a new reverting commit on current main: `git revert <release_commit>`, repeat required checks, then ordinary push to main. Do not reset shared history or overwrite newer work. Base source remains f82786ee7f5a4712e0231e4a87843adf20ff9ebb. The new feature has no backend, credentials, migrations, spend or persistent permission changes.
+
+## Final intermediate-width repair
+
+A final1253px viewport check exposed crowding in the inherited desktop header. The new page now has an age-page class and uses the existing menu below1350px, scoped through its own CSS. Menu open/Escape verified at1253px; no horizontal page overflow at320,1253 or1440px after repair. Shared styles and all prior pages remain unchanged. CSS query version incremented for cache safety. Model/data unchanged.
