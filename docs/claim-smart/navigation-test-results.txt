@@ -1,0 +1,37 @@
+✔ SSA boundary years show precise full retirement ages (1.532834ms)
+✔ January 1 uses the prior year without collecting a full date (0.205917ms)
+✔ birth-year / Jan1 changes propagate to benefit amounts and investment trajectory (8.2645ms)
+✔ direct URL and reload without token remain locked; preview sends nothing (2.489708ms)
+✔ valid existing token revalidates newsletter access, not financial data (1.395ms)
+✔ rejected/expired token fails closed and requests gate (0.384958ms)
+✔ returning-member toggle tolerates removed consent node; no new signup (0.429375ms)
+✔ new subscriber payload is newsletter-only and includes no calculator inputs (0.344334ms)
+✔ static HTML is hidden/inert before JavaScript; no collection or persistence in calculator (0.744042ms)
+✔ Claim Smart appears once in Specials and nowhere in tool groups (87.387584ms)
+✔ All tools card uses the existing eyebrow, heading and CTA structure and supports search (0.337958ms)
+✔ Specials catalog has a single semantic feature card and working destination (0.182417ms)
+✔ Edited desktop/mobile static fallback menus place Claim Smart under Specials (0.648166ms)
+✔ beginner cards distinguish monthly check, contributions, growth and final balance (5.087625ms)
+✔ 0/3/5/7 sensitivity is an equal comparison with independent closed-form values (1.164833ms)
+✔ chosen horizon controls catch-up labels, not entire model horizon (2.90925ms)
+✔ negative/custom returns, partial investment, same and reversed ages (5.708209ms)
+✔ main path explains fields; advanced details remain collapsed; default visible investment story (0.8345ms)
+108 extreme model combinations passed
+✔ SSA monthly statutory fixtures and cohort FRA (0.709708ms)
+✔ cash at age80, month-later payment, closed-form investment annuity (5.021375ms)
+✔ break-even means strictly ahead after a deficit, never initial ties (3.334834ms)
+✔ common COLA clock, claim-time estimates not inflated twice, purchasing power (1.028916ms)
+✔ spending is not wealth and no-retention balance stays zero (1.732959ms)
+✔ invalid inputs fail; edge range remains finite (26.806208ms)
+✔ components.js: signup is newsletter-only (29.744208ms)
+✔ lifemeter.xyz subscriber gate is newsletter-only (0.952041ms)
+✔ wealthmeter.xyz subscriber gate is newsletter-only (0.605916ms)
+✔ no statically rendered signup contains a separate promotional checkbox (36.339958ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 161.848542

@@ -155,10 +155,6 @@
         {
           "href": "/runway_lab",
           "title": "Financial Runway Lab"
-        },
-        {
-          "href": "/claim-smart",
-          "title": "Claim Smart"
         }
       ]
     },
@@ -224,6 +220,11 @@
       "href": "/us-wealth-atlas",
       "title": "Who Owns America?",
       "description": "Move through 36 years of Federal Reserve data and see who owns U.S. household wealth, what each group holds, and how wealth differs by age."
+    },
+    {
+      "href": "/claim-smart",
+      "title": "Claim Smart",
+      "description": "Choose when to start Social Security and compare monthly checks, investing and possible growth. Free subscriber access."
     },
     {
       "href": "/age-automation",

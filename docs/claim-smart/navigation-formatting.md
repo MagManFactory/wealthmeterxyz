@@ -1,0 +1,9 @@
+# Claim Smart catalog and navigation correction
+
+2026-10-15. The supplied2048×420screenshot was inspected as pixels. Claim Smart's catalog entry used icon/title/description spans, unlike the adjacent eyebrow/h2/CTA cards. The final span consequently inherited CTA blue text and the title missed the established Georgia heading rule. Its missingdata-search also broke the All tools search callback for that card.
+
+Replaced only Claim Smart's All tools card with the existing semantic card pattern: Special feature eyebrow, h2title, short comparison CTA; same shared typography, padding, border, spacing and link rules. No new global styles. Added search keywords. All tools presence remains once.
+
+Added a single Claim Smart article to the Special features hub using existing feature-mark, heading, paragraph and read-link conventions. The shared navigation inventory now registers it once under specials and removes it from Rate. An explicitdata-navigation-section=specialsmarker keeps the retained All tools card out of generated tool groups, preventing reappearance in Rate or New. Static desktop/mobile Specials fallbacks are included on the three edited pages. Calculator gains the standardphoenix-pageclass required for Specials shell validation. Calculation scripts, model, inputs, gates and data payloads are unchanged.
+
+28 tests pass, including four new navigation/card tests. Navigation inventory generation, Specials7destinations, Longform78destinations, ordering, content policy and monetization checks pass. Browser computed styles for Claim Smart, The Rent Squeeze and Global Wealth Rank match: Georgia25pxheadings, title color,11pxeyebrow,12pxCTAcolor,25pxpadding and identical borders. Search, desktop/mobile menus and category-card deduplication checked. Final live verification and archive receipt recorded outside source.

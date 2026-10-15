@@ -210,6 +210,8 @@ def tool_items(previous_groups: list[dict[str, object]]) -> list[dict[str, objec
     root = parse(ROOT / "tools.html")
     discovered: list[dict[str, str]] = []
     for link in descendants(root, tag="a", class_name="tool-card"):
+        if link.attrs.get("data-navigation-section") == "specials":
+            continue
         title_node = first(link, class_name="tool-name") or first(link, tag="h2") or first(link, tag="h3") or first(link, tag="strong")
         title = text(title_node)
         if title:
