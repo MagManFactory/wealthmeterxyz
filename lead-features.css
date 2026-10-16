@@ -108,3 +108,8 @@
 .performance-data a{display:inline-flex;align-items:center;min-height:44px;font-size:13px;color:var(--accent)}
 .feature-source-note{font-size:14px;line-height:1.6;max-width:68ch;color:var(--muted)}
 @media(max-width:750px){.stock-performance{padding:18px 12px}.visual-lead .stock-performance{margin:0 12px 12px;padding:18px 12px}.stock-performance figcaption{font-size:23px}.stock-performance .chart-desktop{display:none}.stock-performance .chart-mobile{display:block}.stock-performance svg text{font-size:18px}.performance-legend{grid-template-columns:1fr;gap:10px}.performance-legend li{font-size:14px}.performance-data th,.performance-data td{padding:9px 3px}.stock-performance .chart-source{font-size:12px}}
+
+/* Published story rotations use the existing accessible photo and lead typography. */
+.candidate-home .rotated-lead:before{display:none}
+.rotated-lead .rotation-image{display:block;aspect-ratio:16/9;overflow:hidden}
+.rotated-lead .rotation-image img{display:block;width:100%;height:100%;object-fit:cover}

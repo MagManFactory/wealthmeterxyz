@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "date": "2026-10-16",
+      "previous": {
+        "title": "The AI boom reaches more than your portfolio",
+        "url": "/features/ai-household-exposure.html"
+      },
+      "selected": {
+        "title": "Should you pay off that cheap mortgage?",
+        "url": "/stories/should-you-pay-off-that-cheap-mortgage.html"
+      },
+      "reason": "Practical evergreen reader value and variety from the previous feature; existing published text, dates and imagery retained.",
+      "supporting_replacement": {
+        "title": "Could one day at home cut your commuting bill?",
+        "url": "/stories/could-one-day-at-home-cut-your-commuting-bill.html"
+      }
+    }
+  ]
+}
