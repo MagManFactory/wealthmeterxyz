@@ -349,6 +349,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="the-cash-flow-cost-of-private-school.html">The Cash-Flow Cost of Private School</a>
                     <a href="the-529-overfunding-problem.html">The 529 Overfunding Problem</a>
                     <a href="hsa-as-a-stealth-retirement-account.html">The HSA as a Stealth Retirement Account</a>
                     <a href="municipal-bonds-after-free-money-era.html">Municipal Bonds After the Free-Money Era</a>

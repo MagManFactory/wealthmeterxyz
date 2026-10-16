@@ -1,0 +1,42 @@
+{
+  "status": "generated",
+  "site": "wealthmeter",
+  "requested_model": "gemini-3.1-flash-lite-image",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent",
+  "image_config": {
+    "aspectRatio": "16:9",
+    "imageSize": "1K"
+  },
+  "prompt_sha256": "ccb08227493cb7264a2ddf889a78696af866d493b874b3dabe017a7519ee0e52",
+  "generator_version": "longform-nanobanana2lite-v1",
+  "request_sha256": "ed4ed04710d30be535d08719feb51bcce43884db4b420bef62042b47a336a3f0",
+  "requested_at": "2026-10-16T13:05:04.052115+00:00",
+  "returned_model_version": "gemini-3.1-flash-lite-image",
+  "response_id": "ACHSatq1GOum1MkPhO3YyAo",
+  "usage": {
+    "promptTokenCount": 292,
+    "candidatesTokenCount": 1643,
+    "totalTokenCount": 1935,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 292
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1120
+      }
+    ]
+  },
+  "output_sha256": "7758819f2eba79cfb7ef71885e571c7386786c7c1e24af5f1fc518dea6952b65",
+  "generator_sha256": "da9baed9c894c600a56f19fb7c11dffea53cf89e907dd96b1c469838967281fd",
+  "responded_at": "2026-10-16T13:05:07.771463+00:00",
+  "provider_output_sha256": "cc27f3031317bddbe66570ecc0137331a0af0aab288e418b9ff1583c4c1d0869",
+  "provider_mime_type": "image/jpeg",
+  "output_name": "private-school-commitment-stress-test-2026-oct16.png",
+  "width": 1376,
+  "height": 768,
+  "completed_at": "2026-10-16T13:05:07.891808+00:00"
+}

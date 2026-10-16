@@ -1,0 +1,18 @@
+{
+  "topic": "The Cash-Flow Cost of Private School",
+  "sources": [
+    {
+      "url": "https://nces.ed.gov/programs/digest/d23/tables/dt23_205.50.asp",
+      "verified_claim": "Historical 2020-21 private-school tuition estimates differ by school level and orientation; the table is not a current local price."
+    },
+    {
+      "url": "https://www.irs.gov/publications/p970",
+      "verified_claim": "Federal qualified tuition program rules govern eligible education expenses; current law and state plan terms require confirmation before a withdrawal."
+    }
+  ],
+  "published_images": [
+    "private-school-household-cash-flow-map-2026-oct16-v2.png",
+    "private-school-commitment-stress-test-2026-oct16-v2.png"
+  ],
+  "visual_text_check": "Both selected visuals are qualitative household decision diagrams. They contain no visible labels, amounts, units, periods, precise chart marks, or school-outcome claims."
+}

@@ -1,0 +1,42 @@
+{
+  "status": "generated",
+  "site": "wealthmeter",
+  "requested_model": "gemini-3.1-flash-lite-image",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent",
+  "image_config": {
+    "aspectRatio": "16:9",
+    "imageSize": "1K"
+  },
+  "prompt_sha256": "39d207746ea7d3dd37524795f025b32dbc98ce272c57eb1b9a37bb71cb035fdb",
+  "generator_version": "longform-nanobanana2lite-v1",
+  "request_sha256": "7469856523a75b5445a0245c588faf5d58ebce6d5b2b36bb920df3400b206cc8",
+  "requested_at": "2026-10-16T13:05:00.256009+00:00",
+  "returned_model_version": "gemini-3.1-flash-lite-image",
+  "response_id": "_CDSaqiAMfay1MkPq9KNyAk",
+  "usage": {
+    "promptTokenCount": 300,
+    "candidatesTokenCount": 1587,
+    "totalTokenCount": 1887,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 300
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1120
+      }
+    ]
+  },
+  "output_sha256": "8e7e039b9c36f86e7e44940c1fce353f001f3254198022e809b4615d7362f390",
+  "generator_sha256": "da9baed9c894c600a56f19fb7c11dffea53cf89e907dd96b1c469838967281fd",
+  "responded_at": "2026-10-16T13:05:03.925175+00:00",
+  "provider_output_sha256": "c197a2b83a224367fc8cdd26b0878dca6a80bbf60ffe39b04a8e3886544f6766",
+  "provider_mime_type": "image/jpeg",
+  "output_name": "private-school-household-cash-flow-map-2026-oct16.png",
+  "width": 1376,
+  "height": 768,
+  "completed_at": "2026-10-16T13:05:04.051577+00:00"
+}
