@@ -1,0 +1,42 @@
+{
+  "status": "generated",
+  "site": "wealthmeter",
+  "requested_model": "gemini-3.1-flash-lite-image",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent",
+  "image_config": {
+    "aspectRatio": "16:9",
+    "imageSize": "1K"
+  },
+  "prompt_sha256": "e822805f37e313bfb713cc2c2ab94dcf1e2336f0d83bebc03d54dd4726a273a2",
+  "generator_version": "longform-nanobanana2lite-v1",
+  "request_sha256": "b5085b53ed7ac8bb968a7684cdfa33852741b4e260764199e0e3d0c87d3e57c2",
+  "requested_at": "2026-10-17T13:00:29.214978+00:00",
+  "returned_model_version": "gemini-3.1-flash-lite-image",
+  "response_id": "bXHTatjYHe3VjMcP7ZLnkAQ",
+  "usage": {
+    "promptTokenCount": 316,
+    "candidatesTokenCount": 1627,
+    "totalTokenCount": 1943,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 316
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1120
+      }
+    ]
+  },
+  "output_sha256": "f430b945c5ab2df8d1d97ebb9f23fa196074b55fa229d11bac4bdeda40417474",
+  "generator_sha256": "da9baed9c894c600a56f19fb7c11dffea53cf89e907dd96b1c469838967281fd",
+  "responded_at": "2026-10-17T13:00:32.692474+00:00",
+  "provider_output_sha256": "f86381c234e15129bce50aa6be85e3b6f460e8a11f0eb9189582116a20f73845",
+  "provider_mime_type": "image/jpeg",
+  "output_name": "small-business-exit-proceeds-waterfall-2026-oct17.png",
+  "width": 1376,
+  "height": 768,
+  "completed_at": "2026-10-17T13:00:32.824288+00:00"
+}

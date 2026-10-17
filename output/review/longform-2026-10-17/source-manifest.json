@@ -1,0 +1,27 @@
+{
+  "topic": "Small-Business Wealth Without Exit Liquidity",
+  "sources": [
+    {
+      "url": "https://www.federalreserve.gov/publications/october-2023-changes-in-us-family-finances-from-2019-to-2022.htm",
+      "verified_claim": "The 2022 SCF reported that 20 percent of families owned a privately held business; business ownership and value vary widely. Reported business equity is a survey valuation, not cash proceeds."
+    },
+    {
+      "url": "https://www.fedsmallbusiness.org/survey/2026-report-on-employer-firms",
+      "verified_claim": "The March 2026 Federal Reserve Banks report from the 2025 Small Business Credit Survey says 59 percent of indebted respondent firms used a personal guarantee. Its 6,525 respondents are a weighted convenience sample, not a random national sample."
+    },
+    {
+      "url": "https://www.sba.gov/counseling/manage-your-business/",
+      "verified_claim": "SBA advises business valuation before marketing a sale, a reviewed sales agreement, and attention to assets, liabilities, terms, and ownership transfer."
+    },
+    {
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/sale-of-a-business",
+      "verified_claim": "IRS distinguishes tax treatment of assets in a business sale and requires allocation of consideration in applicable asset sales."
+    }
+  ],
+  "visual_text_rule": "Both images request no text, labels, numerals, scales, valuations, or market data. They explain qualitative liquidity pathways and sale proceeds constraints.",
+  "published_images": [
+    "small-business-paper-value-cash-path-2026-oct17-v2.png",
+    "small-business-exit-proceeds-waterfall-2026-oct17.png"
+  ],
+  "visual_text_check": "First selected image visibly labels Operating small business and Bank Cash reserve. These are qualitative concepts consistent with Federal Reserve SCF business ownership and SBA sale guidance; no numbers, units, periods, or values appear. Second selected image visibly labels Signed business-sale agreement, Debt payoff, Transaction expenses, Taxes, and Household cash account. These are qualitative transaction stages supported by SBA sale guidance and IRS sale-of-business rules; no numbers, units, periods, or values appear. The initial first image was rejected for a misspelled due-diligence label; file and receipt retained."
+}

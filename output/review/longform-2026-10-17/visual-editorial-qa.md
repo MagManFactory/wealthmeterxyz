@@ -1,0 +1,9 @@
+# October 17 paired longform release QA — wealthmeter
+
+- Exact owner-list topic: Small-Business Wealth Without Exit Liquidity. Target article returned 404; slug absent from production longform hub and sitemap before drafting.
+- Primary-source review and factual boundaries: `source-manifest.json`. Topic and editorial emphasis preserved.
+- Direct Google Nano Banana 2 Lite `gemini-3.1-flash-lite-image`, 1K, 16:9. Dry runs reviewed. All calls have nonsecret receipts under `output/review/longform-generation/`. Selected images are true 1376×768 PNGs with dimensional raster texture. Selected images have qualitative labels only. Each visible label was compared with the source manifest and Federal Reserve, SBA, and IRS primary sources; no numerical values or chart marks appear. The misspelled original is preserved and excluded.
+- Complete article-only PDF `article-review.pdf` rendered and read from opening to sources. Both selected images appear in the PDF. Browser-specific interactive chrome layout remains unverified.
+- Full new article prose, headings, captions, metadata, social fields, first hub card, feed copy, and visible image text read for exact and paraphrased avoid-rule violations: pass. Exact banned phrase, contraction, and em-dash searches found none.
+- Same-brand related links, static single-brand chrome, unique canonical/description/social metadata, first hub card, feed/sitemap XML, two local images, and true PNG bytes passed. Local content, order, Phoenix, search, firewall, project tests, and whitespace checks passed.
+- The last planned gate is a scoped commit, rebase on the verified current origin/main, both production wrappers, and direct live article/hub/sitemap/feed/image/render verification.

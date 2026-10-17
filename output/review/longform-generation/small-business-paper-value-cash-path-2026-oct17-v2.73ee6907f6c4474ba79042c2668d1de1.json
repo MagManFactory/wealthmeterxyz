@@ -1,0 +1,42 @@
+{
+  "status": "generated",
+  "site": "wealthmeter",
+  "requested_model": "gemini-3.1-flash-lite-image",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent",
+  "image_config": {
+    "aspectRatio": "16:9",
+    "imageSize": "1K"
+  },
+  "prompt_sha256": "1618b5e2976c8fce9da9d39515ac7d2b5ec096e5141b366ae14069f6b9725265",
+  "generator_version": "longform-nanobanana2lite-v1",
+  "request_sha256": "6d575465a95925a3dbd5d43ae4d8768b290ab555319edfa6fdac5279642c60e9",
+  "requested_at": "2026-10-17T13:01:49.950807+00:00",
+  "returned_model_version": "gemini-3.1-flash-lite-image",
+  "response_id": "vnHTasGEEPLHjMcP7P_wsAQ",
+  "usage": {
+    "promptTokenCount": 407,
+    "candidatesTokenCount": 1618,
+    "totalTokenCount": 2025,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 407
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1120
+      }
+    ]
+  },
+  "output_sha256": "1c204287a44e5eb23860ca9f7bca5b515729f371ebfed1be791acca0b1320eb2",
+  "generator_sha256": "da9baed9c894c600a56f19fb7c11dffea53cf89e907dd96b1c469838967281fd",
+  "responded_at": "2026-10-17T13:01:53.587308+00:00",
+  "provider_output_sha256": "da5e848e7e491aebc63a97ce4a1af7fcec99dcf06edd35bd6afde6293cbc0f71",
+  "provider_mime_type": "image/jpeg",
+  "output_name": "small-business-paper-value-cash-path-2026-oct17-v2.png",
+  "width": 1376,
+  "height": 768,
+  "completed_at": "2026-10-17T13:01:53.693160+00:00"
+}
