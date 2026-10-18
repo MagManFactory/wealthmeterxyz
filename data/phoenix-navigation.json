@@ -3,6 +3,10 @@
   "site": "wealthmeter",
   "longform": [
     {
+      "href": "/the-sba-loan-personal-guarantee-trap",
+      "title": "The SBA Loan Personal-Guarantee Trap"
+    },
+    {
       "href": "/small-business-wealth-without-exit-liquidity",
       "title": "Small-Business Wealth Without Exit Liquidity"
     },
@@ -53,10 +57,6 @@
     {
       "href": "/same-market-different-result-stock-ownership-wealth-gap",
       "title": "Same Market, Different Result: Why Owning More Stocks Drove the Wealth Gap"
-    },
-    {
-      "href": "/the-top-rung-moved-what-the-fed-says-about-the-0-1-percent-and-where-you-stand",
-      "title": "The Top Rung Moved: What the Fed Says About the 0.1% and Where You Stand"
     }
   ],
   "stories": [

@@ -1,0 +1,31 @@
+{
+  "topic": "The SBA Loan Personal-Guarantee Trap",
+  "sources": [
+    {
+      "url": "https://www.sba.gov/loans/7a-loans/",
+      "verified_claim": "SBA 7(a) is a loan guarantee to participating lenders; SBA-backed financing can fund working capital, equipment, real estate and ownership changes. The federal lender guarantee is distinct from an owner personal guarantee."
+    },
+    {
+      "url": "https://www.ecfr.gov/current/title-13/chapter-I/part-120/subpart-A/subject-group-ECFRa096ec067b9c6cf/section-120.160",
+      "verified_claim": "13 CFR 120.160, eCFR current through October 15, 2026: holders of at least 20 percent ownership generally must guarantee SBA business loans; SBA or lender may require other appropriate guarantors."
+    },
+    {
+      "url": "https://www.sba.gov/document/sba-form-148-unconditional-guarantee",
+      "verified_claim": "SBA Form 148 page says owners of 20 percent or more must provide an unlimited personal guaranty; lenders may use this SBA form. Actual signed terms govern a particular obligation."
+    },
+    {
+      "url": "https://www.sba.gov/document/sop-50-10-lender-development-company-loan-programs",
+      "verified_claim": "SBA SOP 50 10 governs origination of 7(a) and 504 loans. Version 8.1 with technical updates is effective October 1, 2026; article avoids asserting a case-specific loan term from the generic program description."
+    },
+    {
+      "url": "https://www.fedsmallbusiness.org/survey/2026-report-on-employer-firms",
+      "verified_claim": "2026 report on 2025 weighted convenience sample says 59 percent of indebted respondent firms used a personal guarantee; it is not a random national prevalence estimate."
+    }
+  ],
+  "visual_text_rule": "No requested labels, numbers, scales, chart values or readable writing. Images qualitatively distinguish the SBA lender guarantee from the owner guarantee and show a conditional default exposure path. Unexpected visible text must be checked against sources or rejected.",
+  "selected_images": [
+    "sba-guarantee-two-obligations-2026-oct18-v2.png",
+    "sba-default-household-exposure-2026-oct18-v3.png"
+  ],
+  "visual_text_check": "Selected images visually inspected at full 1376x768 resolution. No visible words, numbers, data scales or chart values. Earlier text-corrupted candidates rejected and retained with receipts."
+}

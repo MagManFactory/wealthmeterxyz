@@ -1,0 +1,42 @@
+{
+  "status": "generated",
+  "site": "wealthmeter",
+  "requested_model": "gemini-3.1-flash-lite-image",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent",
+  "image_config": {
+    "aspectRatio": "16:9",
+    "imageSize": "1K"
+  },
+  "prompt_sha256": "01225eb2cce1433f0eeb16cd32dcc68cd3216bbfe6742ed4e60d3d67dc6568dc",
+  "generator_version": "longform-nanobanana2lite-v1",
+  "request_sha256": "d2c96172a99f02200ee8f545ec25de0940097fec6cfe90546c9c92f6f66e067a",
+  "requested_at": "2026-10-18T13:01:03.460682+00:00",
+  "returned_model_version": "gemini-3.1-flash-lite-image",
+  "response_id": "D8PUap3hMeqx1MkP-8SCsAQ",
+  "usage": {
+    "promptTokenCount": 360,
+    "candidatesTokenCount": 1552,
+    "totalTokenCount": 1912,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 360
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1120
+      }
+    ]
+  },
+  "output_sha256": "c9f34816ddc83e1bb4532ea530cfcc3bc280196ac4ba6f2d885e6bfad9a15c27",
+  "generator_sha256": "da9baed9c894c600a56f19fb7c11dffea53cf89e907dd96b1c469838967281fd",
+  "responded_at": "2026-10-18T13:01:11.068676+00:00",
+  "provider_output_sha256": "95c6d4e822a674859eb7bd56cf069e9784a6c6a5956e952020ab020a0c3e25c7",
+  "provider_mime_type": "image/jpeg",
+  "output_name": "sba-guarantee-two-obligations-2026-oct18.png",
+  "width": 1376,
+  "height": 768,
+  "completed_at": "2026-10-18T13:01:11.202087+00:00"
+}

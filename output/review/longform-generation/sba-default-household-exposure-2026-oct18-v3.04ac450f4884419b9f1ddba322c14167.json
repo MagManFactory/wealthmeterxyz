@@ -1,0 +1,42 @@
+{
+  "status": "generated",
+  "site": "wealthmeter",
+  "requested_model": "gemini-3.1-flash-lite-image",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent",
+  "image_config": {
+    "aspectRatio": "16:9",
+    "imageSize": "1K"
+  },
+  "prompt_sha256": "ab0ec7ab5653655fdd6a6f46361eefeee0df3f20833027f84b16739acf86e9ed",
+  "generator_version": "longform-nanobanana2lite-v1",
+  "request_sha256": "2a8cea11c23d10c3a98ba53ec644adca11821bcf0be9c08ec3c4d5f24d4b2427",
+  "requested_at": "2026-10-18T13:03:49.822022+00:00",
+  "returned_model_version": "gemini-3.1-flash-lite-image",
+  "response_id": "t8PUapCyEpfXjMcPz83K8Qc",
+  "usage": {
+    "promptTokenCount": 358,
+    "candidatesTokenCount": 1453,
+    "totalTokenCount": 1811,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 358
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1120
+      }
+    ]
+  },
+  "output_sha256": "9aec6b6fa22683255569c981c47e953ce860dc8eaf899e7f32202787a545caaa",
+  "generator_sha256": "da9baed9c894c600a56f19fb7c11dffea53cf89e907dd96b1c469838967281fd",
+  "responded_at": "2026-10-18T13:03:55.508652+00:00",
+  "provider_output_sha256": "23c5a610f5e513d9e56a217533a0f3089a0bf6d6dbcd040211e28ab6afa31471",
+  "provider_mime_type": "image/jpeg",
+  "output_name": "sba-default-household-exposure-2026-oct18-v3.png",
+  "width": 1376,
+  "height": 768,
+  "completed_at": "2026-10-18T13:03:55.655631+00:00"
+}
