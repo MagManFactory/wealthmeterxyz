@@ -3,6 +3,10 @@
   "site": "wealthmeter",
   "longform": [
     {
+      "href": "/partnership-income-and-the-false-stability-problem",
+      "title": "Partnership Income and the False Stability Problem"
+    },
+    {
       "href": "/the-sba-loan-personal-guarantee-trap",
       "title": "The SBA Loan Personal-Guarantee Trap"
     },
@@ -53,10 +57,6 @@
     {
       "href": "/the-90th-to-99th-percentile-retirement-reality-check",
       "title": "The 90th to 99th Percentile Retirement Reality Check"
-    },
-    {
-      "href": "/same-market-different-result-stock-ownership-wealth-gap",
-      "title": "Same Market, Different Result: Why Owning More Stocks Drove the Wealth Gap"
     }
   ],
   "stories": [

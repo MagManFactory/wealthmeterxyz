@@ -349,6 +349,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="partnership-income-and-the-false-stability-problem.html">Partnership Income and the False Stability Problem</a>
                     <a href="the-sba-loan-personal-guarantee-trap.html">The SBA Loan Personal-Guarantee Trap</a>
                     <a href="small-business-wealth-without-exit-liquidity.html">Small-Business Wealth Without Exit Liquidity</a>
                     <a href="the-cash-flow-cost-of-private-school.html">The Cash-Flow Cost of Private School</a>
