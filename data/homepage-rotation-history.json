@@ -16,6 +16,23 @@
         "title": "Could one day at home cut your commuting bill?",
         "url": "/stories/could-one-day-at-home-cut-your-commuting-bill.html"
       }
+    },
+    {
+      "date": "2026-10-19",
+      "selected_at_utc": "2026-10-19T15:47:05.332319+00:00",
+      "previous": {
+        "title": "Should you pay off that cheap mortgage?",
+        "url": "/stories/should-you-pay-off-that-cheap-mortgage.html"
+      },
+      "selected": {
+        "title": "That \u201caverage\u201d 401(k) balance may be misleading you",
+        "url": "/stories/that-average-401-k-balance-may-be-misleading-you.html"
+      },
+      "reason": "Monday rotation: different topic, existing published research story reviewed against primary-source figures and limitations; no changes to article content or dates.",
+      "supporting_replacement": {
+        "title": "Should you pay off that cheap mortgage?",
+        "url": "/stories/should-you-pay-off-that-cheap-mortgage.html"
+      }
     }
   ]
 }
