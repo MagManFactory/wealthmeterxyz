@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-20",
+  "site": "wealthmeter",
+  "owner_topic": "RSU Wealth Without a Sale Discipline",
+  "evidence": [
+    {
+      "url": "https://www.irs.gov/publications/p525",
+      "verified": "Publication 525 (2025) describes restricted property and the distinct section 83(i) election for qualifying private-company RSUs.",
+      "limit": "General publication; individual awards and timing require plan review."
+    },
+    {
+      "url": "https://www.irs.gov/pub/irs-wd/24-0010.pdf",
+      "verified": "IRS memorandum states an RSU is settled through stock transfer or cash after vesting and included amount is reported in W-2 Box 1.",
+      "limit": "Memorandum applies its cited facts; article describes typical stock-settled public-company awards."
+    },
+    {
+      "url": "https://syndication.finra.org/content/questions-employees-should-ask-about-stock-awards",
+      "verified": "FINRA describes vesting and concentration risk in employer stock awards.",
+      "limit": "Educational guidance, not a universal sale threshold."
+    },
+    {
+      "url": "https://www.investor.gov/introduction-investing/getting-started/asset-allocation",
+      "verified": "SEC Investor.gov describes diversification as spreading investments to reduce risk.",
+      "limit": "Diversification cannot guarantee returns or remove market risk."
+    }
+  ],
+  "image_rule": "Qualitative imagery only. No requested labels, values, units, periods, quantitative marks, or chart data. Verify that generated images comply and do not imply causal or guaranteed outcomes.",
+  "generated_visual_label_review": [
+    {
+      "image": "rsu-vesting-sale-two-events-2026-oct20-v2.png",
+      "visible_labels": [
+        "Wage Reporting Event",
+        "Investment Decision Event"
+      ],
+      "source": "https://www.irs.gov/pub/irs-wd/24-0010.pdf",
+      "assessment": "Wage reporting of RSU stock settlement is directly supported. Later hold or sale is a distinct investment decision; label is an editorial inference and implies no specific tax outcome."
+    },
+    {
+      "image": "rsu-concentration-decision-2026-oct20-v2.png",
+      "visible_labels": [
+        "Concentration Risk",
+        "Diversification",
+        "concentration risk",
+        "diversification"
+      ],
+      "sources": [
+        "https://syndication.finra.org/content/questions-employees-should-ask-about-stock-awards",
+        "https://www.investor.gov/introduction-investing/getting-started/asset-allocation"
+      ],
+      "assessment": "Source terms match; no numbers or quantitative marks. The comparison illustrates exposure, not performance."
+    }
+  ]
+}

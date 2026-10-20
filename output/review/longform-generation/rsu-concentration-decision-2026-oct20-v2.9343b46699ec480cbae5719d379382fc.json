@@ -1,0 +1,42 @@
+{
+  "status": "generated",
+  "site": "wealthmeter",
+  "requested_model": "gemini-3.1-flash-lite-image",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent",
+  "image_config": {
+    "aspectRatio": "16:9",
+    "imageSize": "1K"
+  },
+  "prompt_sha256": "0f1da04731d3e64ef326a9e2824f8aa0a1b067569685d2ac2de65631057ff324",
+  "generator_version": "longform-nanobanana2lite-v1",
+  "request_sha256": "b4ac4769d9be6408160cc86a62c8add2ffaea76857ffac5c6d474c6be5752b21",
+  "requested_at": "2026-10-20T13:02:58.635876+00:00",
+  "returned_model_version": "gemini-3.1-flash-lite-image",
+  "response_id": "gmbXao79Msf4-8YPgfy14Q0",
+  "usage": {
+    "promptTokenCount": 384,
+    "candidatesTokenCount": 1485,
+    "totalTokenCount": 1869,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 384
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1120
+      }
+    ]
+  },
+  "output_sha256": "a6bd40f9b254489b96dbae95d7082947eeb7f1129a4f332e209bb109a07d76a6",
+  "generator_sha256": "da9baed9c894c600a56f19fb7c11dffea53cf89e907dd96b1c469838967281fd",
+  "responded_at": "2026-10-20T13:03:05.925635+00:00",
+  "provider_output_sha256": "06ec67e6a76b43ee3e93cb04c914ad06f2c3d34e1eee74984cbf8c40200a76c8",
+  "provider_mime_type": "image/jpeg",
+  "output_name": "rsu-concentration-decision-2026-oct20-v2.png",
+  "width": 1376,
+  "height": 768,
+  "completed_at": "2026-10-20T13:03:06.063216+00:00"
+}

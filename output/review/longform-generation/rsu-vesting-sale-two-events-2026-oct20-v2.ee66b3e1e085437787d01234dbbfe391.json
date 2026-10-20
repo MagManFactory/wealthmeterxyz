@@ -1,0 +1,42 @@
+{
+  "status": "generated",
+  "site": "wealthmeter",
+  "requested_model": "gemini-3.1-flash-lite-image",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent",
+  "image_config": {
+    "aspectRatio": "16:9",
+    "imageSize": "1K"
+  },
+  "prompt_sha256": "bf297c76b2145a4e9d02cc90bd4676746b7b999a05fcedfc4b5e7028429fb3ab",
+  "generator_version": "longform-nanobanana2lite-v1",
+  "request_sha256": "75d66ea8fdc174c1ea242ab4551bdd6f124b520aeda13fd5a0986fa4213630cb",
+  "requested_at": "2026-10-20T13:02:49.187966+00:00",
+  "returned_model_version": "gemini-3.1-flash-lite-image",
+  "response_id": "eWbXaqyKL8z3jMcPuYjW8Ag",
+  "usage": {
+    "promptTokenCount": 384,
+    "candidatesTokenCount": 1544,
+    "totalTokenCount": 1928,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 384
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1120
+      }
+    ]
+  },
+  "output_sha256": "ce0eaad6f5966a7c0548225e45312e85fbcfb06f93c68226fb2bbbd2b97a42a5",
+  "generator_sha256": "da9baed9c894c600a56f19fb7c11dffea53cf89e907dd96b1c469838967281fd",
+  "responded_at": "2026-10-20T13:02:58.511445+00:00",
+  "provider_output_sha256": "659de8666d9e7a70d2b5392b96b1e37e60b53ec4cb16fa94447f24590145ed0e",
+  "provider_mime_type": "image/jpeg",
+  "output_name": "rsu-vesting-sale-two-events-2026-oct20-v2.png",
+  "width": 1376,
+  "height": 768,
+  "completed_at": "2026-10-20T13:02:58.635292+00:00"
+}
