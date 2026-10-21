@@ -33,6 +33,19 @@
         "title": "Should you pay off that cheap mortgage?",
         "url": "/stories/should-you-pay-off-that-cheap-mortgage.html"
       }
+    },
+    {
+      "date": "2026-10-21",
+      "selected_at_utc": "2026-10-21T15:50:43.700496+00:00",
+      "previous": {
+        "title": "That \u201caverage\u201d 401(k) balance may be misleading you",
+        "url": "/stories/that-average-401-k-balance-may-be-misleading-you.html"
+      },
+      "selected": {
+        "title": "Is working still worth it after childcare?",
+        "url": "/stories/is-working-still-worth-it-after-childcare.html"
+      },
+      "reason": "Wednesday rotation: different topic outside recent lead history; complete existing story and primary source reviewed, with original caveats, text and dates retained."
     }
   ]
 }
