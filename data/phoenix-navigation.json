@@ -3,6 +3,10 @@
   "site": "wealthmeter",
   "longform": [
     {
+      "href": "/deferred-compensation-and-the-counterparty-illusion",
+      "title": "Deferred Compensation and the Counterparty Illusion"
+    },
+    {
       "href": "/option-exercise-mistiming-in-private-companies",
       "title": "Option Exercise Mistiming in Private Companies"
     },
@@ -53,10 +57,6 @@
     {
       "href": "/health-insurance-job-lock-premium",
       "title": "The Health Insurance Job Lock Premium"
-    },
-    {
-      "href": "/long-term-care-balance-sheet-risk",
-      "title": "Long-Term Care as a Balance-Sheet Risk"
     }
   ],
   "stories": [
