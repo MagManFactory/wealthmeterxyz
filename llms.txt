@@ -26,6 +26,13 @@
 - [FIRE Timeline Planner](https://wealthmeter.xyz/fire_timeline.html)
 - [Financial Runway Lab](https://wealthmeter.xyz/runway_lab.html)
 
+## New Special Features
+
+- [The Debt Map](https://wealthmeter.xyz/debt-map.html): Explore household debt by type, age and the 11 reported states, with a browser-only comparison of your debt mix.
+- [Where Your Paycheck Ranks](https://wealthmeter.xyz/paycheck-rank.html): Compare income with Census distributions and BLS occupation wages, keeping people, full-time workers and households distinct.
+- [Rent vs. Buy, By Metro](https://wealthmeter.xyz/rent-vs-buy.html): Compare renting and buying under your own costs, growth and return assumptions, using published housing context.
+- [What Your Salary Is Really Worth](https://wealthmeter.xyz/salary-worth.html): Compare the salary equivalents implied by BEA regional price levels across states and metro areas.
+
 ## Citation guidance
 
 Use the canonical page URL and retain each page's stated population, currency, date, and model assumptions. WealthMeter content is educational and is not financial advice.

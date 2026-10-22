@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What Your Salary Is Really Worth | WealthMeter</title>
+<meta name="description" content="Translate a salary between any two states or metro areas with BEA Regional Price Parities, see how local price levels moved from 2008 to 2024, and what $100 buys where you live.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/wm-feature.css">
+<link rel="icon" href="data:,">
+<style>
+.big{font:700 clamp(2.2rem,6vw,3.4rem) "Roboto Mono",monospace;color:#fff;line-height:1}
+table.t{width:100%;border-collapse:collapse;font-size:.88rem}table.t th,table.t td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:right}table.t th:first-child,table.t td:first-child{text-align:left}table.t th{color:var(--muted);font-weight:600}
+.tw{overflow-x:auto}
+</style>
+<link rel="canonical" href="https://wealthmeter.xyz/salary-worth.html">
+</head>
+<body>
+<nav class="topnav" aria-label="Sections"><div class="in">
+ <a class="brand" href="#top">Wealth<b>Meter</b> <span style="color:#b4a391">|</span> Salary Worth</a>
+ <a class="l" href="#compare">Compare</a><a class="l" href="#parts">Where it goes</a><a class="l" href="#time">Over time</a><a class="l" href="#states">States</a><a class="l" href="#metros">Metros</a><a class="l" href="#real">Real income</a><a class="l" href="#limits">Limits</a><a class="l" href="#method">Sources</a>
+</div></nav>
+<main id="top">
+<header class="hero">
+ <p class="eyebrow">WealthMeter special feature</p>
+ <h1>What Your Salary Is Really Worth</h1>
+ <p class="dek">A paycheck goes further in some places than others. Using the federal government's Regional Price Parities, translate any salary between two states or metro areas, and see how the gap has moved since 2008.</p>
+ <p class="note" id="vintage"></p>
+</header>
+
+<section id="compare">
+ <p class="eyebrow">Compare</p><h2>Your salary, moved</h2>
+ <p class="lede">Start from an example persona or set your own. Personas are illustrative examples, not statistics.</p>
+ <div class="chips" id="personas"></div>
+ <div class="grid side">
+  <div class="card">
+   <label class="f">Your salary <span>dollars per year</span><input id="sal" type="number" min="0" step="1000" value="80000" inputmode="numeric"></label>
+   <label class="f">Where you earn it now<select id="from"></select></label>
+   <label class="f">Where you might move<select id="to"></select></label>
+   <label class="f">Price year<select id="yr"></select></label>
+  </div>
+  <div>
+   <div class="card"><p class="eyebrow" style="margin:0 0 6px">To keep the same standard of living</p><div class="big" id="eq"></div><p id="eqNote" style="color:var(--muted);margin:10px 0 0"></p></div>
+   <div class="grid g3" id="cmpStats" style="margin-top:18px"></div>
+  </div>
+ </div>
+</section>
+
+<section id="parts">
+ <p class="eyebrow">Where it goes</p><h2>Which prices make the difference</h2>
+ <p class="lede">BEA splits each parity into goods, housing rents, utilities and other services. 100 is the national average for that category.</p>
+ <div class="card"><div id="partBars"></div><p class="note">Blue: where you earn now. Amber: where you might move. White tick: national average (100).</p></div>
+</section>
+
+<section id="time">
+ <p class="eyebrow">Over time</p><h2>How the gap moved, 2008 onward</h2>
+ <div class="grid">
+  <div class="card"><h3>Price level relative to U.S. (U.S. = 100), all items</h3><div id="tChart"></div><div id="tLegend"></div></div>
+  <div class="card"><h3>Salary needed in the second place to match your salary, by year</h3><div id="eqChart"></div><p class="note">Each year uses that year's parities; it shows relative prices only. It does not adjust for national inflation.</p></div>
+ </div>
+</section>
+
+<section id="states">
+ <p class="eyebrow">States</p><h2>What $100 buys in each state</h2>
+ <p class="lede">$100 divided by the state's parity. Above $100 means your money stretches further than the national average.</p>
+ <div class="chips" id="sComp"></div>
+ <div class="card"><div id="sBars"></div></div>
+ <div class="grid g4" id="sStats" style="margin-top:18px"></div>
+</section>
+
+<section id="metros">
+ <p class="eyebrow">Metro areas</p><h2>Most and least expensive metros</h2>
+ <div class="chips" id="mSel"></div>
+ <div class="card"><div id="mBars"></div><p class="note" id="mNote"></p></div>
+</section>
+
+<section id="real">
+ <p class="eyebrow">Real income</p><h2>Income after local prices</h2>
+ <p class="lede">BEA real per capita personal income adjusts each state's income for both its price level and national inflation (constant 2017 dollars).</p>
+ <div class="card"><div id="rChart"></div><div id="rLegend"></div><p class="note" id="rNote"></p></div>
+</section>
+
+<section id="limits">
+ <p class="eyebrow">Limits</p><h2>Limits of this tool</h2>
+ <div class="card"><ul class="src">
+  <li>BEA price parities end in 2024, the latest year BEA publishes.</li>
+  <li>Real per capita income is published for states only, not metros.</li>
+  <li>Parities compare price levels; they do not show local wages or taxes.</li>
+  <li>Personas are illustrative example inputs, not real people.</li>
+ </ul></div>
+</section>
+
+<section id="method">
+ <p class="eyebrow">Sources and method</p><h2>Where every number comes from</h2>
+ <ul class="src" id="sources"></ul>
+ <p class="lede">All figures are read at page load from <code>data/salary-worth.json</code>, built by <code>update_data.py</code> from the BEA files below. The equivalent salary is your salary times the destination parity divided by the origin parity for the chosen year. Parities measure price levels for a typical consumption basket; your own basket (for example, if you own your home outright) may differ. Parities compare places within a year; to compare across years, BEA real income figures also remove national inflation. Pre tax comparison: state and local taxes are not included. Not financial advice.</p>
+</section>
+<footer>WealthMeter special feature. Data: U.S. Bureau of Economic Analysis, Regional Price Parities.</footer>
+</main>
+<script src="assets/wm-charts.js"></script><script src="/assets/roger-specials-integration.js"></script>
+<script>
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const usd = v => v == null || !isFinite(v) ? "n/a" : "$" + Math.round(v).toLocaleString("en-US");
+const usdK = v => "$" + (v >= 1e6 ? (v/1e6).toFixed(1) + "M" : Math.round(v/1000) + "K");
+function chipGroup(sel, cb){ $$(sel + " .chip").forEach(b => b.onclick = () => { $$(sel + " .chip").forEach(x => x.classList.remove("on")); b.classList.add("on"); cb(b.dataset.v); }); }
+
+fetch("data/salary-worth.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(init).catch(e => {
+ $("main").insertAdjacentHTML("afterbegin", `<p class="callout">Could not load data/salary-worth.json (${e}). Serve this folder over http, for example: python3 -m http.server</p>`);
+});
+
+function init(D){
+ const Y = D.years, S = D.sources, NY = Y.length - 1;
+ const P = {}; D.states.forEach(s => P["s" + s.fips] = {...s, label: s.name + " (state)"}); D.metros.forEach(m => P["m" + m.fips] = {...m, label: m.name});
+ const keyOf = n => Object.keys(P).find(k => P[k].label === n || P[k].name === n);
+ $("#vintage").textContent = `Data: U.S. Bureau of Economic Analysis Regional Price Parities, ${Y[0]} to ${Y[NY]} (${S[0].release.split("; ")[1] || "latest release"}). Retrieved ${S[0].retrieved}.`;
+ WM.sources($("#sources"), S);
+ const opts = `<optgroup label="States">${D.states.map(s => `<option value="s${s.fips}">${s.name}</option>`).join("")}</optgroup><optgroup label="Metro areas">${D.metros.map(m => `<option value="m${m.fips}">${m.name}</option>`).join("")}</optgroup>`;
+ $("#from").innerHTML = opts; $("#to").innerHTML = opts;
+ $("#yr").innerHTML = Y.slice().reverse().map(y => `<option>${y}</option>`).join("");
+ const COMPS = [["all","All items"],["goods","Goods"],["housing","Housing rents"],["utilities","Utilities"],["other","Other services"]];
+
+ function run(){
+  const sal = parseFloat($("#sal").value) || 0, A = P[$("#from").value], B = P[$("#to").value], yi = Y.indexOf(+$("#yr").value);
+  const a = A.all[yi], b = B.all[yi];
+  if (a == null || b == null){ $("#eq").textContent = "n/a"; $("#eqNote").textContent = `BEA has no ${Y[yi]} parity for ${a == null ? A.label : B.label}. Try a later year.`; }
+  else {
+   const eq = sal * b / a, d = (b / a - 1) * 100;
+   $("#eq").textContent = usd(eq);
+   $("#eqNote").innerHTML = `${usd(sal)} in <b>${A.label}</b> buys about what <b>${usd(eq)}</b> buys in <b>${B.label}</b> (${Y[yi]} prices). Prices there are ${Math.abs(d).toFixed(1)}% ${d >= 0 ? "higher" : "lower"}.`;
+  }
+  $("#cmpStats").innerHTML = [[A.label, a], [B.label, b]].map(([n, v]) => `<div class="card stat"><div class="k">${n}</div><div class="v" style="font-size:1.4rem">${v == null ? "n/a" : v.toFixed(1)}</div><div class="s">price parity, U.S. = 100</div></div>`).join("") +
+   `<div class="card stat"><div class="k">$100 buys in ${B.name.split(",")[0]}</div><div class="v" style="font-size:1.4rem">${b ? usd(10000 / b) : "n/a"}</div><div class="s">of national average goods and services</div></div>`;
+  WM.hbars($("#partBars"), COMPS.flatMap(([c, l]) => [
+   {label: l + ", now", value: A[c][yi], color: "#5aa2ff", marks: [{v: 100, color: "#fff"}]},
+   {label: l + ", move", value: B[c][yi], color: "#f0a24a", marks: [{v: 100, color: "#fff"}]}]), {fmt: v => v.toFixed(1), labelW: 200, rowH: 28, max: Math.max(160, ...COMPS.flatMap(([c]) => [A[c][yi] || 0, B[c][yi] || 0])) * 1.02});
+  const ser = [{name: A.label, color: "#5aa2ff", vals: A.all, width: 3}, {name: B.label, color: "#f0a24a", vals: B.all, width: 3}, {name: "U.S.", color: "#c3b29f", vals: Y.map(() => 100), dash: "4 4"}];
+  WM.line($("#tChart"), Y, ser, {fmt: v => Math.round(v), tfmt: v => v.toFixed(1), height: 320, yMax: Math.ceil(Math.max(130, ...A.all.filter(v=>v), ...B.all.filter(v=>v)) / 10) * 10});
+  WM.legend($("#tLegend"), ser);
+  WM.line($("#eqChart"), Y, [{name: "Equivalent salary in " + B.label, color: "#5fcf8e", vals: Y.map((_, i) => A.all[i] && B.all[i] ? sal * B.all[i] / A.all[i] : null), width: 3}], {fmt: usdK, tfmt: usd, height: 320});
+ }
+ ["#sal","#from","#to","#yr"].forEach(id => $(id).addEventListener("input", run));
+
+ // states ranking
+ $("#sComp").innerHTML = COMPS.map(([c, l], i) => `<button class="chip${i ? "" : " on"}" data-v="${c}">${l}</button>`).join("");
+ function states(c){
+  const L = D.states.filter(s => s[c][NY] != null).map(s => ({s, v: 10000 / s[c][NY]})).sort((a, b) => b.v - a.v);
+  const cur = [$("#from").value, $("#to").value];
+  WM.hbars($("#sBars"), L.map(x => ({label: x.s.name, value: x.v, color: cur.includes("s" + x.s.fips) ? "#8cc0ff" : (x.v >= 100 ? "#5fcf8e" : "#f0a24a"), marks: [{v: 100, color: "#fff"}], tip: `${x.s.name}: parity ${x.s[c][NY].toFixed(1)}`})), {fmt: v => "$" + v.toFixed(0), labelW: 180, rowH: 22});
+  const vals = D.states.map(s => s[c][NY]).filter(v => v != null).sort((a, b) => a - b);
+  const hi = L[L.length - 1].s, lo = L[0].s;
+  $("#sStats").innerHTML = [["Most expensive", hi.name, hi[c][NY].toFixed(1)], ["Least expensive", lo.name, lo[c][NY].toFixed(1)], ["Median state parity", "", vals[Math.floor(vals.length/2)].toFixed(1)], ["Spread, top to bottom", "", (vals[vals.length-1] / vals[0]).toFixed(2) + "x"]]
+   .map(([k, n, v]) => `<div class="card stat"><div class="k">${k}</div><div class="v" style="font-size:1.4rem">${v}</div><div class="s">${n || Y[NY] + ", " + COMPS.find(x => x[0] === c)[1].toLowerCase()}</div></div>`).join("");
+ }
+ chipGroup("#sComp", states);
+
+ // metros
+ const MR = D.metros.filter(m => m.all[NY] != null && !/Portion/.test(m.name)).sort((a, b) => b.all[NY] - a.all[NY]);
+ $("#mSel").innerHTML = '<button class="chip on" data-v="hi">Most expensive 15</button><button class="chip" data-v="lo">Least expensive 15</button>';
+ function metros(w){
+  const L = w === "hi" ? MR.slice(0, 15) : MR.slice(-15).reverse();
+  WM.hbars($("#mBars"), L.map(m => ({label: m.name.length > 36 ? m.name.slice(0, 34) + "..." : m.name, value: m.all[NY], color: w === "hi" ? "#f0a24a" : "#5fcf8e", marks: [{v: 100, color: "#fff"}], tip: m.name})), {fmt: v => v.toFixed(1), labelW: 310, rowH: 30, max: 135});
+  const np = D.metros.find(m => /Nonmetropolitan/.test(m.name));
+  $("#mNote").textContent = `${MR.length} metro areas with ${Y[NY]} parities. All items, U.S. = 100 (white tick).` + (np && np.all[NY] ? ` Nonmetropolitan areas of the U.S. combined: ${np.all[NY].toFixed(1)}.` : "");
+ }
+ chipGroup("#mSel", metros);
+
+ function real(){
+  const A = P[$("#from").value], B = P[$("#to").value];
+  const st = [A, B].map(p => p.fips && p.real_pc_income ? p : null);
+  const ser = [{name: "United States", color: "#c3b29f", vals: D.us_real_pc_income, dash: "4 4"}];
+  if (st[0]) ser.push({name: st[0].name, color: "#5aa2ff", vals: st[0].real_pc_income, width: 3});
+  if (st[1] && st[1] !== st[0]) ser.push({name: st[1].name, color: "#f0a24a", vals: st[1].real_pc_income, width: 3});
+  WM.line($("#rChart"), Y, ser, {fmt: usdK, tfmt: usd, height: 320});
+  WM.legend($("#rLegend"), ser);
+  $("#rNote").textContent = (st[0] && st[1] ? "" : "Real income is published for states only; pick states above to compare them here. ") + `U.S. ${Y[NY]}: ${usd(D.us_real_pc_income[NY])} per person in 2017 dollars.`;
+ }
+ ["#from","#to"].forEach(id => $(id).addEventListener("input", () => { real(); states($("#sComp .chip.on").dataset.v); }));
+
+ const PER = [
+  {label: "Example: $95K engineer, San Jose to Austin", sal: 95000, from: "San Jose-Sunnyvale-Santa Clara, CA", to: "Austin-Round Rock-San Marcos, TX"},
+  {label: "Example: $60K teacher, Mississippi to California", sal: 60000, from: "Mississippi (state)", to: "California (state)"},
+  {label: "Example: $120K manager, New York metro to Raleigh", sal: 120000, from: "New York-Newark-Jersey City, NY-NJ", to: "Raleigh-Cary, NC"},
+  {label: "Example: $45K remote worker, Honolulu to Ohio", sal: 45000, from: "Urban Honolulu, HI", to: "Ohio (state)"}
+ ].filter(p => keyOf(p.from) && keyOf(p.to));
+ $("#personas").innerHTML = PER.map((p, i) => `<button class="chip" data-v="${i}">${p.label}</button>`).join("");
+ chipGroup("#personas", i => { const p = PER[i]; $("#sal").value = p.sal; $("#from").value = keyOf(p.from); $("#to").value = keyOf(p.to); $("#yr").value = Y[NY]; run(); real(); states($("#sComp .chip.on").dataset.v); });
+ const p0 = PER[0] || {sal: 80000};
+ $("#from").value = PER[0] ? keyOf(p0.from) : "s06000"; $("#to").value = PER[0] ? keyOf(p0.to) : "s48000"; $("#sal").value = p0.sal;
+ run(); real(); states("all"); metros("hi"); WM.navSpy();
+}
+</script>
+</body>
+</html>

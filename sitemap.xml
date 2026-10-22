@@ -799,4 +799,28 @@
     <loc>https://wealthmeter.xyz/what-inflation-costs-you.html</loc>
     <lastmod>2026-10-16</lastmod>
   </url>
+  <url>
+    <loc>https://wealthmeter.xyz/debt-map.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wealthmeter.xyz/paycheck-rank.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wealthmeter.xyz/rent-vs-buy.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wealthmeter.xyz/salary-worth.html</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

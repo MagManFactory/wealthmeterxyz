@@ -222,6 +222,26 @@
       "description": "Move through 36 years of Federal Reserve data and see who owns U.S. household wealth, what each group holds, and how wealth differs by age."
     },
     {
+      "href": "/debt-map",
+      "title": "The Debt Map",
+      "description": "Explore household debt by type, age and the 11 reported states, with a browser-only comparison of your debt mix."
+    },
+    {
+      "href": "/paycheck-rank",
+      "title": "Where Your Paycheck Ranks",
+      "description": "Compare income with Census distributions and BLS occupation wages, keeping people, full-time workers and households distinct."
+    },
+    {
+      "href": "/rent-vs-buy",
+      "title": "Rent vs. Buy, By Metro",
+      "description": "Compare renting and buying under your own costs, growth and return assumptions, using published housing context."
+    },
+    {
+      "href": "/salary-worth",
+      "title": "What Your Salary Is Really Worth",
+      "description": "Compare the salary equivalents implied by BEA regional price levels across states and metro areas."
+    },
+    {
       "href": "/what-inflation-costs-you",
       "title": "What Inflation Costs You",
       "description": "See how your spending mix changes the impact of rising prices. Explore eight categories using national price averages and an illustrative basket."

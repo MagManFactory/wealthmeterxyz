@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Debt Map: How America Borrows | WealthMeter</title>
+<meta name="description" content="Explore U.S. household debt by type, age, state and delinquency using the New York Fed Household Debt and Credit Report, then compare your own debt mix.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/wm-feature.css">
+<link rel="icon" href="data:,">
+<link rel="canonical" href="https://wealthmeter.xyz/debt-map.html">
+</head>
+<body>
+<nav class="topnav" aria-label="Sections"><div class="in">
+ <a class="brand" href="#top">Wealth<b>Meter</b> <span style="color:#b4a391">|</span> The Debt Map</a>
+ <a class="l" href="#overview">Overview</a><a class="l" href="#mix">Debt mix</a><a class="l" href="#you">Your mix</a><a class="l" href="#late">Delinquency</a><a class="l" href="#flows">Transitions</a><a class="l" href="#age">By age</a><a class="l" href="#states">States</a><a class="l" href="#limits">Limits</a><a class="l" href="#method">Sources</a>
+</div></nav>
+<main id="top">
+<header class="hero">
+ <p class="eyebrow">WealthMeter special feature</p>
+ <h1>The Debt Map</h1>
+ <p class="dek">What American households owe, how the mix has shifted since 2003, and where borrowers are falling behind. Then put your own balances on the map.</p>
+ <p class="note" id="vintage"></p>
+</header>
+
+<section id="overview">
+ <p class="eyebrow">Overview</p><h2>The national balance sheet, latest quarter</h2>
+ <div class="grid g4" id="kpis"></div>
+ <div class="callout" id="overviewNote"></div>
+</section>
+
+<section id="mix">
+ <p class="eyebrow">Composition over time</p><h2>What the debt is made of</h2>
+ <p class="lede">Total household debt by loan type, every quarter since 2003. Switch between dollars and shares, change the window, and tap legend items to hide a category.</p>
+ <div class="card">
+  <div class="chips" id="mixMode"><button class="chip on" data-v="usd">Trillions of dollars</button><button class="chip" data-v="share">Share of total</button></div>
+  <div class="chips" id="mixRange"><button class="chip on" data-v="2003">Since 2003</button><button class="chip" data-v="2015">Since 2015</button><button class="chip" data-v="2020">Since 2020</button></div>
+  <div id="mixChart"></div><div id="mixLegend"></div>
+ </div>
+ <div class="grid g3" id="mixStats" style="margin-top:18px"></div>
+</section>
+
+<section id="you">
+ <p class="eyebrow">Compare yourself</p><h2>Your debt mix vs. the nation</h2>
+ <p class="lede">Enter what you owe, or start from a persona. Nothing leaves your browser. Personas are illustrative inputs, not statistics.</p>
+ <div class="chips" id="personas"></div>
+ <div class="grid side">
+  <div class="card" id="youForm"></div>
+  <div class="card">
+   <div class="grid g2" style="align-items:center">
+    <div><h3>Your mix</h3><div id="youDonut"></div></div>
+    <div><h3 id="natTitle">National mix</h3><div id="natDonut"></div></div>
+   </div>
+   <h3 style="margin-top:14px">Share of total debt, you vs. the nation vs. your age group</h3>
+   <div id="youBars"></div>
+   <div class="callout" id="youRisk"></div>
+  </div>
+ </div>
+</section>
+
+<section id="late">
+ <p class="eyebrow">Delinquency</p><h2>Who is falling behind</h2>
+ <p class="lede">Three lenses from the report: the stock of balances already 90 or more days late, and the share of balances newly moving into 30+ or 90+ day delinquency each year.</p>
+ <div class="card">
+  <div class="chips" id="lateMode"><button class="chip on" data-v="pct_90plus">Share of balance 90+ days late</button><button class="chip" data-v="flow_30plus">New flow into 30+ late</button><button class="chip" data-v="flow_90plus">New flow into 90+ late</button></div>
+  <div id="lateChart"></div><div id="lateLegend"></div>
+ </div>
+ <div class="grid g2" style="margin-top:18px">
+  <div class="card"><h3 id="rankTitle">Latest quarter, ranked</h3><div id="lateRank"></div><p class="note">White tick marks the same quarter one year earlier.</p></div>
+  <div class="card"><h3>All debt by delinquency stage (excluding current)</h3><div id="stageChart"></div><div id="stageLegend"></div></div>
+ </div>
+</section>
+
+<section id="flows">
+ <p class="eyebrow">Transition rates</p><h2>How mortgages move between current and late</h2>
+ <p class="lede">Each quarter some current borrowers slip behind and some late borrowers catch up. These rates show the odds of each move.</p>
+ <div class="grid g2">
+  <div class="card"><h3>From current</h3><div id="trCur"></div><div id="trCurLeg"></div></div>
+  <div class="card"><h3>From 30 to 60 days late</h3><div id="trLate"></div><div id="trLateLeg"></div></div>
+ </div>
+ <div class="card" style="margin-top:18px"><h3>Transition into serious delinquency (90+) by borrower age, all debt</h3><div id="ageTr"></div><div id="ageTrLeg"></div><p class="note">Four quarter moving sum, as published.</p></div>
+</section>
+
+<section id="age">
+ <p class="eyebrow">Life cycle</p><h2>Debt by age</h2>
+ <p class="lede">Which generation holds the balances, and what each age group borrows for.</p>
+ <div class="card"><div id="ageChart"></div><div id="ageLegend"></div></div>
+ <div class="card" style="margin-top:18px">
+  <div class="chips" id="ageChips"></div>
+  <div class="grid g2" style="align-items:center"><div id="ageDonut"></div><div id="ageTable"></div></div>
+ </div>
+</section>
+
+<section id="states">
+ <p class="eyebrow">Geography</p><h2>Eleven large states compared</h2>
+ <p class="lede">The report publishes per capita debt for a set of large states. Per capita here means per person with a credit report.</p>
+ <div class="chips" id="stateChips"></div>
+ <div class="grid g2">
+  <div class="card"><h3 id="stTitle"></h3><div id="stDonut"></div><div id="stTable"></div></div>
+  <div class="card"><h3>Total debt per capita, latest quarter (thousands of $)</h3><div id="stBars"></div></div>
+ </div>
+ <div class="card" style="margin-top:18px"><h3>Share of balance 90+ days late, selected state vs. others</h3><div id="st90"></div></div>
+</section>
+
+<section id="limits">
+ <p class="eyebrow">Limits</p><h2>Limits of this tool</h2>
+ <div class="card"><ul class="src">
+  <li>State detail covers only the 11 states the New York Fed publishes: AZ, CA, FL, IL, MI, NJ, NV, NY, OH, PA and TX.</li>
+  <li>Latest data is 2026 Q2. Q3 has not been released yet.</li><li>The New York Fed notes a temporary mortgage-reporting gap after a servicing transfer in 2026 Q2. Student-loan delinquency also reflects resumed reporting of defaulted balances. These changes are not solely borrower behavior.</li>
+  <li>Figures are national or state averages, not individual credit advice.</li>
+  <li>Personas are illustrative example inputs, not real people.</li>
+ </ul></div>
+</section>
+
+<section id="method">
+ <p class="eyebrow">Sources and method</p><h2>Where every number comes from</h2>
+ <ul class="src" id="sources"></ul>
+ <p class="lede">All figures are read at page load from <code>data/debt-map.json</code>, which <code>update_data.py</code> builds directly from the New York Fed data workbook. Shares, changes and weighted averages on this page are simple arithmetic on those published values. The "your mix" comparison runs only in your browser and is not a credit score or a prediction.</p>
+</section>
+<footer>WealthMeter special feature. Data: Federal Reserve Bank of New York, Consumer Credit Panel/Equifax. Not financial advice. New York Fed Consumer Credit Panel / Equifax. WealthMeter calculations and charts are independent adaptations, not endorsed by the New York Fed. Source data use is subject to the <a href="https://www.newyorkfed.org/privacy/termsofuse" target="_blank" rel="noopener">New York Fed terms</a>.</footer>
+</main>
+<script src="assets/wm-charts.js"></script><script src="/assets/roger-specials-integration.js"></script>
+<script>
+const P = [
+ {k:"mort", name:"Mortgage", color:"#5aa2ff", comp:"Mortgage", d:"MORTGAGE", age:"Mortgage", st:"Mortgage"},
+ {k:"heloc",name:"Home equity line", color:"#3fc7d6", comp:"HE Revolving", d:"HELOC", age:"HELOC", st:"HE Revolving"},
+ {k:"auto", name:"Auto loan", color:"#f0a24a", comp:"Auto Loan", d:"AUTO", age:"Auto Loans", st:"Auto Loan"},
+ {k:"cc",   name:"Credit card", color:"#ff6b5b", comp:"Credit Card", d:"CC", age:"Credit Card", st:"Credit Card"},
+ {k:"stu",  name:"Student loan", color:"#b58cff", comp:"Student Loan", d:"STUDENT LOAN", age:"Student Loans", st:"Student Loan"},
+ {k:"oth",  name:"Other", color:"#9c8a76", comp:"Other", d:"OTHER", age:"Other", st:"Other"}];
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const qf = q => q.replace("Q", " Q");
+const col = (t, name) => t.values.map(r => r[t.columns.indexOf(name)]);
+const last = a => a[a.length - 1];
+const usd = v => "$" + v.toLocaleString("en-US", {maximumFractionDigits: 0});
+const tr = v => "$" + v.toFixed(2) + "T", pc = v => v.toFixed(1) + "%";
+function chipGroup(sel, cb){ $$(sel + " .chip").forEach(b => b.onclick = () => { $$(sel + " .chip").forEach(x => x.classList.remove("on")); b.classList.add("on"); cb(b.dataset.v); }); }
+
+fetch("data/debt-map.json").then(r => r.json()).then(D => {
+ const C = D.composition, Q = C.quarters, n = Q.length, L = Q[n-1];
+ const tot = col(C, "Total"), yAgo = n - 5, s = D.sources[0];
+ $("#vintage").textContent = `Data: ${s.publisher}, ${s.release} release covering ${qf(L)}. Retrieved ${s.retrieved}.`;
+ const peakI = tot.indexOf(Math.max(...tot));
+ const ds = D.delinquency_status, cur = col(ds, "Current"), late = last(cur) != null ? 100 - last(cur) : null;
+ const lateYA = 100 - cur[ds.quarters.length - 5];
+ const cc = col(C, "Credit Card");
+ const kp = [
+  ["Total household debt", tr(last(tot)), `${(last(tot)-tot[n-2] >= 0 ? "+" : "")}${((last(tot)-tot[n-2])*1000).toFixed(0)}B vs. ${qf(Q[n-2])}`],
+  ["Change in a year", `${((last(tot)/tot[yAgo]-1)*100).toFixed(1)}%`, `${tr(tot[yAgo])} in ${qf(Q[yAgo])}`],
+  ["Debt in some stage of delinquency", pc(late), `${pc(lateYA)} a year earlier`],
+  ["Credit card balances", tr(last(cc)), `${((last(cc)/cc[yAgo]-1)*100).toFixed(1)}% vs. a year earlier`]];
+ $("#kpis").innerHTML = kp.map(k => `<div class="card stat"><div class="k">${k[0]}</div><div class="v">${k[1]}</div><div class="s">${k[2]}</div></div>`).join("");
+ const mShare = last(col(C,"Mortgage"))/last(tot)*100;
+ $("#overviewNote").innerHTML = `Mortgages make up <b>${pc(mShare)}</b> of everything households owe. Total debt is ${((last(tot)/tot[0]))
+   .toFixed(1)}x its ${qf(Q[0])} level of ${tr(tot[0])}${peakI === n-1 ? ", and this quarter is the series high." : `. The series high was ${tr(tot[peakI])} in ${qf(Q[peakI])}.`}`;
+
+ // composition
+ let mixMode = "usd", mixFrom = "2003"; const mixS = P.map(p => ({name: p.name, color: p.color, raw: col(C, p.comp)}));
+ function drawMix(){
+  const i0 = Q.findIndex(q => q >= mixFrom), xs = Q.slice(i0);
+  mixS.forEach(s => s.vals = s.raw.slice(i0).map((v, i) => mixMode === "usd" ? v : v / tot[i0 + i] * 100));
+  WM.line($("#mixChart"), xs, mixS, {stacked: true, showTotal: mixMode === "usd", fmt: mixMode === "usd" ? v => "$" + v.toFixed(v < 10 ? 1 : 0) + "T" : v => v.toFixed(0) + "%", tfmt: mixMode === "usd" ? tr : pc, yMax: mixMode === "share" ? 100 : null, xfmt: qf});
+ }
+ WM.legend($("#mixLegend"), mixS, drawMix); chipGroup("#mixMode", v => {mixMode = v; drawMix();}); chipGroup("#mixRange", v => {mixFrom = v; drawMix();}); drawMix();
+ const ms = P.map(p => { const a = col(C, p.comp); return {p, now: last(a), ya: a[yAgo], d5: a[n-21], share: last(a)/last(tot)*100, max: Math.max(...a), maxQ: Q[a.indexOf(Math.max(...a))]}; });
+ const fast = ms.slice().sort((a,b) => (b.now/b.d5) - (a.now/a.d5))[0], slow = ms.slice().sort((a,b) => (a.now/a.ya) - (b.now/b.ya))[0];
+ $("#mixStats").innerHTML = [
+  [`Fastest five year growth`, fast.p.name, `${((fast.now/fast.d5-1)*100).toFixed(0)}% since ${qf(Q[n-21])}`],
+  [`Weakest one year change`, slow.p.name, `${((slow.now/slow.ya-1)*100).toFixed(1)}% since ${qf(Q[yAgo])}`],
+  [`Smallest category`, ms.slice().sort((a,b)=>a.now-b.now)[0].p.name, `${pc(ms.slice().sort((a,b)=>a.now-b.now)[0].share)} of total`]]
+  .map(k => `<div class="card stat"><div class="k">${k[0]}</div><div class="v" style="font-size:1.5rem">${k[1]}</div><div class="s">${k[2]}</div></div>`).join("");
+
+ // your mix
+ const AP = D.by_age_product, ages = AP.columns;
+ const personas = [
+  {name:"Recent grad renting", age:"18-29", v:{mort:0, heloc:0, auto:14000, cc:3500, stu:32000, oth:0}},
+  {name:"First home, two kids", age:"30-39", v:{mort:340000, heloc:0, auto:28000, cc:6000, stu:18000, oth:1500}},
+  {name:"Mid career, remodel", age:"40-49", v:{mort:260000, heloc:45000, auto:22000, cc:9000, stu:0, oth:2000}},
+  {name:"Card heavy renter", age:"30-39", v:{mort:0, heloc:0, auto:9000, cc:21000, stu:0, oth:4000}},
+  {name:"Near retirement", age:"60-69", v:{mort:90000, heloc:12000, auto:15000, cc:4000, stu:0, oth:0}}];
+ $("#youForm").innerHTML = `<h3>Your balances</h3>` + P.map(p => `<label class="f">${p.name} <span>balance owed, $</span><input type="number" min="0" step="500" inputmode="numeric" data-k="${p.k}" value="0"></label>`).join("") +
+   `<label class="f">Your age group<select id="youAge">${ages.map(a => `<option>${a}</option>`).join("")}</select></label>`;
+ $("#personas").innerHTML = personas.map((p, i) => `<button class="chip" data-i="${i}">${p.name}</button>`).join("");
+ $$("#personas .chip").forEach(b => b.onclick = () => { $$("#personas .chip").forEach(x => x.classList.remove("on")); b.classList.add("on"); const p = personas[b.dataset.i]; $$("#youForm input").forEach(i => i.value = p.v[i.dataset.k]); $("#youAge").value = p.age; drawYou(); });
+ $$("#youForm input, #youAge").forEach(i => i.addEventListener("input", () => { $$("#personas .chip").forEach(x => x.classList.remove("on")); drawYou(); }));
+ const nat = P.map(p => last(col(C, p.comp)));
+ const d90 = D.pct_90plus, f90 = D.flow_90plus;
+ function drawYou(){
+  const mine = P.map(p => +($(`#youForm input[data-k=${p.k}]`).value) || 0), mt = mine.reduce((a,b)=>a+b,0);
+  const ag = $("#youAge").value, ai = ages.indexOf(ag), agv = P.map(p => (AP.rows[p.age] || [])[ai] || 0), agt = agv.reduce((a,b)=>a+b,0);
+  const natT = nat.reduce((a,b)=>a+b,0);
+  WM.donut($("#youDonut"), P.map((p,i) => ({label:p.name, value:mine[i], color:p.color})), {center: mt ? usd(mt) : "$0", sub: "you owe"});
+  WM.donut($("#natDonut"), P.map((p,i) => ({label:p.name, value:nat[i], color:p.color})), {center: tr(natT), sub: "U.S. households"});
+  $("#natTitle").textContent = `National mix, ${qf(L)}`;
+  const items = []; P.forEach((p,i) => { const ys = mt ? mine[i]/mt*100 : 0;
+    items.push({label: p.name, value: ys, color: p.color, marks: [{v: nat[i]/natT*100, color:"#fff"}, {v: agv[i]/agt*100, color:"#f0a24a"}],
+      tip: `<b>${p.name}</b><br>You: ${pc(ys)}<br>U.S.: ${pc(nat[i]/natT*100)}<br>Age ${ag}: ${pc(agv[i]/agt*100)}`}); });
+  WM.hbars($("#youBars"), items, {fmt: pc, max: 100, labelW: 160});
+  if (!mt) { $("#youRisk").innerHTML = "Enter a balance or pick a persona to see how your mix compares."; return; }
+  const w = (t) => P.reduce((a,p,i) => a + mine[i]/mt * last(col(t, p.d === "OTHER" ? "OTHER" : p.d)), 0);
+  const nat90 = last(col(d90, "ALL")), big = P.map((p,i)=>({p, gap: mine[i]/mt*100 - nat[i]/natT*100})).sort((a,b)=>Math.abs(b.gap)-Math.abs(a.gap))[0];
+  $("#youRisk").innerHTML = `Your biggest difference from the national mix is <b>${big.p.name.toLowerCase()}</b> (${big.gap > 0 ? "+" : ""}${big.gap.toFixed(1)} points). ` +
+   `If balances shaped like yours behaved like the national averages for ${qf(L)}, <b>${pc(w(d90))}</b> would be 90+ days late (all U.S. debt: ${pc(nat90)}), and <b>${pc(w(f90))}</b> would newly move into serious delinquency over a year (all U.S. debt: ${pc(last(col(f90,"ALL")))}). <span style="color:#b4a391">White ticks: U.S. share. Amber ticks: your age group (${ag}, ${AP.title.match(/\((.*)\)/)[1]}). This is a weighted average of published rates, not a personal risk score.</span>`;
+ }
+ $$("#personas .chip")[1].click();
+
+ // delinquency
+ let lateKey = "pct_90plus"; const lateS = P.map(p => ({name: p.name, color: p.color, dkey: p.d}));
+ function drawLate(){
+  const t = D[lateKey]; lateS.forEach(s => s.vals = col(t, s.dkey));
+  const all = {name: "All debt", color: "#ffffff", vals: col(t, t.columns.find(c => /^(ALL|Total)$/.test(c))), dash: "5 4", width: 2};
+  WM.line($("#lateChart"), t.quarters, [...lateS, ...(all.hidden ? [] : [all])], {fmt: v => v.toFixed(0) + "%", tfmt: v => v.toFixed(2) + "%", xfmt: qf});
+  const tq = t.quarters.length, ya = tq - 5;
+  $("#rankTitle").textContent = `${qf(t.quarters[tq-1])}, ranked`;
+  WM.hbars($("#lateRank"), lateS.map(s => ({label: s.name, value: last(s.vals), color: s.color, marks: s.vals[ya] != null ? [{v: s.vals[ya]}] : [],
+    tip: `<b>${s.name}</b><br>${qf(t.quarters[tq-1])}: ${last(s.vals).toFixed(2)}%<br>${qf(t.quarters[ya])}: ${s.vals[ya] == null ? "n/a" : s.vals[ya].toFixed(2) + "%"}<br>Series high: ${Math.max(...s.vals.filter(v=>v!=null)).toFixed(2)}% (${qf(t.quarters[s.vals.indexOf(Math.max(...s.vals.filter(v=>v!=null)))])})`}))
+    .sort((a,b) => b.value - a.value), {fmt: v => v.toFixed(2) + "%", labelW: 150});
+ }
+ WM.legend($("#lateLegend"), lateS, drawLate); chipGroup("#lateMode", v => {lateKey = v; drawLate();}); drawLate();
+ const stCols = ["30 days late","60 days late","90 days late","120+ days late","Severely Derogatory"], stColors = ["#f6d38a","#f0a24a","#ff8a5b","#ff5b5b","#b8323a"];
+ const stS = stCols.map((c,i) => ({name: c, color: stColors[i], vals: col(ds, c)}));
+ const drawStage = () => WM.line($("#stageChart"), ds.quarters, stS, {stacked: true, showTotal: true, fmt: v => v.toFixed(0) + "%", tfmt: v => v.toFixed(2) + "%", xfmt: qf, height: 300});
+ WM.legend($("#stageLegend"), stS, drawStage); drawStage();
+
+ // transitions
+ const mk = (t, colors) => t.columns.map((c,i) => ({name: c, color: colors[i], vals: col(t, c)}));
+ const c1 = mk(D.mortgage_current_transitions, ["#f0a24a","#ff6b5b"]), c2 = mk(D.mortgage_late_transitions, ["#5fcf8e","#ff6b5b"]);
+ const dC1 = () => WM.line($("#trCur"), D.mortgage_current_transitions.quarters, c1, {fmt: v => v.toFixed(1) + "%", tfmt: v => v.toFixed(2) + "%", xfmt: qf, height: 300});
+ const dC2 = () => WM.line($("#trLate"), D.mortgage_late_transitions.quarters, c2, {fmt: v => v.toFixed(0) + "%", tfmt: v => v.toFixed(2) + "%", xfmt: qf, height: 300});
+ WM.legend($("#trCurLeg"), c1, dC1); WM.legend($("#trLateLeg"), c2, dC2); dC1(); dC2();
+ const at = D.age_90plus_transition, ageCol = ["#b58cff","#5aa2ff","#3fc7d6","#5fcf8e","#f0a24a","#ff6b5b","#ffffff"];
+ const atS = at.columns.map((c,i) => ({name: c === "all" ? "All ages" : c, color: ageCol[i], vals: col(at, c), dash: c === "all" ? "5 4" : ""}));
+ const dAt = () => WM.line($("#ageTr"), at.quarters, atS, {fmt: v => v.toFixed(0) + "%", tfmt: v => v.toFixed(2) + "%", xfmt: qf});
+ WM.legend($("#ageTrLeg"), atS, dAt); dAt();
+
+ // age
+ const AT = D.by_age_total, agS = AT.columns.map((c,i) => ({name: c, color: ageCol[i], vals: col(AT, c)}));
+ const dAg = () => WM.line($("#ageChart"), AT.quarters, agS, {stacked: true, showTotal: true, fmt: v => "$" + v.toFixed(0) + "T", tfmt: tr, xfmt: qf});
+ WM.legend($("#ageLegend"), agS, dAg); dAg();
+ $("#ageChips").innerHTML = ages.map((a,i) => `<button class="chip${i==1?" on":""}" data-v="${a}">${a}</button>`).join("");
+ function drawAge(a){ const i = ages.indexOf(a), v = P.map(p => (AP.rows[p.age]||[])[i] || 0), t = v.reduce((x,y)=>x+y,0);
+  WM.donut($("#ageDonut"), P.map((p,k) => ({label: p.name, value: v[k], color: p.color})), {center: tr(t), sub: "age " + a});
+  $("#ageTable").innerHTML = `<h3>Age ${a}, ${AP.title.match(/\((.*)\)/)[1]}</h3><table class="t"><tr><th>Type</th><th>$ trillions</th><th>Share</th><th>Share of all U.S. ${"debt"} of this type</th></tr>` +
+   P.map((p,k) => { const all = ages.reduce((s,_,j) => s + ((AP.rows[p.age]||[])[j]||0), 0); return `<tr><td><i style="display:inline-block;width:9px;height:9px;background:${p.color};border-radius:2px;margin-right:6px"></i>${p.name}</td><td>${v[k].toFixed(3)}</td><td>${pc(v[k]/t*100)}</td><td>${pc(v[k]/all*100)}</td></tr>`; }).join("") + `</table><p class="note">Last column: this age group's slice of the national balance for each loan type, summed across the six published age groups.</p>`; }
+ chipGroup("#ageChips", drawAge); drawAge(ages[1]);
+
+ // states
+ const SC = D.state_composition, SP = D.state_per_capita_total, S9 = D.state_pct_90plus, sts = Object.keys(SC.rows).filter(k => k !== "US");
+ const STN = {AZ:"Arizona",CA:"California",FL:"Florida",IL:"Illinois",MI:"Michigan",NJ:"New Jersey",NV:"Nevada",NY:"New York",OH:"Ohio",PA:"Pennsylvania",TX:"Texas"};
+ $("#stateChips").innerHTML = sts.map((s,i) => `<button class="chip${s==="CA"?" on":""}" data-v="${s}">${STN[s]||s}</button>`).join("");
+ function drawState(st){
+  const v = SC.rows[st], t = v.reduce((a,b)=>a+b,0);
+  $("#stTitle").textContent = `${STN[st]||st}: debt per capita by type, ${SC.title.match(/\((.*)\)/)[1]}`;
+  WM.donut($("#stDonut"), P.map((p,k) => ({label: p.name, value: v[SC.columns.indexOf(p.st)], color: p.color})), {center: "$" + t.toFixed(1) + "K", sub: "per capita"});
+  const avg = c => sts.reduce((a,s) => a + SC.rows[s][SC.columns.indexOf(c)], 0) / sts.length;
+  $("#stTable").innerHTML = `<table class="t"><tr><th>Type</th><th>${st}, $K</th><th>United States, $K</th></tr>` + P.map(p => `<tr><td>${p.name}</td><td>${v[SC.columns.indexOf(p.st)].toFixed(2)}</td><td>${SC.rows.US ? SC.rows.US[SC.columns.indexOf(p.st)].toFixed(2) : avg(p.st).toFixed(2)}</td></tr>`).join("") + `</table>`;
+  WM.hbars($("#stBars"), sts.map(s => ({label: STN[s]||s, value: last(SP.series[s]), color: s === st ? "#5aa2ff" : "#5a4636"})).sort((a,b)=>b.value-a.value), {fmt: v => "$" + v.toFixed(1) + "K", labelW: 140, rowH: 30});
+  WM.line($("#st90"), S9.quarters, sts.map(s => ({name: STN[s]||s, color: s === st ? "#5aa2ff" : "rgba(195,178,159,.28)", width: s === st ? 3.2 : 1.4, vals: S9.series[s]})).sort((a,b) => (a.name === (STN[st]||st)) - (b.name === (STN[st]||st))),
+   {fmt: v => v.toFixed(0) + "%", tfmt: v => v.toFixed(2) + "%", xfmt: qf, height: 320});
+ }
+ chipGroup("#stateChips", drawState); drawState("CA");
+ WM.sources($("#sources"), D.sources); WM.navSpy();
+}).catch(e => { document.querySelector("main").insertAdjacentHTML("afterbegin", `<p class="callout">Could not load data/debt-map.json (${e}). Serve this folder over http, for example: python3 -m http.server</p>`); });
+</script>
+</body>
+</html>

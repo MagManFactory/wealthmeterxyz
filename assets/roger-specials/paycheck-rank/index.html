@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Where Your Paycheck Ranks | WealthMeter</title>
+<meta name="description" content="Find your income percentile among U.S. earners, full-time workers and households by age, then compare your pay with your occupation and your state using Census and BLS data.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/wm-feature.css">
+<link rel="icon" href="data:,">
+<style>
+.gauge{display:grid;gap:6px}.gauge .track{position:relative;height:14px;border-radius:999px;background:linear-gradient(90deg,#3a2b21,#5aa2ff)}
+.gauge .pin{position:absolute;top:-6px;width:4px;height:26px;border-radius:3px;background:#fff;box-shadow:0 0 0 3px rgba(0,0,0,.35);transform:translateX(-2px)}
+.gauge .scale{display:flex;justify-content:space-between;color:var(--dim);font:500 .72rem "Roboto Mono"}
+.big{font:700 clamp(2.4rem,6vw,3.6rem) "Roboto Mono",monospace;color:#fff;line-height:1}
+.occlist{max-height:220px;overflow:auto;border:1px solid var(--line);border-radius:12px;margin-top:6px;display:none;background:var(--bg)}
+.occlist button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--ink);font:500 .85rem Inter;padding:9px 12px;cursor:pointer}.occlist button:hover{background:var(--paper2)}
+table.t{width:100%;border-collapse:collapse;font-size:.88rem}table.t th,table.t td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:right}table.t th:first-child,table.t td:first-child{text-align:left}table.t th{color:var(--muted);font-weight:600}
+table.t tr.me td{color:#8cc0ff;font-weight:700}
+.tw{overflow-x:auto}
+</style>
+<link rel="canonical" href="https://wealthmeter.xyz/paycheck-rank.html">
+</head>
+<body>
+<nav class="topnav" aria-label="Sections"><div class="in">
+ <a class="brand" href="#top">Wealth<b>Meter</b> <span style="color:#b4a391">|</span> Paycheck Rank</a>
+ <a class="l" href="#rank">Your rank</a><a class="l" href="#dist">Distribution</a><a class="l" href="#whatif">What if</a><a class="l" href="#occ">Occupation</a><a class="l" href="#state">State</a><a class="l" href="#age">By age</a><a class="l" href="#limits">Limits</a><a class="l" href="#method">Sources</a>
+</div></nav>
+<main id="top">
+<header class="hero">
+ <p class="eyebrow">WealthMeter special feature</p>
+ <h1>Where Your Paycheck Ranks</h1>
+ <p class="dek">Enter your income, age, state and job. See where you stand among all American earners, among full-time workers, among people your age, and among people who do the same work.</p>
+ <p class="note" id="vintage"></p>
+</header>
+
+<section id="rank">
+ <p class="eyebrow">Your rank</p><h2>Your percentile</h2>
+ <p class="lede">Start from a persona or type your own numbers. Everything is computed in your browser. Personas are illustrative inputs, not statistics.</p>
+ <div class="chips" id="personas"></div>
+ <div class="grid side">
+  <div class="card" id="form">
+   <h3>About you</h3>
+   <label class="f">Annual income <span>before taxes, dollars</span><input id="inc" type="number" min="0" step="1000" inputmode="numeric" value="65000"></label>
+   <label class="f">Compare as <select id="mode"><option value="all">An individual earner (all people with income)</option><option value="ftyr">A full-time, year-round worker</option><option value="hh">A household (total household income)</option></select></label>
+   <label class="f">Age <span id="ageNote">householder age in household mode</span><input id="ageIn" type="number" min="15" max="99" value="35" inputmode="numeric"></label>
+   <label class="f">State<select id="st"></select></label>
+   <label class="f">Occupation <span>search 800+ BLS occupations</span><input id="occq" type="text" autocomplete="off" placeholder="e.g. nurse, teacher, software"><div class="occlist" id="occlist"></div></label>
+   <p class="note" id="occPicked"></p><label class="f">Occupation wage <span>your gross annual job pay, excluding other income; separate from Census income above</span><input id="jobpay" type="number" min="0" step="1000" value="65000" inputmode="numeric"></label>
+  </div>
+  <div>
+   <div class="grid g2" id="gauges"></div>
+   <div class="callout" id="rankNote"></div>
+  </div>
+ </div>
+</section>
+
+<section id="dist">
+ <p class="eyebrow">The distribution</p><h2>Where you sit on the curve</h2>
+ <p class="lede">Each bar is a published Census income bracket. The white line is you. Switch the comparison group to see how the curve moves with age.</p>
+ <div class="card">
+  <div class="chips" id="distAge"></div>
+  <h3 id="distTitle"></h3>
+  <div id="hist"></div>
+  <p class="note" id="histNote"></p>
+ </div>
+ <div class="grid g4" id="distStats" style="margin-top:18px"></div>
+</section>
+
+<section id="whatif">
+ <p class="eyebrow">Scenarios</p><h2>What a raise would do</h2>
+ <p class="lede">Slide to try a raise or a pay cut and watch your rank move.</p>
+ <div class="card">
+  <label class="f">Change in income: <b id="rlab" style="color:#8cc0ff">+10%</b><input id="raise" type="range" min="-50" max="100" step="5" value="10"></label>
+  <div class="grid g3" id="whatStats"></div>
+  <h3 style="margin-top:18px">Income needed to reach each percentile (same group)</h3>
+  <div id="ladder"></div>
+ </div>
+</section>
+
+<section id="occ">
+ <p class="eyebrow">Your occupation</p><h2 id="occTitle">Pay in your line of work</h2>
+ <p class="lede">BLS wage percentiles for the occupation you picked, nationally and in your state, with your pay marked. Wages exclude self employment and most non wage income.</p>
+ <div class="grid">
+  <div class="card"><h3>Wage range, 10th to 90th percentile</h3><div id="occBand"></div><div class="callout" id="occNote"></div></div>
+  <div class="card"><h3>Related occupations in the same group, median annual wage</h3><div id="occPeers"></div></div>
+ </div>
+</section>
+
+<section id="state">
+ <p class="eyebrow">Your state</p><h2 id="stTitle">Pay where you live</h2>
+ <div class="grid">
+  <div class="card"><h3>Median household income, current dollars</h3><div id="stLine"></div><div id="stLegend"></div><p class="note">Census Table H-8. Single year state estimates from the CPS are noisy; Census recommends multi year averages for state comparisons.</p></div>
+  <div class="card"><h3>Median annual wage by occupation group, state (blue) vs. U.S. (white tick)</h3><div id="stBars"></div></div>
+ </div>
+</section>
+
+<section id="age">
+ <p class="eyebrow">By age</p><h2>How income changes over a lifetime</h2>
+ <div class="card tw"><div id="ageTable"></div></div>
+</section>
+
+<section id="limits">
+ <p class="eyebrow">Limits</p><h2>Limits of this tool</h2>
+ <div class="card"><ul class="src">
+  <li>Census top brackets are open ended ($100,000 and over for people, $200,000 and over for households), so above them results show as "Nth percentile or higher".</li>
+  <li>There is no state by age percentile. For states the page shows the median and wages instead.</li>
+  <li>Some BLS OEWS occupation wages are suppressed and show as n/a.</li>
+  <li>Income year is 2025; occupation wages are OEWS May 2025.</li>
+  <li>Income is pre-tax money income.</li>
+  <li>Personas are illustrative example inputs, not real people.</li>
+ </ul></div>
+</section>
+
+<section id="method">
+ <p class="eyebrow">Sources and method</p><h2>Where every number comes from</h2>
+ <ul class="src" id="sources"></ul>
+ <p class="lede">All figures are read at page load from <code>data/paycheck-rank.json</code>, which <code>update_data.py</code> builds directly from the Census and BLS files. Percentiles are estimated by linear interpolation inside the published income brackets ($2,500 wide for people, $5,000 for households), so they can differ slightly from Census published medians, which are shown alongside. The top Census bracket is open ended ($100,000 and over for people, $200,000 and over for households), so above it the page can only say you are at or above a given percentile. Occupation ranks use the separate gross job-wage input, not Census total money income or household income. Occupation ranks interpolate between the BLS 10th, 25th, 50th, 75th and 90th percentile wages; beyond those points the page says below the 10th or above the 90th. Census income is total money income for calendar year 2025; BLS wages are May 2025 estimates. Not financial advice.</p>
+</section>
+<footer>WealthMeter special feature. Data: U.S. Census Bureau CPS ASEC and U.S. Bureau of Labor Statistics OEWS.</footer>
+</main>
+<script src="assets/wm-charts.js"></script><script src="/assets/roger-specials-integration.js"></script>
+<script>
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const usd = v => v == null ? "n/a" : "$" + Math.round(v).toLocaleString("en-US");
+const usdK = v => "$" + (v >= 1e6 ? (v/1e6).toFixed(1) + "M" : Math.round(v/1000) + "K");
+const ord = p => { const n = Math.round(p); const s = (n % 100 >= 11 && n % 100 <= 13) ? "th" : ({1:"st",2:"nd",3:"rd"}[n % 10] || "th"); return n + s; };
+function chipGroup(sel, cb){ $$(sel + " .chip").forEach(b => b.onclick = () => { $$(sel + " .chip").forEach(x => x.classList.remove("on")); b.classList.add("on"); cb(b.dataset.v); }); }
+
+fetch("data/paycheck-rank.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(init).catch(e => {
+ $("main").insertAdjacentHTML("afterbegin", `<p class="callout">Could not load data/paycheck-rank.json (${e}). Serve this folder over http, for example: python3 -m http.server</p>`);
+});
+
+function init(D){
+ const TAB = {all: D.person_income_all, ftyr: D.person_income_ftyr, hh: D.household_income};
+ const MODE_NAME = {all: "people with income", ftyr: "full-time, year-round workers", hh: "households"};
+ const ALLKEY = {all: "All people", ftyr: "All people", hh: "All households"};
+ const AGES = Object.keys(D.person_income_all.groups).filter(k => !/^All/.test(k));
+ const O = D.oews, NAT = Object.fromEntries(O.national.map(r => [r.code, r]));
+ const OCCS = O.national.filter(r => r.group === "detailed" && r.w[2] != null);
+ const H8 = D.state_median_household.states;
+ const STATES = Object.keys(O.states).filter(s => H8[s]).sort();
+ const src = D.sources;
+ $("#vintage").textContent = `Data: U.S. Census Bureau, CPS ASEC (${src[0].release}); U.S. Bureau of Labor Statistics, OEWS (${src[4].release}). Retrieved ${src[0].retrieved}.`;
+ $("#st").innerHTML = STATES.map(s => `<option>${s}</option>`).join("");
+ WM.sources($("#sources"), src);
+
+ // percentile within bracketed distribution
+ function rankIn(tab, group, x){
+  const g = tab.groups[group], B = tab.brackets, c = g.counts, tot = c.reduce((a,b) => a + b, 0);
+  let below = 0;
+  for (let i = 0; i < B.length; i++){
+   const lo = B[i][0] == null ? 0 : B[i][0], hi = B[i][1];
+   if (hi == null) return {p: below / tot * 100, open: true, floor: lo};
+   if (x < hi){ const f = Math.max(0, Math.min(1, (x - lo) / (hi - lo))); return {p: (below + c[i] * f) / tot * 100, open: false}; }
+   below += c[i];
+  }
+ }
+ function incomeAt(tab, group, p){
+  const g = tab.groups[group], B = tab.brackets, c = g.counts, tot = c.reduce((a,b) => a + b, 0), target = p / 100 * tot;
+  let below = 0;
+  for (let i = 0; i < B.length; i++){
+   const lo = B[i][0] == null ? 0 : B[i][0], hi = B[i][1];
+   if (hi == null) return {v: lo, open: true};
+   if (below + c[i] >= target) return {v: lo + (hi - lo) * (c[i] ? (target - below) / c[i] : 0), open: false};
+   below += c[i];
+  }
+ }
+ const ageGroup = a => a < 25 ? AGES[0] : a < 35 ? AGES[1] : a < 45 ? AGES[2] : a < 55 ? AGES[3] : a < 65 ? AGES[4] : AGES[5];
+ const pTxt = r => r.open ? `${ord(r.p)}+` : ord(r.p);
+ const pLong = r => r.open ? `at or above the ${ord(r.p)} percentile` : `about the ${ord(r.p)} percentile`;
+ function occRank(w, x){
+  const P = [10,25,50,75,90], v = w.slice(0,5);
+  if (v.filter(value => value != null && value === x).length > 1) return {txt: "at tied percentile wages; exact rank unavailable", p: null};
+  if (v[0] != null && x < v[0]) return {txt: "below the 10th", p: 5};
+  for (let i = 0; i < 4; i++){ if (v[i] != null && v[i+1] != null && x >= v[i] && x <= v[i+1]) { const p = P[i] + (P[i+1]-P[i]) * (x - v[i]) / (v[i+1] - v[i]); return {txt: `about the ${ord(p)}`, p}; } }
+  if (v[4] != null && x > v[4]) return {txt: "above the 90th", p: 95};
+  return {txt: "not determinable (BLS did not publish all percentiles)", p: null};
+ }
+
+ const S = {wage: 65000, inc: 65000, mode: "all", age: 35, st: "California", occ: "15-1252", distAge: "auto"};
+ const PERSONAS = [
+  {n: "New grad nurse", inc: 82000, mode: "ftyr", age: 24, st: "Texas", occ: "29-1141"},
+  {n: "Retail associate", inc: 32000, mode: "all", age: 31, st: "Ohio", occ: "41-2031"},
+  {n: "Mid career developer", inc: 165000, mode: "ftyr", age: 41, st: "Washington", occ: "15-1252"},
+  {n: "High school teacher", inc: 68000, mode: "ftyr", age: 46, st: "Pennsylvania", occ: "25-2031"},
+  {n: "Trucker, two earner home", inc: 112000, mode: "hh", age: 52, st: "Georgia", occ: "53-3032"},
+  {n: "Operations manager", inc: 240000, mode: "ftyr", age: 50, st: "New York", occ: "11-1021"}
+ ];
+ $("#personas").innerHTML = PERSONAS.map((p,i) => `<button class="chip" data-v="${i}">${p.n}</button>`).join("");
+ chipGroup("#personas", i => { Object.assign(S, PERSONAS[i]); if(S.mode!=="hh") S.wage=S.inc; S.distAge = "auto"; syncForm(); render(); });
+ function syncForm(){ $("#jobpay").value = S.wage; $("#inc").value = S.inc; $("#mode").value = S.mode; $("#ageIn").value = S.age; $("#st").value = S.st; $("#occq").value = ""; }
+ const clearP = () => $$("#personas .chip").forEach(x => x.classList.remove("on"));
+ $("#jobpay").oninput = e => { S.wage = +e.target.value; clearP(); render(); };
+ $("#inc").oninput = e => { S.inc = Math.max(0, +e.target.value || 0); clearP(); render(); };
+ $("#mode").onchange = e => { S.mode = e.target.value; S.distAge = "auto"; clearP(); render(); };
+ $("#ageIn").oninput = e => { const a = +e.target.value; if (a >= 15 && a <= 99){ S.age = a; S.distAge = "auto"; clearP(); render(); } };
+ $("#st").onchange = e => { S.st = e.target.value; clearP(); render(); };
+ $("#occq").oninput = e => {
+  const q = e.target.value.trim().toLowerCase(), L = $("#occlist");
+  if (q.length < 2){ L.style.display = "none"; return; }
+  const hits = OCCS.filter(r => r.title.toLowerCase().includes(q)).slice(0, 40);
+  L.innerHTML = hits.length ? hits.map(r => `<button type="button" data-c="${r.code}">${r.title}</button>`).join("") : `<button type="button" disabled>No match</button>`;
+  L.style.display = "block";
+  $$("#occlist button[data-c]").forEach(b => b.onclick = () => { S.occ = b.dataset.c; L.style.display = "none"; $("#occq").value = ""; clearP(); render(); });
+ };
+
+ function gauge(label, r, sub){
+  const p = r ? Math.max(0, Math.min(100, r.p)) : null;
+  return `<div class="card stat"><div class="k">${label}</div><div class="big">${r ? pTxt(r) : "n/a"}</div><div class="s" style="margin:6px 0 10px">${sub}</div>
+   <div class="gauge"><div class="track">${p == null ? "" : `<div class="pin" style="left:${p}%"></div>`}</div><div class="scale"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div></div></div>`;
+ }
+
+ function hist(tab, group, x){
+  const host = $("#hist"), B = tab.brackets, c = tab.groups[group].counts, W = 900, H = 300, m = {l: 50, r: 10, t: 12, b: 34};
+  host.innerHTML = ""; host.classList.add("chart");
+  const NS = "http://www.w3.org/2000/svg", el = (t, a, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); p.appendChild(e); return e; };
+  const svg = el("svg", {viewBox: `0 0 ${W} ${H}`, role: "img"}, host), tip = document.createElement("div"); tip.className = "tip"; host.appendChild(tip);
+  window.WMReviewTable(host, ["Income bracket", "Estimated people/households, thousands"], tab.bracket_labels.map((label,i)=>[label,c[i]]));
+  const tot = c.reduce((a,b) => a + b, 0), sh = c.map(v => v / tot * 100), ymax = Math.ceil(Math.max(...sh.slice(0, -1)) + .5);
+  const n = B.length, bw = (W - m.l - m.r) / n, ih = H - m.t - m.b;
+  for (let k = 0; k <= 4; k++){ const v = ymax * k / 4, y = m.t + ih - v / ymax * ih; el("line", {x1: m.l, x2: W - m.r, y1: y, y2: y, class: "gridl"}, svg); el("text", {x: m.l - 6, y: y + 4, "text-anchor": "end"}, svg).textContent = v.toFixed(1) + "%"; }
+  let mi = B.findIndex(b => b[1] == null || x < b[1]);
+  sh.forEach((v, i) => {
+   const vv = Math.min(v, ymax);
+   if (v > ymax) el("text", {x: m.l + i * bw - 4, y: m.t + 30, "text-anchor": "end", style: "fill:#c3b29f;font:600 12px Inter"}, svg).textContent = `${v.toFixed(1)}% in the open top bracket (bar cut off)`;
+   const r = el("rect", {x: m.l + i * bw + 1, y: m.t + ih - vv / ymax * ih, width: bw - 2, height: vv / ymax * ih, rx: 2, fill: i === mi ? "#5aa2ff" : i < mi ? "#3f6fa8" : "#5a4636"}, svg);
+   r.addEventListener("mousemove", ev => { const rr = host.getBoundingClientRect(); tip.innerHTML = `<b>${tab.bracket_labels[i]}</b><br>${v.toFixed(1)}% of ${MODE_NAME[S.mode]}<br>${(c[i]/1000).toFixed(2)} million`; tip.style.opacity = 1; tip.style.left = Math.min(ev.clientX - rr.left + 12, rr.width - 190) + "px"; tip.style.top = (ev.clientY - rr.top - 10) + "px"; });
+   r.addEventListener("mouseleave", () => tip.style.opacity = 0);
+   if (i % 8 === 0 || i === n - 1) el("text", {x: m.l + i * bw + bw / 2, y: H - 12, "text-anchor": "middle"}, svg).textContent = B[i][1] == null ? usdK(B[i][0]) + "+" : usdK(B[i][0] == null ? 0 : B[i][0]);
+  });
+  const lo = B[mi][0] == null ? 0 : B[mi][0], hi = B[mi][1], fx = hi == null ? .5 : Math.min(1, (x - lo) / (hi - lo));
+  const X = m.l + (mi + fx) * bw;
+  el("line", {x1: X, x2: X, y1: m.t, y2: m.t + ih, stroke: "#fff", "stroke-width": 3}, svg);
+  el("text", {x: Math.min(X + 6, W - 70), y: m.t + 14, style: "fill:#fff;font:700 13px Inter"}, svg).textContent = "You";
+ }
+
+ function render(){
+  const tab = TAB[S.mode], ag = ageGroup(S.age), all = ALLKEY[S.mode], x = S.inc;
+  const rAll = rankIn(tab, all, x), rAge = rankIn(tab, ag, x);
+  const occ = NAT[S.occ] || NAT["00-0000"], wx = S.wage, so = occRank(occ.w, wx);
+  $("#occPicked").textContent = "Selected occupation: " + occ.title + " (" + occ.code + ")";
+  $("#ageNote").textContent = S.mode === "hh" ? "age of householder" : "your age";
+  const otherMode = S.mode === "hh" ? null : (S.mode === "all" ? "ftyr" : "all");
+  const rOther = otherMode ? rankIn(TAB[otherMode], ALLKEY[otherMode], x) : null;
+  $("#gauges").innerHTML =
+   gauge("Among all " + MODE_NAME[S.mode], rAll, `U.S. median ${usd(tab.groups[all].median)}`) +
+   gauge("Among " + MODE_NAME[S.mode] + " aged " + ag.replace(" years", ""), rAge, `Median for this age group ${usd(tab.groups[ag].median)}`) +
+   (rOther ? gauge("Among " + MODE_NAME[otherMode], rOther, `Median ${usd(TAB[otherMode].groups[ALLKEY[otherMode]].median)}`) : "") +
+   gauge("Your wage within your occupation", so.p == null ? null : {p: so.p, open: false}, `${occ.title}: median ${usd(occ.w[2])}`).replace(/<div class="big">[^<]*<\/div>/, `<div class="big" style="font-size:clamp(1.4rem,3.4vw,2rem)">${so.txt}</div>`);
+  const ratio = x / tab.groups[all].median;
+  $("#rankNote").innerHTML = `An income of <b>${usd(x)}</b> puts you ${pLong(rAll)} of U.S. ${MODE_NAME[S.mode]} in ${D.income_year}, and ${pLong(rAge)} among those aged ${ag.replace(" years","")}. That is <b>${ratio.toFixed(2)}x</b> the national median. ` +
+   (rAll.open ? `Census publishes only "${tab.bracket_labels[tab.bracket_labels.length-1]}" at the top, so a finer rank above that line is not available from this table. ` : "") +
+   (S.mode === "hh" ? `The median household in ${S.st} earned ${usd(H8[S.st][D.income_year] ?? null)} in ${D.income_year}.` : `In ${S.st}, the median wage across all occupations is ${usd(O.states[S.st].occ["00-0000"][2])}.`);
+
+  // distribution
+  const ages = [all, ...AGES], dg = S.distAge === "auto" ? ag : S.distAge;
+  $("#distAge").innerHTML = ages.map(a => `<button class="chip${a===dg?" on":""}" data-v="${a}">${a.replace(" years","")}</button>`).join("");
+  chipGroup("#distAge", v => { S.distAge = v; render(); });
+  $("#distTitle").textContent = `Income distribution of ${MODE_NAME[S.mode]}, ${dg.replace(" years"," year olds")}, ${D.income_year}`;
+  hist(tab, dg, x);
+  const rD = rankIn(tab, dg, x);
+  $("#histNote").textContent = `Share of the group in each bracket. You are ${pLong(rD)} of this group. Tap or hover a bar for its count.`;
+  const g = tab.groups[dg], q = p => { const r = incomeAt(tab, dg, p); return r.open ? usd(r.v) + " or more" : usd(Math.round(r.v / 100) * 100); };
+  $("#distStats").innerHTML = [["Published median", usd(g.median), "Census"], ["Published mean", usd(g.mean), "pulled up by top earners"], ["25th to 75th percentile", q(25).replace(" or more","+") + " to " + q(75).replace(" or more","+"), "estimated from brackets"], ["90th percentile", q(90), "estimated from brackets"]]
+   .map(k => `<div class="card stat"><div class="k">${k[0]}</div><div class="v" style="font-size:1.35rem">${k[1]}</div><div class="s">${k[2]}</div></div>`).join("");
+
+  // what if
+  const pct = +$("#raise").value, nx = x * (1 + pct / 100), rN = rankIn(tab, all, nx);
+  $("#rlab").textContent = (pct >= 0 ? "+" : "") + pct + "%";
+  const totN = tab.groups[all].counts.reduce((a,b) => a + b, 0), passed = (rN.p - rAll.p) / 100 * totN / 1000;
+  $("#whatStats").innerHTML = [["New income", usd(nx), `from ${usd(x)}`], ["New rank", pTxt(rN), `was ${pTxt(rAll)} among ${MODE_NAME[S.mode]}`],
+   [S.mode === "hh" ? "Households passed" : "People passed", rN.open || rAll.open ? "Not estimable" : (passed >= 0 ? "" : "minus ") + Math.abs(passed).toFixed(1) + "M", rN.open || rAll.open ? "One or both incomes are in the open top bracket; the number passed is unknown." : `estimated from rounded brackets of ${(totN/1000).toFixed(0)} million ${MODE_NAME[S.mode]}`]]
+   .map(k => `<div class="card stat"><div class="k">${k[0]}</div><div class="v" style="font-size:1.5rem">${k[1]}</div><div class="s">${k[2]}</div></div>`).join("");
+  const LP = [10,25,50,75,90,95].map(p => { const r = incomeAt(tab, all, p); if (!r.open) r.v = Math.round(r.v / 100) * 100; return {p, r}; });
+  WM.hbars($("#ladder"), LP.map(o => ({label: ord(o.p) + " percentile", value: o.r.v, color: x >= o.r.v ? "#5aa2ff" : "#5a4636", marks: [{v: Math.min(x, LP[LP.length-1].r.v * 1.04), color: "#fff"}]})),
+   {fmt: v => usd(v) + (LP.find(o => o.r.v === v)?.r.open ? "+" : ""), labelW: 150, rowH: 34, max: Math.max(LP[LP.length-1].r.v, x) * 1.05});
+
+  // occupation
+  $("#occTitle").textContent = occ.title;
+  const stw = O.states[S.st].occ[S.occ];
+  const band = [["U.S.", occ.w]]; const maj = S.occ.slice(0,2) + "-0000";
+  const stMaj = O.states[S.st].occ[maj];
+  const ab = O.states[S.st].abbr; if (stw) band.push([ab, stw]); else if (stMaj) band.push([ab + " group", stMaj]);
+  WM.hbars($("#occBand"), band.flatMap(([n, w]) => [10,25,50,75,90].map((p,i) => ({label: `${n}, ${ord(p)}`, value: w[i], color: w[i] != null && wx >= w[i] ? "#5aa2ff" : "#5a4636", marks: [{v: wx, color: "#fff"}]}))),
+   {fmt: usd, labelW: 150, rowH: 30, max: Math.max(wx, ...band.flatMap(b => b[1].slice(0,5).filter(v => v != null))) * 1.08});
+  $("#occNote").innerHTML = `At a job wage of ${usd(wx)} you are <b>${so.txt}</b> percentile of ${occ.title.toLowerCase()} nationally (BLS, ${O.national.length ? "May " + D.oews_year : ""}). ` +
+   (stw ? `In ${S.st} that job's median is ${usd(stw[2])}, versus ${usd(occ.w[2])} nationally. ` : `This page stores state wages for major occupation groups only, so the state band shows the ${(O.major_groups[maj]||"").toLowerCase()} group. `) +
+   `${(occ.emp/1000).toFixed(0)}K people held this job nationally. ` + (occ.w[4] == null ? "BLS did not publish one or more upper percentiles for this occupation." : "");
+  const minor = S.occ.slice(0,4);
+  const peers = OCCS.filter(r => r.code.slice(0,4) === minor).sort((a,b) => b.w[2] - a.w[2]).slice(0, 12);
+  WM.hbars($("#occPeers"), peers.map(r => ({label: r.title.length > 34 ? r.title.slice(0,33) + "..." : r.title, value: r.w[2], color: r.code === S.occ ? "#5aa2ff" : "#5a4636", tip: `<b>${r.title}</b><br>10th ${usd(r.w[0])}<br>median ${usd(r.w[2])}<br>90th ${usd(r.w[4])}`})), {fmt: usd, labelW: 280, rowH: 28});
+
+  // state
+  $("#stTitle").textContent = "Pay in " + S.st;
+  const yrs = Object.keys(H8["United States"]).map(Number).sort((a,b) => a - b);
+  const ser = [{name: S.st, color: "#5aa2ff", width: 3, vals: yrs.map(y => H8[S.st][y] ?? null)}, {name: "United States", color: "#c3b29f", dash: "5 5", vals: yrs.map(y => H8["United States"][y] ?? null)}];
+  WM.line($("#stLine"), yrs, ser, {fmt: v => usdK(v), tfmt: usd, height: 300});
+  WM.legend($("#stLegend"), ser);
+  const MG = Object.keys(O.major_groups).filter(k => k !== "00-0000" && O.states[S.st].occ[k] && O.states[S.st].occ[k][2] != null);
+  WM.hbars($("#stBars"), MG.map(k => ({label: O.major_groups[k].replace(" Occupations","").replace(/,? and /," & "), value: O.states[S.st].occ[k][2], color: k === maj ? "#8cc0ff" : "#3f6fa8", marks: [{v: NAT[k] ? NAT[k].w[2] : 0, color: "#fff"}], tip: `<b>${O.major_groups[k]}</b><br>${S.st}: ${usd(O.states[S.st].occ[k][2])}<br>U.S.: ${usd(NAT[k] && NAT[k].w[2])}`})).sort((a,b) => b.value - a.value), {fmt: usd, labelW: 300, rowH: 26});
+
+  // age table
+  const rows = ["all","ftyr","hh"].map(k => [k, TAB[k]]);
+  $("#ageTable").innerHTML = `<table class="t"><tr><th>Age</th>${rows.map(([k]) => `<th>Median, ${MODE_NAME[k]}</th>`).join("")}<th>Your rank (${MODE_NAME[S.mode]})</th></tr>` +
+   ages.map(a => `<tr class="${a === ag ? "me" : ""}"><td>${a.replace(" years","")}</td>${rows.map(([k,t]) => { const gk = /^All/.test(a) ? ALLKEY[k] : a; return `<td>${usd(t.groups[gk].median)}</td>`; }).join("")}<td>${pTxt(rankIn(tab, /^All/.test(a) ? all : a, x))}</td></tr>`).join("") + `</table>
+   <p class="note">Census published medians for ${D.income_year}. For households, age is the age of the householder.</p>`;
+ }
+ $("#raise").oninput = render;
+ syncForm(); render(); WM.navSpy();
+}
+</script>
+</body>
+</html>

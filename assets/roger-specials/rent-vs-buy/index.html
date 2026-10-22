@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rent vs. Buy, By Metro | WealthMeter</title>
+<meta name="description" content="Compare renting and buying in your metro with Freddie Mac mortgage rates, FHFA home price history and Census median rents and home values. Find your breakeven year.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/wm-feature.css">
+<link rel="icon" href="data:,">
+<style>
+.big{font:700 clamp(2.2rem,6vw,3.4rem) "Roboto Mono",monospace;color:#fff;line-height:1}
+.assume{border:1px dashed var(--line);border-radius:14px;padding:12px 14px;margin-top:6px}
+.assume h4{margin:0 0 8px;font:700 .78rem Inter;color:var(--amber);text-transform:uppercase;letter-spacing:.08em}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.mlist{max-height:240px;overflow:auto;border:1px solid var(--line);border-radius:12px;margin-top:6px;display:none;background:var(--bg)}
+.mlist button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--ink);font:500 .85rem Inter;padding:9px 12px;cursor:pointer}.mlist button:hover{background:var(--paper2)}
+table.t{width:100%;border-collapse:collapse;font-size:.88rem}table.t th,table.t td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:right}table.t th:first-child,table.t td:first-child{text-align:left}table.t th{color:var(--muted);font-weight:600}
+.tw{overflow-x:auto}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+</style>
+<link rel="canonical" href="https://wealthmeter.xyz/rent-vs-buy.html">
+</head>
+<body>
+<nav class="topnav" aria-label="Sections"><div class="in">
+ <a class="brand" href="#top">Wealth<b>Meter</b> <span style="color:#b4a391">|</span> Rent vs. Buy</a>
+ <a class="l" href="#calc">Calculator</a><a class="l" href="#path">Wealth path</a><a class="l" href="#scen">Scenarios</a><a class="l" href="#metro">Your metro</a><a class="l" href="#rates">Rates</a><a class="l" href="#rank">Metro ranking</a><a class="l" href="#limits">Limits</a><a class="l" href="#method">Sources</a>
+</div></nav>
+<main id="top">
+<header class="hero">
+ <p class="eyebrow">WealthMeter special feature</p>
+ <h1>Rent vs. Buy, By Metro</h1>
+ <p class="dek">Pick your metro. We load its median rent, median home value and home price history, plus this week's mortgage rate. Set your down payment and how long you plan to stay, and see the year buying pulls ahead, if it does.</p>
+ <p class="note" id="vintage"></p>
+</header>
+
+<section id="calc">
+ <p class="eyebrow">Calculator</p><h2>Your breakeven year</h2>
+ <p class="lede">Start from an example persona or set your own numbers. Personas are illustrative examples, not statistics. Fields in the dashed boxes are your assumptions, not data; change them freely.</p>
+ <div class="chips" id="personas"></div>
+ <div class="grid side">
+  <div class="card">
+   <label class="f">Metro <span>search 400+ metro areas and divisions</span><input id="mq" type="text" autocomplete="off" placeholder="e.g. Denver, Austin, Boston"><div class="mlist" id="mlist"></div></label>
+   <p class="note" id="mPicked"></p>
+   <div class="two">
+    <label class="f">Home price <span>default: metro median value</span><input id="price" type="number" min="10000" step="5000" inputmode="numeric"></label>
+    <label class="f">Monthly rent <span>default: metro median gross rent</span><input id="rent" type="number" min="100" step="25" inputmode="numeric"></label>
+    <label class="f">Down payment, % <input id="down" type="number" min="0" max="100" step="1" value="20"></label>
+    <label class="f">Mortgage rate, % <span>default: latest 30 year PMMS</span><input id="rate" type="number" min="0" max="20" step="0.01"></label>
+    <label class="f">Years you will stay <input id="years" type="number" min="1" max="30" step="1" value="7"></label>
+    <label class="f">Home price growth, %/yr <span>default: metro 10 year FHFA trend</span><input id="appr" type="number" min="-10" max="20" step="0.1"></label>
+   </div>
+   <div class="assume"><h4>Your assumptions (not data)</h4><div class="two">
+    <label class="f">Rent growth, %/yr<input id="rg" type="number" step="0.1" value="3"></label>
+    <label class="f">Return on invested savings, %/yr<input id="inv" type="number" step="0.1" value="5"></label>
+    <label class="f">Property tax + insurance, % of value/yr<input id="tax" type="number" step="0.05" value="1.5"></label>
+    <label class="f">Maintenance, % of value/yr<input id="maint" type="number" step="0.1" value="1"></label>
+    <label class="f">Closing costs to buy, % of price<input id="cbuy" type="number" step="0.5" value="3"></label>
+    <label class="f">Costs to sell, % of sale price<input id="csell" type="number" step="0.5" value="6"></label>
+   </div></div>
+  </div>
+  <div>
+   <div class="card"><p class="eyebrow" style="margin:0 0 6px">Verdict</p><div class="big" id="be"></div><p id="beNote" style="color:var(--muted);margin:10px 0 0"></p></div>
+   <div class="grid g2" id="calcStats" style="margin-top:18px"></div>
+  </div>
+ </div>
+</section>
+
+<section id="path">
+ <p class="eyebrow">Wealth path</p><h2>Buyer vs. renter net worth, year by year</h2>
+ <p class="lede">The buyer's net worth is home value minus the loan balance and the cost to sell. The renter starts by investing the down payment and closing costs, then invests whatever they save each month versus owning (or the buyer invests the difference when owning is cheaper).</p>
+ <div class="card"><div id="pathChart"></div><div id="pathLegend"></div><p class="note">Hover or tap for values. Taxes on investment gains, the mortgage interest deduction and capital gains exclusions are not modeled.</p></div>
+</section>
+
+<section id="scen">
+ <p class="eyebrow">Scenarios</p><h2>How the answer moves</h2>
+ <p class="lede">Same inputs, one thing changed at a time. Rates come from the Freddie Mac weekly history; price growth comes from this metro's FHFA index.</p>
+ <div class="card tw"><div id="scenTable"></div></div>
+</section>
+
+<section id="metro">
+ <p class="eyebrow">Your metro</p><h2 id="mTitle">Home prices where you live</h2>
+ <div class="grid g4" id="mStats"></div>
+ <div class="card" style="margin-top:18px"><h3>FHFA house price index, rebased so 2000 Q1 = 100</h3><div id="hpiChart"></div><div id="hpiLegend"></div><p class="note" id="hpiNote"></p></div>
+</section>
+
+<section id="rates">
+ <p class="eyebrow">Mortgage rates</p><h2>Fifty five years of the 30 year rate</h2>
+ <div class="grid g4" id="rStats"></div>
+ <div class="card" style="margin-top:18px"><div class="chips" id="rRange"></div><div id="rateChart"></div><div id="rateLegend"></div><p class="note">Freddie Mac PMMS weekly averages. 15 year series begins in 1991.</p></div>
+</section>
+
+<section id="rank">
+ <p class="eyebrow">Metro ranking</p><h2>Where buying looks expensive next to renting</h2>
+ <p class="lede">Price to rent ratio: median home value divided by a year of median gross rent, both from the same ACS survey. Higher means buying costs more relative to renting.</p>
+ <div class="chips" id="rankSel"></div>
+ <div class="card"><div id="rankBars"></div><p class="note" id="rankNote"></p></div>
+</section>
+
+<section id="limits">
+ <p class="eyebrow">Limits</p><h2>Limits of this tool</h2>
+ <div class="card"><ul class="src">
+  <li>Rents and home values are Census ACS 2024 1-year medians. They are historical survey estimates, not current asking prices.</li>
+  <li>FHFA publishes some large metros only by division. Whole-metro growth then remains your assumption; select a named division for that division's published index.</li>
+  <li>20 metros (Puerto Rico and Eagle Pass, TX) have no FHFA price index, so growth defaults are not available there.</li>
+  <li>Medians describe all homes and renters, not homes for sale today.</li>
+  <li>Income taxes and the mortgage interest deduction are not modeled.</li>
+  <li>Rent growth, investment return, tax, insurance, maintenance and transaction costs are your assumptions, not data.</li>
+  <li>Personas are illustrative example inputs, not real people.</li>
+ </ul></div>
+</section>
+
+<section id="method">
+ <p class="eyebrow">Sources and method</p><h2>Where every number comes from</h2>
+ <ul class="src" id="sources"></ul>
+ <p class="lede">All data is read at page load from <code>data/rent-vs-buy.json</code>, built by <code>update_data.py</code> from the files below. ACS medians are survey estimates with margins of error (shown as plus or minus). ACS median gross rent includes utilities paid by the renter; median value is the owner's estimate of what the home would sell for. ACS covers all rented and owned units, not just homes for sale or vacant rentals, so current asking prices and rents may be higher. The FHFA all transactions index tracks repeat sales and appraisals of homes with conforming mortgages. FHFA publishes some large metros only as metro divisions. The page does not substitute one division for the whole metro; select a named division to use its own index. The calculator compounds monthly; loans are 30 year fixed. Not financial advice.</p>
+</section>
+<footer>WealthMeter special feature. Data: Freddie Mac PMMS, FHFA House Price Index, U.S. Census Bureau ACS.</footer>
+</main>
+<script src="assets/wm-charts.js"></script><script src="/assets/roger-specials-integration.js"></script>
+<script>
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const usd = v => v == null || !isFinite(v) ? "n/a" : (v < 0 ? "minus " : "") + "$" + Math.round(Math.abs(v)).toLocaleString("en-US");
+const usdK = v => (v < 0 ? "minus " : "") + "$" + (Math.abs(v) >= 1e6 ? (Math.abs(v)/1e6).toFixed(1) + "M" : Math.round(Math.abs(v)/1000) + "K");
+const pct = (v, d=1) => { if (v == null || !isFinite(v)) return "n/a"; const r = +v.toFixed(d); return (r > 0 ? "+" : r < 0 ? "minus " : "") + Math.abs(r).toFixed(d) + "%"; };
+function chipGroup(sel, cb){ $$(sel + " .chip").forEach(b => b.onclick = () => { $$(sel + " .chip").forEach(x => x.classList.remove("on")); b.classList.add("on"); cb(b.dataset.v); }); }
+
+fetch("data/rent-vs-buy.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(init).catch(e => {
+ $("main").insertAdjacentHTML("afterbegin", `<p class="callout">Could not load data/rent-vs-buy.json (${e}). Serve this folder over http, for example: python3 -m http.server</p>`);
+});
+
+function init(D){
+ const S = D.sources, W = D.pmms.weeks, Q = D.hpi_quarters, M = D.metros;
+ const byName = Object.fromEntries(M.map(m => [m.name, m]));
+ const last = W[W.length - 1], rateNow = last[1];
+ const yearAgo = W.filter(w => w[0] <= String(+last[0].slice(0,4) - 1) + last[0].slice(4)).pop();
+ const fmtDate = d => new Date(d + "T12:00:00").toLocaleDateString("en-US", {month: "short", day: "numeric", year: "numeric"});
+ $("#vintage").textContent = `Data: Freddie Mac PMMS week of ${fmtDate(last[0])}; FHFA HPI through ${Q[Q.length-1].replace("Q", " Q")}; Census ACS ${D.acs_year} 1-year. Retrieved ${S[0].retrieved}.`;
+ WM.sources($("#sources"), S);
+
+ // HPI helpers
+ function hpiOf(m){
+  if (m.hpi) return {vals: m.hpi, label: m.name};
+  if (m.hpi_divisions) return null; // Do not substitute the first division for an entire metro.
+  return null;
+ }
+ function cagr(vals, yrs){ const n = vals.length - 1, a = vals[n - yrs*4], b = vals[n]; return a && b ? (Math.pow(b/a, 1/yrs) - 1) * 100 : null; }
+ function chg(vals, yrs){ const n = vals.length - 1, a = vals[n - yrs*4], b = vals[n]; return a && b ? (b/a - 1) * 100 : null; }
+
+ let cur = null;
+ function setMetro(m, keepInputs){
+  cur = m; $("#mq").value = m.name; $("#mlist").style.display = "none";
+  const h = hpiOf(m), c10 = h ? cagr(h.vals, 10) : null;
+  if (!keepInputs){
+   $("#price").value = m.value != null ? m.value : 400000; $("#rent").value = m.rent != null ? m.rent : 1500;
+   $("#appr").value = c10 != null ? c10.toFixed(1) : 3;
+  }
+  $("#mPicked").textContent = `ACS ${D.acs_year}: median value ${usd(m.value)} (plus or minus ${usd(m.value_moe)}), median gross rent ${usd(m.rent)}/mo (plus or minus ${usd(m.rent_moe)}). ` +
+   (h ? `FHFA 10 year trend ${c10 == null ? "n/a" : c10.toFixed(1) + "%/yr"}${h.via ? " (division: " + h.label + ")" : ""}.` : "No whole-area FHFA index is used here; price growth is your assumption. Select a named division for its own published index.");
+  if ((m.value == null || m.rent == null) && !keepInputs) $("#mPicked").textContent += " Missing ACS values were replaced with editable placeholders; type your own.";
+  metroSection(); run();
+ }
+ // metro search
+ $("#mq").oninput = () => { const q = $("#mq").value.toLowerCase().trim(); if (q.length < 2){ $("#mlist").style.display = "none"; return; }
+  const hits = M.filter(m => m.name.toLowerCase().includes(q)).slice(0, 30);
+  $("#mlist").innerHTML = hits.map(m => `<button data-n="${m.name}">${m.name}</button>`).join("") || "<button disabled>No match</button>";
+  $("#mlist").style.display = "block"; $$("#mlist button[data-n]").forEach(b => b.onclick = () => setMetro(byName[b.dataset.n])); };
+
+ const val = id => parseFloat($(id).value);
+ function inputs(){ return {price: val("#price"), rent: val("#rent"), down: val("#down")/100, rate: val("#rate")/100, years: Math.max(1, Math.min(30, Math.round(val("#years")))), appr: val("#appr")/100,
+   rg: val("#rg")/100, inv: val("#inv")/100, tax: val("#tax")/100, maint: val("#maint")/100, cbuy: val("#cbuy")/100, csell: val("#csell")/100}; }
+
+ // core model: monthly, 30 years
+ function sim(p){
+  const loan = p.price * (1 - p.down), r = p.rate / 12, n = 360;
+  const pmt = r > 0 ? loan * r / (1 - Math.pow(1 + r, -n)) : loan / n;
+  let bal = loan, home = p.price, rent = p.rent, renter = p.price * p.down + p.price * p.cbuy, buyerSide = 0;
+  const gi = Math.pow(1 + p.inv, 1/12), ga = Math.pow(1 + p.appr, 1/12), buyerW = [ -p.price * p.csell + p.price * p.down ], renterW = [renter];
+  const yr1 = {pmt, own: 0, rent: p.rent};
+  for (let mo = 1; mo <= 360; mo++){
+   const interest = bal * r; bal = Math.max(0, bal - (pmt - interest));
+   const own = pmt + home * (p.tax + p.maint) / 12;
+   if (mo === 1) yr1.own = own;
+   renter = renter * gi; buyerSide = buyerSide * gi;
+   if (own > rent) renter += own - rent; else buyerSide += rent - own;
+   home *= ga; if (mo % 12 === 0) rent *= (1 + p.rg);
+   if (mo % 12 === 0){ buyerW.push(home - bal - home * p.csell + buyerSide); renterW.push(renter); }
+  }
+  let be = null; for (let y = 1; y <= 30; y++) if (buyerW[y] >= renterW[y]){ be = y; break; }
+  let beStay = null; for (let y = 1; y <= 30; y++){ if (buyerW[y] >= renterW[y]){ if (beStay == null) beStay = y; } else beStay = null; }
+  return {buyerW, renterW, be, beStay, yr1};
+ }
+
+ function run(){
+  const p = inputs(); if (Object.values(p).some(v => !isFinite(v))) return;
+  const s = sim(p), y = p.years, d = s.buyerW[y] - s.renterW[y];
+  $("#be").textContent = s.beStay == null ? "Buying does not stay ahead through year 30" : `Year ${s.beStay}`;
+  $("#beNote").innerHTML = (s.beStay == null ? "With these inputs, buying does not remain ahead through year 30." :
+   `Buying pulls ahead and stays ahead from year ${s.beStay}.`) + ` If you stay <b>${y}</b> years, <b>${d >= 0 ? "buying" : "renting"}</b> leaves you about <b>${usd(Math.abs(d))}</b> richer.`;
+  $("#calcStats").innerHTML = [
+   ["Monthly cost to own, year 1", usd(s.yr1.own), `principal and interest ${usd(s.yr1.pmt)} plus tax, insurance, maintenance`],
+   ["Monthly rent, year 1", usd(p.rent), "your input"],
+   ["Cash to buy", usd(p.price * (p.down + p.cbuy)), "down payment plus closing costs"],
+   [`Net worth gap at year ${y}`, usd(d), d >= 0 ? "buyer ahead" : "renter ahead"]
+  ].map(([k,v,s2]) => `<div class="card stat"><div class="k">${k}</div><div class="v" style="font-size:1.5rem">${v}</div><div class="s">${s2}</div></div>`).join("");
+  const xs = [...Array(31).keys()];
+  WM.line($("#pathChart"), xs, [{name: "Buyer net worth", color: "#5aa2ff", vals: s.buyerW, width: 3}, {name: "Renter net worth", color: "#f0a24a", vals: s.renterW, width: 3}],
+   {fmt: usdK, tfmt: usd, xfmt: x => "Year " + x, marks: [{i: p.years, label: "you leave"}].concat(s.beStay ? [{i: s.beStay, label: "breakeven"}] : [])});
+  WM.legend($("#pathLegend"), [{name: "Buyer net worth", color: "#5aa2ff"}, {name: "Renter net worth", color: "#f0a24a"}]);
+  scenarios(p, s);
+ }
+
+ function scenarios(p, base){
+  const rates = W.map(w => w[1]).filter(v => v != null), minR = Math.min(...rates), maxR = Math.max(...rates);
+  const minW = W.find(w => w[1] === minR), maxW = W.find(w => w[1] === maxR);
+  const h = cur && hpiOf(cur), c5 = h ? cagr(h.vals, 5) : null, c20 = h ? cagr(h.vals, 20) : null;
+  const rows = [["Your inputs", p]];
+  rows.push([`Rate one year ago (${yearAgo[1].toFixed(2)}%, ${fmtDate(yearAgo[0])})`, {...p, rate: yearAgo[1]/100}]);
+  rows.push([`Record low rate (${minR.toFixed(2)}%, ${fmtDate(minW[0])})`, {...p, rate: minR/100}]);
+  rows.push([`Record high rate (${maxR.toFixed(2)}%, ${fmtDate(maxW[0])})`, {...p, rate: maxR/100}]);
+  if (c5 != null) rows.push([`Metro 5 year price trend (${c5.toFixed(1)}%/yr)`, {...p, appr: c5/100}]);
+  if (c20 != null) rows.push([`Metro 20 year price trend (${c20.toFixed(1)}%/yr)`, {...p, appr: c20/100}]);
+  rows.push(["Prices flat (0%/yr)", {...p, appr: 0}]);
+  rows.push(["Down payment 5%", {...p, down: .05}]);
+  rows.push(["Down payment 35%", {...p, down: .35}]);
+  $("#scenTable").innerHTML = `<table class="t"><tr><th>Scenario</th><th>Monthly cost to own</th><th>Breakeven</th><th>Gap at year ${p.years}</th></tr>` + rows.map(([n, q], i) => { const s = i ? sim(q) : base, d = s.buyerW[q.years] - s.renterW[q.years];
+   return `<tr${i ? "" : ' style="color:#8cc0ff;font-weight:700"'}><td>${n}</td><td>${usd(s.yr1.own)}</td><td>${s.beStay ? "Year " + s.beStay : "None in 30 yrs"}</td><td>${d >= 0 ? "Buy +" : "Rent +"}${usd(Math.abs(d))}</td></tr>`; }).join("") + "</table>";
+ }
+
+ function metroSection(){
+  const m = cur, h = hpiOf(m); $("#mTitle").textContent = m.name;
+  const ptr = m.value && m.rent ? m.value / (m.rent * 12) : null;
+  $("#mStats").innerHTML = [
+   ["Median home value", usd(m.value), `ACS ${D.acs_year}, plus or minus ${usd(m.value_moe)}`],
+   ["Median gross rent", usd(m.rent) + "/mo", `ACS ${D.acs_year}, plus or minus ${usd(m.rent_moe)}`],
+   ["Price to rent ratio", ptr ? ptr.toFixed(1) : "n/a", "value divided by 12 months of rent"],
+   ["Home prices, 1 / 5 / 10 yr", h ? [1,5,10].map(y => pct(chg(h.vals, y), 0)).join(" / ") : "n/a", h ? "FHFA, latest quarter vs. same quarter earlier" : "no FHFA index"]
+  ].map(([k,v,s]) => `<div class="card stat"><div class="k">${k}</div><div class="v" style="font-size:1.35rem">${v}</div><div class="s">${s}</div></div>`).join("");
+  if (!h){ $("#hpiChart").innerHTML = '<p class="callout">No whole-area FHFA index is used here. Select a named division where available.</p>'; $("#hpiLegend").innerHTML = ""; $("#hpiNote").textContent = ""; return; }
+  const reb = v => { const b = v.find(x => x != null); return v.map(x => x == null || !b ? null : x / b * 100); };
+  const peers = [{name: h.label, color: "#5aa2ff", vals: reb(h.vals), width: 3}];
+  const cmp = ["San Francisco-San Mateo-Redwood City, CA (division)", "Austin-Round Rock-San Marcos, TX", "Cleveland, OH"].filter(n => n !== h.label && byName[n] && byName[n].hpi).slice(0, 2);
+  const cols = ["#f0a24a", "#5fcf8e"]; cmp.forEach((n, i) => peers.push({name: n, color: cols[i], vals: reb(byName[n].hpi), dash: "5 4"}));
+  WM.line($("#hpiChart"), Q, peers, {fmt: v => Math.round(v), tfmt: v => v.toFixed(1), xfmt: q => q.slice(0,4)});
+  WM.legend($("#hpiLegend"), peers);
+  $("#hpiNote").textContent = (h.via ? `FHFA publishes ${m.name} by division; showing ${h.label}. Other divisions: ${m.hpi_divisions.slice(1).join("; ")}. ` : "") + "Dashed lines are comparison metros.";
+ }
+
+ // rates section
+ const r30 = rates30 = W.map(w => w[1]);
+ const rmin = Math.min(...r30.filter(v => v != null)), rmax = Math.max(...r30.filter(v => v != null));
+ $("#rStats").innerHTML = [
+  ["30 year fixed, latest", last[1].toFixed(2) + "%", "week of " + fmtDate(last[0])],
+  ["15 year fixed, latest", last[2] != null ? last[2].toFixed(2) + "%" : "n/a", "week of " + fmtDate(last[0])],
+  ["30 year, one year ago", yearAgo[1].toFixed(2) + "%", fmtDate(yearAgo[0])],
+  ["30 year range since 1971", rmin.toFixed(2) + "% to " + rmax.toFixed(2) + "%", "weekly averages"]
+ ].map(([k,v,s]) => `<div class="card stat"><div class="k">${k}</div><div class="v" style="font-size:1.35rem">${v}</div><div class="s">${s}</div></div>`).join("");
+ $("#rRange").innerHTML = [["all","Since 1971"],["20","20 years"],["5","5 years"]].map(([v,l], i) => `<button class="chip${i ? "" : " on"}" data-v="${v}">${l}</button>`).join("");
+ function rateChart(span){
+  let w = W; if (span !== "all"){ const cut = String(+last[0].slice(0,4) - +span) + last[0].slice(4); w = W.filter(x => x[0] >= cut); }
+  const step = span === "all" ? 4 : 1; const ws = w.filter((x, i) => i % step === 0 || i === w.length - 1);
+  const ser = [{name: "30 year fixed", color: "#5aa2ff", vals: ws.map(x => x[1]), width: 2.5}, {name: "15 year fixed", color: "#f0a24a", vals: ws.map(x => x[2])}];
+  WM.line($("#rateChart"), ws.map(x => x[0]), ser, {fmt: v => v.toFixed(0) + "%", tfmt: v => v.toFixed(2) + "%", xfmt: d => span === "5" ? d.slice(0,7) : d.slice(0,4)});
+  WM.legend($("#rateLegend"), ser);
+ }
+ chipGroup("#rRange", rateChart); rateChart("all");
+
+ // ranking
+ const ranked = M.filter(m => m.kind === "metro" && m.value && m.rent).map(m => ({m, r: m.value / (m.rent * 12)})).sort((a, b) => b.r - a.r);
+ $("#rankSel").innerHTML = '<button class="chip on" data-v="hi">Highest 15</button><button class="chip" data-v="lo">Lowest 15</button>';
+ function rank(which){
+  const list = which === "hi" ? ranked.slice(0, 15) : ranked.slice(-15).reverse();
+  WM.hbars($("#rankBars"), list.map(x => ({label: x.m.name.length > 34 ? x.m.name.slice(0, 32) + "..." : x.m.name, value: x.r, color: cur && x.m.code === cur.code ? "#8cc0ff" : (which === "hi" ? "#f0a24a" : "#5fcf8e"), tip: `${x.m.name}: value ${usd(x.m.value)}, rent ${usd(x.m.rent)}/mo`})), {fmt: v => v.toFixed(1), labelW: 300, rowH: 30});
+  const me = cur && ranked.findIndex(x => x.m.code === cur.code);
+  $("#rankNote").textContent = `${ranked.length} metro areas with both ACS medians. Median ratio across them: ${ranked[Math.floor(ranked.length/2)].r.toFixed(1)}.` + (me != null && me >= 0 ? ` ${cur.name} ranks ${me + 1} of ${ranked.length}.` : "");
+ }
+ chipGroup("#rankSel", rank);
+
+ // personas (illustrative)
+ const P = [
+  {label: "Example: Denver couple, staying 10 years", metro: "Denver-Aurora-Centennial, CO", down: 20, years: 10},
+  {label: "Example: Austin first buyer, 5% down, 5 years", metro: "Austin-Round Rock-San Marcos, TX", down: 5, years: 5},
+  {label: "Example: Cleveland family, 15 years", metro: "Cleveland, OH", down: 10, years: 15},
+  {label: "Example: San Francisco renter, 4 years", metro: "San Francisco-San Mateo-Redwood City, CA (division)", down: 20, years: 4}
+ ].filter(p => byName[p.metro]);
+ $("#personas").innerHTML = P.map((p, i) => `<button class="chip" data-v="${i}">${p.label}</button>`).join("");
+ chipGroup("#personas", i => { const p = P[i]; $("#down").value = p.down; $("#years").value = p.years; $("#rate").value = rateNow.toFixed(2); setMetro(byName[p.metro]); rank($("#rankSel .chip.on").dataset.v); });
+ $$("#calc input[type=number]").forEach(el => el.addEventListener("input", run));
+ $("#rate").value = rateNow.toFixed(2);
+ setMetro(byName[P[0].metro] || M[0]); rank("hi");
+ WM.navSpy();
+}
+</script>
+</body>
+</html>
