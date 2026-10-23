@@ -33,6 +33,8 @@
 - [Rent vs. Buy, By Metro](https://wealthmeter.xyz/rent-vs-buy.html): Compare renting and buying under your own costs, growth and return assumptions, using published housing context.
 - [What Your Salary Is Really Worth](https://wealthmeter.xyz/salary-worth.html): Compare the salary equivalents implied by BEA regional price levels across states and metro areas.
 
+- [Special features](https://wealthmeter.xyz/special-features.html): Interactive comparisons with source dates, methods and limitations.
+
 ## Citation guidance
 
 Use the canonical page URL and retain each page's stated population, currency, date, and model assumptions. WealthMeter content is educational and is not financial advice.
