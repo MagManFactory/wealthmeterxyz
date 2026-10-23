@@ -46,6 +46,28 @@
         "url": "/stories/is-working-still-worth-it-after-childcare.html"
       },
       "reason": "Wednesday rotation: different topic outside recent lead history; complete existing story and primary source reviewed, with original caveats, text and dates retained."
+    },
+    {
+      "date": "2026-10-23",
+      "selected_at_utc": "2026-10-23T15:26:05.614606+00:00",
+      "previous": {
+        "title": "Is working still worth it after childcare?",
+        "url": "/stories/is-working-still-worth-it-after-childcare.html"
+      },
+      "selected": {
+        "title": "Could one day at home cut your commuting bill?",
+        "url": "/stories/could-one-day-at-home-cut-your-commuting-bill.html"
+      },
+      "reason": "Practical spending topic varies the recent childcare, retirement and mortgage leads. All scenario amounts are explicit assumptions, not current market prices; the complete published arithmetic and caveats were rechecked.",
+      "supporting_replacement": {
+        "title": "Is working still worth it after childcare?",
+        "url": "/stories/is-working-still-worth-it-after-childcare.html",
+        "locations": [
+          "opening quick-story",
+          "supporting story-card"
+        ],
+        "reason": "Only placements duplicating the new lead were replaced, using the previously published lead."
+      }
     }
   ]
 }
