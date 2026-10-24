@@ -1,0 +1,42 @@
+{
+  "status": "generated",
+  "site": "wealthmeter",
+  "requested_model": "gemini-3.1-flash-lite-image",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent",
+  "image_config": {
+    "aspectRatio": "16:9",
+    "imageSize": "1K"
+  },
+  "prompt_sha256": "e4e0c659553d01607db2207de12c22798b5c395b192750d1e8f58270148ec80e",
+  "generator_version": "longform-nanobanana2lite-v1",
+  "request_sha256": "c66012e0122c85d7356b07fddc971d1f4b336d6e0b18947999ad349b80fb6fba",
+  "requested_at": "2026-10-24T13:02:19.100545+00:00",
+  "returned_model_version": "gemini-3.1-flash-lite-image",
+  "response_id": "W6zcauPuHpGi_uMP18_HgAI",
+  "usage": {
+    "promptTokenCount": 355,
+    "candidatesTokenCount": 1574,
+    "totalTokenCount": 1929,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 355
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1120
+      }
+    ]
+  },
+  "output_sha256": "7176da61b9714323af76c6d0017caeeae2cbb122b2bcb065300e7711e07d8c35",
+  "generator_sha256": "da9baed9c894c600a56f19fb7c11dffea53cf89e907dd96b1c469838967281fd",
+  "responded_at": "2026-10-24T13:02:24.659439+00:00",
+  "provider_output_sha256": "0696f8f017a00a80abb8ca4aa46e427f75f99b8366580ce7781f993e10d0a237",
+  "provider_mime_type": "image/jpeg",
+  "output_name": "family-bank-boundary-test-2026-oct24.png",
+  "width": 1376,
+  "height": 768,
+  "completed_at": "2026-10-24T13:02:24.784379+00:00"
+}

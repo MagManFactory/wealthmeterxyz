@@ -1,0 +1,42 @@
+{
+  "status": "generated",
+  "site": "wealthmeter",
+  "requested_model": "gemini-3.1-flash-lite-image",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent",
+  "image_config": {
+    "aspectRatio": "16:9",
+    "imageSize": "1K"
+  },
+  "prompt_sha256": "65cf4aa783fed62cb00b1dd2f81ccde8611361371a4c21cf77b02cd3f510c515",
+  "generator_version": "longform-nanobanana2lite-v1",
+  "request_sha256": "75ffafe712f68116cfcc2e701002aa8ce424b28bf845063f49c4ae8ed7755e73",
+  "requested_at": "2026-10-24T13:02:14.814343+00:00",
+  "returned_model_version": "gemini-3.1-flash-lite-image",
+  "response_id": "V6zcaoDEB-aM_uMPn5TfqQI",
+  "usage": {
+    "promptTokenCount": 293,
+    "candidatesTokenCount": 1657,
+    "totalTokenCount": 1950,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 293
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1120
+      }
+    ]
+  },
+  "output_sha256": "87708f5cbc58e536c824e95858c93159b9639c9b4103a9c73b47c5c784104110",
+  "generator_sha256": "da9baed9c894c600a56f19fb7c11dffea53cf89e907dd96b1c469838967281fd",
+  "responded_at": "2026-10-24T13:02:18.973078+00:00",
+  "provider_output_sha256": "c9765791e09298cc27d5c1b1ff62c15e0e4ae7f3026c14ce8d290c3bd93c5fad",
+  "provider_mime_type": "image/jpeg",
+  "output_name": "family-bank-support-map-2026-oct24.png",
+  "width": 1376,
+  "height": 768,
+  "completed_at": "2026-10-24T13:02:19.100037+00:00"
+}
