@@ -222,6 +222,11 @@
       "description": "Move through 36 years of Federal Reserve data and see who owns U.S. household wealth, what each group holds, and how wealth differs by age."
     },
     {
+      "href": "/sp-style-reshuffle",
+      "title": "The Great Style Reshuffle",
+      "description": "Explore announced Growth and Value rules using transparent hypothetical inputs, per-share calculations and primary sources."
+    },
+    {
       "href": "/debt-map",
       "title": "The Debt Map",
       "description": "Explore household debt by type, age and the 11 reported states, with a browser-only comparison of your debt mix."

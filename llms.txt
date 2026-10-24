@@ -35,6 +35,8 @@
 
 - [Special features](https://wealthmeter.xyz/special-features.html): Interactive comparisons with source dates, methods and limitations.
 
+- [The Great Style Reshuffle](https://wealthmeter.xyz/sp-style-reshuffle.html): Announced S&P rules and hypothetical per-share examples, with no company predictions or trading estimates.
+
 ## Citation guidance
 
 Use the canonical page URL and retain each page's stated population, currency, date, and model assumptions. WealthMeter content is educational and is not financial advice.

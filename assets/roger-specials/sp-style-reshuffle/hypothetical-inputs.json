@@ -1,0 +1,205 @@
+{
+  "version": "2026-10-24-hypothetical-v1",
+  "rules_announced": "2026-10-23",
+  "rules_effective": "2026-12-21",
+  "reviewed": "2026-10-24",
+  "presets": {
+    "baseline": {
+      "label": "Balanced hypothetical company",
+      "inputs": {
+        "price": 100,
+        "priorPrice": 80,
+        "epsPast": 2,
+        "epsNow": 4,
+        "epsTrailing": 4,
+        "epsForward": 5,
+        "revenuePast": 1000,
+        "revenueNow": 1500,
+        "sharesPast": 100,
+        "sharesNow": 100,
+        "revenueTTM": 1600,
+        "sharesTTM": 100,
+        "book": 20,
+        "adjustedBook": 35,
+        "fcfTTM": 300,
+        "classification": "ordinary"
+      }
+    },
+    "buyback": {
+      "label": "Same revenue, fewer shares",
+      "inputs": {
+        "price": 100,
+        "priorPrice": 80,
+        "epsPast": 2,
+        "epsNow": 4,
+        "epsTrailing": 4,
+        "epsForward": 5,
+        "revenuePast": 1000,
+        "revenueNow": 1000,
+        "sharesPast": 100,
+        "sharesNow": 50,
+        "revenueTTM": 1600,
+        "sharesTTM": 100,
+        "book": 20,
+        "adjustedBook": 35,
+        "fcfTTM": 300,
+        "classification": "ordinary"
+      }
+    },
+    "price-only": {
+      "label": "Price rises while business inputs stay flat",
+      "inputs": {
+        "price": 150,
+        "priorPrice": 100,
+        "epsPast": 4,
+        "epsNow": 4,
+        "epsTrailing": 4,
+        "epsForward": 5,
+        "revenuePast": 1000,
+        "revenueNow": 1000,
+        "sharesPast": 100,
+        "sharesNow": 100,
+        "revenueTTM": 1600,
+        "sharesTTM": 100,
+        "book": 20,
+        "adjustedBook": 35,
+        "fcfTTM": 300,
+        "classification": "ordinary"
+      }
+    },
+    "negative-cash": {
+      "label": "Negative free cash flow",
+      "inputs": {
+        "price": 100,
+        "priorPrice": 80,
+        "epsPast": 2,
+        "epsNow": 4,
+        "epsTrailing": 4,
+        "epsForward": 5,
+        "revenuePast": 1000,
+        "revenueNow": 1500,
+        "sharesPast": 100,
+        "sharesNow": 100,
+        "revenueTTM": 1600,
+        "sharesTTM": 100,
+        "book": 20,
+        "adjustedBook": 35,
+        "fcfTTM": -100,
+        "classification": "ordinary"
+      }
+    },
+    "bank": {
+      "label": "Bank classification: cash-flow factor excluded",
+      "inputs": {
+        "price": 100,
+        "priorPrice": 80,
+        "epsPast": 2,
+        "epsNow": 4,
+        "epsTrailing": 4,
+        "epsForward": 5,
+        "revenuePast": 1000,
+        "revenueNow": 1500,
+        "sharesPast": 100,
+        "sharesNow": 100,
+        "revenueTTM": 1600,
+        "sharesTTM": 100,
+        "book": 20,
+        "adjustedBook": 35,
+        "fcfTTM": 300,
+        "classification": "4010"
+      }
+    }
+  },
+  "sources": [
+    {
+      "publisher": "S&P Dow Jones Indices",
+      "kind": "Primary announcement",
+      "url": "https://www.spglobal.com/spdji/en/documents/indexnews/announcements/20261023-1485643/1485643_sp-us-style-results-20261023.pdf",
+      "observation": "2026-10-23",
+      "use": "Paraphrased factual announcement and dates; no proprietary index data redistributed."
+    },
+    {
+      "publisher": "S&P Dow Jones Indices",
+      "kind": "Published methodology",
+      "url": "https://www.spglobal.com/spdji/en/documents/methodologies/methodology-sp-us-style.pdf",
+      "observation": "October2026",
+      "use": "Paraphrased factor definitions and documented exclusions; no attempt to reproduce index scores or weights."
+    },
+    {
+      "publisher": "iShares",
+      "kind": "Official fund page",
+      "ticker": "IVW",
+      "benchmark_name": "S&P 500 Growth",
+      "url": "https://www.ishares.com/us/products/239725/ishares-sp-500-growth-etf",
+      "reviewed": "2026-10-24",
+      "use": "Factual product/benchmark identity and direct link only; no holdings, assets, fees, prices or returns republished."
+    },
+    {
+      "publisher": "iShares",
+      "kind": "Official fund page",
+      "ticker": "IVE",
+      "benchmark_name": "S&P 500 Value",
+      "url": "https://www.ishares.com/us/products/239728/ishares-sp-500-value-etf",
+      "reviewed": "2026-10-24",
+      "use": "Factual product/benchmark identity and direct link only; no holdings, assets, fees, prices or returns republished."
+    },
+    {
+      "publisher": "State Street SPDR",
+      "kind": "Official fund page",
+      "ticker": "SPYG",
+      "benchmark_name": "S&P 500 Growth",
+      "url": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-sp-500-growth-etf-spyg",
+      "reviewed": "2026-10-24",
+      "use": "Factual product/benchmark identity and direct link only; no holdings, assets, fees, prices or returns republished."
+    },
+    {
+      "publisher": "State Street SPDR",
+      "kind": "Official fund page",
+      "ticker": "SPYV",
+      "benchmark_name": "S&P 500 Value",
+      "url": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-sp-500-value-etf-spyv",
+      "reviewed": "2026-10-24",
+      "use": "Factual product/benchmark identity and direct link only; no holdings, assets, fees, prices or returns republished."
+    },
+    {
+      "publisher": "Vanguard",
+      "kind": "Official fund page",
+      "ticker": "VOOG",
+      "benchmark_name": "S&P 500 Growth",
+      "url": "https://investor.vanguard.com/investment-products/etfs/profile/voog",
+      "reviewed": "2026-10-24",
+      "use": "Factual product/benchmark identity and direct link only; no holdings, assets, fees, prices or returns republished."
+    },
+    {
+      "publisher": "Vanguard",
+      "kind": "Official fund page",
+      "ticker": "VOOV",
+      "benchmark_name": "S&P 500 Value",
+      "url": "https://investor.vanguard.com/investment-products/etfs/profile/voov",
+      "reviewed": "2026-10-24",
+      "use": "Factual product/benchmark identity and direct link only; no holdings, assets, fees, prices or returns republished."
+    }
+  ],
+  "rights": {
+    "hypothetical_inputs": "Original educational examples constructed for WealthMeter. No real company or market observations.",
+    "third_party": "S&P and fund issuers retain rights in their publications and marks. No licensed market dataset, PDF, image or logo is redistributed.",
+    "runtime_data_access": "None; no scraping, external quote feed or automated data collection.",
+    "source_supplied_market_data": "Excluded from public assets."
+  },
+  "units": {
+    "price_priorPrice_book_adjustedBook_epsFields": "Nominal USD per share, all on one consistent split-adjusted hypothetical share basis.",
+    "revenueFields_fcfTTM": "Nominal USD millions.",
+    "sharesFields": "Millions of shares.",
+    "annual_growth": "Three fiscal years separate past/current revenue and shares; compound annual rate.",
+    "TTM": "Trailing12months; separate from the fiscal-year growth inputs.",
+    "epsForward": "User-assumed forward one-year EPS, not an analyst estimate.",
+    "adjustedBook": "User-entered hypothetical intangibles-adjusted book value per share. No undisclosed S&P adjustment is inferred."
+  },
+  "refresh": {
+    "owner": "Existing WealthMeter release owner",
+    "next_review": "2026-12-04",
+    "effective_date_review": "2026-12-21",
+    "schedule_created": false,
+    "withdrawal": "Review or withdraw dated rules if a primary-source change invalidates them; hypothetical arithmetic remains identifiable as such."
+  }
+}

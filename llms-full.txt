@@ -69,6 +69,7 @@ Use canonical URLs. Preserve each page's date, population, currency, model assum
 - [Where Your Paycheck Ranks](https://wealthmeter.xyz/paycheck-rank.html): Compare income with Census distributions and BLS occupation wages, keeping people, full-time workers and households distinct.
 - [Rent vs. Buy, By Metro](https://wealthmeter.xyz/rent-vs-buy.html): Compare renting and buying under your own costs, growth and return assumptions, using published housing context.
 - [What Your Salary Is Really Worth](https://wealthmeter.xyz/salary-worth.html): Compare the salary equivalents implied by BEA regional price levels across states and metro areas.
+- [The Great Style Reshuffle](https://wealthmeter.xyz/sp-style-reshuffle.html): Explore S&P Growth and Value rule changes with transparent hypothetical inputs, per-share calculations, primary sources and stated limits.
 
 ## Longform analysis
 
