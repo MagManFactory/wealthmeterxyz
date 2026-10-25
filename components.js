@@ -349,6 +349,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="fraud-risk-in-aging-households.html">Fraud Risk in Aging Households</a>
                     <a href="the-family-bank-problem-when-one-balance-sheet-supports-everyone.html">The Family Bank Problem: When One Balance Sheet Supports Everyone</a>
                     <a href="deferred-compensation-and-the-counterparty-illusion.html">Deferred Compensation and the Counterparty Illusion</a>
                     <a href="option-exercise-mistiming-in-private-companies.html">Option Exercise Mistiming in Private Companies</a>

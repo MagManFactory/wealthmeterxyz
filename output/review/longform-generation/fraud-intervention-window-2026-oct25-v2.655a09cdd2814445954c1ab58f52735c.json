@@ -1,0 +1,42 @@
+{
+  "status": "generated",
+  "site": "wealthmeter",
+  "requested_model": "gemini-3.1-flash-lite-image",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent",
+  "image_config": {
+    "aspectRatio": "16:9",
+    "imageSize": "1K"
+  },
+  "prompt_sha256": "3869f0dd8bdefbd2d2b0dc1943eeb80ccb32539a1c77921ac8c4b1f388a9abcd",
+  "generator_version": "longform-nanobanana2lite-v1",
+  "request_sha256": "6896e58da09f8c090c86ab16e4b5aba9dbc974f2235c190eecb458c17dc17b82",
+  "requested_at": "2026-10-25T13:02:30.725420+00:00",
+  "returned_model_version": "gemini-3.1-flash-lite-image",
+  "response_id": "5_3dau4XiaXUyQ-w2IapCg",
+  "usage": {
+    "promptTokenCount": 389,
+    "candidatesTokenCount": 1546,
+    "totalTokenCount": 1935,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 389
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1120
+      }
+    ]
+  },
+  "output_sha256": "148e23a8007bec12855d33a324bdeabd94038d0383838fbf81e714fb6c802659",
+  "generator_sha256": "da9baed9c894c600a56f19fb7c11dffea53cf89e907dd96b1c469838967281fd",
+  "responded_at": "2026-10-25T13:02:33.891657+00:00",
+  "provider_output_sha256": "15b99409f410ab27df75f9aeca17178e78a59114a0e5e363c8dd9731927d96f5",
+  "provider_mime_type": "image/jpeg",
+  "output_name": "fraud-intervention-window-2026-oct25-v2.png",
+  "width": 1376,
+  "height": 768,
+  "completed_at": "2026-10-25T13:02:34.013044+00:00"
+}

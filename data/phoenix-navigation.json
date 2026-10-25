@@ -3,6 +3,10 @@
   "site": "wealthmeter",
   "longform": [
     {
+      "href": "/fraud-risk-in-aging-households",
+      "title": "Fraud Risk in Aging Households"
+    },
+    {
       "href": "/the-family-bank-problem-when-one-balance-sheet-supports-everyone",
       "title": "The Family Bank Problem: When One Balance Sheet Supports Everyone"
     },
@@ -53,10 +57,6 @@
     {
       "href": "/elder-care-cash-drain",
       "title": "The Elder-Care Cash Drain"
-    },
-    {
-      "href": "/divorce-as-a-wealth-event-hidden-destruction-curve",
-      "title": "Divorce as a Wealth Event: The Hidden Destruction Curve"
     }
   ],
   "stories": [

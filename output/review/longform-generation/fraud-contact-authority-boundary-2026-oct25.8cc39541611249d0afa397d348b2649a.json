@@ -1,0 +1,42 @@
+{
+  "status": "generated",
+  "site": "wealthmeter",
+  "requested_model": "gemini-3.1-flash-lite-image",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent",
+  "image_config": {
+    "aspectRatio": "16:9",
+    "imageSize": "1K"
+  },
+  "prompt_sha256": "ab91b515e6017f561db63144b5b24f944b61eba7b4e4013d072e27668e19b288",
+  "generator_version": "longform-nanobanana2lite-v1",
+  "request_sha256": "7b70e8013f7b885165f31b73f4b717a91c673857bff48cbedc6c0060fa399083",
+  "requested_at": "2026-10-25T13:01:54.421488+00:00",
+  "returned_model_version": "gemini-3.1-flash-lite-image",
+  "response_id": "wv3dapmCL8aSjrEPjaLMoA4",
+  "usage": {
+    "promptTokenCount": 340,
+    "candidatesTokenCount": 1692,
+    "totalTokenCount": 2032,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 340
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1120
+      }
+    ]
+  },
+  "output_sha256": "b1abeed9c4b44a8265fd02e6eb032de8c51adeeadfed9e8625d6f3cf02a6c059",
+  "generator_sha256": "da9baed9c894c600a56f19fb7c11dffea53cf89e907dd96b1c469838967281fd",
+  "responded_at": "2026-10-25T13:01:58.154438+00:00",
+  "provider_output_sha256": "21281da3f4bb60e52d063e677fdec4727bed85aa5161fae3903baaf3470ebf83",
+  "provider_mime_type": "image/jpeg",
+  "output_name": "fraud-contact-authority-boundary-2026-oct25.png",
+  "width": 1376,
+  "height": 768,
+  "completed_at": "2026-10-25T13:01:58.272988+00:00"
+}
