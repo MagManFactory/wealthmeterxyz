@@ -3,6 +3,10 @@
   "site": "wealthmeter",
   "longform": [
     {
+      "href": "/cybersecurity-as-household-wealth-protection",
+      "title": "Cybersecurity as Household Wealth Protection"
+    },
+    {
       "href": "/fraud-risk-in-aging-households",
       "title": "Fraud Risk in Aging Households"
     },
@@ -53,10 +57,6 @@
     {
       "href": "/tax-location-blind-spot",
       "title": "The Tax-Location Blind Spot: Why Asset Placement Still Gets Ignored"
-    },
-    {
-      "href": "/elder-care-cash-drain",
-      "title": "The Elder-Care Cash Drain"
     }
   ],
   "stories": [
