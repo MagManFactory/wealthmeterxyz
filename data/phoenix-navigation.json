@@ -222,6 +222,11 @@
       "description": "Move through 36 years of Federal Reserve data and see who owns U.S. household wealth, what each group holds, and how wealth differs by age."
     },
     {
+      "href": "/retirement-transition-explorer",
+      "title": "Retirement Transition Explorer",
+      "description": "Explore how retirement timing, taxes, Social Security and health-coverage assumptions interact in a browser-only scenario model."
+    },
+    {
       "href": "/sp-style-reshuffle",
       "title": "The Great Style Reshuffle",
       "description": "Explore announced Growth and Value rules using transparent hypothetical inputs, per-share calculations and primary sources."

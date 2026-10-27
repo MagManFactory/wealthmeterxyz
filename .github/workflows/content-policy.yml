@@ -25,6 +25,9 @@ jobs:
       - name: Validate governed commercial placements
         run: python3 scripts/validate_monetization.py
 
+      - name: Validate retirement transition scenarios
+        run: node tests/retirement-transition.test.cjs
+
   live-verify:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: [content-policy]

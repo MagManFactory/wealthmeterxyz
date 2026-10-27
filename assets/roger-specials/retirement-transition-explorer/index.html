@@ -1,0 +1,1616 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Retirement Transition Explorer | WealthMeter</title>
+<meta name="description" content="An educational scenario explorer for the years from last paycheck to Medicare, Social Security and required distributions. Not financial, tax, legal or medical advice.">
+<style>:root{--ink:#14211c;--ink2:#3d4a44;--mute:#56625c;--bg:#f7f5ef;--card:#fff;--line:#d9d5c9;--acc:#0c5c46;--acc2:#e6f0eb;--warn:#8a4b00;--warnbg:#fbf1e1;--c1:#2f6f8f;--c2:#7a5195;--c3:#0c7a5a;--c4:#b5651d;--c5:#9a8f2f;--c6:#c4485a;--c7:#5b6770;--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans)}
+a{color:var(--acc)}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #1d4ed8;outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line);background:var(--bg)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:56px;gap:12px}
+.mark{font:600 19px/1 var(--serif);letter-spacing:.02em;color:var(--ink)}
+.kicker{font-size:13px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em}
+.hero{padding-top:40px;padding-bottom:18px}
+h1{font:600 clamp(30px,5vw,50px)/1.08 var(--serif);margin:6px 0 14px;letter-spacing:-.01em}
+.lede{font-size:clamp(17px,2vw,20px);color:var(--ink2);max-width:760px;margin:0 0 18px}
+.notice{border:1px solid #e3cfa9;background:var(--warnbg);color:#4d3000;border-radius:10px;padding:12px 16px;font-size:15px;max-width:900px}
+.notice strong{color:#3b2500}
+h2{font:600 clamp(23px,3vw,30px)/1.2 var(--serif);margin:0 0 6px}
+h3{font:600 20px/1.3 var(--serif);margin:0 0 8px}
+h4{font-size:15px;margin:14px 0 6px;color:var(--ink)}
+section.block{padding:28px 0;border-top:1px solid var(--line)}
+.sub{color:var(--mute);margin:0 0 16px;max-width:780px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:10px;border:1px solid var(--acc);background:var(--acc);color:#fff;font:600 15px var(--sans);cursor:pointer;text-decoration:none}
+.btn.ghost{background:#fff;color:var(--acc)}.btn.small{min-height:44px;padding:0 12px;font-size:14px}
+.btn[aria-pressed=true]{background:var(--acc2);color:var(--acc);border-color:var(--acc)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+/* guided */
+.guide{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.guide .q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+.qn{font:600 13px var(--sans);color:var(--acc);text-transform:uppercase;letter-spacing:.08em}
+.choice{display:flex;gap:8px;flex-wrap:wrap}
+.choice label{flex:1 1 120px;display:flex;align-items:center;gap:8px;min-height:44px;border:1px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;background:#fff}
+.choice input{width:20px;height:20px;accent-color:var(--acc)}
+.presets{margin-top:16px}
+.presets .btn{flex:1 1 200px;text-align:left;justify-content:flex-start;flex-direction:column;align-items:flex-start;padding:10px 14px;line-height:1.3}
+.presets .btn span{font-weight:400;font-size:13px;opacity:.85}
+/* fields */
+.f{display:flex;flex-direction:column;gap:4px;margin:0 0 10px;min-width:0}
+.f label,.lbl{font-size:14px;font-weight:600;color:var(--ink)}
+.f .hint{font-size:12.5px;color:var(--mute)}
+input[type=text],input[type=number],select{font:16px var(--sans);min-height:44px;padding:8px 10px;border:1px solid #8c948f;border-radius:8px;background:#fff;color:var(--ink);width:100%;min-width:0}
+input[type=range]{width:100%;min-height:44px;accent-color:var(--acc)}
+.pair{display:grid;grid-template-columns:1fr 92px;gap:10px;align-items:center}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.chk{display:flex;align-items:center;gap:10px;min-height:44px;font-size:15px;cursor:pointer}
+.chk input{width:20px;height:20px;accent-color:var(--acc);flex:none}
+.msgs{font-size:14px;color:#7a2e00;background:#fff4ec;border:1px solid #f0c9a8;border-radius:8px;padding:8px 12px;margin:8px 0}
+.msgs:empty{display:none}
+/* layout */
+.app{display:grid;grid-template-columns:340px minmax(0,1fr);gap:24px;align-items:start}
+.panel{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px 14px 14px}
+.panel details{border-bottom:1px solid var(--line)}.panel details:last-of-type{border-bottom:0}
+summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:600;list-style:none;gap:8px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";display:inline-block;width:18px;color:var(--acc);font-weight:700}
+details[open]>summary::before{content:"\2212"}
+.person h4{margin-top:4px}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat .k{font-size:13px;color:var(--mute)}.stat .v{font:600 24px/1.2 var(--serif)}.stat .d{font-size:13px;color:var(--ink2)}
+.ribbon{margin:14px 0 0;display:flex;flex-direction:column;gap:6px}
+.lane{display:grid;grid-template-columns:90px 1fr;gap:8px;align-items:center;font-size:13px}
+.track{position:relative;height:26px;background:#eee9dd;border-radius:6px;overflow:hidden}
+.seg{position:absolute;top:0;bottom:0;display:flex;align-items:center;padding-left:6px;font-size:12px;color:#fff;white-space:nowrap;overflow:hidden}
+/* guidance */
+ol.guidance{list-style:none;padding:0;margin:0;display:grid;gap:10px;counter-reset:g}
+ol.guidance li{background:#fff;border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:10px;padding:12px 14px 12px 50px;position:relative;counter-increment:g}
+ol.guidance li::before{content:counter(g);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--acc2);color:var(--acc);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+ol.guidance .why{font-size:14px;color:var(--ink2)}
+/* chart */
+.chartbox{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+.chartbox svg{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;margin:8px 0 0;padding:0;list-style:none}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.legend i.ln{height:3px;border-radius:0;vertical-align:3px;width:16px}
+.tblwrap{overflow-x:auto;max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{padding:6px 8px;border-bottom:1px solid #ebe7dc;text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{font-size:13px;color:var(--mute);font-weight:600}
+caption{text-align:left;font-size:13px;color:var(--mute);padding:4px 0}
+/* compare */
+.compare{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.strat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.strat.sel{border-color:var(--acc);box-shadow:0 0 0 2px var(--acc2)}
+.strat dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:4px 8px;font-size:14px}
+.strat dt{color:var(--ink2)}.strat dd{margin:0;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.bar{height:8px;background:#eee9dd;border-radius:4px;overflow:hidden}.bar b{display:block;height:100%;background:var(--acc)}
+.tag{display:inline-block;font-size:12px;background:var(--acc2);color:var(--acc);border-radius:20px;padding:2px 8px;font-weight:600}
+/* decision cards */
+.cards{display:grid;gap:16px}
+.dcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.dcard .num{font:600 13px var(--sans);color:var(--acc);letter-spacing:.08em;text-transform:uppercase}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:10px 0}
+.kv div{background:#f4f2ea;border-radius:10px;padding:10px 12px}
+.kv span{display:block;font-size:13px;color:var(--mute)}.kv b{font:600 19px/1.25 var(--serif)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.dcard ul{margin:6px 0;padding-left:20px}.dcard li{margin:3px 0}
+.calc{font-size:14px;color:var(--ink2)}
+.calc pre{white-space:pre-wrap;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;background:#f4f2ea;padding:10px;border-radius:8px;margin:6px 0;overflow-x:auto}
+.src{font-size:13px;color:var(--mute)}
+.ruleset{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+/* rules */
+.rules td,.rules th{white-space:normal;text-align:left;vertical-align:top}
+.rules td:nth-child(2){min-width:220px}
+.foot{padding:30px 0 50px;border-top:1px solid var(--line)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:8px;background:#fff;padding:10px;z-index:9}
+.savebox{display:none;margin-top:8px}.savebox.show{display:block}
+@media (max-width:1060px){.app{grid-template-columns:minmax(0,1fr)}.panel{position:static;max-height:none}.compare{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.guide{grid-template-columns:1fr}.cols,.ruleset{grid-template-columns:1fr}.wrap{padding:0 14px}.hero{padding-top:24px}}
+@media (max-width:520px){.compare{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat .v{font-size:20px}.grid2{grid-template-columns:1fr}.lane{grid-template-columns:64px 1fr}}
+@media (prefers-reduced-motion:no-preference){.bar b,.strat{transition:all .25s ease}html{scroll-behavior:smooth}}
+@media print{body{background:#fff;font-size:11pt}.panel,.guide-wrap,.noprint,header.top .row{display:none!important}.app{display:block}section.block{break-inside:avoid-page;padding:12px 0}.dcard,.strat,.chartbox{break-inside:avoid}details{display:block}details>*{display:block}a::after{content:" (" attr(href) ")";font-size:9pt;word-break:break-all}.notice{border:1px solid #000;background:#fff}}
+.app>*{min-width:0}
+.rules a{display:inline-block;padding:12px 0}
+.skip:focus{min-height:44px;display:flex;align-items:center}
+.cards,.cols,.compare,.stats,.ruleset,.guide{grid-template-columns:minmax(0,1fr)}
+@media (min-width:761px){.cols,.ruleset{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media (min-width:521px){.compare,.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:761px){.guide{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:1061px){.compare,.stats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.dcard,.cols>*{min-width:0}
+.kv{grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr))}
+.dcard a,.why a{display:inline-block;padding:11px 0}
+caption{white-space:normal;caption-side:top}
+/* round 2 */
+.ferr{display:block;font-size:14px;margin-top:4px}.ferr.bad{color:#9b1c1c;font-weight:600}.ferr.note{color:var(--ink2)}
+input[aria-invalid=true]{border-color:#9b1c1c!important;box-shadow:0 0 0 2px #f3c7c7}
+.gerr{color:#9b1c1c;font-weight:600;margin:8px 0 0;min-height:0}.gerr:empty{display:none}
+.miles{list-style:none;padding:0;margin:0 0 14px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:900px}
+.miles li{background:#fff;border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:10px;padding:8px 10px;font-size:14px;color:var(--ink2);line-height:1.3}
+.miles b{display:block;font:600 18px/1.2 var(--serif);color:var(--ink)}
+.disc{font-size:15px;color:var(--ink2);margin:0;max-width:900px}.disc a{display:inline-flex;align-items:center;min-height:44px;padding:0 6px}
+.presetlbl{margin:16px 0 6px;font-weight:600}
+.drawerbtn{display:none}.drawerclose{display:none}.phead{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.chip{display:inline-flex;align-items:center;min-height:32px;padding:4px 12px;border-radius:999px;background:var(--acc2);color:var(--acc);font-weight:600;font-size:14px}
+.stratrow{align-items:flex-end;gap:12px;margin:0 0 12px}
+.cmphead{font-weight:600;background:var(--warnbg);border:1px solid #e3cfa9;color:#4d3000;border-radius:10px;padding:10px 14px}
+.chartnote{font-size:14px;color:var(--ink2);margin:8px 0 0}.chartnote:empty{display:none}
+.pin{display:inline-flex;width:22px;height:22px;border-radius:50%;background:#000;color:#fff;font-size:13px;font-weight:700;align-items:center;justify-content:center;margin-right:4px}
+.rkey{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px}.rkey i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+ol.guidance a.go{display:flex;align-items:center;justify-content:space-between;min-height:44px;margin-top:8px;padding:8px 12px;border:1px solid var(--acc);border-radius:8px;background:var(--acc2);font-weight:600;text-decoration:none}
+details.dcard{padding:0}details.dcard>summary{list-style:none;cursor:pointer;padding:16px 20px;min-height:44px;display:flex;align-items:center;gap:12px}
+details.dcard>summary::-webkit-details-marker{display:none}
+details.dcard>summary::after{content:"+";margin-left:auto;font:600 24px/1 var(--sans);color:var(--acc)}details.dcard[open]>summary::after{content:"\2212"}
+details.dcard>:not(summary){margin-left:20px;margin-right:20px}details.dcard>details.calc{margin-bottom:16px}
+.sumtxt{display:flex;flex-direction:column;gap:2px;min-width:0}.sumtxt .h3{font:600 20px/1.25 var(--serif)}.sumtxt .key{font-size:14px;color:var(--ink2)}
+.more{font-size:14px;color:var(--ink2)}
+.flag{border-left:4px solid var(--warn);background:var(--warnbg);color:#4d3000;padding:10px 14px;border-radius:8px;margin:10px 0}
+.cautions{font-size:15px}
+.tblwrap{overflow-x:auto;max-width:100%}.tblwrap.wide table{min-width:0;width:100%}
+.printonly{display:none}
+@media (max-width:1060px){
+ .drawerbtn{display:flex;position:sticky;bottom:12px;z-index:20;margin:0 auto 12px;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.25);order:2;width:min(320px,100%)}
+ .app{display:flex;flex-direction:column}
+ .panel{display:none}
+ .panel.open{display:block;position:fixed;inset:0;z-index:30;max-height:none;border-radius:0;overflow:auto;padding:6px 16px 40px}
+ .panel.open .drawerclose{display:inline-flex}
+ #out{order:1}
+}
+@media (max-width:520px){.miles{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-top:14px}h1{margin-bottom:8px}.lede{margin-bottom:10px;font-size:16px}.miles li{padding:6px 8px;font-size:13px}.miles b{font-size:16px}.top .kicker{display:none}}
+@media print{.printonly{display:block}.drawerbtn,.chip{display:none!important}#printInputs table{font-size:9pt;width:100%}#printInputs th{width:22%;text-align:left}details.dcard>summary::after{content:""}}
+.skip{min-height:44px;display:flex;align-items:center;padding:10px}
+.dcard a,.why a{display:inline-flex;align-items:center;min-height:44px}
+@media (max-width:1060px){#out{min-width:0;width:100%}}
+@media (max-width:520px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px}.stat{padding:10px}.stat .d{font-size:13px}.stratrow .f{min-width:0!important;flex:1 1 auto}}
+details.tbld>summary,#limitsBody>details>summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:600;color:var(--acc)}
+@media (max-width:520px){.strat .bar{display:none}.strat{padding:12px;gap:4px}.foot .notice{font-size:14px}ol.guidance li{padding:10px 12px 10px 44px}ol.guidance li::before{left:10px}}
+details.qs>summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:600;color:var(--acc)}
+.means{max-width:820px}
+@media (max-width:520px){details.dcard>summary{padding:12px 14px}details.dcard>:not(summary){margin-left:14px;margin-right:14px}.sumtxt .h3{font-size:18px}.cards{gap:8px!important}.foot{padding:20px 0}}
+details.dcard>summary::before{content:none;display:none}
+/* round 3 */
+[id]{scroll-margin-top:20px}
+.legend i.hatch{background:repeating-linear-gradient(45deg,#8a8a8a 0 3px,#fff 3px 6px);border:1px solid #8a8a8a}
+.app{margin-bottom:32px}.panel{align-self:start}
+.editing{margin:0 0 4px;font-size:13px;color:var(--ink2)}
+.pause{background:#fff4d6;border:2px solid #9a5414;border-radius:10px;padding:10px 14px;margin:0 0 14px;color:#14211c;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;position:sticky;top:8px;z-index:15}
+.pause[hidden]{display:none}
+#out.paused>section{opacity:.45;filter:grayscale(.6)}
+.errct{display:inline-block;margin-left:8px;background:#fff;color:#8a1c1c;border-radius:999px;padding:1px 8px;font-size:13px;font-weight:700}
+.term{display:inline-block;font:inherit;color:inherit;background:none;border:0;text-decoration:underline dotted #0c7a5a 2px;text-underline-offset:3px;padding:11px 2px;margin:-11px 0;min-width:44px;min-height:44px;cursor:help;line-height:1.2;vertical-align:baseline;text-align:center}
+.term:focus-visible{outline:3px solid #0c7a5a;outline-offset:1px}
+.defpop{display:block;margin:6px 0;padding:8px 12px;background:#14211c;color:#fff;border-radius:8px;font-size:14px;line-height:1.45;max-width:560px}
+.defpop[hidden]{display:none}
+.take{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink2);margin-top:4px}.take .spark{flex:0 0 auto}
+.barrow{display:flex;align-items:center;gap:8px}.barrow .bar{flex:1 1 auto}.lowmk{font-size:12px;font-weight:700;color:#0c5a43;min-width:52px;text-align:right}
+.note2{background:#f3f0e7;border-radius:8px;padding:8px 12px;font-size:14px}
+.preview{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.preview .lbl{margin:0 0 6px}
+.pvgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;align-items:end}
+.pv span{display:block;font-size:13px;color:var(--ink2)}.pv b{font:600 20px/1.2 var(--serif)}
+.pvchart{width:100%;height:56px;display:block}
+@media (max-width:760px){.pvgrid{grid-template-columns:repeat(3,minmax(0,1fr))}.pvc{grid-column:1/-1}}
+@media (max-width:1060px){#out{padding-bottom:72px}}
+@media (max-width:520px){.miles{display:none}.lede{font-size:15px}.hero{padding-bottom:8px}.pv b{font-size:17px}}
+@media print{a[href^="#"]::after{content:none!important}.pause,.preview,.defpop{display:none!important}#out.paused>section{opacity:1;filter:none}.term{border:0;padding:0;margin:0;min-height:0;min-width:0}}
+
+#dev-theme{min-height:44px;white-space:nowrap}.review-fold>summary{padding:12px 0;min-height:44px;font-weight:600;cursor:pointer}.mobile-guidance-toggle{display:none}.panel.open{overscroll-behavior:contain}.table-scroll:focus,.tblwrap:focus{outline:3px solid var(--acc)}.review-fold[open]>summary{margin-bottom:12px}
+@media(max-width:760px){section.block{padding:24px 0}.guide .grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.guide .grid2>*{min-width:0}.guidance:not(.show-all)>li:nth-child(n+4){display:none}.mobile-guidance-toggle{display:inline-flex;margin-top:10px}.review-fold:not([open]){padding-bottom:8px}#out{padding-bottom:90px}.hero .disc{margin-bottom:8px}.chartbox .legend{gap:8px;font-size:13px}.guide .q{padding:12px}.q .hint{font-size:13px}.panel.open{inset:0;padding-top:12px;min-height:0;height:100dvh;max-height:100dvh}.panel.open #drawerClose{position:sticky;top:0;z-index:40;background:var(--card)}}
+html[data-review-theme=dark]{--ink:#edf4ef;--ink2:#d2dfd8;--mute:#b3c5ba;--bg:#111e17;--card:#1b2d22;--line:#4e6656;--acc:#80d9ae;--acc2:#243f2e;--warn:#ffd097;--warnbg:#3d3020;--c1:#73bedf;--c2:#c7a2df;--c3:#62cba3;--c4:#e2ac70;--c5:#d6ca75;--c6:#ef9ba7;--c7:#b3c5d0}
+html[data-review-theme=dark]{color-scheme:dark}html[data-review-theme=dark] .preview,html[data-review-theme=dark] .guide .q,html[data-review-theme=dark] .choice label,html[data-review-theme=dark] .panel,html[data-review-theme=dark] .stat,html[data-review-theme=dark] ol.guidance li,html[data-review-theme=dark] .chartbox,html[data-review-theme=dark] .strat,html[data-review-theme=dark] .dcard,html[data-review-theme=dark] .miles li,html[data-review-theme=dark] .btn.ghost,html[data-review-theme=dark] input[type=text],html[data-review-theme=dark] input[type=number],html[data-review-theme=dark] select{background:var(--card)}html[data-review-theme=dark] .lowmk{color:var(--acc)}html[data-review-theme=dark] .note2{background:var(--acc2);color:var(--ink)}html[data-review-theme=dark] .kv div,html[data-review-theme=dark] .calc pre{background:var(--acc2)}html[data-review-theme=dark] .cmphead,html[data-review-theme=dark] .msgs{background:var(--warnbg);color:var(--ink)}html[data-review-theme=dark] .gerr,html[data-review-theme=dark] .ferr.bad{color:#ffb4ad}html[data-review-theme=dark] .track,html[data-review-theme=dark] .bar{background:var(--line)}html[data-review-theme=dark] .seg{color:#10241a}html[data-review-theme=dark] .btn:not(.ghost){color:#10241a}html[data-review-theme=dark] .notice,html[data-review-theme=dark] .notice strong,html[data-review-theme=dark] .flag{color:var(--ink)}html[data-review-theme=dark] .defpop{background:var(--card);color:var(--ink);border-color:var(--line)}html[data-review-theme=dark] .strat.sel{border-color:var(--acc)}html[data-review-theme=dark] .pause{color:#17221b}html[data-review-theme=dark] svg text{fill:var(--ink2)}html[data-review-theme=dark] .tag{background:var(--acc2);color:var(--ink)}
+html[data-review-theme=dark] svg [fill="#5b6770"]{fill:#b3c5d0}html[data-review-theme=dark] svg [stroke="#5b6770"]{stroke:#b3c5d0}html[data-review-theme=dark] .legend i[style*="#5b6770"],html[data-review-theme=dark] .seg[style*="#5b6770"]{background:#b3c5d0!important}
+html[data-review-theme=dark] svg [fill="#857a1f"]{fill:#c6be70}html[data-review-theme=dark] svg [stroke="#857a1f"]{stroke:#c6be70}html[data-review-theme=dark] .legend i[style*="#857a1f"],html[data-review-theme=dark] .seg[style*="#857a1f"]{background:#c6be70!important}
+html[data-review-theme=dark] svg [fill="#2f6f8f"]{fill:#72bee5}html[data-review-theme=dark] svg [stroke="#2f6f8f"]{stroke:#72bee5}html[data-review-theme=dark] .legend i[style*="#2f6f8f"],html[data-review-theme=dark] .seg[style*="#2f6f8f"]{background:#72bee5!important}
+html[data-review-theme=dark] svg [fill="#7a5195"]{fill:#c3a0df}html[data-review-theme=dark] svg [stroke="#7a5195"]{stroke:#c3a0df}html[data-review-theme=dark] .legend i[style*="#7a5195"],html[data-review-theme=dark] .seg[style*="#7a5195"]{background:#c3a0df!important}
+html[data-review-theme=dark] svg [fill="#b292c9"]{fill:#ccb7e0}html[data-review-theme=dark] svg [stroke="#b292c9"]{stroke:#ccb7e0}html[data-review-theme=dark] .legend i[style*="#b292c9"],html[data-review-theme=dark] .seg[style*="#b292c9"]{background:#ccb7e0!important}
+html[data-review-theme=dark] svg [fill="#c4485a"]{fill:#ef9ba7}html[data-review-theme=dark] svg [stroke="#c4485a"]{stroke:#ef9ba7}html[data-review-theme=dark] .legend i[style*="#c4485a"],html[data-review-theme=dark] .seg[style*="#c4485a"]{background:#ef9ba7!important}
+html[data-review-theme=dark] svg [fill="#e89aa5"]{fill:#f3c0c7}html[data-review-theme=dark] svg [stroke="#e89aa5"]{stroke:#f3c0c7}html[data-review-theme=dark] .legend i[style*="#e89aa5"],html[data-review-theme=dark] .seg[style*="#e89aa5"]{background:#f3c0c7!important}
+html[data-review-theme=dark] svg [fill="#0c7a5a"]{fill:#63cba2}html[data-review-theme=dark] svg [stroke="#0c7a5a"]{stroke:#63cba2}html[data-review-theme=dark] .legend i[style*="#0c7a5a"],html[data-review-theme=dark] .seg[style*="#0c7a5a"]{background:#63cba2!important}
+html[data-review-theme=dark] svg [fill="#7fbfa5"]{fill:#8ed3bb}html[data-review-theme=dark] svg [stroke="#7fbfa5"]{stroke:#8ed3bb}html[data-review-theme=dark] .legend i[style*="#7fbfa5"],html[data-review-theme=dark] .seg[style*="#7fbfa5"]{background:#8ed3bb!important}
+html[data-review-theme=dark] svg [fill="#8e6b3f"]{fill:#d4b58a}html[data-review-theme=dark] svg [stroke="#8e6b3f"]{stroke:#d4b58a}html[data-review-theme=dark] .legend i[style*="#8e6b3f"],html[data-review-theme=dark] .seg[style*="#8e6b3f"]{background:#d4b58a!important}
+html[data-review-theme=dark] svg [fill="#9a5414"]{fill:#e4ad79}html[data-review-theme=dark] svg [stroke="#9a5414"]{stroke:#e4ad79}html[data-review-theme=dark] .legend i[style*="#9a5414"],html[data-review-theme=dark] .seg[style*="#9a5414"]{background:#e4ad79!important}
+html[data-review-theme=dark] svg [fill="#a12d6a"]{fill:#ef9ccc}html[data-review-theme=dark] svg [stroke="#a12d6a"]{stroke:#ef9ccc}html[data-review-theme=dark] .legend i[style*="#a12d6a"],html[data-review-theme=dark] .seg[style*="#a12d6a"]{background:#ef9ccc!important}
+html[data-review-theme=dark] svg [fill="#2a8c82"]{fill:#74cbbd}html[data-review-theme=dark] svg [stroke="#2a8c82"]{stroke:#74cbbd}html[data-review-theme=dark] .legend i[style*="#2a8c82"],html[data-review-theme=dark] .seg[style*="#2a8c82"]{background:#74cbbd!important}
+html[data-review-theme=dark] svg [fill="#334f9e"]{fill:#94b1ef}html[data-review-theme=dark] svg [stroke="#334f9e"]{stroke:#94b1ef}html[data-review-theme=dark] .legend i[style*="#334f9e"],html[data-review-theme=dark] .seg[style*="#334f9e"]{background:#94b1ef!important}
+html[data-review-theme=dark] svg [fill="#000000"]{fill:#f6f7ed}html[data-review-theme=dark] svg [stroke="#000000"]{stroke:#f6f7ed}html[data-review-theme=dark] .legend i[style*="#000000"],html[data-review-theme=dark] .seg[style*="#000000"]{background:#f6f7ed!important}
+html[data-review-theme=dark] svg [fill="#8a8a8a"]{fill:#bdc5bf}html[data-review-theme=dark] svg [stroke="#8a8a8a"]{stroke:#bdc5bf}html[data-review-theme=dark] .legend i[style*="#8a8a8a"],html[data-review-theme=dark] .seg[style*="#8a8a8a"]{background:#bdc5bf!important}
+</style>
+</head>
+<body>
+<a class="skip" href="#out">Skip to results</a>
+<header class="top"><div class="wrap"><span class="mark">WealthMeter</span><span class="kicker">Special feature</span><button id="dev-theme" class="btn ghost" type="button">Dark theme</button></div></header>
+<main id="main">
+<div class="wrap hero">
+ <p class="kicker">Ages 55 and over</p>
+ <h1>Retirement Transition Explorer</h1>
+ <p class="lede">From the last paycheck to required withdrawals, a few tax and health coverage choices pull on each other. See how they move together for your numbers.</p>
+ <ol class="miles" aria-label="Key ages"><li><b>59 and a half</b>IRA access without penalty</li><li><b>63</b>Income sets Medicare premiums at 65</li><li><b>65</b>Medicare eligibility; enrollment rules apply</li><li><b>73 or 75</b>Required withdrawals begin</li></ol>
+ <p class="disc"><strong>Education, not advice.</strong> Calculator numbers stay in this browser. Feedback sends only the message you choose to enter. Saved links contain your numbers, readable by anyone who has the link. <a href="#fine">Details</a> <button type="button" id="open-feedback" class="btn ghost small">Feedback or questions</button></p>
+</div>
+
+<div class="wrap guide-wrap">
+<section class="block" id="start" aria-labelledby="start-h">
+ <h2 id="start-h">Start with three questions</h2>
+ <p class="sub">Answer these to get a first picture, or pick a sample household. Every detail can be refined afterwards.</p>
+ <form id="guide" onsubmit="return false">
+ <div class="guide">
+  <fieldset class="q"><legend class="qn">Question 1: Who is this plan for?</legend>
+   <div class="choice">
+    <label><input type="radio" name="gstatus" value="single"> One person</label>
+    <label><input type="radio" name="gstatus" value="mfj" checked> Married couple</label>
+   </div>
+  </fieldset>
+  <fieldset class="q"><legend class="qn">Question 2: Ages in 2027 and planned retirement ages</legend>
+   <div class="grid2">
+    <div class="f"><label for="g_a1">Your age</label><input id="g_a1" type="text" inputmode="numeric" value="62"></div>
+    <div class="f"><label for="g_r1">Retire at</label><input id="g_r1" type="text" inputmode="numeric" value="63"></div>
+    <div class="f g2p"><label for="g_a2">Spouse age</label><input id="g_a2" type="text" inputmode="numeric" value="60"></div>
+    <div class="f g2p"><label for="g_r2">Spouse retires at</label><input id="g_r2" type="text" inputmode="numeric" value="62"></div>
+   </div>
+  </fieldset>
+  <fieldset class="q"><legend class="qn">Question 3: Savings and spending</legend>
+   <div class="f"><label for="g_sav">Total retirement and investment savings</label><input id="g_sav" type="text" inputmode="decimal" value="1,200,000"><span class="hint">Accepts 1.2m, 850k or 850,000</span></div>
+   <div class="f"><label for="g_pren" id="g_prel">Share in pretax 401(k), 403(b) or traditional IRA, %</label><div class="pair"><input id="g_pre" type="range" min="0" max="100" step="5" value="65" aria-labelledby="g_prel"><input id="g_pren" type="text" inputmode="numeric" value="65"></div></div>
+   <div class="f"><label for="g_sp">Yearly spending, excluding taxes and health premiums</label><input id="g_sp" type="text" inputmode="decimal" value="85,000"></div>
+  </fieldset>
+ </div>
+ <div class="preview" id="preview" aria-live="polite"><p class="lbl">Live preview while you type, taxable first order</p><div class="pvgrid" id="pvgrid"></div></div>
+ <div class="row" style="margin-top:14px"><button class="btn" id="g_go" type="button">Show my scenarios</button><span class="hint" style="font-size:14px;color:var(--mute)">You can fine tune every number afterwards.</span></div>
+ <p id="g_err" class="gerr" role="alert"></p>
+ </form>
+ <p class="lbl presetlbl" id="pl">Or try a sample household</p>
+ <div class="row presets" role="group" aria-labelledby="pl">
+  <button class="btn ghost" type="button" data-preset="single58">Single, 58<span>Large pretax balance, retiring now</span></button>
+  <button class="btn ghost" type="button" data-preset="couple62">Couple, 62 and 61<span>Part time work, marketplace coverage before 65</span></button>
+  <button class="btn ghost" type="button" data-preset="couple66">Couple, 66 and 65<span>Large IRA, on Medicare</span></button>
+  <button class="btn ghost" type="button" data-preset="low">Early retiree, 56<span>Modest savings and income</span></button>
+ </div>
+</section>
+</div>
+
+<div class="wrap">
+<div class="app" id="results">
+ <button class="btn drawerbtn noprint" type="button" id="drawerBtn" aria-controls="panel" aria-expanded="false">Edit your numbers</button>
+ <aside class="panel" id="panel" aria-labelledby="panel-h">
+  <div class="phead"><div><h2 id="panel-h" style="font-size:20px;margin:10px 0 0">Your numbers</h2><p class="editing" id="editing" aria-live="polite">Editing: Starting example</p></div><button class="btn small ghost drawerclose" type="button" id="drawerClose">Done</button></div>
+  <p class="src" style="margin:0 0 6px">All amounts in 2026 dollars per year unless noted. A blank money field counts as $0.</p>
+  <div id="msgs" class="msgs" role="status" aria-live="polite"></div>
+  <div id="fields"></div>
+  <div class="row noprint" style="margin-top:10px">
+   <button class="btn small" type="button" id="save">Save in page address</button>
+   <button class="btn small ghost" type="button" id="reset">Reset</button>
+   <button class="btn small ghost" type="button" id="print">Print</button>
+  </div>
+  <div class="savebox" id="savebox"><div class="f"><label for="saveurl">Link with your numbers (stays in your browser until you share it)</label><input id="saveurl" type="text" readonly></div></div>
+ </aside>
+ <div id="out">
+  <div class="pause" id="pause" role="alert" hidden></div>
+  <section class="block" style="border-top:0;padding-top:0" aria-labelledby="glance-h">
+   <h2 id="glance-h">At a glance</h2>
+   <p class="sub" id="glance-sub"></p>
+   <div class="row stratrow noprint"><div class="f" style="margin:0;min-width:220px"><label for="glanceStrat">Withdrawal strategy</label><select id="glanceStrat" class="stratSel"></select></div><span class="chip"></span></div>
+   <div id="printInputs" class="printonly"></div>
+   <div class="stats" id="stats"></div>
+   <div class="ribbon" id="ribbon" role="img"></div>
+  </section>
+  <section class="block" aria-labelledby="qg-h">
+   <h2 id="qg-h">Quick guidance</h2>
+   <p class="sub">Observations ranked by how much they appear to matter for these numbers. Each one points to the section that explains it. These are prompts for a conversation with a professional, not instructions.</p>
+   <ol class="guidance" id="guidance"></ol><button type="button" class="btn ghost mobile-guidance-toggle" id="more-guidance" aria-expanded="false" aria-controls="guidance">Show all observations</button>
+  </section>
+  <section class="block" aria-labelledby="tl-h" id="timeline">
+   <h2 id="tl-h">Lifetime income timeline</h2>
+   <p class="sub">Income, withdrawals and account transfers by year, with tax and health-cost reference lines. Amounts are in 2026 dollars. Roth conversions are transfers, not extra cash available for spending.</p>
+   <div class="chartbox">
+    <div class="row noprint" style="margin-bottom:8px"><div class="f" style="margin:0;min-width:220px"><label for="chartStrat">Withdrawal strategy</label><select id="chartStrat" class="stratSel"></select></div><span class="chip"></span></div>
+    <div id="chart"></div>
+    <p class="chartnote" id="chartnote"></p>
+    <p class="sr" id="chartsum"></p>
+    <ul class="legend" id="legend"></ul>
+    <details style="margin-top:8px"><summary>Year by year table (text version of the chart)</summary><div class="tblwrap" id="tbl"></div></details>
+   </div>
+  </section>
+  <section class="block" aria-labelledby="cmp-h" id="compare">
+   <h2 id="cmp-h">Withdrawal strategies side by side</h2><details class="review-fold" data-mobile-fold><summary>Compare four withdrawal strategies</summary>
+   <p class="sub">Four ways to pay the bills from the same accounts. Totals run through the end age and are in 2026 dollars. A lower tax total is not automatically better: ending balances, account types and health costs differ too.</p>
+   <p class="cmphead" id="cmphead" hidden></p>
+   <div class="compare" id="cmpgrid"></div>
+  </details></section>
+  <section class="block" aria-labelledby="dc-h" id="decisions">
+   <h2 id="dc-h">Eleven decisions, worked through with your numbers</h2>
+   <p class="sub">Each card shows the calculation, what it means and questions to bring to a qualified professional.</p>
+   <div class="cards" id="cards"></div>
+  </section>
+  <section class="block" aria-labelledby="nm-h" id="limits">
+   <h2 id="nm-h">Simplifications and what is not modeled</h2>
+   <p class="sub">All results are in 2026 dollars with steady returns, one flat state tax rate and simplified health costs. The full list explains what each simplification means for the numbers.</p>
+   <div class="card" id="limitsBody"></div>
+  </section>
+  <section class="block" aria-labelledby="rs-h" id="rules">
+   <h2 id="rs-h">Rules and sources</h2><details class="review-fold" data-mobile-fold><summary>Review the dated rules and primary sources</summary>
+   <p class="sub">Every parameter used on this page, its source and the date it was checked. Federal income-tax brackets and several Medicare parameters use 2026 amounts as future stand-ins in 2026 dollars. The 2027 ACA contribution table and coverage poverty-line inputs are separately sourced; each rule row identifies its vintage. Future amounts are modeled assumptions, not published forecasts.</p>
+   <details class="card"><summary>Show all rules and sources</summary><div class="tblwrap"><table class="rules" id="rulesTbl"><caption>Parameters and sources</caption><thead><tr><th scope="col">Rule</th><th scope="col">Value used</th><th scope="col">Source and date</th></tr></thead><tbody></tbody></table></div></details>
+  </details></section>
+ </div>
+</div>
+</div>
+</main>
+<footer class="foot"><div class="wrap">
+ <p class="mark" style="margin:0 0 8px">WealthMeter</p>
+ <div class="notice" role="note" id="fine"><strong>Education, not advice.</strong> This is a scenario explorer, not financial, tax, legal or medical advice, and it does not recommend any product or action. Rules are simplified and summarized as of October 26, 2026. <strong>Private by design:</strong> every calculation runs in this browser tab. Calculator numbers stay in this browser. The optional feedback form sends only your typed message to Michelle Martin in WealthMeter operations; it does not send calculator numbers or the saved-page address. The calculator sets no cookies or local storage; your numbers enter the page address only when you press Save. Results are illustrations from simplified rules and the assumptions shown, not predictions or recommendations. Laws, premiums and thresholds change every year. Before acting on anything here, talk with a qualified tax professional, financial planner, attorney or benefits counselor who can see your full situation.</div>
+</div></footer>
+<script>/* Retirement transition engine. Pure functions, no DOM. Real (today's) dollars. */
+(function (root) {
+'use strict';
+var P = {
+  asOf: '2026-10-26', taxYear: 2026, startYear: 2027,
+  brackets: { // Rev. Proc. 2025-32, tax year 2026, taxable income upper bounds
+    single: [[12400,.10],[50400,.12],[105700,.22],[201775,.24],[256225,.32],[640600,.35],[Infinity,.37]],
+    mfj:    [[24800,.10],[100800,.12],[211400,.22],[403550,.24],[512450,.32],[768700,.35],[Infinity,.37]]
+  },
+  stdDed: { single: 16100, mfj: 32200 },
+  addl65: { single: 2050, mfj: 1650 },
+  seniorDed: { amount: 6000, phaseStart: { single: 75000, mfj: 150000 }, rate: 0.06, lastYear: 2028 },
+  ltcg: { zeroTop: { single: 49450, mfj: 98900 }, fifteenTop: { single: 545500, mfj: 613700 } },
+  niit: { rate: 0.038, threshold: { single: 200000, mfj: 250000 } },
+  ssTax: { b1: { single: 25000, mfj: 32000 }, b2: { single: 34000, mfj: 44000 } },
+  irmaa: { // CMS 2026; MAGI from two years earlier. upper bound inclusive except last tiers
+    single: [109000,137000,171000,205000,500000], mfj: [218000,274000,342000,410000,750000],
+    partB: [0,81.20,202.90,324.60,446.30,487.00], partD: [0,14.50,37.50,60.40,83.30,91.00], baseB: 202.90
+  },
+  fpl: { first: 15960, extra: 5680 }, // 2026 HHS guidelines, used for 2027 coverage
+  acaCurrent: [[1.33,2.15,2.15],[1.50,3.23,4.30],[2.00,4.30,6.78],[2.50,6.78,8.66],[3.00,8.66,10.22],[4.00,10.22,10.22]],
+  acaEnhanced: [[1.50,0,0],[2.00,0,2],[2.50,2,4],[3.00,4,6],[4.00,6,8.5],[Infinity,8.5,8.5]],
+  rmdTable: {72:27.4,73:26.5,74:25.5,75:24.6,76:23.7,77:22.9,78:22.0,79:21.1,80:20.2,81:19.4,82:18.5,83:17.7,84:16.8,85:16.0,86:15.2,87:14.4,88:13.7,89:12.9,90:12.2,91:11.5,92:10.8,93:10.1,94:9.5,95:8.9,96:8.4,97:7.8,98:7.3,99:6.8,100:6.4,101:6.0,102:5.6,103:5.2,104:4.9,105:4.6,106:4.3,107:4.1,108:3.9,109:3.7,110:3.5,111:3.4,112:3.3,113:3.1,114:3.0,115:2.9,116:2.8,117:2.7,118:2.5,119:2.3,120:2.0},
+  rmdPenalty: 0.25, earlyPenalty: 0.10, hsaPenalty: 0.20
+};
+function fs(s){ return s === 'mfj' ? 'mfj' : 'single'; }
+function clamp(x,a,b){ x = +x; if (!isFinite(x)) x = a; return Math.min(b, Math.max(a, x)); }
+
+function ordinaryTax(ti, st, scale) { // scale: real indexing factor (1 = 2026 values)
+  scale = scale || 1; var b = P.brackets[fs(st)], t = 0, lo = 0;
+  for (var i = 0; i < b.length; i++) { var hi = b[i][0]*scale; if (ti > lo) t += (Math.min(ti, hi) - lo) * b[i][1]; lo = hi; }
+  return t;
+}
+function marginalRate(ti, st, scale){ scale=scale||1; var b=P.brackets[fs(st)]; for (var i=0;i<b.length;i++) if (ti < b[i][0]*scale) return b[i][1]; return .37; }
+function bracketTop(rate, st, scale){ scale=scale||1; var b=P.brackets[fs(st)]; for (var i=0;i<b.length;i++) if (b[i][1]===rate) return b[i][0]*scale; return Infinity; }
+/* Federal tax on taxable income with qualified gains/dividends stacked on top (Qualified Dividends and Capital Gain Tax Worksheet logic). */
+function federalTax(ordTI, ltcg, st, scale) {
+  scale = scale || 1; st = fs(st); ordTI = Math.max(0, ordTI); ltcg = Math.max(0, ltcg);
+  var z = P.ltcg.zeroTop[st]*scale, f = P.ltcg.fifteenTop[st]*scale, top = ordTI + ltcg;
+  var in0 = Math.max(0, Math.min(top, z) - ordTI);
+  var in15 = Math.max(0, Math.min(top, f) - Math.max(ordTI, z));
+  var in20 = ltcg - in0 - in15;
+  return ordinaryTax(ordTI, st, scale) + 0.15*in15 + 0.20*in20;
+}
+/* Taxable Social Security, IRS Pub 915 worksheet. otherIncome = AGI items excluding SS (incl. gains). Thresholds are not indexed. */
+function taxableSS(ss, otherIncome, st, deflate) {
+  deflate = deflate || 1; st = fs(st); if (ss <= 0) return 0;
+  var b1 = P.ssTax.b1[st]*deflate, b2 = P.ssTax.b2[st]*deflate, pi = otherIncome + 0.5*ss;
+  if (pi <= b1) return 0;
+  if (pi <= b2) return Math.min(0.5*ss, 0.5*(pi - b1));
+  return Math.min(0.85*ss, 0.85*(pi - b2) + Math.min(0.5*ss, 0.5*(b2 - b1)));
+}
+function seniorDeduction(n65, magi, st, year, deflate) {
+  deflate = deflate || 1; if (year > P.seniorDed.lastYear || n65 <= 0) return 0; st = fs(st);
+  var per = Math.max(0, P.seniorDed.amount*deflate - P.seniorDed.rate*Math.max(0, magi - P.seniorDed.phaseStart[st]*deflate));
+  return per * n65;
+}
+function deduction(st, n65, magi, year, scale, deflate) {
+  st = fs(st); return (P.stdDed[st] + P.addl65[st]*n65)*scale + seniorDeduction(n65, magi, st, year, deflate);
+}
+function niit(nii, magi, st, deflate){ deflate=deflate||1; return P.niit.rate*Math.max(0, Math.min(nii, magi - P.niit.threshold[fs(st)]*deflate)); }
+/* IRMAA tier index (0 = none) for a MAGI */
+function irmaaTier(magi, st, scale, topF) {
+  scale = scale || 1; topF = topF || 1; var t = P.irmaa[fs(st)];
+  for (var i = 0; i < 4; i++) if (magi <= t[i]*scale) return i;
+  return magi < t[4]*scale*topF ? 4 : 5; // topF: top line fixed in dollars for 2027 premiums (SSA 1839(i)(3)(C)), indexed from 2028
+}
+function irmaaMonthly(tier){ return P.irmaa.partB[tier] + P.irmaa.partD[tier]; }
+function fpl(size){ return P.fpl.first + P.fpl.extra*Math.max(0,size-1); }
+/* Applicable percentage (as fraction) for household income as ratio of FPL. Returns null when not eligible. */
+function applicablePct(ratio, rules) {
+  if (ratio < 1) return null;
+  var tbl = rules === 'enhanced' ? P.acaEnhanced : P.acaCurrent, lo = rules === 'enhanced' ? 0 : 0;
+  var prev = rules === 'enhanced' ? 1.0 : 1.0;
+  for (var i = 0; i < tbl.length; i++) {
+    var hi = tbl[i][0];
+    if (ratio < hi || (i === tbl.length-1 && ratio <= hi)) {
+      var start = i === 0 ? 1.0 : tbl[i-1][0];
+      if (i === 0) return tbl[i][1]/100;
+      var w = (ratio - start)/(hi - start);
+      if (!isFinite(w)) w = 0;
+      return (tbl[i][1] + (tbl[i][2]-tbl[i][1])*w)/100;
+    }
+  }
+  return null; // above 400 percent under current rules
+}
+function premiumTaxCredit(magi, size, benchmarkAnnual, rules, scale) {
+  scale = scale || 1; var r = magi/(fpl(size)*scale), pct = applicablePct(r, rules);
+  if (pct === null) return { ptc: 0, pct: null, ratio: r, contribution: benchmarkAnnual };
+  var contrib = pct*magi; return { ptc: Math.max(0, benchmarkAnnual - contrib), pct: pct, ratio: r, contribution: Math.min(contrib, benchmarkAnnual) };
+}
+/* Social Security */
+function coverageScenario(magi, size, benchmarkAnnual, rules, scale, assumeEligible) {
+ var c = premiumTaxCredit(magi, size, benchmarkAnnual, rules, scale);
+ c.premium = benchmarkAnnual - c.ptc; c.medicaid = false;
+ if (assumeEligible && c.ratio < 1.38) { c.medicaid = true; c.ptc = 0; c.premium = 0; c.pct = null; c.contribution = 0; }
+ return c;
+}
+function irmaaBoundary(index, st, scale, topF) {
+ var i = Math.max(0, Math.min(4, index));
+ return { amount:P.irmaa[fs(st)][i]*(scale||1)*(i===4?(topF||1):1), inclusive:i===4 };
+}
+function conversionRoom(input, year, rate, baseline) {
+ var base = baseline || project(input, 'conventional');
+ var b = base.rows.find(function(r){ return r.year === year; });
+ if (!b) return { amount:0, incrementalFederal:0, ordTI:null, baseTI:null };
+ var scenario = project(input, 'conventional', {singleConversion:{year:year,rate:rate}});
+ var r = scenario.rows.find(function(r){return r.year===year;});
+ return {amount:r.conv, incrementalFederal:r.fed-b.fed, ordTI:r.ordTI, baseTI:b.ordTI, year:year, rate:rate, inModelWindow:b.ages.some(function(age,i){return age!==null && age>=input.people[i].retire && age<rmdStartAge(P.startYear-input.people[i].age);})};
+}
+function fraMonths(birthYear) {
+  if (birthYear <= 1954) return 66*12; if (birthYear >= 1960) return 67*12;
+  return 66*12 + 2*(birthYear - 1954);
+}
+function ssFactor(claimAge, birthYear) {
+  var m = Math.round(claimAge*12) - fraMonths(birthYear);
+  if (m < 0) { var e = -m; return 1 - (5/9/100)*Math.min(e,36) - (5/12/100)*Math.max(0,e-36); }
+  var late = Math.min(m, 70*12 - fraMonths(birthYear)); return 1 + (2/3/100)*Math.max(0,late);
+}
+/* Survivor full retirement age, 20 CFR 404.409(b) */
+function survFraMonths(birthYear) {
+  if (birthYear <= 1956) return 66*12; if (birthYear >= 1962) return 67*12;
+  return 66*12 + 2*(birthYear - 1956);
+}
+/* Survivor reduction: 71.5% at 60 rising evenly to 100% at survivor full retirement age (SSA). */
+function survFactor(startAge, birthYear) {
+  var fra = survFraMonths(birthYear), m = fra - Math.round(Math.max(60, startAge)*12);
+  if (m <= 0) return 1; return 1 - 0.285*m/(fra - 720);
+}
+/* Widow(er) benefit per year (2026 dollars). pia = monthly PIA of the deceased. POMS RS 00615.320 and RS 00615.322. */
+function survivorBenefit(pia, decBy, decClaim, deathAge, survStartAge, survBy) {
+  var sf = survFactor(survStartAge, survBy), base, claimed = decClaim <= deathAge, lim = null;
+  if (claimed) { var fD = ssFactor(decClaim, decBy);
+    if (fD < 1) { base = pia; lim = Math.max(pia*fD, 0.825*pia); }   // RIB-LIM
+    else base = pia*fD; }                                              // DRCs carry over
+  else if (Math.round(deathAge*12) < fraMonths(decBy)) base = pia;     // died before full age, never claimed
+  else base = pia*ssFactor(Math.min(70, deathAge + 11/12), decBy);    // DRCs earned to death (death modeled at the end of the year at that age)
+  var wib = base*sf; if (lim !== null) wib = Math.min(wib, lim);
+  return { monthly: wib, annual: wib*12, survF: sf, base: base, limit: lim, claimed: claimed };
+}
+function rmdStartAge(birthYear){ return birthYear >= 1960 ? 75 : 73; }
+function rmdDivisor(age){ if (age < 72) return null; return P.rmdTable[Math.min(120, Math.floor(age))]; }
+
+/* -------- Inputs -------- */
+function parseMoney(v) {
+  if (v === null || v === undefined) return NaN; if (typeof v === 'number') return v;
+  var s = String(v).trim().toLowerCase().replace(/[$,\s]/g, ''); if (s === '') return NaN;
+  var mult = 1; if (/k$/.test(s)) { mult = 1e3; s = s.slice(0,-1); } else if (/m$/.test(s)) { mult = 1e6; s = s.slice(0,-1); }
+  var n = parseFloat(s); return isFinite(n) ? n*mult : NaN;
+}
+function defaults() {
+  return { status:'mfj', people:[
+    { age:62, retire:63, claim:67, ssFra:2800, k401:400000, ira:150000, roth:60000, salary:110000, partTime:0, ptEnd:65, pension:0, pensionStart:65 },
+    { age:60, retire:62, claim:67, ssFra:1900, k401:180000, ira:40000, roth:30000, salary:70000, partTime:0, ptEnd:65, pension:0, pensionStart:65 } ],
+    taxable:250000, basisPct:60, cash:60000, hsa:30000, home:650000, loan:150000,
+    spend:85000, stateRate:5, ret:5, infl:2.5, cashRet:2.5, endAge:95, benchmark:1100,
+    aca:'current', medExp:false, bracket:0.12, guardAca:true, guardIrmaa:true, heirRate:22, margin:3,
+    death:{ on:false, who:0, age:85, spendPct:80, pensionSurv:50 } };
+}
+function sanitize(x) {
+  var d = defaults(), o = JSON.parse(JSON.stringify(d)), msgs = [], errors = [], notes = [];
+  function fmt(v){ return Math.abs(v) >= 1000 ? Math.round(v).toLocaleString('en-US') : String(v); }
+  function num(src, key, lo, hi, label, target, path, blankZero) {
+    target = target || o; path = path || key; if (src[key] === undefined || src[key] === null) return;
+    var raw = String(src[key]).trim(), v = parseMoney(src[key]);
+    if (raw === '') {
+      if (blankZero) { target[key] = 0; notes.push({ k:path, msg:'Blank, so this counts as 0. Type an amount to change it.' }); }
+      else { errors.push({ k:path, msg:'Please enter ' + label + '. Until then the results use ' + fmt(target[key]) + '.' }); msgs.push(label + ' is blank.'); }
+      return; }
+    if (!isFinite(v)) { errors.push({ k:path, msg:'That is not a number. Try digits such as 65 or 85,000. Until then the results use ' + fmt(target[key]) + '.' }); msgs.push(label + ' is not a number.'); return; }
+    if (v < lo || v > hi) { var c = clamp(v, lo, hi); errors.push({ k:path, msg:'Please enter a value from ' + fmt(lo) + ' to ' + fmt(hi) + '. Until then the results use ' + fmt(c) + '.' }); msgs.push(label + ' is outside ' + fmt(lo) + ' to ' + fmt(hi) + '.'); target[key] = c; return; }
+    target[key] = v;
+  }
+  x = x || {};
+  o.status = x.status === 'single' ? 'single' : 'mfj';
+  var n = o.status === 'mfj' ? 2 : 1;
+  for (var i = 0; i < 2; i++) {
+    var src = (x.people && x.people[i]) || {}, t = o.people[i], who = i === 0 ? 'Person 1 ' : 'Person 2 ', pp = 'people.' + i + '.';
+    num(src,'age',50,85,who+'age',t,pp+'age'); num(src,'retire',40,85,who+'retirement age',t,pp+'retire'); num(src,'claim',62,70,who+'claiming age',t,pp+'claim');
+    num(src,'ssFra',0,6000,who+'Social Security benefit',t,pp+'ssFra',true); num(src,'k401',0,5e7,who+'401(k) balance',t,pp+'k401',true); num(src,'ira',0,5e7,who+'IRA balance',t,pp+'ira',true);
+    num(src,'roth',0,5e7,who+'Roth balance',t,pp+'roth',true); num(src,'salary',0,2e6,who+'salary',t,pp+'salary',true); num(src,'partTime',0,5e5,who+'part time income',t,pp+'partTime',true);
+    num(src,'ptEnd',50,90,who+'part time end age',t,pp+'ptEnd'); num(src,'pension',0,5e5,who+'pension',t,pp+'pension',true); num(src,'pensionStart',50,85,who+'pension start age',t,pp+'pensionStart');
+    ['age','retire','claim'].forEach(function(k){ if (Math.round(t[k]) !== t[k]) { notes.push({ k:pp+k, msg:'Whole years only, so ' + t[k] + ' counts as ' + Math.round(t[k]) + '.' }); t[k] = Math.round(t[k]); } });
+  }
+  ['taxable','cash','hsa','home','loan'].forEach(function(k){ num(x,k,0,1e8,k,o,k,true); });
+  num(x,'basisPct',0,100,'Cost basis percent'); num(x,'spend',0,2e6,'Annual spending',o,'spend',true); num(x,'stateRate',0,15,'State tax rate',o,'stateRate',true);
+  num(x,'ret',-2,12,'Investment return'); num(x,'infl',0,10,'Inflation'); num(x,'cashRet',0,10,'Cash return'); num(x,'endAge',80,105,'Plan to age');
+  num(x,'benchmark',0,5000,'Benchmark premium'); num(x,'heirRate',0,50,'Heir tax rate'); num(x,'margin',0,20,'Safety margin');
+  o.aca = x.aca === 'enhanced' ? 'enhanced' : 'current'; o.medExp = x.medExp === true || x.medExp === 'true';
+  var br = +x.bracket; o.bracket = [0.10,0.12,0.22,0.24,0.32].indexOf(br) >= 0 ? br : 0.12;
+  o.guardAca = x.guardAca !== false; o.guardIrmaa = x.guardIrmaa !== false;
+  if (x.death) { o.death.on = !!x.death.on && n === 2; o.death.who = +x.death.who === 1 ? 1 : 0;
+    num(x.death,'age',60,105,'Age at first death',o.death,'death.age'); num(x.death,'spendPct',40,100,'Survivor spending percent',o.death,'death.spendPct'); num(x.death,'pensionSurv',0,100,'Pension survivor percent',o.death,'death.pensionSurv'); }
+  if (o.loan > o.home) notes.push({ k:'loan', msg:'The mortgage is larger than the home value, so home equity shows as zero.' });
+  o.people = o.people.slice(0, n); o.n = n;
+  if (o.endAge <= Math.max.apply(null, o.people.map(function(q){ return q.age; }))) errors.push({ k:'endAge', msg:'Plan through age needs to be above the oldest age. Until then the plan covers one year.' });
+  return { input:o, messages:msgs, errors:errors, notes:notes };
+}
+
+/* -------- Projection -------- */
+var STRATS = {
+  conventional: { label:'Taxable first', short:'Cash and taxable, then pretax, then Roth' },
+  pretaxFirst:  { label:'Pretax first', short:'Pretax, then cash and taxable, then Roth' },
+  proportional: { label:'Proportional', short:'A slice of every account each year' },
+  bracketFill:  { label:'Bracket fill', short:'Taxable first plus Roth conversions up to a chosen bracket' }
+};
+function project(inp, strategy, opts) {
+  opts = opts || {};
+  var I = inp, n = I.n, r = (1+I.ret/100)/(1+I.infl/100) - 1, rc = (1+I.cashRet/100)/(1+I.infl/100) - 1, ii = I.infl/100;
+  var ppl = [];
+  for (var i = 0; i < n; i++) { var p = I.people[i]; ppl.push({ age0:p.age, by:P.startYear - p.age, k401:p.k401, ira:p.ira, roth:p.roth, alive:true, p:p }); }
+  var taxable = I.taxable, basis = I.taxable*I.basisPct/100, cash = I.cash, hsa = I.hsa;
+  var maxAge0 = Math.max.apply(null, ppl.map(function(q){return q.age0;}));
+  var years = Math.max(1, Math.min(60, I.endAge - maxAge0 + 1));
+  var rows = [], magiHist = {}, statusHist = {}, tot = { fed:0, state:0, pen:0, aca:0, irmaa:0, medicare:0, niit:0, conv:0, shortfallAge:null, rmdPenaltyRisk:0 };
+  var status = I.status;
+  for (var y = 0; y < years; y++) {
+    var year = P.startYear + y, defl = Math.pow(1+ii, -(year - 2026)), scale = 1; // indexed items constant in real terms
+    // Marketplace: plan year Y uses the poverty guideline published in Y-1, worth F/(1+i) in 2026 dollars.
+    // IRMAA: premium year Y lines (indexed) apply to Y-2 income, so in 2026 dollars the line is T x (1+i)^2.
+    var fplScale = 1/(1+ii), irScale = Math.pow(1+ii, 2), margin = (I.margin === undefined ? 3 : I.margin)/100;
+    var death = I.death && I.death.on && n === 2 ? I.death : null;
+    ppl.forEach(function(q, k){ q.ageNow = q.age0 + y; });
+    if (death) { var dq = ppl[death.who];
+      if (dq.alive && dq.ageNow > death.age) { // dies at end of the year at that age; rollover to survivor
+        dq.alive = false; var s = ppl[1-death.who]; s.ira += dq.k401 + dq.ira; s.roth += dq.roth; dq.k401 = dq.ira = dq.roth = 0; } }
+    var alive = ppl.filter(function(q){return q.alive;});
+    var stY = (status === 'mfj' && alive.length === 2) ? 'mfj' : 'single';
+    var widowed = alive.length < n;
+    // fixed income
+    var wages = 0, pension = 0, ss = 0, ssBy = [], survInfo = null;
+    ppl.forEach(function(q, k){
+      var a = q.ageNow, p = q.p;
+      if (!q.alive) { ssBy[k]=0; return; }
+      if (a < p.retire) wages += p.salary; else if (a < p.ptEnd) wages += p.partTime;
+      if (a >= p.pensionStart) pension += p.pension;
+      ssBy[k] = a >= p.claim ? p.ssFra*12*ssFactor(p.claim, q.by) : 0;
+    });
+    if (widowed) { // survivor keeps larger of the two benefits (simplified) and a share of the deceased pension
+      var dk = death.who, sk = 1-dk, dp = ppl[dk];
+      var sp = ppl[sk], survStart = Math.max(60, sp.age0 + (death.age + 1 - dp.age0));
+      var sb = survivorBenefit(dp.p.ssFra, dp.by, dp.p.claim, death.age, survStart, sp.by);
+      survInfo = { start: survStart, annual: sb.annual, survF: sb.survF, limit: sb.limit, base: sb.base, claimed: sb.claimed, own: ssBy[sk] };
+      if (sp.ageNow >= survStart && sb.annual > ssBy[sk]) ssBy[sk] = sb.annual;
+      if (dp.age0 + y >= dp.p.pensionStart) pension += dp.p.pension*I.death.pensionSurv/100;
+    }
+    ssBy.forEach(function(v){ ss += v; });
+    var spend = I.spend*(widowed ? I.death.spendPct/100 : 1);
+    var anyRetired = alive.some(function(q){ return q.ageNow >= q.p.retire; });
+    // RMDs from prior year-end balances
+    var rmd = 0, rmdBy = [];
+    ppl.forEach(function(q,k){ rmdBy[k]=0; if(!q.alive) return; if (q.ageNow >= rmdStartAge(q.by)) { var dv = rmdDivisor(q.ageNow);
+      var bal = q.ira + (q.ageNow >= q.p.retire ? q.k401 : 0); // still-working exception for current employer plan
+      rmdBy[k] = Math.min(bal, bal/dv); rmd += rmdBy[k]; } });
+    // health coverage
+    var acaPeople = alive.filter(function(q){ return q.ageNow < 65 && q.ageNow >= q.p.retire; }).length;
+    var mcPeople = alive.filter(function(q){ return q.ageNow >= 65; }).length;
+    var lookMagi = magiHist[year-2] !== undefined ? magiHist[year-2] : (opts.priorMagi !== undefined ? opts.priorMagi : null);
+    var lookScale = magiHist[year-2] !== undefined ? irScale : 1; // same-year income stands in for 2027 and 2028
+    var tierStatus = (magiHist[year-2] !== undefined && statusHist[year-2]) ? statusHist[year-2] : stY; // POMS HI 01101.020: the table follows the filing status on the lookback return
+    var lce = widowed && statusHist[year-2] === 'mfj'; // lookback year was joint: SSA-44 life-changing event
+    // Opening-balance nominal interest is a current taxable cash flow.
+    // Divide by annual inflation for this model's end-year real-dollar convention.
+    var cashInterest = cash*(I.cashRet/100)/(1+ii);
+    // decision variables solved iteratively
+    var draws, conv = 0, tax = 0, health = 0, res;
+    function evalYear(conv, draws) {
+      var ord = wages + pension + cashInterest + rmd + conv + draws.pre, gains = draws.taxGain;
+      var otherForSS = ord + gains;
+      var tss = taxableSS(ss, otherForSS, stY, defl);
+      var agi = ord + gains + tss, magiAca = agi + (ss - tss);
+      var n65 = alive.filter(function(q){return q.ageNow >= 65;}).length;
+      var ded = deduction(stY, n65, agi, year, scale, defl);
+      var ordTI = Math.max(0, ord + tss - ded), ltcgTI = Math.max(0, Math.min(gains, ord + tss + gains - ded));
+      var fed = federalTax(ordTI, ltcgTI, stY, scale) + niit(gains + cashInterest, agi, stY, defl);
+      var stTax = I.stateRate/100*Math.max(0, ordTI + ltcgTI);
+      var pen = draws.pen;
+      var aca = 0, ptc = 0, acaInfo = null;
+      if (acaPeople > 0) { var bm = I.benchmark*12*acaPeople; acaInfo = coverageScenario(magiAca, alive.length, bm, I.aca, fplScale, I.medExp); ptc = acaInfo.ptc; aca = acaInfo.premium; } // expansion state: Medicaid assumed, no premium modeled
+      var mc = 0, tier = 0, tierLce = null, lm = null, lsc = lookScale;
+      if (mcPeople > 0) { lm = lookMagi === null ? agi : lookMagi; if (lookMagi === null) lsc = 1; tier = irmaaTier(lm, tierStatus, lsc, 1/(1+I.infl/100)); mc = mcPeople*12*(P.irmaa.baseB + irmaaMonthly(tier));
+        if (lce) tierLce = irmaaTier(agi, stY, 1, 1/(1+I.infl/100)); }
+      return { ord:ord, gains:gains, tss:tss, agi:agi, magi:magiAca, ded:ded, ordTI:ordTI, ltcgTI:ltcgTI, fed:fed, niit:niit(gains + cashInterest,agi,stY,defl), state:stTax, pen:pen,
+        aca:aca, ptc:ptc, acaInfo:acaInfo, mc:mc, tier:tier, tierLce:tierLce, lookMagi:lm, lookScale:lsc, total: fed + stTax + pen };
+    }
+    function draw(need) { // returns draws without mutating balances
+      var d = { pre:0, preBy:[0,0], k401By:[0,0], iraBy:[0,0], rothBy:[0,0], roth:0, taxable:0, taxGain:0, cash:0, hsa:0, pen:0, short:0 };
+      if (need <= 0) return d;
+      var gainFrac = taxable > 0 ? Math.max(0, 1 - basis/taxable) : 0;
+      // pools
+      var pools = [];
+      function pfAge(a){ return a >= 60 ? 0 : (a === 59 ? 0.5 : 1); } // year a person turns 59: half the year is after 59 and a half (mid year proxy)
+      function exemptPre(q){ return pfAge(q.ageNow) < 1; }
+      ppl.forEach(function(q,k){ if(!q.alive) return;
+        var rule55 = q.p.retire >= 55 && q.ageNow >= q.p.retire;
+        pools.push({ type:'pre', sub:'k401', k:k, bal:q.k401, exempt: exemptPre(q) || rule55, pf: rule55 ? 0 : pfAge(q.ageNow) });
+        pools.push({ type:'pre', sub:'ira', k:k, bal:q.ira, exempt: exemptPre(q), pf: pfAge(q.ageNow) });
+        pools.push({ type:'roth', k:k, bal:q.roth, exempt: exemptPre(q), pf: pfAge(q.ageNow) });
+      });
+      // adjust pretax pool balances for RMD and conversion already taken
+      pools.forEach(function(pl){ if (pl.type==='pre') { var q = ppl[pl.k]; var used = (rmdTaken[pl.k]||{}), cv = (curConv[pl.k]||{}); pl.bal = Math.max(0, pl.bal - (used[pl.sub]||0) - (cv[pl.sub]||0)); } if (pl.type==='roth') pl.bal += (convTo[pl.k]||0); });
+      pools.push({ type:'cash', bal:cash, exempt:true }); pools.push({ type:'taxable', bal:taxable, exempt:true });
+      var order;
+      var ex = function(t){ return pools.filter(function(p){ return p.type===t && p.exempt; }); };
+      var nx = function(t){ return pools.filter(function(p){ return p.type===t && !p.exempt; }); };
+      var cashTax = pools.filter(function(p){ return p.type==='cash'||p.type==='taxable'; });
+      if (strategy === 'pretaxFirst') order = [ex('pre'), cashTax, ex('roth'), nx('pre'), nx('roth')];
+      else if (strategy === 'proportional') order = [ex('pre').concat(cashTax).concat(ex('roth')), nx('pre'), nx('roth')];
+      else order = [cashTax.slice(0,1), cashTax.slice(1), ex('pre'), ex('roth'), nx('pre'), nx('roth')];
+      // gross-up for penalties is handled by outer iteration (pen adds to need)
+      var left = need;
+      order.forEach(function(group){
+        if (left <= 1e-9) return;
+        var total = group.reduce(function(s,p){return s+p.bal;},0); if (total <= 0) return;
+        var take = Math.min(left, total);
+        group.forEach(function(pl){ var t = take*pl.bal/total; if (t<=0) return;
+          if (pl.type==='pre') { d.pre += t; d.preBy[pl.k]+=t; if (pl.sub==='k401') d.k401By[pl.k]+=t; else d.iraBy[pl.k]+=t; d.pen += P.earlyPenalty*(pl.pf||0)*t; }
+          else if (pl.type==='roth') { d.roth += t; d.rothBy[pl.k]+=t; d.pen += P.earlyPenalty*(pl.pf||0)*t; }
+          else if (pl.type==='cash') d.cash += t; else { d.taxable += t; d.taxGain += t*gainFrac; } });
+        left -= take;
+      });
+      d.short = Math.max(0, left); return d;
+    }
+    // RMD and conversion bookkeeping per person (taken from IRA first then 401k)
+    var rmdTaken = [], convTo = [], curConv = [];
+    ppl.forEach(function(q,k){ var t = rmdBy[k]; var fromIra = Math.min(q.ira, t); rmdTaken[k] = { ira: fromIra, k401: t - fromIra }; convTo[k] = 0; });
+    function convSplit(c) { // allocate conversion across people's remaining pretax, older first
+      var alloc = [], left = c;
+      var idx = ppl.map(function(q,k){return k;}).sort(function(a,b){ return ppl[b].ageNow - ppl[a].ageNow; });
+      idx.forEach(function(k){ var q = ppl[k]; alloc[k] = { ira:0, k401:0 }; if (!q.alive || left<=0) return;
+        var avI = Math.max(0, q.ira - rmdTaken[k].ira), avK = q.ageNow >= q.p.retire ? Math.max(0, q.k401 - rmdTaken[k].k401) : 0;
+        var a = Math.min(left, avI); alloc[k].ira = a; left -= a; var b = Math.min(left, avK); alloc[k].k401 = b; left -= b; });
+      return alloc;
+    }
+    function convCapacity() { var s = 0; ppl.forEach(function(q,k){ if (!q.alive) return; s += Math.max(0, q.ira - rmdTaken[k].ira) + (q.ageNow >= q.p.retire ? Math.max(0, q.k401 - rmdTaken[k].k401) : 0); }); return s; }
+    var oneConversion = opts.singleConversion && opts.singleConversion.year === year;
+    var convEligible = (strategy === 'bracketFill' || oneConversion) && anyRetired && alive.some(function(q){ return q.ageNow < rmdStartAge(q.by) && q.ageNow >= q.p.retire; });
+    var hsaUse = 0;
+    draws = draw(0); var it;
+    for (it = 0; it < 40; it++) {
+      if (convEligible) {
+        var cap = convCapacity(), top = bracketTop(oneConversion ? opts.singleConversion.rate : I.bracket, stY, scale);
+        var lo = 0, hi = cap;
+        var okFn = function(c){ var e = evalYear(c, draws);
+          if (e.ordTI > top + 0.5) return false;
+          var acaLim = 4*fpl(alive.length)*fplScale*(1-margin);
+          if (!oneConversion && I.guardAca && acaPeople > 0 && I.aca === 'current' && e.magi > acaLim) {
+            var e0 = evalYear(0, draws); if (e0.magi <= acaLim) return false; }
+          if (!oneConversion && I.guardIrmaa && alive.some(function(q){ return q.ageNow + 2 >= 65; })) {
+            var lim = P.irmaa[stY][0]*irScale*(1-margin); if (e.agi > lim) { var e1 = evalYear(0, draws); if (e1.agi <= lim) return false; } }
+          return true; };
+        if (!okFn(0)) conv = 0; else if (okFn(cap)) conv = cap; else {
+          for (var b = 0; b < 40; b++) { var mid = (lo+hi)/2; if (okFn(mid)) lo = mid; else hi = mid; } conv = Math.floor(lo); }
+      }
+      // conversion moves to Roth (not spendable this year in this model)
+      var ca = convSplit(conv); curConv = ca; convTo = []; ppl.forEach(function(q,k){ convTo[k] = 0; });
+      var e = evalYear(conv, draws);
+      hsaUse = Math.min(hsa, e.mc * (mcPeople>0 ? 1 : 0)); // HSA pays Medicare premiums from 65 (qualified expense)
+      var need = spend + e.aca + e.mc - hsaUse + e.fed + e.state + e.pen - (wages + pension + ss + rmd + cashInterest);
+      var nd = draw(need);
+      // shift pools for conversion amounts: reduce pretax available
+      if (Math.abs(nd.pre - draws.pre) < 0.5 && Math.abs(nd.taxGain - draws.taxGain) < 0.5 && Math.abs(nd.pen - draws.pen) < 0.05 && it > 1) { draws = nd; break; }
+      draws = nd;
+    }
+    res = evalYear(conv, draws);
+    hsaUse = Math.min(hsa, res.mc);
+    var surplus = Math.max(0, (wages + pension + ss + rmd + cashInterest) - (spend + res.aca + res.mc - hsaUse + res.total));
+    // apply flows
+    var ca2 = convSplit(conv); curConv = ca2;
+    ppl.forEach(function(q,k){ if (!q.alive) return;
+      q.ira -= rmdTaken[k].ira + ca2[k].ira + draws.iraBy[k]; q.k401 -= rmdTaken[k].k401 + ca2[k].k401 + draws.k401By[k];
+      q.roth += ca2[k].ira + ca2[k].k401 - draws.rothBy[k];
+      q.ira = Math.max(0,q.ira); q.k401 = Math.max(0,q.k401); q.roth = Math.max(0,q.roth); });
+    if (taxable > 0 && draws.taxable > 0) { basis -= basis*draws.taxable/taxable; }
+    taxable -= draws.taxable; cash -= draws.cash; hsa -= hsaUse;
+    taxable += surplus; basis += surplus;
+    if (draws.short > 1 && tot.shortfallAge === null) tot.shortfallAge = ppl[0].ageNow;
+    magiHist[year] = res.agi; statusHist[year] = stY; // IRMAA uses MAGI = AGI plus tax-exempt interest (none modeled)
+    var row = { year:year, ages: ppl.map(function(q){ return q.alive ? q.ageNow : null; }), status:stY, wages:wages, pension:pension, cashInterest:cashInterest, ss:ss, rmd:rmd, conv:conv,
+      wPre:draws.pre, wRoth:draws.roth, wTaxable:draws.taxable, wCash:draws.cash, hsaUse:hsaUse, gains:draws.taxGain,
+      agi:res.agi, magi:res.magi, ordTI:res.ordTI, ltcgTI:res.ltcgTI, tss:res.tss, ded:res.ded, fed:res.fed, niit:res.niit, state:res.state, pen:res.pen,
+      aca:res.aca, ptc:res.ptc, acaRatio: res.acaInfo ? res.acaInfo.ratio : null, acaMedicaid: !!(res.acaInfo && res.acaInfo.medicaid), acaPeople:acaPeople, mc:res.mc, tier:res.tier, mcPeople:mcPeople,
+      short:draws.short, spend:spend, marg: marginalRate(res.ordTI, stY, scale),
+      top12: bracketTop(0.12, stY) + res.ded, top22: bracketTop(0.22, stY) + res.ded, fpl400: 4*fpl(alive.length)*fplScale, irmaa1: P.irmaa[stY][0]*irScale,
+      fplReal: fpl(alive.length)*fplScale, tierLce:res.tierLce, lookMagi:res.lookMagi, lookLine: mcPeople > 0 ? P.irmaa[stY][0]*res.lookScale : null, survInfo: survInfo, widowed: widowed,
+      acaNear: !!(res.acaInfo && I.aca === 'current' && res.acaInfo.ratio <= 4 && res.acaInfo.ratio > 4*(1-0.05)),
+      acaOver: !!(res.acaInfo && I.aca === 'current' && res.acaInfo.ratio > 4),
+      irmaaNear: mcPeople > 0 && res.tier === 0 && res.lookMagi !== null && res.lookMagi > 0.95*P.irmaa[stY][0]*res.lookScale,
+      irmaaNextNear: alive.some(function(q){ return q.ageNow + 2 >= 65; }) && res.agi <= P.irmaa[stY][0]*irScale && res.agi > 0.95*P.irmaa[stY][0]*irScale };
+    tot.fed += res.fed; tot.state += res.state; tot.pen += res.pen; tot.aca += res.aca; tot.medicare += res.mc;
+    tot.irmaa += mcPeople*12*irmaaMonthly(res.tier); tot.niit += res.niit; tot.conv += conv;
+    // growth
+    ppl.forEach(function(q){ q.ira *= 1+r; q.k401 *= 1+r; q.roth *= 1+r; });
+    taxable *= 1+r; cash /= 1+ii; hsa *= 1+r;
+    row.end = { pre: ppl.reduce(function(s,q){return s+q.ira+q.k401;},0), roth: ppl.reduce(function(s,q){return s+q.roth;},0), taxable:taxable, cash:cash, hsa:hsa };
+    rows.push(row);
+  }
+  var last = rows[rows.length-1].end;
+  var endTotal = last.pre + last.roth + last.taxable + last.cash + last.hsa;
+  tot.taxes = tot.fed + tot.state + tot.pen;
+  tot.end = last; tot.endTotal = endTotal; tot.endAfterTax = endTotal - last.pre*I.heirRate/100 - last.hsa*I.heirRate/100;
+  return { rows:rows, totals:tot, strategy:strategy };
+}
+function phases(I) {
+  var out = [];
+  for (var i = 0; i < I.n; i++) { var p = I.people[i], by = P.startYear - p.age;
+    out.push({ retire:p.retire, claim:p.claim, medicare:65, rmd:rmdStartAge(by), fra: fraMonths(by)/12, by:by, gap: Math.max(0, Math.min(p.claim, rmdStartAge(by)) - Math.max(p.retire, p.age)), acaYears: Math.max(0, 65 - Math.max(p.retire, p.age)) }); }
+  return out;
+}
+var API = { P:P, ordinaryTax:ordinaryTax, federalTax:federalTax, taxableSS:taxableSS, seniorDeduction:seniorDeduction, deduction:deduction, niit:niit,
+  coverageScenario:coverageScenario, irmaaBoundary:irmaaBoundary, conversionRoom:conversionRoom, irmaaTier:irmaaTier, irmaaMonthly:irmaaMonthly, fpl:fpl, applicablePct:applicablePct, premiumTaxCredit:premiumTaxCredit, fraMonths:fraMonths,
+  ssFactor:ssFactor, rmdStartAge:rmdStartAge, rmdDivisor:rmdDivisor, parseMoney:parseMoney, defaults:defaults, sanitize:sanitize, project:project,
+  STRATS:STRATS, phases:phases, survFraMonths:survFraMonths, survFactor:survFactor, survivorBenefit:survivorBenefit, bracketTop:bracketTop, marginalRate:marginalRate, clamp:clamp };
+if (typeof module !== 'undefined' && module.exports) module.exports = API; else root.RTE = API;
+})(this);
+
+var RULES =[
+ {
+  "id": "brackets",
+  "topic": "Federal tax brackets, tax year 2026",
+  "value": "Single: 10% to $12,400, 12% to $50,400, 22% to $105,700, 24% to $201,775, 32% to $256,225, 35% to $640,600. Joint: $24,800, $100,800, $211,400, $403,550, $512,450, $768,700.",
+  "src": "IRS IR-2025-103 and Rev. Proc. 2025-32",
+  "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+  "asOf": "2025-10-09, opened 2026-10-26"
+ },
+ {
+  "id": "std",
+  "topic": "Standard deduction, 2026",
+  "value": "$16,100 single, $32,200 married filing jointly.",
+  "src": "IRS IR-2025-103",
+  "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+  "asOf": "2025-10-09, opened 2026-10-26"
+ },
+ {
+  "id": "addl65",
+  "topic": "Additional standard deduction at 65 or older, 2026",
+  "value": "$1,650 per married person; $2,050 if unmarried.",
+  "src": "Rev. Proc. 2025-32, section 4.14",
+  "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "senior",
+  "topic": "Enhanced deduction for seniors (2025 through 2028)",
+  "value": "$6,000 per person 65 or older, reduced by 6% of MAGI over $75,000 ($150,000 joint). Not available after 2028 under current law.",
+  "src": "IRS FS-2025-03",
+  "url": "https://www.irs.gov/newsroom/one-big-beautiful-bill-act-tax-deductions-for-working-americans-and-seniors",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "ltcg",
+  "topic": "Long term capital gain rate thresholds, 2026",
+  "value": "0% up to $49,450 single, $98,900 joint; 15% up to $545,500 single, $613,700 joint; 20% above.",
+  "src": "Rev. Proc. 2025-32, section 4.03",
+  "url": "https://www.irs.gov/pub/irs-drop/rp-25-32.pdf",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "niit",
+  "topic": "Net investment income tax",
+  "value": "3.8% on the lesser of net investment income or MAGI over $200,000 single, $250,000 joint (not indexed).",
+  "src": "IRS Net Investment Income Tax page",
+  "url": "https://www.irs.gov/individuals/net-investment-income-tax",
+  "asOf": "reviewed 2026-07-01, opened 2026-10-26"
+ },
+ {
+  "id": "ssTax",
+  "topic": "Taxation of Social Security benefits",
+  "value": "Combined income over $25,000 single or $32,000 joint: up to 50% taxable; over $34,000 or $44,000: up to 85% (not indexed).",
+  "src": "IRS Publication 915",
+  "url": "https://www.irs.gov/publications/p915",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "ssEarly",
+  "topic": "Social Security early claiming reduction",
+  "value": "5/9 of 1% per month for the first 36 months before full retirement age, 5/12 of 1% per month beyond that. Age 62 is 70% of the full benefit for people born 1960 or later.",
+  "src": "SSA Starting Your Retirement Benefits Early",
+  "url": "https://www.ssa.gov/benefits/retirement/planner/agereduction.html",
+  "asOf": "opened 2026-10-26; re-fetched 2026-10-26 with the snippet matched word for word. ssa.gov refuses plain scripted requests (HTTP 403), so a check in a normal browser is advised"
+ },
+ {
+  "id": "ssFra",
+  "topic": "Full retirement age",
+  "value": "66 for 1943 to 1954 births, rising 2 months per year to 67 for 1960 and later.",
+  "src": "SSA Starting Your Retirement Benefits Early",
+  "url": "https://www.ssa.gov/benefits/retirement/planner/agereduction.html",
+  "asOf": "opened 2026-10-26; re-fetched 2026-10-26 with the snippet matched word for word. ssa.gov refuses plain scripted requests (HTTP 403), so a check in a normal browser is advised"
+ },
+ {
+  "id": "ssDrc",
+  "topic": "Delayed retirement credits",
+  "value": "8% per year (2/3 of 1% per month) for 1943 or later births; increase stops at 70.",
+  "src": "SSA Delayed Retirement Credits",
+  "url": "https://www.ssa.gov/benefits/retirement/planner/delayret.html",
+  "asOf": "opened 2026-10-26; re-fetched 2026-10-26 with the snippet matched word for word. ssa.gov refuses plain scripted requests (HTTP 403), so a check in a normal browser is advised"
+ },
+ {
+  "id": "ssSurv",
+  "topic": "Survivor benefits",
+  "value": "From 71.5% of the deceased benefit at 60 up to 100% at survivor full retirement age. If the deceased claimed early, the survivor amount is limited to the larger of the reduced benefit or 82.5% of the full benefit.",
+  "src": "SSA survivor benefit chart",
+  "url": "https://www.ssa.gov/benefits/survivors/survivorchartred.html",
+  "asOf": "opened 2026-10-26; re-fetched 2026-10-26 with the snippet matched word for word. ssa.gov refuses plain scripted requests (HTTP 403), so a check in a normal browser is advised"
+ },
+ {
+  "id": "ssSurvFra",
+  "topic": "Survivor full retirement age",
+  "value": "66 and 2 months for 1957 births, rising to 67 for 1962 and later; survivor benefits can start at 60.",
+  "src": "20 CFR 404.409(b)",
+  "url": "https://www.ecfr.gov/current/title-20/section-404.409",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "ssRibLim",
+  "topic": "Survivor limit when the deceased claimed early",
+  "value": "Limited to the larger of 82.5% of the full benefit or the reduced amount the deceased would have received.",
+  "src": "SSA POMS RS 00615.320",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0300615320",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "irmaa",
+  "topic": "Medicare Part B premium and IRMAA, 2026",
+  "value": "Standard Part B $202.90 a month. Surcharges start above $109,000 single, $218,000 joint MAGI; tiers at $137k, $171k, $205k, $500k single and $274k, $342k, $410k, $750k joint.",
+  "src": "CMS 2026 Medicare Parts A and B Premiums fact sheet",
+  "url": "https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles",
+  "asOf": "2025-11-14, opened 2026-10-26"
+ },
+ {
+  "id": "irmaaD",
+  "topic": "Part D IRMAA, 2026",
+  "value": "$14.50, $37.50, $60.40, $83.30, $91.00 a month by tier, added to the plan premium.",
+  "src": "CMS 2026 fact sheet",
+  "url": "https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles",
+  "asOf": "2025-11-14, opened 2026-10-26"
+ },
+ {
+  "id": "irmaaLook",
+  "topic": "IRMAA two year lookback",
+  "value": "The premium year uses the tax return from two years earlier (for example 2026 premiums use 2024 MAGI).",
+  "src": "SSA POMS HI 01101.020",
+  "url": "https://secure.ssa.gov/poms.nsf/lnx/0601101020",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "irmaaLower",
+  "topic": "Asking for a lower IRMAA after a life changing event",
+  "value": "Form SSA-44 lets a person ask SSA to use a more recent year of income after events such as work stopping.",
+  "src": "SSA Lower your IRMAA",
+  "url": "https://www.ssa.gov/medicare/lower-irmaa",
+  "asOf": "opened 2026-10-26; re-fetched 2026-10-26 with the snippet matched word for word. ssa.gov refuses plain scripted requests (HTTP 403), so a check in a normal browser is advised"
+ },
+ {
+  "id": "fpl",
+  "topic": "Federal poverty guidelines used for 2027 marketplace coverage",
+  "value": "2026 guidelines: $15,960 for 1 person, $21,640 for 2; prior year guidelines set the next year of savings.",
+  "src": "HealthCare.gov FPL glossary",
+  "url": "https://www.healthcare.gov/glossary/federal-poverty-level-fpl/",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "medicaid",
+  "topic": "Low income and Medicaid",
+  "value": "Below 138% of the poverty level, people in expansion states may qualify for Medicaid; below 100%, marketplace savings are generally not available.",
+  "src": "HealthCare.gov FPL glossary",
+  "url": "https://www.healthcare.gov/glossary/federal-poverty-level-fpl/",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "aca27",
+  "topic": "Premium tax credit applicable percentages, 2027 (current law)",
+  "value": "Under 133% FPL 2.15%; 133 to 150% 3.23 to 4.30%; 150 to 200% 4.30 to 6.78%; 200 to 250% 6.78 to 8.66%; 250 to 300% 8.66 to 10.22%; 300 to 400% 10.22%. No credit above 400%.",
+  "src": "IRS Rev. Proc. 2026-26 (IRB 2026-31)",
+  "url": "https://www.irs.gov/pub/irs-drop/rp-26-26.pdf",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "aca26",
+  "topic": "Premium tax credit applicable percentages, 2026",
+  "value": "2.10% to 9.96%, with the 400% FPL limit back in force.",
+  "src": "IRS Rev. Proc. 2025-25",
+  "url": "https://www.irs.gov/pub/irs-drop/rp-25-25.pdf",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "acaEnh",
+  "topic": "Enhanced credit rules (expired after 2025)",
+  "value": "0% up to 150% FPL, rising to 8.5% at 300 to 400%, and 8.5% with no upper limit above 400%. Applied only to tax years before January 1, 2026.",
+  "src": "26 U.S.C. 36B(b)(3)(A)(iii)",
+  "url": "https://www.law.cornell.edu/uscode/text/26/36B",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "acaStatus",
+  "topic": "Status of enhanced credits",
+  "value": "Expired at the end of 2025 and not extended as of October 6, 2026 (KFF). Congress could still act; the page shows both rule sets.",
+  "src": "KFF Midterm Election Update, Oct 6, 2026; CRS R48290",
+  "url": "https://www.kff.org/elections/midterm-election-update-the-affordable-care-act-marketplaces/",
+  "asOf": "2026-10-06, opened 2026-10-26"
+ },
+ {
+  "id": "acaRepay",
+  "topic": "Repaying excess advance credit",
+  "value": "From tax year 2026, any excess advance premium tax credit must be repaid in full; the old repayment caps are gone.",
+  "src": "IRS, repayment caps eliminated (Pub. L. 119-21 section 71305)",
+  "url": "https://www.irs.gov/tax-professionals/eitc-central/repayment-caps-eliminated-for-excess-advance-payments-of-the-premium-tax-credit",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "rmdAge",
+  "topic": "RMD starting age (SECURE 2.0)",
+  "value": "73 for people who reach 72 after 2022 and 73 before 2033; 75 for people who reach 74 after 2032. Page uses 73 for 1951 to 1959 births and 75 for 1960 and later.",
+  "src": "Final RMD regulations, 89 FR 58886 (July 19, 2024); 1959 cohort in proposed regs 89 FR 58644",
+  "url": "https://www.federalregister.gov/documents/2024/07/19/2024-14542/required-minimum-distributions",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "rmdTable",
+  "topic": "Uniform Lifetime Table",
+  "value": "Divisor 26.5 at 73, 24.6 at 75, 20.2 at 80, 16.0 at 85, 12.2 at 90.",
+  "src": "IRS Publication 590-B (2025), Appendix B, Table III",
+  "url": "https://www.irs.gov/pub/irs-pdf/p590b.pdf",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "rmdPen",
+  "topic": "Missed RMD excise tax",
+  "value": "25% of the amount not withdrawn; 10% if corrected within two years.",
+  "src": "Final RMD regulations, 89 FR 58886",
+  "url": "https://www.federalregister.gov/documents/2024/07/19/2024-14542/required-minimum-distributions",
+  "asOf": "reviewed 2026-01-29, opened 2026-10-26"
+ },
+ {
+  "id": "early",
+  "topic": "Early distributions and exceptions",
+  "value": "Additional 10% tax before 59 and a half unless an exception applies; separation from service in or after the year you reach 55 applies to the plan, not IRAs; equal payments (72(t)) is an exception.",
+  "src": "IRS Topic 558",
+  "url": "https://www.irs.gov/taxtopics/tc558",
+  "asOf": "reviewed 2025-12-11, opened 2026-10-26"
+ },
+ {
+  "id": "roth5",
+  "topic": "Roth conversion five year rule",
+  "value": "Taking converted amounts out of a Roth IRA within 5 years of the conversion year, before 59 and a half, may trigger the 10% additional tax.",
+  "src": "IRS Publication 590-B (2025)",
+  "url": "https://www.irs.gov/pub/irs-pdf/p590b.pdf",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "hsa",
+  "topic": "HSA after 65",
+  "value": "Medicare premiums (not Medigap) are qualified medical expenses at 65 or older; the additional 20% tax on non medical use ends at 65, but income tax still applies.",
+  "src": "IRS Publication 969",
+  "url": "https://www.irs.gov/publications/p969",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "home",
+  "topic": "Home sale exclusion",
+  "value": "Up to $250,000 of gain on a main home ($500,000 joint) may be excluded if tests are met.",
+  "src": "IRS Topic 701",
+  "url": "https://www.irs.gov/taxtopics/tc701",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "hecm",
+  "topic": "Reverse mortgage (HECM)",
+  "value": "For homeowners 62 and older; balance grows as interest and fees are added; borrower must keep paying property taxes and insurance and live in the home.",
+  "src": "CFPB What is a reverse mortgage",
+  "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-reverse-mortgage-en-224/",
+  "asOf": "reviewed 2026-08-28, opened 2026-10-26"
+ },
+ {
+  "id": "heloc",
+  "topic": "Home equity line of credit",
+  "value": "A loan secured by the home, usually at a variable rate, with required payments; falling behind can mean losing the home.",
+  "src": "CFPB What is a home equity line of credit",
+  "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-line-of-credit-en-107/",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "tax27",
+  "topic": "2027 tax year figures",
+  "value": "Not yet released by the IRS as of October 26, 2026. The page uses 2026 figures as today dollar stand ins for all future years.",
+  "src": "IRS Inflation adjusted tax items by tax year",
+  "url": "https://www.irs.gov/newsroom/inflation-adjusted-tax-items-by-tax-year",
+  "asOf": "opened 2026-10-26"
+ },
+ {
+  "id": "qcd",
+  "topic": "Qualified charitable distributions",
+  "value": "IRA owners 70 and a half or older can transfer IRA money directly to a qualifying charity; the amount is excluded from income, counts toward the RMD, and is capped at $111,000 per person for 2026.",
+  "src": "IRS Publication 590-B (age) and IRS Notice 2025-67 (2026 limit)",
+  "url": "https://www.irs.gov/pub/irs-drop/n-25-67.pdf",
+  "asOf": "opened 2026-10-26; age rule from https://www.irs.gov/publications/p590b"
+ },
+ {
+  "id": "cashInterest",
+  "topic": "Taxable cash interest and model timing",
+  "value": "Nominal opening-cash yield enters ordinary income, Social Security taxation, ACA MAGI and NIIT. It is paid into current cash flow; cash principal only deflates, so yield is not counted twice.",
+  "src": "IRS Topic 403; explicit model timing assumption",
+  "url": "https://www.irs.gov/taxtopics/tc403",
+  "asOf": "reviewed 2026-10-27"
+ },
+ {
+  "id": "acaEligibility2027",
+  "topic": "2027 Marketplace immigration eligibility",
+  "value": "The below-100%-FPL immigration exception ended after 2025. Savings in 2027 require qualifying immigration status; enrollment-estimate exceptions have separate conditions. This tool does not determine eligibility.",
+  "src": "CMS 2027 final rule, P.L.119-21 section 71302; HealthCare.gov",
+  "url": "https://www.govinfo.gov/content/pkg/FR-2026-05-20/html/2026-10050.htm",
+  "asOf": "reviewed 2026-10-27"
+ },
+ {
+  "id": "medicaid2027",
+  "topic": "Medicaid assumption, not eligibility calculation",
+  "value": "Expansion-state residence and income alone do not establish eligibility. Certain adults 19 to 64 face community-engagement requirements generally by January 1,2027, with exemptions. Only an explicit user assumption of verified eligibility permits the $0-premium scenario.",
+  "src": "CMS-2454-IFC fact sheet",
+  "url": "https://www.cms.gov/newsroom/fact-sheets/medicaid-community-engagement-requirement-certain-individuals-interim-final-rule-comment-period-cms",
+  "asOf": "June 1,2026; reviewed 2026-10-27"
+ },
+ {
+  "id": "ssFairness",
+  "topic": "WEP/GPO repeal and the earnings test",
+  "value": "WEP and GPO ended for benefits payable from January 2024. The retirement earnings test before full retirement age is a separate issue; it is not calculated here.",
+  "src": "SSA Social Security Fairness Act",
+  "url": "https://www.ssa.gov/benefits/retirement/social-security-fairness-act.html",
+  "asOf": "Reviewed 2026-10-27"
+ }
+];
+if (typeof module !== 'undefined') module.exports = RULES;
+
+(function(){
+'use strict';
+var E = window.RTE, P = E.P;
+var $ = function(s,r){ return (r||document).querySelector(s); }, $$ = function(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+function m(x){ if (x===null||x===undefined||!isFinite(x)) return 'n/a'; var neg = x < 0; x = Math.round(Math.abs(x)); return (neg?'minus ':'') + '$' + x.toLocaleString('en-US'); }
+function mk(x){ if (!isFinite(x)) return 'n/a'; var a=Math.abs(x); var s = a>=1e6 ? (a/1e6).toFixed(a>=1e7?1:2).replace(/\.0+$/,'')+'M' : a>=1e4 ? Math.round(a/1e3)+'k' : Math.round(a).toLocaleString('en-US'); return (x<0?'minus ':'')+'$'+s; }
+function pc(x,d){ return (x*100).toFixed(d===undefined?0:d)+'%'; }
+var DEFS = { IRMAA:'Income related monthly adjustment amount: an extra charge on Medicare Part B and D premiums when income from two years earlier is above set lines.',
+ MAGI:'Modified adjusted gross income: AGI with some items added back. For marketplace credits that includes untaxed Social Security; for Medicare it adds tax exempt interest.',
+ AGI:'Adjusted gross income: income that is taxable, such as wages, pretax withdrawals, conversions, gains and the taxable part of Social Security, before the standard deduction.',
+ RMD:'Required minimum distribution: the amount the law requires to come out of pretax accounts each year once the starting age is reached.',
+ QCD:'Qualified charitable distribution: money sent directly from an IRA to a charity by someone 70 and a half or older. It counts toward the RMD and is left out of income.' };
+var TN = 0; function T(w, label){ TN++; return '<button type="button" class="term" aria-expanded="false" aria-controls="def'+TN+'">'+(label||w)+'</button><span class="defpop" id="def'+TN+'" role="note" hidden>'+DEFS[w]+'</span>'; }
+function spark(f){ f = Math.max(0, Math.min(1, isFinite(f) ? f : 0)); return '<svg class="spark" width="60" height="10" viewBox="0 0 60 10" aria-hidden="true" focusable="false"><rect width="60" height="10" rx="5" fill="#e5e1d6"/><rect width="'+Math.max(4,60*f).toFixed(1)+'" height="10" rx="5" fill="#0c7a5a"/></svg>'; }
+function metrics(res){ var gR = gapRows(res), aR = res.rows.filter(function(r){ return r.acaPeople > 0; });
+ var per = I.people.map(function(p,i){ return res.rows.filter(function(r){ var a = r.ages[i]; return a !== null && a < 65 && a >= p.retire; }).length; });
+ var t = res.totals; return { gap: gR.length, gapAvg: gR.length ? gR.reduce(function(s,r){ return s + r.agi; },0)/gR.length : 0, acaHH: aR.length, acaFirst: aR[0] || null, acaPer: per, short: t.shortfallAge, endTotal: t.endTotal, taxes: t.taxes }; }
+function yrsTxt(n){ return n + (n===1 ? ' year' : ' years'); }
+function gapRows(res){ return res.rows.filter(function(r){ return r.wages < 1 && r.ss < 1 && r.rmd < 1; }); }
+var LOADED = 'Starting example';
+var STATE = E.defaults(), I = null, RES = {}, chartStrat = 'conventional';
+
+/* ---------- presets ---------- */
+var PRESETS = {
+ single58: function(){ var d=E.defaults(); d.status='single'; d.people=[{age:58,retire:58,claim:67,ssFra:3100,k401:1150000,ira:250000,roth:40000,salary:0,partTime:0,ptEnd:60,pension:0,pensionStart:65}];
+  d.taxable=120000; d.basisPct=70; d.cash=50000; d.hsa=25000; d.home=520000; d.loan=90000; d.spend=78000; return d; },
+ couple62: function(){ var d=E.defaults(); d.people[0]=Object.assign(d.people[0],{age:62,retire:62,claim:67,ssFra:2600,k401:520000,ira:90000,roth:50000,salary:0,partTime:50000,ptEnd:64});
+  d.people[1]=Object.assign(d.people[1],{age:61,retire:61,claim:67,ssFra:1700,k401:160000,ira:60000,roth:20000,salary:0});
+  d.taxable=180000; d.basisPct=40; d.cash=70000; d.hsa=15000; d.spend=72000; return d; },
+ couple66: function(){ var d=E.defaults(); d.people[0]=Object.assign(d.people[0],{age:66,retire:64,claim:70,ssFra:3300,k401:0,ira:1900000,roth:80000,salary:0});
+  d.people[1]=Object.assign(d.people[1],{age:65,retire:63,claim:67,ssFra:2000,k401:0,ira:450000,roth:30000,salary:0});
+  d.taxable=300000; d.basisPct=55; d.cash=90000; d.hsa=40000; d.home=900000; d.loan=0; d.spend=110000; d.bracket=0.22; return d; },
+ low: function(){ var d=E.defaults(); d.status='single'; d.people=[{age:56,retire:56,claim:67,ssFra:1650,k401:210000,ira:30000,roth:15000,salary:0,partTime:18000,ptEnd:62,pension:0,pensionStart:65}];
+  d.taxable=20000; d.basisPct=80; d.cash=25000; d.hsa=4000; d.home=300000; d.loan=120000; d.spend=38000; d.benchmark=950; return d; }
+};
+
+/* ---------- field spec ---------- */
+var PF = [ ['age','Age in 2027','numeric',50,85], ['retire','Retirement age','numeric',40,85,'Age when full time work stops; an age below today means already retired'], ['claim','Social Security claim age','numeric',62,70],
+ ['ssFra','Social Security at full retirement age, per month','money',0,6000,'From your SSA statement'], ['salary','Salary until retirement','money',0,1e6],
+ ['k401','401(k) or 403(b), pretax','money',0,2e7], ['ira','Traditional IRA','money',0,2e7], ['roth','Roth accounts','money',0,2e7],
+ ['partTime','Part time income after retiring','money',0,300000], ['ptEnd','Part time work ends at age','numeric',50,85], ['pension','Pension per year','money',0,500000], ['pensionStart','Pension starts at age','numeric',50,85] ];
+var HF = [ ['taxable','Taxable brokerage balance','money',0,2e7], ['basisPct','Share of taxable balance that is cost basis (%)','numeric',0,100], ['cash','Cash and savings','money',0,1e7], ['hsa','Health savings account (HSA)','money',0,1e6] ];
+var HOME = [ ['home','Home value','money',0,2e7], ['loan','Mortgage balance','money',0,2e7] ];
+function fieldHTML(id, f, val){ var t = f[2]==='money' ? 'decimal' : 'numeric';
+ return '<div class="f"><label for="'+id+'">'+esc(f[1])+'</label><input id="'+id+'" type="text" inputmode="'+t+'" data-k="'+f[0]+'" value="'+esc(f[2]==='money'? Math.round(val).toLocaleString('en-US') : val)+'">'+(f[5]?'<span class="hint">'+esc(f[5])+'</span>':'')+'</div>'; }
+function slider(id, label, k, min, max, step, val, hint){
+ return '<div class="f"><label for="'+id+'n" id="'+id+'l">'+esc(label)+'</label><div class="pair"><input type="range" id="'+id+'" aria-labelledby="'+id+'l" min="'+min+'" max="'+max+'" step="'+step+'" value="'+val+'" data-k="'+k+'" data-pair="'+id+'n"><input type="text" inputmode="decimal" id="'+id+'n" data-k="'+k+'" data-pair="'+id+'" value="'+val+'"></div>'+(hint?'<span class="hint">'+esc(hint)+'</span>':'')+'</div>'; }
+function buildFields(){
+ var d = STATE, h = '';
+ h += '<details open><summary>Household</summary><div class="f"><label for="f_status">Filing status</label><select id="f_status" data-k="status"><option value="single">Single</option><option value="mfj">Married couple filing jointly</option></select></div>';
+ h += slider('s_spend','Yearly spending (excluding taxes and health premiums), $','spend',10000,300000,1000,d.spend);
+ h += '<div class="f"><label for="f_endAge">Plan through age (oldest person)</label><input id="f_endAge" type="text" inputmode="numeric" data-k="endAge" value="'+d.endAge+'"></div></details>';
+ for (var i=0;i<2;i++){ var p = d.people[i] || E.defaults().people[i];
+  h += '<details class="person" data-p="'+i+'" '+(i===0?'open':'')+'><summary>'+(i===0?'Person 1':'Person 2 (spouse)')+'</summary>';
+  PF.forEach(function(f){ h += fieldHTML('p'+i+'_'+f[0], f, p[f[0]]).replace('data-k=','data-p="'+i+'" data-k='); });
+  h += '</details>'; }
+ h += '<details><summary>Other accounts</summary>'; HF.forEach(function(f){ h += fieldHTML('f_'+f[0], f, d[f[0]]); }); h += '</details>';
+ h += '<details><summary>Home</summary>'; HOME.forEach(function(f){ h += fieldHTML('f_'+f[0], f, d[f[0]]); }); h += '</details>';
+ h += '<details><summary>Assumptions</summary>';
+ h += slider('s_ret','Investment return per year, % (assumption)','ret',0,10,0.25,d.ret,'Nominal, before inflation');
+ h += slider('s_infl','Inflation per year, % (assumption)','infl',0,6,0.25,d.infl);
+ h += slider('s_cash','Cash return per year, % (assumption)','cashRet',0,6,0.25,d.cashRet);
+ h += slider('s_state','State income tax, flat %, applied to federal taxable income','stateRate',0,13.5,0.25,d.stateRate,'Assumption: 5%. Many states differ; some do not tax retirement income.');
+ h += slider('s_bm','Benchmark silver premium per person per month, $ (assumption)','benchmark',300,3000,25,d.benchmark,'Varies widely by age and county; check HealthCare.gov for yours');
+ h += '<div class="f"><label for="f_aca">Marketplace credit rules</label><select id="f_aca" data-k="aca"><option value="current">Current law (enhanced credits expired after 2025)</option><option value="enhanced">If enhanced credits were restored</option></select></div>';
+ h += '<div class="f"><label for="f_medexp">Medicaid eligibility scenario (not determined by this tool)</label><select id="f_medexp" data-k="medExp"><option value="false">Not assumed (marketplace credits only)</option><option value="true">Assume independently verified eligibility in applicable years</option></select><span class="hint">Default is off. On assumes verified eligibility AND $0 premiums in applicable pre-65 years below 138% FPL. State expansion alone is insufficient. Confirm state rules, 2027 community-engagement requirements and exemptions separately. Cost sharing and eligibility are not calculated.</span></div>';
+ h += '<div class="f"><label for="f_bracket">Bracket fill strategy converts up to the top of</label><select id="f_bracket" data-k="bracket"><option value="0.12">12% bracket</option><option value="0.22">22% bracket</option><option value="0.24">24% bracket</option></select></div>';
+ h += '<label class="chk"><input type="checkbox" id="f_guardAca" data-k="guardAca"> Hold conversions under 400% of the poverty line while on marketplace coverage</label>';
+ h += '<label class="chk"><input type="checkbox" id="f_guardIrmaa" data-k="guardIrmaa"> Hold conversions under the first Medicare surcharge line from age 63</label>';
+ h += slider('s_margin','Safety margin below the 400% and Medicare lines when converting, %','margin',0,20,0.5,(d.margin===undefined?3:d.margin),'Conversions stop this far under each line so a small surprise in income does not cross it. Assumption: 3%.');
+ h += slider('s_heir','Tax rate heirs might pay on inherited pretax money, % (assumption)','heirRate',0,40,1,d.heirRate);
+ h += '</details>';
+ h += '<details><summary>Survivor scenario</summary><label class="chk"><input type="checkbox" id="f_death" data-k="death.on"> Include a survivor scenario in every projection</label>';
+ h += '<div class="f"><label for="f_dwho">Person who dies first</label><select id="f_dwho" data-k="death.who"><option value="0">Person 1</option><option value="1">Person 2</option></select></div>';
+ h += '<div class="f"><label for="f_dage">Dies after age</label><input id="f_dage" type="text" inputmode="numeric" data-k="death.age" value="'+d.death.age+'"></div>';
+ h += '<div class="f"><label for="f_dsp">Survivor spending, % of couple spending</label><input id="f_dsp" type="text" inputmode="numeric" data-k="death.spendPct" value="'+d.death.spendPct+'"></div>';
+ h += '<div class="f"><label for="f_dpen">Pension continuing to survivor, %</label><input id="f_dpen" type="text" inputmode="numeric" data-k="death.pensionSurv" value="'+d.death.pensionSurv+'"></div></details>';
+ $('#fields').innerHTML = h; syncFields();
+}
+function syncFields(){
+ var d = STATE;
+ $$('#fields [data-k]').forEach(function(el){ var k = el.getAttribute('data-k'), pi = el.getAttribute('data-p'), v;
+  if (pi !== null) { var p = d.people[+pi]; if (!p) return; v = p[k]; } else if (k.indexOf('death.')===0) v = d.death[k.slice(6)]; else v = d[k];
+  if (el.type==='checkbox') el.checked = !!v; else if (el.tagName==='SELECT') el.value = String(v);
+  else if (el.type==='range') el.value = v; else { var money = /k401|ira|roth|salary|partTime|pension$|ssFra|taxable|cash$|hsa|home|loan|spend/.test(k) && el.id.indexOf('s_')!==0; el.value = money ? Math.round(v).toLocaleString('en-US') : v; } });
+ $$('#fields details.person[data-p="1"]').forEach(function(x){ x.hidden = d.status !== 'mfj'; });
+}
+function readField(el){
+ var k = el.getAttribute('data-k'), pi = el.getAttribute('data-p'), v = el.type==='checkbox' ? el.checked : el.value;
+ if (el.tagName==='SELECT' && k==='medExp') v = v==='true'; else if (el.tagName==='SELECT' && k!=='status' && k!=='aca') v = +v;
+ if (pi !== null) STATE.people[+pi][k] = v; else if (k.indexOf('death.')===0) STATE.death[k.slice(6)] = v; else STATE[k] = v;
+ if (k==='status' && v==='mfj' && STATE.people.length<2) STATE.people.push(E.defaults().people[1]);
+ if (el.getAttribute('data-pair')) { var o = document.getElementById(el.getAttribute('data-pair')); var pv = E.parseMoney(el.value); if (isFinite(pv)) o.value = pv; }
+}
+
+/* ---------- run ---------- */
+function fieldFor(k){
+ var mm = k.match(/^people\.(\d)\.(\w+)$/), sel;
+ if (mm) sel = '#fields [data-p="'+mm[1]+'"][data-k="'+mm[2]+'"]'; else sel = '#fields [data-k="'+k+'"]';
+ var els = $$(sel).filter(function(e){ return e.type !== 'range'; }); return els[0] || null;
+}
+function showFieldMsgs(s){
+ $$('#fields .ferr').forEach(function(x){ x.remove(); });
+ $$('#fields [aria-invalid]').forEach(function(x){ x.removeAttribute('aria-invalid'); });
+ $$('#fields [aria-describedby]').forEach(function(x){ var d = (x.getAttribute('aria-describedby')||'').split(' ').filter(function(t){ return t && t.indexOf('err_')!==0; }).join(' '); if (d) x.setAttribute('aria-describedby', d); else x.removeAttribute('aria-describedby'); });
+ var bad = [];
+ function put(list, cls){ list.forEach(function(e){ var el = fieldFor(e.k); if (!el) return; var id = 'err_' + el.id, sp = document.getElementById(id);
+  if (!sp) { sp = document.createElement('span'); sp.id = id; sp.className = 'ferr ' + cls; var host = el.closest('.pair') || el; host.insertAdjacentElement('afterend', sp); }
+  sp.textContent = RES.base ? e.msg.replace(/ Until then the results use .*$/, ' Results stay paused until then.') : e.msg; var d = (el.getAttribute('aria-describedby')||'').split(' ').filter(Boolean); if (d.indexOf(id) < 0) d.push(id); el.setAttribute('aria-describedby', d.join(' '));
+  if (cls === 'bad') { el.setAttribute('aria-invalid','true'); bad.push(el); var det = el.closest('details'); if (det) det.open = true; } }); }
+ put(s.errors, 'bad'); put(s.notes, 'note');
+ var mg = $('#msgs');
+ if (bad.length) mg.innerHTML = (bad.length===1 ? 'One field needs a look.' : bad.length + ' fields need a look.') + (RES.base ? ' Results stay paused at the last complete numbers until fixed.' : ' Each one says which value the results are using for now.') + ' <a href="#'+bad[0].id+'">Go to the first one</a>';
+ else mg.textContent = '';
+ var nb = bad.length; if (!s.errors.length) nb = 0; $('#out').classList.toggle('paused', nb > 0); var pz = $('#pause'); pz.hidden = !nb;
+ if (nb) pz.innerHTML = '<strong>Fix ' + (nb===1 ? '1 field' : nb + ' fields') + ' to update results.</strong> '+(RES.base ? 'The results below are paused at the last complete set of numbers.' : 'Until then the results use the stand in value stated beside each field.')+' <button class="btn small" type="button" id="pauseGo">Go to the first one</button>';
+ $('#drawerBtn').innerHTML = 'Edit your numbers' + (nb ? ' <span class="errct">' + nb + ' to fix</span>' : '');
+ var gm = $('#g_err'); if (gm) gm.textContent = bad.length ? (bad.length===1?'One number':'Some numbers') + ' in Your numbers needs a look. The results use the values stated beside each field.' : '';
+}
+function run(){
+ var raw = JSON.parse(JSON.stringify(STATE)); if (raw.status==='single') raw.people = raw.people.slice(0,1);
+ var s = E.sanitize(raw); PAUSED = s.errors.length > 0 && !!RES.base;
+ showFieldMsgs(s); $('#editing').textContent = 'Editing: ' + LOADED;
+ if (PAUSED) return;
+ I = s.input;
+ RES = {}; Object.keys(E.STRATS).forEach(function(k){ RES[k] = E.project(I, k); });
+ render();
+}
+var PAUSED = false; var timer; function schedule(){ clearTimeout(timer); timer = setTimeout(run, 160); }
+
+/* ---------- helpers on results ---------- */
+function rowsWhere(res, f){ return res.rows.filter(f); }
+function age1(r){ return r.ages[0] !== null ? r.ages[0] : (r.ages[1] + (I.people[0].age - I.people[1].age)); }
+function firstRow(res, f){ for (var i=0;i<res.rows.length;i++) if (f(res.rows[i])) return res.rows[i]; return null; }
+function ph(){ return E.phases(I); }
+function names(i){ return I.n===1 ? 'You' : (i===0?'Person 1':'Person 2'); }
+/* ---------- render ---------- */
+var COL = { work:'#5b6770', pension:'#857a1f', ss:'#2f6f8f', rmd:'#7a5195', pre:'#b292c9', conv:'#c4485a', rothW:'#e89aa5', taxable:'#0c7a5a', cash:'#7fbfa5', interest:'#8e6b3f', aca:'#9a5414', medicare:'#a12d6a', b12:'#2a8c82', b22:'#334f9e', agi:'#000000', short:'#8a8a8a' };
+var OPEN = {}, UOPEN = {}; RES = RES || {};
+function render(){
+ RES.base = RES[chartStrat];
+ var lab = E.STRATS[chartStrat].label + (chartStrat==='bracketFill' ? ' to ' + pc(I.bracket) : '');
+ $$('.chip').forEach(function(c){ c.textContent = 'Showing: ' + lab; });
+ $$('.stratSel').forEach(function(s){ s.value = chartStrat; });
+ renderGlance(); renderGuidance(); renderChart(); renderCompare(); renderCards(); renderLimits(); renderPrint();
+}
+function setStrat(k){ chartStrat = k; render(); }
+function renderGlance(){
+ var phs = ph(), b = RES.base.totals, lab = E.STRATS[chartStrat].label;
+ var M = metrics(RES.base), gap = M.gap, gAvg = M.gapAvg, aca = M.acaHH;
+ var save = I.people.reduce(function(s,p){return s+p.k401+p.ira+p.roth;},0) + I.taxable + I.cash + I.hsa;
+ $('#glance-sub').textContent = (I.n===1?'One person':'A married couple') + ', planning from 2027 through age ' + I.endAge + ', with ' + mk(save) + ' saved and ' + mk(I.spend) + ' a year of spending.';
+ var st = [
+  ['Money lasts', b.shortfallAge===null ? 'Through ' + I.endAge : 'Runs short at ' + b.shortfallAge, b.shortfallAge===null ? 'Ending balance ' + mk(b.endTotal) : 'Spending is not fully covered after that'],
+  ['Lifetime federal and state tax', mk(M.taxes), 'Including any early withdrawal penalties'],
+  ['Gap years before Social Security', gap + (gap===1?' year':' years'), gap ? 'Retired, with no Social Security or RMDs yet. Taxable income in those years averages ' + mk(gAvg) + ' on this path, from withdrawals and any conversions.' : 'No year is fully retired before Social Security or RMDs begin.'],
+  [I.n===2 ? 'Years with someone on marketplace coverage' : 'Years on marketplace coverage', yrsTxt(aca), !aca ? 'Nobody is retired and under 65 in this plan.' : I.n===2 ? 'Retired and under 65. ' + I.people.map(function(p,i){ return names(i) + ': ' + yrsTxt(M.acaPer[i]); }).join('; ') + '.' + (M.acaPer[0] + M.acaPer[1] > aca ? ' Some years overlap.' : '') : 'Retired and under 65']
+ ];
+ $('#stats').innerHTML = st.map(function(s){ return '<div class="stat"><div class="k">'+s[0]+'</div><div class="v">'+s[1]+'</div><div class="d">'+s[2]+'</div></div>'; }).join('');
+ var hi = I.endAge, txt = [], h = '', oldest = Math.max.apply(null,I.people.map(function(x){return x.age;}));
+ I.people.forEach(function(p,i){ var q = phs[i], segs = [], pa = p.age, endP = pa + (hi - oldest) + 1;
+  function sg(a,b,c,l){ a=Math.max(a,pa); b=Math.min(b,endP); if (b>a) segs.push([a,b,c,l]); }
+  sg(pa, p.retire, COL.work,'Working'); sg(p.retire, 65, COL.aca,'Marketplace'); sg(Math.max(p.retire,65), q.rmd, COL.medicare,'Medicare'); sg(Math.max(q.rmd,p.retire), endP, COL.rmd,'Medicare and RMDs');
+  h += '<div class="lane"><span>'+names(i)+'</span><div class="track">' + segs.map(function(s){ var l=(s[0]-pa)/(endP-pa)*100, w=(s[1]-s[0])/(endP-pa)*100; return '<div class="seg" style="left:'+l+'%;width:'+w+'%;background:'+s[2]+'" title="'+s[3]+'">'+(w>s[3].length*2?s[3]:'')+'</div>'; }).join('') + '</div></div>';
+  txt.push(names(i)+': works until '+p.retire+', marketplace coverage until 65 if retired earlier, Medicare from 65, Social Security from '+p.claim+', RMDs from '+q.rmd);
+ });
+ h += '<ul class="rkey" aria-hidden="true"><li><i style="background:'+COL.work+'"></i>Working</li><li><i style="background:'+COL.aca+'"></i>Marketplace</li><li><i style="background:'+COL.medicare+'"></i>Medicare</li><li><i style="background:'+COL.rmd+'"></i>Medicare and RMDs</li></ul>';
+ $('#ribbon').innerHTML = h; $('#ribbon').setAttribute('aria-label', 'Life phases. ' + txt.join('. ') + '.');
+}
+
+/* ---------- guidance ---------- */
+function timesFpl(magi, F){ return (magi/F).toFixed(1).replace(/\.0$/,'') + ' times the poverty line (' + m(magi) + ' of ' + m(F) + ')'; }
+function nearCount(res){ var rs = res.rows.filter(function(r){ return r.irmaaNextNear; }); var gapMin = rs.reduce(function(s,r){ return Math.min(s, r.irmaa1 - r.agi); }, Infinity); return { n: rs.length, gap: gapMin }; }
+function renderGuidance(){
+ var G = [], phs = ph(), b = RES.base, bt = b.totals, bf = RES.bracketFill, lab = E.STRATS[chartStrat].label;
+ var pre = I.people.reduce(function(s,p){return s+p.k401+p.ira;},0), all = pre + I.people.reduce(function(s,p){return s+p.roth;},0) + I.taxable + I.cash + I.hsa;
+ var M = metrics(b), gap = M.gap;
+ if (bt.shortfallAge !== null) G.push([100, 'Savings run short at about age ' + bt.shortfallAge + ' in this projection.', 'Spending of ' + mk(I.spend) + ' plus taxes and premiums is more than the accounts and income support at a ' + I.ret + '% return and ' + I.infl + '% inflation. Small changes to spending or claiming age move this a lot.', '#compare', 'Compare the four strategies']);
+ var rmdRow = firstRow(b, function(r){ return r.rmd > 0; });
+ if (pre > 0 && all > 0 && pre/all >= .5) G.push([60 + Math.min(30, gap*4), pc(pre/all) + ' of savings is pretax, with ' + gap + ' retired ' + (gap===1?'year':'years') + ' before Social Security or RMDs.', 'Every pretax dollar is taxed when it comes out. ' + (rmdRow ? 'Left alone, the first required distribution is about ' + mk(rmdRow.rmd) + ' at age ' + age1(rmdRow) + (I.spend > 0 ? ', or ' + pc(rmdRow.rmd/I.spend) + ' of current spending' : '') + '. ' : '') + 'A bracket fill path would convert about ' + mk(bf.totals.conv) + ' in total.', '#card1', 'Roth conversion room']);
+  if (M.acaHH){ var r0 = M.acaFirst, ratio = r0.acaRatio, F = r0.fplReal, cliff = r0.fpl400, yrs = yrsTxt(M.acaHH) + (I.n===2 ? ' with someone' : '') + ' on';
+  if (ratio !== null && ratio < 1) G.push([95, 'Income in ' + r0.year + ' is about ' + timesFpl(r0.magi, F) + ', below the floor for marketplace credits.', 'Below the poverty line there is usually no premium credit, though a qualified enrollment-estimate exception can apply when advance credits were paid and all tax/reconciliation conditions are met, without intentional or reckless misstatements. State Medicaid eligibility, 2027 community-engagement rules and exemptions require separate verification; this income can still leave a coverage gap. About ' + m(F - r0.magi) + ' more income, such as a Roth conversion or taxable gains, would reach 100%.', '#card2', 'Marketplace credits']);
+  else if (ratio !== null && ratio < 1.38) G.push([80, 'Income in ' + r0.year + ' is about ' + timesFpl(r0.magi, F) + ', under the 138% Medicaid line.', 'Income and expansion-state residence do not establish Medicaid eligibility. Verify state rules, the 2027 community-engagement requirements and exemptions separately. This tool only changes costs when independently verified eligibility is explicitly assumed.', '#card2', 'Marketplace credits']);
+  else if (r0.acaOver) G.push([92, 'Income in ' + r0.year + ' is above the 400% line, so the marketplace credit is zero.', 'Under current law the credit ends above ' + m(cliff) + ' for this household (in this page\u0027s 2026 dollars). From 2026 there is no cap on paying back advance credits, so ending a year above the line means repaying all of it.', '#card2', 'Marketplace credits']);
+  else G.push([r0.acaNear ? 90 : 70, yrs + ' marketplace coverage, with ' + r0.year + ' income at about ' + timesFpl(r0.magi, F) + '.', 'Under current law the credit ends above 400% of the poverty line, ' + m(cliff) + ' for this household in this page\u0027s 2026 dollars. ' + (r0.acaNear ? 'Projected income sits within 5% of that line, so a small extra withdrawal or conversion could cost thousands in premiums, and from 2026 any excess advance credit is repaid in full.' : 'Conversions in these years count toward that income.'), '#card2', 'Marketplace credits']); }
+ var bfTier = bf.rows.filter(function(r){ return r.tier>0; }).length, bTier = b.rows.filter(function(r){ return r.tier>0; }).length, nb = nearCount(b), nf = nearCount(bf);
+ if (bTier) G.push([75, 'Medicare surcharges appear in ' + bTier + ' projected ' + (bTier===1?'year':'years') + '.', 'The surcharge looks back two years at income, so a conversion or large withdrawal at 63 can raise premiums at 65. Bracket fill path: ' + bfTier + ' surcharge years.', '#card3', 'Medicare and IRMAA']);
+ else if (nb.n || nf.n) { var nn = nb.n ? nb : nf; G.push([82, 'Income sits within 5% of the first Medicare surcharge line in ' + nn.n + ' ' + (nn.n===1?'year':'years') + (nb.n ? '' : ' on the bracket fill path') + '.', 'At the closest, income is only ' + m(nn.gap) + ' under the line that counts two years later. One extra dividend or gain could trigger a full year surcharge for each person on Medicare. The safety margin setting under Assumptions widens this buffer.', '#card3', 'Medicare and IRMAA']); }
+ else G.push([35, 'No projected year crosses the first Medicare surcharge line.', 'The line is ' + m(P.irmaa[I.status==='mfj'?'mfj':'single'][0]) + ' for premiums in 2026, compared with income from two years earlier. Large conversions or a survivor year could change that.', '#card3', 'Medicare and IRMAA']);
+ var early = I.people.filter(function(p){ return p.retire < 60; });
+ if (early.length){ var p = early[0], bridge = I.taxable + I.cash, yrs2 = Math.max(0, 60 - Math.max(p.retire,p.age)), need = yrs2*I.spend;
+  G.push([bridge < need ? 85 : 55, 'Retiring at ' + p.retire + ' leaves ' + yrs2 + ' ' + (yrs2===1?'year':'years') + ' before penalty free IRA access at 59 and a half.', 'Cash and taxable savings of ' + mk(bridge) + ' compare with about ' + mk(need) + ' of spending over that period. ' + (p.retire>=55 ? 'Leaving work at 55 or later may open that employer plan (not IRAs) under the Rule of 55.' : 'Retiring before 55 means the Rule of 55 does not apply.'), '#card7', 'Early access']); }
+ var claims = I.people.map(function(p){ return p.claim; }), byMin = 2027 - I.people[0].age, f62 = E.ssFactor(62, byMin), f70 = E.ssFactor(70, byMin);
+ if (claims.some(function(c){ return c < 67; })) G.push([50, 'A claim age of ' + Math.min.apply(null,claims) + ' locks in a smaller check for life.', 'For someone born in ' + byMin + ', claiming at 62 pays ' + pc(f62,1) + ' of the full benefit and waiting to 70 pays ' + pc(f70,1) + '. ' + (I.n===2 ? 'For couples, the larger benefit also shapes the survivor benefit.' : ''), '#card4', 'Social Security']);
+ else G.push([40, 'Claiming at ' + (claims[1]===claims[0] ? claims[0] : claims.join(' and ')) + ' creates low income years before benefits start.', 'Those years are where conversion room and 0% capital gains room are widest.', '#card4', 'Social Security']);
+ if (I.n===2) G.push([55, 'After a first death, the survivor files as single.', 'Single brackets through 32%, the standard deduction and the first Medicare surcharge line are exactly half the joint ones, while household income often falls by less, so taxes and surcharges can rise.', '#card11', 'Survivor effects']);
+ var on65 = I.people.some(function(p){ return p.age >= 65; });
+ if (on65 && pre > 0) G.push([58, 'From 70 and a half, IRA money can go straight to charity as a qualified charitable distribution.', 'Under IRS rules an IRA owner 70 and a half or older can transfer up to $111,000 in 2026 directly to a qualifying charity. The amount counts toward the RMD and is left out of AGI, so it also stays out of the income that sets Medicare surcharges and the taxable share of Social Security. It applies only to money that goes to charity. Source: IRS Publication 590-B.', '#card6', 'RMDs and charitable distributions']);
+ var ssR = firstRow(b, function(r){ return r.ss > 0 && r.ages.every(function(a,i){ return a===null || a>=I.people[i].claim; }); });
+ if (on65 && ssR && ssR.ss > 0) G.push([57, 'About ' + pc(ssR.tss/ssR.ss) + ' of Social Security is taxable in ' + ssR.year + '.', 'Under IRS Publication 915, up to 50% of benefits becomes taxable once combined income passes ' + (I.status==='mfj' ? '$32,000 on a joint return' : '$25,000 for a single filer') + ', and up to 85% past ' + (I.status==='mfj' ? '$44,000' : '$34,000') + '. Combined income is AGI before benefits plus half of benefits, so RMDs, conversions and pretax withdrawals can make more of each benefit dollar taxable. These lines are not adjusted for inflation.', '#card4', 'Social Security taxation']);
+ var eq = I.home - I.loan; if (eq > 0 && eq/(eq+all) > .4) G.push([45, 'Home equity of ' + mk(eq) + ' is ' + pc(eq/(eq+all)) + ' of what you own.', 'Equity is not spendable without selling, borrowing or a reverse mortgage, and each has tradeoffs.', '#card10', 'Home equity']);
+ var gRow = firstRow(b, function(r){ return r.wages===0 && r.ss===0; });
+ if (gRow && I.taxable>0){ var zt = P.ltcg.zeroTop[gRow.status] - gRow.ordTI; if (zt>5000) G.push([42, 'About ' + mk(zt) + ' of 0% capital gains room in ' + gRow.year + '.', 'Long term gains inside that room are taxed at 0% federally, though they still raise income for marketplace and Medicare tests.', '#card8', 'Capital gains']); }
+ if (I.hsa > 0) G.push([30, 'An HSA balance of ' + mk(I.hsa) + ' can pay Medicare premiums tax free after 65.', 'That is about ' + (I.hsa/(P.irmaa.baseB*12)).toFixed(1) + ' years of one standard Part B premium.', '#card9', 'HSA']);
+ G.sort(function(a,b){ return b[0]-a[0]; });
+ G = G.slice(0,6); OPEN = {}; var c = 0; G.forEach(function(g){ if (c < 3 && /^#card/.test(g[3]) && !OPEN[g[3]]) { OPEN[g[3]] = true; c++; } });
+ $('#guidance').innerHTML = G.map(function(g){ return '<li><strong>'+esc(g[1])+'</strong><div class="why">'+esc(g[2])+'</div><a class="go" href="'+g[3]+'">'+esc(g[4])+' <span aria-hidden="true">&rarr;</span></a></li>'; }).join('');
+}
+
+/* ---------- chart ---------- */
+var rzT, rzW = 0; window.addEventListener('resize', function(){ clearTimeout(rzT); rzT = setTimeout(function(){ var w = ($('#chart')||{}).clientWidth||0; if (RES && RES.base && Math.abs(w-rzW)>40) { rzW = w; renderChart(); } }, 200); });
+var SER = [ ['wages','Wages',COL.work], ['pension','Pension',COL.pension], ['cashInterest','Cash interest',COL.interest], ['ss','Social Security',COL.ss], ['rmd','RMDs',COL.rmd], ['wPre','Pretax withdrawals',COL.pre], ['conv','Roth conversions',COL.conv], ['wTaxable','Taxable account',COL.taxable], ['wCash','Cash',COL.cash], ['wRoth','Roth withdrawals',COL.rothW] ];
+function renderChart(){
+ var res = RES.base, rows = res.rows, cwid = ($('#chart').clientWidth||900), W = Math.max(300, Math.min(900, Math.round(cwid))), narrow = W < 600, H = narrow ? 320 : 380, L = narrow ? 52 : 62, R = narrow ? 70 : 128, T = 14, B = 40;
+ var maxV = 0; rows.forEach(function(r){ var s = SER.reduce(function(a,x){ return a + r[x[0]]; },0) + r.short; maxV = Math.max(maxV, s, r.agi); });
+ var lines = [['top12', narrow?'12%':'Top of 12%','Top of 12% bracket (as gross income)',COL.b12,'5 3'], ['top22', narrow?'22%':'Top of 22%','Top of 22% bracket (as gross income)',COL.b22,'10 4'], ['fpl400', narrow?'400% FPL':'400% poverty line','400% of poverty line (marketplace credit ends)',COL.aca,'6 3'], ['irmaa1', narrow?'IRMAA':'Medicare surcharge','First Medicare surcharge line (for income two years ahead)',COL.medicare,'6 3'], ['agi', 'AGI','Taxable income (AGI)',COL.agi,'1 0']];
+ maxV = Math.max(maxV*1.08, 50000); var yMax = Math.ceil(maxV/50000)*50000;
+ var n = rows.length, bw = (W-L-R)/n, y = function(v){ return T + (H-T-B)*(1 - Math.min(v,yMax)/yMax); };
+ var desc = chartDesc(res);
+ var s = '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(desc)+'" focusable="false"><defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#fff"/><line x1="0" y1="0" x2="0" y2="6" stroke="'+COL.short+'" stroke-width="3"/></pattern></defs>';
+ for (var g=0; g<=yMax; g+=yMax/5){ s += '<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(g)+'" y2="'+y(g)+'" stroke="#e5e1d6"/><text x="'+(L-6)+'" y="'+(y(g)+4)+'" text-anchor="end" font-size="12" fill="#56625c">'+mk(g)+'</text>'; }
+ var used = {}, anyShort = false;
+ rows.forEach(function(r,i){ var acc = 0, x = L + i*bw + bw*.12, w = bw*.76;
+  SER.forEach(function(se){ var v = r[se[0]]; if (v<=0.5) return; used[se[0]] = 1; s += '<rect x="'+x.toFixed(1)+'" y="'+y(acc+v).toFixed(1)+'" width="'+w.toFixed(1)+'" height="'+Math.max(0,(y(acc)-y(acc+v))).toFixed(1)+'" fill="'+se[2]+'"><title>Age '+age1(r)+': '+se[1]+' '+m(v)+'</title></rect>'; acc += v; });
+  if (r.short > 1) { anyShort = true; s += '<rect x="'+x.toFixed(1)+'" y="'+y(acc+r.short).toFixed(1)+'" width="'+w.toFixed(1)+'" height="'+Math.max(0,(y(acc)-y(acc+r.short))).toFixed(1)+'" fill="url(#hatch)" stroke="'+COL.short+'"><title>Age '+age1(r)+': spending not covered '+m(r.short)+'</title></rect>'; }
+  var a = age1(r); if (a%5===0) s += '<text x="'+(x+w/2)+'" y="'+(H-B+18)+'" text-anchor="middle" font-size="12" fill="#3d4a44">'+a+'</text>';
+ });
+ var co = [], ci;
+ ci = rows.findIndex(function(r,i){ return r.ss > 0 && (i===0 || rows[i-1].ss <= 0); }); if (ci > 0) co.push([ci, (narrow?'SS from ':'Social Security from ')+age1(rows[ci])]);
+ ci = rows.findIndex(function(r){ return r.rmd > 0; }); if (ci > 0) co.push([ci, (narrow?'RMDs from ':'First RMD at ')+age1(rows[ci])]);
+ if (res.totals.shortfallAge !== null) { ci = rows.findIndex(function(r){ return r.short > 1; }); if (ci >= 0) co.push([ci, 'Runs short at '+res.totals.shortfallAge]); }
+ co.sort(function(a,b){ return a[0]-b[0]; });
+ co.forEach(function(c,k){ var cx = L + c[0]*bw, ty = T + 12 + k*16, right = cx > (W-R) - (narrow?90:130);
+  s += '<line x1="'+cx.toFixed(1)+'" x2="'+cx.toFixed(1)+'" y1="'+(ty+4)+'" y2="'+(H-B)+'" stroke="#3d4a44" stroke-dasharray="2 3"/><text x="'+(right?cx-4:cx+4).toFixed(1)+'" y="'+ty+'" text-anchor="'+(right?'end':'start')+'" font-size="12" font-weight="600" fill="#14211c" stroke="#fff" stroke-width="3" paint-order="stroke">'+esc(c[1])+'</text>'; });
+ s += '<text x="'+((W+L-R)/2)+'" y="'+(H-4)+'" text-anchor="middle" font-size="12" font-weight="600" fill="#3d4a44">'+(I.n===1?'Your age':'Your age (person 1)')+'</text>';
+ var ends = [], drawn = {};
+ lines.forEach(function(ln){ var pts = [], last = null; rows.forEach(function(r,i){ var v = r[ln[0]];
+   if (ln[0]==='fpl400' && (!r.acaPeople || I.aca!=='current')) v = null; if (ln[0]==='irmaa1' && r.ages.every(function(a){ return a===null || a+2<65; })) v = null;
+   if (v===null || v>yMax) { if (pts.length) { s += path(pts, ln); pts = []; } return; } pts.push([L+i*bw+bw*.5, y(v)]); last = [L+i*bw+bw*.5, y(v), i]; }); if (pts.length) s += path(pts, ln);
+   if (last) { drawn[ln[0]] = 1; if (ln[0] !== 'agi') ends.push({ y:last[1], x:last[0], t:ln[1], c:ln[3], early: last[2] < n-1 }); } });
+ var early = ends.filter(function(e){ return e.early; }); ends = ends.filter(function(e){ return !e.early; });
+ ends.sort(function(a,b){ return a.y-b.y; }); for (var k=1;k<ends.length;k++) if (ends[k].y - ends[k-1].y < 14) ends[k].y = ends[k-1].y + 14;
+ ends.forEach(function(e){ s += '<text x="'+(W-R+6)+'" y="'+(e.y+4).toFixed(1)+'" font-size="12" font-weight="600" fill="'+e.c+'">'+esc(e.t)+'</text>'; });
+ early.forEach(function(e){ s += '<text x="'+(e.x+6).toFixed(1)+'" y="'+(e.y-6).toFixed(1)+'" font-size="12" font-weight="600" fill="'+e.c+'" stroke="#fff" stroke-width="3" paint-order="stroke">'+esc(e.t)+'</text>'; });
+ var note = agiNote(rows);
+ if (note) { var nx = L + note.i*bw + bw*.5; s += '<line x1="'+nx+'" x2="'+nx+'" y1="'+(y(note.r.agi)-4)+'" y2="'+(y(note.r.agi)-26)+'" stroke="#000"/><circle cx="'+nx+'" cy="'+(y(note.r.agi)-30)+'" r="8" fill="#000"/><text x="'+nx+'" y="'+(y(note.r.agi)-26)+'" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">1</text>'; }
+ s += '</svg>';
+ $('#chart').innerHTML = s;
+ $('#chartnote').innerHTML = (Object.keys(drawn).length > 1 ? 'Dashed lines are labeled where they end: the 12% bracket top, and the 22% top when it fits the scale (both as gross income), the 400% poverty line where marketplace credits end, and the first Medicare surcharge line. ' : '') + (note ? '<span class="pin" aria-hidden="true">1</span> Why the black line drops at ' + age1(note.r) + ': Roth withdrawals and most Social Security are not taxable income, so taxable income (AGI) falls even though spending is still being met.' : '');
+ $('#chartsum').textContent = desc;
+ $('#legend').innerHTML = SER.filter(function(x){ return used[x[0]]; }).map(function(x){ return '<li><i style="background:'+x[2]+'"></i>'+x[1]+'</li>'; }).join('') + (anyShort ? '<li><i class="hatch"></i>Spending not covered</li>' : '') + lines.filter(function(x){ return drawn[x[0]] && x[0]==='agi'; }).map(function(x){ return '<li><i class="ln" style="border-top:3px '+(x[4]==='1 0'?'solid':'dashed')+' '+x[3]+'"></i>'+x[2]+'</li>'; }).join('');
+ var t = '<table><caption>'+esc(E.STRATS[chartStrat].label)+', whole dollars in 2026 dollars</caption><thead><tr><th scope="col">Year</th><th scope="col">Age</th><th scope="col">Wages and pension</th><th scope="col">Social Security</th><th scope="col">RMD</th><th scope="col">Conversion</th><th scope="col">Withdrawals</th><th scope="col">Not covered</th><th scope="col">AGI</th><th scope="col">Federal tax</th><th scope="col">Marketplace net premium</th><th scope="col">Medicare premiums</th><th scope="col">IRMAA tier</th><th scope="col">End balance</th></tr></thead><tbody>';
+ rows.forEach(function(r){ var e = r.end; t += '<tr><td>'+r.year+'</td><td>'+r.ages.map(function(a){return a===null?'none':a;}).join(' / ')+'</td><td>'+m(r.wages+r.pension)+'</td><td>'+m(r.ss)+'</td><td>'+m(r.rmd)+'</td><td>'+m(r.conv)+'</td><td>'+m(r.wPre+r.wTaxable+r.wCash+r.wRoth)+'</td><td>'+m(r.short)+'</td><td>'+m(r.agi)+(r.irmaaNextNear||r.acaNear?' *':'')+'</td><td>'+m(r.fed)+'</td><td>'+(r.acaPeople?m(r.aca):'none')+'</td><td>'+(r.mcPeople?m(r.mc):'none')+'</td><td>'+r.tier+'</td><td>'+m(e.pre+e.roth+e.taxable+e.cash+e.hsa)+'</td></tr>'; });
+ $('#tbl').innerHTML = t + '</tbody></table><p class="src">An asterisk marks income within 5% of the 400% marketplace line or the first Medicare surcharge line.</p>';
+}
+function agiNote(rows){ for (var i=1;i<rows.length;i++){ var r = rows[i], tot = SER.reduce(function(a,x){ return a + r[x[0]]; },0); if (r.wRoth > 1000 && r.agi < 0.5*tot && rows[i-1].agi > r.agi*1.3) return { i:i, r:r }; } return null; }
+function path(pts, ln){ return '<polyline fill="none" stroke="'+ln[3]+'" stroke-width="'+(ln[0]==='agi'?2.4:2)+'" stroke-dasharray="'+ln[4]+'" points="'+pts.map(function(p){return p[0].toFixed(1)+','+p[1].toFixed(1);}).join(' ')+'"/>'; }
+function chartDesc(res){ var r = res.rows, t = res.totals;
+ var conv = r.filter(function(x){return x.conv>0;});
+ return 'Income by source from age ' + age1(r[0]) + ' to ' + age1(r[r.length-1]) + ', ' + E.STRATS[chartStrat].label + ' strategy. ' + (t.shortfallAge !== null ? 'Savings run short at ' + t.shortfallAge + '. ' : 'Money lasts through ' + I.endAge + '. ') + (conv.length ? 'Roth conversions in ' + conv.length + ' years totaling ' + m(t.conv) + '. ' : 'No Roth conversions. ') + 'Lifetime federal and state tax ' + m(t.taxes) + '. Full figures are in the year by year table.'; }
+
+/* ---------- compare ---------- */
+function renderCompare(){
+ var ks = Object.keys(E.STRATS), mx = { taxes:0, health:0, at:0 };
+ var rows = ks.map(function(k){ var t = RES[k].totals; var h = t.aca + t.medicare; mx.taxes = Math.max(mx.taxes, t.taxes); mx.health = Math.max(mx.health,h); mx.at = Math.max(mx.at, t.endAfterTax); return {k:k,t:t,h:h,last: t.shortfallAge===null ? 999 : t.shortfallAge}; });
+ var allShort = rows.every(function(r){ return r.t.shortfallAge !== null; }), anyShort = rows.some(function(r){ return r.t.shortfallAge !== null; });
+ function uniq(vals, v, tol){ return vals.filter(function(x){ return Math.abs(x - v) <= tol; }).length === 1; }
+ var taxes = rows.map(function(r){return r.t.taxes;}), ats = rows.map(function(r){return r.t.endAfterTax;}), lasts = rows.map(function(r){return r.last;});
+ var minTax = Math.min.apply(null, taxes), maxAT = Math.max.apply(null, ats), maxLast = Math.max.apply(null, lasts);
+ var head = '';
+ if (allShort) { var ages = rows.map(function(r){return r.t.shortfallAge;}), lo = Math.min.apply(null,ages), hi = Math.max.apply(null,ages);
+  head = 'All four strategies run short ' + (lo===hi ? 'at age ' + lo : 'between ages ' + lo + ' and ' + hi) + '. They are listed by how long the money lasts.';
+  rows.sort(function(a,b){ return b.last - a.last || a.t.taxes - b.t.taxes; }); }
+ else if (anyShort) head = 'Some strategies run short before ' + I.endAge + '. Check the Money lasts line on each.';
+ head = (head ? head + ' ' : '') + 'A label such as Lowest lifetime tax marks one measure only; it does not rank the strategies overall.';
+ $('#cmphead').textContent = head; $('#cmphead').hidden = false;
+ var mn = { taxes: Math.min.apply(null, rows.map(function(r){return r.t.taxes;})), health: Math.min.apply(null, rows.map(function(r){return r.h;})), at: maxAT };
+ var VALS = { taxes: rows.map(function(r){return r.t.taxes;}), health: rows.map(function(r){return r.h;}), at: rows.map(function(r){return r.t.endAfterTax;}) };
+ $('#cmpgrid').innerHTML = rows.map(function(r){ var t = r.t, S = E.STRATS[r.k], tags = [];
+  if (anyShort && r.last === maxLast && uniq(lasts, maxLast, 0)) tags.push('Money lasts longest');
+  if (!allShort && t.taxes === minTax && uniq(taxes, minTax, 100)) tags.push('Lowest lifetime tax');
+  if (maxAT > 1000 && t.endAfterTax === maxAT && uniq(ats, maxAT, 100)) tags.push('Largest after tax ending value');
+  function bar(v,max,k){ var one = VALS[k].filter(function(x){return Math.abs(x-v)<1;}).length === 1; var lo = one && ( k==='at' ? (Math.abs(v-mn.at)<1 && max>0) : Math.abs(v-mn[k])<1), hi = one && k!=='at' && Math.abs(v-max)<1 && max>mn[k]+1; return '<div class="barrow"><div class="bar" aria-hidden="true"><b style="width:'+(max>0?Math.max(2,v/max*100):0)+'%"></b></div><span class="lowmk">'+(lo?(k==='at'?'Largest':'Lowest'):hi?'Highest':'')+'</span></div>'; }
+  return '<article class="strat'+(r.k===chartStrat?' sel':'')+'"><h3>'+S.label+'</h3><p class="src" style="margin:0">'+S.short+(r.k==='bracketFill'?' ('+pc(I.bracket)+')':'')+'</p>'+
+   '<div>'+tags.map(function(x){ return '<span class="tag">'+x+'</span> '; }).join('')+'</div>'+
+   '<dl><dt>Money lasts</dt><dd>'+(t.shortfallAge===null?'Through '+I.endAge:'Short at '+t.shortfallAge)+'</dd></dl>'+
+   '<dl><dt>Federal and state tax, penalties</dt><dd>'+mk(t.taxes)+'</dd></dl>'+bar(t.taxes,mx.taxes,'taxes')+
+   '<dl><dt>Marketplace and Medicare premiums</dt><dd>'+mk(r.h)+'</dd><dt>of which IRMAA surcharges</dt><dd>'+mk(t.irmaa)+'</dd></dl>'+bar(r.h,mx.health,'health')+
+   '<dl><dt>Roth conversions</dt><dd>'+mk(t.conv)+'</dd><dt>Ending balance</dt><dd>'+mk(t.endTotal)+'</dd><dt>of which pretax</dt><dd>'+mk(t.end.pre)+'</dd><dt>After tax ending value</dt><dd>'+mk(t.endAfterTax)+'</dd></dl>'+bar(t.endAfterTax,mx.at,'at')+
+   '<button class="btn small ghost noprint" type="button" data-show="'+r.k+'" aria-pressed="'+(r.k===chartStrat)+'">'+(r.k===chartStrat?'Showing this one':'Show this one everywhere')+'</button></article>'; }).join('');
+}
+
+/* ---------- decision cards ---------- */
+function card(n, tk, title, kv, means, qs, calc, extra){
+ extra = extra || ''; var ti = extra.indexOf('<div class="tblwrap'); if (ti >= 0) extra = extra.slice(0,ti) + '<details class="tbld"><summary>Show the table</summary>' + extra.slice(ti) + '</details>';
+ var ck = '#card'+n, open = (ck in UOPEN ? UOPEN[ck] : OPEN[ck]) ? ' open' : '', top = kv.slice(0,3), more = kv.slice(3);
+ return '<details class="dcard" id="card'+n+'"'+open+'><summary><span class="sumtxt"><span class="num">Decision '+n+'</span><span class="h3" role="heading" aria-level="3">'+title+'</span>'+(tk && tk.t ? '<span class="take">'+spark(tk.f)+'<span>'+tk.t+'</span></span>' : (kv.length?'<span class="key">'+kv[0][0]+': <b>'+kv[0][1]+'</b></span>':''))+'</span></summary>'+
+  (top.length?'<div class="kv">'+top.map(function(x){return '<div><span>'+x[0]+'</span><b>'+x[1]+'</b></div>';}).join('')+'</div>':'')+
+  (more.length?'<p class="more">Also: '+more.map(function(x){ return x[0]+' <b>'+x[1]+'</b>'; }).join('; ')+'.</p>':'')+(extra||'')+
+  '<div class="means"><h4>What this means</h4>'+means+'</div><details class="qs"><summary>'+qs.length+(qs.length===1?' question':' questions')+' to bring to a qualified professional</summary><ul>'+qs.map(function(q){return '<li>'+q+'</li>';}).join('')+'</ul></details>'+
+  '<details class="calc"><summary>Show the calculation</summary><pre>'+esc(calc)+'</pre></details></details>'; }
+function renderCards(){
+ var b = RES.base, bf = RES.bracketFill, phs = ph(), st = I.status==='mfj'?'mfj':'single', H = [];
+ // 1 Roth conversion room
+ var convBase = chartStrat === 'conventional' ? b : E.project(I,'conventional');
+ var g = firstRow(convBase, function(r){ return r.wages < 1 && r.rmd===0 && r.ages.some(function(a,i){ return a!==null && a>=I.people[i].retire; }); }) || convBase.rows[0];
+ var t12 = E.bracketTop(0.12,g.status), t22 = E.bracketTop(0.22,g.status), t24 = E.bracketTop(0.24,g.status);
+ var c12 = E.conversionRoom(I,g.year,0.12,convBase), c22 = E.conversionRoom(I,g.year,0.22,convBase);
+ var rm12=c12.amount, rm22=c22.amount, cost12=c12.incrementalFederal, cost22=c22.incrementalFederal;
+ var rB = firstRow(convBase,function(r){return r.rmd>0;}), rF = firstRow(bf,function(r){return r.rmd>0;});
+ if(!c12.inModelWindow) H.push(card(1,{t:'Outside this model’s pre-RMD conversion window',f:0},'Roth conversion room in the gap years',[['Displayed year',String(g.year)],['Model scope','Retired years before the applicable RMD age']],'<p>This model does not calculate Roth conversion capacity in this window. A zero from the engine here is a model limitation, not a legal limit on conversions.</p>',['What conversion options are relevant after required distributions begin?'], 'This model solves additional conversions only in retired years before the applicable RMD age. No post-RMD conversion capacity is calculated.'));
+ else H.push(card(1,{t:'Room to the top of 12% in '+g.year+': <b>'+mk(rm12)+'</b>', f:t12?rm12/t12:0},'Roth conversion room in the gap years',[['First gap year','Age '+age1(g)+' ('+g.year+')'],['Taxable income before converting',m(g.ordTI)],['Room to top of 12%',m(rm12)],['Room to top of 22%',m(rm22)],['First RMD, no conversions',rB?m(rB.rmd):'none in plan'],['First RMD, bracket fill',rF?m(rF.rmd):'none in plan']],
+  '<p>In years with little other income, moving pretax money to a Roth account is taxed at lower rates than may apply later, when Social Security and required distributions stack up. Filling the 12% bracket in '+g.year+' would add about '+m(cost12)+' of federal tax ('+pc(rm12?cost12/rm12:0,1)+' of the amount converted, recomputing taxable Social Security, deductions, capital gains and cash-flow withdrawals). Conversions also raise income for marketplace credits and, two years later, Medicare surcharges, which the next two cards cover. '+T('AGI','Taxable income')+' here means ordinary income and taxable Social Security minus the applicable modeled deductions. This illustration follows the taxable-first path before the displayed year, then solves an additional conversion in that year. Health-cost guards are off for this bracket-room illustration; state tax and health-cost differences are not included in the displayed extra federal tax.</p>',
+  ['How do projected tax rates later in life compare with the rate on a conversion now?','How do conversions interact with marketplace credits and Medicare premiums for my household?','Should state tax, including a possible future move, change the picture?','What happens to heirs who inherit pretax accounts versus Roth accounts?'],
+  'Year '+g.year+', filing '+g.status+'\nOrdinary taxable income (no conversion) = '+m(g.ordTI)+'\nTop of 12% bracket = '+m(t12)+'; room = '+m(rm12)+'\nTop of 22% bracket = '+m(t22)+'; room = '+m(rm22)+'; top of 24% = '+m(t24)+'\nAdditional conversion solved with the full engine: '+m(rm12)+'; resulting ordinary taxable income '+m(c12.ordTI)+'\nExtra federal tax versus the no-conversion year = '+m(cost12)+'\nExtra federal tax to fill 22% = '+m(cost22)+'\nA bracket fill path would convert about '+m(bf.totals.conv)+' in total across the plan.'));
+ // 2 ACA
+ var aR = firstRow(b,function(r){return r.acaPeople>0;}), infl = I.infl/100, marg = (I.margin===undefined?3:I.margin)/100;
+ if (aR){ var hh = aR.ages.filter(function(a){return a!==null;}).length, Fn = E.fpl(hh), F = aR.fplReal, fs = F/Fn, bm = I.benchmark*12*aR.acaPeople;
+  var cliff = aR.fpl400, guardL = cliff*(1-marg), ratio = aR.magi/F;
+  var lev = [0,10000,25000], toC = cliff - aR.magi; if (toC>0) lev.push(Math.floor(toC)-1, Math.ceil(toC)+1); if (ratio < 1) lev.push(Math.ceil(F - aR.magi)); lev.push(50000); lev = lev.filter(function(v,i,a){return v>=0 && a.indexOf(v)===i;}).sort(function(a,b){return a-b;});
+  var tb = '<div class="tblwrap wide"><table><caption>What extra income in '+aR.year+' does to the credit ('+hh+' person household, benchmark '+m(bm)+' a year, 2026 dollars)</caption><thead><tr><th scope="col">Extra income</th><th scope="col">MAGI</th><th scope="col">Times poverty line</th><th scope="col">Credit now</th><th scope="col">If enhanced rules return</th></tr></thead><tbody>';
+  lev.forEach(function(v){ var mg = aR.magi+v, c = E.coverageScenario(mg,hh,bm,'current',fs,I.medExp), e = E.coverageScenario(mg,hh,bm,'enhanced',fs,I.medExp); var lab = (toC>0 && v===Math.floor(toC)-1) ? 'Just under the 400% line: ' : (toC>0 && v===Math.ceil(toC)+1) ? 'Just over the 400% line: ' : ''; tb += '<tr><td>'+lab+m(v)+'</td><td>'+m(mg)+'</td><td>'+(mg/F).toFixed(2)+'</td><td>'+m(c.ptc)+'</td><td>'+m(e.ptc)+'</td></tr>'; });
+  tb += '</tbody></table></div>';
+  var c0 = E.coverageScenario(aR.magi,hh,bm,'current',fs,I.medExp), e0 = E.coverageScenario(aR.magi,hh,bm,'enhanced',fs,I.medExp), atCliff = E.coverageScenario(cliff,hh,bm,'current',fs,I.medExp).ptc;
+  var Alt = JSON.parse(JSON.stringify(I)); Alt.medExp = !I.medExp; var alt = E.project(Alt, chartStrat), acaT = RES.base.totals.aca, acaA = alt.totals.aca, lifeE = I.medExp ? acaT : acaA, lifeN = I.medExp ? acaA : acaT;
+  var expNote = '<p class="note2"><strong>Explicit Medicaid eligibility assumption:</strong> now '+(I.medExp?'verified eligibility assumed by the user':'not assumed')+' (under Assumptions). Lifetime marketplace premiums after credits on this path: <b>'+m(lifeN)+'</b> without the verified-Medicaid assumption and <b>'+m(lifeE)+'</b> if independently verified eligible years under 138% use an assumed $0 Medicaid premium. State rules, community engagement/exemptions and cost sharing are not calculated.'+(Math.abs(lifeN-lifeE)<1?' The two match here because no applicable year falls under 138%.':'')+'</p>';
+  var flag = '';
+  if (ratio < 1) flag = '<div class="flag" role="note"><strong>Below the floor for credits.</strong> Projected income is about '+timesFpl(aR.magi,F)+'. Below 100% there is usually no marketplace credit. It can survive in narrow cases, when the Marketplace estimated income at or above 100% FPL at enrollment, advance credits were paid and all other tax and reconciliation conditions are met, excluding intentional or reckless misstatements. Immigration status by itself no longer creates a below-poverty-line exception for coverage years after 2025. In states that expanded Medicaid, income under 138% of the poverty line may qualify for Medicaid; in states that did not, this can be a coverage gap with neither. About <strong>'+m(F-aR.magi)+'</strong> more income, such as a Roth conversion or taxable gains (see Decision 1), would reach 100%.</div>';
+  else if (ratio < 1.38) flag = '<div class="flag" role="note"><strong>Under the 138% Medicaid line.</strong> Projected income is about '+timesFpl(aR.magi,F)+'. In states that expanded Medicaid, this income may qualify for Medicaid instead of marketplace credits'+(I.medExp?', and the user has explicitly assumed independently verified eligibility and a $0 premium in these years':'; this page counts them as marketplace years unless independently verified eligibility is explicitly assumed under Assumptions')+'.</div>';
+  else if (aR.acaOver) flag = '<div class="flag" role="note"><strong>Above the 400% line.</strong> Under current law the credit is zero at '+m(aR.magi)+'. From tax year 2026 there is no cap on paying back excess advance credits, so a year that was estimated under the line and ends above it means repaying the whole advance, up to about '+m(atCliff)+' here.</div>';
+  else if (aR.acaNear) flag = '<div class="flag" role="note"><strong>Close to the 400% line.</strong> Income is only '+m(cliff-aR.magi)+' under it. One dollar over removes the whole credit of about '+m(c0.ptc)+', and from tax year 2026 any excess advance credit is repaid in full with no cap.</div>';
+  H.push(card(2,{t:aR.acaOver?'Over the 400% line in '+aR.year+': no credit':'Credit in '+aR.year+': <b>'+mk(c0.ptc)+'</b> at '+ratio.toFixed(2)+' times the poverty line', f:Math.min(1,ratio/4)},'Marketplace premium tax credit before 65',[['Projected income (MAGI), '+aR.year,m(aR.magi)],['Times the poverty line',ratio.toFixed(2)],['Credit under current law',m(c0.ptc)],['poverty line for '+hh+(hh===1?' person':' people'),m(F)],['400% line',m(cliff)],['conversion guard line ('+pc(marg)+' margin)',m(guardL)],['credit if enhanced rules return',m(e0.ptc)]],
+   '<p>The enhanced credits of 2021 to 2025 ended with 2025 and, as of October 26, 2026, had not been extended. For 2027 coverage, current law asks a household to pay 2.15% to 10.22% of income toward the benchmark plan and gives no credit above 400% of the poverty line. Both rule sets are shown in case Congress acts.</p><p>The credit depends on '+T('MAGI','income (MAGI)')+' in the plan year itself, estimated at enrollment and settled on the tax return. Roth conversions, capital gains and the untaxed part of Social Security all count. The poverty line used is the one published the year before, so in this page\u0027s 2026 dollars the 400% line is '+m(cliff)+' (the published '+m(4*Fn)+' deflated one year at '+I.infl+'% inflation).</p><details class="qs"><summary>Four things that can change the credit</summary><ul class="cautions"><li>From tax year 2026 the cap on repaying excess advance credits is gone (One Big Beautiful Bill Act, section 71305), so an underestimate of income is repaid in full.</li><li>Below 138% of the poverty line, Medicaid may apply instead in states that expanded it.</li><li>An offer of affordable employer coverage, including through a spouse\u0027s job, usually rules out the credit.</li><li>Poverty lines are higher in Alaska and Hawaii; this page uses the 48 state figures.</li></ul></details>',
+   ['What income estimate should go on the marketplace application, and what happens at reconciliation if income ends up higher?','How do conversions or capital gains in these years affect the credit under the rules in force for my plan year?','What does the benchmark silver plan actually cost for our ages and county?','Does Medicaid in our state, or any state subsidy, apply at lower incomes?'],
+   'MAGI for marketplace = AGI + untaxed Social Security = '+m(aR.magi)+'\nPoverty line used for '+aR.year+' coverage = '+m(Fn)+' published; in 2026 dollars '+m(Fn)+' / '+(1+infl).toFixed(3)+' = '+m(F)+'\nRatio = '+(aR.magi/F).toFixed(3)+'; 400% line = '+m(cliff)+'; guard = 400% line x (1 minus '+pc(marg)+') = '+m(guardL)+'\nCurrent law applicable % = '+(c0.pct===null?'no credit':pc(c0.pct,2))+'; expected contribution = '+m(c0.contribution)+'\nCoverage result: '+(c0.medicaid?'Assumed verified Medicaid eligibility: Marketplace credit $0; modeled premium $0.':'Credit = max(0, benchmark '+m(bm)+' minus contribution '+m(c0.contribution)+') = '+m(c0.ptc))+'\nEnhanced rules applicable % = '+(e0.pct===null?'no credit':pc(e0.pct,2))+'; credit = '+m(e0.ptc), flag+expNote+tb));
+ } else H.push(card(2,{t:'Not used: no retired years before 65',f:0},'Marketplace premium tax credit before 65',[['Years on marketplace coverage','0']],'<p>In this scenario nobody is both retired and under 65, so marketplace credits do not apply. They matter for anyone who stops work before 65 and buys individual coverage. The enhanced credits ended after 2025; current law ends the credit above 400% of the poverty line, and from tax year 2026 excess advance credits are repaid in full.</p>',['If retirement came earlier, how would coverage before 65 be arranged and paid for?','Does employer retiree coverage exist, and how does it compare?'],'Not applicable for these inputs.'));
+ H[H.length-1] = H[H.length-1].replace('</details>', '<p class="note2">Coverage and savings are different. From January 1, 2027, Marketplace savings for noncitizens are limited to specified status groups, including lawful permanent residents, Cuban/Haitian entrants and COFA migrants. This tool assumes other eligibility requirements are satisfied and does not determine immigration or Medicaid eligibility. Verify current state and federal rules.</p></details>');
+ // 3 IRMAA
+ var th = P.irmaa[st], tierRows = '', irs = Math.pow(1+infl,2);
+ var mR = firstRow(b,function(r){ return r.ages.some(function(a){return a!==null && a+2>=65;}); }) || b.rows[0];
+ th.forEach(function(v,i){ var boundary = E.irmaaBoundary(i,st,irs,1/(1+infl)), vl = boundary.amount, relation = boundary.inclusive ? 'at or above ' : 'above '; tierRows += '<tr><td>Tier '+(i+1)+'</td><td>'+(i===4?'at or above ':'above ')+m(v)+'</td><td>'+relation+m(vl)+'</td><td>'+m(P.irmaa.partB[i+1]*12)+' + '+m(P.irmaa.partD[i+1]*12)+'</td><td>'+((boundary.inclusive?mR.agi>=vl:mR.agi>vl)?'at or beyond boundary':m(Math.max(0,vl-mR.agi)+(boundary.inclusive?0:1)))+'</td></tr>'; });
+ var tb3 = '<div class="tblwrap wide"><table><caption>'+(st==='mfj'?'Joint':'Single')+' lines and how much extra income in '+mR.year+' (age '+age1(mR)+') would cross each one two years later</caption><thead><tr><th scope="col">Tier</th><th scope="col">Published line, 2026 premiums</th><th scope="col">Same line for income two years earlier, 2026 dollars</th><th scope="col">Yearly surcharge per person (B + D)</th><th scope="col">Extra income to cross</th></tr></thead><tbody>'+tierRows+'</tbody></table></div>';
+ var irB = b.totals.irmaa, irF = bf.totals.irmaa, nb3 = nearCount(b), nf3 = nearCount(bf), flag3 = '';
+ if (nb3.n || nf3.n) { var q3 = nb3.n ? nb3 : nf3; flag3 = '<div class="flag" role="note"><strong>Close to the first surcharge line.</strong> On the '+(nb3.n ? E.STRATS[chartStrat].label : 'bracket fill')+' path, income is within 5% of the line in '+q3.n+' '+(q3.n===1?'year':'years')+', and only '+m(q3.gap)+' under it at the closest. One extra dividend or gain could add a full year of surcharges for each person on Medicare. The safety margin under Assumptions (now '+pc(marg)+') sets how far below the line conversions stop.</div>'; }
+ H.push(card(3,{t:(mR.agi>th[0]*irs?'Above':'Below')+' the first surcharge line at age '+age1(mR)+' by <b>'+mk(Math.abs(th[0]*irs-mR.agi))+'</b>', f:Math.min(1,mR.agi/(th[0]*irs))},'Medicare premiums and the IRMAA surcharge',[['First line for income in '+mR.year,m(th[0]*irs)],['Projected AGI in '+mR.year,m(mR.agi)],['Lifetime IRMAA, '+E.STRATS[chartStrat].label,m(irB)],['standard Part B in 2026',m(P.irmaa.baseB)+' a month'],['lifetime IRMAA, bracket fill',m(irF)]],
+  '<p>'+T('IRMAA','IRMAA')+' is the extra charge here: Part B and D premiums rise in steps once income from two years earlier crosses each line. One dollar over a line costs the full surcharge for the year, for each person on Medicare. Income at 63 sets premiums at 65.</p><p>The lines rise with inflation each year, so the line that will apply to income two years from now is about '+m(th[0]*irs)+' in this page\u0027s 2026 dollars, not '+m(th[0])+'. For 2027 and 2028 premiums the page uses same year income as a stand in, because 2025 and 2026 income is not entered. A large drop in income after a life change such as retirement or the death of a spouse can be reported to Social Security on Form SSA-44.</p><p>The table used is the one for the filing status on the tax return from two years earlier. A survivor whose lookback year was a joint return is measured against the joint lines until the lookback reaches a single return, and Form SSA-44 remains the alternative when current income is lower.</p>',
+  ['Which tier do our projected incomes two years ahead fall into, and how close are we to the next line?','Does a work stoppage or other life changing event qualify for a premium reconsideration on Form SSA-44?','How should one time income, like a home sale gain, be timed relative to the lookback?','Would qualified charitable distributions from an IRA lower the income that counts?'],
+  'Premium year Y uses MAGI from year Y minus 2 (AGI plus tax exempt interest; none modeled). SSA: POMS HI 01101.020.\nLines in 2026 dollars for income two years earlier = 2026 line x (1 + '+I.infl+'%)^2 = '+m(th[0])+' x '+irs.toFixed(4)+' = '+m(th[0]*irs)+'\nConversion guard line = that x (1 minus '+pc(marg)+') = '+m(th[0]*irs*(1-marg))+'\nSurcharge per person per year at tier 1 = ('+P.irmaa.partB[1]+' + '+P.irmaa.partD[1]+') x 12 = '+m((P.irmaa.partB[1]+P.irmaa.partD[1])*12)+'\nProjected AGI at age '+age1(mR)+' = '+m(mR.agi), flag3+tb3));
+ // 4 SS
+ var ssRows = '', ssTxt = '';
+ I.people.forEach(function(p,i){ var by = 2027 - p.age, f = E.fraMonths(by)/12, a62 = E.ssFactor(62,by), aF = 1, a70 = E.ssFactor(70,by), ac = E.ssFactor(p.claim,by);
+  var be = null; for (var a=70;a<=100;a++){ if ((a-70+1)*a70 >= (a-62+1)*a62) { be = a; break; } }
+  ssRows += '<tr><td>'+names(i)+' (born '+by+', full age '+fmtAge(f)+')</td><td>'+m(p.ssFra*a62)+' ('+pc(a62,1)+')</td><td>'+m(p.ssFra)+'</td><td>'+m(p.ssFra*a70)+' ('+pc(a70,1)+')</td><td>'+m(p.ssFra*ac)+' at '+p.claim+'</td><td>'+(be?'about '+be:'after 100')+'</td></tr>';
+  ssTxt += names(i)+': '+pc(a62,1)+' at 62, '+pc(a70,1)+' at 70. '; });
+ var both = firstRow(b,function(r){return r.ss>0 && r.ages.every(function(a,i){return a===null || a>=I.people[i].claim;});}) || firstRow(b,function(r){return r.ss>0;});
+ var prov = both ? (both.agi - both.tss) + both.ss/2 : 0;
+ var tb4 = '<div class="tblwrap"><table><caption>Monthly benefit by claim age, 2026 dollars</caption><thead><tr><th scope="col">Person</th><th scope="col">At 62</th><th scope="col">At full age</th><th scope="col">At 70</th><th scope="col">Chosen</th><th scope="col">Waiting to 70 pulls ahead of 62 by</th></tr></thead><tbody>'+ssRows+'</tbody></table></div>';
+ var thr = st==='mfj' ? [32000,44000] : [25000,34000];
+ H.push(card(4,{t:'Taxable share of benefits: <b>'+(both?pc(both.tss/both.ss):'n/a')+'</b>'+(both?' in '+both.year:''), f:both?both.tss/both.ss/0.85:0},'Social Security claiming and how benefits are taxed',[['Combined income in '+(both?both.year:'n/a'),m(prov)],['Lower and upper lines',m(thr[0])+' and '+m(thr[1])],['Taxable share of benefits',both?pc(both.tss/both.ss):'n/a']],
+  '<p>Each month of claiming before full retirement age cuts the benefit permanently, and each month of waiting after it adds two thirds of 1% until 70. The percentages in the table depend on birth year: 70% and 124% hold for people born in 1960 or later, while a 1959 birth gets 70.83% and 125.33%. The crossover age is a simple cumulative comparison in 2026 dollars, without interest or mortality, so it is a rough marker only.</p><p>Up to 85% of benefits become taxable once combined income passes the upper line. Combined income, in IRS Publication 915 terms, is AGI before benefits plus tax exempt interest plus half of benefits. The lines are not adjusted for inflation, so more retirees cross them over time. The extra $6,000 deduction for people 65 and over (2025 to 2028) needs a valid Social Security number and, for married people, a joint return.'+(I.n===2?' For couples, the higher earner\u0027s claiming age also sets the survivor benefit.':'')+'</p>',
+  ['How does our health and family longevity history bear on the claiming age?','How do spousal and survivor benefits change the best claiming order for us?','Which years would pretax withdrawals or conversions push more of our benefit into taxable income?','If I keep working before full retirement age, does the earnings test apply? WEP and GPO ended for benefits payable from January 2024.'],
+  ssTxt+'\nEarly: 5/9 of 1% per month for the first 36 months, 5/12 of 1% for each month beyond.\nDelayed: 2/3 of 1% per month after full age, to 70.\nCombined income = AGI before benefits + tax exempt interest (none modeled) + half of benefits = '+m(prov)+'\nTaxable benefits follow IRS Publication 915 Worksheet 1 (50% and 85% tiers).', tb4));
+ // 5 withdrawal order (summary pointing to compare)
+ var ks = Object.keys(E.STRATS), best = ks.slice().sort(function(a,c){return RES[a].totals.taxes-RES[c].totals.taxes;});
+ H.push(card(5,{t:'Lowest lifetime tax: <b>'+E.STRATS[best[0]].label+'</b>, with caveats', f:RES[best[best.length-1]].totals.taxes>0?RES[best[0]].totals.taxes/RES[best[best.length-1]].totals.taxes:0},'Withdrawal order and lifetime tax',ks.map(function(k){ return [E.STRATS[k].label+' lifetime tax', mk(RES[k].totals.taxes)]; }),
+  '<p>The order in which accounts are drawn changes when income is taxed, not only how much. Drawing taxable and cash first keeps early taxable income low but can leave large pretax balances for required distributions later. Pretax first spreads that income out but can raise marketplace and Medicare costs. Bracket fill adds conversions on top of taxable first. In this scenario the lowest projected lifetime tax is <strong>'+E.STRATS[best[0]].label+'</strong> and the highest is '+E.STRATS[best[best.length-1]].label+'; compare ending balances and premiums too in the <a href="#compare">strategy compare</a> section.</p><p><strong>Read the ranking with care.</strong> Lowest lifetime tax is not the same as best. A strategy can pay less tax yet leave a smaller or more heavily taxed estate, pay more in health premiums, or run short sooner. The ranking also rests on steady returns, current law held fixed, a flat state rate and the heir tax rate assumed, so a small change in any of them can reorder it.</p>',
+  ['Which withdrawal pattern fits our income needs, tax brackets and health coverage years together?','How should withdrawals be coordinated with charitable giving or estate goals?','How sensitive is this comparison to market returns in the first few years?'],
+  'Each year: spending + taxes + premiums minus wages, pensions, Social Security and RMDs = amount to withdraw.\nThe withdrawal and its tax are solved together (iterated until stable).\nTaxable account gains share = 1 minus basis share. Penalties: full 10% on pretax and Roth withdrawals before the year someone turns 59; in the year they turn 59, half the penalty as a mid year stand in for 59 and a half; none from 60; none on plan money after a Rule of 55 retirement.'));
+ // 6 RMD
+ var rm = '', rmTxt = '';
+ I.people.forEach(function(p,i){ var by = 2027-p.age, ra = E.rmdStartAge(by), dv = E.rmdDivisor(ra); var r1 = firstRow(b,function(r){return r.ages[i]===ra;});
+  rm += '<tr><td>'+names(i)+' (born '+by+')</td><td>'+ra+(by===1959?' (proposed regulations)':'')+'</td><td>'+dv+'</td></tr>'; rmTxt += names(i)+': start age '+ra+', divisor '+dv+'. '; });
+ var miss = rB ? rB.rmd : 0;
+ H.push(card(6,{t:rB?'First RMD at '+age1(rB)+': <b>'+mk(rB.rmd)+'</b>':'No RMD within the plan', f:rB&&rF&&rB.rmd>0?Math.min(1,rF.rmd/rB.rmd):0},'Required minimum distributions',[['First RMD, taxable first',rB?m(rB.rmd)+' at '+age1(rB):'none in plan'],['First RMD, bracket fill',rF?m(rF.rmd):'none in plan'],['Excise tax if that RMD is missed',m(miss*.25)],['If corrected within two years',m(miss*.10)]],
+  '<p>SECURE 2.0 set the starting age at 73 for people who reach 72 after 2022, and at 75 for people who reach 74 after 2032. The law text overlaps for people born in 1959; IRS proposed regulations published July 19, 2024 (89 FR 58644) read it as 73, which this page uses. Each year\u0027s '+T('RMD','required minimum distribution')+' is the prior year end balance divided by the Uniform Lifetime Table factor. Money still in a current employer\u0027s plan can usually wait until retirement. Roth IRAs have no required distributions for the owner.</p><p><strong>Charitable distributions:</strong> from 70 and a half, an IRA owner can send up to $111,000 in 2026 straight from the IRA to a qualifying charity as a '+T('QCD','qualified charitable distribution')+'. It counts toward the RMD and is left out of AGI, which also keeps it out of the income behind Medicare surcharges and the taxable share of Social Security (IRS Publication 590-B). It applies only to giving that would happen anyway, and the projection does not model it.</p>',
+  ['Which accounts are subject to RMDs, and can one IRA RMD be taken from another IRA?','Should the first RMD be delayed to April 1 of the next year, given two would then fall in one year?','How do qualified charitable distributions fit for us?'],
+  rmTxt+'\nRMD = prior year end pretax balance / divisor.\nMissed RMD excise = 25% of shortfall, or 10% if corrected within two years.', '<div class="tblwrap"><table><caption>RMD start ages and first year divisors</caption><thead><tr><th scope="col">Person</th><th scope="col">Start age</th><th scope="col">Divisor</th></tr></thead><tbody>'+rm+'</tbody></table></div>'));
+ // 7 early access
+ var ea = '', eaTxt = '';
+ I.people.forEach(function(p,i){ var r55 = p.retire>=55, pre = p.age < 60 || p.retire < 60;
+  ea += '<tr><td>'+names(i)+'</td><td>'+p.retire+'</td><td>'+(r55?'Possibly, for that employer plan':'No (left before 55)')+'</td><td>'+Math.max(0,(59.5-Math.max(p.retire,p.age))).toFixed(1)+'</td></tr>'; });
+ H.push(card(7,{t:'Projected early withdrawal penalties: <b>'+mk(b.totals.pen)+'</b>', f:b.totals.taxes>0?b.totals.pen/b.totals.taxes:0},'Getting at money before 59 and a half',[['Cash and taxable available',m(I.taxable+I.cash)],['Roth balance (contributions may be accessible)',m(I.people.reduce(function(s,p){return s+p.roth;},0))],['Projected early withdrawal penalties',m(b.totals.pen)]],
+  '<p>Pretax withdrawals before 59 and a half generally carry a 10% additional tax on top of income tax unless an exception applies. Published exceptions include separation from service in or after the year you reach 55 (the plan of that employer only, not IRAs), a series of substantially equal periodic payments under section 72(t), disability, and others on the IRS list. A 72(t) series must continue for at least five years or to 59 and a half, whichever is longer; breaking it can bring back the tax on earlier payments. Converted Roth amounts withdrawn within five years of the conversion year before 59 and a half may also face the 10% tax. This page counts whole years. It charges the full penalty on pretax and Roth withdrawals before the year someone turns 59, half the penalty in the year they turn 59 as a mid year stand in for 59 and a half, and none from 60. Plan withdrawals after a qualifying Rule of 55 retirement are exempt. Charging Roth withdrawals overstates costs when contributions could come out tax free.</p>',
+  ['Does my plan allow partial withdrawals after separation, and would rolling it to an IRA lose the Rule of 55?','Would a 72(t) payment schedule fit, and which calculation method applies?','How are Roth contributions, conversions and earnings ordered when withdrawn?'],
+  'Penalty = 10% x early pretax or Roth withdrawal amount before the year of turning 59; 5% in the year of turning 59; 0 from 60.\nRule of 55: retirement age 55 or later, applies to that 401(k) or 403(b) only.\nPenalties projected (taxable first) = '+m(RES.conventional.totals.pen)+'; pretax first = '+m(RES.pretaxFirst.totals.pen), '<div class="tblwrap"><table><caption>Access by person</caption><thead><tr><th scope="col">Person</th><th scope="col">Retire at</th><th scope="col">Rule of 55</th><th scope="col">Years to 59 and a half after retiring</th></tr></thead><tbody>'+ea+'</tbody></table></div>'));
+ // 8 LTCG
+ var lt = [P.ltcg.zeroTop[g.status]], zr = Math.max(0, lt[0]-g.ordTI), niTh = P.niit.threshold[g.status];
+ H.push(card(8,{t:'Room for 0% gains in '+g.year+': <b>'+mk(zr)+'</b>', f:lt[0]?zr/lt[0]:0},'The 0% capital gains zone and the 3.8% surtax',[['Year shown',String(g.year)],['0% zone top',m(lt[0])],['Ordinary taxable income',m(g.ordTI)],['Room for 0% gains',m(zr)],['Surtax line (not indexed)',m(niTh)],['Projected AGI',m(g.agi)]],
+  '<p>Long term gains and qualified dividends are taxed at 0% to the extent taxable income stays under the 0% line, with ordinary income filling the lower brackets first. Selling appreciated holdings in low income years can reset cost basis at no federal tax, though the gain still counts for marketplace credits and Medicare surcharges, and it competes with Roth conversions for the same room. The 3.8% net investment income tax applies only above '+m(niTh)+' of income.</p>',
+  ['Does harvesting gains or converting to Roth make better use of low income years for us?','How do state taxes treat capital gains?','Which lots would be sold, and how are holding periods tracked?'],
+  'Room = 0% line '+m(lt[0])+' minus ordinary taxable income '+m(g.ordTI)+' = '+m(zr)+'\nNIIT = 3.8% x lesser of investment income or (MAGI minus '+m(niTh)+').'));
+ // 9 HSA
+ var yrsB = I.hsa/(P.irmaa.baseB*12);
+ H.push(card(9,{t:'HSA covers about <b>'+yrsB.toFixed(1)+' years</b> of one Part B premium', f:Math.min(1,yrsB/20)},'Health savings accounts before and after 65',[['HSA balance',m(I.hsa)],['Years of one standard Part B premium',yrsB.toFixed(1)],['Projected HSA used for Medicare premiums',m(b.rows.reduce(function(s,r){return s+r.hsaUse;},0))]],
+  '<p>Before 65, HSA money used for anything other than qualified medical costs is taxed and hit with an additional 20% tax. From 65 the 20% tax no longer applies, though non medical withdrawals are still taxed as income, much like a traditional IRA. Medicare Part B, Part D and Medicare Advantage premiums are qualified expenses from 65; Medigap premiums are not. Contributions stop once Medicare coverage begins. This page uses the HSA to pay Medicare premiums from 65.</p>',
+  ['When does Medicare enrollment stop HSA contributions for us, including retroactive Part A coverage?','Which past medical receipts could support tax free reimbursement later?','Who would inherit the HSA, and how is it taxed for a non spouse?'],
+  'Years of premiums = '+m(I.hsa)+' / ('+m(P.irmaa.baseB)+' x 12) = '+yrsB.toFixed(1)));
+ // 10 home
+ var eq = I.home - I.loan, ex = st==='mfj'?500000:250000;
+ var dn = '<div class="ruleset"><div class="card"><h4 style="margin-top:0">Downsizing</h4><div class="f"><label for="h_new">New home price, % of current value</label><input id="h_new" type="text" inputmode="numeric" value="'+HOMEUI.newPct+'"></div><div class="f"><label for="h_cost">Selling and moving costs, % of sale price (assumption)</label><input id="h_cost" type="text" inputmode="numeric" value="'+HOMEUI.costPct+'"></div><p>Equity freed after paying off the mortgage, buying the new home outright and costs: <strong>'+m(I.home*(1-HOMEUI.costPct/100) - I.loan - I.home*HOMEUI.newPct/100)+'</strong>. Gain up to '+m(ex)+' on a main home may be excluded from tax if ownership and use tests are met (purchase price not modeled).</p></div>'+
+  '<div class="card"><h4 style="margin-top:0">Borrowing against the home</h4><p><strong>Home equity line of credit:</strong> a loan secured by the home, usually at a variable rate, that requires payments. The CFPB warns that falling behind on it can mean losing the home. <strong>Reverse mortgage (HECM):</strong> the CFPB notes it is only for homeowners 62 and older; there is no monthly payment, but the balance grows as interest and fees are added, and owners must keep paying property taxes and homeowners insurance and keep up the home, or the loan can come due. Neither is modeled in the projection.</p><p class="src">Sources: <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-home-equity-line-of-credit-en-107/" rel="noreferrer noopener">CFPB on home equity lines</a> and <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-reverse-mortgage-en-224/" rel="noreferrer noopener">CFPB on reverse mortgages</a>.</p></div></div>';
+ H.push(card(10,{t:'Home equity: <b>'+mk(eq)+'</b>, '+pc(eq/Math.max(1,eq+I.people.reduce(function(s,p){return s+p.k401+p.ira+p.roth;},0)+I.taxable+I.cash+I.hsa))+' of net worth', f:eq/Math.max(1,eq+I.people.reduce(function(s,p){return s+p.k401+p.ira+p.roth;},0)+I.taxable+I.cash+I.hsa)},'Home equity: downsizing, credit lines and reverse mortgages',[['Home value',m(I.home)],['Mortgage',m(I.loan)],['Equity',m(eq)],['Equity share of net worth',pc(eq/Math.max(1,eq+I.people.reduce(function(s,p){return s+p.k401+p.ira+p.roth;},0)+I.taxable+I.cash+I.hsa))]],
+  '<p>Home equity is often the largest asset at retirement but is not spendable without selling or borrowing. Each route has costs and risks that depend on rates, health, the local market and plans to leave the home to heirs. These are concepts to explore, not recommendations.</p>',
+  ['What would downsizing cost all in, including taxes, fees and moving, where we want to live?','How do a credit line and a reverse mortgage compare on cost, risk and effect on heirs?','How would a sale gain affect our Medicare premiums two years later and our marketplace credits?'],
+  'Freed equity = value x (1 minus cost %) minus mortgage minus new home price\n= '+m(I.home)+' x '+(1-HOMEUI.costPct/100).toFixed(2)+' minus '+m(I.loan)+' minus '+m(I.home*HOMEUI.newPct/100)+'\nExclusion limit = '+m(ex), dn));
+ // 11 survivor
+ if (I.n===2){ var D = JSON.parse(JSON.stringify(I)); D.death = Object.assign({}, I.death, {on:true}); var sv = E.project(D,chartStrat), noD = JSON.parse(JSON.stringify(I)); noD.death.on=false; var nd = E.project(noD,chartStrat);
+  var idx = sv.rows.findIndex(function(r){ return r.status==='single'; });
+  var a = idx>0 ? nd.rows[idx] : null, s2 = idx>0 ? sv.rows[idx] : null, si = s2 ? s2.survInfo || (sv.rows.filter(function(r){return r.survInfo;})[0]||{}).survInfo : null;
+  var sRow = s2 ? sv.rows.slice(idx).filter(function(r){ return r.tierLce !== null && r.tierLce !== undefined && r.tierLce < r.tier; })[0] : null;
+  var kv11 = a ? [['Household Social Security, '+s2.year,m(a.ss)+' to '+m(s2.ss)],['Federal tax',m(a.fed)+' to '+m(s2.fed)],['IRMAA tier (two year lookback)',a.tier+' to '+s2.tier],['year after first death',s2.year+' (survivor age '+s2.ages.filter(function(x){return x!==null;})[0]+')'],['marginal rate',pc(a.marg)+' to '+pc(s2.marg)]] : [['Survivor year','beyond plan end']];
+  var svTxt = si ? ' In this scenario the survivor benefit would be about '+m(si.annual)+' a year: '+(si.claimed ? 'the deceased had claimed, ' : 'the deceased had not claimed, so the base is the full benefit'+(si.base > I.people[I.death.who].ssFra*1.001 ? ' plus delayed credits earned through the end of the year of death, ' : ', '))+(si.survF >= 0.9999 ? 'paid at the full 100% because the survivor, at '+si.start+', is past full retirement age' : 'reduced to '+pc(si.survF,1)+' for a survivor starting at '+si.start)+(si.limit!==null && si.limit!==undefined ? ', and capped at the larger of the deceased\u0027s reduced benefit and 82.5% of the full benefit' : '')+'. The survivor keeps whichever is larger, this or their own '+m(si.own)+'.' : '';
+  var lceTxt = sRow ? '<p><strong>Form SSA-44:</strong> in '+sRow.year+' the lookback still uses joint income from before the death, giving tier '+sRow.tier+'. Because the death of a spouse is a life changing event, Social Security can use the survivor\u0027s current income instead, which would be tier '+sRow.tierLce+' here.</p>' : '<p>If the lookback year still shows joint income from before the death, the death of a spouse is a life changing event that can be reported on Form SSA-44 so Social Security uses current income.</p>';
+  H.push(card(11,{t:a?'Survivor Social Security in '+s2.year+': <b>'+mk(s2.ss)+'</b> of '+mk(a.ss):'Survivor year is past the plan end', f:a&&a.ss>0?s2.ss/a.ss:0},'Couples: what changes for the survivor',kv11,
+   '<p>Scenario: '+names(I.death.who)+' dies after age '+I.death.age+', and the survivor spends '+I.death.spendPct+'% of the couple\u0027s budget. The survivor inherits the pretax and Roth accounts and, from the following year, files as single. Single brackets through 32%, the standard deduction and the first Medicare surcharge line are exactly half the joint ones, while household income often falls by less.</p><p>Social Security survivor benefits start at 71.5% of the deceased\u0027s benefit at 60 and rise to 100% at the survivor\u0027s full retirement age.'+svTxt+'</p>'+lceTxt+'<p>Lifetime tax with the survivor scenario: '+m(sv.totals.taxes)+' versus '+m(nd.totals.taxes)+' without. Joint filing for the year of death, and qualifying surviving spouse status with a dependent child, are not modeled.</p>',
+   ['How would the survivor\u0027s income, taxes and Medicare premiums change, and does converting while both are alive help?','Which pension survivor option was or will be elected?','Are beneficiary designations current on every account?','How does claiming age for the higher earner affect the survivor benefit?'],
+   'Survivor benefit (POMS RS 00615.320 and RS 00615.322):\n  base = deceased benefit as claimed; if never claimed, full benefit (plus delayed credits if death came after full age, counted through the end of that year of age, up to 70)\n  x survivor reduction: 71.5% at 60, rising evenly to 100% at survivor full age (20 CFR 404.409(b))\n  if the deceased claimed early: no more than the larger of the reduced benefit or 82.5% of the full benefit\n'+(si?'  here: base '+m(si.base*12)+' a year x '+pc(si.survF,2)+(si.limit!==null&&si.limit!==undefined?', limit '+m(si.limit*12):'')+' = '+m(si.annual)+'\n':'')+'Filing status single from the year after death (simplified).\nIRMAA lines single: '+P.irmaa.single.map(m).join(', ')));
+ } else H.push(card(11,{t:'Applies to married couples only',f:0},'Couples: what changes for the survivor',[],'<p>This card applies to married couples. For a single person, the brackets and Medicare lines shown already use single values.</p>',['Are beneficiary designations current on every account?'],'Not applicable for one person.'));
+ $('#cards').innerHTML = H.join('');
+}
+function fmtAge(f){ var y = Math.floor(f), mo = Math.round((f-y)*12); return y + (mo? ' and ' + mo + ' months':''); }
+var HOMEUI = { newPct:60, costPct:6 };
+
+function renderLimits(){
+ var L = ['Cash interest uses the opening balance and assumed nominal yield, converted to the model real-dollar convention. It is taxable current income and included in NIIT where applicable; cash principal is only deflated at year end. Surplus, including unused interest, enters taxable investments. This is a yearly timing approximation.', 'Medicaid eligibility is not calculated. The opt-in scenario assumes eligibility has been independently verified for every applicable year and assumes $0 premiums; community-engagement rules, exemptions, state-specific criteria and cost sharing require separate verification.','All results are in 2026 dollars. Tax brackets, deductions and Medicare lines are held at 2026 values (they are indexed to inflation). Lines that are not indexed (Social Security taxation, the 3.8% surtax, the senior deduction phaseout) shrink in real terms each year.',
+ 'The $6,000 senior deduction is applied for 2027 and 2028 only, as current law ends it after 2028.',
+ 'Marketplace years assume 2027 rules continue; credits use the benchmark premium you enter, ignoring age rating, plan choice and cost sharing. The poverty line rises with inflation, so the 400% line is shown in 2026 dollars. Medicaid eligibility is not modeled; an explicit verified-eligibility assumption assigns $0 premiums below 138% FPL, with other costs unmodeled; state subsidies and the higher Alaska and Hawaii poverty lines are not modeled. Before retirement, employer coverage is assumed at no cost, and an offer of employer coverage would usually rule out the credit.',
+ 'Medicare: Part B standard premium plus IRMAA for B and D. Part D plan premiums, Medigap and out of pocket costs are not modeled. Premiums for 2027 and 2028 depend on 2025 and 2026 income, which is not entered, so same year income stands in for those two years. Later years use income from two years earlier, compared with lines raised by two years of inflation.',
+ 'Social Security: own benefit only; spousal benefits, the earnings test, cost of living differences and taxation of benefits by states are not modeled.',
+ 'Taxes: federal ordinary and capital gains tax, taxable Social Security, NIIT and early withdrawal penalties. Payroll taxes, AMT, itemized deductions, credits, qualified dividends drag on taxable accounts and state specific rules are not modeled. State tax is one flat rate on federal taxable income, which can be far from a real state result: many states exempt Social Security or some retirement income, and some have no income tax.',
+ 'Early withdrawal penalty: full before the year someone turns 59, half in that year as a mid year stand in for 59 and a half, none from 60. Roth withdrawals are penalized like pretax ones, which overstates the cost when contributions could come out tax free.',
+ 'Returns are steady each year with no market swings, so sequence risk is not shown.',
+ 'RMDs: Uniform Lifetime Table only; 1959 births use age 73, as in IRS proposed regulations of July 19, 2024. The still working exception applies to the 401(k) of a person not yet retired.',
+ 'Survivor: rollover of all accounts to the spouse, single status from the year after death, no qualifying surviving spouse status. The survivor benefit uses the survivor reduction, the 82.5% limit and delayed credits, at yearly rather than monthly steps.',
+ 'Not modeled: inherited accounts, annuities, life insurance, long term care, Roth contribution ordering, wash sale and lot selection, charitable giving including qualified charitable distributions, business income.',
+ 'Medicare surcharge lines are held at 2026 values in real terms. The top line ($500,000 single, $750,000 joint) is fixed in dollars for 2027 premiums by the Bipartisan Budget Act of 2018 and indexed from 2028, so the page lowers it by one year of inflation in real terms.'];
+ $('#limitsBody').innerHTML = '<details><summary>Show all '+L.length+' simplifications</summary><ul>'+L.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul></details>';
+}
+function renderRules(){ $('#rulesTbl tbody').innerHTML = RULES.map(function(r){ return '<tr><th scope="row">'+esc(r.topic)+'</th><td>'+esc(r.value)+'</td><td><a href="'+esc(r.url)+'" rel="noreferrer noopener">'+esc(r.src)+'</a><br><span class="src">'+esc(r.asOf)+'</span></td></tr>'; }).join(''); }
+
+/* ---------- hash save ---------- */
+function save(){ var s = btoa(unescape(encodeURIComponent(JSON.stringify({v:1,s:STATE,h:HOMEUI})))); history.replaceState(null,'','#s='+s); var link=new URL(location.href);try{if(parent!==window&&parent.location.origin===location.origin){link=new URL(parent.location.href);link.hash='#s='+s;parent.history.replaceState(null,'',link);}}catch(e){}$('#saveurl').value=link.href; $('#savebox').classList.add('show'); $('#saveurl').focus(); $('#saveurl').select(); }
+function load(){ var h = location.hash.match(/#s=([A-Za-z0-9+/=]+)/); if (!h) return false; try { var o = JSON.parse(decodeURIComponent(escape(atob(h[1])))); if (o && o.s && o.s.people) { STATE = Object.assign(E.defaults(), o.s); if (o.h) HOMEUI = Object.assign(HOMEUI,o.h); return true; } } catch(e){ $('#msgs').textContent = 'The saved link could not be read, so defaults are shown.'; } return false; }
+
+/* ---------- events ---------- */
+function gErr(id, msg){ var el = $('#'+id), eid = id+'_e', sp = document.getElementById(eid);
+ if (!msg){ el.removeAttribute('aria-invalid'); el.removeAttribute('aria-describedby'); if (sp) sp.remove(); return 0; }
+ if (!sp){ sp = document.createElement('span'); sp.id = eid; sp.className = 'ferr bad'; el.insertAdjacentElement('afterend', sp); }
+ sp.textContent = msg; el.setAttribute('aria-invalid','true'); el.setAttribute('aria-describedby', eid); return 1; }
+function guide(){ var d = readGuide(false); if (!d) return; STATE = d; LOADED = 'Your three answers'; buildFields(); run(); toResults(); }
+function readGuide(silent){
+ var ge = gErr; if (silent) gErr = function(id,msg){ if (!msg) ge(id,''); return msg ? 1 : 0; };
+ try { return readGuide2(silent); } finally { gErr = ge; } }
+function readGuide2(silent){
+ var st = ($('input[name=gstatus]:checked')||{}).value || 'mfj', bad = 0;
+ function age(id, lo, hi, what){ var v = $('#'+id).value.trim(), n = +v; if (v===''){ bad += gErr(id,'Please enter '+what+'.'); return null; } if (!isFinite(n) || n<lo || n>hi){ bad += gErr(id,'Please enter a whole number from '+lo+' to '+hi+'.'); return null; } gErr(id,''); return Math.round(n); }
+ function money(id, what){ var v = $('#'+id).value.trim(), n = E.parseMoney(v); if (v===''){ bad += gErr(id,'Please enter '+what+', or 0.'); return null; } if (!isFinite(n) || n<0){ bad += gErr(id,'This needs a dollar amount, such as 850,000 or 850k.'); return null; } gErr(id,''); return n; }
+ var a1 = age('g_a1',50,85,'an age'), r1 = age('g_r1',40,85,'a retirement age'), a2 = null, r2 = null;
+ if (st==='mfj'){ a2 = age('g_a2',50,85,'an age'); r2 = age('g_r2',40,85,'a retirement age'); } else { gErr('g_a2',''); gErr('g_r2',''); }
+ var sav = money('g_sav','total savings'), sp = money('g_sp','yearly spending'), preV = +$('#g_pren').value;
+ if (!isFinite(preV) || preV<0 || preV>100 || $('#g_pren').value.trim()===''){ bad += gErr('g_pren','Please enter a percent from 0 to 100.'); } else gErr('g_pren','');
+ if (bad){ if (silent) return null; $('#g_err').textContent = (bad===1?'One answer needs':'A few answers need')+' a look before the results can update.'; var f = $('#start [aria-invalid=true]'); if (f) f.focus(); return null; }
+ if (!silent) $('#g_err').textContent = '';
+ var pre = preV/100, d = E.defaults(); d.status = st; if (st==='single') d.people = d.people.slice(0,1);
+ d.people[0].age = a1; d.people[0].retire = r1; if (st==='mfj'){ d.people[1].age = a2; d.people[1].retire = r2; }
+ d.spend = sp;
+ var preAmt = sav*pre, rest = sav - preAmt, share = st==='mfj' ? [0.65,0.35] : [1];
+ d.people.forEach(function(p,i){ p.k401 = preAmt*share[i]*0.75; p.ira = preAmt*share[i]*0.25; p.roth = rest*0.15*share[i]; });
+ d.taxable = rest*0.6; d.cash = rest*0.2; d.hsa = rest*0.05;
+ d.people.forEach(function(p,i){ p.salary = (+p.age < +p.retire) ? [110000,70000][i] : 0; });
+ return d;
+}
+function preview(){ var d = readGuide(true), el = $('#pvgrid'); if (!el) return;
+ if (!d){ el.innerHTML = '<p class="src">Preview waits for complete answers.</p>'; return; }
+ if (d.status==='single') d.people = d.people.slice(0,1);
+ var x = E.sanitize(d).input, r = E.project(x,'conventional'), t = r.totals, gp = gapRows(r).length;
+ var pk = 1; r.rows.forEach(function(q){ var e = q.end; pk = Math.max(pk, e.pre+e.roth+e.taxable+e.cash+e.hsa); });
+ var W = 240, H = 56, bw = W / r.rows.length, sv = '<svg class="pvchart" viewBox="0 0 '+W+' '+H+'" aria-hidden="true" focusable="false">';
+ r.rows.forEach(function(q,i){ var e = q.end, v = e.pre+e.roth+e.taxable+e.cash+e.hsa, h = Math.max(1, (H-2)*v/pk); sv += '<rect x="'+(i*bw+0.5).toFixed(1)+'" y="'+(H-h).toFixed(1)+'" width="'+Math.max(1,bw-1).toFixed(1)+'" height="'+h.toFixed(1)+'" fill="'+(q.short>1?'#8a8a8a':'#0c7a5a')+'"/>'; });
+ sv += '</svg>';
+ el.innerHTML = '<div class="pv"><span>Money lasts</span><b>'+(t.shortfallAge===null?'Through '+x.endAge:'Short at '+t.shortfallAge)+'</b></div><div class="pv"><span>Lifetime tax</span><b>'+mk(t.taxes)+'</b></div><div class="pv"><span>Gap years before Social Security</span><b>'+gp+'</b></div><div class="pv pvc"><span>Savings by year</span>'+sv+'</div>'; }
+var pvT; function schedPreview(){ clearTimeout(pvT); pvT = setTimeout(preview, 200); }
+function toResults(){ var t = $('#out'); t.setAttribute('tabindex','-1'); t.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}); try { t.focus({preventScroll:true}); } catch(e){} }
+function renderPrint(){ var el = $('#printInputs'); if (!el) return; var rows = [['Filing status', I.n===1?'Single':'Married couple filing jointly'],['Yearly spending', m(I.spend)],['Plan through age', I.endAge]];
+ I.people.forEach(function(p,i){ rows.push([names(i), 'age '+p.age+', retires '+p.retire+', claims '+p.claim+', benefit '+m(p.ssFra)+' a month, 401(k) '+m(p.k401)+', IRA '+m(p.ira)+', Roth '+m(p.roth)+', salary '+m(p.salary)+(p.pension?', pension '+m(p.pension):'')+(p.partTime?', part time '+m(p.partTime)+' to '+p.ptEnd:'')]); });
+ rows.push(['Other accounts','taxable '+m(I.taxable)+' ('+I.basisPct+'% basis), cash '+m(I.cash)+', HSA '+m(I.hsa)],['Home', m(I.home)+', mortgage '+m(I.loan)],['Assumptions','return '+I.ret+'%, inflation '+I.infl+'%, cash '+I.cashRet+'%, state tax '+I.stateRate+'%, benchmark '+m(I.benchmark)+' a month, credit rules '+I.aca+', margin '+(I.margin===undefined?3:I.margin)+'%'],['Strategy shown', E.STRATS[chartStrat].label]);
+ el.innerHTML = '<table><caption>Inputs used for this printout</caption><tbody>'+rows.map(function(r){ return '<tr><th scope="row">'+esc(r[0])+'</th><td>'+esc(String(r[1]))+'</td></tr>'; }).join('')+'</tbody></table>'; }
+var drawerPreviousFocus=null, drawerPreviousOverflow='';
+function toggleDrawer(on){ var p=$('.panel'),b=$('#drawerBtn');
+ p.classList.toggle('open',on);b.setAttribute('aria-expanded',String(on));
+ ['.hero','.guide-wrap','#out','.foot','header.top'].forEach(function(sel){var e=$(sel);if(e)e.inert=on;});
+ if(on){drawerPreviousFocus=document.activeElement;drawerPreviousOverflow=document.body.style.overflow;document.body.style.overflow='hidden';p.setAttribute('role','dialog');p.setAttribute('aria-modal','true');p.setAttribute('aria-labelledby','panel-h');$('#drawerClose').focus();}
+ else{document.body.style.overflow=drawerPreviousOverflow;p.removeAttribute('role');p.removeAttribute('aria-modal');p.removeAttribute('aria-labelledby');var f=drawerPreviousFocus&&document.contains(drawerPreviousFocus)?drawerPreviousFocus:b;if(f.getClientRects().length)f.focus();}
+}
+document.addEventListener('keydown',function(e){var p=$('.panel');if(!p||!p.classList.contains('open'))return;if(e.key==='Escape'){if($('.term[aria-expanded=true]'))return;e.preventDefault();toggleDrawer(false);}if(e.key==='Tab'){var a=Array.from(p.querySelectorAll('button,input,select,summary,a[href],[tabindex]')).filter(function(x){return !x.disabled&&x.tabIndex>=0&&x.getClientRects().length;});if(!a.length)return;var first=a[0],last=a[a.length-1];if(e.shiftKey&&(document.activeElement===first||!p.contains(document.activeElement))){e.preventDefault();last.focus();}else if(!e.shiftKey&&(document.activeElement===last||!p.contains(document.activeElement))){e.preventDefault();first.focus();}}});
+window.addEventListener('resize',function(){if(innerWidth>1060&&$('.panel').classList.contains('open'))toggleDrawer(false);});
+function init(){
+ if (load()) LOADED = 'Saved link'; buildFields(); renderRules();
+ $$('.stratSel').forEach(function(sel){ sel.innerHTML = Object.keys(E.STRATS).map(function(k){ return '<option value="'+k+'">'+E.STRATS[k].label+'</option>'; }).join(''); sel.value = chartStrat; sel.addEventListener('change', function(){ setStrat(this.value); }); });
+ $('#fields').addEventListener('input', function(e){ if (e.target.matches('[data-k]')) { readField(e.target); if (e.target.getAttribute('data-k')==='status') syncFields(); schedule(); } });
+ $('#fields').addEventListener('change', function(e){ if (e.target.matches('[data-k]')) { readField(e.target); if (e.target.getAttribute('data-k')==='status') syncFields(); schedule(); } });
+ $('#cmpgrid').addEventListener('click', function(e){ var b = e.target.closest('[data-show]'); if (!b) return; setStrat(b.getAttribute('data-show')); $('#timeline').scrollIntoView(); });
+ document.addEventListener('click', function(e){ var a = e.target.closest('a[href^="#card"], a[href^="#"]'); if (!a) return; var t = document.getElementById(a.getAttribute('href').slice(1)); if (t && t.tagName==='DETAILS') { t.open = true; UOPEN[a.getAttribute('href')] = true; } var dr = $('.panel'); if (dr && dr.classList.contains('open') && !dr.contains(a)) toggleDrawer(false); });
+ $('#drawerBtn').addEventListener('click', function(){ toggleDrawer(!$('.panel').classList.contains('open')); });
+ $('#drawerClose').addEventListener('click', function(){ toggleDrawer(false); });
+ $('#cards').addEventListener('click', function(e){ var sm = e.target.closest('summary'); if (!sm || !sm.parentNode.classList.contains('dcard')) return; var d = sm.parentNode; UOPEN['#'+d.id] = !d.open; });
+ $('#cards').addEventListener('input', function(e){ if (e.target.id==='h_new'||e.target.id==='h_cost'){ var v = E.parseMoney(e.target.value); if (isFinite(v)) { HOMEUI[e.target.id==='h_new'?'newPct':'costPct'] = E.clamp(v,0,200); clearTimeout(timer); timer = setTimeout(function(){ var id = e.target.id, pos = e.target.selectionStart; renderCards(); var el = document.getElementById(id); el.focus(); try{ el.setSelectionRange(pos,pos);}catch(x){} }, 400); } } });
+ $('#g_go').addEventListener('click', guide);
+ $('#guide').addEventListener('input', schedPreview); $('#guide').addEventListener('change', schedPreview); preview();
+ document.addEventListener('click', function(e){ var b = e.target.closest('.term'); $$('.term[aria-expanded=true]').forEach(function(o){ if (o !== b) { delete o.dataset.pin; o.setAttribute('aria-expanded','false'); document.getElementById(o.getAttribute('aria-controls')).hidden = true; } });
+  if (b) { e.preventDefault(); e.stopPropagation(); var on = b.dataset.hov ? true : b.getAttribute('aria-expanded') !== 'true'; delete b.dataset.hov; if (on) b.dataset.pin = '1'; else delete b.dataset.pin; b.setAttribute('aria-expanded', on); document.getElementById(b.getAttribute('aria-controls')).hidden = !on; }
+  if (e.target.id === 'pauseGo') { var f = $('#fields [aria-invalid=true]'); if (matchMedia('(max-width: 1060px)').matches) toggleDrawer(true); if (f) { var dt = f.closest('details'); if (dt) dt.open = true; f.focus(); } } }, true);
+ document.addEventListener('keydown', function(e){ if (e.key === 'Escape') $$('.term[aria-expanded=true]').forEach(function(o){ o.setAttribute('aria-expanded','false'); document.getElementById(o.getAttribute('aria-controls')).hidden = true; o.focus(); }); });
+ if (matchMedia('(hover: hover) and (pointer: fine)').matches) { document.addEventListener('mouseover', function(e){ var b = e.target.closest && e.target.closest('.term'); if (b && b.getAttribute('aria-expanded') !== 'true') { b.dataset.hov = '1'; b.setAttribute('aria-expanded','true'); document.getElementById(b.getAttribute('aria-controls')).hidden = false; } }); document.addEventListener('mouseout', function(e){ var b = e.target.closest && e.target.closest('.term'); if (b && !b.contains(e.relatedTarget) && !b.dataset.pin) { delete b.dataset.hov; b.setAttribute('aria-expanded','false'); document.getElementById(b.getAttribute('aria-controls')).hidden = true; } }); }
+ $('#g_pre').addEventListener('input', function(){ $('#g_pren').value = this.value; });
+ $('#g_pren').addEventListener('input', function(){ var v = +this.value; if (this.value.trim()!=='' && isFinite(v) && v>=0 && v<=100) $('#g_pre').value = v; });
+ $$('input[name=gstatus]').forEach(function(r){ r.addEventListener('change', function(){ $$('.g2p').forEach(function(x){ x.hidden = r.value!=='mfj' || !r.checked; }); }); });
+ $$('[data-preset]').forEach(function(b){ b.addEventListener('click', function(){ STATE = PRESETS[b.getAttribute('data-preset')](); LOADED = 'Sample, ' + b.firstChild.textContent.trim(); buildFields(); run(); toResults(); }); });
+ $('#save').addEventListener('click', save);
+ $('#reset').addEventListener('click', function(){ STATE = E.defaults(); LOADED = 'Starting example'; HOMEUI = {newPct:60,costPct:6}; history.replaceState(null,'',location.pathname); $('#savebox').classList.remove('show'); buildFields(); run(); });
+ $('#print').addEventListener('click', function(){ window.print(); });
+ run();
+}
+if (document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
+/* test hook for tests/consistency.py: the same numbers the tiles and guidance use; nothing is stored */
+window.__rt = { metrics: function(){ return RES.base ? metrics(RES.base) : null; }, strat: function(){ return chartStrat; }, n: function(){ return I.n; }, setStrat: setStrat,
+ load: function(d){ STATE = d; buildFields(); run(); } };
+})();
+</script>
+<script>(function(){var h=document.documentElement,b=document.getElementById('dev-theme');function set(t){h.dataset.reviewTheme=t;b.textContent=t==='dark'?'Light theme':'Dark theme';b.setAttribute('aria-label','Switch to '+(t==='dark'?'light':'dark')+' theme');}set(h.dataset.reviewTheme||'light');b.addEventListener('click',function(){var t=h.dataset.reviewTheme==='dark'?'light':'dark';set(t);if(parent!==window)parent.postMessage({type:'meter-dev-theme-request',theme:t},location.origin);});addEventListener('message',function(e){if(e.source===parent&&e.origin===location.origin&&e.data&&e.data.type==='meter-dev-theme'&&['light','dark'].includes(e.data.theme))set(e.data.theme);});if(parent!==window)parent.postMessage({type:'meter-dev-theme-ready'},location.origin);})();</script><script>(function(){document.querySelectorAll('[data-mobile-fold]').forEach(function(d){d.open=innerWidth>760;});var b=document.getElementById('more-guidance'),l=document.getElementById('guidance');b.addEventListener('click',function(){var on=l.classList.toggle('show-all');b.setAttribute('aria-expanded',String(on));b.textContent=on?'Show the top three observations':'Show all observations';});document.querySelectorAll('.tblwrap').forEach(function(e){e.tabIndex=0;e.setAttribute('role','region');e.setAttribute('aria-label','Scrollable calculation table');});})();</script><script>(()=>{const b=document.getElementById('open-feedback');if(parent===window)b.hidden=true;else b.addEventListener('click',()=>parent.postMessage({type:'meter-feedback-open'},location.origin));})();</script></body>
+</html>

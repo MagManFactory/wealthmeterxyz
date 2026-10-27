@@ -1,3 +1,13 @@
 /*
   X-Robots-Tag: noindex, nofollow
   Referrer-Policy: strict-origin-when-cross-origin
+
+# Approved special: retain noindex until a separate indexing decision.
+/retirement-transition-explorer
+  X-Robots-Tag: noindex, nofollow
+/retirement-transition-explorer.html
+  X-Robots-Tag: noindex, nofollow
+/assets/roger-specials/retirement-transition-explorer
+  X-Robots-Tag: noindex, nofollow
+/assets/roger-specials/retirement-transition-explorer/*
+  X-Robots-Tag: noindex, nofollow
