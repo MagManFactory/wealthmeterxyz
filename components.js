@@ -349,6 +349,7 @@ const siteHeader = `
             <div class="nav-group"><span class="nav-group-label label-longform">Longform</span>
                 <div class="dropdown">
                     <a href="longform.html">Longform Hub</a>
+                    <a href="trust-complexity-without-real-asset-protection.html">Trust Complexity Without Real Asset Protection</a>
                     <a href="the-estate-planning-delay-tax.html">The Estate Planning Delay Tax</a>
                     <a href="cybersecurity-as-household-wealth-protection.html">Cybersecurity as Household Wealth Protection</a>
                     <a href="fraud-risk-in-aging-households.html">Fraud Risk in Aging Households</a>
@@ -360,23 +361,6 @@ const siteHeader = `
                     <a href="the-sba-loan-personal-guarantee-trap.html">The SBA Loan Personal-Guarantee Trap</a>
                     <a href="small-business-wealth-without-exit-liquidity.html">Small-Business Wealth Without Exit Liquidity</a>
                     <a href="the-cash-flow-cost-of-private-school.html">The Cash-Flow Cost of Private School</a>
-                    <a href="the-529-overfunding-problem.html">The 529 Overfunding Problem</a>
-                    <a href="hsa-as-a-stealth-retirement-account.html">The HSA as a Stealth Retirement Account</a>
-                    <a href="municipal-bonds-after-free-money-era.html">Municipal Bonds After the Free-Money Era</a>
-                    <a href="tax-location-blind-spot.html">The Tax-Location Blind Spot: Why Asset Placement Still Gets Ignored</a>
-                    <a href="elder-care-cash-drain.html">The Elder-Care Cash Drain</a>
-                    <a href="divorce-as-a-wealth-event-hidden-destruction-curve.html">Divorce as a Wealth Event: The Hidden Destruction Curve</a>
-                    <a href="health-insurance-job-lock-premium.html">The Health Insurance Job Lock Premium</a>
-                    <a href="long-term-care-balance-sheet-risk.html">Long-Term Care as a Balance-Sheet Risk</a>
-                    <a href="the-bottom-half-grew-fastest-and-still-holds-2-3-percent.html">The Bottom Half Grew Fastest, and Still Holds 2.3%</a>
-                    <a href="the-90th-to-99th-percentile-retirement-reality-check.html">The 90th to 99th Percentile Retirement Reality Check</a>
-                    <a href="same-market-different-result-stock-ownership-wealth-gap.html">Same Market, Different Result: Why Owning More Stocks Drove the Wealth Gap</a>
-                    <a href="the-top-rung-moved-what-the-fed-says-about-the-0-1-percent-and-where-you-stand.html">The Top Rung Moved: What the Fed Says About the 0.1% and Where You Stand</a>
-                    <a href="when-to-adjust-tax-withholding.html">When to Adjust Tax Withholding Instead of Waiting for a Refund</a>
-                    <a href="medicare-drug-monthly-payment-plan.html">Medicare Drug Bills: What the Monthly Payment Plan Changes</a>
-                    <a href="2026-hsa-limit-and-deductible-test.html">The 2026 HSA Limit and the Deductible Test</a>
-                    <a href="credit-freeze-when-to-use-and-lift.html">A Credit Freeze Is Free: When to Use One and How to Lift It</a>
-                    <a href="joint-bank-account-fdic-coverage.html">Is Your Joint Bank Account Fully Insured?</a>
 
 
                     <a href="reports.html" style="color: #2563eb; border-top: 1px solid #e2e8f0; margin-top: 8px;">2026 Reports Hub</a>
