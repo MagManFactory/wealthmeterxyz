@@ -1,3 +1,14 @@
+async function meterVerifiedSignup(input) {
+    if (!window.__meterVerificationLoad) window.__meterVerificationLoad = new Promise((resolve, reject) => {
+        if (window.MeterVerification) { resolve(); return; }
+        const script = document.createElement('script'); script.src = '/subscriber-verification.js?v=20261102a';
+        script.onload = resolve; script.onerror = () => { window.__meterVerificationLoad = null; script.remove(); reject(new Error('Verification could not load. Please try again.')); };
+        document.head.append(script);
+    });
+    await window.__meterVerificationLoad;
+    return window.MeterVerification.start(input);
+}
+
 
 // GA4 — Measurement ID G-8NF91REL39 (do not reuse Lexicon G-5MC05WB07R)
 (function() {
@@ -374,24 +385,6 @@ const siteHeader = `
 const NEWSLETTER_ENDPOINT = "https://lifemeter.xyz/api/newsletter";
 const SUBSCRIBER_ACCESS_ENDPOINT = "https://lifemeter.xyz/api/subscriber-access";
 
-async function rememberSubscriberAccess(email) {
-    try {
-        const response = await fetch(SUBSCRIBER_ACCESS_ENDPOINT, {
-            method: "POST",
-            mode: "cors",
-            credentials: "omit",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ action: "claim", site: "wealthmeter", resource: "newsletter", email, company: "" })
-        });
-        if (!response.ok) return;
-        const data = await response.json();
-        if (!data.token) return;
-        document.cookie = `wm_subscriber_access=${encodeURIComponent(data.token)}; Max-Age=15552000; Path=/; SameSite=Lax; Secure`;
-    } catch (_error) {
-        // Newsletter signup remains successful if the convenience cookie cannot be set.
-    }
-}
-
 function newsletterHTML(source) {
     return `
 <section class="site-newsletter" aria-labelledby="newsletter-heading-${source}">
@@ -460,7 +453,8 @@ document.addEventListener("submit", async (event) => {
     const form = event.target.closest("[data-newsletter-form]");
     if (!form) return;
     event.preventDefault();
-    if (!form.reportValidity()) return;
+    if (!form.reportValidity() || form.dataset.sending === "1") return;
+    form.dataset.sending = "1";
 
     const status = form.querySelector("[data-newsletter-status]");
     const button = form.querySelector('button[type="submit"]');
@@ -469,11 +463,7 @@ document.addEventListener("submit", async (event) => {
     if (button) button.disabled = true;
 
     try {
-        const subscriberEmail = String(formData.get("email") || "").trim();
-        const response = await fetch(NEWSLETTER_ENDPOINT, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
+        await meterVerifiedSignup({...{
                 site: "wealthmeter",
                 source: form.dataset.source || "footer",
                 page: window.location.pathname || "/",
@@ -484,16 +474,14 @@ document.addEventListener("submit", async (event) => {
                 firstName: formData.get("firstName"),
                 lastName: formData.get("lastName"),
                 email: formData.get("email")
-            })
-        });
-        if (!response.ok) throw new Error("Newsletter request failed");
-        await rememberSubscriberAccess(subscriberEmail);
+            }, mode:'new', resource:'newsletter'});
         form.reset();
-        if (status) status.textContent = "You are signed up.";
+        if (status) status.textContent = "Email verified. You are signed up.";
         window.dispatchEvent(new CustomEvent("newsletter:subscribed", { detail: { source: form.dataset.source || "footer" } }));
     } catch (error) {
-        if (status) status.textContent = "We could not complete the signup. Please try again.";
+        if (status) status.textContent = error.message || "We could not complete the signup. Please try again.";
     } finally {
+        form.dataset.sending = "0";
         if (button) button.disabled = false;
     }
 });

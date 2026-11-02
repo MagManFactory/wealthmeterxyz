@@ -1,3 +1,14 @@
+async function meterVerifiedSignup(input) {
+    if (!window.__meterVerificationLoad) window.__meterVerificationLoad = new Promise((resolve, reject) => {
+        if (window.MeterVerification) { resolve(); return; }
+        const script = document.createElement('script'); script.src = '/subscriber-verification.js?v=20261102a';
+        script.onload = resolve; script.onerror = () => { window.__meterVerificationLoad = null; script.remove(); reject(new Error('Verification could not load. Please try again.')); };
+        document.head.append(script);
+    });
+    await window.__meterVerificationLoad;
+    return window.MeterVerification.start(input);
+}
+
 // One theme controls both the editorial shell and existing tool theme selectors.
 function syncPhoenixTheme(){
  const dark=document.body.classList.contains('dark');
@@ -120,19 +131,14 @@ document.querySelectorAll('[data-newsletter-form]').forEach(form => {
   const button = form.querySelector('button[type="submit"]');
   form.dataset.sending = '1'; button.disabled = true;
   try {
-   const response = await fetch('https://lifemeter.xyz/api/newsletter', {
-    method: 'POST', mode: 'cors', credentials: 'omit', headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({site: phoenixSite, source: form.dataset.source || 'phoenix', page: location.pathname,
+   await meterVerifiedSignup({...{site: phoenixSite, source: form.dataset.source || 'phoenix', page: location.pathname,
      newsletter: 'yes', company: form.elements.company?.value || '', firstName: form.elements.firstName.value.trim(),
      lastName: form.elements.lastName.value.trim(), email: form.elements.email.value.trim(),
      commercialUpdates: form.elements.commercialUpdates?.checked ? 'yes' : 'no',
-     commercialConsentVersion: form.elements.commercialUpdates?.checked ? '2026-10-01.1' : ''})
-   });
-   const data = await response.json();
-   if (!response.ok || !data.ok) throw new Error('Signup unavailable');
-   status.textContent = 'You are subscribed. Thank you.';
+     commercialConsentVersion: form.elements.commercialUpdates?.checked ? '2026-10-01.1' : ''}, mode:'new', resource:'newsletter'});
+   status.textContent = 'Email verified. You are subscribed. Thank you.';
    form.reset();
-  } catch { status.textContent = 'Signup is temporarily unavailable. Please try again.'; }
+  } catch (error) { status.textContent = error.message || 'Signup is temporarily unavailable. Please try again.'; }
   finally { form.dataset.sending = '0'; button.disabled = false; }
  });
 });

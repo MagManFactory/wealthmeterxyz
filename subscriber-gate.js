@@ -1,6 +1,17 @@
 (() => {
   "use strict";
 
+async function meterVerifiedSignup(input) {
+    if (!window.__meterVerificationLoad) window.__meterVerificationLoad = new Promise((resolve, reject) => {
+        if (window.MeterVerification) { resolve(); return; }
+        const script = document.createElement('script'); script.src = '/subscriber-verification.js?v=20261102a';
+        script.onload = resolve; script.onerror = () => { window.__meterVerificationLoad = null; script.remove(); reject(new Error('Verification could not load. Please try again.')); };
+        document.head.append(script);
+    });
+    await window.__meterVerificationLoad;
+    return window.MeterVerification.start(input);
+}
+
   const host = window.location.hostname.toLowerCase();
   const site = document.body.classList.contains("wealthmeter") ? "wealthmeter" : "lifemeter";
   const isPreview = ![site + ".xyz", "www." + site + ".xyz"].includes(host);
@@ -58,12 +69,12 @@
     };
     if (copies[resource]) return copies[resource];
     if (resource === "biomarker-essentials") {
-      return ["Unlock the free Biomarker Essentials Guide", "Join LifeMeter for evidence briefs, longform analysis, and new report releases. Your guide opens immediately."];
+      return ["Unlock the free Biomarker Essentials Guide", "Join LifeMeter for evidence briefs, longform analysis, and new report releases. Verify your email to open the guide."];
     }
     if (resource === "portfolio-alpha") {
-      return ["Unlock the Portfolio Alpha Simulator", "Join WealthMeter for new wealth research, diagnostic tools, and report releases. The simulator opens immediately."];
+      return ["Unlock the Portfolio Alpha Simulator", "Join WealthMeter for new wealth research, diagnostic tools, and report releases. Verify your email to open the simulator."];
     }
-    return ["Unlock Wearable Synthesis", "Join LifeMeter for evidence briefs, longform analysis, and new report releases. The tool opens immediately."];
+    return ["Unlock Wearable Synthesis", "Join LifeMeter for evidence briefs, longform analysis, and new report releases. Verify your email to open the tool."];
   }
 
   function showGate(resource, allowClose = false, wantsDestination = false) {
@@ -115,35 +126,16 @@
         button.disabled = false;
         return;
       }
-      if (mode === "new") {
-        const signupResponse = await fetch("https://lifemeter.xyz/api/newsletter", {
-          method: "POST",
-          mode: "cors",
-          credentials: "omit",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            site,
-            source: `subscriber-gate-${pendingResource}`,
-            page: window.location.pathname,
-            newsletter: "yes",
-            commercialUpdates: form.elements.commercialUpdates?.checked === true ? "yes" : "no",
-                commercialConsentVersion: form.elements.commercialUpdates?.checked === true ? "2026-10-01.1" : "",
-            company: form.elements.company.value,
-            firstName: form.elements.firstName.value.trim(),
-            lastName: form.elements.lastName.value.trim(),
-            email,
-          }),
-        });
-        if (!signupResponse.ok) throw new Error("signup_failed");
-      }
-      const data = await request("claim", pendingResource, { email });
+      const data = await meterVerifiedSignup({
+        mode, resource: ["fire-timeline", "lev-preparedness", "medical-black-swan", "life-expectancy-hides", "live-better-for-less", "claim-smart"].includes(pendingResource) ? "newsletter" : pendingResource,
+        email, newsletter: "yes", commercialUpdates: "no", commercialConsentVersion: "", firstName: form.elements.firstName.value.trim(), lastName: form.elements.lastName.value.trim(),
+        company: form.elements.company.value, source: `subscriber-gate-${pendingResource}`, page: location.pathname
+      });
       storeToken(data.token);
       unlock();
       if (pendingDestination && data.destination) window.location.assign(data.destination);
-    } catch (_error) {
-      status.textContent = mode === "returning"
-        ? "We could not verify an active subscription for that email. You can switch to New subscriber to join."
-        : "Access is temporarily unavailable. Please try again.";
+    } catch (error) {
+      status.textContent = error.message || "Access is temporarily unavailable. Please try again.";
       form.dataset.sending = "0";
       button.disabled = false;
     }
