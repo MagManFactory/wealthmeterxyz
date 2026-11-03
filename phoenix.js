@@ -1,7 +1,7 @@
 async function meterVerifiedSignup(input) {
     if (!window.__meterVerificationLoad) window.__meterVerificationLoad = new Promise((resolve, reject) => {
         if (window.MeterVerification) { resolve(); return; }
-        const script = document.createElement('script'); script.src = '/subscriber-verification.js?v=20261102a';
+        const script = document.createElement('script'); script.src = '/subscriber-verification.js?v=20261103-access1';
         script.onload = resolve; script.onerror = () => { window.__meterVerificationLoad = null; script.remove(); reject(new Error('Verification could not load. Please try again.')); };
         document.head.append(script);
     });

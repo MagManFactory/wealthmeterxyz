@@ -4,7 +4,7 @@
 async function meterVerifiedSignup(input) {
     if (!window.__meterVerificationLoad) window.__meterVerificationLoad = new Promise((resolve, reject) => {
         if (window.MeterVerification) { resolve(); return; }
-        const script = document.createElement('script'); script.src = '/subscriber-verification.js?v=20261102a';
+        const script = document.createElement('script'); script.src = '/subscriber-verification.js?v=20261103-access1';
         script.onload = resolve; script.onerror = () => { window.__meterVerificationLoad = null; script.remove(); reject(new Error('Verification could not load. Please try again.')); };
         document.head.append(script);
     });
@@ -170,8 +170,8 @@ async function meterVerifiedSignup(input) {
     try {
       const data = await request("validate", resource, { token: cookieValue() });
       if (data.destination) window.location.assign(data.destination);
-    } catch (_error) {
-      clearToken();
+    } catch (error) {
+      if (error.message === "not_verified") clearToken();
       showGate(resource, true, true);
     }
   });
@@ -192,11 +192,29 @@ async function meterVerifiedSignup(input) {
     try {
       await request("validate", pageResource, { token: cookieValue() });
       unlock();
-    } catch (_error) {
-      clearToken();
+    } catch (error) {
+      if (error.message === "not_verified") clearToken();
       showGate(pageResource, false, false);
+      if (error.message !== "not_verified") document.querySelector(".subscriber-gate-status").textContent = "Session verification is temporarily unavailable. Please try again later.";
     }
   }
 
+  let checkingSession=false,checkingVersion=false;
+  async function recoverOpenGate(){
+    if(isPreview||checkingSession||!pageResource||!cookieValue()||!document.querySelector('.subscriber-gate-backdrop')||document.querySelector('dialog.meter-verification[open]')||document.querySelector('[data-gate-form]')?.dataset.sending==='1')return;
+    checkingSession=true;try{await request('validate',pageResource,{token:cookieValue()});unlock();}catch(error){if(error.message==='not_verified')clearToken();}finally{checkingSession=false;}
+  }
+  async function checkGateVersion(){
+    if(isPreview||checkingVersion||document.querySelector('dialog.meter-verification[open]'))return;checkingVersion=true;
+    try{const response=await fetch('/subscriber-access-version.json?t='+Date.now(),{cache:'no-store',credentials:'omit',signal:AbortSignal.timeout(5000)});const data=await response.json();
+     if(response.ok&&data.schema===1&&data.gate!=='20261103-access1'&&!document.getElementById('meter-access-update')){
+      const banner=document.createElement('aside');banner.id='meter-access-update';banner.setAttribute('role','status');banner.style.cssText='position:fixed;bottom:12px;left:12px;right:12px;z-index:100003;padding:16px;background:#fff;color:#142333;border:2px solid #2563eb;border-radius:10px;font:16px/1.5 system-ui';
+      const text=document.createElement('span');text.textContent='Sign-in has been updated. Refresh before your next sign-in. Refreshing may clear unsaved calculator entries. ';const button=document.createElement('button');button.textContent='Refresh page';button.style.cssText='min-height:44px;padding:10px';button.onclick=()=>location.reload();banner.append(text,button);document.body.append(banner);
+     }
+    }catch(_){}finally{checkingVersion=false;}
+  }
+  function recover(){recoverOpenGate();checkGateVersion();}
+  window.addEventListener('focus',recover);window.addEventListener('pageshow',recover);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')recover();});
+  checkGateVersion();
   initializePageGate();
 })();

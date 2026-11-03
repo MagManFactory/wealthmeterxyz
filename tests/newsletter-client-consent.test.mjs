@@ -10,19 +10,19 @@ function context(host='lifemeter.xyz') {
     matches(){return true;}closest(){return this;}reportValidity(){return true;}reset(){}querySelector(s){return s.includes('button')?this.button:this.status;}
   }
   const document={cookie:'',body:{dataset:{},classList:cls,append(node){markup=node.innerHTML;}},addEventListener(name,handler){handlers[name]=handler;},querySelector(s){return s.includes("googletagmanager")?{}:null;},querySelectorAll(){return [];},createElement(){return {querySelector(){return {focus(){}};}};}};
-  const sandbox={document,window:{__lmGa4:true,__wmGa4:true,location:{hostname:host,pathname:'/',assign(){}},dispatchEvent(){}},HTMLFormElement:Form,FormData:class{constructor(form){this.form=form;}get(n){return this.form.elements[n]?.value||null;}},CustomEvent:class{},Response,console,fetch:async(url,options)=>{const body=JSON.parse(options.body);requests.push({url,body});return Response.json({ok:true,token:'test-token'});}};
+  const sandbox={document,window:{addEventListener(){},MeterVerification:{start:async(body)=>{requests.push({url:'/api/access-verification',body});return {token:'test-token'};}},__lmGa4:true,__wmGa4:true,location:{hostname:host,pathname:'/',assign(){}},dispatchEvent(){}},location:{hostname:host,pathname:'/'},HTMLFormElement:Form,FormData:class{constructor(form){this.form=form;}get(n){return this.form.elements[n]?.value||null;}},CustomEvent:class{},Response,console,fetch:async(url,options)=>{const body=JSON.parse(options.body);requests.push({url,body});return Response.json({ok:true,token:'test-token'});}};
   return {vm:vm.createContext(sandbox),handlers,requests,Form,markup:()=>markup};
 }
 for (const filename of ['components.js','components22.js']) {
   const path=new URL(`../${filename}`,import.meta.url);
   if(!existsSync(path))continue;
   test(`${filename}: signup is newsletter-only`,async()=>{
-    const c=context(filename==='components22.js'?'wealthmeter.xyz':'lifemeter.xyz');
+    const c=context('wealthmeter.xyz');
     vm.runInContext(readFileSync(path,'utf8'),c.vm);
     const html=vm.runInContext('newsletterHTML("footer")',c.vm);
     assert.doesNotMatch(html,/name="commercialUpdates"/);
     await c.handlers.submit({target:new c.Form(),preventDefault(){}});
-    const payload=c.requests.find(x=>x.url.includes('/api/newsletter')).body;
+    const payload=c.requests.find(x=>x.url.includes('/api/access-verification')).body;
     assert.equal(payload.newsletter,'yes');
     assert.equal(payload.commercialUpdates,'no');assert.equal(payload.commercialConsentVersion,'');
   });
@@ -35,7 +35,7 @@ if(existsSync(gatePath)) for(const host of ['lifemeter.xyz','wealthmeter.xyz']) 
   c.vm.gateTest.showGate(host.includes('wealth')?'portfolio-alpha':'biomarker-essentials');
   assert.doesNotMatch(c.markup(),/name="commercialUpdates"/);
   await c.vm.gateTest.submitGate(new c.Form());
-  const payload=c.requests.find(x=>x.url.includes('/api/newsletter')).body;
+  const payload=c.requests.find(x=>x.url.includes('/api/access-verification')).body;
   assert.equal(payload.newsletter,'yes');assert.equal(payload.commercialUpdates,'no');assert.equal(payload.commercialConsentVersion,'');
 });
 
